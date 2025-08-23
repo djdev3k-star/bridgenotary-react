@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-neutral-50 text-neutral-900 font-sans antialiased min-h-screen leading-relaxed;
+    font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial,
+      "Liberation Sans", sans-serif;
+    letter-spacing: 0.01em;
+    font-size: 1rem;
+  }
+  h1 {
+    @apply text-4xl md:text-6xl font-extrabold text-proof mb-6 leading-tight tracking-tight;
+  }
+  h2 {
+    @apply text-2xl md:text-4xl font-medium text-neutral-900 mb-4 leading-snug;
+  }
+  h3 {
+    @apply text-xl md:text-2xl font-semibold text-proof mb-3;
+  }
+  h4,
+  h5,
+  h6 {
+    @apply text-neutral-800 font-medium;
+  }
+  p,
+  li,
+  label {
+    @apply text-neutral-700 md:text-lg;
+    line-height: 1.7;
+    letter-spacing: 0.005em;
+  }
+  a {
+    @apply text-electric-blue;
+    text-decoration: none;
+  }
+  a:hover {
+    outline: 0;
+  }
+  strong,
+  b {
+    @apply text-gold font-semibold;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-20 md:py-28 px-4 md:px-0 max-w-5xl mx-auto;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-2xl p-8 md:p-12;
+  }
+  .pill {
+    @apply inline-block bg-neutral-100 rounded-full px-5 py-2 text-base font-medium text-proof shadow-sm;
+  }
+
+  /* New button styles */
+  .button {
+    @apply rounded-md px-6 py-3 font-semibold text-lg shadow-md transition-all duration-300 focus-visible:ring-2 focus-visible:ring-electric-blue focus:outline-none;
+  }
+  .button-primary {
+    @apply button bg-electric-blue text-white hover:bg-hover-blue;
+  }
+  .button-outline {
+    @apply button border-2 border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-white;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .fade-in-delay {
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .pulse-button {
+    animation: pulse 2s infinite;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 50%, #1e40af 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+      repeat;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-element:nth-child(2) {
+    animation-delay: -2s;
+  }
+
+  .floating-element:nth-child(3) {
+    animation-delay: -4s;
+  }
+
+  .trust-badge {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .cta-button {
+    background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(14, 165, 233, 0.4);
+  }
+
+  .secondary-button {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .secondary-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .stats-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+  }
+
+  .stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+}

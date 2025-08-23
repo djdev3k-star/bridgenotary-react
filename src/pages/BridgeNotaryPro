@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Notary Pro - Free Success Kit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        success: '#10b981'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .fade-in-delay {
+            animation: fadeInUp 0.6s ease-out 0.2s forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse-button {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body class="gradient-bg">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800">Bridge Notary Pro</h1>
+                </div>
+                <div class="text-sm text-gray-600">Your Success Solution Kit</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto fade-in">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                    Stop Losing Clients to More Professional Notaries
+                </h2>
+                <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                    Get your <strong>FREE Beginner Success Kit</strong> and start attracting clients who see you as the
+                    trusted professional you already are.
+                </p>
+                <button onclick="scrollToForm()"
+                    class="bg-success hover:bg-green-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 pulse-button">
+                    ✅ Get My Free Success Kit
+                </button>
+                <p class="text-blue-200 mt-4">No commitment • Instant download</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4"> Does This Sound Familiar?</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="card-hover bg-red-50 rounded-2xl p-8 border border-red-100 fade-in">
+                    <div class="text-4xl mb-4"></div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">"I'll call you back..."</h4>
+                    <p class="text-gray-600">
+                        Sarah was excited—her first real client call! But when asked for a website and business card,
+                        she didn't have either. The client found someone else with a polished presence and clear
+                        communication.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-orange-50 rounded-2xl p-8 border border-orange-100 fade-in-delay">
+                    <div class="text-4xl mb-4"></div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">The Client That Slipped Away</h4>
+                    <p class="text-gray-600">
+                        Mike got certified and ready—but after months, barely booked any signings. His peer, Jennifer,
+                        was fully booked... because she looked ready from day one.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-yellow-50 rounded-2xl p-8 border border-yellow-100 fade-in">
+                    <div class="text-4xl mb-4"></div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">"Am I Doing This Right?"</h4>
+                    <p class="text-gray-600">
+                        Lisa second-guessed everything. She was professional, but lacked tools, confidence, and clarity.
+                        She didn't just want to notarize—she wanted to succeed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Truth Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h3 class="text-4xl font-bold text-gray-800 mb-8">Here's the Truth</h3>
+                <p class="text-xl text-gray-600 mb-8">
+                    You're not losing clients because you lack skill. You're losing them because you don't appear as
+                    professional as you already are. First impressions happen <strong>before you ever speak</strong>—and
+                    your digital presence matters.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h3 class="text-4xl font-bold text-gray-800 mb-8">Imagine Starting Over With Clarity</h3>
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <span class="text-lg text-gray-700">Clients find and trust you</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <span class="text-lg text-gray-700">You speak confidently about your services</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <span class="text-lg text-gray-700">You have the right tools and systems in place</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <span class="text-lg text-gray-700">You're positioned as a professional—not just
+                            available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kit Contents -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <h3 class="text-4xl font-bold mb-4">Get Your FREE Beginner Success Kit</h3>
+                <p class="text-xl text-blue-100">Everything you need to <strong>look professional and get
+                        noticed</strong> by the right clients.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <h4 class="text-2xl font-bold mb-8 text-center">What's Inside the Kit:</h4>
+
+                <div class="space-y-6">
+                    <div class="bg-white/10 rounded-2xl p-6 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-3xl mr-4"></div>
+                            <div>
+                                <h5 class="text-xl font-bold mb-2">Quick Start Checklist</h5>
+                                <p class="text-blue-100">7 steps to go from invisible to booked-out professional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/10 rounded-2xl p-6 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-3xl mr-4"></div>
+                            <div>
+                                <h5 class="text-xl font-bold mb-2">Essential Tools List</h5>
+                                <p class="text-blue-100">Easy, no-cost tools to run your business more effectively</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/10 rounded-2xl p-6 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-3xl mr-4"></div>
+                            <div>
+                                <h5 class="text-xl font-bold mb-2">Client Scripts</h5>
+                                <p class="text-blue-100">Clear, confident responses to common client questions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/10 rounded-2xl p-6 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-3xl mr-4"></div>
+                            <div>
+                                <h5 class="text-xl font-bold mb-2">Online Presence Setup</h5>
+                                <p class="text-blue-100">Step-by-step setup for Google, website, and social media</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/10 rounded-2xl p-6 card-hover">
+                        <div class="flex items-start">
+                            <div class="text-3xl mr-4">📄</div>
+                            <div>
+                                <h5 class="text-xl font-bold mb-2">Professional Templates</h5>
+                                <p class="text-blue-100">Intake forms, email replies, bios, and more</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">What Other Notaries Are Saying:</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover fade-in">
+                    <p class="text-gray-600 mb-4 italic">"I followed the checklist and had my first real signing within
+                        2 weeks."</p>
+                    <div class="font-semibold text-gray-800">Amanda M. – Florida</div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover fade-in-delay">
+                    <p class="text-gray-600 mb-4 italic">"The scripts gave me confidence. I finally sound like a
+                        business, not a beginner."</p>
+                    <div class="font-semibold text-gray-800">Robert T. – Ohio</div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover fade-in">
+                    <p class="text-gray-600 mb-4 italic">"I wish I had this when I started—would've saved me so much
+                        time and stress."</p>
+                    <div class="font-semibold text-gray-800">Linda K. – Texas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Capture Form -->
+    <section id="leadForm" class="py-16 bg-success text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center fade-in">
+                <h3 class="text-4xl font-bold mb-8">Download Your Kit</h3>
+
+                <div class="bg-white rounded-2xl p-8 text-gray-800">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-left font-semibold mb-2">First Name</label>
+                            <input type="text" id="firstName"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-success focus:border-transparent"
+                                placeholder="Enter your first name">
+                        </div>
+
+                        <div>
+                            <label class="block text-left font-semibold mb-2">Email Address</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-success focus:border-transparent"
+                                placeholder="Enter your email address">
+                        </div>
+
+                        <button onclick="downloadKit()"
+                            class="w-full bg-success hover:bg-green-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            Get My Free Success Kit
+                        </button>
+
+                        <p class="text-sm text-gray-600">100% Free • No spam • Instant access</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth System Preview -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12 fade-in">
+                    <h3 class="text-4xl font-bold text-gray-800 mb-4">Intermediate Growth System <em>(Preview)</em>
+                    </h3>
+                    <p class="text-xl text-gray-600"><strong>Save Time, Streamline Workflows, Serve More
+                            Clients</strong></p>
+                    <p class="text-gray-600 mt-2">A structured system that helps you operate like a pro with automation,
+                        organization, and visibility.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl p-8 card-hover">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">Inside the Growth Framework:</h4>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-2">Automation & Operations</h5>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Client intake and follow-up systems</li>
+                                    <li>• Online scheduling & confirmations</li>
+                                    <li>• Branded communications & templates</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-2">Performance & Tracking</h5>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Basic analytics & progress dashboards</li>
+                                    <li>• Review and testimonial collection</li>
+                                    <li>• Client journey mapping</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-8 card-hover">
+                        <div class="space-y-6">
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-2">Tools & Setup</h5>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Email systems, basic CRMs, social content planning</li>
+                                    <li>• Simple automations for everyday tasks</li>
+                                    <li>• Website and Google Business optimizations</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-2">Clarity & Positioning</h5>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Solutions-based service positioning</li>
+                                    <li>• Better client conversations</li>
+                                    <li>• Repeatable service packages</li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-4 border-t border-gray-200">
+                                <h5 class="font-bold text-gray-800 mb-2">Bonus Resources:</h5>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• 90-Day Implementation Roadmap</li>
+                                    <li>• Fill-in-the-blank email sequences</li>
+                                    <li>• Onboarding & intake templates</li>
+                                    <li>• Guided video walkthroughs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto fade-in">
+                <h3 class="text-4xl font-bold mb-4">🚀 Ready to Level Up?</h3>
+                <p class="text-xl text-blue-100 mb-8">
+                    Join hundreds of notaries using smart systems to grow confidently—without the guesswork.
+                </p>
+                <button onclick="scrollToForm()"
+                    class="bg-success hover:bg-green-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    Get Started With Your Free Kit
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <h4 class="text-2xl font-bold">Bridge Notary Pro</h4>
+                <p class="text-gray-400">Helping notaries build professional, profitable businesses from day one.</p>
+            </div>
+            <p class="text-gray-500 text-sm">© 2025 Bridge Notary Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToForm() {
+            document.getElementById('leadForm').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+
+        function downloadKit() {
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+
+            if (!firstName || !email) {
+                alert('Please fill in both your name and email address.');
+                return;
+            }
+
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Simulate download process
+            alert(`Thanks ${firstName}! Your Success Kit is being prepared. Check your email (${email}) in the next few minutes for your download link.`);
+
+            // Clear form
+            document.getElementById('firstName').value = '';
+            document.getElementById('email').value = '';
+        }
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in, .fade-in-delay');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'97207fc877ad6b17',t:'MTc1NTY3ODMxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Sidebar from "./Sidebar";
+import BookingSidebar from "@/components/layout/BookingSidebar";
 
 interface ServiceOption {
   id: 'mobile' | 'online' | 'appointment';
@@ -299,7 +299,7 @@ const BookAppointment: React.FC = () => {
           {!selectedService && renderServiceSelection()}
           {selectedService && selectedService !== 'online' && renderAppointmentForm()}
         </main>
-        <Sidebar />
+        <BookingSidebar />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import Sidebar2 from "./Sidebar2";
+import ServiceSidebar from "@/components/layout/ServiceSidebar";
 
 const coreServices = [
   'Refinance',
@@ -162,7 +162,7 @@ const Pricing = () => (
           </p>
         </div>
       </main>
-      <Sidebar2 />
+      <ServiceSidebar />
       </div>
     </div>
   </div>

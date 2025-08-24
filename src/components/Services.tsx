@@ -1,4 +1,4 @@
-import Sidebar from "./Sidebar";
+import BookingSidebar from "@/components/layout/BookingSidebar";
 
 const coreServices = [
   'Refinance',
@@ -69,7 +69,7 @@ const Services = () => (
           </div>
         </div>
       </main>
-      <Sidebar />
+      <BookingSidebar />
       </div>
     </div>
   </div>

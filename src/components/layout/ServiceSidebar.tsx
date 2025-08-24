@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sidebar2 = () => {
+const ServiceSidebar = () => {
   return (
     <aside className="w-full md:w-1/3 lg:w-1/4 space-y-6">
       {/* Quick Action Card */}
@@ -102,4 +102,4 @@ const Sidebar2 = () => {
   );
 };
 
-export default Sidebar2;
+export default ServiceSidebar;

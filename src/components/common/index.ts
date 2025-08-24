@@ -1,4 +1,4 @@
-import { Button } from './Button';
+import { Button } from '../ui/Button';
 import { Card } from './Card';
 import { CheckIcon } from './icons';
 import { Dropdown } from './Dropdown';

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Sidebar = () => (
+const BookingSidebar = () => (
   <aside className="w-full md:w-1/3 lg:w-1/4 p-6 bg-neutral-100 rounded-2xl shadow-lg h-fit">
     <h3 className="text-xl font-bold text-proof mb-4">Ready to Get Started?</h3>
     <Link to="/book" className="button-primary w-full text-center mb-6 block">Book an Appointment</Link>
@@ -23,4 +23,4 @@ const Sidebar = () => (
   </aside>
 );
 
-export default Sidebar;
+export default BookingSidebar;

@@ -1,4 +1,4 @@
-import Sidebar from "./Sidebar";
+import BookingSidebar from "@/components/layout/BookingSidebar";
 
 const resources = [
   { name: "Fee Sheet PDF", link: "#" },
@@ -27,7 +27,7 @@ const Resources = () => (
           ))}
         </ul>
       </main>
-      <Sidebar />
+      <BookingSidebar />
     </div>
   </div>
 );

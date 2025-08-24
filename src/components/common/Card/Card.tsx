@@ -1,8 +1,18 @@
 import React from 'react';
-import { CardProps } from './Card.types';
+import { Card as UICard, CardBody, CardFooter } from '../../ui/Card';
 import { cn } from '@/utils/classNames';
 
-const Card: React.FC<CardProps> = ({
+// Legacy Card interface for backward compatibility
+export interface LegacyCardProps {
+  title: string;
+  content: React.ReactNode;
+  footer?: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+}
+
+// Legacy Card component that uses the new UI Card
+const LegacyCard: React.FC<LegacyCardProps> = ({
   title,
   content,
   footer,
@@ -10,32 +20,37 @@ const Card: React.FC<CardProps> = ({
   onClick,
 }) => {
   const cardClasses = cn(
-    'bg-white rounded-lg shadow-md overflow-hidden',
-    onClick && 'cursor-pointer hover:shadow-lg transition-shadow duration-200',
+    'overflow-hidden',
+    onClick && 'cursor-pointer',
     className
   );
 
   const cardContent = (
-    <>
-      <div className="px-6 py-4">
+    <UICard 
+      className={cardClasses} 
+      hover={!!onClick}
+      shadow="md"
+    >
+      <CardBody>
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <div className="text-gray-700">{content}</div>
-      </div>
+      </CardBody>
       {footer && (
-        <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+        <CardFooter className="bg-gray-50">
           {footer}
-        </div>
+        </CardFooter>
       )}
-    </>
+    </UICard>
   );
 
   return onClick ? (
-    <div role="button" onClick={onClick} className={cardClasses}>
+    <div role="button" onClick={onClick}>
       {cardContent}
     </div>
   ) : (
-    <div className={cardClasses}>{cardContent}</div>
+    cardContent
   );
 };
 
-export { Card };
+// Export both the legacy Card for backward compatibility and the new UI Card components
+export { LegacyCard as Card };

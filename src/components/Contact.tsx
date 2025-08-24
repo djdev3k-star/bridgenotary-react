@@ -1,4 +1,4 @@
-import Sidebar from "./Sidebar";
+import BookingSidebar from "@/components/layout/BookingSidebar";
 
 const Contact = () => (
   <div className="section">
@@ -24,7 +24,7 @@ const Contact = () => (
           <button type="submit" className="btn btn-primary w-full">Send Message</button>
         </form>
       </main>
-      <Sidebar />
+      <BookingSidebar />
     </div>
   </div>
 );

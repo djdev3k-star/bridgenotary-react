@@ -1,7 +1,7 @@
-import Hero from '@/components/home/Hero';
-import SocialProof from '@/components/home/SocialProof';
-import Process from '@/components/home/Process';
-import Services from '@/components/home/Services';
+import Hero from './Hero';
+import SocialProof from './SocialProof';
+import Process from './Process';
+import Services from './Services';
 
 const AboutSection = () => (
   <section className="py-16 bg-white">

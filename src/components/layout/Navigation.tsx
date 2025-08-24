@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Button } from '@/components/ui/Button';
-import DropdownMenu from './DropdownMenu';
+import DropdownMenu from '@/components/ui/DropdownMenu';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

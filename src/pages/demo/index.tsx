@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import LoadingSpinner from './shared/LoadingSpinner';
+import { LoadingSpinner } from '@/components/common/Loading';
 
 const DemoPage: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);

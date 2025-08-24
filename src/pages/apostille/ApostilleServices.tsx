@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Image from '../shared/Image';
+import Image from '@/components/ui/Image';
 
 interface ScenarioType {
   situation: string;

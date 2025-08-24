@@ -9,19 +9,19 @@ const HomePage = React.lazy(() => import("@/pages/home"));
 const RONPage = React.lazy(() => import("@/pages/ron"));
 const ApostillePage = React.lazy(() => import("@/pages/apostille"));
 const LoanSigningPage = React.lazy(() => import("@/pages/loan-signing"));
-const BridgeNotaryPro = React.lazy(() => import("./components/BridgeNotaryPro"));
-const About = React.lazy(() => import("./components/About"));
-const Services = React.lazy(() => import("./components/Services"));
-const WhyBridgeNotaryPage = React.lazy(() => import("./components/WhyBridgeNotaryPage"));
-const Pricing = React.lazy(() => import("./components/Pricing"));
-const BookAppointment = React.lazy(() => import("./components/BookAppointment"));
-const Contact = React.lazy(() => import("./components/Contact"));
-const Testimonials = React.lazy(() => import("./components/Testimonials"));
-const FAQ = React.lazy(() => import("./components/FAQ"));
-const Resources = React.lazy(() => import("./components/Resources"));
-const SchedulePage = React.lazy(() => import("./components/SchedulePage"));
-const DemoPage = React.lazy(() => import("./components/DemoPage"));
-const Sitemap = React.lazy(() => import("./components/Sitemap"));
+const BridgeNotaryPro = React.lazy(() => import("@/pages/bridge-notary-pro"));
+const About = React.lazy(() => import("@/pages/about"));
+const Services = React.lazy(() => import("@/pages/services"));
+const WhyBridgeNotaryPage = React.lazy(() => import("@/pages/why-bridge-notary"));
+const Pricing = React.lazy(() => import("@/pages/pricing"));
+const BookAppointment = React.lazy(() => import("@/pages/book"));
+const Contact = React.lazy(() => import("@/pages/contact"));
+const Testimonials = React.lazy(() => import("@/pages/testimonials"));
+const FAQ = React.lazy(() => import("@/pages/faq"));
+const Resources = React.lazy(() => import("@/pages/resources"));
+const SchedulePage = React.lazy(() => import("@/pages/schedule"));
+const DemoPage = React.lazy(() => import("@/pages/demo"));
+const Sitemap = React.lazy(() => import("@/pages/sitemap"));
 
 // Loading fallback component
 const LoadingFallback = () => (

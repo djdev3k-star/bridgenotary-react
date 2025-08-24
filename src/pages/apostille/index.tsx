@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Card } from '@/components/common';
 
 // Images for common scenarios and features
-import imgApostilleSigning from '@/assets/apostille_A person signing important legal documents in the presence of a notary public. The notary is seen from the side, with a clear view of the signature, documents, and notary seal._.jpg';
-import imgRemoteNotary from '@/assets/A professional notary conducting a video conference with a client for online notary services. The image shows the notary on a laptop screen, with a legal document visible in the foreground._.jpg';
-import imgHappyMobile from '@/assets/happy customer using video conference conveniently from mobile device.jpg';
-import imgVerify from '@/assets/Verify-identity.png';
-import imgUpload from '@/assets/upload-documents.png';
-import imgSecure from '@/assets/secure-video-signing.png';
+import imgApostilleSigning from '@/assets/images/apostille_A person signing important legal documents in the presence of a notary public. The notary is seen from the side, with a clear view of the signature, documents, and notary seal._.jpg';
+import imgRemoteNotary from '@/assets/images/A professional notary conducting a video conference with a client for online notary services. The image shows the notary on a laptop screen, with a legal document visible in the foreground._.jpg';
+import imgHappyMobile from '@/assets/images/happy customer using video conference conveniently from mobile device.jpg';
+import imgVerify from '@/assets/images/Verify-identity.png';
+import imgUpload from '@/assets/images/upload-documents.png';
+import imgSecure from '@/assets/images/secure-video-signing.png';
 
 const ApostillePage: React.FC = () => {
   const [showContactForm, setShowContactForm] = useState(false);

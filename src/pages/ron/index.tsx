@@ -1,4 +1,4 @@
-/ Layout wrapper removed — App routes render Layout via Outlet
+// Layout wrapper removed — App routes render Layout via Outlet
 import { CheckIcon } from '@/components/common/icons';
 import { FeatureCard, Stat } from '@/features/ron/components';
 import RonUpload from '@/assets/images/upload-documents.png'

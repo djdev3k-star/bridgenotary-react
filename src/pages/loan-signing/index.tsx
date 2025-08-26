@@ -17,7 +17,7 @@ const LoanSigningPage: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/book" className="button-primary text-lg py-4 px-8 inline-block text-center">📅 Schedule Your Signing</Link>
-                <a href="tel:+17135550123" className="button-outline text-lg py-4 px-8 inline-block text-center">📞 Call Now</a>
+                <a href="tel:+14696298932" className="button-outline text-lg py-4 px-8 inline-block text-center">📞 Call Now</a>
                 <Link to="/contact" className="button-secondary text-lg py-4 px-8 inline-block text-center">🔍 Get Availability</Link>
               </div>
 

@@ -244,8 +244,8 @@ const ApostilleServices: React.FC = () => {
             </button>
             <div className="text-center">
               <p className="mb-2">Phone preference?</p>
-              <a href="tel:5551234567" className="text-xl font-semibold hover:text-white/80">
-                (555) 123-4567
+              <a href="tel:+14696298932" className="text-xl font-semibold hover:text-white/80">
+                (469) 629-8932
               </a>
               <p className="text-sm mt-1">Free 5-minute consult</p>
             </div>

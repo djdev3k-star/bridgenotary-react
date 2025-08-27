@@ -45,8 +45,10 @@ export default {
         'md': '4px',
       },
       fontFamily: {
+
         sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
         display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+
       },
     },
   },

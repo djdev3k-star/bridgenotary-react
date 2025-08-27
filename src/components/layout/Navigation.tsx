@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Button } from '@/components/ui/Button';
 import DropdownMenu from '@/components/ui/DropdownMenu';
+import { NavigationMenuItems, NavigationProps } from './Navigation.types';
 
-const Navigation = () => {
+const Navigation: React.FC<NavigationProps> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const solutionsMenuItems = [
+  const solutionsMenuItems: NavigationMenuItems[] = [
     {
       label: 'Remote Online Notarization',
       path: '/ron',

@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur z-50 border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-bold text-2xl tracking-tighter text-proof">Bridge Notary</Link>
+        <Link to="/" className="font-bold text-2xl tracking-tighter text-proof font-logo">Bridge Notary</Link>
         <nav className="hidden md:flex gap-8 items-center">
           <Link to="/pricing" className="text-neutral-700 hover:text-proof transition text-base font-medium">Pricing</Link>
           <Link to="/faq" className="text-neutral-700 hover:text-proof transition text-base font-medium">FAQ</Link>

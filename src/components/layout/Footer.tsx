@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-12 gap-8 mb-12">
           {/* Brand Column */}
           <div className="md:col-span-4">
-            <h3 className="text-xl font-bold text-white mb-4">Bridge Notary</h3>
+            <h3 className="text-xl font-bold text-white mb-4 font-logo">Bridge Notary</h3>
             <p className="text-gray-400 mb-6">
               Professional mobile notary and loan signing services in the Greater Houston area.
             </p>

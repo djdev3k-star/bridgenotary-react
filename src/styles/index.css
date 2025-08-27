@@ -14,18 +14,20 @@
     font-size: 1rem;
   }
   h1 {
-    @apply text-4xl md:text-6xl font-extrabold text-proof mb-6 leading-tight tracking-tight font-brand;
+    @apply text-4xl md:text-6xl font-extrabold text-proof mb-6 leading-tight tracking-tight font-heading;
   }
   h2 {
-    @apply text-2xl md:text-4xl font-medium text-neutral-900 mb-4 leading-snug font-brand;
+    @apply text-2xl md:text-4xl font-medium text-neutral-900 mb-4 leading-snug font-heading;
   }
   h3 {
-    @apply text-xl md:text-2xl font-semibold text-proof mb-3 font-brand;
+    @apply text-xl md:text-2xl font-semibold text-proof mb-3 font-heading;
   }
   h4,
   h5,
   h6 {
-    @apply text-neutral-800 font-medium font-brand;
+
+    @apply text-neutral-800 font-medium font-heading;
+
   }
   p,
   li,

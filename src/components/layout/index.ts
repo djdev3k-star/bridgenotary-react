@@ -11,5 +11,6 @@ export { PageLayout };
 export { default as BookingSidebar } from './BookingSidebar';
 export { default as ServiceSidebar } from './ServiceSidebar';
 export { default as Footer } from './Footer';
+export { default as ScrollToTop } from './ScrollToTop';
 export { default as Navigation } from './Navigation';
 export { default as ScrollToTop } from './ScrollToTop';

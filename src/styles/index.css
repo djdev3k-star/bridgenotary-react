@@ -8,25 +8,31 @@
   }
   body {
     @apply bg-neutral-50 text-neutral-900 font-sans antialiased min-h-screen leading-relaxed;
-    font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial,
+    font-family: "Poppins", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial,
       "Liberation Sans", sans-serif;
     letter-spacing: 0.01em;
     font-size: 1rem;
   }
   h1 {
-    @apply text-4xl md:text-6xl font-extrabold text-proof mb-6 leading-tight tracking-tight font-heading;
+
+    @apply text-4xl md:text-6xl font-extrabold text-proof mb-6 leading-tight tracking-tight;
+    font-family: "Poppins", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
   }
   h2 {
-    @apply text-2xl md:text-4xl font-medium text-neutral-900 mb-4 leading-snug font-heading;
+    @apply text-2xl md:text-4xl font-medium text-neutral-900 mb-4 leading-snug;
+    font-family: "Poppins", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
   }
   h3 {
-    @apply text-xl md:text-2xl font-semibold text-proof mb-3 font-heading;
+    @apply text-xl md:text-2xl font-semibold text-proof mb-3;
+    font-family: "Poppins", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
+
   }
   h4,
   h5,
   h6 {
 
-    @apply text-neutral-800 font-medium font-heading;
+    @apply text-neutral-800 font-medium;
+    font-family: "Poppins", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
 
   }
   p,

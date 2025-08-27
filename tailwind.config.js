@@ -46,7 +46,9 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+
         heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+
       },
     },
   },

@@ -9,6 +9,7 @@ const HomePage = React.lazy(() => import("@/pages/home"));
 const RONPage = React.lazy(() => import("@/pages/ron"));
 const ApostillePage = React.lazy(() => import("@/pages/apostille"));
 const LoanSigningPage = React.lazy(() => import("@/pages/loan-signing"));
+const CourierPage = React.lazy(() => import("@/pages/courier"));
 const BridgeNotaryPro = React.lazy(() => import("@/pages/bridge-notary-pro"));
 const About = React.lazy(() => import("@/pages/about"));
 const Services = React.lazy(() => import("@/pages/services"));
@@ -42,6 +43,7 @@ function App() {
               <Route path="/remote-notarization" element={<RONPage />} />
               <Route path="/apostille" element={<ApostillePage />} />
               <Route path="/loan-signing" element={<LoanSigningPage />} />
+              <Route path="/courier" element={<CourierPage />} />
               <Route path="/why" element={<WhyBridgeNotaryPage />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />

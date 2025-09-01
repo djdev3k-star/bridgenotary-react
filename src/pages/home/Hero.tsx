@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Badge from "@/components/ui/Badge";
 
 const Hero = () => (
   <section className="bg-white">
@@ -22,6 +23,13 @@ const Hero = () => (
           </Link>
           <Link to="/pricing" className="button-outline">
             View Services & Pricing
+          </Link>
+        </div>
+        {/* New Service Highlight */}
+        <div className="mt-6 flex justify-center">
+          <Link to="/courier" className="inline-flex items-center gap-2 text-proof hover:text-accent transition-colors">
+            <Badge variant="info" size="sm">NEW</Badge>
+            <span className="font-medium">Secure Courier Services Available</span>
           </Link>
         </div>
       </div>

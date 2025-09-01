@@ -6,6 +6,7 @@ const footerLinks = {
     { label: 'Pricing', path: '/pricing' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Remote Notary', path: '/ron' },
+    { label: 'Courier Services', path: '/courier' },
     { label: 'Resources', path: '/resources' },
   ],
   company: [

@@ -1,10 +1,14 @@
 // Layout wrapper removed — App routes render Layout via Outlet
+import React, { useState } from 'react';
 import { CheckIcon } from '@/components/common/icons';
 import { FeatureCard, Stat } from '@/features/ron/components';
+import { Card, CardBody } from '@/components/ui/Card';
 import RonUpload from '@/assets/images/upload-documents.png'
 
 
 export default function RONPage() {
+  // State for live agent availability (toggle for demo purposes)
+  const [liveAgentsAvailable, setLiveAgentsAvailable] = useState(true);
   return (
     <div className="w-full bg-white text-neutral-900">
         {/* Hero Section with Primary CTA */}
@@ -16,10 +20,52 @@ export default function RONPage() {
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto mb-8">
               Complete your notarization securely from anywhere, in minutes. Our platform ensures a legally-binding process with enterprise-grade security.
             </p>
-            <div className="flex flex-col md:flex-row justify-center gap-4 mb-12">
-              <button className="button-primary text-lg py-4 px-8">Start Notarization Session</button>
-              <button className="button-outline text-lg py-4 px-8">Schedule for Later</button>
+            <div className="flex flex-col md:flex-row justify-center gap-6 mb-12 max-w-4xl mx-auto">
+              {/* Start Session Card - Only visible when agents are available */}
+              {liveAgentsAvailable && (
+                <Card hover={true} shadow="lg" className="flex-1 cursor-pointer">
+                  <CardBody className="text-center">
+                    {/* Live Agent Indicator */}
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <div className="w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                      <span className="text-success font-medium text-sm">Live Agents Available</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-proof mb-3">Start Notarization Session</h3>
+                    <p className="text-neutral-600 mb-4">Connect with an available notary right now</p>
+                    <button className="button-primary w-full">Begin Session</button>
+                  </CardBody>
+                </Card>
+              )}
+              
+              {/* Schedule Card - Always visible */}
+              <Card hover={true} shadow="lg" className="flex-1 cursor-pointer">
+                <CardBody className="text-center">
+                  <div className="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mx-auto text-proof">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                      <line x1="16" y1="2" x2="16" y2="6"/>
+                      <line x1="8" y1="2" x2="8" y2="6"/>
+                      <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-proof mb-3">Schedule for Later</h3>
+                  <p className="text-neutral-600 mb-4">Book an appointment at your convenience</p>
+                  <button className="button-outline w-full">Schedule Session</button>
+                </CardBody>
+              </Card>
             </div>
+            
+            {/* Demo Toggle for Live Agent Availability (Development Only) */}
+            {process.env.NODE_ENV === 'development' && (
+              <div className="text-center mb-12">
+                <button 
+                  onClick={() => setLiveAgentsAvailable(!liveAgentsAvailable)}
+                  className="text-sm text-neutral-500 hover:text-neutral-700 underline"
+                >
+                  Demo: Toggle Agent Availability (Currently: {liveAgentsAvailable ? 'Available' : 'Unavailable'})
+                </button>
+              </div>
+            )}
             
             {/* Session Requirements Quick Check */}
             <div className="bg-white p-6 rounded-lg shadow-md max-w-2xl mx-auto">

@@ -4,6 +4,16 @@ const Hero = () => (
   <section className="bg-white">
     <div className="section text-center">
       <div className="max-w-4xl mx-auto">
+        {/* NEW Service Badge */}
+        <div className="mb-6">
+          <span className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full px-4 py-2 text-sm font-medium text-blue-700">
+            🚀 NEW: Secure Courier Services Available
+            <Link to="/courier" className="text-blue-600 hover:text-blue-800 font-semibold underline">
+              Learn More
+            </Link>
+          </span>
+        </div>
+        
         <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-proof">
           Your Trusted Partner for
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-gold">

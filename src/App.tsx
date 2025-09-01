@@ -22,6 +22,7 @@ const Resources = React.lazy(() => import("@/pages/resources"));
 const SchedulePage = React.lazy(() => import("@/pages/schedule"));
 const DemoPage = React.lazy(() => import("@/pages/demo"));
 const Sitemap = React.lazy(() => import("@/pages/sitemap"));
+const CourierPage = React.lazy(() => import("@/pages/courier"));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -54,6 +55,7 @@ function App() {
               <Route path="/faq" element={<FAQ />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/sitemap" element={<Sitemap />} />
+              <Route path="/courier" element={<CourierPage />} />
             </Route>
             <Route path="/pro" element={<BridgeNotaryPro />} />
           </Routes>

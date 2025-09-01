@@ -6,6 +6,7 @@ const footerLinks = {
     { label: 'Pricing', path: '/pricing' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Remote Notary', path: '/ron' },
+    { label: 'Secure Courier', path: '/courier', isNew: true },
     { label: 'Resources', path: '/resources' },
   ],
   company: [
@@ -47,8 +48,11 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.resources.map(link => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-gray-400 hover:text-white transition-colors">
+                  <Link to={link.path} className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
                     {link.label}
+                    {link.isNew && (
+                      <span className="text-xs bg-blue-600 text-white px-2 py-1 rounded-full">NEW</span>
+                    )}
                   </Link>
                 </li>
               ))}

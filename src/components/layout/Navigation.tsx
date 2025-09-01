@@ -22,6 +22,11 @@ const Navigation: React.FC<NavigationProps> = () => {
       label: 'Loan Signing Services',
       path: '/loan-signing',
       description: 'Professional notary services for loan documents'
+    },
+    {
+      label: 'Courier Services',
+      path: '/courier-services',
+      description: 'Secure document delivery and transport'
     }
   ];
 

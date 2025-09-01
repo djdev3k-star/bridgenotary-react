@@ -8,6 +8,9 @@ const BookingSidebar = () => (
     <div className="border-t border-neutral-300 pt-6">
       <h4 className="font-semibold text-proof mb-3">Quick Links</h4>
       <ul className="space-y-2">
+        <li><Link to="/courier" className="text-neutral-700 hover:text-proof transition font-medium flex items-center gap-2">
+          <span>🔐</span> Secure Courier Service
+        </Link></li>
         <li><Link to="/services" className="text-neutral-700 hover:text-proof transition font-medium">Our Services</Link></li>
         <li><Link to="/pricing" className="text-neutral-700 hover:text-proof transition font-medium">Pricing Details</Link></li>
         <li><Link to="/faq" className="text-neutral-700 hover:text-proof transition font-medium">FAQ</Link></li>

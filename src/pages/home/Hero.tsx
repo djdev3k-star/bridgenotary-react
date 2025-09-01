@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom";
+import Badge from '@/components/ui/Badge';
 
 const Hero = () => (
   <section className="bg-white">
     <div className="section text-center">
       <div className="max-w-4xl mx-auto">
+        <div className="mb-6">
+          <Link to="/courier" className="inline-block">
+            <Badge variant="info" className="mb-4 hover:scale-105 transition-transform">
+              🔐 NEW: Secure Courier Service Available
+            </Badge>
+          </Link>
+        </div>
         <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-proof">
           Your Trusted Partner for
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-gold">

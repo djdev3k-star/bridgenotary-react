@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
+import Badge from '@/components/ui/Badge';
 
 const footerLinks = {
   resources: [
     { label: 'Pricing', path: '/pricing' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Remote Notary', path: '/ron' },
+    { label: 'Secure Courier Service', path: '/courier', isNew: true },
     { label: 'Resources', path: '/resources' },
   ],
   company: [
@@ -47,8 +49,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.resources.map(link => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-gray-400 hover:text-white transition-colors">
+                  <Link to={link.path} className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
                     {link.label}
+                    {link.isNew && <Badge variant="success" size="sm">NEW</Badge>}
                   </Link>
                 </li>
               ))}

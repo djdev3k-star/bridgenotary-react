@@ -1,8 +1,72 @@
 import Hero from './Hero';
-import SocialProof from './SocialProof';
 import Process from './Process';
 import Services from './Services';
+import { Link } from 'react-router-dom';
 
+// Final CTA component
+const FinalCTA = () => (
+  <section className="relative py-24 px-6 overflow-hidden">
+    {/* Background gradient */}
+    <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue"></div>
+    
+    {/* Background pattern */}
+    <div className="absolute inset-0 opacity-10">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="diagonalHatch" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M-10,10 l20,-20 M0,40 l40,-40 M30,50 l20,-20" stroke="white" strokeWidth="3" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#diagonalHatch)" />
+      </svg>
+    </div>
+    
+    {/* Floating elements */}
+    <div className="absolute top-1/4 left-10 bg-white/10 backdrop-blur-sm rounded-full w-40 h-40 floating-element"></div>
+    <div className="absolute bottom-1/4 right-10 bg-white/10 backdrop-blur-sm rounded-full w-24 h-24 floating-element"></div>
+    
+    <div className="max-w-5xl mx-auto relative z-10 text-center">
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 fade-in">Ready For Your Next Signing?</h2>
+      <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto fade-in-delay">
+        Join thousands of satisfied clients who trust Bridge Notary for their most important documents.
+        Professional, reliable, and convenient mobile notary services.
+      </p>
+      <div className="flex flex-col sm:flex-row justify-center gap-6 fade-in-delay">
+        <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded-lg text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 pulse-button">
+          Book Your Appointment
+        </Link>
+        <Link to="/contact" className="bg-transparent border-2 border-white hover:bg-white/10 transition-all font-semibold rounded-lg text-lg py-5 px-10 text-white">
+          Contact Us
+        </Link>
+      </div>
+      
+      <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-white fade-in-delay">
+        <div className="text-center">
+          <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gold mb-2">10+</div>
+          <div className="text-white/80">Years Experience</div>
+        </div>
+        <div className="text-center">
+          <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gold mb-2">1000+</div>
+          <div className="text-white/80">Satisfied Clients</div>
+        </div>
+        <div className="text-center">
+          <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gold mb-2">5★</div>
+          <div className="text-white/80">Google Rating</div>
+        </div>
+        <div className="text-center">
+          <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gold mb-2">24/7</div>
+          <div className="text-white/80">Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// SocialProof and AboutSection are commented out to hide them as requested
+// import SocialProof from './SocialProof';
+
+/* 
+// Commented out AboutSection component as it's currently not being used
 const AboutSection = () => (
   <section className="py-16 bg-white">
     <div className="max-w-4xl mx-auto px-4 text-center">
@@ -46,14 +110,17 @@ const AboutSection = () => (
     </div>
   </section>
 );
+*/
 
 const HomePage = () => (
-  <div className="min-h-screen">
+  <div className="w-full bg-white">
     <Hero />
-    <SocialProof />
-    <AboutSection />
     <Process />
     <Services />
+    <FinalCTA />
+    {/* SocialProof and AboutSection are hidden as requested */}
+    {/* <SocialProof /> */}
+    {/* <AboutSection /> */}
   </div>
 );
 

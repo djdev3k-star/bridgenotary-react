@@ -1,171 +1,320 @@
 import ServiceSidebar from "@/components/layout/ServiceSidebar";
 
+// Fee categories
 const coreServices = [
-  'Refinance',
-  'Purchase (Buyer)',
-  'Seller',
-  'Reverse Mortgage (Application & Closing)',
-  'HELOC / Equity Loans',
-  'Loan Modifications',
-  'Commercial Closings',
-  'TX Property Tax Loans',
+  { name: 'Refinance', fee: '$125–$150', notes: 'Per closing package' },
+  { name: 'Purchase (Buyer)', fee: '$100–$125', notes: 'Per closing package' },
+  { name: 'Seller', fee: '$75–$100', notes: 'Per closing package' },
+  { name: 'Reverse Mortgage', fee: '$125–$175', notes: 'Application & Closing' },
+  { name: 'HELOC / Equity Loans', fee: '$100–$150', notes: 'Varies by complexity' },
+  { name: 'Loan Modifications', fee: '$40–$60', notes: 'Basic notarization' },
+  { name: 'Commercial Closings', fee: '$200+', notes: 'Based on document count' },
+  { name: 'TX Property Tax Loans', fee: '$125', notes: 'Flat rate' },
 ];
 
 const addOnServices = [
-  'Scanbacks',
-  'Printing',
-  'Additional Signers',
-  'Weekend/After Hours',
-  'Travel',
-  'Facility Fee (TX Equity Loans)',
+  { name: 'Scanbacks', fee: '$15', notes: 'Per signing package' },
+  { name: 'Printing', fee: '$10–$25', notes: 'Based on page count' },
+  { name: 'Additional Signers', fee: '$25', notes: 'Per additional signer' },
+  { name: 'Weekend/After Hours', fee: '$50', notes: 'Additional fee' },
+  { name: 'Travel', fee: 'Varies', notes: 'Based on distance' },
+  { name: 'Facility Fee (TX Equity Loans)', fee: '$25', notes: 'If applicable' },
 ];
 
 const packages = [
   { 
-    type: 'Refinance', 
-    fee: '$125–$150',
-    description: 'Complete loan package signing with scanbacks',
-    features: ['Full document review', 'ID verification', 'Digital delivery', 'Priority scheduling']
+    type: 'Standard',
+    badge: 'Most Popular',
+    fee: '$125',
+    period: 'per signing',
+    description: 'Perfect for most mortgage refinance or purchase closings',
+    features: [
+      'In-person signing at your location',
+      'Document explanation & review',
+      'ID verification & witnessing',
+      'Electronic delivery to title',
+      'Free 24-hour rescheduling'
+    ],
+    primaryFeature: true
   },
   { 
-    type: 'Buyer', 
-    fee: '$100–$125',
-    description: 'Purchase closing document signing',
-    features: ['Document explanation', 'Witness services', 'Same-day processing', 'Flexible scheduling']
+    type: 'Basic', 
+    fee: '$75',
+    period: 'per signing',
+    description: 'For simple document notarization needs',
+    features: [
+      'Up to 5 signature notarizations',
+      'Basic ID verification',
+      'Standard availability',
+      'Electronic copies provided',
+      'Travel within 10 miles'
+    ]
   },
   { 
-    type: 'Seller', 
-    fee: '$75–$100',
-    description: 'Seller-side document signing',
-    features: ['Quick turnaround', 'Multiple location options', 'Electronic delivery', 'Basic notarization']
+    type: 'Premium', 
+    fee: '$200',
+    period: 'per signing',
+    description: 'Full-service option for complex transactions',
+    features: [
+      'Priority scheduling',
+      'Extended appointment time',
+      'Document pre-review',
+      'Digital & physical copies',
+      'Travel up to 25 miles included',
+      'After-hours availability'
+    ]
   },
   { 
-    type: 'Reverse Mortgage', 
-    fee: '$125–$175',
-    description: 'Specialized reverse mortgage signing',
-    features: ['Extended appointment time', 'Detailed explanation', 'Multiple sessions if needed', 'Senior-friendly service']
+    type: 'Remote Online', 
+    fee: '$100',
+    period: 'per session',
+    description: 'Convenient digital notarization from anywhere',
+    features: [
+      'Secure video conferencing',
+      'Digital document signing',
+      'Electronic journal entry',
+      'Identity verification',
+      'Available outside business hours'
+    ]
   },
   { 
-    type: 'Commercial/Business', 
-    fee: '$200+',
-    description: 'Complex commercial transaction signing',
-    features: ['Multi-party coordination', 'Extended hours', 'Rush service available', 'Volume discounts']
+    type: 'Commercial', 
+    fee: '$250+',
+    period: 'per package',
+    description: 'Specialized service for business transactions',
+    features: [
+      'Multi-party coordination',
+      'Complex document handling',
+      'Extended appointment duration',
+      'Corporate verification protocols',
+      'Priority scheduling'
+    ]
   },
   { 
-    type: 'Loan Modification', 
-    fee: '$40–$60',
-    description: 'Loan modification document signing',
-    features: ['Basic notarization', 'Quick service', 'Flexible scheduling', 'Affordable rates']
+    type: 'Custom', 
+    fee: 'Contact us',
+    period: 'for quote',
+    description: 'Tailored solutions for unique requirements',
+    features: [
+      'Custom scheduling options',
+      'Multi-location coordination',
+      'High-volume discounts',
+      'Special handling requirements',
+      'Dedicated account manager'
+    ]
   },
 ];
 
-const Pricing = () => (
-  <div>
-    <section className="bg-gradient-to-b from-proof/10 to-white py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Services & Pricing</h1>
-            <p className="text-xl text-neutral-600 mb-8 max-w-3xl">
-              Transparent, flat-rate pricing for common services — plus tailored quotes for complex or out-of-area work.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/book" className="button-primary text-lg py-4 px-8 inline-block text-center">Book Now</a>
-              <a href="/contact" className="button-outline text-lg py-4 px-8 inline-block text-center">Contact Us</a>
+const Pricing = () => {
+  return (
+    <div>
+      <section className="bg-gradient-to-b from-proof/10 to-white py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Clear & Transparent Pricing</h1>
+              <p className="text-xl text-neutral-600 mb-8 max-w-3xl">
+                Professional notary services with simple, flat-rate pricing. Choose the package that fits your needs or contact us for custom solutions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="/book" className="button-primary text-lg py-4 px-8 inline-block text-center">Book Now</a>
+                <a href="/contact" className="button-outline text-lg py-4 px-8 inline-block text-center">Request Quote</a>
+              </div>
             </div>
-          </div>
-          <div className="hidden md:block">
-            <div className="bg-neutral-100 rounded-lg aspect-4/3" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div className="section bg-gradient-to-b from-white to-gray-50">
-      <div className="flex flex-col md:flex-row gap-12 max-w-7xl mx-auto">
-      <main className="w-full md:w-2/3 lg:w-3/4">
-        {/* Header Section */}
-        <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-            Services & Pricing
-          </h1>
-          <p className="text-lg text-gray-600 mb-10 max-w-2xl">
-            We offer transparent, flat-rate pricing for our most common services. For custom quotes or complex assignments, please contact us directly.
-          </p>
-        </div>
-
-        {/* Services Grid */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Services</h2>
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Core Signing Services</h3>
-              <ul className="space-y-4">
-                {coreServices.map((item) => (
-                  <li key={item} className="flex items-start">
-                    <svg className="h-6 w-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            <div className="hidden md:block">
+              <div className="bg-white rounded-lg shadow-xl p-6">
+                <div className="text-sm text-proof uppercase tracking-wider font-semibold mb-2">Simple Fee Structure</div>
+                <h2 className="text-2xl font-bold text-neutral-900 mb-4">No Hidden Fees or Surprises</h2>
+                <p className="text-neutral-700 mb-4">Our pricing is straightforward and inclusive. Know exactly what you're paying for before you book.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
                     </svg>
-                    <span className="ml-3 text-gray-600">{item}</span>
+                    <span className="text-neutral-600">Fixed package rates</span>
                   </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Value-Added Services</h3>
-              <ul className="space-y-4">
-                {addOnServices.map((item) => (
-                  <li key={item} className="flex items-start">
-                    <svg className="h-6 w-6 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <li className="flex items-center">
+                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
                     </svg>
-                    <span className="ml-3 text-gray-600">{item}</span>
+                    <span className="text-neutral-600">Transparent add-ons</span>
                   </li>
-                ))}
-              </ul>
+                  <li className="flex items-center">
+                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span className="text-neutral-600">No surprise charges</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Pricing Cards */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Pricing & Packages</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {packages.map((pkg) => (
-              <div key={pkg.type} 
-                className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{pkg.type}</h3>
-                  <div className="text-2xl font-bold text-primary mb-3">{pkg.fee}</div>
-                  <p className="text-gray-600 mb-4">{pkg.description}</p>
-                  <ul className="space-y-3">
-                    {pkg.features.map((feature, i) => (
-                      <li key={i} className="flex items-center text-sm text-gray-600">
-                        <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+      <div className="section bg-gradient-to-b from-white to-gray-50">
+        <div className="flex flex-col md:flex-row gap-12 max-w-7xl mx-auto">
+          <main className="w-full md:w-2/3 lg:w-3/4">
+            {/* Pricing Packages */}
+            <div className="mb-16">
+              <div className="mb-10">
+                <h2 className="text-3xl font-bold text-proof mb-4">Service Packages</h2>
+                <p className="text-lg text-neutral-600 max-w-2xl">
+                  Choose the service tier that best matches your needs. All packages include our professional notary expertise and dedication to excellence.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {packages.map((pkg) => (
+                  <div key={pkg.type} 
+                    className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border ${pkg.primaryFeature ? 'border-electric-blue' : 'border-neutral-200'}`}>
+                    <div className="p-6">
+                      {pkg.badge && (
+                        <div className="bg-electric-blue text-white text-xs font-bold py-1 px-3 rounded-full inline-block mb-3">
+                          {pkg.badge}
+                        </div>
+                      )}
+                      <h3 className="text-xl font-bold text-proof mb-2">{pkg.type}</h3>
+                      <div className="flex items-baseline mb-4">
+                        <span className="text-3xl font-bold text-neutral-900">{pkg.fee}</span>
+                        <span className="text-sm text-neutral-500 ml-1">{pkg.period}</span>
+                      </div>
+                      <p className="text-neutral-600 mb-5 text-sm min-h-[40px]">{pkg.description}</p>
+                      <ul className="space-y-3 mb-6">
+                        {pkg.features.map((feature, i) => (
+                          <li key={i} className="flex items-start text-sm">
+                            <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span className="text-neutral-700">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="px-6 pb-6">
+                      <a 
+                        href="/book" 
+                        className={`w-full py-3 px-4 rounded-lg transition-colors text-center block font-medium 
+                        ${pkg.primaryFeature 
+                          ? 'bg-electric-blue text-white hover:bg-hover-blue' 
+                          : 'bg-neutral-100 text-neutral-800 hover:bg-neutral-200'}`}
+                      >
+                        Select {pkg.type}
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Fee Table */}
+            <div className="mb-16">
+              <div className="mb-10">
+                <h2 className="text-3xl font-bold text-proof mb-4">Detailed Fee Schedule</h2>
+                <p className="text-lg text-neutral-600 max-w-2xl">
+                  Reference our complete fee schedule for all notary services. All prices listed are base rates and may vary slightly based on location and complexity.
+                </p>
+              </div>
+
+              {/* Core Services Table */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                <div className="px-6 py-4 bg-proof text-white">
+                  <h3 className="text-xl font-bold">Core Notary Services</h3>
                 </div>
-                <div className="px-6 pb-6">
-                  <button className="w-full py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
-                    Book Now
-                  </button>
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead className="bg-neutral-50 border-b border-neutral-200">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-sm font-semibold text-neutral-700">Service</th>
+                        <th className="px-6 py-3 text-right text-sm font-semibold text-neutral-700">Fee</th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold text-neutral-700">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-neutral-200">
+                      {coreServices.map((service, index) => (
+                        <tr key={index} className="hover:bg-neutral-50">
+                          <td className="px-6 py-4 text-sm font-medium text-neutral-800">{service.name}</td>
+                          <td className="px-6 py-4 text-sm text-right font-semibold text-proof">{service.fee}</td>
+                          <td className="px-6 py-4 text-sm text-neutral-600">{service.notes}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
-            ))}
-          </div>
-          <p className="text-sm text-gray-500 mt-6 italic">
-            * Fees may vary based on location, time, and complexity. Add-on services such as scanbacks or extra signers are quoted separately.
-          </p>
+
+              {/* Add-On Services Table */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="px-6 py-4 bg-royal-blue text-white">
+                  <h3 className="text-xl font-bold">Add-On Services</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead className="bg-neutral-50 border-b border-neutral-200">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-sm font-semibold text-neutral-700">Service</th>
+                        <th className="px-6 py-3 text-right text-sm font-semibold text-neutral-700">Fee</th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold text-neutral-700">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-neutral-200">
+                      {addOnServices.map((service, index) => (
+                        <tr key={index} className="hover:bg-neutral-50">
+                          <td className="px-6 py-4 text-sm font-medium text-neutral-800">{service.name}</td>
+                          <td className="px-6 py-4 text-sm text-right font-semibold text-royal-blue">{service.fee}</td>
+                          <td className="px-6 py-4 text-sm text-neutral-600">{service.notes}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* FAQ */}
+            <div className="mb-16">
+              <div className="mb-8">
+                <h2 className="text-3xl font-bold text-proof mb-4">Frequently Asked Questions</h2>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-8">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">Do your fees include travel?</h3>
+                    <p className="text-neutral-700">Our standard fees include travel within 10 miles of our location. For distances beyond that, we charge a small additional fee based on distance.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">Are there additional fees for weekends?</h3>
+                    <p className="text-neutral-700">Yes, weekend and after-hours appointments (before 8am or after 6pm) incur a $50 additional fee.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">What payment methods do you accept?</h3>
+                    <p className="text-neutral-700">We accept all major credit cards, Cash App, Venmo, and cash. Payment is due at the time of service.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">What if I need to cancel or reschedule?</h3>
+                    <p className="text-neutral-700">We offer free rescheduling with 24 hours notice. Cancellations with less than 24 hours notice may incur a $25 fee.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="bg-gradient-to-r from-proof to-royal-blue rounded-xl shadow-xl p-8 text-white">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
+                <p className="text-lg mb-8 opacity-90">Book your notary service today and experience our professional, reliable service.</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href="/book" className="py-3 px-8 bg-white text-proof font-semibold rounded-lg hover:bg-opacity-90 transition-colors shadow-lg">Book Appointment</a>
+                  <a href="/contact" className="py-3 px-8 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </main>
+          <ServiceSidebar />
         </div>
-      </main>
-      <ServiceSidebar />
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Pricing;

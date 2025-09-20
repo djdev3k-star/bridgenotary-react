@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import BookingSidebar from "@/components/layout/BookingSidebar";
 
 interface ServiceOption {
   id: 'mobile' | 'online' | 'appointment';
@@ -288,18 +287,15 @@ const BookAppointment: React.FC = () => {
 
   return (
     <div className="section">
-      <div className="flex flex-col md:flex-row gap-12">
-        <main className="w-full md:w-2/3 lg:w-3/4">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-proof mb-6">Book Your Notary Service</h1>
-          <p className="text-lg text-neutral-700 mb-8">
-            Choose your preferred way to connect with our notaries. Whether you need an in-person
-            signing, immediate online session, or want to schedule for later, we've got you covered.
-          </p>
-          
-          {!selectedService && renderServiceSelection()}
-          {selectedService && selectedService !== 'online' && renderAppointmentForm()}
-        </main>
-        <BookingSidebar />
+      <div className="container mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-proof mb-6">Book Your Notary Service</h1>
+        <p className="text-lg text-neutral-700 mb-8">
+          Choose your preferred way to connect with our notaries. Whether you need an in-person
+          signing, immediate online session, or want to schedule for later, we've got you covered.
+        </p>
+        
+        {!selectedService && renderServiceSelection()}
+        {selectedService && selectedService !== 'online' && renderAppointmentForm()}
       </div>
     </div>
   );

@@ -1,0 +1,48 @@
+```
+                                  App Navigation Flow
+                                 ====================
+
+┌───────────────┐       ┌───────────────┐       ┌───────────────┐
+│               │       │               │       │               │
+│  HomeScreen   │──────▶│  UploadScreen │──────▶│ DetailsScreen │
+│               │       │               │       │               │
+└───────────────┘       └───────────────┘       └───────────────┘
+                                                        │
+                                                        ▼
+┌───────────────┐       ┌───────────────┐       ┌───────────────┐
+│               │       │               │       │               │
+│ ResultsScreen │◀──────│ WebViewScreen │◀──────│ PaymentScreen │
+│               │       │               │       │               │
+└───────────────┘       └───────────────┘       └───────────────┘
+        │                       ▲
+        │                       │
+        │               ┌───────────────┐
+        │               │               │
+        └──────────────▶│Confirmation   │
+                        │Screen         │
+                        └───────────────┘
+
+
+                           Component Structure
+                          ====================
+
+┌─ MobileApp
+│  └─ AppNavigation
+│     ├─ HomeScreen
+│     ├─ UploadScreen
+│     │  └─ ProgressStep
+│     ├─ DetailsScreen
+│     │  └─ ProgressStep
+│     ├─ PaymentScreen
+│     │  └─ ProgressStep
+│     ├─ ConfirmationScreen
+│     │  └─ ProgressStep
+│     ├─ WebViewScreen
+│     └─ ResultsScreen
+│        └─ ProgressStep
+│
+└─ Common Components
+   ├─ PrimaryButton
+   └─ ProgressStep
+
+```

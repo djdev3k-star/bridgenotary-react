@@ -1,9 +1,12 @@
 // Layout wrapper removed — App routes render Layout via Outlet
+
 import { Link } from 'react-router-dom';
 import { FeatureCard } from '@/features/ron/components';
 
+
 export default function RONPage() {
   return (
+
     <div className="w-full bg-white">
       {/* Hero Section - Full Width with Gradient Background */}
       <section className="relative bg-electric-blue overflow-hidden text-white">
@@ -23,6 +26,7 @@ export default function RONPage() {
                   <div className="flex items-center justify-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Video camera icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+
                     </svg>
                     Start RON Session
                   </div>
@@ -36,6 +40,7 @@ export default function RONPage() {
                   </div>
                 </a>
               </div>
+
 
               <div className="grid grid-cols-3 gap-3">
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
@@ -113,10 +118,12 @@ export default function RONPage() {
                       <span className="text-white drop-shadow-sm">5-minute average session</span>
                     </li>
                   </ul>
+
                 </div>
               </div>
             </div>
           </div>
+
         </div>
 
         {/* Wave separator */}
@@ -274,6 +281,7 @@ export default function RONPage() {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
+
               </div>
             </div>
           </div>
@@ -470,6 +478,7 @@ export default function RONPage() {
             </a>
           </div>
 
+
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-white">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-gold mb-2">99%</div>
@@ -486,6 +495,7 @@ export default function RONPage() {
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-gold mb-2">50</div>
               <div className="text-white/80">States Served</div>
+
             </div>
           </div>
         </div>

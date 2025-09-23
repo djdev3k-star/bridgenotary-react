@@ -58,7 +58,9 @@ const Services = () => (
           Bridge Notary specializes in a comprehensive suite of loan signings and mobile notarial work for real estate, lending, and legal professionals.
         </p>
         <div className="grid md:grid-cols-2 gap-12">
+
           <div className="card">
+
             <h2 className="text-2xl font-bold text-proof mb-6">Core Signing Services</h2>
             <ul className="list-disc list-inside text-neutral-700 space-y-3 text-lg">
               {coreServices.map((item) => (
@@ -66,7 +68,9 @@ const Services = () => (
               ))}
             </ul>
           </div>
+
           <div className="card">
+
             <h2 className="text-2xl font-bold text-proof mb-6">Value-Added Services</h2>
             <ul className="list-disc list-inside text-neutral-700 space-y-3 text-lg">
               {addOnServices.map((item) => (
@@ -79,6 +83,7 @@ const Services = () => (
     </section>
 
     {/* Quick Action Section */}
+
     <section className="py-16 px-6 bg-neutral-50">
       <div className="max-w-6xl mx-auto">
         <div className="card">
@@ -110,6 +115,7 @@ const Services = () => (
               </Link>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -119,7 +125,9 @@ const Services = () => (
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-proof mb-10 text-center">What to Bring</h2>
         <div className="grid md:grid-cols-3 gap-8">
+
           <div className="card flex flex-col items-center text-center">
+
             <div className="bg-electric-blue/10 rounded-full p-3 mb-4">
               <svg className="w-8 h-8 text-electric-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M16 7h.01M3.5 7v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-13a2 2 0 0 0-2 2z"/>
@@ -129,7 +137,9 @@ const Services = () => (
             <h3 className="text-xl font-bold text-proof mb-3">Government-issued Photo ID</h3>
             <p className="text-neutral-600">Valid driver's license, passport, or state ID card</p>
           </div>
+
           <div className="card flex flex-col items-center text-center">
+
             <div className="bg-electric-blue/10 rounded-full p-3 mb-4">
               <svg className="w-8 h-8 text-electric-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -139,7 +149,9 @@ const Services = () => (
             <h3 className="text-xl font-bold text-proof mb-3">Loan Documents</h3>
             <p className="text-neutral-600">Any loan documents that require notarization</p>
           </div>
+
           <div className="card flex flex-col items-center text-center">
+
             <div className="bg-electric-blue/10 rounded-full p-3 mb-4">
               <svg className="w-8 h-8 text-electric-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
@@ -158,7 +170,9 @@ const Services = () => (
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-proof mb-10 text-center">Related Services</h2>
         <div className="grid md:grid-cols-3 gap-8">
+
           <Link to="/ron" className="card hover:border-electric-blue hover:shadow-md transition-all">
+
             <h3 className="text-xl font-bold text-proof mb-4 flex items-center gap-2">
               <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -167,7 +181,9 @@ const Services = () => (
             </h3>
             <p className="text-neutral-600">Complete your notarization securely from anywhere, in minutes.</p>
           </Link>
+
           <Link to="/apostille" className="card hover:border-electric-blue hover:shadow-md transition-all">
+
             <h3 className="text-xl font-bold text-proof mb-4 flex items-center gap-2">
               <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
@@ -176,7 +192,9 @@ const Services = () => (
             </h3>
             <p className="text-neutral-600">Document authentication for international use.</p>
           </Link>
+
           <Link to="/loan-signing" className="card hover:border-electric-blue hover:shadow-md transition-all">
+
             <h3 className="text-xl font-bold text-proof mb-4 flex items-center gap-2">
               <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -193,6 +211,7 @@ const Services = () => (
     <section className="py-16 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="card">
+
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-proof mb-6">Contact Us</h2>
@@ -202,7 +221,9 @@ const Services = () => (
               <div className="space-y-4">
                 <a href="tel:+14696298932" className="flex items-center gap-3 text-neutral-700 hover:text-electric-blue transition-colors group">
                   <div className="bg-electric-blue/10 p-3 rounded-full group-hover:bg-electric-blue/20 transition-colors">
+
                     <svg className="w-5 h-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
@@ -210,7 +231,9 @@ const Services = () => (
                 </a>
                 <a href="mailto:info@bridgenotary.com" className="flex items-center gap-3 text-neutral-700 hover:text-electric-blue transition-colors group">
                   <div className="bg-electric-blue/10 p-3 rounded-full group-hover:bg-electric-blue/20 transition-colors">
+
                     <svg className="w-5 h-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
@@ -220,10 +243,12 @@ const Services = () => (
             </div>
             <div className="flex justify-center">
               <div className="space-y-6">
+
                 <Link to="/book" className="block w-full button-primary py-4 px-8 text-center text-lg font-medium">
                   Book a Signing
                 </Link>
                 <Link to="/contact" className="block w-full button-outline py-4 px-8 text-center text-lg font-medium">
+
                   Contact Sales
                 </Link>
               </div>

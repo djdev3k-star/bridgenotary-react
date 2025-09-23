@@ -76,7 +76,7 @@ export default function RONPage() {
                 {/* Background image with overlay */}
                 <div className="absolute inset-0 z-0 opacity-15">
                   <img
-                    src="/assets/images/ron-remote-notary-professional.jpg"
+                    src="/src/assets/images/A professional notary conducting a video conference with a client for online notary services. The image shows the notary on a laptop screen, with a legal document visible in the foreground._.jpg"
                     alt="Professional notary conducting remote session"
                     className="object-cover w-full h-full"
                   />
@@ -212,7 +212,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/assets/images/upload-documents.png"
+                  src="/src/assets/images/upload-documents.png"
                   alt="Upload and prepare documents" 
                   className="h-32 object-contain"
                 />
@@ -240,7 +240,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/assets/images/verify-identity.png"
+                  src="/src/assets/images/Verify-identity.png"
                   alt="Verify your identity" 
                   className="h-32 object-contain"
                 />
@@ -268,7 +268,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/assets/images/secure-video-signing.png"
+                  src="/src/assets/images/secure-video-signing.png"
                   alt="Meet with notary and sign documents" 
                   className="h-32 object-contain"
                 />
@@ -340,7 +340,7 @@ export default function RONPage() {
             </div>
             <div className="hidden md:block">
               <img
-                src="/assets/images/happy-customer-mobile-video.jpg"
+                src="/src/assets/images/happy customer using video conference conveniently from mobile device.jpg"
                 alt="Customer preparing for a remote notary session" 
                 className="rounded-lg shadow-md w-full h-64 md:h-auto object-cover"
               />

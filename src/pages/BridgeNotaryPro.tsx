@@ -72,21 +72,21 @@ const BridgeNotaryPro = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-proof to-proof-light text-white py-16">
+      <section className="bg-proof text-white py-16">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto fade-in">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
               Stop Losing Clients to More Professional Notaries
             </h2>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
-              Get your <strong>FREE Beginner Success Kit</strong> and start attracting clients who see you as the
+            <p className="text-xl md:text-2xl mb-8 text-white">
+              Get your <strong className="text-white">FREE Beginner Success Kit</strong> and start attracting clients who see you as the
               trusted professional you already are.
             </p>
             <button onClick={scrollToForm}
               className="cta-button text-white px-8 py-4 rounded-xl text-lg font-semibold">
               Get My Free Success Kit
             </button>
-            <p className="text-blue-200 mt-4">No commitment • Instant download</p>
+            <p className="text-white mt-4">No commitment • Instant download</p>
           </div>
         </div>
       </section>

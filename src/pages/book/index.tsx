@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import BookingSidebar from "@/components/layout/BookingSidebar";
 
 interface ServiceOption {
   id: 'mobile' | 'online' | 'appointment';
@@ -115,20 +114,20 @@ const BookAppointment: React.FC = () => {
         <button
           key={option.id}
           onClick={() => handleServiceSelection(option.id)}
-          className={`p-6 rounded-lg border-2 text-left transition-all
-            \${selectedService === option.id 
-              ? 'border-proof bg-proof/5' 
-              : 'border-neutral-200 hover:border-proof/50'}`}
+          className={`p-6 rounded-lg border-2 text-left transition-all hover:shadow-lg
+            ${selectedService === option.id 
+              ? 'border-electric-blue bg-electric-blue/5' 
+              : 'border-neutral-200 hover:border-electric-blue/50'}`}
         >
-          <div className={`text-proof mb-4 \${selectedService === option.id ? 'text-proof' : 'text-proof/70'}`}>
+          <div className={`mb-4 ${selectedService === option.id ? 'text-electric-blue' : 'text-proof'}`}>
             {option.icon}
           </div>
-          <h3 className="text-xl font-semibold mb-2">{option.title}</h3>
+          <h3 className="text-xl font-semibold mb-2 text-proof">{option.title}</h3>
           <p className="text-neutral-600 mb-4">{option.description}</p>
           <ul className="space-y-2">
             {option.benefits.map((benefit, index) => (
               <li key={index} className="flex items-start gap-2">
-                <svg className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-5 w-5 text-electric-blue mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-sm text-neutral-600">{benefit}</span>
@@ -151,7 +150,7 @@ const BookAppointment: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-proof focus:border-proof"
+              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Full Name"
               placeholder="Enter your full name"
@@ -164,7 +163,7 @@ const BookAppointment: React.FC = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-proof focus:border-proof"
+              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Email Address"
               placeholder="Enter your email address"
@@ -180,7 +179,7 @@ const BookAppointment: React.FC = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-proof focus:border-proof"
+              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Phone Number"
               placeholder="Enter your phone number"
@@ -192,7 +191,7 @@ const BookAppointment: React.FC = () => {
               name="documentType"
               value={formData.documentType}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-proof focus:border-proof"
+              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Document Type"
               title="Select the type of document you need notarized"
@@ -215,7 +214,7 @@ const BookAppointment: React.FC = () => {
               name="preferredDate"
               value={formData.preferredDate}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-proof focus:border-proof"
+              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Preferred Date"
               title="Select your preferred date"
@@ -227,7 +226,7 @@ const BookAppointment: React.FC = () => {
               name="preferredTime"
               value={formData.preferredTime}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-proof focus:border-proof"
+              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Preferred Time"
               title="Select your preferred time slot"
@@ -249,7 +248,7 @@ const BookAppointment: React.FC = () => {
               value={formData.location}
               onChange={handleInputChange}
               placeholder="Enter address for mobile signing"
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-proof focus:border-proof"
+              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
             />
           </div>
@@ -262,7 +261,7 @@ const BookAppointment: React.FC = () => {
             value={formData.additionalNotes}
             onChange={handleInputChange}
             rows={4}
-            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-proof focus:border-proof"
+            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
             placeholder="Any special requirements or additional information..."
           />
         </div>
@@ -277,7 +276,7 @@ const BookAppointment: React.FC = () => {
           </button>
           <button
             type="submit"
-            className="px-6 py-2 bg-proof text-white rounded-lg hover:bg-proof/90"
+            className="button-primary"
           >
             Submit Request
           </button>
@@ -288,18 +287,18 @@ const BookAppointment: React.FC = () => {
 
   return (
     <div className="section">
-      <div className="flex flex-col md:flex-row gap-12">
-        <main className="w-full md:w-2/3 lg:w-3/4">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-proof mb-6">Book Your Notary Service</h1>
-          <p className="text-lg text-neutral-700 mb-8">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Book Your Notary Service</h1>
+          <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
+          <p className="text-lg text-neutral-700">
             Choose your preferred way to connect with our notaries. Whether you need an in-person
             signing, immediate online session, or want to schedule for later, we've got you covered.
           </p>
-          
-          {!selectedService && renderServiceSelection()}
-          {selectedService && selectedService !== 'online' && renderAppointmentForm()}
-        </main>
-        <BookingSidebar />
+        </div>
+        
+        {!selectedService && renderServiceSelection()}
+        {selectedService && selectedService !== 'online' && renderAppointmentForm()}
       </div>
     </div>
   );

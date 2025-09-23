@@ -37,7 +37,7 @@ const WhyBridgeNotaryPage: React.FC = () => {
   return (
     <div className="w-full bg-white text-neutral-900 pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-proof/10 to-white py-20 px-6">
+      <section className="bg-proof/10 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">
             Why Bridge Notary?

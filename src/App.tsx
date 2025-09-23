@@ -8,6 +8,10 @@ import React, { Suspense } from 'react';
 const HomePage = React.lazy(() => import("@/pages/home"));
 const RONPage = React.lazy(() => import("@/pages/ron"));
 const ApostillePage = React.lazy(() => import("@/pages/apostille"));
+const ApostilleLayout = React.lazy(() => import("@/pages/apostille/ApostilleLayout"));
+const ApostilleQuizPage = React.lazy(() => import("@/pages/apostille/quiz"));
+const ApostilleQuizStartPage = React.lazy(() => import("@/pages/apostille/quiz/quiz-start"));
+const ApostilleQuizResultsPage = React.lazy(() => import("@/pages/apostille/quiz/quiz-results"));
 const LoanSigningPage = React.lazy(() => import("@/pages/loan-signing"));
 const BridgeNotaryPro = React.lazy(() => import("@/pages/bridge-notary-pro"));
 const About = React.lazy(() => import("@/pages/about"));
@@ -41,6 +45,16 @@ function App() {
               <Route path="/ron" element={<RONPage />} />
               <Route path="/remote-notarization" element={<RONPage />} />
               <Route path="/apostille" element={<ApostillePage />} />
+            </Route>
+            
+            {/* Apostille section with custom layout */}
+            <Route element={<ApostilleLayout />}>
+              <Route path="/apostille/quiz" element={<ApostilleQuizPage />} />
+              <Route path="/apostille/quiz-start" element={<ApostilleQuizStartPage />} />
+              <Route path="/apostille/quiz-results" element={<ApostilleQuizResultsPage />} />
+            </Route>
+            
+            <Route element={<Layout />}>
               <Route path="/loan-signing" element={<LoanSigningPage />} />
               <Route path="/why" element={<WhyBridgeNotaryPage />} />
               <Route path="/about" element={<About />} />

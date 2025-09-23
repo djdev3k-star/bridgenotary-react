@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 import { FeatureCard } from '@/features/ron/components';
 
 export default function RONPage() {
-
   return (
     <div className="w-full bg-white">
       {/* Hero Section - Full Width with Gradient Background */}
-      <section className="relative bg-gradient-to-r from-proof to-electric-blue overflow-hidden text-white">
+      <section className="relative bg-electric-blue overflow-hidden text-white">
         {/* Simple background without orbs or patterns */}
         <div className="max-w-7xl mx-auto py-28 px-6 relative z-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -22,7 +21,7 @@ export default function RONPage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center font-semibold shadow-xl pulse-button">
                   <div className="flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Video camera icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                     Start RON Session
@@ -30,7 +29,7 @@ export default function RONPage() {
                 </Link>
                 <a href="tel:+14696298932" className="bg-transparent border-2 border-white hover:bg-white/10 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center text-white font-semibold shadow-lg">
                   <div className="flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Phone icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     Call Now
@@ -41,7 +40,7 @@ export default function RONPage() {
               <div className="grid grid-cols-3 gap-3">
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
                   <div className="flex justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Shield check icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
@@ -49,7 +48,7 @@ export default function RONPage() {
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
                   <div className="flex justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Lightning bolt icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
@@ -57,7 +56,7 @@ export default function RONPage() {
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
                   <div className="flex justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Clock icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -83,7 +82,7 @@ export default function RONPage() {
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
                       <div className="bg-white/30 rounded-full p-1 flex-shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img" aria-label="Checkmark icon">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
@@ -147,7 +146,7 @@ export default function RONPage() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="stats-card rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all">
               <div className="flex justify-center mb-6">
-                <div className="bg-gradient-to-r from-proof to-electric-blue rounded-full p-4 text-white">
+                <div className="bg-electric-blue rounded-full p-4 text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -158,7 +157,7 @@ export default function RONPage() {
             </div>
             <div className="stats-card rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all">
               <div className="flex justify-center mb-6">
-                <div className="bg-gradient-to-r from-proof to-electric-blue rounded-full p-4 text-white">
+                <div className="bg-electric-blue rounded-full p-4 text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -169,7 +168,7 @@ export default function RONPage() {
             </div>
             <div className="stats-card rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all">
               <div className="flex justify-center mb-6">
-                <div className="bg-gradient-to-r from-proof to-electric-blue rounded-full p-4 text-white">
+                <div className="bg-electric-blue rounded-full p-4 text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -183,7 +182,7 @@ export default function RONPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-gradient-to-b from-neutral-50 to-white py-24 px-6">
+      <section className="bg-neutral-50 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">How Remote Online Notarization Works</h2>
@@ -206,7 +205,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/src/assets/images/upload-documents.png" 
+                  src="/src/assets/images/upload-documents.png"
                   alt="Upload and prepare documents" 
                   className="h-32 object-contain"
                 />
@@ -234,7 +233,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/src/assets/images/Verify-identity.png" 
+                  src="/src/assets/images/Verify-identity.png"
                   alt="Verify your identity" 
                   className="h-32 object-contain"
                 />
@@ -262,7 +261,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/src/assets/images/secure-video-signing.png" 
+                  src="/src/assets/images/secure-video-signing.png"
                   alt="Meet with notary and sign documents" 
                   className="h-32 object-contain"
                 />
@@ -333,7 +332,7 @@ export default function RONPage() {
             </div>
             <div className="hidden md:block">
               <img
-                src="/src/assets/images/happy customer using video conference conveniently from mobile device.jpg" 
+                src="/src/assets/images/happy customer using video conference conveniently from mobile device.jpg"
                 alt="Customer preparing for a remote notary session" 
                 className="rounded-lg shadow-md w-full h-64 md:h-auto object-cover"
               />
@@ -384,7 +383,7 @@ export default function RONPage() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-gradient-to-b from-neutral-50 to-white py-24 px-6">
+      <section className="bg-neutral-50 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Enterprise-Grade Security & Compliance</h2>
@@ -449,23 +448,12 @@ export default function RONPage() {
       {/* Final CTA Section */}
       <section className="relative py-24 px-6 overflow-hidden">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue"></div>
+        <div className="absolute inset-0 bg-electric-blue"></div>
 
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="diagonalHatch" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M-10,10 l20,-20 M0,40 l40,-40 M30,50 l20,-20" stroke="white" strokeWidth="3" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#diagonalHatch)" />
-          </svg>
-        </div>
+        {/* Removed background pattern */}
 
         {/* Floating elements */}
-        <div className="absolute top-1/4 left-10 bg-white/10 backdrop-blur-sm rounded-full w-40 h-40 floating-element"></div>
-        <div className="absolute bottom-1/4 right-10 bg-white/10 backdrop-blur-sm rounded-full w-24 h-24 floating-element"></div>
+        {/* Removed floating orbs */}
 
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Ready to Start Your RON Session?</h2>

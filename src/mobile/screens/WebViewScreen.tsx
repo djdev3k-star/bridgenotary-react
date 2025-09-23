@@ -25,7 +25,7 @@ interface WebViewScreenProps {
 }
 
 const WebViewScreen: React.FC<WebViewScreenProps> = ({ navigation, route }) => {
-  const { url, sessionId } = route.params;
+  const { url, sessionId, documentUri } = route.params;
   const [loading, setLoading] = useState(true);
   const [sessionComplete, setSessionComplete] = useState(false);
   const webViewRef = useRef<WebView>(null);
@@ -63,8 +63,8 @@ const WebViewScreen: React.FC<WebViewScreenProps> = ({ navigation, route }) => {
       if (data.type === 'SESSION_COMPLETE') {
         setSessionComplete(true);
         
-        // Mock data for the result screen
-        const documentUri = 'https://bridgenotary.com/documents/' + sessionId + '.pdf';
+        // Use the actual document URI passed from previous screens
+        // instead of creating a mock one
         const auditTrailUrl = 'https://bridgenotary.com/audit/' + sessionId;
         
         setTimeout(() => {

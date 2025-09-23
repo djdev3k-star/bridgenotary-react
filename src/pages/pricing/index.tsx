@@ -108,7 +108,7 @@ const packages = [
 const Pricing = () => {
   return (
     <div>
-      <section className="bg-gradient-to-b from-proof/10 to-white py-20 px-6">
+      <section className="bg-proof/10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -152,7 +152,7 @@ const Pricing = () => {
         </div>
       </section>
 
-      <div className="section bg-gradient-to-b from-white to-gray-50">
+      <div className="section bg-gray-50">
         <div className="flex flex-col md:flex-row gap-12 max-w-7xl mx-auto">
           <main className="w-full md:w-2/3 lg:w-3/4">
             {/* Pricing Packages */}
@@ -299,7 +299,7 @@ const Pricing = () => {
             </div>
 
             {/* CTA */}
-            <div className="bg-gradient-to-r from-proof to-royal-blue rounded-xl shadow-xl p-8 text-white">
+            <div className="bg-electric-blue rounded-xl shadow-xl p-8 text-white">
               <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
                 <p className="text-lg mb-8 opacity-90">Book your notary service today and experience our professional, reliable service.</p>

@@ -87,12 +87,12 @@ const LoanSigningPage: React.FC = () => {
       <section className="relative text-white">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-proof/60 to-proof/50 z-10"></div> {/* Lighter overlay */}
+          <div className="absolute inset-0 bg-proof/60 z-10"></div> {/* Solid overlay */}
           <div className="absolute inset-0 bg-black/20 z-10"></div> {/* Reduced darkness overlay */}
           {/* Video with fallback display */}
           {videoError ? (
             <img 
-              src="/images/loan-signing-fallback.jpg"
+              src="/src/assets/images/notarypublic-generalimagewithstamp.jpg"
               alt="Notary signing documents" 
               className="absolute inset-0 object-cover w-full h-full"
             />
@@ -105,10 +105,10 @@ const LoanSigningPage: React.FC = () => {
               muted 
               playsInline
               preload="auto"
-              poster="/images/loan-signing-fallback.jpg"
+              poster="/src/assets/images/notarypublic-generalimagewithstamp.jpg"
               onError={() => setVideoError(true)}
             >
-              <source src="/videos/loan-signin-bg.mp4" type="video/mp4" />
+              <source src="/src/assets/images/loan-signin-bg.mp4" type="video/mp4" />
               Your browser does not support the video tag. Please upgrade your browser for the best experience.
             </video>
           )}
@@ -125,9 +125,9 @@ const LoanSigningPage: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Link to="/book" className="bg-gradient-to-r from-electric-blue to-proof hover:from-electric-blue/90 hover:to-proof/90 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center text-white font-semibold shadow-xl pulse-button">
+                <Link to="/book" className="bg-electric-blue hover:bg-electric-blue/90 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center text-white font-semibold shadow-xl pulse-button">
                   <div className="flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Calendar icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     Schedule Your Signing
@@ -135,7 +135,7 @@ const LoanSigningPage: React.FC = () => {
                 </Link>
                 <a href="tel:+14696298932" className="bg-white/20 backdrop-blur-sm border-2 border-white hover:bg-white/30 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center text-white font-semibold shadow-lg">
                   <div className="flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Phone icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     Call Now
@@ -177,7 +177,7 @@ const LoanSigningPage: React.FC = () => {
                 {/* Background image with overlay */}
                 <div className="absolute inset-0 z-0 opacity-15">
                   <img 
-                    src="/images/notarypublic-generalimagewithstamp.jpg" 
+                    src="/src/assets/images/notarypublic-generalimagewithstamp.jpg" 
                     alt="Notary stamp and documents" 
                     className="object-cover w-full h-full"
                   />
@@ -253,7 +253,7 @@ const LoanSigningPage: React.FC = () => {
             {benefits.map((benefit, index) => (
               <div key={index} className="stats-card rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all">
                 <div className="flex justify-center mb-6">
-                  <div className="bg-gradient-to-r from-proof to-electric-blue rounded-full p-4 text-white">
+                  <div className="bg-electric-blue rounded-full p-4 text-white">
                     {benefit.icon}
                   </div>
                 </div>
@@ -266,7 +266,7 @@ const LoanSigningPage: React.FC = () => {
       </section>
 
       {/* Loan Types Section */}
-      <section className="bg-gradient-to-b from-neutral-50 to-white py-24 px-6 mb-16">
+      <section className="bg-neutral-50 py-24 px-6 mb-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Loan Documents We Handle</h2>
@@ -324,7 +324,7 @@ const LoanSigningPage: React.FC = () => {
             {/* Step 1 */}
             <div className="relative z-10 px-6">
               <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
-                <div className="bg-gradient-to-r from-proof to-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+                <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                   <span className="font-bold text-2xl">1</span>
                 </div>
                 <h3 className="text-2xl font-bold text-proof mb-4">Schedule</h3>
@@ -340,7 +340,7 @@ const LoanSigningPage: React.FC = () => {
             {/* Step 2 */}
             <div className="relative z-10 px-6 mt-12 md:mt-0">
               <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
-                <div className="bg-gradient-to-r from-proof to-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+                <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                   <span className="font-bold text-2xl">2</span>
                 </div>
                 <h3 className="text-2xl font-bold text-proof mb-4">Meet</h3>
@@ -356,7 +356,7 @@ const LoanSigningPage: React.FC = () => {
             {/* Step 3 */}
             <div className="relative z-10 px-6 mt-12 md:mt-0">
               <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
-                <div className="bg-gradient-to-r from-proof to-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+                <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                   <span className="font-bold text-2xl">3</span>
                 </div>
                 <h3 className="text-2xl font-bold text-proof mb-4">Complete</h3>
@@ -373,18 +373,8 @@ const LoanSigningPage: React.FC = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative bg-gradient-to-r from-proof to-electric-blue py-24 px-6 overflow-visible mt-16">
-        {/* Pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="diagonalHatch" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M-10,10 l20,-20 M0,40 l40,-40 M30,50 l20,-20" stroke="white" strokeWidth="3" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#diagonalHatch)" />
-          </svg>
-        </div>
+      <section className="relative bg-electric-blue py-24 px-6 overflow-visible mt-16">
+        {/* Removed pattern overlay */}
         
         {/* Content */}
         <div className="max-w-5xl mx-auto text-center relative">

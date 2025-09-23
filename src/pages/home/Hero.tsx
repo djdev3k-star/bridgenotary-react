@@ -1,29 +1,17 @@
 import { Link } from "react-router-dom";
 
 const Hero = () => (
-  <section className="relative bg-gradient-to-r from-proof to-electric-blue overflow-hidden">
-    {/* Background pattern overlay */}
-    <div className="absolute inset-0 opacity-10">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" strokeWidth="0.5" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#smallGrid)" />
-      </svg>
-    </div>
+  <section className="relative bg-electric-blue overflow-hidden">
+    {/* Background pattern overlay - removed diagonal pattern */}
     
     {/* Floating decorative elements */}
-    <div className="absolute top-20 left-10 bg-white/10 backdrop-blur-sm rounded-full w-48 h-48 floating-element"></div>
-    <div className="absolute bottom-20 right-10 bg-white/10 backdrop-blur-sm rounded-full w-32 h-32 floating-element"></div>
-    <div className="absolute top-1/3 right-1/4 bg-gold/20 backdrop-blur-sm rounded-full w-24 h-24 floating-element"></div>
+    {/* Removed floating orbs */}
     
     <div className="max-w-7xl mx-auto py-28 px-6 relative z-10">
       <div className="text-center max-w-4xl mx-auto fade-in">
         <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white">
           Your Trusted Partner for{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-gold to-white">
+          <span className="text-gold">
             Secure Closings
           </span>
         </h1>

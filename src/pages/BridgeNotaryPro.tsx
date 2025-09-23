@@ -72,7 +72,7 @@ const BridgeNotaryPro = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-proof to-proof-light text-white py-16">
+      <section className="bg-proof text-white py-16">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto fade-in">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">

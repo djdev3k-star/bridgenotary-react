@@ -23,7 +23,7 @@ interface PaymentScreenProps {
 }
 
 const PaymentScreen: React.FC<PaymentScreenProps> = ({ navigation, route }) => {
-  const { firstName, lastName, email, service, documentTitle } = route.params;
+  const { firstName, lastName, email, service, documentTitle, documentUri } = route.params;
   
   const [loading, setLoading] = useState(false);
   const [showStripeCheckout, setShowStripeCheckout] = useState(false);
@@ -77,6 +77,7 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({ navigation, route }) => {
       navigation.navigate('ConfirmationScreen', {
         sessionId,
         proofSessionUrl,
+        documentUri,  // Pass the document URI to the confirmation screen
       });
     }, 2000);
   };
@@ -135,7 +136,7 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({ navigation, route }) => {
     return (
       <WebView
         source={{ html: stripeCheckoutHtml }}
-        onMessage={(event) => {
+        onMessage={(event: any) => {
           if (event.nativeEvent.data === 'payment_success') {
             handleStripeSuccess();
           }

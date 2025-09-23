@@ -22,12 +22,13 @@ interface ConfirmationScreenProps {
 }
 
 const ConfirmationScreen: React.FC<ConfirmationScreenProps> = ({ navigation, route }) => {
-  const { sessionId, proofSessionUrl } = route.params;
+  const { sessionId, proofSessionUrl, documentUri } = route.params;
 
   const handleJoinSession = () => {
     navigation.navigate('WebViewScreen', {
       url: proofSessionUrl,
       sessionId: sessionId,
+      documentUri: documentUri,
     });
   };
 

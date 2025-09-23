@@ -54,12 +54,12 @@ export default function Process() {
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 relative">
-          {/* Connection line */}
-          <div className="hidden md:block absolute top-1/3 left-0 right-0 h-1 bg-gradient-to-r from-proof/20 to-electric-blue/20 z-0"></div>
+          {/* Connection line - removed gradient */}
+          <div className="hidden md:block absolute top-1/3 left-0 right-0 h-1 bg-electric-blue/20 z-0"></div>
           
           {steps.map((item, index) => (
             <div key={item.step} className={`text-center relative z-10 ${index % 2 === 0 ? 'fade-in' : 'fade-in-delay'}`}>
-              <div className="bg-gradient-to-r from-proof to-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <span className="font-bold text-xl">{item.step}</span>
               </div>
               
@@ -75,7 +75,7 @@ export default function Process() {
         </div>
         
         <div className="mt-16 text-center fade-in-delay">
-          <a href="/book" className="inline-flex items-center gap-2 bg-gradient-to-r from-proof to-electric-blue text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 pulse-button">
+          <a href="/book" className="inline-flex items-center gap-2 bg-electric-blue text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 pulse-button">
             Start Your Signing Process
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

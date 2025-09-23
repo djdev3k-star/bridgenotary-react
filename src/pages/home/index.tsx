@@ -6,24 +6,13 @@ import { Link } from 'react-router-dom';
 // Final CTA component
 const FinalCTA = () => (
   <section className="relative py-24 px-6 overflow-hidden">
-    {/* Background gradient */}
-    <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue"></div>
+    {/* Background color */}
+    <div className="absolute inset-0 bg-electric-blue"></div>
     
-    {/* Background pattern */}
-    <div className="absolute inset-0 opacity-10">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="diagonalHatch" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M-10,10 l20,-20 M0,40 l40,-40 M30,50 l20,-20" stroke="white" strokeWidth="3" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#diagonalHatch)" />
-      </svg>
-    </div>
+    {/* Background pattern - removed diagonal pattern */}
     
     {/* Floating elements */}
-    <div className="absolute top-1/4 left-10 bg-white/10 backdrop-blur-sm rounded-full w-40 h-40 floating-element"></div>
-    <div className="absolute bottom-1/4 right-10 bg-white/10 backdrop-blur-sm rounded-full w-24 h-24 floating-element"></div>
+    {/* Removed floating orbs */}
     
     <div className="max-w-5xl mx-auto relative z-10 text-center">
       <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 fade-in">Ready For Your Next Signing?</h2>
@@ -42,19 +31,19 @@ const FinalCTA = () => (
       
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-white fade-in-delay">
         <div className="text-center">
-          <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gold mb-2">10+</div>
+          <div className="text-3xl md:text-4xl font-bold text-gold mb-2">10+</div>
           <div className="text-white/80">Years Experience</div>
         </div>
         <div className="text-center">
-          <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gold mb-2">1000+</div>
+          <div className="text-3xl md:text-4xl font-bold text-gold mb-2">1000+</div>
           <div className="text-white/80">Satisfied Clients</div>
         </div>
         <div className="text-center">
-          <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gold mb-2">5★</div>
+          <div className="text-3xl md:text-4xl font-bold text-gold mb-2">5★</div>
           <div className="text-white/80">Google Rating</div>
         </div>
         <div className="text-center">
-          <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gold mb-2">24/7</div>
+          <div className="text-3xl md:text-4xl font-bold text-gold mb-2">24/7</div>
           <div className="text-white/80">Support</div>
         </div>
       </div>

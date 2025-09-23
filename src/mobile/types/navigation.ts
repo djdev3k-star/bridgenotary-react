@@ -16,10 +16,12 @@ export type RootStackParamList = {
   ConfirmationScreen: {
     sessionId: string;
     proofSessionUrl: string;
+    documentUri: string;
   };
   WebViewScreen: {
     url: string;
     sessionId: string;
+    documentUri: string;
   };
   ResultsScreen: {
     sessionId: string;

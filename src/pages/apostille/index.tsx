@@ -8,16 +8,7 @@ const ApostillePage: React.FC = () => {
     <React.Fragment>
       {/* Hero Section */}
       <section className="relative bg-electric-blue overflow-hidden text-white">
-          {/* Background with apostille document image */}
-          <div className="absolute inset-0 z-0 opacity-15">
-            <img
-              src="/src/assets/images/apostillebg.png"
-              alt=""
-              className="w-full h-full object-cover"
-              aria-hidden="true"
-            />
-            <div className="absolute inset-0 bg-black/40"></div>
-          </div>
+          {/* No background image */}
           
           <div className="max-w-7xl mx-auto py-28 px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -94,7 +85,7 @@ const ApostillePage: React.FC = () => {
                   {/* Background image with overlay */}
                   <div className="absolute inset-0 z-0 opacity-15">
                     <img
-                      src="/src/assets/images/apostille_A person signing important legal documents in the presence of a notary public. The notary is seen from the side, with a clear view of the signature, documents, and notary seal._.jpg"
+                      src="/assets/images/apostille_A person signing important legal documents in the presence of a notary public. The notary is seen from the side, with a clear view of the signature, documents, and notary seal._.jpg"
                       alt="A person signing important legal documents in the presence of a notary public"
                       className="object-cover w-full h-full"
                     />

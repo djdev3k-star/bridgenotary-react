@@ -13,7 +13,7 @@ export default function RONPage() {
         {/* Simple background without orbs or patterns */}
         <div className="max-w-7xl mx-auto py-28 px-6 relative z-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="fade-in backdrop-blur-sm bg-white/10 p-8 rounded-2xl shadow-2xl border border-white/20">
+            <div className="fade-in backdrop-blur-sm bg-white/10 p-8 rounded-md shadow-2xl border border-white/20">
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
                 Remote Online <span className="text-gold">Notarization</span>
               </h1>
@@ -22,7 +22,7 @@ export default function RONPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center font-semibold shadow-xl pulse-button">
+                <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all rounded-md text-lg py-3 px-6 inline-block text-center font-semibold shadow-lg">
                   <div className="flex items-center justify-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Video camera icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -31,7 +31,7 @@ export default function RONPage() {
                     Start RON Session
                   </div>
                 </Link>
-                <a href="tel:+14696298932" className="bg-transparent border-2 border-white hover:bg-white/10 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center text-white font-semibold shadow-lg">
+                <a href="tel:+14696298932" className="bg-transparent border-2 border-white hover:bg-white/10 transition-all rounded-md text-lg py-3 px-6 inline-block text-center text-white font-semibold shadow-lg">
                   <div className="flex items-center justify-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Phone icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -43,7 +43,7 @@ export default function RONPage() {
 
 
               <div className="grid grid-cols-3 gap-3">
-                <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
+                <div className="bg-white/20 backdrop-blur-sm rounded-md px-4 py-3 text-center border border-white/20 shadow-lg">
                   <div className="flex justify-center mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Shield check icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -51,7 +51,7 @@ export default function RONPage() {
                   </div>
                   <span className="text-sm text-white font-medium drop-shadow-sm">Secure</span>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
+                <div className="bg-white/20 backdrop-blur-sm rounded-md px-4 py-3 text-center border border-white/20 shadow-lg">
                   <div className="flex justify-center mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Lightning bolt icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -59,7 +59,7 @@ export default function RONPage() {
                   </div>
                   <span className="text-sm text-white font-medium drop-shadow-sm">Fast</span>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
+                <div className="bg-white/20 backdrop-blur-sm rounded-md px-4 py-3 text-center border border-white/20 shadow-lg">
                   <div className="flex justify-center mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Clock icon">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -72,15 +72,7 @@ export default function RONPage() {
 
             {/* Right side content */}
             <div className="hidden lg:block fade-in-delay">
-              <div className="backdrop-blur-sm bg-proof/20 p-8 rounded-2xl shadow-2xl border border-white/20 relative overflow-hidden">
-                {/* Background image with overlay */}
-                <div className="absolute inset-0 z-0 opacity-15">
-                  <img
-                    src="/src/assets/images/A professional notary conducting a video conference with a client for online notary services. The image shows the notary on a laptop screen, with a legal document visible in the foreground._.jpg"
-                    alt="Professional notary conducting remote session"
-                    className="object-cover w-full h-full"
-                  />
-                </div>
+              <div className="backdrop-blur-sm bg-proof/20 p-8 rounded-md shadow-2xl border border-white/20 relative overflow-hidden">
                 {/* Content */}
                 <div className="relative z-10">
                   <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-sm">Why Choose RON?</h2>
@@ -151,7 +143,7 @@ export default function RONPage() {
 
           {/* Benefits Cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="stats-card rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all">
+            <div className="stats-card rounded-md shadow-xl p-8 text-center hover:shadow-2xl transition-all">
               <div className="flex justify-center mb-6">
                 <div className="bg-electric-blue rounded-full p-4 text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -162,7 +154,7 @@ export default function RONPage() {
               <h3 className="text-xl font-semibold text-proof mb-4">Bank-Grade Security</h3>
               <p className="text-neutral-600">End-to-end encryption with tamper-evident digital certificates and secure video sessions.</p>
             </div>
-            <div className="stats-card rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all">
+            <div className="stats-card rounded-md shadow-xl p-8 text-center hover:shadow-2xl transition-all">
               <div className="flex justify-center mb-6">
                 <div className="bg-electric-blue rounded-full p-4 text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -173,7 +165,7 @@ export default function RONPage() {
               <h3 className="text-xl font-semibold text-proof mb-4">Available 24/7</h3>
               <p className="text-neutral-600">Connect with a live notary anytime, anywhere. No appointments needed for most services.</p>
             </div>
-            <div className="stats-card rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all">
+            <div className="stats-card rounded-md shadow-xl p-8 text-center hover:shadow-2xl transition-all">
               <div className="flex justify-center mb-6">
                 <div className="bg-electric-blue rounded-full p-4 text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -200,7 +192,7 @@ export default function RONPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center">
+            <div className="bg-white rounded-md shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center">
               <div className="flex items-center justify-center mb-6">
                 <div className="bg-proof/10 rounded-full p-4 mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -212,7 +204,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/src/assets/images/upload-documents.png"
+                  src="/assets/images/upload-documents.png"
                   alt="Upload and prepare documents" 
                   className="h-32 object-contain"
                 />
@@ -228,7 +220,7 @@ export default function RONPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center">
+            <div className="bg-white rounded-md shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center">
               <div className="flex items-center justify-center mb-6">
                 <div className="bg-proof/10 rounded-full p-4 mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -240,7 +232,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/src/assets/images/Verify-identity.png"
+                  src="/assets/images/Verify-identity.png"
                   alt="Verify your identity" 
                   className="h-32 object-contain"
                 />
@@ -256,7 +248,7 @@ export default function RONPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center">
+            <div className="bg-white rounded-md shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center">
               <div className="flex items-center justify-center mb-6">
                 <div className="bg-proof/10 rounded-full p-4 mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -268,7 +260,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/src/assets/images/secure-video-signing.png"
+                  src="/assets/images/secure-video-signing.png"
                   alt="Meet with notary and sign documents" 
                   className="h-32 object-contain"
                 />
@@ -300,7 +292,7 @@ export default function RONPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all">
+            <div className="bg-white rounded-md shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all">
               <h3 className="text-xl font-semibold text-proof mb-6">Required Documents</h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
@@ -340,7 +332,7 @@ export default function RONPage() {
             </div>
             <div className="hidden md:block">
               <img
-                src="/src/assets/images/happy customer using video conference conveniently from mobile device.jpg"
+                src="/assets/images/happy-customer-mobile-video.jpg"
                 alt="Customer preparing for a remote notary session" 
                 className="rounded-lg shadow-md w-full h-64 md:h-auto object-cover"
               />
@@ -348,7 +340,7 @@ export default function RONPage() {
           </div>
 
           <div className="mt-12 grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all">
+            <div className="bg-white rounded-md shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all">
               <h3 className="text-xl font-semibold text-proof mb-6">Technical Requirements</h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">

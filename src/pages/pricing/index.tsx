@@ -263,34 +263,34 @@ const Pricing = () => {
                     <div className={`h-1 w-16 bg-${categoryGroup.categoryColor}`}></div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 gap-6">
                     {categoryGroup.packages.map((pkg: any) => (
                       <div key={pkg.type} 
-                        className={`flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border ${pkg.primaryFeature ? 'border-electric-blue border-2' : 'border-neutral-200'}`}>
+                        className={`flex flex-col md:flex-row h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border ${pkg.primaryFeature ? 'border-electric-blue border-2' : 'border-neutral-200'}`}>
                         
-                        {/* Card Header with Icon */}
-                        <div className={`p-6 pb-4 flex items-start gap-4 ${pkg.primaryFeature ? 'bg-electric-blue/5' : 'bg-white'}`}>
-                          <div className={`flex-shrink-0 ${pkg.iconColor}`}>
-                            {pkg.icon}
-                          </div>
-                          <div className="flex-grow">
+                        {/* Card Header with Icon - Left side */}
+                        <div className={`md:w-1/3 p-6 flex flex-col justify-between ${pkg.primaryFeature ? 'bg-electric-blue/5' : 'bg-white'}`}>
+                          <div>
+                            <div className={`flex-shrink-0 mb-4 ${pkg.iconColor}`}>
+                              {pkg.icon}
+                            </div>
                             {pkg.badge && (
-                              <div className="bg-electric-blue text-white text-xs font-bold py-1 px-3 rounded-full inline-block mb-2">
+                              <div className="bg-electric-blue text-white text-xs font-bold py-1 px-3 rounded-full inline-block mb-3">
                                 {pkg.badge}
                               </div>
                             )}
-                            <h3 className="text-xl font-bold text-proof">{pkg.type}</h3>
+                            <h3 className="text-2xl font-bold text-proof mb-2">{pkg.type}</h3>
+                            <div className="flex items-baseline">
+                              <span className="text-4xl font-bold text-neutral-900">{pkg.fee}</span>
+                              <span className="text-sm text-neutral-500 ml-2">{pkg.period}</span>
+                            </div>
                           </div>
                         </div>
 
-                        {/* Card Body */}
-                        <div className="p-6 flex flex-col flex-grow">
-                          <div className="flex items-baseline mb-4">
-                            <span className="text-3xl font-bold text-neutral-900">{pkg.fee}</span>
-                            <span className="text-sm text-neutral-500 ml-2">{pkg.period}</span>
-                          </div>
-                          <p className="text-neutral-600 mb-6 text-sm min-h-[50px]">{pkg.description}</p>
-                          <ul className="space-y-3 mb-6">
+                        {/* Card Body - Middle and Right */}
+                        <div className="md:w-2/3 p-6 flex flex-col">
+                          <p className="text-neutral-600 mb-6 text-base">{pkg.description}</p>
+                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6 flex-grow">
                             {pkg.features.map((feature: string, i: number) => (
                               <li key={i} className="flex items-start text-sm">
                                 <svg className="h-5 w-5 text-electric-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -300,19 +300,19 @@ const Pricing = () => {
                               </li>
                             ))}
                           </ul>
-                        </div>
 
-                        {/* Card Footer - CTA */}
-                        <div className="px-6 pb-6 mt-auto">
-                          <a 
-                            href={pkg.fee === 'Contact us' ? '/contact' : '/book'} 
-                            className={`w-full py-3 px-4 rounded-lg transition-colors text-center block font-medium 
-                            ${pkg.primaryFeature 
-                              ? 'bg-electric-blue text-white hover:bg-hover-blue' 
-                              : 'bg-neutral-100 text-neutral-800 hover:bg-neutral-200'}`}
-                          >
-                            {pkg.cta}
-                          </a>
+                          {/* Card Footer - CTA */}
+                          <div className="mt-auto">
+                            <a 
+                              href={pkg.fee === 'Contact us' ? '/contact' : '/book'} 
+                              className={`w-full py-3 px-6 rounded-lg transition-colors text-center block font-medium inline-block
+                              ${pkg.primaryFeature 
+                                ? 'bg-electric-blue text-white hover:bg-hover-blue' 
+                                : 'bg-neutral-100 text-neutral-800 hover:bg-neutral-200'}`}
+                            >
+                              {pkg.cta}
+                            </a>
+                          </div>
                         </div>
                       </div>
                     ))}

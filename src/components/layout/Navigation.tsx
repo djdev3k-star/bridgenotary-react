@@ -42,13 +42,10 @@ const Navigation: React.FC<NavigationProps> = () => {
             items={solutionsMenuItems}
           />
           <Link to="/pricing" className="text-neutral-700 hover:text-proof transition text-base font-medium">Pricing</Link>
-          <Link to="/pro" className="text-neutral-700 hover:text-proof transition text-base font-medium">Bridge Notary Pro</Link>
           <Link to="/contact" className="text-neutral-700 hover:text-proof transition text-base font-medium">Contact</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
-          <a href="tel:+14696298932" className="text-neutral-700 hover:text-proof transition text-base font-medium">
-            (469) 629-8932
-          </a>
+          {/* TODO: Add phone contact for future development */}
           <Link to="/book">
             <Button variant="primary" className="pulse-button">
               Start a Signing
@@ -81,11 +78,8 @@ const Navigation: React.FC<NavigationProps> = () => {
               </Link>
             ))}
             <Link to="/pricing" className="text-neutral-700 hover:text-proof transition text-base font-medium">Pricing</Link>
-            <Link to="/pro" className="text-neutral-700 hover:text-proof transition text-base font-medium">Bridge Notary Pro</Link>
             <Link to="/contact" className="text-neutral-700 hover:text-proof transition text-base font-medium">Contact</Link>
-            <a href="tel:+14696298932" className="text-neutral-700 hover:text-proof transition text-base font-medium">
-              (469) 629-8932
-            </a>
+            {/* TODO: Add phone contact for future development */}
             <Link to="/book">
               <Button variant="primary" className="w-full pulse-button">
                 Start a Signing

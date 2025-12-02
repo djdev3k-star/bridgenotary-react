@@ -13,7 +13,6 @@ const ApostilleQuizPage = React.lazy(() => import("@/pages/apostille/quiz"));
 const ApostilleQuizStartPage = React.lazy(() => import("@/pages/apostille/quiz/quiz-start"));
 const ApostilleQuizResultsPage = React.lazy(() => import("@/pages/apostille/quiz/quiz-results"));
 const LoanSigningPage = React.lazy(() => import("@/pages/loan-signing"));
-const BridgeNotaryPro = React.lazy(() => import("@/pages/bridge-notary-pro"));
 const About = React.lazy(() => import("@/pages/about"));
 const Services = React.lazy(() => import("@/pages/services"));
 const WhyBridgeNotaryPage = React.lazy(() => import("@/pages/why-bridge-notary"));
@@ -69,7 +68,6 @@ function App() {
               <Route path="/resources" element={<Resources />} />
               <Route path="/sitemap" element={<Sitemap />} />
             </Route>
-            <Route path="/pro" element={<BridgeNotaryPro />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>

@@ -92,7 +92,7 @@ const LoanSigningPage: React.FC = () => {
           {/* Video with fallback display */}
           {videoError ? (
             <img 
-              src="/src/assets/images/notarypublic-generalimagewithstamp.jpg"
+              src="/assets/images/notarypublic-generalimagewithstamp.jpg"
               alt="Notary signing documents" 
               className="absolute inset-0 object-cover w-full h-full"
             />
@@ -105,22 +105,23 @@ const LoanSigningPage: React.FC = () => {
               muted 
               playsInline
               preload="auto"
-              poster="/src/assets/images/notarypublic-generalimagewithstamp.jpg"
+              poster="/assets/images/notarypublic-generalimagewithstamp.jpg"
               onError={() => setVideoError(true)}
             >
-              <source src="/src/assets/images/loan-signin-bg.mp4" type="video/mp4" />
+              <source src="https://cdn.jsdelivr.net/gh/djdev3k-star/bridgenotary-react@c6a06b2/src/assets/images/loan-signin-bg.mp4
+" type="video/mp4" />
               Your browser does not support the video tag. Please upgrade your browser for the best experience.
             </video>
           )}
         </div>
         
         <div className="max-w-7xl mx-auto py-28 px-6 relative z-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-3xl mx-auto">
             <div className="fade-in backdrop-blur-sm bg-proof/20 p-8 rounded-2xl shadow-2xl border border-white/20">
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
                 Mobile Notary & Loan Signing <span className="text-gold">Experts</span>
               </h1>
-              <p className="text-xl text-white mb-10 max-w-3xl drop-shadow-md">
+              <p className="text-xl text-white mb-10 drop-shadow-md">
                 Certified signing agents, bonded & insured, trusted by title companies and lenders for accurate, timely closings. Same-day and rush availability in many areas.
               </p>
 
@@ -133,14 +134,15 @@ const LoanSigningPage: React.FC = () => {
                     Schedule Your Signing
                   </div>
                 </Link>
-                <a href="tel:+14696298932" className="bg-white/20 backdrop-blur-sm border-2 border-white hover:bg-white/30 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center text-white font-semibold shadow-lg">
-                  <div className="flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Phone icon">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    Call Now
-                  </div>
-                </a>
+                {/* TODO: Add phone contact for future development */}
+                {/* <a href="tel:+14696298932" className="bg-white/20 backdrop-blur-sm border-2 border-white hover:bg-white/30 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center text-white font-semibold shadow-lg"> */}
+                  {/* <div className="flex items-center justify-center gap-2"> */}
+                    {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Phone icon"> */}
+                      {/* <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /> */}
+                    {/* </svg> */}
+                    {/* Call Now */}
+                  {/* </div> */}
+                {/* </a> */}
               </div>
 
               <div className="grid grid-cols-3 gap-3">
@@ -170,67 +172,10 @@ const LoanSigningPage: React.FC = () => {
                 </div>
               </div>
             </div>
-
-            {/* Right side content */}
-            <div className="hidden lg:block fade-in-delay">
-              <div className="backdrop-blur-sm bg-proof/20 p-8 rounded-2xl shadow-2xl border border-white/20 relative overflow-hidden">
-                {/* Background image with overlay */}
-                <div className="absolute inset-0 z-0 opacity-15">
-                  <img 
-                    src="/src/assets/images/notarypublic-generalimagewithstamp.jpg" 
-                    alt="Notary stamp and documents" 
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                {/* Content */}
-                <div className="relative z-10">
-                  <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-sm">Why Choose Us?</h2>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3">
-                      <div className="bg-white/30 rounded-full p-1 flex-shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-white">Experienced & certified signing agents</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-white/30 rounded-full p-1 flex-shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-white drop-shadow-sm">Available evenings & weekends</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-white/30 rounded-full p-1 flex-shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-white drop-shadow-sm">Thorough document reviews</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="bg-white/30 rounded-full p-1 flex-shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-white drop-shadow-sm">Same-day service available</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         
-        {/* Wave separator */}
-        <div className="absolute bottom-0 left-0 right-0 z-20">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" fill="#ffffff" preserveAspectRatio="none">
-            <path d="M0,32L80,53.3C160,75,320,117,480,117.3C640,117,800,75,960,58.7C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-          </svg>
-        </div>
+
       </section>
 
       {/* Services Overview Section */}
@@ -389,12 +334,13 @@ const LoanSigningPage: React.FC = () => {
             <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded-lg text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative z-50">
               Schedule a Signing
             </Link>
-            <a href="tel:+14696298932" className="bg-transparent border-2 border-white hover:bg-white/10 transition-all font-semibold rounded-lg text-lg py-5 px-10 text-white relative z-50">
-              Call (469) 629-8932
-            </a>
+            {/* TODO: Add phone contact for future development */}
+            {/* <a href="tel:+14696298932" className="bg-transparent border-2 border-white hover:bg-white/10 transition-all font-semibold rounded-lg text-lg py-5 px-10 text-white relative z-50"> */}
+              {/* Call (469) 629-8932 */}
+            {/* </a> */}
           </div>
           
-          {/* Stats */}
+          {/* Stats
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-gold mb-2">99%</div>
@@ -412,7 +358,7 @@ const LoanSigningPage: React.FC = () => {
               <div className="text-3xl md:text-4xl font-bold text-gold mb-2">24/7</div>
               <div className="text-white/80">Support</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

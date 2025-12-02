@@ -137,44 +137,37 @@ const ApostilleServices: React.FC = () => {
 
   return (
     <div className="w-full bg-white">
-      {/* Common Scenarios Section - Service Details */}
-      <section className="section">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold text-center mb-12">Common Scenarios We Handle</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {commonScenarios.map((scenario, index) => (
-              <div key={index} className="card p-6 rounded-md">
-                <div className="flex justify-center mb-4">
-                  <div className="bg-proof/10 rounded-full p-3">{scenario.icon}</div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{scenario.situation}</h3>
-                <p className="text-neutral-600 mb-2">
-                  <strong>Typical Documents:</strong><br />
-                  {scenario.documents}
-                </p>
-                <p className="text-red-600 text-sm">
-                  <strong>Watch Out:</strong><br />
-                  {scenario.gotcha}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Pain Points Section */}
-      <section className="bg-neutral-50 py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold text-center mb-12">Pain Points We Eliminate</h2>
+      <section className="py-24 relative overflow-hidden bg-gradient-to-b from-proof/5 to-electric-blue/5">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/src/assets/images/stack-loan-documents.jpg" 
+            alt="Stack of Documents" 
+            className="w-full h-full object-cover opacity-5"
+          />
+        </div>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-proof to-electric-blue bg-clip-text text-transparent">
+              Pain Points We Eliminate
+            </h2>
+            <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+              Common frustrations our clients faced before finding us
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
             {painPoints.map((point, index) => (
-              <div key={index} className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Pain point X icon">
+              <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-red-100 flex items-start gap-6 transform hover:-translate-y-1 transition-all duration-300">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center text-white shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Pain point X icon">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </div>
-                <p className="text-neutral-700">{point}</p>
+                <div className="flex-1">
+                  <p className="text-lg text-neutral-800 font-medium">{point}</p>
+                  <div className="mt-2 h-1 w-20 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
+                </div>
               </div>
             ))}
           </div>
@@ -182,17 +175,31 @@ const ApostilleServices: React.FC = () => {
       </section>
 
       {/* Our Solution Section */}
-      <section className="section">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold text-center mb-12">Our Precision Apostille Solution</h2>
+      <section className="py-24 relative overflow-hidden bg-proof text-white">
+        <div className="absolute inset-0 bg-[url('/assets/images/secure-video-signing.png')] opacity-10 bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue opacity-90"></div>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-white">
+              Our Precision Apostille Solution
+            </h2>
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
+              How we make the complex simple
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
             {solutions.map((solution, index) => (
-              <div key={index} className="card p-6 rounded-md">
-                <div className="flex items-start gap-4">
-                  {solution.icon}
+              <div key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 shadow-xl transform hover:scale-105 transition-all duration-300">
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0 w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                    </svg>
+                  </div>
                   <div>
-                    <h3 className="font-semibold mb-2">{solution.action}</h3>
-                    <p className="text-neutral-600">{solution.benefit}</p>
+                    <h3 className="text-xl font-bold mb-3 text-white">{solution.action}</h3>
+                    <p className="text-white/80 text-lg">{solution.benefit}</p>
+                    <div className="mt-4 h-1 w-20 bg-gradient-to-r from-gold to-white/50 rounded-full"></div>
                   </div>
                 </div>
               </div>
@@ -253,44 +260,78 @@ const ApostilleServices: React.FC = () => {
       </section>
 
       {/* Quick Quiz Section */}
-      <section className="section">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-semibold mb-8">Still Unsure If You Need an Apostille?</h2>
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-neutral-50"></div>
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-proof to-electric-blue bg-clip-text text-transparent">
+              Still Unsure If You Need an Apostille?
+            </h2>
+            <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+              Let us help you find the right path forward
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="card p-6 rounded-md">
-              <h3 className="text-xl font-semibold mb-4">Take Our Quick Quiz</h3>
-              <p className="text-neutral-600 mb-4">30 seconds to find out if you need an apostille</p>
-              <button className="button-primary" aria-label="Start apostille need assessment quiz">Start Quiz</button>
+            <div className="bg-white rounded-2xl p-8 shadow-xl border border-neutral-100 hover:shadow-2xl transition-all duration-300">
+              <div className="bg-proof/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-proof text-center">Take Our Quick Quiz</h3>
+              <p className="text-neutral-600 mb-6 text-center">30 seconds to find out if you need an apostille</p>
+              <button 
+                className="w-full bg-proof text-white hover:bg-proof/90 transition-all rounded-lg py-3 px-6 font-semibold shadow-lg hover:shadow-xl"
+                aria-label="Start apostille need assessment quiz"
+              >
+                Start Quiz
+              </button>
             </div>
-            <div className="card p-6 rounded-md">
-              <h3 className="text-xl font-semibold mb-4">Browse Knowledge Base</h3>
-              <p className="text-neutral-600 mb-4">Find answers to common questions</p>
-              <button className="button-outline" aria-label="Browse apostille knowledge base articles">View Articles</button>
+            <div className="bg-white rounded-2xl p-8 shadow-xl border border-neutral-100 hover:shadow-2xl transition-all duration-300">
+              <div className="bg-electric-blue/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-electric-blue text-center">Browse Knowledge Base</h3>
+              <p className="text-neutral-600 mb-6 text-center">Find answers to common questions</p>
+              <button 
+                className="w-full bg-transparent border-2 border-electric-blue text-electric-blue hover:bg-electric-blue/5 transition-all rounded-lg py-3 px-6 font-semibold"
+                aria-label="Browse apostille knowledge base articles"
+              >
+                View Articles
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-proof text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to make your paperwork world-ready?</h2>
-          <p className="text-lg mb-8">Stop guessing. Start traveling, marrying, studying, or doing business abroad—confident your documents will cross borders as smoothly as you do.</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+      <section className="relative py-24 px-6 overflow-hidden">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue"></div>
+        
+        <div className="max-w-5xl mx-auto relative z-10 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 fade-in">Make Your Documents World-Ready</h2>
+          <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto fade-in-delay leading-relaxed">
+            Stop guessing. Start traveling, marrying, studying, or doing business abroad—confident your documents will cross borders as smoothly as you do.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row justify-center gap-6 fade-in-delay">
             <button 
               onClick={() => setShowContactForm(true)}
-              className="bg-white text-proof rounded-md text-lg py-3 px-6 inline-block font-semibold shadow-lg"
-              aria-label="Start apostille process now"
+              className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded-lg text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative z-50"
             >
-              <span className="whitespace-nowrap">Get My Apostille Now</span>
+              Get My Apostille Now
             </button>
-            <div className="text-center">
-              <p className="mb-2">Phone preference?</p>
-              <a href="tel:+14696298932" className="text-xl font-semibold hover:text-white/80">
-                (469) 629-8932
-              </a>
-              <p className="text-sm mt-1">Free 5-minute consult</p>
-            </div>
+            {/* TODO: Add phone contact for future development */}
+            {/* <a 
+              href="tel:+14696298932" 
+              className="bg-transparent border-2 border-white hover:bg-white/10 transition-all font-semibold rounded-lg text-lg py-5 px-10 text-white relative z-50 flex flex-col items-center"
+            >
+              <span className="text-sm text-white/80">Free 5-min Consult</span>
+              <span>(469) 629-8932</span>
+            </a> */}
           </div>
         </div>
       </section>

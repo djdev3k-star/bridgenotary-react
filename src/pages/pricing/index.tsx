@@ -1,4 +1,4 @@
-import ServiceSidebar from "@/components/layout/ServiceSidebar";
+// ServiceSidebar intentionally not used on this page - sidebar available if needed
 
 // Fee categories
 const coreServices = [
@@ -167,8 +167,8 @@ const Pricing = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {packages.map((pkg) => (
                   <div key={pkg.type} 
-                    className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border ${pkg.primaryFeature ? 'border-electric-blue' : 'border-neutral-200'}`}>
-                    <div className="p-6">
+                    className={`flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border ${pkg.primaryFeature ? 'border-electric-blue' : 'border-neutral-200'}`}>
+                    <div className="p-6 flex flex-col flex-grow">
                       {pkg.badge && (
                         <div className="bg-electric-blue text-white text-xs font-bold py-1 px-3 rounded-full inline-block mb-3">
                           {pkg.badge}
@@ -183,7 +183,7 @@ const Pricing = () => {
                       <ul className="space-y-3 mb-6">
                         {pkg.features.map((feature, i) => (
                           <li key={i} className="flex items-start text-sm">
-                            <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
                             </svg>
                             <span className="text-neutral-700">{feature}</span>
@@ -191,7 +191,7 @@ const Pricing = () => {
                         ))}
                       </ul>
                     </div>
-                    <div className="px-6 pb-6">
+                    <div className="px-6 pb-6 mt-auto">
                       <a 
                         href="/book" 
                         className={`w-full py-3 px-4 rounded-lg transition-colors text-center block font-medium 
@@ -223,11 +223,11 @@ const Pricing = () => {
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full">
-                    <thead className="bg-neutral-50 border-b border-neutral-200">
+                    <thead className="bg-proof/90 border-b border-proof">
                       <tr>
-                        <th className="px-6 py-3 text-left text-sm font-semibold text-neutral-700">Service</th>
-                        <th className="px-6 py-3 text-right text-sm font-semibold text-neutral-700">Fee</th>
-                        <th className="px-6 py-3 text-left text-sm font-semibold text-neutral-700">Notes</th>
+                        <th className="px-6 py-3 text-left text-base font-bold text-white tracking-wide">Service</th>
+                        <th className="px-6 py-3 text-right text-base font-bold text-white tracking-wide">Fee</th>
+                        <th className="px-6 py-3 text-left text-base font-bold text-white tracking-wide">Notes</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-neutral-200">
@@ -250,11 +250,11 @@ const Pricing = () => {
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full">
-                    <thead className="bg-neutral-50 border-b border-neutral-200">
+                    <thead className="bg-royal-blue border-b border-royal-blue">
                       <tr>
-                        <th className="px-6 py-3 text-left text-sm font-semibold text-neutral-700">Service</th>
-                        <th className="px-6 py-3 text-right text-sm font-semibold text-neutral-700">Fee</th>
-                        <th className="px-6 py-3 text-left text-sm font-semibold text-neutral-700">Notes</th>
+                        <th className="px-6 py-3 text-left text-base font-bold text-white tracking-wide">Service</th>
+                        <th className="px-6 py-3 text-right text-base font-bold text-white tracking-wide">Fee</th>
+                        <th className="px-6 py-3 text-left text-base font-bold text-white tracking-wide">Notes</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-neutral-200">
@@ -298,19 +298,9 @@ const Pricing = () => {
               </div>
             </div>
 
-            {/* CTA */}
-            <div className="bg-electric-blue rounded-xl shadow-xl p-8 text-white">
-              <div className="max-w-3xl mx-auto text-center">
-                <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
-                <p className="text-lg mb-8 opacity-90">Book your notary service today and experience our professional, reliable service.</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="/book" className="py-3 px-8 bg-white text-proof font-semibold rounded-lg hover:bg-opacity-90 transition-colors shadow-lg">Book Appointment</a>
-                  <a href="/contact" className="py-3 px-8 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors">Contact Us</a>
-                </div>
-              </div>
-            </div>
+           
           </main>
-          <ServiceSidebar />
+         {/* <ServiceSidebar /> */}
         </div>
       </div>
     </div>

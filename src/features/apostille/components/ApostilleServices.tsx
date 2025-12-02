@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
-import { ApostilleHero } from '@/features/apostille/components/ApostilleHero';
-import ApostilleServices from './ApostilleServices';
+import { commonScenarios, solutions, painPoints } from './apostilleData';
+import { ScenarioSection } from './ScenarioSection';
+import { PainPointsSection } from './PainPointsSection';
+import { SolutionsSection } from './SolutionsSection';
+import { WorkflowSection } from './WorkflowSection';
+import { QuizSection } from './QuizSection';
+import { ApostilleCTA } from './ApostilleCTA';
 
-const ApostillePage: React.FC = () => {
+export const ApostilleServices: React.FC = () => {
   const [showContactForm, setShowContactForm] = useState(false);
 
   return (
-    <React.Fragment>
-      <ApostilleHero onContactClick={() => setShowContactForm(true)} />
-      <ApostilleServices />
+    <div className="w-full bg-white">
+      <ScenarioSection scenarios={commonScenarios} />
+      <PainPointsSection painPoints={painPoints} />
+      <SolutionsSection solutions={solutions} />
+      <WorkflowSection />
+      <QuizSection />
+      <ApostilleCTA onContact={() => setShowContactForm(true)} />
 
       {/* Contact Form Modal */}
       {showContactForm && (
@@ -16,7 +25,7 @@ const ApostillePage: React.FC = () => {
           <div className="bg-white rounded-md max-w-xl w-full p-6">
             <h3 className="text-2xl font-semibold mb-4">Start Your Apostille Process</h3>
             {/* Add your contact form here */}
-            <button
+            <button 
               onClick={() => setShowContactForm(false)}
               className="absolute top-4 right-4 text-neutral-500 hover:text-neutral-700"
               aria-label="Close contact form"
@@ -26,8 +35,6 @@ const ApostillePage: React.FC = () => {
           </div>
         </div>
       )}
-    </React.Fragment>
+    </div>
   );
 };
-
-export default ApostillePage;

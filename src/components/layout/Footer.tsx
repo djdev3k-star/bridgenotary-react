@@ -32,9 +32,10 @@ export default function Footer() {
               Professional mobile notary and loan signing services in the Greater Houston area.
             </p>
             <div className="space-y-4">
-              <a href="tel:+14696298932" className="flex items-center text-gray-300 hover:text-white transition-colors">
-                <span className="text-lg">(469) 629-8932</span>
-              </a>
+              {/* TODO: Add phone contact for future development */}
+              {/* <a href="tel:+14696298932" className="flex items-center text-gray-300 hover:text-white transition-colors"> */}
+                {/* <span className="text-lg">(469) 629-8932</span> */}
+              {/* </a> */}
               <a href="mailto:contact@bridgenotary.com" className="text-gray-300 hover:text-white transition-colors">
                 contact@bridgenotary.com
               </a>

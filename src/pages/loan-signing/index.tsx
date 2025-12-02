@@ -82,9 +82,9 @@ const LoanSigningPage: React.FC = () => {
   ];
   
   return (
-    <div className="w-full bg-white">
+    <>
       {/* Hero Section - Full Width Cover Style */}
-      <section className="relative text-white min-h-screen flex items-center overflow-hidden">
+      <section className="relative text-white min-h-screen flex items-center overflow-hidden w-screen -ml-[50vw] left-[50%]">
         {/* Full-Width Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           {/* Video Background */}
@@ -173,6 +173,7 @@ const LoanSigningPage: React.FC = () => {
         {/* Wave Separator removed */}
       </section>
 
+      <div className="w-full bg-white">
       {/* Services Overview Section */}
       <section className="py-20 lg:py-28 mb-16">
         <div className="max-w-7xl mx-auto px-6">
@@ -356,7 +357,8 @@ const LoanSigningPage: React.FC = () => {
           </div> */}
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

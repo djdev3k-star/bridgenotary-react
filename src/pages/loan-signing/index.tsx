@@ -139,8 +139,8 @@ const LoanSigningPage: React.FC = () => {
                 </div>
               </Link>
 
-              {/* Trust Badges */}
-              <div className="grid grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto mt-16">
+              {/* Trust Badges - Hidden */}
+              <div className="hidden grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto mt-16">
                 <div className="bg-white/15 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20 shadow-lg">
                   <div className="flex justify-center mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">

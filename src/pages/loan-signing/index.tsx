@@ -84,21 +84,21 @@ const LoanSigningPage: React.FC = () => {
   return (
     <div className="w-full bg-white">
       {/* Hero Section - Full Width Cover Style */}
-      <section className="relative text-white min-h-screen flex items-center overflow-visible">
+      <section className="relative text-white min-h-screen flex items-center overflow-hidden">
         {/* Full-Width Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           {/* Video Background */}
-          <div className="absolute inset-0 w-full h-full overflow-visible">
+          <div className="absolute inset-0 w-full h-full overflow-hidden">
             {videoError ? (
               <img 
                 src="/assets/images/notarypublic-generalimagewithstamp.jpg"
                 alt="Notary signing documents" 
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover min-w-[120vw] h-full"
+                className="absolute inset-0 object-cover w-full h-full"
               />
             ) : (
               <video 
                 ref={videoRef}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover min-w-[120vw] h-full"
+                className="absolute inset-0 object-cover w-full h-full"
                 autoPlay 
                 loop 
                 muted 
@@ -113,14 +113,14 @@ const LoanSigningPage: React.FC = () => {
             )}
           </div>
 
-          {/* Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-r from-proof/80 via-proof/60 to-proof/40"></div>
+          {/* Electric Blue Overlay with opacity */}
+          <div className="absolute inset-0 bg-electric-blue/60"></div>
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
 
         {/* Content - Centered and Wide */}
-        <div className="w-full relative z-10 px-0 py-24">
-          <div className="mx-auto text-center px-6">
+        <div className="w-full relative z-10 px-6 py-24">
+          <div className="mx-auto text-center">
             <div className="fade-in">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
                 Mobile Notary & Loan Signing <span className="text-gold">Experts</span>
@@ -170,12 +170,7 @@ const LoanSigningPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Wave Separator */}
-        <div className="absolute bottom-0 left-0 right-0 z-20">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" fill="#ffffff" preserveAspectRatio="none">
-            <path d="M0,32L80,53.3C160,75,320,117,480,117.3C640,117,800,75,960,58.7C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-          </svg>
-        </div>
+        {/* Wave Separator removed */}
       </section>
 
       {/* Services Overview Section */}

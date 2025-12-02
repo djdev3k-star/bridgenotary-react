@@ -44,7 +44,7 @@ const steps = [
 export default function Process() {
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[90rem] mx-auto px-6">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">How It Works</h2>
           <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>

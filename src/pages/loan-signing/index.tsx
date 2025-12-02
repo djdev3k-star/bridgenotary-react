@@ -1,34 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const LoanSigningPage: React.FC = () => {
-  const [videoError, setVideoError] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
   
-  useEffect(() => {
-    // Check if video can be played
-    const handleVideoError = () => {
-      console.error("Video failed to load");
-      setVideoError(true);
-    };
-    
-    const handleVideoLoaded = () => {
-      console.log("Video loaded successfully");
-    };
-    
-    const videoElement = videoRef.current;
-    if (videoElement) {
-      videoElement.addEventListener('error', handleVideoError);
-      videoElement.addEventListener('loadeddata', handleVideoLoaded);
-    }
-    
-    return () => {
-      if (videoElement) {
-        videoElement.removeEventListener('error', handleVideoError);
-        videoElement.removeEventListener('loadeddata', handleVideoLoaded);
-      }
-    };
-  }, []);
 
   const loanTypes = [
     {
@@ -87,43 +61,28 @@ const LoanSigningPage: React.FC = () => {
       <section className="relative text-white min-h-screen flex items-center overflow-hidden w-screen -ml-[50vw] left-[50%]">
         {/* Full-Width Background */}
         <div className="absolute inset-0 w-full h-full z-0">
-          {/* Video Background */}
-          <div className="absolute inset-0 w-full h-full overflow-hidden">
-            {videoError ? (
-              <img 
-                src="/assets/images/notarypublic-generalimagewithstamp.jpg"
-                alt="Notary signing documents" 
-                className="absolute inset-0 object-cover w-full h-full"
-              />
-            ) : (
-              <video 
-                ref={videoRef}
-                className="absolute inset-0 object-cover w-full h-full"
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                preload="auto"
-                poster="/assets/images/notarypublic-generalimagewithstamp.jpg"
-                onError={() => setVideoError(true)}
-              >
-                <source src="https://cdn.jsdelivr.net/gh/djdev3k-star/bridgenotary-react@c6a06b2/src/assets/images/loan-signin-bg.mp4" type="video/mp4" />
-                Your browser does not support the video tag. Please upgrade your browser for the best experience.
-              </video>
-            )}
+          {/* Gradient base */}
+          <div className="absolute inset-0 bg-electric-blue/60 z-10"></div>
+          <div className="absolute inset-0 bg-black/20 z-10"></div>
+          {/* Overlay image over gradient */}
+          <div className="absolute inset-0 z-20 opacity-25 pointer-events-none">
+            <img 
+              src="/images/loanFlyers.png"
+              alt=""
+              className="w-full h-full object-cover"
+            />
           </div>
 
-          {/* Electric Blue Overlay with opacity */}
-          <div className="absolute inset-0 bg-electric-blue/60"></div>
-          <div className="absolute inset-0 bg-black/20"></div>
+          {/* Overlays moved above */}
         </div>
 
         {/* Content - Centered and Wide */}
-        <div className="w-full relative z-10 px-6 py-24">
+        <div className="w-full relative z-30 px-6 py-24">
           <div className="mx-auto text-center">
             <div className="fade-in">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-                Mobile Notary & Loan Signing <span className="text-gold">Experts</span>
+                Mobile Notary & Loan Signing
+                <span className="text-gold block">Experts</span>
               </h1>
               <p className="text-lg md:text-2xl text-white/95 mb-12 drop-shadow-md max-w-3xl mx-auto">
                 Certified signing agents, bonded & insured. Trusted by title companies and lenders for accurate, timely closings with same-day and rush availability.

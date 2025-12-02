@@ -55,10 +55,11 @@ const icons = {
   ),
 };
 
-// Package categories
+// Package categories - Use-case driven
 const packageCategories = [
   {
-    category: 'Online Notarization Packages',
+    category: 'Online Notarization',
+    description: 'Secure digital notarization from anywhere',
     categoryColor: 'electric-blue',
     packages: [
       {
@@ -67,7 +68,7 @@ const packageCategories = [
         iconColor: 'text-electric-blue',
         fee: '$100',
         period: 'per session',
-        description: 'Secure digital notarization from anywhere.',
+        description: 'Secure video notarization from anywhere.',
         features: [
           'Secure two-way video conferencing',
           'Digital document signing & notarization',
@@ -80,16 +81,17 @@ const packageCategories = [
     ]
   },
   {
-    category: 'Mobile Notary Packages',
+    category: 'Simple Documents',
+    description: 'Quick notarizations for individual documents',
     categoryColor: 'proof',
     packages: [
       {
-        type: 'Basic Mobile',
+        type: 'Basic In-Person',
         icon: icons.document,
         iconColor: 'text-proof',
         fee: '$75',
         period: 'per signing',
-        description: 'Affordable option for simple in-person notarizations.',
+        description: 'Affordable notarizations for simple documents.',
         features: [
           'Up to 5 notarized signatures',
           'Basic ID verification',
@@ -97,111 +99,99 @@ const packageCategories = [
           'Electronic copies provided',
           'Travel within 10 miles included'
         ],
-        cta: 'Select Basic Mobile'
-      },
-      {
-        type: 'Standard Mobile',
-        icon: icons.home,
-        iconColor: 'text-proof',
-        fee: '$125',
-        period: 'per signing',
-        badge: 'Most Popular',
-        description: 'Most popular option for general in-person document signings.',
-        features: [
-          'In-person signing at your location',
-          'Document review & explanation',
-          'Full ID verification & witnessing',
-          'Electronic delivery to recipient',
-          'Free 24-hour rescheduling',
-          'Travel within 15 miles included'
-        ],
-        cta: 'Select Standard Mobile',
-        primaryFeature: true
-      },
-      {
-        type: 'Premium Mobile',
-        icon: icons.star,
-        iconColor: 'text-gold',
-        fee: '$200',
-        period: 'per signing',
-        description: 'High-touch service for complex or time-sensitive appointments.',
-        features: [
-          'Priority scheduling & concierge support',
-          'Extended appointment time',
-          'Document pre-review',
-          'Digital and physical copies',
-          'Travel up to 25 miles included',
-          'After-hours or weekend availability'
-        ],
-        cta: 'Select Premium Mobile'
+        cta: 'Select Basic'
       }
     ]
   },
   {
-    category: 'Mortgage & Loan Signing Packages',
+    category: 'Residential Closings',
+    description: 'Standard in-person service for home purchases and refinances',
+    categoryColor: 'proof',
+    packages: [
+      {
+        type: 'Standard Closing',
+        icon: icons.home,
+        iconColor: 'text-proof',
+        fee: '$125',
+        period: 'per closing',
+        badge: 'Most Popular',
+        description: 'Most popular option for mortgage and closing signings.',
+        features: [
+          'In-person signing at your location',
+          'Full document review & explanation',
+          'Complete ID verification & witnessing',
+          'Electronic delivery to title, lender, attorney',
+          'Free 24-hour rescheduling',
+          'Travel within 15 miles included'
+        ],
+        cta: 'Select Standard',
+        primaryFeature: true
+      }
+    ]
+  },
+  {
+    category: 'Complex Transactions',
+    description: 'Premium service for complicated deals, multi-borrower, or time-sensitive needs',
     categoryColor: 'royal-blue',
     packages: [
       {
-        type: 'Standard Mortgage Signing',
-        icon: icons.home,
-        iconColor: 'text-royal-blue',
-        fee: '$125',
-        period: 'per closing',
-        description: 'Ideal for most refinance and purchase closings.',
-        features: [
-          'In-person signing at borrower\'s location',
-          'Full document explanation & review',
-          'ID verification & witnessing',
-          'Electronic delivery to title or lender',
-          'Free 24-hour rescheduling',
-          'Travel included'
-        ],
-        cta: 'Select Mortgage Standard'
-      },
-      {
-        type: 'Premium Mortgage Signing',
+        type: 'Premium In-Person',
         icon: icons.star,
         iconColor: 'text-gold',
         fee: '$200',
-        period: 'per closing',
-        description: 'Designed for complex loan packages, multi-borrower transactions, or tight timelines.',
+        period: 'per signing',
+        description: 'High-touch service for complex closings and multi-party transactions.',
         features: [
-          'Priority scheduling',
+          'Priority scheduling & concierge support',
           'Extended appointment time',
-          'Pre-review of lender documents',
-          'Physical & digital copies',
-          'Travel up to 25 miles',
+          'Pre-review of loan/transaction documents',
+          'Digital and physical copies',
+          'Travel up to 25 miles included',
           'After-hours or weekend availability'
         ],
-        cta: 'Select Mortgage Premium'
-      },
+        cta: 'Select Premium'
+      }
+    ]
+  },
+  {
+    category: 'Business & Commercial',
+    description: 'Specialized service for business transactions and multi-party coordination',
+    categoryColor: 'electric-blue',
+    packages: [
       {
-        type: 'Commercial Loan Signing',
+        type: 'Commercial Signing',
         icon: icons.building,
         iconColor: 'text-electric-blue',
         fee: '$250+',
         period: 'per package',
-        description: 'For business, commercial property, and multi-party loan transactions.',
+        description: 'Specialized service for business, commercial property, and multi-party transactions.',
         features: [
           'Multi-party or multi-location coordination',
-          'Complex document handling',
+          'Complex document handling & strategy',
           'Extended appointment duration',
           'Corporate identity verification protocols',
           'Priority scheduling'
         ],
         cta: 'Select Commercial'
-      },
+      }
+    ]
+  },
+  {
+    category: 'Custom Solutions',
+    description: 'Tailored packages for unique requirements',
+    categoryColor: 'proof',
+    packages: [
       {
-        type: 'Custom Loan / Notary Packages',
+        type: 'Custom Package',
         icon: icons.handshake,
         iconColor: 'text-proof',
         fee: 'Contact us',
         period: 'for quote',
-        description: 'Tailored solutions for unusual, multi-site, or high-volume needs.',
+        description: 'Flexible solutions for unusual, multi-site, or high-volume needs.',
         features: [
-          'Flexible scheduling',
-          'Multi-location coordination',
-          'Bulk or corporate discounts',
+          'Flexible scheduling & coordination',
+          'Multi-location support',
+          'Bulk or corporate discounts available',
           'Special document handling workflows',
           'Dedicated account manager'
         ],
@@ -263,17 +253,18 @@ const Pricing = () => {
       <div className="section bg-gray-50">
         <div className="flex flex-col md:flex-row gap-12 max-w-7xl mx-auto">
           <main className="w-full md:w-2/3 lg:w-3/4">
-            {/* Pricing Packages - Organized by Category */}
+            {/* Pricing Packages - Organized by Use Case */}
             <div className="mb-16">
               {packageCategories.map((categoryGroup) => (
                 <div key={categoryGroup.category} className="mb-16">
                   <div className="mb-8">
                     <h2 className="text-3xl font-bold text-proof mb-2">{categoryGroup.category}</h2>
+                    <p className="text-lg text-neutral-600 mb-4">{categoryGroup.description}</p>
                     <div className={`h-1 w-16 bg-${categoryGroup.categoryColor}`}></div>
                   </div>
 
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {categoryGroup.packages.map((pkg) => (
+                    {categoryGroup.packages.map((pkg: any) => (
                       <div key={pkg.type} 
                         className={`flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border ${pkg.primaryFeature ? 'border-electric-blue border-2' : 'border-neutral-200'}`}>
                         
@@ -300,7 +291,7 @@ const Pricing = () => {
                           </div>
                           <p className="text-neutral-600 mb-6 text-sm min-h-[50px]">{pkg.description}</p>
                           <ul className="space-y-3 mb-6">
-                            {pkg.features.map((feature, i) => (
+                            {pkg.features.map((feature: string, i: number) => (
                               <li key={i} className="flex items-start text-sm">
                                 <svg className="h-5 w-5 text-electric-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />

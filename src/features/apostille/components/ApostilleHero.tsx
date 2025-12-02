@@ -26,8 +26,8 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
           </h1>
 
           {/* Tagline */}
-          <div className="bg-white/15 backdrop-blur-sm rounded-xl px-6 py-4 shadow-lg border border-white/30 mb-6 inline-block">
-            <p className="text-lg md:text-xl text-gold font-semibold drop-shadow-sm">
+          <div className="bg-gold text-proof rounded-xl px-8 py-5 shadow-2xl mb-6 inline-block">
+            <p className="text-lg md:text-xl font-bold drop-shadow-sm">
               Avoid Rejection. Avoid Delays. Get It Right the First Time.
             </p>
           </div>
@@ -37,8 +37,8 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
             Whether it's for a destination wedding in Italy, teaching in Japan, or adopting from Colombia, we get your documents stamped, sealed, and ready—without the guesswork.
           </p>
 
-          {/* Trust Badges */}
-          <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
+          {/* Trust Badges - Hidden */}
+          <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto hidden">
             <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30 shadow-lg">
               <div className="flex justify-center mb-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 20 20">

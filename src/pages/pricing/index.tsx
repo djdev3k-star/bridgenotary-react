@@ -108,44 +108,46 @@ const packages = [
 const Pricing = () => {
   return (
     <div>
-      <section className="bg-proof/10 py-20 px-6">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Clear & Transparent Pricing</h1>
-              <p className="text-xl text-neutral-600 mb-8 max-w-3xl">
-                Professional notary services with simple, flat-rate pricing. Choose the package that fits your needs or contact us for custom solutions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/book" className="button-primary text-lg py-4 px-8 inline-block text-center">Book Now</a>
-                <a href="/contact" className="button-outline text-lg py-4 px-8 inline-block text-center">Request Quote</a>
+          <div className="bg-white rounded-lg shadow-sm p-8 border border-proof/10">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Clear & Transparent Pricing</h1>
+                <p className="text-xl text-neutral-600 mb-8 max-w-3xl">
+                  Professional notary services with simple, flat-rate pricing. Choose the package that fits your needs or contact us for custom solutions.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a href="/book" className="button-primary text-lg py-4 px-8 inline-block text-center">Book Now</a>
+                  <a href="/contact" className="button-outline text-lg py-4 px-8 inline-block text-center">Request Quote</a>
+                </div>
               </div>
-            </div>
-            <div className="hidden md:block">
-              <div className="bg-white rounded-lg shadow-xl p-6">
-                <div className="text-sm text-proof uppercase tracking-wider font-semibold mb-2">Simple Fee Structure</div>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">No Hidden Fees or Surprises</h2>
-                <p className="text-neutral-700 mb-4">Our pricing is straightforward and inclusive. Know exactly what you're paying for before you book.</p>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
-                    </svg>
-                    <span className="text-neutral-600">Fixed package rates</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
-                    </svg>
-                    <span className="text-neutral-600">Transparent add-ons</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
-                    </svg>
-                    <span className="text-neutral-600">No surprise charges</span>
-                  </li>
-                </ul>
+              <div className="hidden md:block">
+                <div className="bg-white rounded-lg shadow-xl p-6">
+                  <div className="text-sm text-proof uppercase tracking-wider font-semibold mb-2">Simple Fee Structure</div>
+                  <h2 className="text-2xl font-bold text-neutral-900 mb-4">No Hidden Fees or Surprises</h2>
+                  <p className="text-neutral-700 mb-4">Our pricing is straightforward and inclusive. Know exactly what you're paying for before you book.</p>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <span className="text-neutral-600">Fixed package rates</span>
+                    </li>
+                    <li className="flex items-center">
+                      <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <span className="text-neutral-600">Transparent add-ons</span>
+                    </li>
+                    <li className="flex items-center">
+                      <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <span className="text-neutral-600">No surprise charges</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -230,15 +232,15 @@ const Pricing = () => {
                         <th className="px-6 py-3 text-left text-base font-bold text-white tracking-wide">Notes</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-neutral-200">
-                      {coreServices.map((service, index) => (
-                        <tr key={index} className="hover:bg-neutral-50">
-                          <td className="px-6 py-4 text-sm font-medium text-neutral-800">{service.name}</td>
-                          <td className="px-6 py-4 text-sm text-right font-semibold text-proof">{service.fee}</td>
-                          <td className="px-6 py-4 text-sm text-neutral-600">{service.notes}</td>
-                        </tr>
-                      ))}
-                    </tbody>
+                          <tbody className="divide-y divide-neutral-200">
+                            {coreServices.map((service, index) => (
+                              <tr key={index} className="hover:bg-neutral-50 even:bg-neutral-50">
+                                <td className="px-6 py-4 text-sm font-medium text-neutral-800">{service.name}</td>
+                                <td className="px-6 py-4 text-sm text-right font-semibold text-proof">{service.fee}</td>
+                                <td className="px-6 py-4 text-sm text-neutral-600">{service.notes}</td>
+                              </tr>
+                            ))}
+                          </tbody>
                   </table>
                 </div>
               </div>
@@ -257,15 +259,15 @@ const Pricing = () => {
                         <th className="px-6 py-3 text-left text-base font-bold text-white tracking-wide">Notes</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-neutral-200">
-                      {addOnServices.map((service, index) => (
-                        <tr key={index} className="hover:bg-neutral-50">
-                          <td className="px-6 py-4 text-sm font-medium text-neutral-800">{service.name}</td>
-                          <td className="px-6 py-4 text-sm text-right font-semibold text-royal-blue">{service.fee}</td>
-                          <td className="px-6 py-4 text-sm text-neutral-600">{service.notes}</td>
-                        </tr>
-                      ))}
-                    </tbody>
+                      <tbody className="divide-y divide-neutral-200">
+                        {addOnServices.map((service, index) => (
+                          <tr key={index} className="hover:bg-neutral-50 even:bg-neutral-50">
+                            <td className="px-6 py-4 text-sm font-medium text-neutral-800">{service.name}</td>
+                            <td className="px-6 py-4 text-sm text-right font-semibold text-royal-blue">{service.fee}</td>
+                            <td className="px-6 py-4 text-sm text-neutral-600">{service.notes}</td>
+                          </tr>
+                        ))}
+                      </tbody>
                   </table>
                 </div>
               </div>

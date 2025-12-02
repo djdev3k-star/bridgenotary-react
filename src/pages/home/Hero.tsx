@@ -36,6 +36,14 @@ const Hero: React.FC = () => {
     <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
       <div className="absolute inset-0 bg-proof/60 z-10"></div>
       <div className="absolute inset-0 bg-black/20 z-10"></div>
+      {/* Flyer Overlay */}
+      <div className="absolute inset-0 z-10 opacity-20 pointer-events-none">
+        <img
+          src="/images/commsignFlyer.png"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
       {videoError ? (
         <img 
           src="/assets/images/notarypublic-generalimagewithstamp.jpg"

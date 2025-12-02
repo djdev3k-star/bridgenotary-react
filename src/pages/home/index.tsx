@@ -102,15 +102,17 @@ const AboutSection = () => (
 */
 
 const HomePage = () => (
-  <div className="w-full bg-white">
+  <>
     <Hero />
+    <div className="w-full bg-white">
     <Process />
     {/*<Services /> */}
     <FinalCTA />
     {/* SocialProof and AboutSection are hidden as requested */}
     {/* <SocialProof /> */}
     {/* <AboutSection /> */}
-  </div>
+    </div>
+  </>
 );
 
 export default HomePage;

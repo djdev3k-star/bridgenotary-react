@@ -31,19 +31,9 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-  <section className="relative overflow-hidden">
+  <section className="relative text-white min-h-screen flex items-center overflow-hidden w-screen -ml-[50vw] left-[50%]">
     {/* Video Background */}
     <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-      <div className="absolute inset-0 bg-proof/60 z-10"></div>
-      <div className="absolute inset-0 bg-black/20 z-10"></div>
-      {/* Flyer Overlay */}
-      <div className="absolute inset-0 z-10 opacity-20 pointer-events-none">
-        <img
-          src="/images/commsignFlyer.png"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
       {videoError ? (
         <img 
           src="/assets/images/notarypublic-generalimagewithstamp.jpg"
@@ -66,9 +56,13 @@ const Hero: React.FC = () => {
           Your browser does not support the video tag.
         </video>
       )}
+
+      {/* Electric Blue Overlay with opacity */}
+      <div className="absolute inset-0 bg-electric-blue/60 z-10"></div>
+      <div className="absolute inset-0 bg-black/20 z-10"></div>
     </div>
     
-    <div className="max-w-7xl mx-auto py-28 px-6 relative z-10">
+    <div className="w-full relative z-20 px-6 py-24">
       <div className="text-center max-w-4xl mx-auto fade-in">
         <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white">
           Your Trusted Partner for{" "}
@@ -127,9 +121,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
     </div>
-    
-    {/* Wave separator */}
-    
   </section>
   );
 };

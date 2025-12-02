@@ -83,99 +83,99 @@ const LoanSigningPage: React.FC = () => {
   
   return (
     <div className="w-full bg-white">
-      {/* Hero Section - Full Width with Video Background */}
-      <section className="relative text-white">
-        {/* Video Background */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute inset-0 bg-proof/60 z-10"></div> {/* Solid overlay */}
-          <div className="absolute inset-0 bg-black/20 z-10"></div> {/* Reduced darkness overlay */}
-          {/* Video with fallback display */}
-          {videoError ? (
-            <img 
-              src="/assets/images/notarypublic-generalimagewithstamp.jpg"
-              alt="Notary signing documents" 
-              className="absolute inset-0 object-cover w-full h-full"
-            />
-          ) : (
-            <video 
-              ref={videoRef}
-              className="absolute inset-0 object-cover w-full h-full"
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              preload="auto"
-              poster="/assets/images/notarypublic-generalimagewithstamp.jpg"
-              onError={() => setVideoError(true)}
-            >
-              <source src="https://cdn.jsdelivr.net/gh/djdev3k-star/bridgenotary-react@c6a06b2/src/assets/images/loan-signin-bg.mp4
-" type="video/mp4" />
-              Your browser does not support the video tag. Please upgrade your browser for the best experience.
-            </video>
-          )}
+      {/* Hero Section - Full Width Cover Style */}
+      <section className="relative text-white min-h-screen flex items-center overflow-hidden">
+        {/* Full-Width Background */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          {/* Video Background */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden">
+            {videoError ? (
+              <img 
+                src="/assets/images/notarypublic-generalimagewithstamp.jpg"
+                alt="Notary signing documents" 
+                className="absolute inset-0 object-cover w-full h-full"
+              />
+            ) : (
+              <video 
+                ref={videoRef}
+                className="absolute inset-0 object-cover w-full h-full"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                preload="auto"
+                poster="/assets/images/notarypublic-generalimagewithstamp.jpg"
+                onError={() => setVideoError(true)}
+              >
+                <source src="https://cdn.jsdelivr.net/gh/djdev3k-star/bridgenotary-react@c6a06b2/src/assets/images/loan-signin-bg.mp4" type="video/mp4" />
+                Your browser does not support the video tag. Please upgrade your browser for the best experience.
+              </video>
+            )}
+          </div>
+
+          {/* Gradient Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-r from-proof/80 via-proof/60 to-proof/40"></div>
+          <div className="absolute inset-0 bg-black/20"></div>
         </div>
-        
-        <div className="max-w-7xl mx-auto py-28 px-6 relative z-20">
-          <div className="max-w-3xl mx-auto">
-            <div className="fade-in backdrop-blur-sm bg-proof/20 p-8 rounded-2xl shadow-2xl border border-white/20">
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
+
+        {/* Content - Centered and Wide */}
+        <div className="w-full relative z-10 px-6 py-20">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="fade-in">
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
                 Mobile Notary & Loan Signing <span className="text-gold">Experts</span>
               </h1>
-              <p className="text-xl text-white mb-10 drop-shadow-md">
-                Certified signing agents, bonded & insured, trusted by title companies and lenders for accurate, timely closings. Same-day and rush availability in many areas.
+              <p className="text-lg md:text-2xl text-white/95 mb-12 drop-shadow-md max-w-3xl mx-auto">
+                Certified signing agents, bonded & insured. Trusted by title companies and lenders for accurate, timely closings with same-day and rush availability.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Link to="/book" className="bg-electric-blue hover:bg-electric-blue/90 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center text-white font-semibold shadow-xl pulse-button">
-                  <div className="flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Calendar icon">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    Schedule Your Signing
-                  </div>
-                </Link>
-                {/* TODO: Add phone contact for future development */}
-                {/* <a href="tel:+14696298932" className="bg-white/20 backdrop-blur-sm border-2 border-white hover:bg-white/30 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center text-white font-semibold shadow-lg"> */}
-                  {/* <div className="flex items-center justify-center gap-2"> */}
-                    {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Phone icon"> */}
-                      {/* <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /> */}
-                    {/* </svg> */}
-                    {/* Call Now */}
-                  {/* </div> */}
-                {/* </a> */}
-              </div>
+              {/* CTA Button */}
+              <Link to="/book" className="inline-block bg-electric-blue hover:bg-electric-blue/90 transition-all rounded-lg text-lg py-5 px-12 text-white font-semibold shadow-2xl pulse-button transform hover:scale-105">
+                <div className="flex items-center justify-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Schedule Your Signing
+                </div>
+              </Link>
 
-              <div className="grid grid-cols-3 gap-3">
-                <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
+              {/* Trust Badges */}
+              <div className="grid grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto mt-16">
+                <div className="bg-white/15 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20 shadow-lg">
                   <div className="flex justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 3.062v6.072A3.066 3.066 0 0117.853 17H2.147A3.066 3.066 0 010 13.934V7.862a3.066 3.066 0 012.267-2.955 3.066 3.066 0 005.219-3.034 3.066 3.066 0 001.781.432zm9.733 8.773h-4.693V9.915h4.693v1.918zM6.467 9.915v1.918H1.774V9.915h4.693z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm text-white font-medium drop-shadow-sm">NNA Certified</span>
+                  <span className="text-xs md:text-sm text-white font-semibold drop-shadow-sm">NNA Certified</span>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
+                <div className="bg-white/15 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20 shadow-lg">
                   <div className="flex justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v2h8v-2zM2 15a4 4 0 008 0v2H2v-2z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm text-white font-medium drop-shadow-sm">E&O Insured</span>
+                  <span className="text-xs md:text-sm text-white font-semibold drop-shadow-sm">E&O Insured</span>
                 </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-center border border-white/20 shadow-lg">
+                <div className="bg-white/15 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20 shadow-lg">
                   <div className="flex justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
                     </svg>
                   </div>
-                  <span className="text-sm text-white font-medium drop-shadow-sm">99% On-time</span>
+                  <span className="text-xs md:text-sm text-white font-semibold drop-shadow-sm">99% On-time</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
 
+        {/* Wave Separator */}
+        <div className="absolute bottom-0 left-0 right-0 z-20">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" fill="#ffffff" preserveAspectRatio="none">
+            <path d="M0,32L80,53.3C160,75,320,117,480,117.3C640,117,800,75,960,58.7C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+          </svg>
+        </div>
       </section>
 
       {/* Services Overview Section */}

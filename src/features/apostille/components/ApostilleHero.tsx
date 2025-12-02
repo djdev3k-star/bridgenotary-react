@@ -8,6 +8,15 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
   <>
     {/* Hero Section */}
     <section className="relative overflow-hidden text-white bg-gradient-to-r from-electric-blue via-electric-blue to-proof py-20 md:py-28">
+      {/* Background Flyer Overlay */}
+      <div className="absolute inset-0 z-10 opacity-15">
+        <img
+          src="/images/apostilleFlyers.png"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
       {/* Hero Content */}
       <div className="max-w-7xl mx-auto px-6 relative z-20 w-full">
         <div className="max-w-4xl mx-auto text-center">

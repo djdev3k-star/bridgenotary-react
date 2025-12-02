@@ -264,7 +264,9 @@ const Pricing = () => {
                   </div>
 
                   <div className="grid grid-cols-1 gap-6">
-                    {categoryGroup.packages.map((pkg: any) => (
+                    {categoryGroup.packages
+                      .sort((a: any, b: any) => (b.primaryFeature ? 1 : 0) - (a.primaryFeature ? 1 : 0))
+                      .map((pkg: any) => (
                       <div key={pkg.type} 
                         className={`flex flex-col md:flex-row h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border ${pkg.primaryFeature ? 'border-electric-blue border-2' : 'border-neutral-200'}`}>
                         
@@ -279,10 +281,10 @@ const Pricing = () => {
                                 {pkg.badge}
                               </div>
                             )}
-                            <h3 className="text-2xl font-bold text-proof mb-2">{pkg.type}</h3>
-                            <div className="flex items-baseline">
+                            <h3 className="text-2xl font-bold text-proof mb-4">{pkg.type}</h3>
+                            <div>
                               <span className="text-4xl font-bold text-neutral-900">{pkg.fee}</span>
-                              <span className="text-sm text-neutral-500 ml-2">{pkg.period}</span>
+                              <div className="text-sm text-neutral-500 mt-1">{pkg.period}</div>
                             </div>
                           </div>
                         </div>

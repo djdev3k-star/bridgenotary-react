@@ -84,21 +84,21 @@ const LoanSigningPage: React.FC = () => {
   return (
     <div className="w-full bg-white">
       {/* Hero Section - Full Width Cover Style */}
-      <section className="relative text-white min-h-screen flex items-center overflow-hidden">
+      <section className="relative text-white min-h-screen flex items-center overflow-visible">
         {/* Full-Width Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           {/* Video Background */}
-          <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <div className="absolute inset-0 w-full h-full overflow-visible">
             {videoError ? (
               <img 
                 src="/assets/images/notarypublic-generalimagewithstamp.jpg"
                 alt="Notary signing documents" 
-                className="absolute inset-0 object-cover w-full h-full"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover min-w-[120vw] h-full"
               />
             ) : (
               <video 
                 ref={videoRef}
-                className="absolute inset-0 object-cover w-full h-full"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover min-w-[120vw] h-full"
                 autoPlay 
                 loop 
                 muted 
@@ -119,8 +119,8 @@ const LoanSigningPage: React.FC = () => {
         </div>
 
         {/* Content - Centered and Wide */}
-        <div className="w-full relative z-10 px-6 py-20">
-          <div className="max-w-5xl mx-auto text-center">
+        <div className="w-full relative z-10 px-0 py-24">
+          <div className="mx-auto text-center px-6">
             <div className="fade-in">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
                 Mobile Notary & Loan Signing <span className="text-gold">Experts</span>

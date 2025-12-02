@@ -17,7 +17,7 @@ const FinalCTA = () => (
     <div className="max-w-5xl mx-auto relative z-10 text-center">
       <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 fade-in">Ready For Your Next Signing?</h2>
       <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto fade-in-delay">
-        Join thousands of satisfied clients who trust Bridge Notary for their most important documents.
+        Join other satisfied clients who trust Bridge Notary for their most important documents.
         Professional, reliable, and convenient mobile notary services.
       </p>
       <div className="flex flex-col sm:flex-row justify-center gap-6 fade-in-delay">
@@ -105,7 +105,7 @@ const HomePage = () => (
   <div className="w-full bg-white">
     <Hero />
     <Process />
-    <Services />
+    {/*<Services /> */}
     <FinalCTA />
     {/* SocialProof and AboutSection are hidden as requested */}
     {/* <SocialProof /> */}

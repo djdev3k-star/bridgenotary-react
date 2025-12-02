@@ -106,14 +106,17 @@ const Services = () => (
                 </div>
               </div>
             </div>
-            <div className="md:w-1/3 flex justify-center">
+            // Booking button section (right side of quick action card)
+           {/* <div className="md:w-1/3 flex justify-center">
+                 
               <Link to="/book" className="button-primary py-4 px-8 flex items-center justify-center gap-2 text-lg font-medium">
+                
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 Book a Signing
               </Link>
-            </div>
+            </div>*/}
           </div>
 
         </div>
@@ -219,16 +222,15 @@ const Services = () => (
                 Have questions about our services or need assistance with your notary needs? Our team is ready to help.
               </p>
               <div className="space-y-4">
-                <a href="tel:+14696298932" className="flex items-center gap-3 text-neutral-700 hover:text-electric-blue transition-colors group">
-                  <div className="bg-electric-blue/10 p-3 rounded-full group-hover:bg-electric-blue/20 transition-colors">
-
-                    <svg className="w-5 h-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <span className="text-lg font-medium">(469) 629-8932</span>
-                </a>
+                {/* TODO: Add phone contact for future development */}
+                {/* <a href="tel:+14696298932" className="flex items-center gap-3 text-neutral-700 hover:text-electric-blue transition-colors group"> */}
+                  {/* <div className="bg-electric-blue/10 p-3 rounded-full group-hover:bg-electric-blue/20 transition-colors"> */}
+                    {/* <svg className="w-5 h-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"> */}
+                      {/* <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /> */}
+                    {/* </svg> */}
+                  {/* </div> */}
+                  {/* <span className="text-lg font-medium">(469) 629-8932</span> */}
+                {/* </a> */}
                 <a href="mailto:info@bridgenotary.com" className="flex items-center gap-3 text-neutral-700 hover:text-electric-blue transition-colors group">
                   <div className="bg-electric-blue/10 p-3 rounded-full group-hover:bg-electric-blue/20 transition-colors">
 

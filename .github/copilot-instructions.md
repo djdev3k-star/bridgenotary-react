@@ -1,123 +1,87 @@
 # Bridge Notary React - AI Coding Guide
 
-This document provides essential information for AI coding agents to work effectively with the Bridge Notary React codebase.
+AI agents working on this Bridge Notary website should understand the architecture, workflow, and patterns essential for productivity.
 
-## Project Overview
+## Quick Start
 
-Bridge Notary is a professional notary service provider's website built with:
+**Development**: `npm run dev` (starts on port 3000)
+**Build**: `npm run build`
+**Path alias**: Always use `@/` for src imports, never relative paths
 
-- React 18 + TypeScript
-- Vite as build tool
-- React Router for navigation
-- TailwindCSS for styling
+## Architecture Overview
 
-## Architecture & Component Organization
+### Layout System (Critical for routing)
 
-### Core Structure
+The app uses **two distinct layout patterns**—this is fundamental:
 
-- `/src/pages/` - Page-level components organized by route
-- `/src/components/` - Reusable components organized by purpose:
-  - `/common/` - Generic, widely-used components (Card, Button, etc.)
-  - `/layout/` - Components related to site structure (Navigation, Footer)
-  - `/ui/` - Basic UI elements (buttons, form fields)
-- `/src/features/` - Feature-specific components (apostille, RON services)
+- **`RouteLayout.tsx`** (default in `/src/components/layout/index.ts`): Used in `App.tsx` route definitions. Renders `<Outlet/>` for nested routes, wraps with Navigation + Footer + ScrollToTop.
+- **`Layout.tsx`**: For standalone pages needing Navigation/Footer but managing own content flow. Accepts `children` prop.
 
-### Key Design Patterns
+Why this matters: Incorrect layout choice breaks page structure. Most routes use `RouteLayout` (the default export). Check `App.tsx` routing to see which routes use `ApostilleLayout` (custom variant).
 
-1. **Layout Pattern**: Two layout components handle different use cases:
+### Page & Component Organization
 
-   - `RouteLayout.tsx`: Used with React Router's `<Outlet/>` for route-based content
-   - `Layout.tsx`: Used with direct children for standalone pages
-   - See `/src/components/layout/index.ts` for exports
+```
+/src/pages/          → Route-level pages (lazy-loaded in App.tsx)
+/src/components/
+  /common/          → Reusable components (ErrorBoundary, Card, Image, NavLink)
+  /layout/          → Layout wrappers (Navigation, Footer, Sidebar variants)
+  /ui/              → Atomic UI (Button, FormFields, HeroBackground)
+/src/features/      → Feature domains (apostille/*, ron/*)
+```
 
-2. **Lazy Loading**: All page components are lazy-loaded with Suspense for performance:
+**Page structure pattern** (see `/src/pages/home/index.tsx`):
+1. Import specialized subcomponents (Hero, Process, Services)
+2. Define data interfaces at file top
+3. Export main component with sections
 
-   ```tsx
-   // From App.tsx
-   const HomePage = React.lazy(() => import("@/pages/home"));
-   ```
+### Lazy Loading & Error Handling
 
-3. **Component Naming Convention**:
-   - Page components are named `index.tsx` within their route folder
-   - Specialized components within a page are named by function (e.g., `Hero.tsx`, `Process.tsx`)
+All pages are `React.lazy()` imported in `App.tsx` with `Suspense` + `LoadingFallback`. The app wraps with `ErrorBoundary` at root. Don't add additional error boundaries unless handling specific component failures.
 
-## Styling Guidelines
+## Styling System
 
-1. **TailwindCSS**: Primary styling method with custom components and theme:
+**TailwindCSS with custom layer components** (`/src/styles/index.css`):
 
-   - Custom color palette using Bridge Notary brand colors (`proof`, `gold`, `electric-blue`)
-   - Typography system with consistent heading styles
-   - Component classes defined in `/src/styles/index.css`
+- **Colors**: `electric-blue` (#0046fa), `proof` (#192252), `gold` (#FFD700), `hover-blue` (#1437c0)
+- **Reusable classes**: `.section` (py-20 md:py-28, centered), `.card` (white bg, shadow, p-8), `.button`, `.button-primary`, `.button-outline`
+- **Animations**: `.fade-in`, `.fade-in-delay`, `.pulse-button` (entrance effects)
+- **Typography**: Headlines styled in `@layer base` with font-family priority: Poppins → Inter → system fonts
 
-2. **Component Classes**: Reusable styles in `@layer components`:
+Use TailwindCSS utilities; avoid inline styles. Brand colors are strictly applied (proof for primary headers, electric-blue for CTAs, gold accents).
 
-   ```css
-   /* Example from index.css */
-   .button-primary {
-     @apply button bg-electric-blue text-white hover:bg-hover-blue;
-   }
-   ```
+## Data Flow Patterns
 
-3. **Animation Classes**: Predefined animations for UI elements:
-   - `fade-in`, `fade-in-delay`, `pulse-button`, `floating-element`
-   - Used for staggered entrance animations and hover effects
+**No external state management library**. Data flows:
+1. Page components define local interfaces (e.g., `ScenarioType`, `ServiceType`)
+2. Data arrays live in component file (not external API calls in current codebase)
+3. Props passed to subcomponents with TypeScript interfaces
+4. Navigation state: `useState()` for mobile menu toggle (see `Navigation.tsx`)
 
-## Data Flow & State Management
+## Critical Integration Points
 
-1. **Page Structure**: Most pages follow consistent structure:
-   - Interface definitions at the top
-   - Component data arrays (services, features, etc.)
-   - Main component rendering with sections
-2. **Component Props**: Interfaces are defined at the top of component files:
-   ```tsx
-   interface ScenarioType {
-     situation: string;
-     documents: string;
-     gotcha: string;
-     icon: string;
-   }
-   ```
+- **Navigation/Routing**: Managed by React Router v7 in `App.tsx`. Main nav dropdown (Solutions) defined in `Navigation.tsx` with menu items array structure.
+- **Form interaction**: `FormFields.tsx` in `/src/components/ui/`; booking flow routes to `/book` page
+- **Phone link**: `tel:+14696298932` appears in Navigation header
+- **CTA pattern**: Typically `Book Your Appointment` button → `/book` or contact form
 
-## Development Workflow
+## Important Conventions
 
-1. **Start Development Server**:
+1. **Always use `@/` path alias** for imports from src/
+2. **TypeScript strict mode enabled**: All prop interfaces required, no `any` types
+3. **Responsive mobile-first**: Use `md:`, `lg:` breakpoints; test on mobile widths
+4. **Component naming**: Page index files are `index.tsx`, subcomponents use descriptive names (Hero, Process, Services)
+5. **Exports pattern**: Use index.ts files for clean re-exports (see `/src/components/layout/index.ts`)
 
-   ```bash
-   npm run dev
-   ```
+## Build & Testing Notes
 
-2. **Build for Production**:
+- Jest configured with React Testing Library (setup in `setupTests.ts`)
+- `matchMedia` mocked for responsive design testing
+- TypeScript strict mode: `noUnusedLocals`, `noUnusedParameters` enforced
+- Vite aliases configured in `vite.config.ts` and `tsconfig.json`
 
-   ```bash
-   npm run build
-   ```
+## Special Cases
 
-3. **Path Aliasing**: Use `@/` alias for imports from src directory:
-   ```tsx
-   import Layout from "@/components/layout";
-   ```
-
-## Codebase Conventions
-
-1. **File Structure**:
-
-   - Related component files are grouped in folders
-   - Index files are used for clean exports
-   - Component folders often have a type definition file
-
-2. **Consistent Styling Pattern**:
-   - Sections use the `section` class
-   - Cards use the `card` class
-   - Buttons use `button-primary` or `button-outline`
-   - Background colors follow brand palette
-3. **Responsive Design**:
-   - Mobile-first approach with Tailwind breakpoints
-   - Consistent grid patterns (`grid md:grid-cols-2 lg:grid-cols-3`)
-   - Flexible spacing with responsive padding/margin
-
-## Common Gotchas
-
-1. Imports should use the `@/` path alias rather than relative paths
-2. Component props should have proper TypeScript interfaces
-3. Always wrap page content in appropriate layout components
-4. Use `className` conventions from `index.css` for consistent styling
+- **Apostille quiz flow**: Uses custom `ApostilleLayout` (separate from main RouteLayout) with nested routes at `/apostille/quiz*`
+- **Mobile app** exists in `/src/mobile/` but separate from web (different architecture)
+- **Archived components** in `/archived/` are outdated—don't reference or refactor these

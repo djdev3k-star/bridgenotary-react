@@ -5,37 +5,31 @@ interface ApostilleHeroProps {
 }
 
 export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) => (
-  <section className="relative overflow-hidden text-white min-h-screen flex flex-col items-center justify-center">
-    {/* Background Image with Overlay */}
-    <div className="absolute inset-0 z-0">
-      <img
-        src="/images/apostillebg.png"
-        alt="Apostille Service Background"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-proof/85 via-proof/75 to-proof/60" />
-      <div className="absolute inset-0 bg-black/20" />
-    </div>
-
-    {/* Hero Content */}
-    <div className="max-w-7xl mx-auto px-6 relative z-20 w-full">
-      <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
-        {/* Left Column: Text Content */}
-        <div className="text-center md:text-left">
+  <>
+    {/* Hero Section */}
+    <section className="relative overflow-hidden text-white bg-gradient-to-r from-electric-blue via-electric-blue to-proof py-20 md:py-28">
+      {/* Hero Content */}
+      <div className="max-w-7xl mx-auto px-6 relative z-20 w-full">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
             Document <span className="text-gold">Apostille</span> Services
           </h1>
-          <div className="bg-white/15 backdrop-blur-sm rounded-xl px-6 py-4 shadow-lg border border-white/30 mb-6 inline-block md:w-full">
+
+          {/* Tagline */}
+          <div className="bg-white/15 backdrop-blur-sm rounded-xl px-6 py-4 shadow-lg border border-white/30 mb-6 inline-block">
             <p className="text-lg md:text-xl text-gold font-semibold drop-shadow-sm">
               Avoid Rejection. Avoid Delays. Get It Right the First Time.
             </p>
           </div>
-          <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed drop-shadow-sm">
+
+          {/* Description */}
+          <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed drop-shadow-sm max-w-3xl mx-auto">
             Whether it's for a destination wedding in Italy, teaching in Japan, or adopting from Colombia, we get your documents stamped, sealed, and ready—without the guesswork.
           </p>
 
           {/* Trust Badges */}
-          <div className="grid grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
             <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30 shadow-lg">
               <div className="flex justify-center mb-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 20 20">
@@ -63,7 +57,7 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={onContactClick}
               className="bg-white text-proof hover:bg-neutral-100 transition-all rounded-lg text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl"
@@ -77,7 +71,7 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
             </button>
             <button
               onClick={onContactClick}
-              className="bg-electric-blue text-white hover:bg-hover-blue transition-all rounded-lg text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl"
+              className="bg-gold text-proof hover:bg-yellow-300 transition-all rounded-lg text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl"
             >
               <span className="flex items-center justify-center gap-2 whitespace-nowrap">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,25 +82,18 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
             </button>
           </div>
         </div>
-
-        {/* Right Column: Use Case Images */}
-        <div className="hidden md:block">
-          <img
-            src="/images/apostilleFlyersstrip.png"
-            alt="Apostille use cases: Passport, Destination Wedding, Adoption"
-            className="w-full h-auto rounded-2xl shadow-2xl border-4 border-white/30 drop-shadow-2xl"
-          />
-        </div>
       </div>
+    </section>
 
-      {/* Mobile Use Case Images */}
-      <div className="md:hidden mb-8">
+    {/* Flyer Strip Section */}
+    <section className="w-full py-8 md:py-12 bg-neutral-50">
+      <div className="max-w-7xl mx-auto px-6">
         <img
           src="/images/apostilleFlyersstrip.png"
           alt="Apostille use cases: Passport, Destination Wedding, Adoption"
-          className="w-full h-auto rounded-2xl shadow-2xl border-4 border-white/30 drop-shadow-2xl"
+          className="w-full h-auto rounded-xl shadow-lg"
         />
       </div>
-    </div>
-  </section>
+    </section>
+  </>
 );

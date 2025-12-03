@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-  <section className="relative text-white min-h-screen flex items-center overflow-hidden w-screen -ml-[50vw] left-[50%]">
+  <section className="relative text-white min-h-screen flex items-center overflow-hidden w-screen left-1/2 -translate-x-1/2">
     {/* Video Background */}
     <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
       {videoError ? (
@@ -57,9 +57,8 @@ const Hero: React.FC = () => {
         </video>
       )}
 
-      {/* Electric Blue Overlay with opacity */}
-      <div className="absolute inset-0 bg-electric-blue/60 z-10"></div>
-      <div className="absolute inset-0 bg-black/20 z-10"></div>
+      {/* Electric Blue Overlay with lighter opacity (removed black layer) */}
+      <div className="absolute inset-0 bg-electric-blue/50 z-10"></div>
     </div>
     
     <div className="w-full relative z-20 px-6 py-24">

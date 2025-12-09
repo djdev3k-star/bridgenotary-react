@@ -127,8 +127,18 @@ const WhyBridgeNotaryPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-proof text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative bg-proof text-white py-20 px-6">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="/src/assets/images/stack-loan-documents.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-proof/70"></div>
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl font-bold mb-6">Start Your Notarization Now</h2>
           <p className="text-lg mb-8">
             Whether you're notarizing one page or one hundred, Bridge Notary is here to simplify the process.

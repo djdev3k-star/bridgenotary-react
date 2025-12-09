@@ -1,15 +1,26 @@
 // Layout wrapper removed — App routes render Layout via Outlet
-import { Link } from 'react-router-dom';
-import { FeatureCard } from '@/features/ron/components';
-import { HeroBackground } from '@/components/ui/HeroBackground';
+import { useState } from 'react';
+import { FeatureCard, StartRONModal } from '@/features/ron/components';
 
 export default function RONPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="w-full bg-white">
-      {/* Hero Section - Full Width with Image Background */}
-      <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center">
-        {/* Background variations - change variant prop to try different styles */}
-        <HeroBackground variant="gradient" opacity={0.98} />
+      {/* Hero Section - Full Viewport Width with Deep Blue Gradient */}
+      <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
+        {/* Deep blue gradient background covering full viewport */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-electric-blue to-proof"></div>
+        
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 z-0 opacity-30">
+          <img 
+            src="/src/assets/Google-Business/Remote Online Notary.png" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 z-0 bg-electric-blue/40"></div>
+        
         <div className="max-w-7xl mx-auto py-28 px-6 relative z-20">
           {/* Main Content */}
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -21,66 +32,65 @@ export default function RONPage() {
             </p>
 
             <div className="flex justify-center mb-12">
-              <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all rounded-lg text-lg py-4 px-8 inline-block text-center font-semibold shadow-xl pulse-button">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-white text-proof hover:bg-neutral-100 transition-all rounded-lg text-lg py-4 px-8 font-semibold shadow-xl pulse-button"
+              >
                 <div className="flex items-center justify-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
                   Start RON Session
                 </div>
-              </Link>
+              </button>
             </div>
+
+            {/* RON Modal */}
+            <StartRONModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
           </div>
 
           {/* Feature Grid */}
           <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div className="backdrop-blur-md bg-white/10 p-6 rounded-2xl shadow-2xl border border-white/20 text-center transform hover:scale-105 transition-all duration-300 hover:bg-white/20">
-              <div className="bg-electric-blue/80 rounded-full p-3 w-12 h-12 mx-auto mb-4 flex items-center justify-center shadow-lg">
+            <div className="p-4 text-center">
+              <div className="p-3 w-12 h-12 mx-auto mb-3 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold mb-2 text-white drop-shadow-md">Legally Binding</h3>
-              <p className="text-white text-sm font-medium drop-shadow">Valid in all 50 states</p>
+              <h3 className="text-lg font-bold mb-2 text-white">Legally Binding</h3>
+              <p className="text-white/80 text-sm font-medium">Valid in all 50 states</p>
             </div>
 
-            <div className="backdrop-blur-md bg-white/10 p-6 rounded-2xl shadow-2xl border border-white/20 text-center transform hover:scale-105 transition-all duration-300 hover:bg-white/20">
-              <div className="bg-electric-blue/80 rounded-full p-3 w-12 h-12 mx-auto mb-4 flex items-center justify-center shadow-lg">
+            <div className="p-4 text-center">
+              <div className="p-3 w-12 h-12 mx-auto mb-3 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold mb-2 text-white drop-shadow-md">24/7 Available</h3>
-              <p className="text-white text-sm font-medium drop-shadow">Notarize anytime</p>
+              <h3 className="text-lg font-bold mb-2 text-white">24/7 Available</h3>
+              <p className="text-white/80 text-sm font-medium">Notarize anytime</p>
             </div>
 
-            <div className="backdrop-blur-md bg-white/10 p-6 rounded-2xl shadow-2xl border border-white/20 text-center transform hover:scale-105 transition-all duration-300 hover:bg-white/20">
-              <div className="bg-electric-blue/80 rounded-full p-3 w-12 h-12 mx-auto mb-4 flex items-center justify-center shadow-lg">
+            <div className="p-4 text-center">
+              <div className="p-3 w-12 h-12 mx-auto mb-3 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold mb-2 text-white drop-shadow-md">Enterprise Security</h3>
-              <p className="text-white text-sm font-medium drop-shadow">Bank-grade encryption</p>
+              <h3 className="text-lg font-bold mb-2 text-white">Enterprise Security</h3>
+              <p className="text-white/80 text-sm font-medium">Bank-grade encryption</p>
             </div>
 
-            <div className="backdrop-blur-md bg-white/10 p-6 rounded-2xl shadow-2xl border border-white/20 text-center transform hover:scale-105 transition-all duration-300 hover:bg-white/20">
-              <div className="bg-electric-blue/80 rounded-full p-3 w-12 h-12 mx-auto mb-4 flex items-center justify-center shadow-lg">
+            <div className="p-4 text-center">
+              <div className="p-3 w-12 h-12 mx-auto mb-3 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M13 10V3L4 14h7v7l9-11h-7z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold mb-2 text-white drop-shadow-md">Quick Process</h3>
-              <p className="text-white text-sm font-medium drop-shadow">5-minute average</p>
+              <h3 className="text-lg font-bold mb-2 text-white">Quick Process</h3>
+              <p className="text-white/80 text-sm font-medium">5-minute average</p>
             </div>
           </div>
-        </div>
-
-        {/* Wave separator */}
-        <div className="absolute bottom-0 left-0 right-0 z-20">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" fill="#ffffff" preserveAspectRatio="none">
-            <path d="M0,32L80,53.3C160,75,320,117,480,117.3C640,117,800,75,960,58.7C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-          </svg>
         </div>
       </section>
 
@@ -162,7 +172,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/src/assets/images/upload-documents.png"
+                  src="/images/upload-documents.png"
                   alt="Upload and prepare documents" 
                   className="h-32 object-contain"
                 />
@@ -190,7 +200,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/src/assets/images/Verify-identity.png"
+                  src="/images/Verify-identity.png"
                   alt="Verify your identity" 
                   className="h-32 object-contain"
                 />
@@ -218,7 +228,7 @@ export default function RONPage() {
               
               <div className="mb-6 flex items-center justify-center">
                 <img
-                  src="/src/assets/images/secure-video-signing.png"
+                  src="/images/secure-video-signing.png"
                   alt="Meet with notary and sign documents" 
                   className="h-32 object-contain"
                 />
@@ -303,7 +313,7 @@ export default function RONPage() {
             <div className="flex items-center justify-center">
               <div className="w-full rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="/src/assets/images/happy customer using video conference conveniently from mobile device.jpg"
+                  src="/images/happy customer using video conference conveniently from mobile device.jpg"
                   alt="Customer preparing for a remote notary session"
                   className="w-full h-80 object-cover"
                 />
@@ -380,6 +390,15 @@ export default function RONPage() {
       <section className="relative py-24 px-6 overflow-hidden">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-electric-blue"></div>
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="/src/assets/images/stack-loan-documents.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-electric-blue/70"></div>
 
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Ready to Start Your RON Session?</h2>
@@ -388,9 +407,12 @@ export default function RONPage() {
             Available 24/7 with certified notaries nationwide.
           </p>
           <div className="flex justify-center">
-            <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded-lg text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded-lg text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+            >
               Start RON Session
-            </Link>
+            </button>
           </div>
         </div>
       </section>

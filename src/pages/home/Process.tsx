@@ -59,9 +59,10 @@ export default function Process() {
           
           {steps.map((item, index) => (
             <div key={item.step} className={`text-center relative z-10 ${index % 2 === 0 ? 'fade-in' : 'fade-in-delay'}`}>
-              <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              {/* Step number circle - hidden for now */}
+              {/* <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <span className="font-bold text-xl">{item.step}</span>
-              </div>
+              </div> */}
               
               <div className="bg-white rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-neutral-100 h-full transform hover:-translate-y-1">
                 <div className="bg-electric-blue/10 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-electric-blue">

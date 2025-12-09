@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface ScenarioType {
   situation: string;
@@ -14,6 +15,7 @@ interface SolutionType {
 }
 
 const ApostilleServices: React.FC = () => {
+  const navigate = useNavigate();
   const [showContactForm, setShowContactForm] = useState(false);
 
   const commonScenarios: ScenarioType[] = [
@@ -142,7 +144,7 @@ const ApostilleServices: React.FC = () => {
       <section className="py-24 relative overflow-hidden bg-gradient-to-b from-proof/5 to-electric-blue/5">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/src/assets/images/stack-loan-documents.jpg" 
+            src="/images/stack-loan-documents.jpg" 
             alt="Stack of Documents" 
             className="w-full h-full object-cover opacity-5"
           />
@@ -176,34 +178,48 @@ const ApostilleServices: React.FC = () => {
 
       {/* Our Solution Section */}
       <section className="py-24 relative overflow-hidden bg-proof text-white">
-        <div className="absolute inset-0 bg-[url('/assets/images/secure-video-signing.png')] opacity-10 bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url('/images/secure-video-signing.png')] opacity-10 bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue opacity-90"></div>
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white fade-in">
               Our Precision Apostille Solution
             </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              How we make the complex simple
+            <p className="text-xl text-white/80 max-w-2xl mx-auto fade-in-delay">
+              How we make the complex simple—with precision and accountability
             </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-gold to-white/50 rounded-full mx-auto mt-6 fade-in-delay"></div>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 shadow-xl transform hover:scale-105 transition-all duration-300">
+              <div key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/30 shadow-xl transform hover:scale-105 hover:bg-white/15 transition-all duration-300 fade-in-delay">
                 <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-3 text-white">{solution.action}</h3>
-                    <p className="text-white/80 text-lg">{solution.benefit}</p>
+                    <h3 className="text-xl font-bold mb-3 text-white drop-shadow-lg">{solution.action}</h3>
+                    <p className="text-white/90 text-lg leading-relaxed">{solution.benefit}</p>
                     <div className="mt-4 h-1 w-20 bg-gradient-to-r from-gold to-white/50 rounded-full"></div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Additional emphasis box */}
+          <div className="mt-16 bg-white/15 backdrop-blur-md rounded-2xl p-8 border border-gold/50 shadow-2xl text-center max-w-3xl mx-auto transform hover:-translate-y-1 transition-all duration-300">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+              </svg>
+              <h3 className="text-2xl font-bold text-white">Why We're Different</h3>
+            </div>
+            <p className="text-white/90 text-lg leading-relaxed mb-0">
+              Every document is hand-reviewed, triple-checked, and tracked in real-time. We don't just process apostilles—we guarantee results or fix it free.
+            </p>
           </div>
         </div>
       </section>
@@ -281,6 +297,7 @@ const ApostilleServices: React.FC = () => {
               <h3 className="text-2xl font-bold mb-4 text-proof text-center">Take Our Quick Quiz</h3>
               <p className="text-neutral-600 mb-6 text-center">30 seconds to find out if you need an apostille</p>
               <button 
+                onClick={() => navigate('/apostille/quiz')}
                 className="w-full bg-proof text-white hover:bg-proof/90 transition-all rounded-lg py-3 px-6 font-semibold shadow-lg hover:shadow-xl"
                 aria-label="Start apostille need assessment quiz"
               >
@@ -308,8 +325,15 @@ const ApostilleServices: React.FC = () => {
 
       {/* Final CTA Section */}
       <section className="relative py-24 px-6 overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue"></div>
+        {/* Background image overlay */}
+        <div className="absolute inset-0">
+          <img 
+            src="/images/study-abroad.png" 
+            alt="Study Abroad Documents" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue opacity-85"></div>
+        </div>
         
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 fade-in">Make Your Documents World-Ready</h2>

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/Button';
 
 const footerLinks = {
   resources: [
+    { label: 'Services', path: '/services' },
     { label: 'Pricing', path: '/pricing' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Remote Notary', path: '/ron' },

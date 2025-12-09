@@ -8,7 +8,7 @@ const LoanSigningPage: React.FC = () => {
     {
       title: "Residential Loans",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
       ),
@@ -17,7 +17,7 @@ const LoanSigningPage: React.FC = () => {
     {
       title: "Commercial Loans",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
         </svg>
       ),
@@ -58,16 +58,16 @@ const LoanSigningPage: React.FC = () => {
   return (
     <>
       {/* Hero Section - Full Width Cover Style */}
-      <section className="relative text-white min-h-screen flex items-center overflow-hidden w-screen -ml-[50vw] left-[50%]">
+      <section className="relative text-white min-h-screen flex items-center overflow-hidden w-screen left-1/2 -translate-x-1/2">
         {/* Full-Width Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           {/* Gradient base */}
           <div className="absolute inset-0 bg-electric-blue/60 z-10"></div>
           <div className="absolute inset-0 bg-black/20 z-10"></div>
           {/* Overlay image over gradient */}
-          <div className="absolute inset-0 z-20 opacity-25 pointer-events-none">
+          <div className="absolute inset-0 z-20 opacity-35 pointer-events-none">
             <img 
-              src="/images/loanFlyers.png"
+              src="/images/commsignFlyer.png"
               alt=""
               className="w-full h-full object-cover"
             />
@@ -168,6 +168,14 @@ const LoanSigningPage: React.FC = () => {
       {/* Loan Types Section */}
       <section className="bg-neutral-50 py-24 px-6 mb-16">
         <div className="max-w-7xl mx-auto">
+          {/* Flyers image above the loan documents section */}
+          <div className="mb-12">
+            <img
+              src="/images/commloanFlyers.png"
+              alt="Loan signing flyers"
+              className="w-full h-64 md:h-80 object-contain rounded-2xl shadow"
+            />
+          </div>
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Loan Documents We Handle</h2>
             <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
@@ -274,10 +282,18 @@ const LoanSigningPage: React.FC = () => {
 
       {/* Final CTA Section */}
       <section className="relative bg-electric-blue py-24 px-6 overflow-visible mt-16">
-        {/* Removed pattern overlay */}
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="/src/assets/images/stack-loan-documents.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-electric-blue/70"></div>
         
         {/* Content */}
-        <div className="max-w-5xl mx-auto text-center relative">
+        <div className="max-w-5xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Ready to Schedule Your Signing?</h2>
           <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
             We offer flexible scheduling and can meet at your preferred location. 

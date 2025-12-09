@@ -69,11 +69,6 @@ const Sitemap: React.FC = () => {
       path: '/resources',
       title: 'Resources',
       component: 'Resources'
-    },
-    {
-      path: '/pro',
-      title: 'Bridge Notary Pro',
-      component: 'BridgeNotaryPro'
     }
   ];
 

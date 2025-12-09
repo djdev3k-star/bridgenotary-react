@@ -10,7 +10,7 @@ const ApostilleMenu: React.FC = () => {
   const apostilleLinks: NavLinkType[] = [
     { to: '/apostille', label: 'Overview' },
     { to: '/apostille/quiz', label: 'Apostille Quiz' },
-    { to: '/services/apostille', label: 'Our Services' },
+    { to: '/apostille', label: 'Our Services' },
     { to: '/contact', label: 'Contact Us' }
   ];
 

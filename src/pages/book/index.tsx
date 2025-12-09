@@ -54,34 +54,18 @@ const BookAppointment: React.FC = () => {
     },
     {
       id: 'online',
-      title: 'Start Online Session',
-      description: 'Connect with a notary right now',
+      title: 'Schedule Online Session',
+      description: 'Remote Online Notarization via secure video',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
       ),
       benefits: [
-        'Immediate connection with available notaries',
-        'Secure video conferencing',
-        'Digital document signing',
-        'Available 24/7'
-      ]
-    },
-    {
-      id: 'appointment',
-      title: 'Schedule Appointment',
-      description: 'Book a specific time for your session',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      ),
-      benefits: [
-        'Choose your preferred date and time',
-        'Guaranteed notary availability',
-        'Perfect for planned document signings',
-        'Reminder notifications'
+        'Notarize from anywhere with internet access',
+        'Secure video conferencing technology',
+        'Digital document signing and storage',
+        'Schedule at your convenience'
       ]
     }
   ];
@@ -109,7 +93,7 @@ const BookAppointment: React.FC = () => {
   };
 
   const renderServiceSelection = () => (
-    <div className="grid md:grid-cols-3 gap-6 mb-12">
+    <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
       {serviceOptions.map((option) => (
         <button
           key={option.id}
@@ -278,7 +262,7 @@ const BookAppointment: React.FC = () => {
             type="submit"
             className="button-primary"
           >
-            Submit Request
+            Confirm Appointment
           </button>
         </div>
       </form>
@@ -289,11 +273,11 @@ const BookAppointment: React.FC = () => {
     <div className="section">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Book Your Notary Service</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Schedule Your Appointment</h1>
           <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
           <p className="text-lg text-neutral-700">
-            Choose your preferred way to connect with our notaries. Whether you need an in-person
-            signing, immediate online session, or want to schedule for later, we've got you covered.
+            Choose your preferred notary service. Schedule a mobile signing at your location or 
+            a remote online notarization session via secure video conference.
           </p>
         </div>
         

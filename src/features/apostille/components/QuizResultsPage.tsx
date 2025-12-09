@@ -127,7 +127,7 @@ const QuizResultsPage: React.FC = () => {
                   Get Expert Help
                 </button>
                 <button 
-                  onClick={() => navigate('/services/apostille')}
+                  onClick={() => navigate('/apostille')}
                   className="button-outline"
                 >
                   Our Apostille Services

@@ -72,8 +72,18 @@ const BridgeNotaryPro = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-proof text-white py-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
+      <section className="relative bg-proof text-white py-16">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="/src/assets/images/stack-loan-documents.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-proof/70"></div>
+        
+        <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto fade-in">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
               Stop Losing Clients to More Professional Notaries
@@ -141,8 +151,18 @@ const BridgeNotaryPro = () => {
       </section>
 
       {/* Lead Capture Form */}
-      <section ref={leadFormRef} className="bg-proof text-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
+      <section ref={leadFormRef} className="relative bg-proof text-white py-16">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="/src/assets/images/stack-loan-documents.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-proof/70"></div>
+        
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center fade-in">
             <div className="flex items-center justify-center mb-6">
               <svg className="w-8 h-8 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

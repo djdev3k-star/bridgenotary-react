@@ -6,19 +6,23 @@ interface ApostilleHeroProps {
 
 export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) => (
   <>
-    {/* Hero Section */}
-    <section className="relative overflow-hidden text-white bg-gradient-to-r from-electric-blue via-electric-blue to-proof py-20 md:py-28">
-      {/* Background Flyer Overlay */}
-      <div className="absolute inset-0 z-10 opacity-15">
-        <img
-          src="/images/apostilleFlyers.png"
-          alt=""
+    {/* Hero Section - Full Viewport Width with Deep Blue Gradient */}
+    <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
+      {/* Deep blue gradient background covering full viewport */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-electric-blue to-proof"></div>
+      
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 z-0 opacity-25">
+        <img 
+          src="/images/apostilleFlyers.png" 
+          alt="" 
           className="w-full h-full object-cover"
         />
       </div>
+      <div className="absolute inset-0 z-0 bg-electric-blue/40"></div>
       
       {/* Hero Content */}
-      <div className="max-w-7xl mx-auto px-6 relative z-20 w-full">
+      <div className="max-w-7xl mx-auto py-28 px-6 relative z-20 w-full">
         <div className="max-w-4xl mx-auto text-center">
           {/* Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">

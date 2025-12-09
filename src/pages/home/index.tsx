@@ -9,10 +9,15 @@ const FinalCTA = () => (
     {/* Background color */}
     <div className="absolute inset-0 bg-electric-blue"></div>
     
-    {/* Background pattern - removed diagonal pattern */}
-    
-    {/* Floating elements */}
-    {/* Removed floating orbs */}
+    {/* Background image with overlay */}
+    <div className="absolute inset-0 opacity-25">
+      <img 
+        src="/src/assets/images/notarypublic-generalimagewithstamp.jpg" 
+        alt="" 
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <div className="absolute inset-0 bg-electric-blue/50"></div>
     
     <div className="max-w-[90rem] mx-auto relative z-10 text-center">
       <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 fade-in">Ready For Your Next Signing?</h2>

@@ -213,6 +213,9 @@ const Pricing = () => {
                 <p className="text-xl text-neutral-600 mb-8 max-w-3xl">
                   Professional notary services with simple, flat-rate pricing. Choose the package that fits your needs or contact us for custom solutions.
                 </p>
+                <p className="text-sm text-neutral-500 mb-6">
+                  Looking for service details? <a href="/services" className="text-electric-blue hover:text-hover-blue underline">View our full service offerings</a>
+                </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="/book" className="button-primary text-lg py-4 px-8 inline-block text-center">Book Now</a>
                   <a href="/contact" className="button-outline text-lg py-4 px-8 inline-block text-center">Request Quote</a>
@@ -323,67 +326,219 @@ const Pricing = () => {
               ))}
             </div>
 
-            {/* Fee Table */}
+            {/* Detailed Fee Schedule - Card Grid Layout */}
             <div className="mb-16">
               <div className="mb-10">
-                <h2 className="text-3xl font-bold text-proof mb-4">Detailed Fee Schedule</h2>
+                <h2 className="text-3xl font-bold text-proof mb-4">Loan Signing Services</h2>
                 <p className="text-lg text-neutral-600 max-w-2xl">
-                  Reference our complete fee schedule for all notary services. All prices listed are base rates and may vary slightly based on location and complexity.
+                  Professional loan signing services for residential and commercial transactions. Click any service to learn more about what's included.
                 </p>
               </div>
 
-              {/* Core Services Table */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
-                <div className="px-6 py-4 bg-proof text-white">
-                  <h3 className="text-xl font-bold">Core Notary Services</h3>
-                </div>
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead className="bg-proof/90 border-b border-proof">
-                      <tr>
-                        <th className="px-6 py-3 text-left text-base font-bold text-white tracking-wide">Service</th>
-                        <th className="px-6 py-3 text-right text-base font-bold text-white tracking-wide">Fee</th>
-                        <th className="px-6 py-3 text-left text-base font-bold text-white tracking-wide">Notes</th>
-                      </tr>
-                    </thead>
-                          <tbody className="divide-y divide-neutral-200">
-                            {coreServices.map((service, index) => (
-                              <tr key={index} className="hover:bg-neutral-50 even:bg-neutral-50">
-                                <td className="px-6 py-4 text-sm font-medium text-neutral-800">{service.name}</td>
-                                <td className="px-6 py-4 text-sm text-right font-semibold text-proof">{service.fee}</td>
-                                <td className="px-6 py-4 text-sm text-neutral-600">{service.notes}</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                  </table>
-                </div>
+              <div className="grid md:grid-cols-2 gap-6 mb-12">
+                {coreServices.map((service, index) => {
+                  const serviceLinks: Record<string, string> = {
+                    'Refinance': '/loan-signing/refinance',
+                    'Purchase (Buyer)': '/loan-signing/purchase',
+                    'Seller': '/loan-signing/seller',
+                    'Reverse Mortgage': '/loan-signing/reverse',
+                    'HELOC / Equity Loans': '/loan-signing/heloc',
+                    'Loan Modifications': '/loan-signing/modification',
+                    'Commercial Closings': '/loan-signing/commercial',
+                    'TX Property Tax Loans': '/loan-signing/property-tax',
+                  };
+                  
+                  return (
+                    <a 
+                      key={index}
+                      href={serviceLinks[service.name] || '/loan-signing'}
+                      className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-proof group-hover:text-electric-blue transition-colors mb-2">
+                            {service.name}
+                          </h3>
+                          <p className="text-sm text-neutral-600">{service.notes}</p>
+                        </div>
+                        <div className="ml-4">
+                          <div className="text-2xl font-bold text-electric-blue">{service.fee}</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center text-electric-blue text-sm font-medium group-hover:translate-x-1 transition-transform">
+                        Learn more
+                        <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
 
-              {/* Add-On Services Table */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="px-6 py-4 bg-royal-blue text-white">
-                  <h3 className="text-xl font-bold">Add-On Services</h3>
-                </div>
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead className="bg-royal-blue border-b border-royal-blue">
-                      <tr>
-                        <th className="px-6 py-3 text-left text-base font-bold text-white tracking-wide">Service</th>
-                        <th className="px-6 py-3 text-right text-base font-bold text-white tracking-wide">Fee</th>
-                        <th className="px-6 py-3 text-left text-base font-bold text-white tracking-wide">Notes</th>
-                      </tr>
-                    </thead>
-                      <tbody className="divide-y divide-neutral-200">
-                        {addOnServices.map((service, index) => (
-                          <tr key={index} className="hover:bg-neutral-50 even:bg-neutral-50">
-                            <td className="px-6 py-4 text-sm font-medium text-neutral-800">{service.name}</td>
-                            <td className="px-6 py-4 text-sm text-right font-semibold text-royal-blue">{service.fee}</td>
-                            <td className="px-6 py-4 text-sm text-neutral-600">{service.notes}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                  </table>
-                </div>
+              {/* General Notary Services */}
+              <div className="mb-10">
+                <h2 className="text-3xl font-bold text-proof mb-4">General Notary Services</h2>
+                <p className="text-lg text-neutral-600 max-w-2xl mb-8">
+                  Professional mobile notary services for personal and business documents. We come to your location for added convenience.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-12">
+                <a 
+                  href="/services/mobile"
+                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                >
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                    <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-proof group-hover:text-electric-blue transition-colors mb-2">
+                    Mobile Notary
+                  </h3>
+                  <p className="text-sm text-neutral-600 mb-4">We come to your home, office, or preferred location</p>
+                  <div className="text-xl font-bold text-electric-blue mb-3">$75+</div>
+                  <div className="flex items-center text-electric-blue text-sm font-medium">
+                    View details
+                    <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+
+                <a 
+                  href="/services/estate-trust"
+                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                >
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                    <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-proof group-hover:text-electric-blue transition-colors mb-2">
+                    Estate & Trust
+                  </h3>
+                  <p className="text-sm text-neutral-600 mb-4">Wills, trusts, and estate planning documents</p>
+                  <div className="text-xl font-bold text-electric-blue mb-3">$50+</div>
+                  <div className="flex items-center text-electric-blue text-sm font-medium">
+                    View details
+                    <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+
+                <a 
+                  href="/services/power-of-attorney"
+                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                >
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                    <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-proof group-hover:text-electric-blue transition-colors mb-2">
+                    Power of Attorney
+                  </h3>
+                  <p className="text-sm text-neutral-600 mb-4">Financial, medical, and legal POA documents</p>
+                  <div className="text-xl font-bold text-electric-blue mb-3">$50+</div>
+                  <div className="flex items-center text-electric-blue text-sm font-medium">
+                    View details
+                    <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+
+                <a 
+                  href="/ron"
+                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                >
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                    <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-proof group-hover:text-electric-blue transition-colors mb-2">
+                    Remote Online (RON)
+                  </h3>
+                  <p className="text-sm text-neutral-600 mb-4">Secure video notarization from anywhere</p>
+                  <div className="text-xl font-bold text-electric-blue mb-3">$100</div>
+                  <div className="flex items-center text-electric-blue text-sm font-medium">
+                    View details
+                    <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+
+                <a 
+                  href="/apostille"
+                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                >
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                    <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-proof group-hover:text-electric-blue transition-colors mb-2">
+                    Apostille Services
+                  </h3>
+                  <p className="text-sm text-neutral-600 mb-4">International document authentication</p>
+                  <div className="text-xl font-bold text-electric-blue mb-3">$150+</div>
+                  <div className="flex items-center text-electric-blue text-sm font-medium">
+                    View details
+                    <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+
+                <a 
+                  href="/services/witness"
+                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                >
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                    <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-proof group-hover:text-electric-blue transition-colors mb-2">
+                    Witness Services
+                  </h3>
+                  <p className="text-sm text-neutral-600 mb-4">Professional witness for legal documents</p>
+                  <div className="text-xl font-bold text-electric-blue mb-3">$50+</div>
+                  <div className="flex items-center text-electric-blue text-sm font-medium">
+                    View details
+                    <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+              </div>
+
+              {/* Add-On Services */}
+              <div className="mb-10">
+                <h2 className="text-3xl font-bold text-proof mb-4">Add-On Services</h2>
+                <p className="text-lg text-neutral-600 max-w-2xl mb-8">
+                  Optional services to enhance your notarization experience. These can be added to any signing appointment.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {addOnServices.map((service, index) => (
+                  <div 
+                    key={index}
+                    className="bg-neutral-50 rounded-lg p-5 border border-neutral-200 hover:border-electric-blue hover:bg-white transition-all duration-200"
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <h4 className="font-semibold text-neutral-900 text-base">{service.name}</h4>
+                      <div className="text-lg font-bold text-electric-blue ml-2">{service.fee}</div>
+                    </div>
+                    <p className="text-sm text-neutral-600">{service.notes}</p>
+                  </div>
+                ))}
               </div>
             </div>
 

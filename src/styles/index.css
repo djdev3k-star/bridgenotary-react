@@ -63,7 +63,7 @@
     @apply bg-white rounded-md shadow-2xl p-8 md:p-12;
   }
   .pill {
-    @apply inline-block bg-neutral-100 rounded-full px-5 py-2 text-base font-medium text-proof shadow-sm;
+    @apply inline-block bg-neutral-100 rounded-lg px-5 py-2 text-base font-medium text-proof shadow-sm;
   }
 
   /* New button styles */

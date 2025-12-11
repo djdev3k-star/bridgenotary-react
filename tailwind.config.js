@@ -41,8 +41,17 @@ export default {
         accent: '#3b82f6',
         success: '#10b981',
       },
+      // Tighter, consistent radii across the site
       borderRadius: {
-        'md': '4px',
+        none: '0px',
+        sm: '2px',
+        DEFAULT: '4px',
+        md: '6px',
+        lg: '8px',
+        xl: '10px',
+        '2xl': '12px',
+        '3xl': '14px',
+        full: '9999px',
       },
       fontFamily: {
 

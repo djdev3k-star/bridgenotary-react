@@ -21,9 +21,22 @@ interface StartRONResponse {
   details?: string;
 }
 
+interface RONTransaction {
+  id: string;
+  status: string;
+  signerName: string;
+  signerEmail: string;
+  signerPhone?: string;
+  transactionName?: string;
+  documents?: Array<{ name: string; url: string }>;
+  createdAt?: string;
+  updatedAt?: string;
+  [key: string]: any; // For any additional backend fields
+}
+
 interface TransactionResponse {
   success: boolean;
-  transaction?: any;
+  transaction?: RONTransaction;
   error?: string;
   details?: string;
 }

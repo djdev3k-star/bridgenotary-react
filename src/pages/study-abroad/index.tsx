@@ -13,7 +13,7 @@ const StudyAbroadPage: React.FC = () => {
         {/* Background image overlay */}
         <div className="absolute inset-0 z-0 opacity-60">
           <img
-            src="/src/assets/images/study-abroad.png"
+            src="/images/study-abroad.png"
             alt="Study abroad"
             className="w-full h-full object-cover brightness-110 saturate-110"
           />

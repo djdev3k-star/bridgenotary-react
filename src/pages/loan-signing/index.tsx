@@ -66,17 +66,17 @@ const LoanSigningPage: React.FC = () => {
           {/* High-res overlay images - cycling behind each other */}
           <div className="absolute inset-0 z-20 opacity-40 pointer-events-none mix-blend-overlay">
             <img 
-              src="/src/assets/images/commloanFlyers1.png"
+              src="/images/commloanFlyers.png"
               alt=""
               className="absolute inset-0 w-full h-full object-cover cycle-image-1"
             />
             <img 
-              src="/src/assets/images/commloanFlyers2.png"
+              src="/images/loanFlyers.png"
               alt=""
               className="absolute inset-0 w-full h-full object-cover cycle-image-2"
             />
             <img 
-              src="/src/assets/images/commloanFlyers3.png"
+              src="/images/commsignFlyer.png"
               alt=""
               className="absolute inset-0 w-full h-full object-cover cycle-image-3"
             />

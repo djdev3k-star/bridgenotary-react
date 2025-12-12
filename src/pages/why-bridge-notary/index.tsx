@@ -138,7 +138,7 @@ const WhyBridgeNotaryPage: React.FC = () => {
         {/* Background image with overlay */}
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="/src/assets/images/stack-loan-documents.jpg" 
+            src="/images/stack-loan-documents.jpg" 
             alt="" 
             className="w-full h-full object-cover"
           />

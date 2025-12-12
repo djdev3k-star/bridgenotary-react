@@ -13,7 +13,7 @@ const OverseasPropertyPage: React.FC = () => {
         {/* Background image overlay */}
         <div className="absolute inset-0 z-0 opacity-60">
           <img
-            src="/src/assets/images/overseas-property.png"
+            src="/images/overseas-property.png"
             alt="Overseas property"
             className="w-full h-full object-cover brightness-110 saturate-110"
           />

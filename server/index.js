@@ -8,6 +8,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import config from './config/env.js';
 import ronRoutes from './api/ron.js';
+import contactRoutes from './api/contact.js';
 
 // Load environment variables
 dotenv.config();
@@ -44,6 +45,7 @@ app.get('/health', (req, res) => {
 
 // API routes
 app.use('/api/ron', ronRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

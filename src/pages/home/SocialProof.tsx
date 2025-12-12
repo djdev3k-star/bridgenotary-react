@@ -31,7 +31,7 @@ export default function SocialProof() {
         
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-gray-50 p-6 rounded-xl">
+            <div key={index} className="bg-gray-50 p-6 rounded">
               <div className="flex h-6 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">

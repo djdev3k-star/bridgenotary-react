@@ -5,9 +5,9 @@ const ServiceSidebar = () => {
   return (
     <aside className="w-full md:w-1/3 lg:w-1/4 space-y-6">
       {/* Quick Action Card */}
-      <div className="bg-white rounded-xl shadow-md p-6 border border-neutral-200">
+      <div className="bg-white rounded shadow-md p-6 border border-neutral-200">
         <h3 className="text-xl font-bold text-proof mb-4">Ready to Schedule?</h3>
-        <Link to="/book" className="w-full bg-electric-blue text-white py-3 px-4 rounded-lg mb-4 flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors">
+        <Link to="/book" className="w-full bg-electric-blue text-white py-3 px-4 rounded mb-4 flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
@@ -31,7 +31,7 @@ const ServiceSidebar = () => {
       </div>
 
       {/* Contact Card */}
-      <div className="bg-neutral-50 rounded-xl p-6">
+      <div className="bg-neutral-50 rounded p-6">
         <h3 className="text-xl font-bold text-proof mb-4">Contact Us</h3>
         <div className="space-y-4">
           {/* TODO: Add phone contact for future development */}
@@ -51,7 +51,7 @@ const ServiceSidebar = () => {
       </div>
 
       {/* Document Checklist */}
-      <div className="bg-white rounded-xl shadow-md p-6 border border-neutral-200">
+      <div className="bg-white rounded shadow-md p-6 border border-neutral-200">
         <h3 className="text-xl font-bold text-proof mb-4">What to Bring</h3>
         <ul className="space-y-3">
           <li className="flex items-start gap-2 text-neutral-700">
@@ -82,7 +82,7 @@ const ServiceSidebar = () => {
       </div>
 
       {/* Testimonial */}
-      <div className="bg-neutral-50 rounded-xl p-6">
+      <div className="bg-neutral-50 rounded p-6">
         <div className="mb-2">
           <svg className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24">
             <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.039 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
@@ -95,7 +95,7 @@ const ServiceSidebar = () => {
       </div>
       
       {/* Quick Links */}
-      <div className="bg-white rounded-xl shadow-md p-6 border border-neutral-200">
+      <div className="bg-white rounded shadow-md p-6 border border-neutral-200">
         <h3 className="text-xl font-bold text-proof mb-4">Related Services</h3>
         <ul className="space-y-2">
           <li>

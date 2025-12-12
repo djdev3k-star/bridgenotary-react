@@ -52,7 +52,7 @@ const QuizResultsPage: React.FC = () => {
           <div className="max-w-3xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-bold text-proof mb-6">Apostille Quiz Results</h1>
             
-            <div className="bg-white rounded-xl shadow-md p-8 mb-8">
+            <div className="bg-white rounded shadow-md p-8 mb-8">
               <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-electric-blue/10 mb-4">
                   <span className="text-4xl font-bold text-electric-blue">{Math.round(results.percentage)}%</span>
@@ -83,7 +83,7 @@ const QuizResultsPage: React.FC = () => {
                     {results.incorrectQuestions.map((questionIndex) => {
                       const question = quizQuestions[questionIndex];
                       return (
-                        <div key={question.id} className="p-4 bg-neutral-50 rounded-lg">
+                        <div key={question.id} className="p-4 bg-neutral-50 rounded">
                           <p className="font-medium mb-2">{question.question}</p>
                           <p className="mb-1 text-green-600">
                             <span className="font-medium">Correct answer:</span> {question.options[question.correctAnswer]}
@@ -114,7 +114,7 @@ const QuizResultsPage: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-proof/5 border border-proof/20 rounded-lg p-6">
+            <div className="bg-proof/5 border border-proof/20 rounded p-6">
               <h3 className="text-xl font-semibold text-proof mb-4">Need Professional Apostille Services?</h3>
               <p className="mb-4">
                 Navigating international document requirements can be complex. Bridge Notary offers expert apostille and authentication services to ensure your documents are properly prepared for international use.

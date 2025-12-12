@@ -61,6 +61,13 @@ const Contact = () => {
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Left Column - Form */}
           <main className="w-full lg:w-2/3 space-y-8">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-10 bg-neutral-300"></span>
+              <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">
+                Contact
+              </span>
+              <span className="h-px w-10 bg-neutral-300"></span>
+            </div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-proof mb-6">Contact Us</h1>
             <p className="text-lg text-neutral-700 mb-8">
               Have a question or need a custom quote? Fill out the form below, and we'll get back to you promptly. For immediate assistance, please call or email us directly.
@@ -72,15 +79,15 @@ const Contact = () => {
 
             <div>
               <label htmlFor="name" className="block text-neutral-800 font-semibold mb-1">Name</label>
-              <input id="name" value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Your Name" className="w-full px-4 py-2 rounded-lg bg-neutral-100 text-neutral-800 border border-neutral-300 focus:border-proof focus:ring-proof outline-none" />
+              <input id="name" value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Your Name" className="w-full px-4 py-2 rounded bg-neutral-100 text-neutral-800 border border-neutral-300 focus:border-proof focus:ring-proof outline-none" />
             </div>
             <div>
               <label htmlFor="email" className="block text-neutral-800 font-semibold mb-1">Email</label>
-              <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="your@email.com" className="w-full px-4 py-2 rounded-lg bg-neutral-100 text-neutral-800 border border-neutral-300 focus:border-proof focus:ring-proof outline-none" />
+              <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="your@email.com" className="w-full px-4 py-2 rounded bg-neutral-100 text-neutral-800 border border-neutral-300 focus:border-proof focus:ring-proof outline-none" />
             </div>
             <div>
               <label htmlFor="message" className="block text-neutral-800 font-semibold mb-1">Message</label>
-              <textarea id="message" value={message} onChange={(e) => setMessage(e.target.value)} rows={5} placeholder="How can we help you?" className="w-full px-4 py-2 rounded-lg bg-neutral-100 text-neutral-800 border border-neutral-300 focus:border-proof focus:ring-proof outline-none" />
+              <textarea id="message" value={message} onChange={(e) => setMessage(e.target.value)} rows={5} placeholder="How can we help you?" className="w-full px-4 py-2 rounded bg-neutral-100 text-neutral-800 border border-neutral-300 focus:border-proof focus:ring-proof outline-none" />
             </div>
             <button type="submit" className="btn btn-primary w-full" disabled={loading}>{loading ? 'Sending...' : 'Send Message'}</button>
           </form>

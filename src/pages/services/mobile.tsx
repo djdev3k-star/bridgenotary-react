@@ -95,47 +95,71 @@ const relatedLinks: RelatedLink[] = [
 const MobileNotaryPage = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section - White background, no gradient */}
-      <section className="bg-white py-16 md:py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-proof mb-6">
-            Mobile Notary Services
-          </h1>
-          <p className="text-xl md:text-2xl text-neutral-600 mb-8 max-w-3xl mx-auto">
-            Professional notarization at your home, office, or anywhere you need us—fast, reliable, and on your schedule.
-          </p>
+      {/* Hero Section - overlay style for consistency */}
+      <section className="relative overflow-hidden text-white min-h-[70vh] flex items-center">
+        {/* Gradient base */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-electric-blue to-proof"></div>
 
-          {/* Hero bullets in card-style list on neutral background */}
-          <div className="bg-neutral-50 rounded-lg p-8 mt-8">
-            <ul className="grid md:grid-cols-2 gap-4 text-left max-w-3xl mx-auto">
-              {heroBullets.map((bullet, index) => (
-                <li key={index} className="flex items-start">
-                  <svg
-                    className="h-6 w-6 text-electric-blue mr-3 flex-shrink-0 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span className="text-neutral-700 text-lg">{bullet.text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Background image overlay */}
+        <div className="absolute inset-0 z-0 opacity-55">
+          <img
+            src={loanFlyerImg}
+            alt="Mobile notary services"
+            className="w-full h-full object-cover brightness-105 saturate-110"
+          />
+        </div>
+        <div className="absolute inset-0 z-10 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-br from-proof/60 via-electric-blue/45 to-proof/70 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-electric-blue/15"></div>
+        </div>
 
-          <div className="mt-10">
-            <Link
-              to="/book"
-              className="button-primary text-lg py-4 px-10 inline-block"
-            >
-              Book Mobile Notary Now
-            </Link>
+        {/* Content */}
+        <div className="max-w-7xl mx-auto py-20 px-6 relative z-20 w-full">
+          <div className="max-w-4xl text-left">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-12 bg-white/50"></span>
+              <span className="text-xs uppercase tracking-[0.25em] text-white/90">Mobile Notary</span>
+              <span className="h-px w-12 bg-white/50"></span>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+              On-Demand Mobile Notary Services
+            </h1>
+            <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed drop-shadow-sm max-w-2xl">
+              Professional notarization at your home, office, hospital, or any location—fast, reliable, and on your schedule with certified, insured agents.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl">
+                Book Mobile Notary Now
+              </Link>
+              <Link to="/contact" className="border-2 border-white text-white hover:bg-white hover:text-proof transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl">
+                Talk to a Specialist
+              </Link>
+            </div>
+
+            {/* Hero bullets glass card */}
+            <div className="bg-white/10 border border-white/20 backdrop-blur rounded p-6 shadow-lg max-w-3xl">
+              <ul className="grid md:grid-cols-2 gap-4 text-left">
+                {heroBullets.map((bullet, index) => (
+                  <li key={index} className="flex items-start">
+                    <svg
+                      className="h-6 w-6 text-white mr-3 flex-shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-white/95 text-lg leading-snug">{bullet.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -149,7 +173,7 @@ const MobileNotaryPage = () => {
               {sections.map((section, index) => (
                 <article
                   key={index}
-                  className={index % 2 === 0 ? "bg-white rounded-lg shadow-sm p-8" : ""}
+                  className={index % 2 === 0 ? "bg-white rounded shadow-sm p-8" : ""}
                 >
                   <h2 className="text-3xl font-bold text-proof mb-6">
                     {section.title}
@@ -165,7 +189,7 @@ const MobileNotaryPage = () => {
               ))}
 
               {/* Flyer Image Section */}
-              <div className="bg-white rounded-lg shadow-sm p-8">
+              <div className="bg-white rounded shadow-sm p-8">
                 <h2 className="text-3xl font-bold text-proof mb-6">
                   Our Service Areas
                 </h2>
@@ -173,7 +197,7 @@ const MobileNotaryPage = () => {
                   <img
                     src={loanFlyerImg}
                     alt="Bridge Notary Mobile Service Areas"
-                    className="w-full h-auto rounded-lg shadow-md"
+                    className="w-full h-auto rounded shadow-md"
                   />
                 </div>
                 <p className="text-lg text-neutral-700 leading-relaxed">
@@ -184,7 +208,7 @@ const MobileNotaryPage = () => {
 
             {/* Sidebar - Sticky Highlights */}
             <aside className="lg:col-span-1">
-              <div className="sticky top-24 bg-white rounded-lg shadow-sm p-8">
+              <div className="sticky top-24 bg-white rounded shadow-sm p-8">
                 <h3 className="text-2xl font-bold text-proof mb-6">
                   Key Benefits
                 </h3>
@@ -225,13 +249,13 @@ const MobileNotaryPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/book"
-              className="bg-white text-electric-blue hover:bg-neutral-100 font-semibold py-4 px-10 rounded-lg text-lg transition-colors"
+              className="bg-white text-electric-blue hover:bg-neutral-100 font-semibold py-4 px-10 rounded text-lg transition-colors"
             >
               Book Your Appointment
             </Link>
             <Link
               to="/contact"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-electric-blue font-semibold py-4 px-10 rounded-lg text-lg transition-colors"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-electric-blue font-semibold py-4 px-10 rounded text-lg transition-colors"
             >
               Contact Us
             </Link>
@@ -250,7 +274,7 @@ const MobileNotaryPage = () => {
               <Link
                 key={index}
                 to={link.to}
-                className="bg-neutral-50 hover:bg-neutral-100 rounded-lg p-6 text-center transition-colors border border-neutral-200"
+                className="bg-neutral-50 hover:bg-neutral-100 rounded p-6 text-center transition-colors border border-neutral-200"
               >
                 <h3 className="font-semibold text-neutral-900 text-lg">
                   {link.title}

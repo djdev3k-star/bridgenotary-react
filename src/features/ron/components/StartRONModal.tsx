@@ -59,7 +59,7 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <div className="bg-white rounded shadow-2xl max-w-md w-full p-8 relative">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -78,7 +78,7 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
         </div>
 
         {error && (
-          <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+          <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded">
             <p className="text-red-700 text-sm">{error}</p>
           </div>
         )}
@@ -97,7 +97,7 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
               onChange={handleChange}
               required
               disabled={isLoading}
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-transparent transition-all disabled:bg-neutral-100"
+              className="w-full px-4 py-3 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-transparent transition-all disabled:bg-neutral-100"
               placeholder="John Doe"
             />
           </div>
@@ -115,7 +115,7 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
               onChange={handleChange}
               required
               disabled={isLoading}
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-transparent transition-all disabled:bg-neutral-100"
+              className="w-full px-4 py-3 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-transparent transition-all disabled:bg-neutral-100"
               placeholder="john@example.com"
             />
           </div>
@@ -132,7 +132,7 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
               value={formData.signerPhone}
               onChange={handleChange}
               disabled={isLoading}
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-transparent transition-all disabled:bg-neutral-100"
+              className="w-full px-4 py-3 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-transparent transition-all disabled:bg-neutral-100"
               placeholder="(555) 123-4567"
             />
           </div>
@@ -141,7 +141,7 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-electric-blue text-white font-semibold py-4 px-6 rounded-lg hover:bg-hover-blue transition-all disabled:bg-neutral-300 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-electric-blue text-white font-semibold py-4 px-6 rounded hover:bg-hover-blue transition-all disabled:bg-neutral-300 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isLoading ? (
               <>

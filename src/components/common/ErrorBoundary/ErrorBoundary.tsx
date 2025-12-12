@@ -26,7 +26,7 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
       }
 
       return (
-        <div className="p-4 rounded-lg bg-red-50 border border-red-200">
+        <div className="p-4 rounded bg-red-50 border border-red-200">
           <h2 className="text-lg font-semibold text-red-800 mb-2">Something went wrong</h2>
           <p className="text-sm text-red-600">
             {this.state.error?.message || 'An unexpected error occurred'}

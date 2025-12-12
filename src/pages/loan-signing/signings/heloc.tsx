@@ -11,33 +11,33 @@ const HELOCSigningPage: React.FC = () => {
   return (
     <LongFormSigningPage
       title="HELOC / Equity Loans"
-      subtitle="Keeping Access to Funds on Schedule"
-      heroSummary="Home equity lines of credit and fixed-term equity loans give borrowers access to property equity, but closing packages must be executed correctly to avoid delaying account activation or funding."
+      subtitle="Precision That Protects Your Funding"
+      heroSummary="Equity and HELOC packages often span several documents with scattered signature points. Missing even one can slow funding or trigger a redraw. Texas adds another layer: homestead loans must follow specific constitutional rules, making precision essential."
       heroBullets={[
-        "Prevent redraws by capturing every signature, initial, and date.",
-        "Handle credit agreements, security instruments, riders, and disclosures cleanly.",
-        "Texas homestead-aware for equity loans and lines on primary residences."
+        "Complete, accurate packages avoid redraws",
+        "Texas homestead requirements handled with confidence",
+        "Smooth guidance through each document and obligation"
       ]}
       sections={[
         {
           title: "Why equity accuracy matters",
           paragraphs: [
-            "HELOC documents may include a credit agreement, security instrument, rider pages, and various disclosures that can require initials and signatures on many separate sections.",
-            "In Texas, certain home equity loans and lines on homestead property must comply with constitutional rules and location restrictions similar to other homestead-secured loans."
+            "Equity and HELOC packages often span several documents with scattered signature points. Missing even one can slow funding or trigger a redraw.",
+            "Texas adds another layer: homestead loans must follow specific constitutional rules, making precision essential."
           ]
         },
         {
           title: "How we keep funding on track",
           paragraphs: [
-            "A qualified signing agent helps borrowers navigate the package efficiently, ensuring that every required signature, initial, and date appears where needed before the documents return to the lender.",
-            "This reduces the risk of redraws or post-closing corrections, helping borrowers gain access to funds for renovations, debt consolidation, or other purposes without unnecessary delays."
+            "We guide borrowers through the documents efficiently, making sure everything is signed correctly the first time.",
+            "That means fewer corrections, cleaner files, and faster access to funds—whether for renovations, debt payoff, or anything else."
           ]
         }
       ]}
       highlights={[
-        { title: "Funding certainty", description: "Stop redraws by completing every field correctly." },
-        { title: "Texas homestead aware", description: "Equity loans handled with state-specific rules in mind." },
-        { title: "Borrower clarity", description: "Guide through riders, draws, and obligations efficiently." }
+        { title: "Funding certainty", description: "Complete, accurate packages avoid redraws." },
+        { title: "Texas homestead aware", description: "State requirements handled with confidence." },
+        { title: "Borrower clarity", description: "Smooth guidance through each document and obligation." }
       ]}
       ctaText="Book a HELOC Signing"
       ctaLink="/book"

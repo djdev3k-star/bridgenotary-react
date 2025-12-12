@@ -15,7 +15,7 @@ const ApostilleMenu: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden mb-6">
+    <div className="bg-white shadow-md rounded overflow-hidden mb-6">
       <h3 className="bg-proof text-white font-semibold px-4 py-3">Apostille Resources</h3>
       <div className="divide-y">
         {apostilleLinks.map((link) => (

@@ -13,6 +13,11 @@ const ApostilleLayout = React.lazy(() => import("@/pages/apostille/ApostilleLayo
 const ApostilleQuizPage = React.lazy(() => import("@/pages/apostille/quiz"));
 const ApostilleQuizStartPage = React.lazy(() => import("@/pages/apostille/quiz/quiz-start"));
 const ApostilleQuizResultsPage = React.lazy(() => import("@/pages/apostille/quiz/quiz-results"));
+const StudyAbroadPage = React.lazy(() => import("@/pages/study-abroad"));
+const DualCitizenshipPage = React.lazy(() => import("@/pages/dual-citizenship"));
+const InternationalAdoptionPage = React.lazy(() => import("@/pages/international-adoption"));
+const OverseasPropertyPage = React.lazy(() => import("@/pages/overseas-property"));
+const DestinationWeddingPage = React.lazy(() => import("@/pages/destination-wedding"));
 const LoanSigningPage = React.lazy(() => import("@/pages/loan-signing"));
 const RefinanceSigningPage = React.lazy(() => import("@/pages/loan-signing/signings/refinance"));
 const PurchaseSigningPage = React.lazy(() => import("@/pages/loan-signing/signings/purchase"));
@@ -37,6 +42,7 @@ const FAQ = React.lazy(() => import("@/pages/faq"));
 const Resources = React.lazy(() => import("@/pages/resources"));
 const SchedulePage = React.lazy(() => import("@/pages/schedule"));
 const DemoPage = React.lazy(() => import("@/pages/demo"));
+const LoginPage = React.lazy(() => import("@/pages/login"));
 const Sitemap = React.lazy(() => import("@/pages/sitemap"));
 
 // Loading fallback component
@@ -65,6 +71,11 @@ function App() {
               <Route path="/apostille/quiz" element={<ApostilleQuizPage />} />
               <Route path="/apostille/quiz-start" element={<ApostilleQuizStartPage />} />
               <Route path="/apostille/quiz-results" element={<ApostilleQuizResultsPage />} />
+              <Route path="/study-abroad" element={<StudyAbroadPage />} />
+              <Route path="/dual-citizenship" element={<DualCitizenshipPage />} />
+              <Route path="/international-adoption" element={<InternationalAdoptionPage />} />
+              <Route path="/overseas-property" element={<OverseasPropertyPage />} />
+              <Route path="/destination-wedding" element={<DestinationWeddingPage />} />
             </Route>
             
             <Route element={<Layout />}>
@@ -92,6 +103,7 @@ function App() {
               <Route path="/testimonials" element={<Testimonials />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/resources" element={<Resources />} />
+              <Route path="/login" element={<LoginPage />} />
               <Route path="/sitemap" element={<Sitemap />} />
             </Route>
           </Routes>

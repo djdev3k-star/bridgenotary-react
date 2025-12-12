@@ -49,7 +49,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ trigger, items = [], groups
       
       {isOpen && (
         <div
-          className="absolute left-1/2 -translate-x-1/2 mt-4 w-[1200px] max-w-[96vw] rounded-2xl shadow-xl bg-white ring-1 ring-black/5 focus:outline-none"
+          className="absolute left-0 mt-4 w-[1200px] max-w-[96vw] rounded shadow-xl bg-white ring-1 ring-black/5 focus:outline-none"
           role="list"
           aria-labelledby="solutions-menu"
         >
@@ -66,7 +66,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ trigger, items = [], groups
                           key={item.path}
                           to={item.path}
                           onClick={() => setIsOpen(false)}
-                          className="group flex gap-3 rounded-xl px-4 py-3 hover:bg-neutral-50 transition-colors"
+                          className="group flex gap-3 rounded px-4 py-3 hover:bg-neutral-50 transition-colors"
                           role="menuitem"
                         >
                           {item.icon && (

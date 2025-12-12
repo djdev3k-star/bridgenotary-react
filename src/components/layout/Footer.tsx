@@ -72,7 +72,7 @@ export default function Footer() {
 
           {/* CTA Column */}
           <div className="md:col-span-4">
-            <div className="bg-gray-800 rounded-xl p-6">
+            <div className="bg-gray-800 rounded p-6">
               <h4 className="text-lg font-semibold text-white mb-2">Ready to get started?</h4>
               <p className="text-gray-300 mb-4">
                 Book your signing appointment now or contact us for special requests.

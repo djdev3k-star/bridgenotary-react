@@ -107,7 +107,7 @@ const EstateTrustPage = () => {
           </p>
 
           {/* Hero bullets in card-style list on neutral background */}
-          <div className="bg-neutral-50 rounded-lg p-8 mt-8">
+          <div className="bg-neutral-50 rounded p-8 mt-8">
             <ul className="grid md:grid-cols-2 gap-4 text-left max-w-3xl mx-auto">
               {heroBullets.map((bullet, index) => (
                 <li key={index} className="flex items-start">
@@ -150,7 +150,7 @@ const EstateTrustPage = () => {
               {sections.map((section, index) => (
                 <article
                   key={index}
-                  className={index % 2 === 0 ? "bg-white rounded-lg shadow-sm p-8" : ""}
+                  className={index % 2 === 0 ? "bg-white rounded shadow-sm p-8" : ""}
                 >
                   <h2 className="text-3xl font-bold text-proof mb-6">
                     {section.title}
@@ -166,7 +166,7 @@ const EstateTrustPage = () => {
               ))}
 
               {/* Flyer Images Section */}
-              <div className="bg-white rounded-lg shadow-sm p-8">
+              <div className="bg-white rounded shadow-sm p-8">
                 <h2 className="text-3xl font-bold text-proof mb-6">
                   Trusted by DFW Families & Attorneys
                 </h2>
@@ -174,12 +174,12 @@ const EstateTrustPage = () => {
                   <img
                     src={genNotaryFlyerImg}
                     alt="Bridge Notary Estate Services"
-                    className="w-full h-auto rounded-lg shadow-md"
+                    className="w-full h-auto rounded shadow-md"
                   />
                   <img
                     src={genNotaryStripImg}
                     alt="Bridge Notary Professional Services"
-                    className="w-full h-auto rounded-lg shadow-md"
+                    className="w-full h-auto rounded shadow-md"
                   />
                 </div>
                 <p className="text-lg text-neutral-700 leading-relaxed">
@@ -190,7 +190,7 @@ const EstateTrustPage = () => {
 
             {/* Sidebar - Sticky Highlights */}
             <aside className="lg:col-span-1">
-              <div className="sticky top-24 bg-white rounded-lg shadow-sm p-8">
+              <div className="sticky top-24 bg-white rounded shadow-sm p-8">
                 <h3 className="text-2xl font-bold text-proof mb-6">
                   Key Features
                 </h3>
@@ -231,13 +231,13 @@ const EstateTrustPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/book"
-              className="bg-white text-electric-blue hover:bg-neutral-100 font-semibold py-4 px-10 rounded-lg text-lg transition-colors"
+              className="bg-white text-electric-blue hover:bg-neutral-100 font-semibold py-4 px-10 rounded text-lg transition-colors"
             >
               Schedule Appointment
             </Link>
             <Link
               to="/contact"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-electric-blue font-semibold py-4 px-10 rounded-lg text-lg transition-colors"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-electric-blue font-semibold py-4 px-10 rounded text-lg transition-colors"
             >
               Ask a Question
             </Link>
@@ -256,7 +256,7 @@ const EstateTrustPage = () => {
               <Link
                 key={index}
                 to={link.to}
-                className="bg-neutral-50 hover:bg-neutral-100 rounded-lg p-6 text-center transition-colors border border-neutral-200"
+                className="bg-neutral-50 hover:bg-neutral-100 rounded p-6 text-center transition-colors border border-neutral-200"
               >
                 <h3 className="font-semibold text-neutral-900 text-lg">
                   {link.title}

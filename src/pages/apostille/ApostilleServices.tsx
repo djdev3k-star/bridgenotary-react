@@ -141,34 +141,30 @@ const ApostilleServices: React.FC = () => {
     <div className="w-full bg-white">
 
       {/* Pain Points Section */}
-      <section className="py-24 relative overflow-hidden bg-gradient-to-b from-proof/5 to-electric-blue/5">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/stack-loan-documents.jpg" 
-            alt="Stack of Documents" 
-            className="w-full h-full object-cover opacity-5"
-          />
-        </div>
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-proof to-electric-blue bg-clip-text text-transparent">
-              Pain Points We Eliminate
-            </h2>
-            <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-              Common frustrations our clients faced before finding us
-            </p>
+      <section className="section bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-12 bg-neutral-300"></span>
+              <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">Pain Points We Eliminate</span>
+              <span className="h-px w-12 bg-neutral-300"></span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-proof">What We Remove From Your Process</h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mt-3">Common frustrations clients faced before finding us.</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {painPoints.map((point, index) => (
-              <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-red-100 flex items-start gap-6 transform hover:-translate-y-1 transition-all duration-300">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center text-white shadow-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Pain point X icon">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <p className="text-lg text-neutral-800 font-medium">{point}</p>
-                  <div className="mt-2 h-1 w-20 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
+              <div
+                key={index}
+                className="bg-white rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-electric-blue text-white flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </div>
+                  <p className="text-base md:text-lg text-neutral-800">{point}</p>
                 </div>
               </div>
             ))}
@@ -177,32 +173,29 @@ const ApostilleServices: React.FC = () => {
       </section>
 
       {/* Our Solution Section */}
-      <section className="py-24 relative overflow-hidden bg-proof text-white">
-        <div className="absolute inset-0 bg-[url('/images/secure-video-signing.png')] opacity-10 bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue opacity-90"></div>
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white fade-in">
-              Our Precision Apostille Solution
-            </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto fade-in-delay">
-              How we make the complex simple—with precision and accountability
-            </p>
-            <div className="h-1 w-20 bg-gradient-to-r from-gold to-white/50 rounded-full mx-auto mt-6 fade-in-delay"></div>
+      <section className="section bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-12 bg-neutral-300"></span>
+              <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">Our Precision Apostille Solution</span>
+              <span className="h-px w-12 bg-neutral-300"></span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-proof">How We Make Complex Simple</h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mt-3">Precision process with accountability at every step.</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/30 shadow-xl transform hover:scale-105 hover:bg-white/15 transition-all duration-300 fade-in-delay">
+              <div key={index} className="bg-white rounded p-8 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow">
                 <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-electric-blue/10 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-3 text-white drop-shadow-lg">{solution.action}</h3>
-                    <p className="text-white/90 text-lg leading-relaxed">{solution.benefit}</p>
-                    <div className="mt-4 h-1 w-20 bg-gradient-to-r from-gold to-white/50 rounded-full"></div>
+                    <h3 className="text-xl font-bold mb-2 text-proof">{solution.action}</h3>
+                    <p className="text-neutral-700 text-base md:text-lg leading-relaxed">{solution.benefit}</p>
                   </div>
                 </div>
               </div>
@@ -210,15 +203,15 @@ const ApostilleServices: React.FC = () => {
           </div>
 
           {/* Additional emphasis box */}
-          <div className="mt-16 bg-white/15 backdrop-blur-md rounded-2xl p-8 border border-gold/50 shadow-2xl text-center max-w-3xl mx-auto transform hover:-translate-y-1 transition-all duration-300">
+          <div className="mt-16 bg-white rounded p-8 border border-neutral-200 shadow-sm text-center max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
               </svg>
-              <h3 className="text-2xl font-bold text-white">Why We're Different</h3>
+              <h3 className="text-2xl font-bold text-proof">Why We're Different</h3>
             </div>
-            <p className="text-white/90 text-lg leading-relaxed mb-0">
-              Every document is hand-reviewed, triple-checked, and tracked in real-time. We don't just process apostilles—we guarantee results or fix it free.
+            <p className="text-neutral-700 text-lg leading-relaxed mb-0">
+              Every document is hand-reviewed, carefully verified, and tracked in real-time. We focus on accuracy and clear communication throughout the process.
             </p>
           </div>
         </div>
@@ -268,7 +261,7 @@ const ApostilleServices: React.FC = () => {
           <div className="mt-12 text-center">
             <div className="bg-green-50 border border-green-200 rounded-md p-6 inline-block">
               <p className="text-green-800 font-medium">
-                Guarantee: If any apostille we process is rejected, we fix it free—shipping included.
+                Service Commitment: If an issue arises with an apostille we process, we work with you to correct it promptly.
               </p>
             </div>
           </div>
@@ -288,7 +281,7 @@ const ApostilleServices: React.FC = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-xl border border-neutral-100 hover:shadow-2xl transition-all duration-300">
+            <div className="bg-white rounded p-8 shadow-xl border border-neutral-100 hover:shadow-2xl transition-all duration-300">
               <div className="bg-proof/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -298,13 +291,13 @@ const ApostilleServices: React.FC = () => {
               <p className="text-neutral-600 mb-6 text-center">30 seconds to find out if you need an apostille</p>
               <button 
                 onClick={() => navigate('/apostille/quiz')}
-                className="w-full bg-proof text-white hover:bg-proof/90 transition-all rounded-lg py-3 px-6 font-semibold shadow-lg hover:shadow-xl"
+                className="w-full bg-proof text-white hover:bg-proof/90 transition-all rounded py-3 px-6 font-semibold shadow-lg hover:shadow-xl"
                 aria-label="Start apostille need assessment quiz"
               >
                 Start Quiz
               </button>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl border border-neutral-100 hover:shadow-2xl transition-all duration-300">
+            <div className="bg-white rounded p-8 shadow-xl border border-neutral-100 hover:shadow-2xl transition-all duration-300">
               <div className="bg-electric-blue/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -313,7 +306,7 @@ const ApostilleServices: React.FC = () => {
               <h3 className="text-2xl font-bold mb-4 text-electric-blue text-center">Browse Knowledge Base</h3>
               <p className="text-neutral-600 mb-6 text-center">Find answers to common questions</p>
               <button 
-                className="w-full bg-transparent border-2 border-electric-blue text-electric-blue hover:bg-electric-blue/5 transition-all rounded-lg py-3 px-6 font-semibold"
+                className="w-full bg-transparent border-2 border-electric-blue text-electric-blue hover:bg-electric-blue/5 transition-all rounded py-3 px-6 font-semibold"
                 aria-label="Browse apostille knowledge base articles"
               >
                 View Articles
@@ -344,14 +337,14 @@ const ApostilleServices: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-6 fade-in-delay">
             <button 
               onClick={() => setShowContactForm(true)}
-              className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded-lg text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative z-50"
+              className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative z-50"
             >
               Get My Apostille Now
             </button>
             {/* TODO: Add phone contact for future development */}
             {/* <a 
               href="tel:+14696298932" 
-              className="bg-transparent border-2 border-white hover:bg-white/10 transition-all font-semibold rounded-lg text-lg py-5 px-10 text-white relative z-50 flex flex-col items-center"
+              className="bg-transparent border-2 border-white hover:bg-white/10 transition-all font-semibold rounded text-lg py-5 px-10 text-white relative z-50 flex flex-col items-center"
             >
               <span className="text-sm text-white/80">Free 5-min Consult</span>
               <span>(469) 629-8932</span>

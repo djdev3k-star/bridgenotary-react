@@ -15,7 +15,7 @@ const ApostilleQuizPage: React.FC = () => {
               <p className="text-xl text-neutral-600">Test your understanding of apostilles and international document authentication</p>
             </div>
             
-            <div className="bg-white rounded-xl shadow-md p-8 mb-8">
+            <div className="bg-white rounded shadow-md p-8 mb-8">
               <div className="flex items-start mb-8">
                 <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -72,7 +72,7 @@ const ApostilleQuizPage: React.FC = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-lg border border-neutral-200">
+              <div className="bg-white p-6 rounded border border-neutral-200">
                 <h3 className="text-xl font-semibold text-proof mb-3">Who Should Take This Quiz?</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start">
@@ -102,7 +102,7 @@ const ApostilleQuizPage: React.FC = () => {
                 </ul>
               </div>
               
-              <div className="bg-white p-6 rounded-lg border border-neutral-200">
+              <div className="bg-white p-6 rounded border border-neutral-200">
                 <h3 className="text-xl font-semibold text-proof mb-3">What You'll Learn</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start">

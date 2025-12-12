@@ -61,75 +61,52 @@ const LoanSigningPage: React.FC = () => {
       <section className="relative text-white min-h-screen flex items-center overflow-hidden w-screen left-1/2 -translate-x-1/2">
         {/* Full-Width Background */}
         <div className="absolute inset-0 w-full h-full z-0">
-          {/* Gradient base */}
-          <div className="absolute inset-0 bg-electric-blue/60 z-10"></div>
-          <div className="absolute inset-0 bg-black/20 z-10"></div>
-          {/* Overlay image over gradient */}
-          <div className="absolute inset-0 z-20 opacity-35 pointer-events-none">
+          {/* Deep gradient base with proof blue */}
+          <div className="absolute inset-0 bg-gradient-to-br from-proof via-electric-blue to-proof z-10"></div>
+          {/* High-res overlay images - cycling behind each other */}
+          <div className="absolute inset-0 z-20 opacity-40 pointer-events-none mix-blend-overlay">
             <img 
-              src="/images/commsignFlyer.png"
+              src="/src/assets/images/commloanFlyers1.png"
               alt=""
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover cycle-image-1"
+            />
+            <img 
+              src="/src/assets/images/commloanFlyers2.png"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover cycle-image-2"
+            />
+            <img 
+              src="/src/assets/images/commloanFlyers3.png"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover cycle-image-3"
             />
           </div>
-
-          {/* Overlays moved above */}
+          <div className="absolute inset-0 bg-electric-blue/30 z-25"></div>
         </div>
 
-        {/* Content - Centered and Wide */}
+        {/* Content - Left-aligned and Wide */}
         <div className="w-full relative z-30 px-6 py-24">
-          <div className="mx-auto text-center">
-            <div className="fade-in">
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-                Mobile Notary & Loan Signing
-                <span className="text-gold block">Experts</span>
-              </h1>
-              <p className="text-lg md:text-2xl text-white/95 mb-12 drop-shadow-md max-w-3xl mx-auto">
-                Certified signing agents, bonded & insured. Trusted by title companies and lenders for accurate, timely closings with same-day and rush availability.
-              </p>
+          <div className="text-left max-w-4xl mx-auto fade-in">
+            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white">
+              Mortgage & Loan
+              <br />
+              <span className="text-neutral-900">Signing Experts</span>
+            </h1>
+            <p className="text-lg text-white/90 mb-10 leading-relaxed max-w-2xl font-light">
+              Certified signing agents, bonded & insured. Trusted by title companies and lenders for accurate, timely closings with same-day and rush availability.
+            </p>
 
-              {/* CTA Button */}
-              <Link to="/book" className="inline-block bg-electric-blue hover:bg-electric-blue/90 transition-all rounded-lg text-lg py-5 px-12 text-white font-semibold shadow-2xl pulse-button transform hover:scale-105">
-                <div className="flex items-center justify-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  Schedule Your Signing
-                </div>
-              </Link>
-
-              {/* Trust Badges - Hidden */}
-              <div className="hidden grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto mt-16">
-                <div className="bg-white/15 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20 shadow-lg">
-                  <div className="flex justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 3.062v6.072A3.066 3.066 0 0117.853 17H2.147A3.066 3.066 0 010 13.934V7.862a3.066 3.066 0 012.267-2.955 3.066 3.066 0 005.219-3.034 3.066 3.066 0 001.781.432zm9.733 8.773h-4.693V9.915h4.693v1.918zM6.467 9.915v1.918H1.774V9.915h4.693z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-xs md:text-sm text-white font-semibold drop-shadow-sm">NNA Certified</span>
-                </div>
-                <div className="bg-white/15 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20 shadow-lg">
-                  <div className="flex justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v2h8v-2zM2 15a4 4 0 008 0v2H2v-2z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-xs md:text-sm text-white font-semibold drop-shadow-sm">E&O Insured</span>
-                </div>
-                <div className="bg-white/15 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20 shadow-lg">
-                  <div className="flex justify-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-                    </svg>
-                  </div>
-                  <span className="text-xs md:text-sm text-white font-semibold drop-shadow-sm">99% On-time</span>
-                </div>
+            {/* CTA Button */}
+            <Link to="/book" className="inline-block bg-proof hover:bg-proof/90 transition-all rounded text-lg py-4 px-8 text-white font-semibold pulse-button">
+              <div className="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Schedule Your Signing
               </div>
-            </div>
+            </Link>
           </div>
         </div>
-
-        {/* Wave Separator removed */}
       </section>
 
       <div className="w-full bg-white">
@@ -138,7 +115,7 @@ const LoanSigningPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Professional Loan Signing Services</h2>
-            <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
+            <div className="h-1 w-20 bg-neutral-900 mx-auto mb-8"></div>
             <p className="text-xl text-neutral-600 mb-4">
               Our professional loan signing agents are certified and experienced in handling all types of loan documents.
               We provide mobile notary services for real estate transactions, refinancing, and more.
@@ -151,7 +128,7 @@ const LoanSigningPage: React.FC = () => {
           {/* Benefits Cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {benefits.map((benefit, index) => (
-              <div key={index} className="stats-card rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all">
+              <div key={index} className="stats-card rounded shadow-xl p-8 text-center hover:shadow-2xl transition-all">
                 <div className="flex justify-center mb-6">
                   <div className="bg-electric-blue rounded-full p-4 text-white">
                     {benefit.icon}
@@ -173,12 +150,12 @@ const LoanSigningPage: React.FC = () => {
             <img
               src="/images/commloanFlyers.png"
               alt="Loan signing flyers"
-              className="w-full h-64 md:h-80 object-contain rounded-2xl shadow"
+              className="w-full h-64 md:h-80 object-contain rounded shadow"
             />
           </div>
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Loan Documents We Handle</h2>
-            <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
+            <div className="h-1 w-20 bg-neutral-900 mx-auto mb-8"></div>
             <p className="text-lg text-neutral-600">
               Our notaries are experienced with all types of loan documents, ensuring accurate and compliant signings for your peace of mind.
             </p>
@@ -186,7 +163,7 @@ const LoanSigningPage: React.FC = () => {
           
           <div className="grid md:grid-cols-2 gap-12">
             {loanTypes.map((type, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300">
+              <div key={index} className="bg-white rounded shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   <div className="bg-proof/10 rounded-full p-4 mr-4">
                     {type.icon}
@@ -219,7 +196,7 @@ const LoanSigningPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Our Simple 3-Step Process</h2>
-            <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
+            <div className="h-1 w-20 bg-neutral-900 mx-auto mb-8"></div>
             <p className="text-lg text-neutral-600">
               We've streamlined the loan signing process to be as simple and stress-free as possible for our clients.
             </p>
@@ -231,7 +208,7 @@ const LoanSigningPage: React.FC = () => {
             
             {/* Step 1 */}
             <div className="relative z-10 px-6">
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
+              <div className="bg-white rounded shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
                 <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                   <span className="font-bold text-2xl">1</span>
                 </div>
@@ -247,7 +224,7 @@ const LoanSigningPage: React.FC = () => {
             
             {/* Step 2 */}
             <div className="relative z-10 px-6 mt-12 md:mt-0">
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
+              <div className="bg-white rounded shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
                 <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                   <span className="font-bold text-2xl">2</span>
                 </div>
@@ -263,7 +240,7 @@ const LoanSigningPage: React.FC = () => {
             
             {/* Step 3 */}
             <div className="relative z-10 px-6 mt-12 md:mt-0">
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
+              <div className="bg-white rounded shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
                 <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                   <span className="font-bold text-2xl">3</span>
                 </div>
@@ -302,11 +279,11 @@ const LoanSigningPage: React.FC = () => {
           
           {/* Buttons - simplified structure */}
           <div className="relative flex flex-col sm:flex-row justify-center gap-6 mb-16 mt-8">
-            <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded-lg text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative z-50">
+            <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative z-50">
               Schedule a Signing
             </Link>
             {/* TODO: Add phone contact for future development */}
-            {/* <a href="tel:+14696298932" className="bg-transparent border-2 border-white hover:bg-white/10 transition-all font-semibold rounded-lg text-lg py-5 px-10 text-white relative z-50"> */}
+            {/* <a href="tel:+14696298932" className="bg-transparent border-2 border-white hover:bg-white/10 transition-all font-semibold rounded text-lg py-5 px-10 text-white relative z-50"> */}
               {/* Call (469) 629-8932 */}
             {/* </a> */}
           </div>
@@ -314,19 +291,19 @@ const LoanSigningPage: React.FC = () => {
           {/* Stats
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gold mb-2">99%</div>
+              <div className="text-3xl md:text-4xl font-bold text-neutral-900 mb-2">99%</div>
               <div className="text-white/80">On-time Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gold mb-2">1000+</div>
+              <div className="text-3xl md:text-4xl font-bold text-neutral-900 mb-2">1000+</div>
               <div className="text-white/80">Signings Completed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gold mb-2">5★</div>
+              <div className="text-3xl md:text-4xl font-bold text-neutral-900 mb-2">5★</div>
               <div className="text-white/80">Google Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gold mb-2">24/7</div>
+              <div className="text-3xl md:text-4xl font-bold text-neutral-900 mb-2">24/7</div>
               <div className="text-white/80">Support</div>
             </div>
           </div> */}

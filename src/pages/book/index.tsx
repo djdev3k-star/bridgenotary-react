@@ -98,7 +98,7 @@ const BookAppointment: React.FC = () => {
         <button
           key={option.id}
           onClick={() => handleServiceSelection(option.id)}
-          className={`p-6 rounded-lg border-2 text-left transition-all hover:shadow-lg
+          className={`p-6 rounded border-2 text-left transition-all hover:shadow-lg
             ${selectedService === option.id 
               ? 'border-electric-blue bg-electric-blue/5' 
               : 'border-neutral-200 hover:border-electric-blue/50'}`}
@@ -134,7 +134,7 @@ const BookAppointment: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Full Name"
               placeholder="Enter your full name"
@@ -147,7 +147,7 @@ const BookAppointment: React.FC = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Email Address"
               placeholder="Enter your email address"
@@ -163,7 +163,7 @@ const BookAppointment: React.FC = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Phone Number"
               placeholder="Enter your phone number"
@@ -175,7 +175,7 @@ const BookAppointment: React.FC = () => {
               name="documentType"
               value={formData.documentType}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Document Type"
               title="Select the type of document you need notarized"
@@ -198,7 +198,7 @@ const BookAppointment: React.FC = () => {
               name="preferredDate"
               value={formData.preferredDate}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Preferred Date"
               title="Select your preferred date"
@@ -210,7 +210,7 @@ const BookAppointment: React.FC = () => {
               name="preferredTime"
               value={formData.preferredTime}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Preferred Time"
               title="Select your preferred time slot"
@@ -232,7 +232,7 @@ const BookAppointment: React.FC = () => {
               value={formData.location}
               onChange={handleInputChange}
               placeholder="Enter address for mobile signing"
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
             />
           </div>
@@ -245,7 +245,7 @@ const BookAppointment: React.FC = () => {
             value={formData.additionalNotes}
             onChange={handleInputChange}
             rows={4}
-            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+            className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
             placeholder="Any special requirements or additional information..."
           />
         </div>
@@ -254,7 +254,7 @@ const BookAppointment: React.FC = () => {
           <button
             type="button"
             onClick={() => setSelectedService(null)}
-            className="px-6 py-2 border border-neutral-300 rounded-lg hover:bg-neutral-50"
+            className="px-6 py-2 border border-neutral-300 rounded hover:bg-neutral-50"
           >
             Back
           </button>
@@ -274,7 +274,7 @@ const BookAppointment: React.FC = () => {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Schedule Your Appointment</h1>
-          <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
+          <div className="h-1 w-20 bg-neutral-900 mx-auto mb-8"></div>
           <p className="text-lg text-neutral-700">
             Choose your preferred notary service. Schedule a mobile signing at your location or 
             a remote online notarization session via secure video conference.

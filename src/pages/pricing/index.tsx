@@ -206,7 +206,14 @@ const Pricing = () => {
     <div>
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-lg shadow-sm p-8 border border-proof/10">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="h-px w-12 bg-neutral-300"></span>
+            <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">
+              Pricing
+            </span>
+            <span className="h-px w-12 bg-neutral-300"></span>
+          </div>
+          <div className="bg-white rounded shadow-sm p-8 border border-proof/10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Clear & Transparent Pricing</h1>
@@ -222,7 +229,7 @@ const Pricing = () => {
                 </div>
               </div>
               <div className="hidden md:block">
-                <div className="bg-white rounded-lg shadow-xl p-6">
+                <div className="bg-white rounded shadow-xl p-6">
                   <div className="text-sm text-proof uppercase tracking-wider font-semibold mb-2">Simple Fee Structure</div>
                   <h2 className="text-2xl font-bold text-neutral-900 mb-4">No Hidden Fees or Surprises</h2>
                   <p className="text-neutral-700 mb-4">Our pricing is straightforward and inclusive. Know exactly what you're paying for before you book.</p>
@@ -271,7 +278,7 @@ const Pricing = () => {
                       .sort((a: any, b: any) => (b.primaryFeature ? 1 : 0) - (a.primaryFeature ? 1 : 0))
                       .map((pkg: any) => (
                       <div key={pkg.type} 
-                        className={`flex flex-col md:flex-row h-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border ${pkg.primaryFeature ? 'border-electric-blue border-2' : 'border-neutral-200'}`}>
+                        className={`flex flex-col md:flex-row h-full bg-white rounded shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border ${pkg.primaryFeature ? 'border-electric-blue border-2' : 'border-neutral-200'}`}>
                         
                         {/* Card Header with Icon - Left side */}
                         <div className={`md:w-1/3 p-6 flex flex-col justify-between ${pkg.primaryFeature ? 'bg-electric-blue/5' : 'bg-white'}`}>
@@ -280,7 +287,7 @@ const Pricing = () => {
                               {pkg.icon}
                             </div>
                             {pkg.badge && (
-                              <div className="bg-electric-blue text-white text-xs font-bold py-1 px-3 rounded-full inline-block mb-3">
+                              <div className="bg-electric-blue text-white text-xs font-bold py-1 px-3 rounded inline-block mb-3">
                                 {pkg.badge}
                               </div>
                             )}
@@ -310,7 +317,7 @@ const Pricing = () => {
                           <div className="mt-auto">
                             <a 
                               href={pkg.fee === 'Contact us' ? '/contact' : '/book'} 
-                              className={`w-full py-3 px-6 rounded-lg transition-colors text-center block font-medium inline-block
+                              className={`w-full py-3 px-6 rounded transition-colors text-center block font-medium inline-block
                               ${pkg.primaryFeature 
                                 ? 'bg-electric-blue text-white hover:bg-hover-blue' 
                                 : 'bg-neutral-100 text-neutral-800 hover:bg-neutral-200'}`}
@@ -352,7 +359,7 @@ const Pricing = () => {
                     <a 
                       key={index}
                       href={serviceLinks[service.name] || '/loan-signing'}
-                      className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                      className="bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
@@ -387,9 +394,9 @@ const Pricing = () => {
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 <a 
                   href="/services/mobile"
-                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                  className="bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
                 >
-                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
                     <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                     </svg>
@@ -409,9 +416,9 @@ const Pricing = () => {
 
                 <a 
                   href="/services/estate-trust"
-                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                  className="bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
                 >
-                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
                     <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
@@ -431,9 +438,9 @@ const Pricing = () => {
 
                 <a 
                   href="/services/power-of-attorney"
-                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                  className="bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
                 >
-                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
                     <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                     </svg>
@@ -453,9 +460,9 @@ const Pricing = () => {
 
                 <a 
                   href="/ron"
-                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                  className="bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
                 >
-                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
                     <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
@@ -475,9 +482,9 @@ const Pricing = () => {
 
                 <a 
                   href="/apostille"
-                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                  className="bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
                 >
-                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
                     <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -497,9 +504,9 @@ const Pricing = () => {
 
                 <a 
                   href="/services/witness"
-                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
+                  className="bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-neutral-200 hover:border-electric-blue group"
                 >
-                  <div className="bg-electric-blue/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded flex items-center justify-center mb-4 group-hover:bg-electric-blue/20 transition-colors">
                     <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
@@ -530,7 +537,7 @@ const Pricing = () => {
                 {addOnServices.map((service, index) => (
                   <div 
                     key={index}
-                    className="bg-neutral-50 rounded-lg p-5 border border-neutral-200 hover:border-electric-blue hover:bg-white transition-all duration-200"
+                    className="bg-neutral-50 rounded p-5 border border-neutral-200 hover:border-electric-blue hover:bg-white transition-all duration-200"
                   >
                     <div className="flex items-start justify-between mb-2">
                       <h4 className="font-semibold text-neutral-900 text-base">{service.name}</h4>
@@ -547,7 +554,7 @@ const Pricing = () => {
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-proof mb-4">Frequently Asked Questions</h2>
               </div>
-              <div className="bg-white rounded-xl shadow-lg p-8">
+              <div className="bg-white rounded shadow-lg p-8">
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-semibold text-neutral-900 mb-2">Do your fees include travel?</h3>

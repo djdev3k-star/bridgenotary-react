@@ -1,6 +1,13 @@
 const About = () => (
   <div className="section">
     <div className="max-w-4xl mx-auto text-center">
+      <div className="flex items-center justify-center gap-3 mb-6">
+        <span className="h-px w-12 bg-neutral-300"></span>
+        <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">
+          About Us
+        </span>
+        <span className="h-px w-12 bg-neutral-300"></span>
+      </div>
       <h1 className="text-4xl md:text-5xl font-extrabold text-proof mb-6">Your Partner in Professional Notary Services</h1>
       <p className="text-xl text-neutral-700 mb-12">
         Bridge Notary is dedicated to providing reliable, accurate, and professional notarial services to title companies, lenders, and real estate professionals. Our mission is to deliver seamless closings with confidence and integrity.

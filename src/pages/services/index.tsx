@@ -25,7 +25,7 @@ const Services = () => (
     {/* Hero section - match Pricing style with white card */}
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-white rounded-lg shadow-sm p-8 border border-proof/10">
+        <div className="bg-white rounded shadow-sm p-8 border border-proof/10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Our Services</h1>
@@ -38,7 +38,7 @@ const Services = () => (
               </div>
             </div>
             <div className="hidden md:block">
-              <div className="bg-white rounded-lg shadow-xl p-6">
+              <div className="bg-white rounded shadow-xl p-6">
                 <div className="text-sm text-proof uppercase tracking-wider font-semibold mb-2">Trusted Notary Solutions</div>
                 <h2 className="text-2xl font-bold text-neutral-900 mb-4">Reliable, Professional, On-Time</h2>
                 <p className="text-neutral-700 mb-4">We bring expertise and clear communication to every signing. Count on punctuality and meticulous attention to detail.</p>
@@ -76,57 +76,57 @@ const Services = () => (
           <h2 className="text-3xl md:text-4xl font-bold text-proof mb-10">Featured Services</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Stack of Loan Documents */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-neutral-200">
+            <div className="relative rounded overflow-hidden shadow-xl border border-neutral-200">
               <img src="/images/stack-loan-documents.jpg" alt="Stack of Loan Documents" className="w-full h-64 md:h-80 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Loan Signing Packages</h3>
                 <p className="text-white/90 mb-4">Refinance, Purchase, Reverse Mortgage, HELOC — expertly handled and on-time.</p>
                 <div className="flex gap-3">
-                  <Link to="/loan-signing" className="bg-electric-blue text-white px-5 py-3 rounded-lg font-semibold hover:bg-hover-blue">Explore Loan Signing</Link>
-                  <Link to="/book" className="bg-white/90 text-proof px-5 py-3 rounded-lg font-semibold hover:bg-white">Book Now</Link>
+                  <Link to="/loan-signing" className="bg-electric-blue text-white px-5 py-3 rounded font-semibold hover:bg-hover-blue">Explore Loan Signing</Link>
+                  <Link to="/book" className="bg-white/90 text-proof px-5 py-3 rounded font-semibold hover:bg-white">Book Now</Link>
                 </div>
               </div>
             </div>
 
             {/* Overseas Property / Power of Attorney */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-neutral-200">
+            <div className="relative rounded overflow-hidden shadow-xl border border-neutral-200">
               <img src="/images/overseas-property.png" alt="Overseas Property Authorization" className="w-full h-64 md:h-80 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">International Power of Attorney</h3>
                 <p className="text-white/90 mb-4">Notarization + Apostille sequencing for overseas property transactions.</p>
                 <div className="flex gap-3">
-                  <Link to="/apostille" className="bg-electric-blue text-white px-5 py-3 rounded-lg font-semibold hover:bg-hover-blue">Apostille Services</Link>
-                  <Link to="/contact" className="bg-white/90 text-proof px-5 py-3 rounded-lg font-semibold hover:bg-white">Ask a Specialist</Link>
+                  <Link to="/apostille" className="bg-electric-blue text-white px-5 py-3 rounded font-semibold hover:bg-hover-blue">Apostille Services</Link>
+                  <Link to="/contact" className="bg-white/90 text-proof px-5 py-3 rounded font-semibold hover:bg-white">Ask a Specialist</Link>
                 </div>
               </div>
             </div>
 
             {/* General Notary With Stamp */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-neutral-200">
+            <div className="relative rounded overflow-hidden shadow-xl border border-neutral-200">
               <img src="/images/notarypublic-generalimagewithstamp.jpg" alt="General Notary with Stamp" className="w-full h-64 md:h-80 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">General Notary Work</h3>
                 <p className="text-white/90 mb-4">Affidavits, acknowledgements, jurats, and more — fast and convenient.</p>
                 <div className="flex gap-3">
-                  <Link to="/services" className="bg-electric-blue text-white px-5 py-3 rounded-lg font-semibold hover:bg-hover-blue">View Notary Services</Link>
-                  <Link to="/book" className="bg-white/90 text-proof px-5 py-3 rounded-lg font-semibold hover:bg-white">Schedule</Link>
+                  <Link to="/services" className="bg-electric-blue text-white px-5 py-3 rounded font-semibold hover:bg-hover-blue">View Notary Services</Link>
+                  <Link to="/book" className="bg-white/90 text-proof px-5 py-3 rounded font-semibold hover:bg-white">Schedule</Link>
                 </div>
               </div>
             </div>
 
             {/* RON Featured: Upload Documents */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-neutral-200">
+            <div className="relative rounded overflow-hidden shadow-xl border border-neutral-200">
               <img src="/images/upload-documents.png" alt="Upload Documents for RON" className="w-full h-64 md:h-80 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Remote Online Notarization</h3>
                 <p className="text-white/90 mb-4">Upload documents, verify identity, and complete securely online.</p>
                 <div className="flex gap-3">
-                  <Link to="/ron" className="bg-electric-blue text-white px-5 py-3 rounded-lg font-semibold hover:bg-hover-blue">Remote Online Notary</Link>
-                  <Link to="/contact" className="bg-white/90 text-proof px-5 py-3 rounded-lg font-semibold hover:bg-white">Get a Quote</Link>
+                  <Link to="/ron" className="bg-electric-blue text-white px-5 py-3 rounded font-semibold hover:bg-hover-blue">Remote Online Notary</Link>
+                  <Link to="/contact" className="bg-white/90 text-proof px-5 py-3 rounded font-semibold hover:bg-white">Get a Quote</Link>
                 </div>
               </div>
             </div>

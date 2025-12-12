@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from '@/components/ui/Button';
 import DropdownMenu from '@/components/ui/DropdownMenu';
 import { NavigationMenuItems, NavigationMenuGroup, NavigationProps } from './Navigation.types';
 
 const Navigation: React.FC<NavigationProps> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/login';
+  const notarizeButtonClass = isLoginPage ? 'bg-[#10A981] hover:bg-[#0d8c6e]' : '';
 
   const solutionsMenuGroups: NavigationMenuGroup[] = [
     {
@@ -90,26 +93,57 @@ const Navigation: React.FC<NavigationProps> = () => {
           )
         },
         {
-          label: 'Destination Wedding',
-          path: '/apostille',
-          description: 'Marriage and identity docs for ceremonies abroad.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21s-6-4.35-6-10a6 6 0 1112 0c0 5.65-6 10-6 10z" />
-            </svg>
-          )
-        },
-        {
-          label: 'Study & Work Abroad',
-          path: '/apostille',
-          description: 'Diplomas, transcripts, and employment documents.',
+          label: 'Study Abroad',
+          path: '/study-abroad',
+          description: 'Diplomas, transcripts, and educational documents.',
           icon: (
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14v7" />
             </svg>
           )
-        }
+        },
+        /* {
+          label: 'Dual Citizenship',
+          path: '/dual-citizenship',
+          description: 'Vital records and background checks for dual passports.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 20a6 6 0 1112 0H6z" />
+            </svg>
+          )
+        }, */
+        /* {
+          label: 'International Adoption',
+          path: '/international-adoption',
+          description: 'Home studies, dossiers, and legal documents.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+          )
+        }, */
+        {
+          label: 'Overseas Property',
+          path: '/overseas-property',
+          description: 'Real estate deeds, contracts, and legal documents.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-3m0 0l7-4 7 4M5 9v10a1 1 0 001 1h12a1 1 0 001-1V9m-9 4l4 2m-4-2l-4-2" />
+            </svg>
+          )
+        },
+        {
+          label: 'Destination Wedding',
+          path: '/destination-wedding',
+          description: 'Marriage licenses, birth certificates, and legal documents.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21s-6-4.35-6-10a6 6 0 1112 0c0 5.65-6 10-6 10z" />
+            </svg>
+          )
+        },
       ]
     },
     {
@@ -179,7 +213,7 @@ const Navigation: React.FC<NavigationProps> = () => {
         <nav className="hidden md:flex gap-8 items-center">
           <DropdownMenu
             trigger={
-              <span className="text-neutral-700 hover:text-proof transition text-base font-medium flex items-center gap-1">
+              <span className="text-neutral-900 hover:text-proof transition text-base font-medium flex items-center gap-1">
                 Services
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -188,15 +222,38 @@ const Navigation: React.FC<NavigationProps> = () => {
             }
             groups={solutionsMenuGroups}
           />
-          <Link to="/pricing" className="text-neutral-700 hover:text-proof transition text-base font-medium">Pricing</Link>
-          <Link to="/resources" className="text-neutral-700 hover:text-proof transition text-base font-medium">Resources</Link>
-          <Link to="/about" className="text-neutral-700 hover:text-proof transition text-base font-medium">About</Link>
+          <Link to="/pricing" className="text-neutral-900 hover:text-proof transition text-base font-medium">Pricing</Link>
+          <Link to="/resources" className="text-neutral-900 hover:text-proof transition text-base font-medium">Resources</Link>
+          <Link to="/about" className="text-neutral-900 hover:text-proof transition text-base font-medium">About</Link>
         </nav>
-        <div className="hidden md:flex items-center gap-4">
-          {/* TODO: Add phone contact for future development */}
+        <div className="hidden md:flex items-center gap-6">
+          {/* Trust Badges */}
+          <div className="flex items-center gap-3 px-3 py-1">
+            <div className="flex items-center gap-1 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <span className="text-neutral-700 font-medium">Trusted</span>
+            </div>
+            <div className="flex items-center gap-1 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-neutral-700 font-medium">Certified</span>
+            </div>
+            <div className="flex items-center gap-1 text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-neutral-700 font-medium">24/7</span>
+            </div>
+          </div>
+          <Link to="/login" className="text-neutral-900 hover:text-proof transition font-medium">
+            Login
+          </Link>
           <Link to="/book">
-            <Button variant="primary" className="pulse-button">
-              Book a Signing
+            <Button variant="primary" className={`pulse-button ${notarizeButtonClass}`}>
+              Notarize
             </Button>
           </Link>
         </div>
@@ -219,17 +276,18 @@ const Navigation: React.FC<NavigationProps> = () => {
               <Link 
                 key={item.path}
                 to={item.path} 
-                className="text-neutral-700 hover:text-proof transition text-base font-medium"
+                className="text-neutral-900 hover:text-proof transition text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <Link to="/pricing" className="text-neutral-700 hover:text-proof transition text-base font-medium">Pricing</Link>
-            <Link to="/contact" className="text-neutral-700 hover:text-proof transition text-base font-medium">Contact</Link>
+            <Link to="/pricing" className="text-neutral-900 hover:text-proof transition text-base font-medium">Pricing</Link>
+            <Link to="/contact" className="text-neutral-900 hover:text-proof transition text-base font-medium">Contact</Link>
+            <Link to="/login" className="text-neutral-900 hover:text-proof transition text-base font-medium">Login</Link>
             {/* TODO: Add phone contact for future development */}
             <Link to="/book">
-              <Button variant="primary" className="w-full pulse-button">
+              <Button variant="primary" className={`w-full pulse-button ${notarizeButtonClass}`}>
                 Notarize
               </Button>
             </Link>

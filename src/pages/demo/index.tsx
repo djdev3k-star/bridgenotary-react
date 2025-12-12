@@ -38,7 +38,7 @@ const DemoPage: React.FC = () => {
         </div>
 
         {/* Demo Content */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <div className="bg-white rounded shadow-lg p-8 mb-8">
           {isLoading ? (
             <div className="h-64 flex items-center justify-center">
               <LoadingSpinner size="large" />
@@ -52,7 +52,7 @@ const DemoPage: React.FC = () => {
                     Experience how easy it is to upload and prepare your documents for notarization.
                     Our platform supports various file formats including PDF, Word, and images.
                   </p>
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                  <div className="border-2 border-dashed border-gray-300 rounded p-8 text-center">
                     <p className="text-neutral-600">Drag and drop your documents here</p>
                     <p className="text-sm text-neutral-500 mt-2">or</p>
                     <button className="mt-2 px-4 py-2 bg-proof text-white rounded-md">
@@ -69,8 +69,8 @@ const DemoPage: React.FC = () => {
                     See how our secure identity verification process works. We use advanced
                     technology to verify your government-issued ID and ensure your identity.
                   </p>
-                  <div className="border rounded-lg p-8">
-                    <div className="aspect-video bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
+                  <div className="border rounded p-8">
+                    <div className="aspect-video bg-gray-100 rounded mb-4 flex items-center justify-center">
                       [Camera Preview Placeholder]
                     </div>
                     <p className="text-center text-neutral-600">
@@ -88,10 +88,10 @@ const DemoPage: React.FC = () => {
                     the electronic signing process and receive your notarized documents instantly.
                   </p>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div className="border rounded-lg p-4 aspect-video bg-gray-100 flex items-center justify-center">
+                    <div className="border rounded p-4 aspect-video bg-gray-100 flex items-center justify-center">
                       [Notary Video Feed]
                     </div>
-                    <div className="border rounded-lg p-4 aspect-video bg-gray-100 flex items-center justify-center">
+                    <div className="border rounded p-4 aspect-video bg-gray-100 flex items-center justify-center">
                       [Your Video Feed]
                     </div>
                   </div>

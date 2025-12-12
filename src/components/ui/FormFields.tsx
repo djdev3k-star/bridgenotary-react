@@ -30,7 +30,7 @@ export function InputField({
         id={name}
         placeholder={placeholder}
         required={required}
-        className={`w-full p-3 border rounded-lg transition-colors
+        className={`w-full p-3 border rounded transition-colors
           ${error ? 'border-red-500' : 'border-gray-200 focus:border-primary'}
           focus:outline-none focus:ring-2 focus:ring-primary/20`}
       />
@@ -65,7 +65,7 @@ export function SelectField({
         name={name}
         id={name}
         required={required}
-        className={`w-full p-3 border rounded-lg transition-colors
+        className={`w-full p-3 border rounded transition-colors
           ${error ? 'border-red-500' : 'border-gray-200 focus:border-primary'}
           focus:outline-none focus:ring-2 focus:ring-primary/20`}
       >
@@ -111,7 +111,7 @@ export function TextAreaField({
         rows={rows}
         placeholder={placeholder}
         required={required}
-        className={`w-full p-3 border rounded-lg transition-colors
+        className={`w-full p-3 border rounded transition-colors
           ${error ? 'border-red-500' : 'border-gray-200 focus:border-primary'}
           focus:outline-none focus:ring-2 focus:ring-primary/20`}
       />

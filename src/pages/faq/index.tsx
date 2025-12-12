@@ -205,7 +205,7 @@ const FAQ = () => (
           <div key={catIdx}>
             {/* Category Header */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="bg-electric-blue text-white p-3 rounded-lg">
+              <div className="bg-electric-blue text-white p-3 rounded">
                 {category.icon}
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-proof">{category.category}</h2>

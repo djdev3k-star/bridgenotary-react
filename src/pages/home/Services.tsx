@@ -46,7 +46,7 @@ export default function Services() {
       <div className="max-w-[90rem] mx-auto px-6 relative z-10">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Popular Services</h2>
-          <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
+          <div className="h-1 w-20 bg-neutral-900 mx-auto mb-8"></div>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
             Choose from our most requested notary services, all available at your preferred location with professional, experienced signing agents
           </p>
@@ -66,9 +66,9 @@ export default function Services() {
                 </div>
               )}
               
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 h-full flex flex-col transform group-hover:-translate-y-2">
+              <div className="bg-white rounded shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 h-full flex flex-col transform group-hover:-translate-y-2">
                 <div className="mb-6">
-                  <div className={`${service.color} text-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg mb-4`}>
+                  <div className={`${service.color} text-white w-16 h-16 rounded flex items-center justify-center shadow-lg mb-4`}>
                     <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
@@ -93,7 +93,7 @@ export default function Services() {
 
                 <a 
                   href="/book" 
-                  className={`w-full py-3 px-4 rounded-lg font-semibold text-center mt-auto 
+                  className={`w-full py-3 px-4 rounded font-semibold text-center mt-auto 
                     ${service.popular 
                       ? 'bg-electric-blue text-white hover:shadow-lg pulse-button' 
                       : 'bg-white border-2 border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-white'
@@ -107,7 +107,7 @@ export default function Services() {
         </div>
 
         <div className="text-center mt-16 fade-in-delay">
-          <a href="/services" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-white shadow-md border border-neutral-200 text-proof hover:shadow-lg transition-all hover:bg-proof/5">
+          <a href="/services" className="inline-flex items-center gap-2 px-8 py-3 rounded bg-white shadow-md border border-neutral-200 text-proof hover:shadow-lg transition-all hover:bg-proof/5">
             View All Services
             <svg className="w-5 h-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

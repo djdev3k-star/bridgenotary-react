@@ -84,10 +84,10 @@ const Home1Page: React.FC = () => {
               Fast, compliant notarization and loan signings. Remote or mobile, same-day availability, and tracked documents for total peace of mind.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/book" className="bg-white text-proof font-semibold rounded-lg px-6 py-4 text-base shadow-lg hover:shadow-xl transition-all">
+              <Link to="/book" className="bg-white text-proof font-semibold rounded px-6 py-4 text-base shadow-lg hover:shadow-xl transition-all">
                 Book Your Appointment
               </Link>
-              <Link to="/contact" className="border border-white/70 text-white font-semibold rounded-lg px-6 py-4 text-base hover:bg-white/10 transition-all">
+              <Link to="/contact" className="border border-white/70 text-white font-semibold rounded px-6 py-4 text-base hover:bg-white/10 transition-all">
                 Talk to a Notary
               </Link>
             </div>
@@ -115,7 +115,7 @@ const Home1Page: React.FC = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service) => (
-              <div key={service.title} className="rounded-2xl border border-neutral-200 p-6 shadow-sm hover:shadow-md transition-all">
+              <div key={service.title} className="rounded border border-neutral-200 p-6 shadow-sm hover:shadow-md transition-all">
                 <h3 className="text-xl font-bold text-proof mb-2">{service.title}</h3>
                 <p className="text-sm md:text-base text-neutral-600 mb-4 leading-relaxed">{service.desc}</p>
                 <Link to={service.link} className="text-electric-blue font-semibold text-sm md:text-base inline-flex items-center gap-2">
@@ -141,7 +141,7 @@ const Home1Page: React.FC = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step) => (
-              <div key={step.title} className="bg-white rounded-2xl border border-neutral-200 p-6 shadow-sm">
+              <div key={step.title} className="bg-white rounded border border-neutral-200 p-6 shadow-sm">
                 <div className="w-11 h-11 rounded-full bg-electric-blue/10 flex items-center justify-center mb-4">{step.icon}</div>
                 <h3 className="text-lg font-bold text-proof mb-2">{step.title}</h3>
                 <p className="text-sm md:text-base text-neutral-600 leading-relaxed">{step.desc}</p>
@@ -163,10 +163,10 @@ const Home1Page: React.FC = () => {
             Professional, reliable, and secure. Book now and keep your documents moving.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book" className="bg-white text-proof font-semibold px-6 py-4 rounded-lg text-base shadow-lg hover:shadow-xl transition-all">
+            <Link to="/book" className="bg-white text-proof font-semibold px-6 py-4 rounded text-base shadow-lg hover:shadow-xl transition-all">
               Book Now
             </Link>
-            <Link to="/pricing" className="border border-white text-white font-semibold px-6 py-4 rounded-lg text-base hover:bg-white/10 transition-all">
+            <Link to="/pricing" className="border border-white text-white font-semibold px-6 py-4 rounded text-base hover:bg-white/10 transition-all">
               View Pricing
             </Link>
           </div>

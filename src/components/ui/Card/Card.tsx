@@ -14,7 +14,7 @@ export default function Card({
   };
 
   const classes = [
-    'bg-white rounded-xl',
+    'bg-white rounded',
     shadowClasses[shadow],
     hover ? 'transition-all duration-300 hover:shadow-lg hover:-translate-y-1' : '',
     className,

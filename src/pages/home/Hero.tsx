@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
           poster="/assets/images/notarypublic-generalimagewithstamp.jpg"
           onError={() => setVideoError(true)}
         >
-          <source src="https://cdn.jsdelivr.net/gh/djdev3k-star/bridgenotary-react@c6a06b2/src/assets/images/loan-signin-bg.mp4" type="video/mp4" />
+          <source src="/assets/images/loan-signin-bg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}

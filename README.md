@@ -1,46 +1,50 @@
-# Bridge Notary Coming Soon Page
+# Bridge Notary – React App
 
-🖋️ **Bridge Notary – Mobile Signing Services**
+Modern React 18 + TypeScript site for Bridge Notary built with Vite and TailwindCSS. Includes routed marketing pages (apostille, RON, destination wedding, overseas property, study abroad, dual citizenship, international adoption), hero image cycling, mega menu, and consistent layout system.
 
-This is a simple, lightweight **Coming Soon** page for Bridge Notary. The page is designed for fast deployment and a professional placeholder while the full site is in development.
+## Quick Start
 
----
-
-## 🚀 Deployment Options
-
-You can host this page almost anywhere for free:
-
-- **GitHub Pages** → Push this repo, then enable Pages in repo settings.
-- **Cloudflare Pages** → Connect this repo or drag-and-drop upload.
-- **Netlify / Vercel** → One-click deploy from repo.
-
----
-
-## 📂 Project Structure
-
-```
-bridge-notary-comingsoon/
-├── index.html   # Main Coming Soon page
-├── README.md    # Project info
-├── .gitignore   # Node/React ignore file
+```bash
+npm install
+npm run dev    # starts Vite dev server on http://localhost:5173
+npm run build  # production build
+npm run test   # unit/UI tests (Jest + RTL)
 ```
 
----
+## Stack
+- React 18 + TypeScript
+- Vite build/dev server
+- TailwindCSS for styling (see src/styles/index.css)
+- React Router v7 with lazy-loaded pages
 
-## 🛠️ Customization
-- Update `index.html` with your logo, brand colors, or text.
-- Replace the background or typography for a unique look.
-- Add analytics or signup form (optional).
+## Key Conventions
+- Path alias: use `@/` for imports from `src/`
+- Layouts: `RouteLayout` for routed pages with `<Outlet/>`; `Layout` for standalone pages
+- Components organized under `src/components/{layout,common,ui}`
+- Feature areas under `src/features/` (apostille, ron)
+- Pages live in `src/pages/` with `index.tsx` per route
 
----
+## Notable UX Features
+- Hero backgrounds with cycling imagery (RON, loan-signing) and gradient overlays
+- Mega menu with apostille subpages (quiz, study abroad, overseas property, destination wedding)
+- Consistent breadcrumb headers and sharp card grids
+- Session prep and process sections with checklist cards
 
-## ✅ Next Steps
-1. Connect your domain via **Cloudflare DNS**.
-2. Add hosting (GitHub Pages, Cloudflare Pages, etc.).
-3. Point DNS records (A/CNAME) to hosting provider.
+## Project Structure (partial)
 
-Your placeholder site will then be live at your domain.
+```
+src/
+	App.tsx            # routes + lazy imports
+	components/        # layout/common/ui atoms & molecules
+	features/          # apostille, ron feature modules
+	pages/             # route pages (apostille, ron, services, etc.)
+	styles/index.css   # Tailwind layer customizations, animations
+```
 
----
+## Deploy
+- Vite static build → `npm run build` outputs to `dist/`
+- Host on Netlify, Vercel, Cloudflare Pages, or any static host
 
-© 2025 Bridge Notary – Professional Mobile Signing Services
+## Testing
+- Jest + React Testing Library
+- `npm run test` to execute suite

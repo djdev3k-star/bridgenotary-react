@@ -110,32 +110,27 @@ const LoanSigningPage: React.FC = () => {
       </section>
 
       <div className="w-full bg-white">
-      {/* Services Overview Section */}
-      <section className="py-20 lg:py-28 mb-16">
+      {/* Preparation Cards Section */}
+      <section className="section bg-neutral-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Professional Loan Signing Services</h2>
-            <div className="h-1 w-20 bg-neutral-900 mx-auto mb-8"></div>
-            <p className="text-xl text-neutral-600 mb-4">
-              Our professional loan signing agents are certified and experienced in handling all types of loan documents.
-              We provide mobile notary services for real estate transactions, refinancing, and more.
-            </p>
-            <p className="text-xl text-neutral-600 mb-12">
-              We focus on accuracy, clear communication, and fast turnarounds — so you can close on time.
+          <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
+            <span className="text-electric-blue font-semibold text-sm uppercase tracking-wide">Before Your Signing</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-proof mt-4 mb-6">What You Need to Know</h2>
+            <p className="text-xl text-neutral-600">
+              Our certified signing agents handle all types of loan documents with precision and care. Here's how we ensure a smooth closing.
             </p>
           </div>
 
-          {/* Benefits Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="stats-card rounded shadow-xl p-8 text-center hover:shadow-2xl transition-all">
-                <div className="flex justify-center mb-6">
-                  <div className="bg-electric-blue rounded-full p-4 text-white">
+              <div key={index} className="card group hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="bg-electric-blue rounded-lg p-3 text-white group-hover:scale-110 transition-transform">
                     {benefit.icon}
                   </div>
+                  <h3 className="text-xl font-bold text-proof mt-2">{benefit.title}</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-proof mb-4">{benefit.title}</h3>
-                <p className="text-neutral-600">{benefit.description}</p>
+                <p className="text-neutral-600 leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -143,114 +138,86 @@ const LoanSigningPage: React.FC = () => {
       </section>
 
       {/* Loan Types Section */}
-      <section className="bg-neutral-50 py-24 px-6 mb-16">
-        <div className="max-w-7xl mx-auto">
-          {/* Flyers image above the loan documents section */}
-          <div className="mb-12">
-            <img
-              src="/images/commloanFlyers.png"
-              alt="Loan signing flyers"
-              className="w-full h-64 md:h-80 object-contain rounded shadow"
-            />
-          </div>
+      <section className="section bg-white">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Loan Documents We Handle</h2>
-            <div className="h-1 w-20 bg-neutral-900 mx-auto mb-8"></div>
-            <p className="text-lg text-neutral-600">
-              Our notaries are experienced with all types of loan documents, ensuring accurate and compliant signings for your peace of mind.
+            <span className="text-electric-blue font-semibold text-sm uppercase tracking-wide">Document Types</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-proof mt-4 mb-6">Loan Documents We Handle</h2>
+            <p className="text-xl text-neutral-600">
+              From residential purchases to complex commercial loans, our certified agents are experienced with all document types.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8">
             {loanTypes.map((type, index) => (
-              <div key={index} className="bg-white rounded shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300">
-                <div className="flex items-center mb-6">
-                  <div className="bg-proof/10 rounded-full p-4 mr-4">
+              <div key={index} className="card group hover:shadow-2xl transition-all duration-300 hover:border-electric-blue">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="bg-gradient-to-br from-electric-blue to-proof rounded-xl p-4 text-white group-hover:scale-110 transition-transform">
                     {type.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-proof">{type.title}</h3>
                 </div>
                 
-                <div className="pl-4 border-l-4 border-electric-blue">
-                  <ul className="space-y-4">
-                    {type.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-4">
-                        <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-1">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <span className="text-lg text-neutral-700 font-medium">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="space-y-4">
+                  {type.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <svg className="w-6 h-6 text-electric-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-lg text-neutral-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Process Section */}
-      <section className="py-24 px-6 bg-white relative mb-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Our Simple 3-Step Process</h2>
-            <div className="h-1 w-20 bg-neutral-900 mx-auto mb-8"></div>
-            <p className="text-lg text-neutral-600">
-              We've streamlined the loan signing process to be as simple and stress-free as possible for our clients.
+      {/* Process Section */}
+      <section className="section bg-gradient-to-br from-neutral-50 to-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-20 fade-in">
+            <span className="text-electric-blue font-semibold text-sm uppercase tracking-wide">Simple Process</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-proof mt-4 mb-6">How It Works</h2>
+            <p className="text-xl text-neutral-600">
+              Three simple steps to a successful loan signing — from scheduling to completion.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-0 mb-16 relative">
+          <div className="relative">
             {/* Connection line */}
-            <div className="hidden md:block absolute top-1/3 left-0 right-0 h-1 bg-electric-blue z-0"></div>
+            <div className="hidden lg:block absolute top-20 left-1/4 right-1/4 h-1 bg-gradient-to-r from-electric-blue via-proof to-electric-blue" />
             
-            {/* Step 1 */}
-            <div className="relative z-10 px-6">
-              <div className="bg-white rounded shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
-                <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
-                  <span className="font-bold text-2xl">1</span>
+            <div className="grid md:grid-cols-3 gap-12">
+              <div className="relative text-center group">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-electric-blue to-proof text-white rounded-2xl mb-6 text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform">
+                  1
                 </div>
                 <h3 className="text-2xl font-bold text-proof mb-4">Schedule</h3>
-                <p className="text-neutral-600 mb-6">Book your appointment online or by phone at your preferred time and location.</p>
-                <div className="mt-auto">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
+                <p className="text-neutral-600 leading-relaxed">
+                  Book online or call us. Choose your preferred time and location — we come to you.
+                </p>
               </div>
-            </div>
-            
-            {/* Step 2 */}
-            <div className="relative z-10 px-6 mt-12 md:mt-0">
-              <div className="bg-white rounded shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
-                <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
-                  <span className="font-bold text-2xl">2</span>
+              
+              <div className="relative text-center group">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-proof to-electric-blue text-white rounded-2xl mb-6 text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform">
+                  2
                 </div>
-                <h3 className="text-2xl font-bold text-proof mb-4">Meet</h3>
-                <p className="text-neutral-600 mb-6">Our notary arrives on time with all necessary supplies to guide you through signing.</p>
-                <div className="mt-auto">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
+                <h3 className="text-2xl font-bold text-proof mb-4">Sign</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  Our certified agent arrives prepared, reviews documents, and guides you through each signature.
+                </p>
               </div>
-            </div>
-            
-            {/* Step 3 */}
-            <div className="relative z-10 px-6 mt-12 md:mt-0">
-              <div className="bg-white rounded shadow-xl p-8 border border-neutral-100 hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col">
-                <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
-                  <span className="font-bold text-2xl">3</span>
+              
+              <div className="relative text-center group">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-electric-blue to-proof text-white rounded-2xl mb-6 text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform">
+                  3
                 </div>
-                <h3 className="text-2xl font-bold text-proof mb-4">Complete</h3>
-                <p className="text-neutral-600 mb-6">Documents are properly executed, notarized, and delivered as required.</p>
-                <div className="mt-auto">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
+                <h3 className="text-2xl font-bold text-proof mb-4">Close</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  Documents are notarized, scanned, and returned same-day. Your closing is complete.
+                </p>
               </div>
             </div>
           </div>
@@ -258,55 +225,29 @@ const LoanSigningPage: React.FC = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative bg-electric-blue py-24 px-6 overflow-visible mt-16">
-        {/* Background image with overlay */}
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src="/src/assets/images/stack-loan-documents.jpg" 
-            alt="" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-electric-blue/70"></div>
+      <section className="relative bg-gradient-to-br from-proof via-electric-blue to-proof py-32">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(255,215,0,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,70,250,0.15),transparent_50%)]" />
         
-        {/* Content */}
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Ready to Schedule Your Signing?</h2>
-          <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
-            We offer flexible scheduling and can meet at your preferred location. 
-            Trusted by title companies and lenders for punctual, accurate signings.
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Schedule Your Signing?
+          </h2>
+          <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Trusted by title companies and lenders nationwide. Same-day availability with certified, professional signing agents.
           </p>
           
-          {/* Buttons - simplified structure */}
-          <div className="relative flex flex-col sm:flex-row justify-center gap-6 mb-16 mt-8">
-            <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative z-50">
-              Schedule a Signing
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <Link
+              to="/book"
+              className="inline-flex items-center justify-center gap-2 bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded-lg text-lg px-10 py-5 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              Schedule Your Signing
             </Link>
-            {/* TODO: Add phone contact for future development */}
-            {/* <a href="tel:+14696298932" className="bg-transparent border-2 border-white hover:bg-white/10 transition-all font-semibold rounded text-lg py-5 px-10 text-white relative z-50"> */}
-              {/* Call (469) 629-8932 */}
-            {/* </a> */}
           </div>
-          
-          {/* Stats
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-neutral-900 mb-2">99%</div>
-              <div className="text-white/80">On-time Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-neutral-900 mb-2">1000+</div>
-              <div className="text-white/80">Signings Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-neutral-900 mb-2">5★</div>
-              <div className="text-white/80">Google Rating</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-neutral-900 mb-2">24/7</div>
-              <div className="text-white/80">Support</div>
-            </div>
-          </div> */}
         </div>
       </section>
       </div>

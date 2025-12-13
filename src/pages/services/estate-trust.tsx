@@ -67,7 +67,7 @@ const EstateTrustPage = () => {
       sections={sections}
       highlights={highlights}
       ctaText="Schedule Estate Notarization"
-      ctaLink="/book"
+      ctaLink="/book?service=estate-trust"
     />
   );
 };

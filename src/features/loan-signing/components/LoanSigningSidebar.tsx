@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 interface ServiceLink {
   to: string;
@@ -10,16 +10,18 @@ interface LoanSigningSidebarProps {
   currentService?: string;
 }
 
-const LoanSigningSidebar: React.FC<LoanSigningSidebarProps> = ({ currentService }) => {
+const LoanSigningSidebar: React.FC<LoanSigningSidebarProps> = () => {
+  const location = useLocation();
+  
   const loanSigningServices: ServiceLink[] = [
     { to: '/loan-signing/purchase', label: 'Purchase Signings' },
     { to: '/loan-signing/seller', label: 'Seller Signings' },
-    { to: '/loan-signing/refinance', label: 'Refinances' },
+    { to: '/loan-signing/refinance', label: 'Refinance Signings' },
     { to: '/loan-signing/reverse', label: 'Reverse Mortgages' },
-    { to: '/loan-signing/heloc', label: 'HELOC & Equity' },
+    { to: '/loan-signing/heloc', label: 'HELOC & Home Equity' },
     { to: '/loan-signing/commercial', label: 'Commercial Closings' },
     { to: '/loan-signing/modification', label: 'Loan Modifications' },
-    { to: '/loan-signing/property-tax', label: 'Property Tax Relief' }
+    { to: '/loan-signing/property-tax', label: 'Property Tax Loans' }
   ];
 
   return (
@@ -33,7 +35,7 @@ const LoanSigningSidebar: React.FC<LoanSigningSidebarProps> = ({ currentService 
               key={service.to}
               to={service.to}
               className={`block px-4 py-3 transition-colors ${
-                currentService === service.label
+                location.pathname === service.to
                   ? 'bg-electric-blue/10 text-proof font-semibold border-l-4 border-electric-blue'
                   : 'hover:bg-neutral-50 text-neutral-700'
               }`}

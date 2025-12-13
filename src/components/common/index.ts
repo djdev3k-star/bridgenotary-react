@@ -4,6 +4,7 @@ import { CheckIcon } from './icons';
 import { Dropdown } from './Dropdown';
 import ErrorBoundary from './ErrorBoundary';
 import { LoadingSpinner, WithLoading } from './Loading';
+import { TawkChat, useTawkChat } from './TawkChat';
 
 export {
   Button,
@@ -12,5 +13,7 @@ export {
   Dropdown,
   ErrorBoundary,
   LoadingSpinner,
+  TawkChat,
+  useTawkChat,
   WithLoading,
 };

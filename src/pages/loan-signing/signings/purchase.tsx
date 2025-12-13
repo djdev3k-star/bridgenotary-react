@@ -47,8 +47,9 @@ const PurchaseSigningPage: React.FC = () => {
         { title: "Party coordination", description: "Direct communication with lender, title, and agents for seamless timing." }
       ]}
       ctaText="Schedule a Buyer Closing"
-      ctaLink="/book"
+      ctaLink="/book?service=purchase"
       relatedLinks={relatedLinks}
+      serviceId="purchase"
     />
   );
 };

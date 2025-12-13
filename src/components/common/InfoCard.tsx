@@ -13,7 +13,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, icon, imageSrc, imageAlt, ch
   return (
     <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white">
       <div className="flex items-center gap-3 mb-4">
-        {icon && <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">{icon}</div>}
+        {icon && <div className="flex-shrink-0">{icon}</div>}
         <h3 className="text-xl font-bold text-proof">{title}</h3>
       </div>
       {imageSrc && (

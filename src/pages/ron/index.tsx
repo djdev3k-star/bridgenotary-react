@@ -13,7 +13,7 @@ export default function RONPage() {
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-electric-blue to-electric-blue"></div>
         
         {/* Background image with overlay - cycling dual images */}
-        <div className="absolute inset-0 z-0 opacity-35">
+        <div className="absolute inset-0 z-0 opacity-70">
           <img 
             src="/images/secure-video-signing.png" 
             alt="" 
@@ -116,12 +116,12 @@ export default function RONPage() {
             </p>
           </div>
 
-          {/* Three-column process cards */}
+          {/* Horizontal process cards (single row on desktop, similar to pricing cards) */}
           <div className="grid md:grid-cols-3 gap-8">
             {/* Step 1: Upload */}
             <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all">
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+                <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                   </svg>
@@ -131,7 +131,6 @@ export default function RONPage() {
                   <h3 className="text-xl font-bold text-proof">Upload Documents</h3>
                 </div>
               </div>
-
               <div className="mb-6">
                 <img
                   src="/images/upload-documents.png"
@@ -139,34 +138,26 @@ export default function RONPage() {
                   className="w-full h-40 object-cover rounded"
                 />
               </div>
-
               <p className="text-neutral-700 mb-4">
-                Upload your documents securely through our encrypted platform. We support all common file formats including PDF, DOCX, and images.
+                Upload your documents securely through our encrypted platform. <span className="text-sm text-neutral-500">We support PDF, DOCX, and images.</span>
               </p>
-
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Bank-grade encryption</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Multiple file formats supported</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Instant upload confirmation</span>
                 </li>
               </ul>
@@ -175,7 +166,7 @@ export default function RONPage() {
             {/* Step 2: Verify */}
             <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all">
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+                <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -185,7 +176,6 @@ export default function RONPage() {
                   <h3 className="text-xl font-bold text-proof">Verify Identity</h3>
                 </div>
               </div>
-
               <div className="mb-6">
                 <img
                   src="/images/Verify-identity.png"
@@ -193,34 +183,26 @@ export default function RONPage() {
                   className="w-full h-40 object-cover rounded"
                 />
               </div>
-
               <p className="text-neutral-700 mb-4">
                 Complete secure identity verification with your government-issued ID through our advanced, automated validation system.
               </p>
-
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Government ID verification</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Knowledge-based authentication</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Compliant with state requirements</span>
                 </li>
               </ul>
@@ -229,7 +211,7 @@ export default function RONPage() {
             {/* Step 3: Notarize */}
             <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all">
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+                <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
@@ -239,7 +221,6 @@ export default function RONPage() {
                   <h3 className="text-xl font-bold text-proof">Live Notarization</h3>
                 </div>
               </div>
-
               <div className="mb-6">
                 <img
                   src="/images/secure-video-signing.png"
@@ -247,34 +228,26 @@ export default function RONPage() {
                   className="w-full h-40 object-cover rounded"
                 />
               </div>
-
               <p className="text-neutral-700 mb-4">
                 Connect with a certified notary via secure HD video call and complete your notarization session in real time.
               </p>
-
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Secure video conferencing</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Digital signature & seal applied</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Instant document delivery</span>
                 </li>
               </ul>
@@ -299,7 +272,8 @@ export default function RONPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Stacked InfoCards only (right column removed) */}
+          <div className="space-y-6">
             {/* Card 1: Prepare Your Documents (using shared InfoCard) */}
             <InfoCard
               title="Gather Your Documents"
@@ -316,19 +290,15 @@ export default function RONPage() {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Accepted ID: Driver's license, passport, state ID</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Ensure documents are legible and complete</span>
                 </li>
               </ul>
@@ -349,27 +319,21 @@ export default function RONPage() {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Minimum 1 Mbps upload/download speed</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Working webcam and microphone</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Updated browser (Chrome, Firefox, Safari)</span>
                 </li>
               </ul>
@@ -391,73 +355,30 @@ export default function RONPage() {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Join 2-3 minutes early to test connection</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Close other apps using camera/microphone</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Use a quiet, well-lit space</span>
                 </li>
               </ul>
             </InfoCard>
-          </div>
+            </div>
         </div>
       </section>
 
-      {/* What We Cover (Notary Role) */}
-      <section className="section bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-neutral-300"></div>
-              <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">What We Cover</span>
-              <div className="h-px flex-1 bg-neutral-300"></div>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-proof mb-6">Notary Role in RON</h2>
-            <p className="text-xl text-neutral-600 max-w-3xl">
-              In remote online notarizations, we provide precise identity checks, certificate accuracy, and smooth execution to meet lender and state requirements.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
-              <h3 className="text-xl font-bold text-proof mb-2">Verify identities and signing authority</h3>
-              <p className="text-neutral-700">Confirm each signer’s identity, match names to documents, and ensure they have authority to sign for their corporation, LLC, partnership, or trust.</p>
-            </div>
-
-            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
-              <h3 className="text-xl font-bold text-proof mb-2">Capture exact capacities and certificates</h3>
-              <p className="text-neutral-700">Complete notarial certificates with precise titles, capacities, and entity information, using the correct acknowledgment wording required for Texas and lender guidelines.</p>
-            </div>
-
-            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
-              <h3 className="text-xl font-bold text-proof mb-2">Manage execution order and document flow</h3>
-              <p className="text-neutral-700">Guide signers through the package in sequence, ensure all signatures and initials are captured, and complete notarizations in the order needed for recording and funding.</p>
-            </div>
-
-            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
-              <h3 className="text-xl font-bold text-proof mb-2">Coordinate with counsel, title, and lender</h3>
-              <p className="text-neutral-700">Follow written instructions, flag inconsistencies, and confirm completion so all parties receive properly executed, notarized documents with minimal post-closing corrections.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Notary Role in RON section removed per request */}
 
       {/* Why Choose RON Section - Consolidated */}
       <section className="section bg-white">
@@ -476,10 +397,10 @@ export default function RONPage() {
           </div>
 
           {/* Benefits Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
             <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white">
               <div className="flex items-center gap-4 mb-4">
-                <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+                <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -491,27 +412,21 @@ export default function RONPage() {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">256-bit encryption for all transfers</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Tamper-evident digital certificates</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Complete digital audit trail</span>
                 </li>
               </ul>
@@ -519,7 +434,7 @@ export default function RONPage() {
 
             <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white">
               <div className="flex items-center gap-4 mb-4">
-                <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+                <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -531,27 +446,21 @@ export default function RONPage() {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Notaries available round-the-clock</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Valid in all 50 states</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Instant session start</span>
                 </li>
               </ul>
@@ -559,7 +468,7 @@ export default function RONPage() {
 
             <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white">
               <div className="flex items-center gap-4 mb-4">
-                <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+                <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -571,52 +480,28 @@ export default function RONPage() {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">5-minute average session time</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Multi-factor authentication</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                   <span className="text-sm text-neutral-600">Instant document delivery</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Stats Row */}
-          <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white text-center">
-              <div className="text-4xl font-bold text-electric-blue mb-2">24/7</div>
-              <div className="text-neutral-600 font-medium">Available</div>
-            </div>
-            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white text-center">
-              <div className="text-4xl font-bold text-electric-blue mb-2">50</div>
-              <div className="text-neutral-600 font-medium">States</div>
-            </div>
-            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white text-center">
-              <div className="text-4xl font-bold text-electric-blue mb-2">5 min</div>
-              <div className="text-neutral-600 font-medium">Average</div>
-            </div>
-            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white text-center">
-              <div className="text-4xl font-bold text-electric-blue mb-2">100%</div>
-              <div className="text-neutral-600 font-medium">Secure</div>
-            </div>
-          </div>
+          {/* Stats Row removed per request */}
         </div>
       </section>
 

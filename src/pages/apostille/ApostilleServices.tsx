@@ -76,7 +76,7 @@ const ApostilleServices: React.FC = () => {
       action: 'Door-to-door courier or priority mail service',
       benefit: 'No office visits—handle everything from your couch',
       icon: (
-        <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+        <div className="flex-shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Courier service icon">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
           </svg>
@@ -87,7 +87,7 @@ const ApostilleServices: React.FC = () => {
       action: 'Pre-review & triple-check of every document',
       benefit: 'Zero rejections or do-overs',
       icon: (
-        <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+        <div className="flex-shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Document review icon">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
           </svg>
@@ -98,7 +98,7 @@ const ApostilleServices: React.FC = () => {
       action: 'Same-day dispatch to correct authority',
       benefit: '3- to 5-day turnaround (rush options available)',
       icon: (
-        <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+        <div className="flex-shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Fast dispatch icon">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
@@ -109,7 +109,7 @@ const ApostilleServices: React.FC = () => {
       action: 'Real-time tracking portal + SMS updates',
       benefit: 'Total visibility—know when each seal is applied',
       icon: (
-        <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+        <div className="flex-shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Tracking portal icon">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
           </svg>
@@ -120,7 +120,7 @@ const ApostilleServices: React.FC = () => {
       action: 'Secure return in tamper-evident pouch',
       benefit: 'Documents arrive flight-ready and pristine',
       icon: (
-        <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
+        <div className="flex-shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Secure delivery icon">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
           </svg>
@@ -140,179 +140,95 @@ const ApostilleServices: React.FC = () => {
   return (
     <div className="w-full bg-white">
 
-      {/* Pain Points Section */}
+      {/* Pain Points Section - Simplified to list format */}
       <section className="section bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="mb-12 text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
               <span className="h-px w-12 bg-neutral-300"></span>
               <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">Pain Points We Eliminate</span>
               <span className="h-px w-12 bg-neutral-300"></span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-proof">What We Remove From Your Process</h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mt-3">Common frustrations clients faced before finding us.</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <ul className="space-y-4 max-w-2xl mx-auto">
             {painPoints.map((point, index) => (
-              <div
-                key={index}
-                className="bg-white rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-electric-blue text-white flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </div>
-                  <p className="text-base md:text-lg text-neutral-800">{point}</p>
-                </div>
-              </div>
+              <li key={index} className="flex items-start gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span className="text-neutral-800">{point}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* Our Solution Section */}
-      <section className="section bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
+      {/* Our Solution Section - Simplified to list format */}
+      <section className="section bg-neutral-50">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="mb-12 text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
               <span className="h-px w-12 bg-neutral-300"></span>
-              <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">Our Precision Apostille Solution</span>
+              <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">Our Solution</span>
               <span className="h-px w-12 bg-neutral-300"></span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-proof">How We Make Complex Simple</h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mt-3">Precision process with accountability at every step.</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <ul className="space-y-4 max-w-2xl mx-auto">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-white rounded p-8 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-electric-blue/10 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 text-proof">{solution.action}</h3>
-                    <p className="text-neutral-700 text-base md:text-lg leading-relaxed">{solution.benefit}</p>
-                  </div>
+              <li key={index} className="flex items-start gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <div>
+                  <span className="font-semibold text-proof">{solution.action}</span>
+                  <span className="text-neutral-600"> — {solution.benefit}</span>
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
-
-          {/* Additional emphasis box */}
-          <div className="mt-16 bg-white rounded p-8 border border-neutral-200 shadow-sm text-center max-w-3xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-              </svg>
-              <h3 className="text-2xl font-bold text-proof">Why We're Different</h3>
-            </div>
-            <p className="text-neutral-700 text-lg leading-relaxed mb-0">
-              Every document is hand-reviewed, carefully verified, and tracked in real-time. We focus on accuracy and clear communication throughout the process.
-            </p>
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="bg-neutral-50 py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold text-center mb-12">How It Works (3 Simple Steps)</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="bg-proof/10 rounded-full p-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Camera icon for Upload or Snap">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">1. Upload or Snap</h3>
-              <p className="text-neutral-600">Upload or take a photo of your document—we'll confirm if it's apostille-eligible.</p>
+      {/* How It Works Section - Simplified horizontal steps */}
+      <section className="section bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-proof text-center mb-12">How It Works</h2>
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div className="flex-1 text-center">
+              <span className="text-electric-blue font-bold text-2xl">1.</span>
+              <h3 className="text-lg font-semibold mt-2 mb-1">Upload or Snap</h3>
+              <p className="text-neutral-600 text-sm">Send your document—we confirm eligibility.</p>
             </div>
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="bg-proof/10 rounded-full p-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Location icon for Ship It">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">2. Ship It</h3>
-              <p className="text-neutral-600">Receive your prepaid mailer—drop it in any USPS box or use our courier.</p>
+            <div className="hidden md:block text-neutral-300 text-2xl">→</div>
+            <div className="flex-1 text-center">
+              <span className="text-electric-blue font-bold text-2xl">2.</span>
+              <h3 className="text-lg font-semibold mt-2 mb-1">Ship It</h3>
+              <p className="text-neutral-600 text-sm">Drop in prepaid mailer or use our courier.</p>
             </div>
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="bg-proof/10 rounded-full p-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" role="img" aria-label="Checkmark icon for Track & Receive">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">3. Track & Receive</h3>
-              <p className="text-neutral-600">Get your apostilled originals back at your door—or forwarded to the embassy.</p>
-            </div>
-          </div>
-          <div className="mt-12 text-center">
-            <div className="bg-green-50 border border-green-200 rounded-md p-6 inline-block">
-              <p className="text-green-800 font-medium">
-                Service Commitment: If an issue arises with an apostille we process, we work with you to correct it promptly.
-              </p>
+            <div className="hidden md:block text-neutral-300 text-2xl">→</div>
+            <div className="flex-1 text-center">
+              <span className="text-electric-blue font-bold text-2xl">3.</span>
+              <h3 className="text-lg font-semibold mt-2 mb-1">Track & Receive</h3>
+              <p className="text-neutral-600 text-sm">Apostilled documents delivered to your door.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Quiz Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-neutral-50"></div>
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-proof to-electric-blue bg-clip-text text-transparent">
-              Still Unsure If You Need an Apostille?
-            </h2>
-            <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-              Let us help you find the right path forward
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded p-8 shadow-xl border border-neutral-100 hover:shadow-2xl transition-all duration-300">
-              <div className="bg-proof/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-proof text-center">Take Our Quick Quiz</h3>
-              <p className="text-neutral-600 mb-6 text-center">30 seconds to find out if you need an apostille</p>
-              <button 
-                onClick={() => navigate('/apostille/quiz')}
-                className="w-full bg-proof text-white hover:bg-proof/90 transition-all rounded py-3 px-6 font-semibold shadow-lg hover:shadow-xl"
-                aria-label="Start apostille need assessment quiz"
-              >
-                Start Quiz
-              </button>
-            </div>
-            <div className="bg-white rounded p-8 shadow-xl border border-neutral-100 hover:shadow-2xl transition-all duration-300">
-              <div className="bg-electric-blue/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-electric-blue text-center">Browse Knowledge Base</h3>
-              <p className="text-neutral-600 mb-6 text-center">Find answers to common questions</p>
-              <button 
-                className="w-full bg-transparent border-2 border-electric-blue text-electric-blue hover:bg-electric-blue/5 transition-all rounded py-3 px-6 font-semibold"
-                aria-label="Browse apostille knowledge base articles"
-              >
-                View Articles
-              </button>
-            </div>
-          </div>
+      {/* Quick Quiz CTA - Simplified inline */}
+      <section className="section bg-neutral-50">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-2xl font-bold text-proof mb-4">Still Unsure If You Need an Apostille?</h2>
+          <p className="text-neutral-600 mb-6">Take our 30-second quiz to find out.</p>
+          <button 
+            onClick={() => navigate('/apostille/quiz')}
+            className="button-primary"
+            aria-label="Start apostille need assessment quiz"
+          >
+            Start Quiz
+          </button>
         </div>
       </section>
 

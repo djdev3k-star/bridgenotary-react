@@ -47,8 +47,9 @@ const PropertyTaxLoanSigningPage: React.FC = () => {
         { title: "Foreclosure prevention", description: "Ensure funding arrives in time to prevent tax sale." }
       ]}
       ctaText="Book a Property Tax Loan Signing"
-      ctaLink="/book"
+      ctaLink="/book?service=property-tax"
       relatedLinks={relatedLinks}
+      serviceId="property-tax"
     />
    );
  };

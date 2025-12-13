@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
     <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
       {videoError ? (
         <img 
-          src="/assets/images/notarypublic-generalimagewithstamp.jpg"
+          src="/images/notarypublic-generalimagewithstamp.jpg"
           alt="Notary signing documents" 
           className="absolute inset-0 object-cover w-full h-full brightness-110 contrast-105 saturate-110"
         />
@@ -49,10 +49,10 @@ const Hero: React.FC = () => {
           muted 
           playsInline
           preload="auto"
-          poster="/assets/images/notarypublic-generalimagewithstamp.jpg"
+          poster="/images/notarypublic-generalimagewithstamp.jpg"
           onError={() => setVideoError(true)}
         >
-          <source src="/assets/images/loan-signin-bg.mp4" type="video/mp4" />
+          <source src="/images/loan-signin-bg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              Start a Signing
+              Sign
             </div>
           </Link>
           <Link to="/pricing" className="border-2 border-white text-white hover:bg-white hover:text-proof rounded text-lg py-4 px-8 inline-block text-center font-semibold transition-all duration-300">

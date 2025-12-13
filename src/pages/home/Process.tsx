@@ -65,7 +65,7 @@ export default function Process() {
               </div> */}
               
               <div className="bg-white rounded p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-neutral-100 h-full transform hover:-translate-y-1">
-                <div className="bg-electric-blue/10 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-electric-blue">
+                <div className="w-14 h-14 flex items-center justify-center mx-auto mb-4 text-electric-blue">
                   {item.icon}
                 </div>
                 <div className="text-xl font-semibold text-proof mb-3">{item.title}</div>

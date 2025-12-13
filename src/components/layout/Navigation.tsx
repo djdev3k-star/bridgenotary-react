@@ -61,7 +61,7 @@ const Navigation: React.FC<NavigationProps> = () => {
           path: '/services',
           description: 'POA, witness services, affidavits, and more.',
           icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           )
@@ -152,47 +152,63 @@ const Navigation: React.FC<NavigationProps> = () => {
         {
           label: 'Purchase Signing',
           path: '/loan-signing/purchase',
-          description: 'Buyer closings with funding coordination.'
+          description: 'Buyer closings with funding coordination.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3" />
+            </svg>
+          )
         },
         {
           label: 'Refinance Signing',
           path: '/loan-signing/refinance',
-          description: 'Rate/term and cash-out refinance packages.'
+          description: 'Rate/term and cash-out refinance packages.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          )
         },
         {
           label: 'Reverse Mortgage',
           path: '/loan-signing/reverse',
-          description: 'Specialized HECM and senior borrower support.'
+          description: 'Specialized HECM and senior borrower support.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          )
         },
         {
           label: 'HELOC & Home Equity',
           path: '/loan-signing/heloc',
-          description: 'Equity line closings with lender-specific docs.'
+          description: 'Equity line closings with lender-specific docs.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+            </svg>
+          )
         },
         {
           label: 'Seller Signing',
           path: '/loan-signing/seller',
-          description: 'Seller-side closings and proceeds.'
-        },
-        {
-          label: 'Commercial Closings',
-          path: '/loan-signing/commercial',
-          description: 'Entity-complex commercial transactions.'
-        },
-        {
-          label: 'Loan Modifications',
-          path: '/loan-signing/modification',
-          description: 'Loan modification and relief documents.'
-        },
-        {
-          label: 'Property Tax Relief',
-          path: '/loan-signing/property-tax',
-          description: 'Deadline-driven tax relief signings.'
+          description: 'Seller-side closings and proceeds.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 17h10m4 0h.01M5 17l1-4h11l1 4M6 13l2-7h8l2 7" />
+            </svg>
+          )
         },
         {
           label: 'View all loan signings →',
           path: '/loan-signing',
-          description: 'Complete loan signing overview.'
+          description: 'Complete loan signing overview.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          )
         }
       ]
     }
@@ -208,7 +224,7 @@ const Navigation: React.FC<NavigationProps> = () => {
           <DropdownMenu
             trigger={
               <span className="text-neutral-900 hover:text-proof transition text-base font-medium flex items-center gap-1">
-                Services
+                  Solutions
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
@@ -217,7 +233,7 @@ const Navigation: React.FC<NavigationProps> = () => {
             groups={solutionsMenuGroups}
           />
           <Link to="/pricing" className="text-neutral-900 hover:text-proof transition text-base font-medium">Pricing</Link>
-          <Link to="/resources" className="text-neutral-900 hover:text-proof transition text-base font-medium">Resources</Link>
+            <Link to="/ron" className="text-neutral-900 hover:text-proof transition text-base font-medium">RON</Link>
           <Link to="/about" className="text-neutral-900 hover:text-proof transition text-base font-medium">About</Link>
         </nav>
         <div className="hidden md:flex items-center gap-6">

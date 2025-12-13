@@ -47,8 +47,9 @@ const LoanModificationSigningPage: React.FC = () => {
         { title: "Relief protection", description: "Ensure modification terms take effect as agreed." }
       ]}
       ctaText="Schedule a Loan Modification Signing"
-      ctaLink="/book"
+      ctaLink="/book?service=modification"
       relatedLinks={relatedLinks}
+      serviceId="modification"
     />
   );
 };

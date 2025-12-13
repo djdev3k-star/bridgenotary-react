@@ -30,4 +30,4 @@ export type RootStackParamList = {
   };
 };
 
-export type ServiceType = 'general' | 'loan' | 'business' | 'power_of_attorney' | 'affidavit';
+export type ServiceType = 'general' | 'loan' | 'business' | 'power_of_attorney' | 'affidavit' | 'title_deed' | 'estate_trust' | 'school_permission' | 'medical_authorization' | 'witness';

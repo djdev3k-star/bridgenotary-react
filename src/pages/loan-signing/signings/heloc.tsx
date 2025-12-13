@@ -47,8 +47,9 @@ const HELOCSigningPage: React.FC = () => {
         { title: "Speed and accuracy", description: "Fast processing and faster fund access with clean files." }
       ]}
       ctaText="Book a HELOC Signing"
-      ctaLink="/book"
+      ctaLink="/book?service=heloc"
       relatedLinks={relatedLinks}
+      serviceId="heloc"
     />
   );
 };

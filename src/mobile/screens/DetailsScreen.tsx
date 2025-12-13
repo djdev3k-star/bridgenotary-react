@@ -124,6 +124,11 @@ const DetailsScreen: React.FC<DetailsScreenProps> = ({ navigation, route }) => {
               <Picker.Item label="Business Documents" value="business" />
               <Picker.Item label="Power of Attorney" value="power_of_attorney" />
               <Picker.Item label="Affidavit" value="affidavit" />
+              <Picker.Item label="Title & Deed Transfers" value="title_deed" />
+              <Picker.Item label="Estate & Trust Documents" value="estate_trust" />
+              <Picker.Item label="School Permission Forms" value="school_permission" />
+              <Picker.Item label="Medical Authorization" value="medical_authorization" />
+              <Picker.Item label="Witnessing" value="witness" />
             </Picker>
           </View>
         </View>

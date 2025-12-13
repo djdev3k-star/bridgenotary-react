@@ -47,8 +47,9 @@ const SellerSigningPage: React.FC = () => {
         { title: "Funds flow on time", description: "Get your sale proceeds without post-closing corrections." }
       ]}
       ctaText="Book a Seller Signing"
-      ctaLink="/book"
+      ctaLink="/book?service=seller"
       relatedLinks={relatedLinks}
+      serviceId="seller"
     />
   );
 };

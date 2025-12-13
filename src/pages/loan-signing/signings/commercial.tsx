@@ -47,8 +47,9 @@ const CommercialClosingSigningPage: React.FC = () => {
         { title: "Liability protection", description: "Professional execution protects all parties and investors." }
       ]}
       ctaText="Request a Commercial Closing"
-      ctaLink="/book"
+      ctaLink="/book?service=commercial"
       relatedLinks={relatedLinks}
+      serviceId="commercial"
     />
   );
 };

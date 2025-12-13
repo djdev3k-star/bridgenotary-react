@@ -47,8 +47,9 @@ const ReverseMortgageSigningPage: React.FC = () => {
         { title: "Respectful professionalism", description: "Neutral role supporting senior borrowers with dignity." }
       ]}
       ctaText="Schedule a Reverse Mortgage Signing"
-      ctaLink="/book"
+      ctaLink="/book?service=reverse"
       relatedLinks={relatedLinks}
+      serviceId="reverse"
     />
   );
 };

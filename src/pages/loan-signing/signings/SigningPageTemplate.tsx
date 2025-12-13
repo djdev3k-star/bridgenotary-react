@@ -9,8 +9,21 @@ interface SigningPageProps {
   idealFor: string;
   ctaText: string;
   ctaLink: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
+  serviceId?: string;
 }
+
+// Related services data
+const relatedServices = [
+  { name: "Refinance", link: "/loan-signing/refinance", desc: "Rate reduction & term adjustment" },
+  { name: "Purchase", link: "/loan-signing/purchase", desc: "Buyer closing documents" },
+  { name: "Seller", link: "/loan-signing/seller", desc: "Property sale execution" },
+  { name: "Reverse Mortgage", link: "/loan-signing/reverse", desc: "HECM & equity access" },
+  { name: "HELOC", link: "/loan-signing/heloc", desc: "Home equity loans" },
+  { name: "Modification", link: "/loan-signing/modification", desc: "Loan term changes" },
+  { name: "Commercial", link: "/loan-signing/commercial", desc: "Business property" },
+  { name: "TX Property Tax", link: "/loan-signing/property-tax", desc: "Property tax loans" },
+];
 
 const SigningPageTemplate: React.FC<SigningPageProps> = ({
   title,
@@ -20,177 +33,188 @@ const SigningPageTemplate: React.FC<SigningPageProps> = ({
   idealFor,
   ctaText,
   ctaLink,
-  icon,
+  serviceId,
 }) => {
+  const bookingLink = serviceId 
+    ? `${ctaLink}${ctaLink.includes('?') ? '&' : '?'}service=${serviceId}`
+    : ctaLink;
+
+  // Filter out current service from related
+  const otherServices = relatedServices.filter(s => !s.link.includes(serviceId || ''));
+
   return (
-    <>
+    <div className="w-full bg-white">
       {/* Hero Section */}
-      <section className="relative text-white min-h-screen flex items-center overflow-hidden w-screen left-1/2 -translate-x-1/2">
-        <div className="absolute inset-0 w-full h-full z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue opacity-90 z-10"></div>
-          <div className="absolute inset-0 bg-black/20 z-10"></div>
-        </div>
-
-        <div className="w-full relative z-30 px-6 py-24">
-          <div className="mx-auto text-center max-w-4xl">
-            <div className="fade-in mb-8">
-              <div className="flex justify-center mb-6">
-                <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 border border-white/30">
-                  {icon}
-                </div>
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
-                {title}
-              </h1>
-              <p className="text-2xl md:text-3xl text-gold mb-8 drop-shadow-md font-semibold">
-                {subtitle}
-              </p>
-              <p className="text-lg md:text-xl text-white/90 mb-12 drop-shadow-md max-w-3xl mx-auto leading-relaxed">
-                {intro}
-              </p>
-
-              <Link to={ctaLink} className="inline-block bg-white text-proof hover:bg-neutral-100 transition-all rounded text-lg py-5 px-12 font-semibold shadow-2xl transform hover:scale-105 hover:shadow-2xl">
-                <div className="flex items-center justify-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  {ctaText}
-                </div>
-              </Link>
-            </div>
+      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-neutral-200">
+        <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-24">
+          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-proof/60 mb-4">
+            Loan Signing Services
+          </p>
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-proof">
+            {title}
+          </h1>
+          <p className="text-2xl md:text-3xl text-electric-blue font-semibold mb-6">
+            {subtitle}
+          </p>
+          <p className="text-xl md:text-2xl text-neutral-700 max-w-4xl leading-relaxed mb-8">
+            {intro}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              to={bookingLink}
+              className="bg-electric-blue text-white font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl hover:bg-electric-blue/90 transition-all"
+            >
+              {ctaText}
+            </Link>
+            <Link
+              to="/contact"
+              className="border-2 border-proof text-proof font-semibold px-8 py-4 text-lg hover:bg-proof hover:text-white transition-all"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>
 
-      <div className="w-full bg-white">
-        {/* Benefits Section */}
-        <section className="py-20 lg:py-28">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="fade-in">
-                <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Why Choose Bridge Notary?</h2>
-                <div className="h-1 w-20 bg-gold mb-8"></div>
-                <p className="text-lg text-neutral-700 leading-relaxed mb-8">
+      {/* Main Content */}
+      <section className="py-20 md:py-24 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-3 gap-12">
+            {/* Main Article Column */}
+            <div className="lg:col-span-2 space-y-12">
+              {/* Why Choose Us */}
+              <article className="bg-white p-8 md:p-12 shadow-sm border border-neutral-200">
+                <h2 className="text-3xl md:text-4xl font-bold text-proof leading-tight mb-8">
+                  Why Choose Bridge Notary?
+                </h2>
+                <p className="text-lg text-neutral-700 leading-[1.9] mb-6 first-letter:text-5xl first-letter:font-bold first-letter:text-proof first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none">
                   {benefit}
                 </p>
-              </div>
-
-              <div className="fade-in-delay grid grid-cols-1 gap-4">
-                <div className="bg-proof/5 rounded p-6 border-l-4 border-electric-blue">
-                  <h3 className="text-xl font-bold text-proof mb-3">Professional Agents</h3>
-                  <p className="text-neutral-700">NNA Certified, bonded, insured, and background-checked signing agents</p>
+                <div className="mt-8 pt-8 border-t border-neutral-200">
+                  <Link
+                    to={bookingLink}
+                    className="inline-flex items-center text-electric-blue font-semibold hover:underline"
+                  >
+                    Schedule Your Signing
+                    <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
                 </div>
-                <div className="bg-proof/5 rounded p-6 border-l-4 border-electric-blue">
-                  <h3 className="text-xl font-bold text-proof mb-3">99% On-Time Rate</h3>
-                  <p className="text-neutral-700">Clear communication and reliable service you can count on</p>
+              </article>
+
+              {/* What We Cover */}
+              <div>
+                <h3 className="text-2xl font-bold text-proof mb-8">What Our Signing Agents Do</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    { title: "Verify Identities", desc: "Confirm signer identities, match names to documents, verify authority for entities" },
+                    { title: "Execute with Precision", desc: "Guide through document packages in proper sequence, capture all signatures" },
+                    { title: "Meet Lender Requirements", desc: "Ensure compliance with lender, title, and investor guidelines" },
+                    { title: "Deliver Error-Free Results", desc: "Properly executed packages with minimal post-closing corrections" },
+                  ].map((item) => (
+                    <div
+                      key={item.title}
+                      className="bg-white p-6 border border-neutral-200 hover:border-electric-blue/30 hover:shadow-md transition-all"
+                    >
+                      <h4 className="font-bold text-proof mb-2">{item.title}</h4>
+                      <p className="text-sm text-neutral-600">{item.desc}</p>
+                    </div>
+                  ))}
                 </div>
-                <div className="bg-proof/5 rounded p-6 border-l-4 border-electric-blue">
-                  <h3 className="text-xl font-bold text-proof mb-3">Flexible Options</h3>
-                  <p className="text-neutral-700">Mobile, in-person, and remote signings with same-day availability</p>
+              </div>
+
+              {/* Ideal For */}
+              <div className="bg-electric-blue/5 p-8 border-l-4 border-electric-blue">
+                <h3 className="text-xl font-bold text-proof mb-4">Ideal For</h3>
+                <p className="text-lg text-neutral-700 leading-relaxed">{idealFor}</p>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <aside className="space-y-6">
+              {/* Quick Book Card */}
+              <div className="bg-white p-6 shadow-sm border border-neutral-200 sticky top-24">
+                <h4 className="font-bold text-proof mb-4">Ready to Schedule?</h4>
+                <p className="text-sm text-neutral-600 mb-6">
+                  Our certified signing agents are available for same-day appointments throughout DFW.
+                </p>
+                <Link
+                  to={bookingLink}
+                  className="block w-full bg-electric-blue text-white text-center font-semibold py-3 hover:bg-electric-blue/90 transition-all"
+                >
+                  {ctaText}
+                </Link>
+                <div className="mt-6 pt-6 border-t border-neutral-200">
+                  <div className="space-y-3 text-sm">
+                    <div className="flex items-center gap-2 text-neutral-700">
+                      <svg className="w-4 h-4 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <span>NNA Certified</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-neutral-700">
+                      <svg className="w-4 h-4 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <span>E&O Insured ($100K)</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-neutral-700">
+                      <svg className="w-4 h-4 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <span>99% On-Time Rate</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* What We Cover Section */}
-        <section className="py-20 lg:py-28 bg-neutral-50">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="mb-12">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-px w-12 bg-neutral-300"></div>
-                <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">What We Cover</span>
-                <div className="h-px flex-1 bg-neutral-300"></div>
+              {/* Other Services */}
+              <div className="bg-white p-6 shadow-sm border border-neutral-200">
+                <h4 className="font-bold text-proof mb-4">Other Loan Signings</h4>
+                <nav className="space-y-2">
+                  {otherServices.slice(0, 6).map((service) => (
+                    <Link
+                      key={service.name}
+                      to={service.link}
+                      className="block py-2 text-sm text-neutral-600 hover:text-electric-blue border-b border-neutral-100 last:border-0 transition-colors"
+                    >
+                      <span className="font-medium">{service.name}</span>
+                      <span className="text-neutral-400 ml-1">— {service.desc}</span>
+                    </Link>
+                  ))}
+                </nav>
+                <Link
+                  to="/loan-signing"
+                  className="mt-4 inline-flex items-center text-sm text-electric-blue font-medium hover:underline"
+                >
+                  View All Services
+                  <svg className="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Signing Agent Role</h2>
-              <p className="text-lg text-neutral-600 max-w-3xl">
-                Our professional agents ensure precision, compliance, and efficiency at every signing.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
-                <h3 className="text-lg font-bold text-proof mb-2">Verify identities and authority</h3>
-                <p className="text-neutral-700 text-sm">Confirm signer identities, match names to documents, and verify authority to sign for corporations, LLCs, trusts, or partnerships.</p>
-              </div>
-
-              <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
-                <h3 className="text-lg font-bold text-proof mb-2">Execute with precision</h3>
-                <p className="text-neutral-700 text-sm">Guide signers through document packages in proper sequence, ensure all required signatures and initials are captured in correct locations.</p>
-              </div>
-
-              <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
-                <h3 className="text-lg font-bold text-proof mb-2">Meet lender requirements</h3>
-                <p className="text-neutral-700 text-sm">Ensure documents align with lender, title, and investor guidelines, flag inconsistencies, and coordinate completion for timely funding.</p>
-              </div>
-
-              <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
-                <h3 className="text-lg font-bold text-proof mb-2">Deliver error-free results</h3>
-                <p className="text-neutral-700 text-sm">Manage document flow, coordinate with all parties, and deliver properly executed packages with minimal post-closing corrections.</p>
-              </div>
-            </div>
+            </aside>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Ideal For Section */}
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="bg-neutral-50 rounded shadow-lg p-10 border-l-4 border-electric-blue">
-              <h3 className="text-2xl md:text-3xl font-bold text-proof mb-4">Ideal For</h3>
-              <p className="text-lg text-neutral-700 leading-relaxed">
-                {idealFor}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 lg:py-28">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-proof mb-8">Ready to Get Started?</h2>
-            <p className="text-lg text-neutral-600 mb-12 max-w-2xl mx-auto">
-              Our experienced signing agents are ready to handle your documents with precision and care.
-            </p>
-            <Link to={ctaLink} className="inline-block bg-electric-blue hover:bg-electric-blue/90 text-white font-semibold py-4 px-12 rounded text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
-              {ctaText} Now
-            </Link>
-          </div>
-        </section>
-
-        {/* Related Services Section */}
-        <section className="py-20 lg:py-28 bg-proof text-white">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold mb-12 text-center">Our Other Signing Services</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Link to="/loan-signing/refinance" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded p-6 border border-white/20 transition-all transform hover:scale-105">
-                <h3 className="font-bold mb-2">Refinance Signings</h3>
-                <p className="text-white/80 text-sm">Mortgage rate reduction and loan term adjustments</p>
-              </Link>
-              <Link to="/loan-signing/purchase" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded p-6 border border-white/20 transition-all transform hover:scale-105">
-                <h3 className="font-bold mb-2">Purchase Signings</h3>
-                <p className="text-white/80 text-sm">Home buyer closing documents and agreements</p>
-              </Link>
-              <Link to="/loan-signing/seller" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded p-6 border border-white/20 transition-all transform hover:scale-105">
-                <h3 className="font-bold mb-2">Seller Signings</h3>
-                <p className="text-white/80 text-sm">Property sale documentation and execution</p>
-              </Link>
-              <Link to="/loan-signing/reverse" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded p-6 border border-white/20 transition-all transform hover:scale-105">
-                <h3 className="font-bold mb-2">Reverse Mortgages</h3>
-                <p className="text-white/80 text-sm">Senior-focused HECM and equity access programs</p>
-              </Link>
-              <Link to="/loan-signing/heloc" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded p-6 border border-white/20 transition-all transform hover:scale-105">
-                <h3 className="font-bold mb-2">HELOC / Home Equity</h3>
-                <p className="text-white/80 text-sm">Home equity line and loan documentation</p>
-              </Link>
-              <Link to="/loan-signing/commercial" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded p-6 border border-white/20 transition-all transform hover:scale-105">
-                <h3 className="font-bold mb-2">Commercial Closings</h3>
-                <p className="text-white/80 text-sm">Business property transactions and agreements</p>
-              </Link>
-            </div>
-          </div>
-        </section>
-      </div>
-    </>
+      {/* CTA Section */}
+      <section className="py-20 md:py-28 bg-electric-blue text-white">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+            Our experienced signing agents handle your documents with precision and care.
+          </p>
+          <Link
+            to={bookingLink}
+            className="inline-block bg-white text-proof hover:bg-neutral-100 font-bold py-5 px-12 text-xl shadow-2xl hover:shadow-xl hover:scale-105 transition-all"
+          >
+            {ctaText}
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 };
 

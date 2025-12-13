@@ -13,8 +13,11 @@ const HomePage = () => (
           className="w-full h-full object-cover"
         />
       </div>
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-proof/70 via-proof/40 to-transparent"></div>
+      {/* Deep blue and electric blue overlays for brand look */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-r from-proof/80 via-proof/60 to-transparent mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-electric-blue/30"></div>
+      </div>
 
       {/* Content */}
       <div className="max-w-7xl mx-auto py-24 px-6 relative z-20 w-full">

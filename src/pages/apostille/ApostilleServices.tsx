@@ -17,6 +17,48 @@ interface SolutionType {
 const ApostilleServices: React.FC = () => {
   const navigate = useNavigate();
   const [showContactForm, setShowContactForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    documentTypes: [] as string[],
+    destinationCountry: '',
+    comments: '',
+  });
+
+  const documentOptions = [
+    'Birth Certificate',
+    'Marriage Certificate',
+    'Power of Attorney',
+    'Diploma / Transcript',
+    'FBI Background Check',
+    'Business Documents',
+    'Single Status Affidavit',
+    'Other',
+  ];
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleInputChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+    const { name, value, type, multiple, options } = e.target as HTMLInputElement & HTMLSelectElement;
+    if (name === 'documentTypes' && multiple) {
+      const selected: string[] = [];
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].selected) selected.push(options[i].value);
+      }
+      setFormData((prev) => ({ ...prev, documentTypes: selected }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  }
+
+  function handleFormSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => {
+      setShowContactForm(false);
+      setSubmitted(false);
+      setFormData({ name: '', email: '', documentTypes: [], destinationCountry: '', comments: '' });
+    }, 1500);
+  }
 
   const commonScenarios: ScenarioType[] = [
     {
@@ -140,54 +182,48 @@ const ApostilleServices: React.FC = () => {
   return (
     <div className="w-full bg-white">
 
-      {/* Pain Points Section - Simplified to list format */}
-      <section className="section bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="mb-12 text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="h-px w-12 bg-neutral-300"></span>
-              <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">Pain Points We Eliminate</span>
-              <span className="h-px w-12 bg-neutral-300"></span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-proof">What We Remove From Your Process</h2>
+      {/* Pain Points Section - visually enhanced */}
+      <section className="section bg-neutral-50 py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6 mb-12">
+          <div className="flex items-center gap-3 mb-4 justify-center">
+            <span className="h-px w-12 bg-neutral-300"></span>
+            <span className="text-xs uppercase tracking-[0.25em] text-electric-blue font-semibold">Pain Points We Eliminate</span>
+            <span className="h-px w-12 bg-neutral-300"></span>
           </div>
-          <ul className="space-y-4 max-w-2xl mx-auto">
-            {painPoints.map((point, index) => (
-              <li key={index} className="flex items-start gap-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <h2 className="text-4xl md:text-5xl font-bold text-proof text-center mb-4">What We Remove From Your Process</h2>
+        </div>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {painPoints.map((point, index) => (
+            <div key={index} className="card bg-white shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-electric-blue fade-in">
+              <div className="mb-4">
+                <svg className="w-8 h-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
-                <span className="text-neutral-800">{point}</span>
-              </li>
-            ))}
-          </ul>
+              </div>
+              <p className="text-neutral-800 text-lg">{point}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Our Solution Section - Simplified to list format */}
-      <section className="section bg-neutral-50">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="mb-12 text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="h-px w-12 bg-neutral-300"></span>
-              <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">Our Solution</span>
-              <span className="h-px w-12 bg-neutral-300"></span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-proof">How We Make Complex Simple</h2>
+      {/* Our Solution Section - visually enhanced, blue only */}
+      <section className="section bg-white py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6 mb-12">
+          <div className="flex items-center gap-3 mb-4 justify-center">
+            <span className="h-px w-12 bg-neutral-300"></span>
+            <span className="text-xs uppercase tracking-[0.25em] text-electric-blue font-semibold">Our Solution</span>
+            <span className="h-px w-12 bg-neutral-300"></span>
           </div>
-          <ul className="space-y-4 max-w-2xl mx-auto">
-            {solutions.map((solution, index) => (
-              <li key={index} className="flex items-start gap-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <div>
-                  <span className="font-semibold text-proof">{solution.action}</span>
-                  <span className="text-neutral-600"> — {solution.benefit}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <h2 className="text-4xl md:text-5xl font-bold text-proof text-center mb-4">How We Make Complex Simple</h2>
+        </div>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {solutions.map((solution, index) => (
+            <div key={index} className="card bg-white shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-electric-blue fade-in-delay">
+              <div className="mb-4">{solution.icon}</div>
+              <h3 className="text-lg font-bold text-proof mb-2">{solution.action}</h3>
+              <p className="text-neutral-600">{solution.benefit}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -272,16 +308,96 @@ const ApostilleServices: React.FC = () => {
       {/* Contact Form Modal */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
-          <div className="bg-white rounded-md max-w-xl w-full p-6">
-            <h3 className="text-2xl font-semibold mb-4">Start Your Apostille Process</h3>
-            {/* Add your contact form here */}
+          <div className="bg-white rounded-md max-w-xl w-full p-6 relative">
             <button 
               onClick={() => setShowContactForm(false)}
-              className="absolute top-4 right-4 text-neutral-500 hover:text-neutral-700"
+              className="absolute top-4 right-4 text-neutral-500 hover:text-electric-blue text-2xl"
               aria-label="Close contact form"
             >
               ✕
             </button>
+            <h3 className="text-2xl font-semibold mb-2 text-proof text-center">Start Your Apostille Process</h3>
+            <p className="text-neutral-600 mb-4 text-center">Fill out this quick form and our team will reach out to guide you through the next steps.</p>
+            {submitted ? (
+              <div className="text-center py-8">
+                <div className="text-electric-blue text-4xl mb-2">✓</div>
+                <div className="text-proof font-semibold">Thank you! We'll be in touch soon.</div>
+              </div>
+            ) : (
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-proof mb-1">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-electric-blue"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-proof mb-1">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-electric-blue"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="documentTypes" className="block text-sm font-medium text-proof mb-1">Type of Document(s)</label>
+                  <select
+                    id="documentTypes"
+                    name="documentTypes"
+                    multiple
+                    value={formData.documentTypes}
+                    onChange={handleInputChange}
+                    className="w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-electric-blue bg-white"
+                    required
+                  >
+                    {documentOptions.map((option) => (
+                      <option key={option} value={option}>{option}</option>
+                    ))}
+                  </select>
+                  <p className="text-xs text-neutral-500 mt-1">Hold Ctrl (Windows) or Cmd (Mac) to select multiple.</p>
+                </div>
+                <div>
+                  <label htmlFor="destinationCountry" className="block text-sm font-medium text-proof mb-1">Destination Country</label>
+                  <input
+                    type="text"
+                    id="destinationCountry"
+                    name="destinationCountry"
+                    value={formData.destinationCountry}
+                    onChange={handleInputChange}
+                    className="w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-electric-blue"
+                    placeholder="e.g. Italy, India, Mexico"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="comments" className="block text-sm font-medium text-proof mb-1">Comments (optional)</label>
+                  <textarea
+                    id="comments"
+                    name="comments"
+                    value={formData.comments}
+                    onChange={handleInputChange}
+                    className="w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-electric-blue"
+                    rows={2}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="button-primary w-full mt-2 pulse-button"
+                >
+                  Submit
+                </button>
+              </form>
+            )}
           </div>
         </div>
       )}

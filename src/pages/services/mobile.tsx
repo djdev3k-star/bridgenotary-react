@@ -32,9 +32,9 @@ const MobileNotaryPage = () => {
                 </div>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-                Get Documents Signed <span className="text-gold">Today</span>—We Come to You
+                Get Documents Signed <span className="text-white">Today</span>—We Come to You
               </h1>
-              <p className="text-xl md:text-2xl text-gold font-semibold mb-4 drop-shadow-md">
+              <p className="text-xl md:text-2xl text-black font-semibold mb-4 drop-shadow-md">
                 Same-Day Mobile Notary Across DFW
               </p>
               <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed drop-shadow-sm max-w-2xl">

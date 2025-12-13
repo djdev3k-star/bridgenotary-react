@@ -50,28 +50,60 @@ const OverseasPropertyPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Info blocks - sharp cards */}
-      <section className="section bg-white">
-        <div className="mb-10">
-          <div className="flex items-center gap-3 mb-4">
+      {/* Info blocks - modern wide cards with icons */}
+      <section className="section bg-neutral-50 py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6 mb-12">
+          <div className="flex items-center gap-3 mb-4 justify-center">
             <span className="h-px w-12 bg-neutral-300"></span>
-            <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">What You May Need</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-electric-blue font-semibold">What You May Need</span>
             <span className="h-px w-12 bg-neutral-300"></span>
           </div>
-          <h2 className="text-3xl font-bold text-proof">Common Overseas Property Documents</h2>
-          <p className="text-lg text-neutral-600 mt-3">We help authenticate and certify documents for international real estate transactions and property ownership.</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-proof text-center mb-4">Common Overseas Property Documents</h2>
+          <p className="text-xl text-neutral-600 text-center max-w-3xl mx-auto">We help authenticate and certify documents for international real estate transactions and property ownership.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { title: 'Property Deeds', desc: 'Ownership documents, title transfers, deed recordings' },
-            { title: 'Purchase Agreements', desc: 'Contracts, sales agreements, closing documents' },
-            { title: 'Legal Certification', desc: 'Power of attorney, notarized declarations, affidavits' },
-          ].map((item) => (
-            <div key={item.title} className="bg-white rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-proof mb-2">{item.title}</h3>
-              <p className="text-neutral-700">{item.desc}</p>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Property Deeds */}
+          <div className="card bg-white shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-gold fade-in">
+            <div className="mb-4">
+              <svg className="w-10 h-10 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
             </div>
-          ))}
+            <h3 className="text-xl font-bold text-proof mb-2">Property Deeds</h3>
+            <ul className="text-neutral-700 text-base space-y-1">
+              <li>Ownership documents</li>
+              <li>Title transfers</li>
+              <li>Deed recordings</li>
+            </ul>
+          </div>
+          {/* Purchase Agreements */}
+          <div className="card bg-white shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-electric-blue fade-in-delay">
+            <div className="mb-4">
+              <svg className="w-10 h-10 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-proof mb-2">Purchase Agreements</h3>
+            <ul className="text-neutral-700 text-base space-y-1">
+              <li>Contracts</li>
+              <li>Sales agreements</li>
+              <li>Closing documents</li>
+            </ul>
+          </div>
+          {/* Legal Certification */}
+          <div className="card bg-white shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-electric-blue fade-in-delay">
+            <div className="mb-4">
+              <svg className="w-10 h-10 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-proof mb-2">Legal Certification</h3>
+            <ul className="text-neutral-700 text-base space-y-1">
+              <li>Power of attorney</li>
+              <li>Notarized declarations</li>
+              <li>Affidavits</li>
+            </ul>
+          </div>
         </div>
       </section>
     </Layout>

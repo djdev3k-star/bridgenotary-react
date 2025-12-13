@@ -11,33 +11,40 @@ const PropertyTaxLoanSigningPage: React.FC = () => {
   return (
     <LongFormSigningPage
       title="Texas Property Tax Loans"
-      subtitle="Beating Deadlines and Maintaining Compliance"
-      heroSummary="Texas property tax loans help borrowers handle delinquent taxes and avoid escalating penalties or foreclosure, so timing and documentation are critical."
+      subtitle="Deadline-Critical Relief with Compliant Execution"
+      heroSummary="Property tax loans help Texas borrowers resolve delinquent taxes and avoid foreclosure. These transactions are deadline-driven and require notarized loan agreements, disclosures, and assignments that meet Texas notarial and lending standards."
       heroBullets={[
-        "Compliant notarization for loan agreements, disclosures, and assignments.",
-        "Texas notarial standards applied to keep funding on schedule.",
-        "Mobile options to meet borrowers where they are under deadline."
+        "Compliant, notarized loan and disclosure execution under tight timelines.",
+        "Texas notarial standards applied to every form and certificate.",
+        "Mobile availability to meet borrowers facing foreclosure deadlines."
       ]}
       sections={[
         {
-          title: "Deadline-driven transactions",
+          title: "Deadline-driven relief for Texas borrowers",
           paragraphs: [
-            "These transactions often require notarized loan agreements, disclosures, and assignments that must comply with both state lending laws and Texas notarial standards.",
-            "Mistakes in notarization or missing signatures can delay loan funding and leave tax obligations unresolved longer than necessary."
+            "Property tax loans help Texas borrowers resolve delinquent taxes and prevent tax foreclosure. These transactions operate under strict timelines and require notarized loan agreements, disclosures, promissory notes, and assignments that comply with Texas lending and notarial law.",
+            "Any error or delay in notarization, missing signatures, or incomplete certificates can hold up loan funding and leave tax obligations unresolved."
           ]
         },
         {
-          title: "How we keep them moving",
+          title: "Expert, mobile execution to beat the clock",
           paragraphs: [
-            "A dedicated Texas property tax loan signing service understands the urgency behind these transactions and prioritizes accurate, timely notarization at locations that work for the borrower.",
-            "By ensuring that documents are executed correctly the first time, the signing agent supports lenders, tax loan companies, and borrowers in meeting deadlines and staying compliant with applicable requirements."
+            "A dedicated property tax loan signing specialist understands the urgency behind these transactions and the unique requirements of Texas property tax loans. We prioritize accurate, timely notarization at locations convenient for the borrower—whether mobile, in-office, or remote.",
+            "Clean, compliant execution ensures lenders fund on time, tax authorities receive payment, and borrowers avoid foreclosure."
+          ]
+        },
+        {
+          title: "Compliance that protects all parties",
+          paragraphs: [
+            "Property tax loans carry heightened regulatory scrutiny. Correct notarization, clear disclosures, and documented consent protect the borrower, lender, and tax loan servicer from regulatory challenges or future disputes."
           ]
         }
       ]}
       highlights={[
-        { title: "Deadline-first", description: "Prioritize speed without sacrificing compliance." },
-        { title: "Texas compliant", description: "Loan agreements and assignments notarized correctly." },
-        { title: "Borrower-friendly", description: "Mobile options to meet urgent timelines." }
+        { title: "Deadline-first", description: "Speed without sacrificing compliance or accuracy." },
+        { title: "Texas compliant", description: "Loan, disclosure, and assignment notarization done right." },
+        { title: "Mobile availability", description: "Meet borrowers at urgent timelines, wherever needed." },
+        { title: "Foreclosure prevention", description: "Ensure funding arrives in time to prevent tax sale." }
       ]}
       ctaText="Book a Property Tax Loan Signing"
       ctaLink="/book"

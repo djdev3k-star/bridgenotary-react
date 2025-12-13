@@ -22,22 +22,29 @@ const PurchaseSigningPage: React.FC = () => {
         {
           title: "Why precision matters",
           paragraphs: [
-            "Purchase packages typically include the Note, Deed of Trust, Closing Disclosure, affidavits, and lender-specific forms that must be signed and sometimes notarized in a precise way. A trained signing agent helps prevent missed signatures, incorrect dates, or incomplete notarial certificates that could hold up keys and possession.",
-            "For Texas transactions, acknowledgments must comply with state law and identification must be satisfactory for all signers, including any non-borrowing spouses who must sign certain documents for homestead properties."
+            "Purchase packages include the Note, Deed of Trust, Closing Disclosure, affidavits, and lender-specific forms. Each requires correct signatures, dates, and notarization. A missed initial, wrong date, or incomplete acknowledgment can delay funding, keys, and possession—sometimes by days.",
+            "For Texas transactions, acknowledgments must comply with state law. Non-borrowing spouses must sign certain documents on homestead properties, and identification must satisfy lender and title requirements. A trained signing agent prevents these common re-sign triggers."
           ]
         },
         {
           title: "How we support buyer closings",
           paragraphs: [
-            "We quality-check documents at the table, guide signers through the sequence, and align with title and lender instructions to avoid funding delays.",
-            "Working with a professional buyer-side signing service provides additional quality control for title and lender teams, while giving buyers confidence that the final step of their home purchase is handled correctly."
+            "Our agents arrive prepared with a quality checklist, verify document completeness, guide signers through the proper sequence, and align every signature with title and lender instructions. We flag inconsistencies in real time, preventing funding delays.",
+            "Professional buyer-side signing service adds quality control that protects title and lender teams while giving buyers peace of mind. The result: closing day confidence and timely keys."
+          ]
+        },
+        {
+          title: "Coordination with all parties",
+          paragraphs: [
+            "We communicate directly with lender, title, and real estate agents to confirm document packages, signing instructions, and delivery deadlines. This multi-party coordination is what keeps closings on track."
           ]
         }
       ]}
       highlights={[
-        { title: "Funding-focused", description: "Keep wire and recording timelines intact by eliminating re-signs." },
-        { title: "Texas compliance", description: "State-specific acknowledgments and homestead considerations." },
-        { title: "Move-in ready", description: "Prevent closing day surprises with thorough table checks." }
+        { title: "Funding-focused", description: "Eliminate re-signs and missed signatures that delay wires and recording." },
+        { title: "Texas compliance", description: "State-specific acknowledgments, homestead rules, and spouse requirements." },
+        { title: "Quality checklist", description: "Table review ensures completeness before leaving the signing table." },
+        { title: "Party coordination", description: "Direct communication with lender, title, and agents for seamless timing." }
       ]}
       ctaText="Schedule a Buyer Closing"
       ctaLink="/book"

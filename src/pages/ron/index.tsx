@@ -1,6 +1,7 @@
 // Layout wrapper removed — App routes render Layout via Outlet
 import { useState } from 'react';
 import { StartRONModal } from '@/features/ron/components';
+import InfoCard from '@/components/common/InfoCard';
 
 export default function RONPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,22 +10,22 @@ export default function RONPage() {
       {/* Hero Section - Full Viewport Width with Deep Blue Gradient */}
       <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
         {/* Deep blue gradient background covering full viewport */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-electric-blue to-proof"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-electric-blue to-electric-blue"></div>
         
         {/* Background image with overlay - cycling dual images */}
-        <div className="absolute inset-0 z-0 opacity-45">
+        <div className="absolute inset-0 z-0 opacity-35">
           <img 
-            src="/src/assets/images/ronsession.jpg" 
+            src="/images/secure-video-signing.png" 
             alt="" 
             className="absolute inset-0 w-full h-full object-cover ron-cycle-primary"
           />
           <img 
-            src="/src/assets/images/ronsession.jpg" 
+            src="/images/happy customer using video conference conveniently from mobile device.jpg" 
             alt="" 
             className="absolute inset-0 w-full h-full object-cover ron-cycle-secondary"
           />
         </div>
-        <div className="absolute inset-0 z-0 bg-electric-blue/40"></div>
+        <div className="absolute inset-0 z-0 bg-electric-blue/70"></div>
         
         <div className="max-w-7xl mx-auto py-28 px-6 relative z-20">
           {/* Main Content */}
@@ -299,23 +300,17 @@ export default function RONPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {/* Card 1: Documents */}
-            <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-proof">Gather Your Documents</h3>
-              </div>
-              <div className="mb-4">
-                <img
-                  src="/src/assets/images/stack-loan-documents.jpg"
-                  alt="Stack of documents ready for notarization"
-                  className="w-full h-48 object-cover rounded border border-neutral-200"
-                />
-              </div>
+            {/* Card 1: Prepare Your Documents (using shared InfoCard) */}
+            <InfoCard
+              title="Gather Your Documents"
+              icon={(
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h8a2 2 0 012 2v2m4 0h-4m0 0v10a2 2 0 01-2 2H6a2 2 0 01-2-2V8m12 0H6" />
+                </svg>
+              )}
+              imageSrc="/images/stack-loan-documents.jpg"
+              imageAlt="Stack of documents ready for notarization"
+            >
               <p className="text-neutral-700 mb-4">
                 Have your government-issued photo ID and documents ready in digital format (PDF or images).
               </p>
@@ -326,7 +321,7 @@ export default function RONPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm text-neutral-600">Driver's license, passport, or state ID</span>
+                  <span className="text-sm text-neutral-600">Accepted ID: Driver's license, passport, state ID</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
@@ -334,36 +329,21 @@ export default function RONPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm text-neutral-600">Documents to be notarized (PDF preferred)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="bg-electric-blue rounded-full p-1 flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-sm text-neutral-600">Clear, legible scans or photos</span>
+                  <span className="text-sm text-neutral-600">Ensure documents are legible and complete</span>
                 </li>
               </ul>
-            </div>
-
-            {/* Card 2: Tech Check */}
-            <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-proof">Check Your Technology</h3>
-              </div>
-              <div className="mb-4">
-                <img
-                  src="/images/happy customer using video conference conveniently from mobile device.jpg"
-                  alt="Customer using video conference on mobile device"
-                  className="w-full h-48 object-cover rounded border border-neutral-200"
-                />
-              </div>
+            </InfoCard>
+            {/* Card 2: Tech Check (InfoCard) */}
+            <InfoCard
+              title="Check Your Technology"
+              icon={(
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              )}
+              imageSrc="/images/happy customer using video conference conveniently from mobile device.jpg"
+              imageAlt="Customer using video conference on mobile device"
+            >
               <p className="text-neutral-700 mb-4">
                 Ensure your device, camera, microphone, and internet connection are working properly.
               </p>
@@ -393,25 +373,19 @@ export default function RONPage() {
                   <span className="text-sm text-neutral-600">Updated browser (Chrome, Firefox, Safari)</span>
                 </li>
               </ul>
-            </div>
+            </InfoCard>
 
-            {/* Card 3: Session Tips */}
-            <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-electric-blue/10 rounded-md p-3 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-proof">Join Your Session</h3>
-              </div>
-              <div className="mb-4">
-                <img
-                  src="/src/assets/images/secure-video-signing.png"
-                  alt="Secure video notarization session"
-                  className="w-full h-48 object-cover rounded border border-neutral-200"
-                />
-              </div>
+            {/* Card 3: Session Tips (InfoCard) */}
+            <InfoCard
+              title="Join Your Session"
+              icon={(
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              )}
+              imageSrc="/images/ronsession.jpg"
+              imageAlt="Live remote notarization session"
+            >
               <p className="text-neutral-700 mb-4">
                 Click the session link at your scheduled time, verify your identity, and follow the notary's guidance.
               </p>
@@ -441,6 +415,45 @@ export default function RONPage() {
                   <span className="text-sm text-neutral-600">Use a quiet, well-lit space</span>
                 </li>
               </ul>
+            </InfoCard>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Cover (Notary Role) */}
+      <section className="section bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-12 bg-neutral-300"></div>
+              <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">What We Cover</span>
+              <div className="h-px flex-1 bg-neutral-300"></div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-proof mb-6">Notary Role in RON</h2>
+            <p className="text-xl text-neutral-600 max-w-3xl">
+              In remote online notarizations, we provide precise identity checks, certificate accuracy, and smooth execution to meet lender and state requirements.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
+              <h3 className="text-xl font-bold text-proof mb-2">Verify identities and signing authority</h3>
+              <p className="text-neutral-700">Confirm each signer’s identity, match names to documents, and ensure they have authority to sign for their corporation, LLC, partnership, or trust.</p>
+            </div>
+
+            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
+              <h3 className="text-xl font-bold text-proof mb-2">Capture exact capacities and certificates</h3>
+              <p className="text-neutral-700">Complete notarial certificates with precise titles, capacities, and entity information, using the correct acknowledgment wording required for Texas and lender guidelines.</p>
+            </div>
+
+            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
+              <h3 className="text-xl font-bold text-proof mb-2">Manage execution order and document flow</h3>
+              <p className="text-neutral-700">Guide signers through the package in sequence, ensure all signatures and initials are captured, and complete notarizations in the order needed for recording and funding.</p>
+            </div>
+
+            <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
+              <h3 className="text-xl font-bold text-proof mb-2">Coordinate with counsel, title, and lender</h3>
+              <p className="text-neutral-700">Follow written instructions, flag inconsistencies, and confirm completion so all parties receive properly executed, notarized documents with minimal post-closing corrections.</p>
             </div>
           </div>
         </div>

@@ -10,34 +10,41 @@ const relatedLinks = [
 const HELOCSigningPage: React.FC = () => {
   return (
     <LongFormSigningPage
-      title="HELOC / Equity Loans"
-      subtitle="Precision That Protects Your Funding"
-      heroSummary="Equity and HELOC packages often span several documents with scattered signature points. Missing even one can slow funding or trigger a redraw. Texas adds another layer: homestead loans must follow specific constitutional rules, making precision essential."
+      title="HELOC & Home Equity Loans"
+      subtitle="Accurate Execution Protects Your Funding Timeline"
+      heroSummary="Equity and HELOC packages span multiple documents with scattered signature requirements. Missing even one signature or notarial certificate can trigger redraws or funding delays. In Texas, homestead transactions add constitutional compliance requirements—precision is non-negotiable."
       heroBullets={[
-        "Complete, accurate packages avoid redraws",
-        "Texas homestead requirements handled with confidence",
-        "Smooth guidance through each document and obligation"
+        "Complete, accurate execution avoids costly redraws.",
+        "Texas homestead compliance built into every package.",
+        "Careful coordination keeps funding on schedule."
       ]}
       sections={[
         {
           title: "Why equity accuracy matters",
           paragraphs: [
-            "Equity and HELOC packages often span several documents with scattered signature points. Missing even one can slow funding or trigger a redraw.",
-            "Texas adds another layer: homestead loans must follow specific constitutional rules, making precision essential."
+            "Equity and HELOC packages span multiple documents with scattered signature requirements—promissory notes, security agreements, disclosures, and compliance forms. Missing a single signature or notarial certificate triggers redraws or delays funding.",
+            "In Texas, homestead transactions add constitutional compliance requirements: proper spousal consent, correct vesting, and accurate acknowledgments are non-negotiable."
           ]
         },
         {
-          title: "How we keep funding on track",
+          title: "Precision keeps funding on schedule",
           paragraphs: [
-            "We guide borrowers through the documents efficiently, making sure everything is signed correctly the first time.",
-            "That means fewer corrections, cleaner files, and faster access to funds—whether for renovations, debt payoff, or anything else."
+            "Our agents arrive with a complete package checklist, verify signatures are in the right places, ensure correct dates and notarial certificates, and guide borrowers through documents clearly.",
+            "Correct execution the first time means clean files, faster lender processing, and borrowers access funds without unexpected delays or re-signs."
+          ]
+        },
+        {
+          title: "Texas homestead and spousal requirements",
+          paragraphs: [
+            "Texas constitutional property rights require careful attention to spousal signature lines, vesting accuracy, and proper acknowledgments on homestead liens. Our specialists ensure compliance to prevent post-closing corrections."
           ]
         }
       ]}
       highlights={[
-        { title: "Funding certainty", description: "Complete, accurate packages avoid redraws." },
-        { title: "Texas homestead aware", description: "State requirements handled with confidence." },
-        { title: "Borrower clarity", description: "Smooth guidance through each document and obligation." }
+        { title: "Funding certainty", description: "Complete, accurate execution eliminates expensive redraws." },
+        { title: "Texas homestead compliant", description: "Spousal consent, vesting, and acknowledgments done right." },
+        { title: "Borrower clarity", description: "Smooth guidance through each document and obligation." },
+        { title: "Speed and accuracy", description: "Fast processing and faster fund access with clean files." }
       ]}
       ctaText="Book a HELOC Signing"
       ctaLink="/book"

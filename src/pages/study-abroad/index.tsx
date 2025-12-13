@@ -35,7 +35,7 @@ const StudyAbroadPage: React.FC = () => {
               Document Authentication for Study Abroad
             </h1>
             <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed drop-shadow-sm">
-              Prepare your transcripts, diplomas, and identity documents for international programs with reliable apostille and legalization support.
+              Prepare your transcripts, diplomas, and identity documents for international programs with reliable <Link to="/apostille" className="text-white/95 hover:text-white underline">apostille</Link> and legalization support.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

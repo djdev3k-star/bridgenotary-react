@@ -11,10 +11,10 @@ const RefinanceSigningPage: React.FC = () => {
   return (
     <SigningPageTemplate
       title="Refinance Signings"
-      subtitle="Streamline Your Mortgage Refinancing"
-      intro="Refinancing your mortgage should be simple and stress-free. Our certified notary signing agents handle your refinance documents with precision and ensure each signature meets lender and state requirements."
-      benefit="We coordinate directly with your lender or title company to ensure all pages are correctly executed and returned promptly. Whether you're reducing your rate or tapping into equity, we make the signing process seamless."
-      idealFor="Homeowners lowering mortgage rates, adjusting loan terms, or consolidating debt."
+      subtitle="Lock in Your New Rate with Confidence"
+      intro="Refinancing your mortgage is a major financial decision. Our experienced signing agents ensure every document is executed correctly, protecting your funding timeline and getting you to your new loan terms quickly and securely."
+      benefit="Refinance packages require careful attention to detail—missing signatures, incorrect dates, or incomplete acknowledgments can delay funding by days. We coordinate with your lender and title company to ensure all documents are properly signed and notarized the first time, so your refinance funds on schedule."
+      idealFor="Homeowners refinancing to lower rates, adjust loan terms, consolidate debt, or access home equity."
       ctaText="Book a Refinance Signing"
       ctaLink="/book"
       icon={icon}

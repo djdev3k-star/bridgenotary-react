@@ -93,10 +93,49 @@ const SigningPageTemplate: React.FC<SigningPageProps> = ({
           </div>
         </section>
 
-        {/* Ideal For Section */}
+        {/* What We Cover Section */}
         <section className="py-20 lg:py-28 bg-neutral-50">
           <div className="max-w-4xl mx-auto px-6">
-            <div className="bg-white rounded shadow-lg p-10 border-l-4 border-electric-blue">
+            <div className="mb-12">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-px w-12 bg-neutral-300"></div>
+                <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">What We Cover</span>
+                <div className="h-px flex-1 bg-neutral-300"></div>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">Signing Agent Role</h2>
+              <p className="text-lg text-neutral-600 max-w-3xl">
+                Our professional agents ensure precision, compliance, and efficiency at every signing.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
+                <h3 className="text-lg font-bold text-proof mb-2">Verify identities and authority</h3>
+                <p className="text-neutral-700 text-sm">Confirm signer identities, match names to documents, and verify authority to sign for corporations, LLCs, trusts, or partnerships.</p>
+              </div>
+
+              <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
+                <h3 className="text-lg font-bold text-proof mb-2">Execute with precision</h3>
+                <p className="text-neutral-700 text-sm">Guide signers through document packages in proper sequence, ensure all required signatures and initials are captured in correct locations.</p>
+              </div>
+
+              <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
+                <h3 className="text-lg font-bold text-proof mb-2">Meet lender requirements</h3>
+                <p className="text-neutral-700 text-sm">Ensure documents align with lender, title, and investor guidelines, flag inconsistencies, and coordinate completion for timely funding.</p>
+              </div>
+
+              <div className="rounded p-6 shadow-sm border border-neutral-200 bg-white">
+                <h3 className="text-lg font-bold text-proof mb-2">Deliver error-free results</h3>
+                <p className="text-neutral-700 text-sm">Manage document flow, coordinate with all parties, and deliver properly executed packages with minimal post-closing corrections.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ideal For Section */}
+        <section className="py-20 lg:py-28 bg-white">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="bg-neutral-50 rounded shadow-lg p-10 border-l-4 border-electric-blue">
               <h3 className="text-2xl md:text-3xl font-bold text-proof mb-4">Ideal For</h3>
               <p className="text-lg text-neutral-700 leading-relaxed">
                 {idealFor}

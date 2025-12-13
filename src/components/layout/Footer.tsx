@@ -103,6 +103,11 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/client-portal" className="text-gray-400 hover:text-gray-300 text-xs transition-colors">
+                  Client Portal
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

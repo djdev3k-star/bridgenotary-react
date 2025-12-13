@@ -11,33 +11,40 @@ const CommercialClosingSigningPage: React.FC = () => {
   return (
     <LongFormSigningPage
       title="Commercial Closings"
-      subtitle="High-Stakes Documents, Zero Margin for Error"
-      heroSummary="Commercial real estate transactions often involve complex loan agreements, guaranties, entity resolutions, leases, and closing certificates, many of which require notarization."
+      subtitle="Complex Transactions Demand Expert Execution"
+      heroSummary="Commercial real estate closings involve loans, guaranties, entity resolutions, leases, and certificates—many notarized. Signers may represent corporations, LLCs, partnerships, or trusts. One capacity error, one missing signature, or one misaligned acknowledgment can delay closing or create liability."
       heroBullets={[
-        "Handle corporations, LLCs, partnerships, and trusts with correct capacities.",
-        "Accurate acknowledgments and execution sequencing for recording offices.",
-        "Reduce post-closing corrections for lenders, counsel, and title."
+        "Correctly capture entity signers, titles, and notarial capacities.",
+        "Execute in proper sequence to meet recording office and lender standards.",
+        "Prevent post-closing corrections and liability exposure."
       ]}
       sections={[
         {
           title: "Complex parties and documents",
           paragraphs: [
-            "Multiple signers may represent corporations, LLCs, partnerships, or trusts, and the notary must correctly capture capacity and name information in the certificates.",
-            "Any error in acknowledgment wording, signer identification, or execution sequence can cause issues for recording offices or lenders and may delay closing or funding."
+            "Commercial signers may represent corporations, LLCs, partnerships, or trusts. Each requires correct capacity identification in notarial certificates. A single error in acknowledgment wording, signer title, or entity name can delay recording or create liability.",
+            "Commercial packages often include loans, guaranties, corporate resolutions, leases, assignment agreements, and closing certificates—some notarized, all interdependent."
           ]
         },
         {
-          title: "Experienced commercial support",
+          title: "Expert execution and coordination",
           paragraphs: [
-            "An experienced commercial closing signing agent is familiar with typical commercial document structures and works closely with counsel and title to follow specific instructions for signatures and notarial language.",
-            "This attention to detail supports smoother closings, fewer post-closing corrections, and better documentation for institutional lenders and investors."
+            "Commercial closing signing agents are familiar with typical commercial document structures, entity signing protocols, and precise notarial language requirements. We work directly with counsel and title to follow exact instructions.",
+            "This attention to detail prevents post-closing corrections, protects all parties, and ensures institutional lenders and investors receive clean documentation."
+          ]
+        },
+        {
+          title: "Liability protection through precision",
+          paragraphs: [
+            "One misaligned signature, one incorrect capacity, or one missing acknowledgment can expose the borrower, guarantor, or lender to liability. Professional commercial signing reduces these risks significantly."
           ]
         }
       ]}
       highlights={[
-        { title: "Entity-ready", description: "Capture capacities and resolutions correctly." },
-        { title: "Recording-safe", description: "Precise certificates to satisfy county and lender review." },
-        { title: "Coordination-focused", description: "Align with counsel and title to avoid rework." }
+        { title: "Entity-ready", description: "Correct capacity identification and corporate resolution review." },
+        { title: "Recording-safe", description: "Precise notarial certificates to satisfy county and lender requirements." },
+        { title: "Coordination-expert", description: "Work seamlessly with counsel, title, and institutional lenders." },
+        { title: "Liability protection", description: "Professional execution protects all parties and investors." }
       ]}
       ctaText="Request a Commercial Closing"
       ctaLink="/book"

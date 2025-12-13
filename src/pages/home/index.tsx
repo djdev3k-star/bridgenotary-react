@@ -22,7 +22,7 @@ const FinalCTA = () => (
       <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 fade-in">Ready For Your Next Signing?</h2>
       <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto fade-in-delay">
         Join other satisfied clients who trust Bridge Notary for their most important documents.
-        Professional, reliable, and convenient mobile notary services.
+        Professional, reliable, and convenient <Link to="/services/mobile" className="text-white/90 hover:text-white underline">mobile notary services</Link>.
       </p>
       <div className="flex flex-col sm:flex-row justify-center gap-6 fade-in-delay">
         <Link to="/book" className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 pulse-button">

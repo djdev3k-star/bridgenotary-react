@@ -10,34 +10,41 @@ const relatedLinks = [
 const ReverseMortgageSigningPage: React.FC = () => {
   return (
     <LongFormSigningPage
-      title="Reverse Mortgage (Application & Closing)"
-      subtitle="Specialized Support for Senior Borrowers"
-      heroSummary="Reverse mortgage applications and closings involve unique disclosures, counseling confirmations, and security instruments designed for older homeowners."
+      title="Reverse Mortgages (HECM & Application)"
+      subtitle="Patient Expertise for Senior Borrowers"
+      heroSummary="Reverse mortgages serve an important role for retirement-age homeowners. Application and closing packages are large, detailed, and require patient explanation alongside accurate, notary-verified execution."
       heroBullets={[
-        "Patient, neutral guidance through large packages and sensitive forms.",
-        "Precise execution of affidavits, occupancy certifications, and lender specifics.",
-        "Compliance-minded to prevent funding delays or additional underwriting review."
+        "Experienced guidance through large, complex packages with clear explanations.",
+        "Accurate notarization of affidavits, occupancy certifications, and lender requirements.",
+        "Compliance focus to prevent underwriting delays or funding holds."
       ]}
       sections={[
         {
           title: "Complex, senior-focused packages",
           paragraphs: [
-            "Senior borrowers may feel overwhelmed by the size of the package and the technical language, so a patient, experienced signing agent is critical to support understanding while maintaining a neutral role.",
-            "Reverse mortgage documents often include multiple affidavits, occupancy certifications, and specific lender forms that demand precise execution and notarization."
+            "Reverse mortgage applications and closings are large and technically dense. Senior borrowers deserve patient, clear explanation of each step while the signing agent maintains a neutral, professional role.",
+            "These packages include counseling confirmations, occupancy affidavits, HECM disclosures, note and deed forms, and lender-specific documents—all requiring precise execution and accurate notarization."
           ]
         },
         {
-          title: "Compliance and care",
+          title: "Compliance and accuracy under review",
           paragraphs: [
-            "Because these loans are heavily regulated and frequently reviewed, errors in notarial wording, missing signatures, or incorrect dates can trigger funding delays or additional underwriting review.",
-            "A professional reverse mortgage signing service ensures that each document is correctly completed, explains the general purpose of key forms, and confirms that all required parties sign, helping lenders and title companies maintain a high standard for this sensitive product."
+            "Reverse mortgages are heavily regulated and frequently audited. Notarial certificate errors, missing signatures, incorrect dates, or incomplete acknowledgments can trigger funding delays or additional underwriting scrutiny.",
+            "Our reverse mortgage specialists ensure every document is correctly completed, guide borrowers through key concepts without providing advice, and confirm proper execution for lender and investor confidence."
+          ]
+        },
+        {
+          title: "Supporting the retirement milestone",
+          paragraphs: [
+            "Reverse mortgages help seniors access home equity and achieve financial security in retirement. Our role is ensuring this important transaction progresses smoothly, with confidence and accurate documentation."
           ]
         }
       ]}
       highlights={[
-        { title: "Patient guidance", description: "Calm walkthroughs for seniors while staying neutral." },
-        { title: "HECM-ready", description: "Familiar with counseling confirmations and occupancy forms." },
-        { title: "Audit-safe", description: "Clean certificates and dates to avoid rework." }
+        { title: "Patient guidance", description: "Clear explanations and calm support through complex packages." },
+        { title: "HECM expertise", description: "Familiar with counseling confirmations, occupancy forms, and HECM rules." },
+        { title: "Audit-safe execution", description: "Clean certificates and precise dates to avoid funding delays." },
+        { title: "Respectful professionalism", description: "Neutral role supporting senior borrowers with dignity." }
       ]}
       ctaText="Schedule a Reverse Mortgage Signing"
       ctaLink="/book"

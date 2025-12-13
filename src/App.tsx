@@ -43,6 +43,7 @@ const Resources = React.lazy(() => import("@/pages/resources"));
 const SchedulePage = React.lazy(() => import("@/pages/schedule"));
 const DemoPage = React.lazy(() => import("@/pages/demo"));
 const LoginPage = React.lazy(() => import("@/pages/login"));
+const ClientPortal = React.lazy(() => import("@/pages/client-portal"));
 const Sitemap = React.lazy(() => import("@/pages/sitemap"));
 
 // Loading fallback component
@@ -104,6 +105,7 @@ function App() {
               <Route path="/faq" element={<FAQ />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/client-portal" element={<ClientPortal />} />
               <Route path="/sitemap" element={<Sitemap />} />
             </Route>
           </Routes>

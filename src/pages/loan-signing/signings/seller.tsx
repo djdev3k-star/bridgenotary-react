@@ -22,22 +22,29 @@ const SellerSigningPage: React.FC = () => {
         {
           title: "Why seller accuracy matters",
           paragraphs: [
-            "Errors in the seller’s deed or acknowledgment can delay recording, which in turn can delay funding schedules and closing out the file for title and escrow.",
-            "A knowledgeable signing agent verifies that all required sellers are present, properly identified, and signing the correct forms as prepared by the title company."
+            "Seller deeds and acknowledgments must be notarized without error. Any mistake in the certificate delays recording, which holds up funding for title and escrow. Sellers rightfully want their proceeds on schedule.",
+            "A trained signing agent verifies all required sellers are present, properly identified per lender and title requirements, and signing the exact forms prepared by the title company."
           ]
         },
         {
-          title: "Texas-specific care",
+          title: "Texas homestead and vesting considerations",
           paragraphs: [
-            "In Texas, particular attention is paid to homestead issues, marital status, and vesting in the deed, so the notary must complete certificates that clearly identify the signers and comply with statutory requirements.",
-            "Using a dedicated seller signing service reduces re-signs and post-closing corrections, protecting transaction timelines and helping sellers receive proceeds faster."
+            "Texas law imposes strict requirements on homestead sales: marital status, vesting accuracy, and spousal signing obligations are non-negotiable. Notarial certificates must clearly identify signers and comply with state statute.",
+            "A seller-side signing specialist ensures these nuances are handled correctly, preventing recording delays and post-closing corrections."
+          ]
+        },
+        {
+          title: "Streamlined seller proceeds",
+          paragraphs: [
+            "When deeds and acknowledgments are executed correctly the first time, funds disburse on schedule. Our focus is ensuring your closing is recording-ready so you receive your proceeds without delay."
           ]
         }
       ]}
       highlights={[
-        { title: "Recording-ready", description: "Accurate deeds and acknowledgments to keep funds moving." },
-        { title: "ID certainty", description: "Confirm all required sellers and capacities before the table starts." },
-        { title: "Texas compliance", description: "Homestead, vesting, and marital status handled correctly." }
+        { title: "Recording-ready", description: "Accurate deeds and acknowledgments eliminate re-signs and delays." },
+        { title: "ID verification", description: "Confirm all required sellers and proper identification before signing." },
+        { title: "Texas compliance", description: "Homestead, vesting, and marital status compliance built in." },
+        { title: "Funds flow on time", description: "Get your sale proceeds without post-closing corrections." }
       ]}
       ctaText="Book a Seller Signing"
       ctaLink="/book"

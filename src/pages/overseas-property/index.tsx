@@ -35,7 +35,7 @@ const OverseasPropertyPage: React.FC = () => {
               Document Authentication for International Real Estate
             </h1>
             <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed drop-shadow-sm">
-              Authenticate property deeds, purchase agreements, and legal documents for overseas real estate transactions with certified apostille support.
+              Authenticate property deeds, purchase agreements, and legal documents for overseas real estate transactions with certified apostille support. <Link to="/services/mobile" className="text-white/95 hover:text-white underline">Mobile notary</Link> available.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

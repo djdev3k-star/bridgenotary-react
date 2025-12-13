@@ -93,7 +93,7 @@ const LoanSigningPage: React.FC = () => {
               <span className="text-neutral-900">Signing Experts</span>
             </h1>
             <p className="text-lg text-white/90 mb-10 leading-relaxed max-w-2xl font-light">
-              Certified signing agents, bonded & insured. Trusted by title companies and lenders for accurate, timely closings with same-day and rush availability.
+              Certified signing agents, bonded & insured. Trusted by title companies and lenders for accurate, timely closings with same-day and rush availability. <Link to="/ron" className="text-white/90 hover:text-white underline">Remote notarization</Link> also available.
             </p>
 
             {/* CTA Button */}

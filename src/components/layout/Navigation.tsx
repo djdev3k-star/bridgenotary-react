@@ -152,53 +152,47 @@ const Navigation: React.FC<NavigationProps> = () => {
         {
           label: 'Purchase Signing',
           path: '/loan-signing/purchase',
-          description: 'Buyer closings with funding coordination.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-          )
+          description: 'Buyer closings with funding coordination.'
         },
         {
           label: 'Refinance Signing',
           path: '/loan-signing/refinance',
-          description: 'Rate/term and cash-out refinance packages.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.4 15A8 8 0 106 5.6" />
-            </svg>
-          )
+          description: 'Rate/term and cash-out refinance packages.'
         },
         {
           label: 'Reverse Mortgage',
           path: '/loan-signing/reverse',
-          description: 'Specialized HECM and senior borrower support.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7H7v10h10v-6m-4-4l4 4m-4-4v4h4" />
-            </svg>
-          )
+          description: 'Specialized HECM and senior borrower support.'
         },
         {
           label: 'HELOC & Home Equity',
           path: '/loan-signing/heloc',
-          description: 'Equity line closings with lender-specific docs.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m4 0h1M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          )
+          description: 'Equity line closings with lender-specific docs.'
+        },
+        {
+          label: 'Seller Signing',
+          path: '/loan-signing/seller',
+          description: 'Seller-side closings and proceeds.'
+        },
+        {
+          label: 'Commercial Closings',
+          path: '/loan-signing/commercial',
+          description: 'Entity-complex commercial transactions.'
+        },
+        {
+          label: 'Loan Modifications',
+          path: '/loan-signing/modification',
+          description: 'Loan modification and relief documents.'
+        },
+        {
+          label: 'Property Tax Relief',
+          path: '/loan-signing/property-tax',
+          description: 'Deadline-driven tax relief signings.'
         },
         {
           label: 'View all loan signings →',
           path: '/loan-signing',
-          description: 'Seller, commercial, modifications, and more.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          )
+          description: 'Complete loan signing overview.'
         }
       ]
     }

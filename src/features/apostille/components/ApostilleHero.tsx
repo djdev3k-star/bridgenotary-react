@@ -1,84 +1,134 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface ApostilleHeroProps {
   onContactClick: () => void;
 }
 
 export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) => (
-  <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center">
-    {/* Background Image with Overlay */}
-    <div className="absolute inset-0 z-0">
-      <img
-        src="/assets/images/apostille_A person signing important legal documents in the presence of a notary public. The notary is seen from the side, with a clear view of the signature, documents, and notary seal._.jpg"
-        alt="Apostille Service"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-proof/80 to-electric-blue/80" />
-      <div className="absolute inset-0 bg-black/30" />
-    </div>
-    <div className="max-w-7xl mx-auto py-20 px-6 relative z-20">
-      <div className="max-w-4xl mx-auto text-center mb-12">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-          Document <span className="text-gold">Apostille</span> Services
-        </h1>
-        <div className="bg-white/10 backdrop-blur-sm rounded-xl px-8 py-4 shadow-lg border border-white/20 inline-block">
-          <p className="text-xl text-gold font-medium">
-            Avoid Rejection. Avoid Delays. Get It Right the First Time.
+  <>
+    {/* Hero Section - Full Viewport Width with Deep Blue Gradient */}
+    <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
+      {/* Deep blue gradient background covering full viewport */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-electric-blue to-proof"></div>
+      
+      {/* Background image with enhanced visibility and deepened blue overlay */}
+      <div className="absolute inset-0 z-0 opacity-60">
+        <img 
+          src="/images/apostilleFlyers.png" 
+          alt="" 
+          className="w-full h-full object-cover brightness-110 saturate-110"
+        />
+      </div>
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-proof/60 via-electric-blue/50 to-proof/65 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-electric-blue/20"></div>
+      </div>
+      
+      {/* Hero Content */}
+      <div className="max-w-7xl mx-auto py-28 px-6 relative z-20 w-full">
+        <div className="max-w-3xl text-left">
+          {/* Heading */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+            Document Apostille Services
+          </h1>
+
+          {/* Tagline */}
+          <div className="mb-6">
+            <p className="text-lg md:text-xl font-bold text-white drop-shadow-sm">
+              Avoid Rejection. Avoid Delays. Get It Right the First Time.
+            </p>
+          </div>
+
+          {/* Description */}
+          <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed drop-shadow-sm">
+            Whether it's for a destination wedding in Italy, teaching in Japan, or adopting from Colombia, we get your documents stamped, sealed, and ready—without the guesswork.
           </p>
-        </div>
-        <p className="text-xl text-white/90 mb-10 max-w-3xl leading-relaxed">
-          Whether it's for a destination wedding in Italy, teaching in Japan, or adopting from Colombia, we get your documents stamped, sealed, and ready—without the guesswork.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 mb-10">
-          <button
-            onClick={onContactClick}
-            className="bg-white text-proof hover:bg-neutral-100 transition-all rounded-md text-lg py-3 px-6 inline-block text-center font-semibold shadow-lg"
-          >
-            <span className="flex items-center justify-center gap-2 whitespace-nowrap">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Start My Apostille
-            </span>
-          </button>
-          <button
-            className="bg-transparent border-2 border-white hover:bg-white/10 transition-all rounded-md text-lg py-3 px-6 inline-block text-center text-white font-semibold shadow-lg"
-          >
-            <span className="flex items-center justify-center gap-2 whitespace-nowrap">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-              Chat With an Expert
-            </span>
-          </button>
-        </div>
-        <div className="grid grid-cols-3 gap-3">
-          <div className="bg-white/20 backdrop-blur-sm rounded-md px-4 py-3 text-center border border-white/20 shadow-lg">
-            <div className="flex justify-center mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <span className="text-sm text-white font-medium drop-shadow-sm">Guaranteed</span>
-          </div>
-          <div className="bg-white/20 backdrop-blur-sm rounded-md px-4 py-3 text-center border border-white/20 shadow-lg">
-            <div className="flex justify-center mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <span className="text-sm text-white font-medium drop-shadow-sm">Fast</span>
-          </div>
-          <div className="bg-white/20 backdrop-blur-sm rounded-md px-4 py-3 text-center border border-white/20 shadow-lg">
-            <div className="flex justify-center mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <span className="text-sm text-white font-medium drop-shadow-sm">Global</span>
+
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button
+              onClick={onContactClick}
+              className="bg-white text-proof hover:bg-neutral-100 transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl"
+            >
+              <span className="flex items-center justify-center gap-2 whitespace-nowrap">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Start My Apostille
+              </span>
+            </button>
+            <button
+              onClick={onContactClick}
+              className="border-2 border-white text-white hover:bg-white hover:text-proof transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl"
+            >
+              <span className="flex items-center justify-center gap-2 whitespace-nowrap">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                Chat With an Expert
+              </span>
+            </button>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    {/* Flyer Strip Section - full-width seamless trio with deep links */}
+    <section className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden bg-neutral-50">
+      <div className="flex flex-col md:flex-row h-56 md:h-64 lg:h-72">
+        <Link
+          to="/study-abroad"
+          className="relative flex-1 group block"
+          aria-label="Study Abroad apostille services"
+        >
+          <img
+            src="/src/assets/images/study-abroad.png"
+            alt="Study Abroad"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-electric-blue/60 via-electric-blue/30 to-transparent group-hover:from-electric-blue/70 group-hover:via-electric-blue/40 transition-colors duration-300"></div>
+          <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
+            <p className="text-sm uppercase tracking-[0.2em] text-white/80">Study Abroad</p>
+            <p className="text-lg font-semibold">Academic & visa documents</p>
+          </div>
+        </Link>
+
+        <Link
+          to="/international-adoption"
+          className="relative flex-1 group block"
+          aria-label="International Adoption apostille services"
+        >
+          <img
+            src="/src/assets/images/international-adoption.png"
+            alt="International Adoption"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-proof/65 via-electric-blue/35 to-transparent group-hover:from-proof/75 group-hover:via-electric-blue/45 transition-colors duration-300"></div>
+          <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
+            <p className="text-sm uppercase tracking-[0.2em] text-white/80">International Adoption</p>
+            <p className="text-lg font-semibold">Home studies & dossiers</p>
+          </div>
+        </Link>
+
+        <Link
+          to="/destination-wedding"
+          className="relative flex-1 group block"
+          aria-label="Destination Wedding apostille services"
+        >
+          <img
+            src="/src/assets/images/destination-wedding.png"
+            alt="Destination Wedding"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-electric-blue/40 via-proof/20 to-transparent group-hover:from-electric-blue/50 group-hover:via-proof/30 transition-colors duration-300"></div>
+          <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
+            <p className="text-sm uppercase tracking-[0.2em] text-white/80">Destination Wedding</p>
+            <p className="text-lg font-semibold">Marriage & identity docs</p>
+          </div>
+        </Link>
+      </div>
+    </section>
+  </>
 );

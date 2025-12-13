@@ -38,8 +38,8 @@
   p,
   li,
   label {
-    @apply text-neutral-700 md:text-lg;
-    line-height: 1.7;
+    @apply text-neutral-700;
+    line-height: 1.8;
     letter-spacing: 0.005em;
   }
   a {
@@ -60,15 +60,15 @@
     @apply py-20 md:py-28 px-4 md:px-0 max-w-5xl mx-auto;
   }
   .card {
-    @apply bg-white rounded-md shadow-2xl p-8 md:p-12;
+    @apply bg-white rounded-sm shadow-2xl p-8 md:p-12;
   }
   .pill {
-    @apply inline-block bg-neutral-100 rounded-full px-5 py-2 text-base font-medium text-proof shadow-sm;
+    @apply inline-block bg-neutral-100 rounded px-5 py-2 text-base font-medium text-proof shadow-sm;
   }
 
   /* New button styles */
   .button {
-    @apply rounded-md px-6 py-3 font-semibold text-lg shadow-md transition-all duration-300 focus-visible:ring-2 focus-visible:ring-electric-blue focus:outline-none;
+    @apply rounded-sm px-6 py-3 font-semibold text-lg shadow-md transition-all duration-300 focus-visible:ring-2 focus-visible:ring-electric-blue focus:outline-none;
   }
   .button-primary {
     @apply button bg-electric-blue text-white hover:bg-hover-blue;
@@ -167,4 +167,107 @@
   .icon-bg {
     @apply bg-electric-blue text-white;
   }
+
+  /* RON page cycling animations - primary image longer */
+  @keyframes ronCyclePrimary {
+    0%, 65% {
+      opacity: 1;
+      z-index: 20;
+    }
+    66%, 100% {
+      opacity: 0;
+      z-index: 19;
+    }
+  }
+
+  @keyframes ronCycleSecondary {
+    0%, 65% {
+      opacity: 0;
+      z-index: 19;
+    }
+    66%, 100% {
+      opacity: 1;
+      z-index: 20;
+    }
+  }
+
+  .ron-cycle-primary {
+    animation: ronCyclePrimary 12s ease-in-out infinite;
+  }
+
+  .ron-cycle-secondary {
+    animation: ronCycleSecondary 12s ease-in-out infinite;
+  }
+
+  /* Cycling animation for hero background images */
+  @keyframes cycleImage1 {
+    0%, 100% {
+      opacity: 1;
+      z-index: 20;
+    }
+    49% {
+      opacity: 1;
+      z-index: 20;
+    }
+    50% {
+      opacity: 0;
+      z-index: 19;
+    }
+  }
+
+  @keyframes cycleImage2 {
+    0%, 49% {
+      opacity: 0;
+      z-index: 19;
+    }
+    50%, 100% {
+      opacity: 1;
+      z-index: 20;
+    }
+  }
+  @keyframes cycleImage3 {
+    0%, 65% {
+      opacity: 0;
+      z-index: 19;
+    }
+    66%, 100% {
+      opacity: 1;
+      z-index: 20;
+    }
+  }
+
+  .cycle-image-1 {
+    animation: cycleImage1 9s ease-in-out infinite;
+  }
+
+  .cycle-image-2 {
+    animation: cycleImage2 9s ease-in-out infinite;
+  }
+
+  .cycle-image-3 {
+    animation: cycleImage3 9s ease-in-out infinite;
+  }
+
+  .scroll-animation {
+    animation: scrollImage 30s linear infinite;
+  }
+}
+
+/* Tawk.to Widget Color Override - Blue theme */
+#tawk-bubble-container,
+.tawk-min-container {
+  --tawk-header-color: #0046fa !important;
+  --tawk-primary-color: #0046fa !important;
+}
+
+/* Override Tawk.to bubble background color */
+.tawk-min-container .tawk-button,
+#tawk-bubble-container .tawk-button {
+  background-color: #0046fa !important;
+}
+
+/* Override chat header */
+.tawk-min-container .tawk-header,
+iframe[title*="chat widget"] {
+  --tawk-header-background: #0046fa !important;
 }

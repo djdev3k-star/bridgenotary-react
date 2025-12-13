@@ -44,10 +44,10 @@ const steps = [
 export default function Process() {
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[90rem] mx-auto px-6">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-proof mb-6">How It Works</h2>
-          <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
+          <div className="h-1 w-20 bg-neutral-900 mx-auto mb-8"></div>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
             Our streamlined process ensures a smooth and efficient signing experience from booking to completion
           </p>
@@ -59,12 +59,13 @@ export default function Process() {
           
           {steps.map((item, index) => (
             <div key={item.step} className={`text-center relative z-10 ${index % 2 === 0 ? 'fade-in' : 'fade-in-delay'}`}>
-              <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 shadow-lg">
+              {/* Step number circle - hidden for now */}
+              {/* <div className="bg-electric-blue text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <span className="font-bold text-xl">{item.step}</span>
-              </div>
+              </div> */}
               
-              <div className="bg-white rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-neutral-100 h-full transform hover:-translate-y-1">
-                <div className="bg-electric-blue/10 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-electric-blue">
+              <div className="bg-white rounded p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-neutral-100 h-full transform hover:-translate-y-1">
+                <div className="w-14 h-14 flex items-center justify-center mx-auto mb-4 text-electric-blue">
                   {item.icon}
                 </div>
                 <div className="text-xl font-semibold text-proof mb-3">{item.title}</div>
@@ -75,7 +76,7 @@ export default function Process() {
         </div>
         
   <div className="mt-28 text-center fade-in-delay">
-    <a href="/book" className="inline-flex items-center gap-2 bg-electric-blue text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 pulse-button">
+    <a href="/book" className="inline-flex items-center gap-2 bg-electric-blue text-white px-8 py-4 rounded font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 pulse-button">
       Start Your Signing Process
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

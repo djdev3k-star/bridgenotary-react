@@ -15,7 +15,7 @@ interface FeatureCardProps {
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon }) => (
-  <div className="bg-white rounded-lg p-6 shadow-sm border border-neutral-100">
+  <div className="bg-white rounded p-6 shadow-sm border border-neutral-100">
     <div className="flex items-start gap-4">
       <div className="text-proof">{icon}</div>
       <div>
@@ -39,6 +39,13 @@ const WhyBridgeNotaryPage: React.FC = () => {
       {/* Hero Section */}
       <section className="bg-proof/10 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="h-px w-12 bg-neutral-300"></span>
+            <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">
+              Why Choose Us
+            </span>
+            <span className="h-px w-12 bg-neutral-300"></span>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">
             Why Bridge Notary?
           </h1>
@@ -69,7 +76,7 @@ const WhyBridgeNotaryPage: React.FC = () => {
                 mailing, or travel.
               </p>
             </div>
-            <div className="bg-neutral-100 aspect-video rounded-lg">
+            <div className="bg-neutral-100 aspect-video rounded">
               <div className="flex items-center justify-center h-full text-neutral-400">
                 [Infographic: Remote Notarization Process]
               </div>
@@ -127,8 +134,18 @@ const WhyBridgeNotaryPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-proof text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative bg-proof text-white py-20 px-6">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="/images/stack-loan-documents.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-proof/70"></div>
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl font-bold mb-6">Start Your Notarization Now</h2>
           <p className="text-lg mb-8">
             Whether you're notarizing one page or one hundred, Bridge Notary is here to simplify the process.

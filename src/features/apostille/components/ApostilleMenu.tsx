@@ -10,12 +10,12 @@ const ApostilleMenu: React.FC = () => {
   const apostilleLinks: NavLinkType[] = [
     { to: '/apostille', label: 'Overview' },
     { to: '/apostille/quiz', label: 'Apostille Quiz' },
-    { to: '/services/apostille', label: 'Our Services' },
+    { to: '/apostille', label: 'Our Services' },
     { to: '/contact', label: 'Contact Us' }
   ];
 
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden mb-6">
+    <div className="bg-white shadow-md rounded overflow-hidden mb-6">
       <h3 className="bg-proof text-white font-semibold px-4 py-3">Apostille Resources</h3>
       <div className="divide-y">
         {apostilleLinks.map((link) => (

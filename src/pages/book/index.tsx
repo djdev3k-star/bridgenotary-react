@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { SERVICE_TYPES, getServiceById, type ServiceTypeConfig } from '@/types/services';
 
 interface ServiceOption {
   id: 'mobile' | 'online' | 'appointment';
@@ -20,9 +21,34 @@ interface AppointmentFormData {
   additionalNotes: string;
 }
 
+// Document type options grouped by category
+const DOCUMENT_TYPE_OPTIONS = [
+  { value: '', label: 'Select document type', category: '' },
+  // Loan Signing
+  { value: 'refinance', label: 'Refinance Signing', category: 'Loan Signing' },
+  { value: 'purchase', label: 'Purchase Signing (Buyer)', category: 'Loan Signing' },
+  { value: 'seller', label: 'Seller Signing', category: 'Loan Signing' },
+  { value: 'reverse', label: 'Reverse Mortgage', category: 'Loan Signing' },
+  { value: 'heloc', label: 'HELOC / Home Equity', category: 'Loan Signing' },
+  { value: 'modification', label: 'Loan Modification', category: 'Loan Signing' },
+  { value: 'commercial', label: 'Commercial Closing', category: 'Loan Signing' },
+  { value: 'property-tax', label: 'TX Property Tax Loan', category: 'Loan Signing' },
+  // General Notary
+  { value: 'general', label: 'General Notary', category: 'General Notary' },
+  { value: 'power-of-attorney', label: 'Power of Attorney', category: 'General Notary' },
+  { value: 'estate-trust', label: 'Estate & Trust Documents', category: 'General Notary' },
+  { value: 'witness', label: 'Witness Services', category: 'General Notary' },
+  { value: 'i9-verification', label: 'I-9 Verification', category: 'General Notary' },
+  // Specialty
+  { value: 'apostille', label: 'Apostille Services', category: 'Specialty' },
+  { value: 'other', label: 'Other', category: 'Other' },
+];
+
 const BookAppointment: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [selectedService, setSelectedService] = useState<ServiceOption['id'] | null>(null);
+  const [preselectedDocType, setPreselectedDocType] = useState<ServiceTypeConfig | null>(null);
   const [formData, setFormData] = useState<AppointmentFormData>({
     name: '',
     email: '',
@@ -33,6 +59,29 @@ const BookAppointment: React.FC = () => {
     location: '',
     additionalNotes: ''
   });
+
+  // Handle query params for service pre-selection
+  useEffect(() => {
+    const serviceParam = searchParams.get('service');
+    const modeParam = searchParams.get('mode'); // 'mobile' or 'online'
+    
+    if (serviceParam) {
+      const service = getServiceById(serviceParam);
+      if (service) {
+        setPreselectedDocType(service);
+        setFormData(prev => ({ ...prev, documentType: serviceParam }));
+        
+        // Auto-select mobile if service is in-person only
+        if (service.inPersonOnly) {
+          setSelectedService('mobile');
+        } else if (modeParam === 'online' && service.ronCapable) {
+          navigate('/ron');
+        } else if (modeParam === 'mobile') {
+          setSelectedService('mobile');
+        }
+      }
+    }
+  }, [searchParams, navigate]);
 
   const serviceOptions: ServiceOption[] = [
     {
@@ -54,39 +103,29 @@ const BookAppointment: React.FC = () => {
     },
     {
       id: 'online',
-      title: 'Start Online Session',
-      description: 'Connect with a notary right now',
+      title: 'Schedule Online Session',
+      description: 'Remote Online Notarization via secure video',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
       ),
       benefits: [
-        'Immediate connection with available notaries',
-        'Secure video conferencing',
-        'Digital document signing',
-        'Available 24/7'
-      ]
-    },
-    {
-      id: 'appointment',
-      title: 'Schedule Appointment',
-      description: 'Book a specific time for your session',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      ),
-      benefits: [
-        'Choose your preferred date and time',
-        'Guaranteed notary availability',
-        'Perfect for planned document signings',
-        'Reminder notifications'
+        'Notarize from anywhere with internet access',
+        'Secure video conferencing technology',
+        'Digital document signing and storage',
+        'Schedule at your convenience'
       ]
     }
   ];
 
   const handleServiceSelection = (serviceId: ServiceOption['id']) => {
+    // Check if the selected document type requires in-person signing
+    if (serviceId === 'online' && preselectedDocType?.inPersonOnly) {
+      // Don't allow online for in-person-only services
+      return;
+    }
+    
     setSelectedService(serviceId);
     if (serviceId === 'online') {
       navigate('/ron');
@@ -109,33 +148,87 @@ const BookAppointment: React.FC = () => {
   };
 
   const renderServiceSelection = () => (
-    <div className="grid md:grid-cols-3 gap-6 mb-12">
-      {serviceOptions.map((option) => (
-        <button
-          key={option.id}
-          onClick={() => handleServiceSelection(option.id)}
-          className={`p-6 rounded-lg border-2 text-left transition-all hover:shadow-lg
-            ${selectedService === option.id 
-              ? 'border-electric-blue bg-electric-blue/5' 
-              : 'border-neutral-200 hover:border-electric-blue/50'}`}
-        >
-          <div className={`mb-4 ${selectedService === option.id ? 'text-electric-blue' : 'text-proof'}`}>
-            {option.icon}
+    <div>
+      {/* Service context notice */}
+      {preselectedDocType && (
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className={`p-4 rounded-lg border ${preselectedDocType.inPersonOnly 
+            ? 'bg-amber-50 border-amber-200' 
+            : 'bg-electric-blue/5 border-electric-blue/20'}`}>
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">{preselectedDocType.inPersonOnly ? '📍' : '✓'}</span>
+              <div>
+                <p className="font-semibold text-proof">
+                  {preselectedDocType.label}
+                </p>
+                {preselectedDocType.inPersonOnly ? (
+                  <p className="text-sm text-amber-800">
+                    {preselectedDocType.notes || 'This service requires an in-person signing.'}
+                  </p>
+                ) : (
+                  <p className="text-sm text-neutral-600">
+                    {preselectedDocType.ronCapable 
+                      ? 'Available for both mobile signing and remote online notarization.' 
+                      : preselectedDocType.description}
+                  </p>
+                )}
+              </div>
+            </div>
           </div>
-          <h3 className="text-xl font-semibold mb-2 text-proof">{option.title}</h3>
-          <p className="text-neutral-600 mb-4">{option.description}</p>
-          <ul className="space-y-2">
-            {option.benefits.map((benefit, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <svg className="h-5 w-5 text-electric-blue mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-sm text-neutral-600">{benefit}</span>
-              </li>
-            ))}
-          </ul>
-        </button>
-      ))}
+        </div>
+      )}
+      
+      <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
+        {serviceOptions.map((option) => {
+          const isDisabled = option.id === 'online' && preselectedDocType?.inPersonOnly;
+          
+          return (
+            <button
+              key={option.id}
+              onClick={() => handleServiceSelection(option.id)}
+              disabled={isDisabled}
+              className={`p-6 rounded border-2 text-left transition-all
+                ${isDisabled 
+                  ? 'border-neutral-200 bg-neutral-50 opacity-60 cursor-not-allowed'
+                  : selectedService === option.id 
+                    ? 'border-electric-blue bg-electric-blue/5 hover:shadow-lg' 
+                    : 'border-neutral-200 hover:border-electric-blue/50 hover:shadow-lg'}`}
+            >
+              <div className={`mb-4 ${isDisabled ? 'text-neutral-400' : selectedService === option.id ? 'text-electric-blue' : 'text-proof'}`}>
+                {option.icon}
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className={`text-xl font-semibold ${isDisabled ? 'text-neutral-400' : 'text-proof'}`}>
+                  {option.title}
+                </h3>
+                {option.id === 'online' && preselectedDocType?.inPersonOnly && (
+                  <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">
+                    Not Available
+                  </span>
+                )}
+              </div>
+              <p className={`mb-4 ${isDisabled ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                {option.description}
+              </p>
+              <ul className="space-y-2">
+                {option.benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <svg className={`h-5 w-5 mt-1 flex-shrink-0 ${isDisabled ? 'text-neutral-300' : 'text-electric-blue'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className={`text-sm ${isDisabled ? 'text-neutral-400' : 'text-neutral-600'}`}>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+              {isDisabled && (
+                <p className="mt-4 text-xs text-amber-700 bg-amber-50 p-2 rounded">
+                  {preselectedDocType?.notes || 'This document type requires in-person signing.'}
+                </p>
+              )}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 
@@ -150,7 +243,7 @@ const BookAppointment: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Full Name"
               placeholder="Enter your full name"
@@ -163,7 +256,7 @@ const BookAppointment: React.FC = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Email Address"
               placeholder="Enter your email address"
@@ -179,7 +272,7 @@ const BookAppointment: React.FC = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Phone Number"
               placeholder="Enter your phone number"
@@ -191,18 +284,54 @@ const BookAppointment: React.FC = () => {
               name="documentType"
               value={formData.documentType}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Document Type"
               title="Select the type of document you need notarized"
             >
               <option value="">Select document type</option>
-              <option value="real-estate">Real Estate Documents</option>
-              <option value="power-of-attorney">Power of Attorney</option>
-              <option value="affidavit">Affidavit</option>
-              <option value="legal">Legal Documents</option>
-              <option value="other">Other</option>
+              <optgroup label="Loan Signing">
+                <option value="refinance">Refinance Signing</option>
+                <option value="purchase">Purchase Signing (Buyer)</option>
+                <option value="seller">Seller Signing</option>
+                <option value="reverse">Reverse Mortgage</option>
+                <option value="heloc">HELOC / Home Equity</option>
+                <option value="modification">Loan Modification</option>
+                <option value="commercial">Commercial Closing</option>
+                <option value="property-tax">TX Property Tax Loan</option>
+              </optgroup>
+              <optgroup label="General Notary">
+                <option value="general">General Notary</option>
+                <option value="power-of-attorney">Power of Attorney</option>
+                <option value="estate-trust">Estate & Trust Documents</option>
+                <option value="witness">Witness Services</option>
+                <option value="i9-verification">I-9 Verification</option>
+              </optgroup>
+              <optgroup label="Specialty">
+                <option value="apostille">Apostille Services</option>
+                <option value="other">Other</option>
+              </optgroup>
             </select>
+            {/* RON availability indicator */}
+            {formData.documentType && SERVICE_TYPES[formData.documentType] && (
+              <div className="mt-2">
+                {SERVICE_TYPES[formData.documentType].inPersonOnly ? (
+                  <span className="text-xs text-amber-700 bg-amber-50 px-2 py-1 rounded inline-flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                    In-Person Only
+                  </span>
+                ) : SERVICE_TYPES[formData.documentType].ronCapable ? (
+                  <span className="text-xs text-electric-blue bg-electric-blue/10 px-2 py-1 rounded inline-flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    RON Available
+                  </span>
+                ) : null}
+              </div>
+            )}
           </div>
         </div>
 
@@ -214,7 +343,7 @@ const BookAppointment: React.FC = () => {
               name="preferredDate"
               value={formData.preferredDate}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Preferred Date"
               title="Select your preferred date"
@@ -226,7 +355,7 @@ const BookAppointment: React.FC = () => {
               name="preferredTime"
               value={formData.preferredTime}
               onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
               aria-label="Preferred Time"
               title="Select your preferred time slot"
@@ -248,7 +377,7 @@ const BookAppointment: React.FC = () => {
               value={formData.location}
               onChange={handleInputChange}
               placeholder="Enter address for mobile signing"
-              className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+              className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
               required
             />
           </div>
@@ -261,7 +390,7 @@ const BookAppointment: React.FC = () => {
             value={formData.additionalNotes}
             onChange={handleInputChange}
             rows={4}
-            className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
+            className="w-full px-4 py-2 border border-neutral-300 rounded focus:ring-2 focus:ring-electric-blue focus:border-electric-blue"
             placeholder="Any special requirements or additional information..."
           />
         </div>
@@ -270,7 +399,7 @@ const BookAppointment: React.FC = () => {
           <button
             type="button"
             onClick={() => setSelectedService(null)}
-            className="px-6 py-2 border border-neutral-300 rounded-lg hover:bg-neutral-50"
+            className="px-6 py-2 border border-neutral-300 rounded hover:bg-neutral-50"
           >
             Back
           </button>
@@ -278,7 +407,7 @@ const BookAppointment: React.FC = () => {
             type="submit"
             className="button-primary"
           >
-            Submit Request
+            Confirm Appointment
           </button>
         </div>
       </form>
@@ -289,11 +418,11 @@ const BookAppointment: React.FC = () => {
     <div className="section">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Book Your Notary Service</h1>
-          <div className="h-1 w-20 bg-gold mx-auto mb-8"></div>
+          <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">Schedule Your Appointment</h1>
+          <div className="h-1 w-20 bg-neutral-900 mx-auto mb-8"></div>
           <p className="text-lg text-neutral-700">
-            Choose your preferred way to connect with our notaries. Whether you need an in-person
-            signing, immediate online session, or want to schedule for later, we've got you covered.
+            Choose your preferred notary service. Schedule a mobile signing at your location or 
+            a remote online notarization session via secure video conference.
           </p>
         </div>
         

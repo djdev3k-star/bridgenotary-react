@@ -20,7 +20,7 @@ function WithLoading<T>({
 
   if (error) {
     return (
-      <div className="p-4 rounded-lg bg-red-50 border border-red-200">
+      <div className="p-4 rounded bg-red-50 border border-red-200">
         <p className="text-sm text-red-600">{error}</p>
       </div>
     );

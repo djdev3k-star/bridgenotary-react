@@ -191,7 +191,7 @@ const ApostilleQuiz: React.FC = () => {
   
   return (
     <div className="max-w-3xl mx-auto px-4">
-      <div className="bg-white rounded-xl shadow-md p-8">
+      <div className="bg-white rounded shadow-md p-8">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-proof">Apostille Knowledge Quiz</h2>
           <span className="text-neutral-600 font-medium">Question {currentQuestion + 1} of {quizQuestions.length}</span>
@@ -204,7 +204,7 @@ const ApostilleQuiz: React.FC = () => {
               <button
                 key={index}
                 onClick={() => handleOptionSelect(index)}
-                className={`w-full text-left p-4 rounded-lg border transition-all ${
+                className={`w-full text-left p-4 rounded border transition-all ${
                   selectedOption === index 
                     ? 'border-electric-blue bg-electric-blue/5' 
                     : 'border-neutral-200 hover:border-electric-blue/50 hover:bg-neutral-50'
@@ -226,7 +226,7 @@ const ApostilleQuiz: React.FC = () => {
         </div>
         
         {showExplanation && (
-          <div className="bg-neutral-50 p-4 rounded-lg mb-6">
+          <div className="bg-neutral-50 p-4 rounded mb-6">
             <p className="font-medium mb-1">Explanation:</p>
             <p className="text-neutral-700">{currentQ.explanation}</p>
           </div>
@@ -254,7 +254,7 @@ const ApostilleQuiz: React.FC = () => {
         </div>
       </div>
       
-      <div className="mt-8 bg-white rounded-lg p-5 border border-neutral-200">
+      <div className="mt-8 bg-white rounded p-5 border border-neutral-200">
         <div className="flex items-start">
           <div className="flex-shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-proof" viewBox="0 0 20 20" fill="currentColor">

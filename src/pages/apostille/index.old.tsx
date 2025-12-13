@@ -23,7 +23,7 @@ const ApostillePage: React.FC = () => {
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
               Document <span className="text-gold">Apostille</span> Services
             </h1>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl px-8 py-4 shadow-lg border border-white/20 inline-block">
+            <div className="bg-white/10 backdrop-blur-sm rounded px-8 py-4 shadow-lg border border-white/20 inline-block">
               <p className="text-xl text-gold font-medium">
                 Avoid Rejection. Avoid Delays. Get It Right the First Time.
               </p>
@@ -83,8 +83,8 @@ const ApostillePage: React.FC = () => {
             </div>
             {/* Right: Why Choose Us Card */}
             <div className="hidden lg:block fade-in-delay">
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 p-10 flex flex-col h-full justify-center transform hover:scale-105 transition-transform duration-300">
-                <img src="/src/assets/images/apostille_A person signing important legal documents in the presence of a notary public. The notary is seen from the side, with a clear view of the signature, documents, and notary seal._.jpg" alt="Apostille Service" className="w-full h-48 object-cover rounded-lg mb-8 shadow-lg" />
+              <div className="bg-white/95 backdrop-blur-sm rounded shadow-2xl border border-white/20 p-10 flex flex-col h-full justify-center transform hover:scale-105 transition-transform duration-300">
+                <img src="/src/assets/images/apostille_A person signing important legal documents in the presence of a notary public. The notary is seen from the side, with a clear view of the signature, documents, and notary seal._.jpg" alt="Apostille Service" className="w-full h-48 object-cover rounded mb-8 shadow-lg" />
                 <h2 className="text-3xl font-bold text-proof mb-6 bg-gradient-to-r from-proof to-electric-blue bg-clip-text text-transparent">Why Choose Our Service?</h2>
                 <ul className="space-y-6">
                   <li className="flex items-start gap-3">

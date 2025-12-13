@@ -25,11 +25,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-files
-          path: dist/
-
+     - name: Upload build artifacts
+  uses: actions/upload-artifact@v4
+  with:
+    name: build-files
+    path: dist/
   # Add deployment steps for Netlify or Cloudflare Pages
   # You'll need to configure secrets in your GitHub repository
+

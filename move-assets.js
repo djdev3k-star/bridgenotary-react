@@ -8,7 +8,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const srcDir = path.join(__dirname, 'src', 'assets', 'images');
-const destDir = path.join(__dirname, 'public', 'assets', 'images');
+// Sync to public/images to match production asset usage
+const destDir = path.join(__dirname, 'public', 'images');
 
 // Create destination directory if it doesn't exist
 if (!fs.existsSync(destDir)) {

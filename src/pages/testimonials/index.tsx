@@ -22,6 +22,13 @@ const testimonials = [
 const Testimonials = () => (
   <div className="section">
     <div className="max-w-4xl mx-auto text-center">
+      <div className="flex items-center justify-center gap-3 mb-6">
+        <span className="h-px w-12 bg-neutral-300"></span>
+        <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">
+          Testimonials
+        </span>
+        <span className="h-px w-12 bg-neutral-300"></span>
+      </div>
       <h1 className="text-4xl md:text-5xl font-extrabold text-proof mb-6">What Our Clients Say</h1>
       <p className="text-xl text-neutral-700 mb-12">
         We pride ourselves on providing a professional and reliable service. Here’s what our clients have to say about their experience with Bridge Notary.

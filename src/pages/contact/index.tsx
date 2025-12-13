@@ -51,7 +51,7 @@ const Contact = () => {
     <div className="w-full bg-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden text-white py-20 md:py-28 w-screen left-1/2 -translate-x-1/2">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-proof to-electric-blue"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-electric-blue via-proof to-electric-blue"></div>
         <div className="absolute inset-0 z-10 bg-proof/20"></div>
 
         <div className="max-w-6xl mx-auto px-6 relative z-20">
@@ -63,7 +63,7 @@ const Contact = () => {
               Get in Touch
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Let's <span className="text-gold">Connect</span>
+              Let's <span className="text-electric-blue">Connect</span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
               Have a question or need a custom quote? We're here to help with all your notary needs.

@@ -23,11 +23,10 @@ const HomePage = () => (
       <div className="max-w-7xl mx-auto py-24 px-6 relative z-20 w-full">
         <div className="max-w-3xl">
           <div className="fade-in">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 text-sm font-medium mb-6 border border-white/30">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-              Bridge Notary
+            {/* Horizontal badges at top, white text, no background */}
+            <div className="flex flex-row gap-6 mb-8">
+              <div className="text-sm font-semibold text-white">$100K E&O Insurance</div>
+              <div className="text-sm font-semibold text-white">NNA Certified</div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
               Your Trusted Partner for <span className="text-gold">Professional</span> Notary Services
@@ -59,29 +58,10 @@ const HomePage = () => (
           </div>
         </div>
 
-        {/* Trust Badges */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl fade-in-delay">
-          <div className="text-center bg-white/10 backdrop-blur-sm p-4 border border-white/20">
-            <p className="text-3xl font-bold text-white mb-1">10+</p>
-            <p className="text-white/80 text-sm">Years Experience</p>
-          </div>
-          <div className="text-center bg-white/10 backdrop-blur-sm p-4 border border-white/20">
-            <p className="text-3xl font-bold text-white mb-1">5,000+</p>
-            <p className="text-white/80 text-sm">Documents Notarized</p>
-          </div>
-          <div className="text-center bg-white/10 backdrop-blur-sm p-4 border border-white/20">
-            <p className="text-3xl font-bold text-white mb-1">$100K</p>
-            <p className="text-white/80 text-sm">E&O Insurance</p>
-          </div>
-          <div className="text-center bg-white/10 backdrop-blur-sm p-4 border border-white/20">
-            <p className="text-3xl font-bold text-white mb-1">NNA</p>
-            <p className="text-white/80 text-sm">Certified & Screened</p>
-          </div>
-        </div>
       </div>
     </section>
 
-    {/* Services Overview */}
+    {/* Services Overview - new panel style */}
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
@@ -96,11 +76,11 @@ const HomePage = () => (
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
               icon: (
-                <svg className="w-8 h-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-10 h-10 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               ),
@@ -110,7 +90,7 @@ const HomePage = () => (
             },
             {
               icon: (
-                <svg className="w-8 h-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-10 h-10 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               ),
@@ -120,7 +100,7 @@ const HomePage = () => (
             },
             {
               icon: (
-                <svg className="w-8 h-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-10 h-10 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               ),
@@ -130,7 +110,7 @@ const HomePage = () => (
             },
             {
               icon: (
-                <svg className="w-8 h-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-10 h-10 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -143,13 +123,13 @@ const HomePage = () => (
             <Link 
               key={item.title} 
               to={item.link}
-              className="bg-white p-6 border border-neutral-200 hover:border-electric-blue/30 hover:shadow-lg transition-all group"
+              className="bg-white p-8 border border-neutral-200 hover:border-electric-blue/30 hover:shadow-xl transition-all group rounded-xl flex flex-col items-center text-center"
             >
               <div className="mb-5">
                 {item.icon}
               </div>
               <h3 className="text-lg font-bold text-proof mb-2 group-hover:text-electric-blue transition-colors">{item.title}</h3>
-              <p className="text-neutral-600 text-sm mb-4">{item.desc}</p>
+              <p className="text-neutral-600 text-base mb-4">{item.desc}</p>
               <span className="text-electric-blue text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                 Learn more
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -300,10 +280,10 @@ const HomePage = () => (
                 </div>
               </div>
             </div>
-            {/* Floating badge */}
-            <div className="absolute -top-4 -right-4 bg-gold text-proof px-4 py-2 text-sm font-bold shadow-lg">
+            {/* Floating badge hidden */}
+            {/* <div className="absolute -top-4 -right-4 bg-gold text-proof px-4 py-2 text-sm font-bold shadow-lg">
               ⭐ 5.0 Rating
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

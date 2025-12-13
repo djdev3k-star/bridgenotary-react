@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LoanSigningHero from './Hero';
 
 const LoanSigningPage: React.FC = () => {
   
@@ -57,57 +58,8 @@ const LoanSigningPage: React.FC = () => {
   
   return (
     <>
-      {/* Hero Section - Full Width Cover Style */}
-      <section className="relative text-white min-h-screen flex items-center overflow-hidden w-screen left-1/2 -translate-x-1/2">
-        {/* Full-Width Background */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          {/* Deep gradient base with proof blue */}
-          <div className="absolute inset-0 bg-gradient-to-br from-proof via-electric-blue to-proof z-10"></div>
-          {/* High-res overlay images - cycling behind each other */}
-          <div className="absolute inset-0 z-20 opacity-40 pointer-events-none mix-blend-overlay">
-            <img 
-              src="/images/commloanFlyers.png"
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover cycle-image-1"
-            />
-            <img 
-              src="/images/loanFlyers.png"
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover cycle-image-2"
-            />
-            <img 
-              src="/images/commsignFlyer.png"
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover cycle-image-3"
-            />
-          </div>
-          <div className="absolute inset-0 bg-electric-blue/30 z-25"></div>
-        </div>
-
-        {/* Content - Left-aligned and Wide */}
-        <div className="w-full relative z-30 px-6 py-24">
-          <div className="text-left max-w-4xl mx-auto fade-in">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white">
-              Mortgage & Loan
-              <br />
-              <span className="text-neutral-900">Signing Experts</span>
-            </h1>
-            <p className="text-lg text-white/90 mb-10 leading-relaxed max-w-2xl font-light">
-              Certified signing agents, bonded & insured. Trusted by title companies and lenders for accurate, timely closings with same-day and rush availability. <Link to="/ron" className="text-white/90 hover:text-white underline">Remote notarization</Link> also available.
-            </p>
-
-            {/* CTA Button */}
-            <Link to="/book" className="inline-block bg-proof hover:bg-proof/90 transition-all rounded text-lg py-4 px-8 text-white font-semibold pulse-button">
-              <div className="flex items-center justify-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                Schedule Your Signing
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section - Full Width Cover Style with Video Background */}
+      <LoanSigningHero />
 
       <div className="w-full bg-white">
       {/* Preparation Cards Section */}

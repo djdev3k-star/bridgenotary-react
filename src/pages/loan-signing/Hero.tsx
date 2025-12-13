@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from 'react';
 
-const Hero: React.FC = () => {
+const LoanSigningHero: React.FC = () => {
   const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   
@@ -102,4 +102,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
+export default LoanSigningHero;

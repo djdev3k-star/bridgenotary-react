@@ -23,7 +23,7 @@ const About = () => (
             Bridge Notary was founded with a simple belief: every signature tells a story. Whether it's a first-time homebuyer signing their closing documents, a business owner finalizing a critical agreement, or a family handling estate matters, we recognized that these moments deserve more than just a stamp—they deserve care, professionalism, and peace of mind.
           </p>
           <p className="text-lg text-neutral-700 leading-[1.9] mb-8">
-            Our founder, with over a decade of experience in real estate and legal documentation, saw a gap in the market. Too often, notary services were treated as an afterthought—rushed, impersonal, and prone to errors that caused delays and frustration. We set out to change that.
+            Bridge Notary was created to raise the standard for notary services—making the process clear, professional, and reliable for every client and every document.
           </p>
           <p className="text-lg text-neutral-700 leading-[1.9] mb-8">
             Today, Bridge Notary serves as a trusted partner for title companies, mortgage lenders, real estate professionals, and individuals throughout the DFW metroplex. We've built our reputation on three pillars: <strong className="text-proof">reliability</strong> (we show up on time, every time), <strong className="text-proof">accuracy</strong> (we get documents right the first time), and <strong className="text-proof">communication</strong> (we keep everyone informed throughout the process).

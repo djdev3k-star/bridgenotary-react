@@ -8,12 +8,11 @@ const LoanSigningHero: React.FC = () => {
   useEffect(() => {
     // Check if video can be played
     const handleVideoError = () => {
-      console.error("Video failed to load");
       setVideoError(true);
     };
     
     const handleVideoLoaded = () => {
-      console.log("Video loaded successfully");
+      // Video loaded successfully
     };
     
     const videoElement = videoRef.current;

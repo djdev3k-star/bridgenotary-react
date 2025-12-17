@@ -144,7 +144,7 @@ const BookAppointment: React.FC = () => {
     e.preventDefault();
     // Handle form submission based on selectedService
     // You would typically send this to your backend
-    console.log('Form submitted:', { selectedService, formData });
+    // Form submitted: { selectedService, formData }
   };
 
   const renderServiceSelection = () => (

@@ -5,6 +5,8 @@
 
 import express from 'express';
 import proofService from '../services/proofService.js';
+import crypto from 'crypto';
+import config from '../config/env.js';
 
 const router = express.Router();
 
@@ -158,16 +160,38 @@ router.post('/transaction/:transactionId/documents', async (req, res) => {
  */
 router.post('/webhook', async (req, res) => {
   try {
+    const signature = req.headers['x-proof-signature'] || req.headers['x-signature'] || req.headers['x-webhook-signature'];
+    const secret = config.webhookSecret;
+    const rawBody = JSON.stringify(req.body);
+
+    if (!secret) {
+      return res.status(500).json({ error: 'Webhook secret not configured' });
+    }
+
+    if (!signature) {
+      return res.status(401).json({ error: 'Missing webhook signature' });
+    }
+
+    // Compute HMAC SHA256 signature
+    const expectedSignature = crypto
+      .createHmac('sha256', secret)
+      .update(rawBody)
+      .digest('hex');
+
+    if (signature !== expectedSignature) {
+      return res.status(401).json({ error: 'Invalid webhook signature' });
+    }
+
     const event = req.body;
 
     // Log the webhook event
-    console.log('Received Proof webhook:', {
-      type: event.type,
-      transactionId: event.transaction?.id,
-      timestamp: new Date().toISOString(),
-    });
+    // Optionally replace with a proper logger in production
+    // console.log('Received Proof webhook:', {
+    //   type: event.type,
+    //   transactionId: event.transaction?.id,
+    //   timestamp: new Date().toISOString(),
+    // });
 
-    // TODO: Implement webhook signature verification using PROOF_WEBHOOK_SECRET
     // TODO: Handle different event types (transaction.completed, transaction.failed, etc.)
     // TODO: Update your database with transaction status
 
@@ -175,7 +199,7 @@ router.post('/webhook', async (req, res) => {
     res.json({ received: true });
 
   } catch (error) {
-    console.error('Error processing webhook:', error);
+    // console.error('Error processing webhook:', error);
     res.status(500).json({
       error: 'Failed to process webhook',
     });

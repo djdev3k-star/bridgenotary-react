@@ -1,3 +1,65 @@
+import { Link } from "react-router-dom";
+import { useMemo } from "react";
+import {
+  generalImages,
+  travelImages,
+  ronImages,
+  apostilleImages,
+  loanSigningImages
+} from "@/assets/images";
+
+const notFoundImages = [
+  generalImages.notaryPublicStamp,
+  generalImages.genNotaryFlyer,
+  generalImages.genNotaryStripFlyer,
+  ronImages.remoteNotaryProfessional,
+  ronImages.happyCustomer,
+  apostilleImages.apostilleDocument,
+  apostilleImages.apostilleFlyer,
+  apostilleImages.apostilleFlyerStrip,
+  travelImages.destinationWedding,
+  travelImages.dualCitizenship,
+  travelImages.internationalAdoption,
+  travelImages.overseasProperty,
+  travelImages.studyAbroad,
+  loanSigningImages.stackLoanDocuments,
+  loanSigningImages.loanFlyer,
+  loanSigningImages.commLoanFlyer,
+  loanSigningImages.commSignFlyer
+].filter(Boolean);
+
+const NotFound = () => {
+  // Pick a random image on each render
+  const bgImage = useMemo(() => {
+    const idx = Math.floor(Math.random() * notFoundImages.length);
+    return notFoundImages[idx];
+  }, []);
+
+  return (
+    <div
+      className="min-h-screen flex flex-col items-center justify-center relative px-4"
+      style={{
+        background: `linear-gradient(rgba(255,255,255,0.85),rgba(0,70,250,0.08)), url('${bgImage}') center/cover no-repeat`,
+        transition: 'background-image 0.5s',
+      }}
+    >
+      <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" aria-hidden="true"></div>
+      <div className="relative z-10 flex flex-col items-center">
+        <h1 className="text-5xl font-extrabold mb-4 text-proof drop-shadow">404 - Page Not Found</h1>
+        <p className="mb-6 text-lg text-gray-700 max-w-xl text-center">
+          Oops! The page you’re looking for doesn’t exist or has moved.<br/>
+          But your notary needs are just a click away.
+        </p>
+        <div className="flex flex-col md:flex-row gap-4 mb-8">
+          <Link to="/" className="button-primary">Return Home</Link>
+          <Link to="/book" className="button-outline">Book an Appointment</Link>
+          <Link to="/contact" className="button-outline">Contact Us</Link>
+        </div>
+        <div className="text-sm text-gray-500">Need help? Call <a href="tel:+14696298932" className="underline hover:text-electric-blue">(469) 629-8932</a></div>
+      </div>
+    </div>
+  );
+};
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "@/components/layout";
 import { ErrorBoundary } from "@/components/common";
@@ -108,6 +170,8 @@ function App() {
               <Route path="/client-portal" element={<ClientPortal />} />
               <Route path="/sitemap" element={<Sitemap />} />
             </Route>
+            {/* 404 catch-all route */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>

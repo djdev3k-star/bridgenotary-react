@@ -2,84 +2,94 @@ import { Link } from "react-router-dom";
 import heroImage from "@/assets/images/commloanFlyers2.png";
 
 const HomePage = () => (
-  <div className="w-full bg-white">
-    {/* Hero Section */}
-    <section className="relative overflow-hidden text-white min-h-[70vh] flex items-center w-screen left-1/2 -translate-x-1/2">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
-      {/* Deep blue and electric blue overlays for brand look */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-proof/80 via-proof/60 to-transparent mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-electric-blue/30"></div>
-      </div>
-
-      {/* Content */}
-      <div className="max-w-7xl mx-auto py-24 px-6 relative z-20 w-full">
-        <div className="max-w-3xl">
-          <div className="fade-in">
-            {/* Horizontal badges at top, white text, no background */}
-            <div className="flex flex-row gap-6 mb-8">
-              <div className="text-sm font-semibold text-white">$100K E&O Insurance</div>
-              <div className="text-sm font-semibold text-white">NNA Certified</div>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-              Your Trusted Partner for <span className="text-gold">Professional</span> Notary Services
-            </h1>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed max-w-2xl drop-shadow-sm">
-              Delivering seamless closings with confidence and integrity for title companies, lenders, and real estate professionals across DFW.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/book" 
-                className="inline-flex items-center justify-center gap-3 bg-white text-proof hover:bg-neutral-100 transition-all text-lg py-4 px-8 font-semibold shadow-xl transform hover:scale-105"
-              >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                Book an Appointment
-              </Link>
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center justify-center gap-3 border-2 border-white text-white hover:bg-white hover:text-proof transition-all text-lg py-4 px-8 font-semibold"
-              >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                Get in Touch
-              </Link>
-            </div>
+  <div className="w-full bg-white pt-20">
+    {/* Hero Section - Clean Professional Design */}
+    <section className="relative overflow-hidden py-20 md:py-32 w-full">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        {/* Left Content */}
+        <div>
+          {/* Credentials */}
+          <div className="flex flex-wrap gap-3 mb-8">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-100 rounded-full text-xs font-semibold text-deep-navy">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              NNA Certified
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-100 rounded-full text-xs font-semibold text-deep-navy">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              $100K E&O Insured
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-100 rounded-full text-xs font-semibold text-deep-navy">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              Available 24/7
+            </span>
           </div>
+
+          {/* Headline */}
+          <h1 className="text-5xl md:text-6xl font-bold text-deep-navy mb-6 leading-tight">
+            Professional Notary Services You Can <span className="text-professional-blue">Trust</span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-lg text-charcoal/80 mb-8 leading-relaxed max-w-lg">
+            Reliable loan signings, mobile notarization, and apostille services for individuals and businesses across the Dallas-Fort Worth area.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link 
+              to="/book" 
+              className="button-primary inline-flex items-center justify-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              Book an Appointment
+            </Link>
+            <Link 
+              to="/contact" 
+              className="button-outline inline-flex items-center justify-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Get in Touch
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Image */}
+        <div className="hidden md:block">
+          <img 
+            src={heroImage} 
+            alt="Professional notary services"
+            className="w-full h-auto rounded-lg shadow-lg object-cover"
+          />
         </div>
       </div>
     </section>
 
-    {/* Services Overview - new panel style */}
-    <section className="py-20 lg:py-28 bg-white">
+    {/* Services Overview - Card Grid */}
+    <section className="py-20 md:py-28 bg-neutral-50">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-12 bg-neutral-300"></div>
-            <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">Our Services</span>
-            <div className="h-px w-12 bg-neutral-300"></div>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-proof mb-4">Professional Notary Solutions</h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            From loan signings to apostille services, we handle your documents with precision and care.
+        <div className="text-center mb-16">
+          <span className="inline-block text-sm font-semibold text-professional-blue uppercase tracking-wider mb-3">Our Services</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-deep-navy mb-4">Professional Notary Solutions</h2>
+          <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">
+            From loan signings to international document authentication—we handle every notarization need with expertise and reliability.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
               icon: (
-                <svg className="w-10 h-10 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               ),
@@ -89,7 +99,7 @@ const HomePage = () => (
             },
             {
               icon: (
-                <svg className="w-10 h-10 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               ),
@@ -99,7 +109,7 @@ const HomePage = () => (
             },
             {
               icon: (
-                <svg className="w-10 h-10 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               ),
@@ -109,7 +119,7 @@ const HomePage = () => (
             },
             {
               icon: (
-                <svg className="w-10 h-10 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -122,17 +132,17 @@ const HomePage = () => (
             <Link 
               key={item.title} 
               to={item.link}
-              className="bg-white p-8 border border-neutral-200 hover:border-electric-blue/30 hover:shadow-xl transition-all group rounded-xl flex flex-col items-center text-center"
+              className="service-card"
             >
-              <div className="mb-5">
+              <div className="mb-4 text-professional-blue">
                 {item.icon}
               </div>
-              <h3 className="text-lg font-bold text-proof mb-2 group-hover:text-electric-blue transition-colors">{item.title}</h3>
-              <p className="text-neutral-600 text-base mb-4">{item.desc}</p>
-              <span className="text-electric-blue text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              <h3 className="text-lg font-semibold text-deep-navy mb-2">{item.title}</h3>
+              <p className="text-charcoal/70 text-sm mb-4 leading-relaxed">{item.desc}</p>
+              <span className="inline-flex items-center gap-1 text-professional-blue text-sm font-semibold hover:gap-2 transition-all">
                 Learn more
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </span>
             </Link>

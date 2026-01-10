@@ -1,4 +1,6 @@
 // Service pricing data
+import { Link } from 'react-router-dom';
+
 const coreServices = [
   { name: 'Refinance', fee: '$125–$150', notes: 'Per closing package' },
   { name: 'Purchase (Buyer)', fee: '$100–$125', notes: 'Per closing package' },
@@ -235,24 +237,24 @@ const Pricing = () => {
             Book your appointment or request a custom quote for your specific needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/book"
+            <Link 
+              to="/book"
               className="inline-flex items-center justify-center gap-3 bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold rounded-lg"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               Book an Appointment
-            </a>
-            <a 
-              href="/contact"
+            </Link>
+            <Link 
+              to="/contact"
               className="inline-flex items-center justify-center gap-3 border-2 border-off-white text-off-white hover:bg-off-white hover:text-deep-navy transition-all text-lg py-4 px-8 font-semibold rounded-lg"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               Get a Custom Quote
-            </a>
+            </Link>
           </div>
         </div>
       </section>

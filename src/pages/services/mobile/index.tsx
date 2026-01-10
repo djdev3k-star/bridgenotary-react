@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 interface FeatureItem {
   title: string;
@@ -55,7 +56,7 @@ export default function MobileNotaryPage() {
             <h1 className="text-4xl md:text-5xl font-extrabold text-white">Mobile Notary Services</h1>
             <p className="text-lg text-white/90 mt-4">Reliable, on-site notarization anywhere in the DFW metroplex.</p>
             <div className="mt-6">
-              <a href="/book" className="button-primary">Book Your Appointment</a>
+              <Link to="/book" className="button-primary">Book Your Appointment</Link>
             </div>
           </div>
         </div>
@@ -124,13 +125,13 @@ export default function MobileNotaryPage() {
               </ul>
               <p className="text-neutral-700 mt-3 text-sm">Exact pricing depends on location, document count, and timing. See full pricing for details.</p>
               <div className="mt-4">
-                <a href="/pricing" className="button-outline">View Full Pricing</a>
+                <Link to="/pricing" className="button-outline">View Full Pricing</Link>
               </div>
             </div>
           </div>
 
           <div className="mt-10 text-center">
-            <a href="/book" className="button-primary">Book Your Mobile Notary</a>
+            <Link to="/book" className="button-primary">Book Your Mobile Notary</Link>
           </div>
         </div>
       </div>

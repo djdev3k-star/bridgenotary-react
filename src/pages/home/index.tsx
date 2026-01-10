@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/images/commloanFlyers2.png";
+import TrustSection from "@/components/common/TrustSection";
 
 const HomePage = () => (
   <div className="w-full bg-white pt-20">
@@ -150,6 +151,9 @@ const HomePage = () => (
         </div>
       </div>
     </section>
+
+    {/* Trust & Credibility Section */}
+    <TrustSection />
 
     {/* Credentials */}
     <section className="py-20 lg:py-28 bg-neutral-50">

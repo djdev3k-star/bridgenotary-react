@@ -174,3 +174,6 @@ logs
 
 # Misc
 *.tgz
+
+# Local Netlify folder
+.netlify

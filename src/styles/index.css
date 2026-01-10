@@ -7,51 +7,53 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-neutral-50 text-neutral-900 font-sans antialiased min-h-screen leading-relaxed;
-    font-family: "Poppins", "Inter", "Segoe UI", "Roboto", "Helvetica Neue",
+    @apply bg-neutral-50 text-charcoal font-sans antialiased min-h-screen leading-relaxed;
+    font-family: "Inter", "Poppins", "Segoe UI", "Roboto", "Helvetica Neue",
       Arial, "Liberation Sans", sans-serif;
-    letter-spacing: 0.01em;
-    font-size: 1rem;
+    letter-spacing: 0.005em;
+    font-size: 1.05rem;
   }
   h1 {
-    @apply text-4xl md:text-6xl font-extrabold text-proof mb-6 leading-tight tracking-tight;
+    @apply text-5xl md:text-7xl font-bold text-deep-navy mb-6 leading-tight tracking-tight;
     font-family: "Poppins", "Inter", "Segoe UI", "Roboto", "Helvetica Neue",
       Arial, "Liberation Sans", sans-serif;
   }
   h2 {
-    @apply text-2xl md:text-4xl font-medium text-neutral-900 mb-4 leading-snug;
+    @apply text-2xl md:text-3xl font-semibold text-deep-navy mb-4 leading-snug;
     font-family: "Poppins", "Inter", "Segoe UI", "Roboto", "Helvetica Neue",
       Arial, "Liberation Sans", sans-serif;
   }
   h3 {
-    @apply text-xl md:text-2xl font-semibold text-proof mb-3;
+    @apply text-lg md:text-2xl font-semibold text-deep-navy mb-3;
     font-family: "Poppins", "Inter", "Segoe UI", "Roboto", "Helvetica Neue",
       Arial, "Liberation Sans", sans-serif;
   }
   h4,
   h5,
   h6 {
-    @apply text-neutral-800 font-medium;
+    @apply text-charcoal font-semibold;
     font-family: "Poppins", "Inter", "Segoe UI", "Roboto", "Helvetica Neue",
       Arial, "Liberation Sans", sans-serif;
   }
   p,
   li,
   label {
-    @apply text-neutral-700;
+    @apply text-charcoal;
     line-height: 1.8;
     letter-spacing: 0.005em;
   }
   a {
-    @apply text-electric-blue;
+    @apply text-professional-blue;
     text-decoration: none;
+    transition: opacity 0.2s ease;
   }
   a:hover {
+    @apply underline;
     outline: 0;
   }
   strong,
   b {
-    @apply text-gold font-semibold;
+    @apply text-muted-gold font-semibold;
   }
 }
 
@@ -60,45 +62,33 @@
     @apply py-20 md:py-28 px-4 md:px-0 max-w-5xl mx-auto;
   }
   .card {
-    @apply bg-white rounded-sm shadow-2xl p-8 md:p-12;
+    @apply bg-white rounded-lg border border-neutral-200 p-8 md:p-12 shadow-sm transition-all duration-300 hover:shadow-md;
   }
   .pill {
-    @apply inline-block bg-neutral-100 rounded px-5 py-2 text-base font-medium text-proof shadow-sm;
+    @apply inline-block bg-neutral-100 rounded-full px-5 py-2 text-sm font-semibold text-deep-navy;
   }
 
-  /* New button styles */
+  /* Professional button styles */
   .button {
-    @apply rounded-sm px-6 py-3 font-semibold text-lg shadow-md transition-all duration-300 focus-visible:ring-2 focus-visible:ring-electric-blue focus:outline-none;
+    @apply rounded-lg px-6 py-3 font-semibold text-base transition-all duration-300 focus-visible:ring-2 focus-visible:ring-professional-blue focus:outline-none;
   }
   .button-primary {
-    @apply button bg-electric-blue text-white hover:bg-hover-blue;
+    @apply button bg-professional-blue text-white hover:bg-hover-blue shadow-md hover:shadow-lg;
   }
   .button-outline {
-    @apply button border-2 border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-white;
+    @apply button border-2 border-deep-navy text-deep-navy hover:bg-deep-navy hover:text-white;
+  }
+  .button-ghost {
+    @apply button text-professional-blue hover:text-deep-navy;
   }
 
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .fade-in {
-    animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  .fade-in-delay {
-    animation: fadeInUp 0.6s ease-out 0.2s forwards;
-    opacity: 0;
-    transform: translateY(30px);
+  /* Card with border design */
+  .service-card {
+    @apply bg-white rounded-lg border border-neutral-200 p-6 transition-all duration-300 hover:border-professional-blue hover:shadow-md;
   }
 
   @keyframes pulse {
-    0%,
-    100% {
+    0%, 100% {
       transform: scale(1);
     }
     50% {
@@ -106,19 +96,34 @@
     }
   }
 
+  .stats-card {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  }
+  .stats-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 85, 230, 0.1);
+  }
+
+  /* Modal enhancements */
+  .modal {
+    @apply rounded-lg shadow-lg bg-white border border-neutral-200;
+    transition: box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+  }
   .pulse-button {
     animation: pulse 2s infinite;
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 50%, #1e40af 100%);
+    background: linear-gradient(135deg, #1A2B4D 0%, #2C3E50 50%, #1A2B4D 100%);
     position: relative;
     overflow: hidden;
   }
-
-  /* Removed diagonal pattern */
-
-  /* Removed floating animations */
+}
 
   .trust-badge {
     -webkit-backdrop-filter: blur(10px);

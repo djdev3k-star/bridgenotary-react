@@ -11,19 +11,19 @@ const HomePage = () => (
         <div className="text-charcoal">
           {/* Credentials */}
           <div className="flex flex-wrap gap-3 mb-10">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/10 border border-professional-blue/30 rounded-full text-xs font-semibold text-professional-blue">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/10 border border-professional-blue/30 text-xs font-semibold text-professional-blue">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               NNA Certified
             </span>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-muted-gold/10 border border-muted-gold/30 rounded-full text-xs font-semibold text-muted-gold">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-muted-gold/10 border border-muted-gold/30 text-xs font-semibold text-muted-gold">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               $100K E&O Insured
             </span>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/10 border border-professional-blue/30 rounded-full text-xs font-semibold text-professional-blue">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/10 border border-professional-blue/30 text-xs font-semibold text-professional-blue">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
@@ -88,7 +88,11 @@ const HomePage = () => (
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          {/* Geometric overlays */}
+          <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/3 -z-10"></div>
+          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/3 -z-10"></div>
+          
           {[
             {
               icon: (
@@ -147,7 +151,7 @@ const HomePage = () => (
             <Link 
               key={item.title} 
               to={item.link}
-              className={`group relative overflow-hidden rounded-xl p-8 transition-all hover:scale-105 cursor-pointer border ${item.borderColor} bg-gradient-to-br ${item.color} bg-white hover:shadow-lg hover:border-charcoal/20`}
+              className={`group relative overflow-hidden p-8 transition-all hover:scale-105 cursor-pointer border ${item.borderColor} bg-gradient-to-br ${item.color} bg-white hover:shadow-lg hover:border-charcoal/20`}
             >
               <div className="relative z-10">
                 <div className={`mb-6 ${item.iconColor} group-hover:scale-110 transition-transform origin-left`}>
@@ -207,7 +211,7 @@ const HomePage = () => (
 
           {/* Stats Card */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-professional-blue/5 to-muted-gold/5 border border-professional-blue/20 p-8 md:p-12 rounded-xl">
+            <div className="bg-gradient-to-br from-professional-blue/5 to-muted-gold/5 border border-professional-blue/20 p-8 md:p-12">
               <div className="bg-white shadow-lg p-6 md:p-8 border border-charcoal/10">
                 <div className="flex items-center gap-4 mb-6 pb-6 border-b border-charcoal/10">
                   <div className="w-16 h-16 bg-gradient-to-br from-professional-blue to-muted-gold flex items-center justify-center text-white text-2xl font-bold">
@@ -223,22 +227,22 @@ const HomePage = () => (
                     <span className="text-charcoal/70">Client Satisfaction</span>
                     <span className="text-professional-blue font-bold">99%</span>
                   </div>
-                  <div className="w-full bg-charcoal/10 h-2 rounded-full">
-                    <div className="bg-gradient-to-r from-professional-blue to-muted-gold h-2 rounded-full" style={{ width: '99%' }}></div>
+                  <div className="w-full bg-charcoal/10 h-2">
+                    <div className="bg-gradient-to-r from-professional-blue to-muted-gold h-2" style={{ width: '99%' }}></div>
                   </div>
                   <div className="flex justify-between items-center pt-2">
                     <span className="text-charcoal/70">On-Time Rate</span>
                     <span className="text-professional-blue font-bold">99%</span>
                   </div>
-                  <div className="w-full bg-charcoal/10 h-2 rounded-full">
-                    <div className="bg-gradient-to-r from-professional-blue to-muted-gold h-2 rounded-full" style={{ width: '99%' }}></div>
+                  <div className="w-full bg-charcoal/10 h-2">
+                    <div className="bg-gradient-to-r from-professional-blue to-muted-gold h-2" style={{ width: '99%' }}></div>
                   </div>
                   <div className="flex justify-between items-center pt-2">
                     <span className="text-charcoal/70">Document Accuracy</span>
                     <span className="text-professional-blue font-bold">100%</span>
                   </div>
-                  <div className="w-full bg-charcoal/10 h-2 rounded-full">
-                    <div className="bg-gradient-to-r from-professional-blue to-muted-gold h-2 rounded-full" style={{ width: '100%' }}></div>
+                  <div className="w-full bg-charcoal/10 h-2">
+                    <div className="bg-gradient-to-r from-professional-blue to-muted-gold h-2" style={{ width: '100%' }}></div>
                   </div>
                 </div>
               </div>

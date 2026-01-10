@@ -177,10 +177,10 @@ const Pricing = () => {
               {coreServices.map((service, idx) => (
                 <div key={idx} className="bg-white p-6 border border-neutral-200 hover:border-professional-blue hover:shadow-lg transition-all">
                   <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-lg font-semibold text-deep-navy">{service.name}</h4>
+                    <h4 className="text-base font-semibold text-deep-navy">{service.name}</h4>
                     <div className="text-2xl font-bold text-professional-blue">{service.fee}</div>
                   </div>
-                  <p className="text-sm text-soft-gray">{service.notes}</p>
+                  <p className="text-xs text-soft-gray">{service.notes}</p>
                 </div>
               ))}
             </div>
@@ -194,10 +194,10 @@ const Pricing = () => {
               {addOnServices.map((service, idx) => (
                 <div key={idx} className="bg-white p-5 border border-neutral-200 hover:bg-off-white transition-all">
                   <div className="flex items-start justify-between mb-2">
-                    <h4 className="font-semibold text-deep-navy">{service.name}</h4>
+                    <h4 className="text-sm font-semibold text-deep-navy">{service.name}</h4>
                     <div className="text-lg font-bold text-professional-blue">{service.fee}</div>
                   </div>
-                  <p className="text-sm text-soft-gray">{service.notes}</p>
+                  <p className="text-xs text-soft-gray">{service.notes}</p>
                 </div>
               ))}
             </div>
@@ -240,8 +240,8 @@ const Pricing = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 lg:py-32 bg-deep-navy text-off-white w-screen left-1/2 -translate-x-1/2">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-24 lg:py-32 bg-deep-navy text-off-white w-screen left-1/2 -translate-x-1/2 flex items-center justify-center">
+        <div className="max-w-4xl px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Ready to Get Started?
           </h2>

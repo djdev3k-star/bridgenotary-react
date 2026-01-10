@@ -46,22 +46,11 @@ const Navigation: React.FC<NavigationProps> = () => {
           )
         },
         {
-          label: 'Estate & Trust Documents',
-          path: '/services/estate-trust',
-          description: 'Wills, trusts, healthcare directives, and POAs.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c1.657 0 3-.895 3-2s-1.343-2-3-2-3 .895-3 2 1.343 2 3 2z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 20c0-2.21 2.686-4 6-4s6 1.79 6 4" />
-            </svg>
-          )
-        },
-        {
-          label: 'View all notary services →',
+          label: 'View all services →',
           path: '/services',
           description: 'POA, witness services, affidavits, and more.',
           icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           )
@@ -83,16 +72,6 @@ const Navigation: React.FC<NavigationProps> = () => {
           )
         },
         {
-          label: 'Apostille Quiz',
-          path: '/apostille/quiz-start',
-          description: 'Find out what documents you need.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16h6m-9 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          )
-        },
-        {
           label: 'Study Abroad',
           path: '/study-abroad',
           description: 'Diplomas, transcripts, and educational documents.',
@@ -100,37 +79,6 @@ const Navigation: React.FC<NavigationProps> = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14v7" />
-            </svg>
-          )
-        },
-        /* {
-          label: 'Dual Citizenship',
-          path: '/dual-citizenship',
-          description: 'Vital records and background checks for dual passports.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 20a6 6 0 1112 0H6z" />
-            </svg>
-          )
-        }, */
-        /* {
-          label: 'International Adoption',
-          path: '/international-adoption',
-          description: 'Home studies, dossiers, and legal documents.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
-          )
-        }, */
-        {
-          label: 'Overseas Property',
-          path: '/overseas-property',
-          description: 'Real estate deeds, contracts, and legal documents.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-3m0 0l7-4 7 4M5 9v10a1 1 0 001 1h12a1 1 0 001-1V9m-9 4l4 2m-4-2l-4-2" />
             </svg>
           )
         },
@@ -180,32 +128,11 @@ const Navigation: React.FC<NavigationProps> = () => {
           )
         },
         {
-          label: 'HELOC & Home Equity',
-          path: '/loan-signing/heloc',
-          description: 'Equity line closings with lender-specific docs.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-            </svg>
-          )
-        },
-        {
-          label: 'Seller Signing',
-          path: '/loan-signing/seller',
-          description: 'Seller-side closings and proceeds.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 17h10m4 0h.01M5 17l1-4h11l1 4M6 13l2-7h8l2 7" />
-            </svg>
-          )
-        },
-        {
-          label: 'View all loan signings →',
+          label: 'View all signings →',
           path: '/loan-signing',
           description: 'Complete loan signing overview.',
           icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           )

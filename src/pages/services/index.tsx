@@ -99,18 +99,22 @@ const Services = () => {
       </section>
 
       {/* Tabbed Service Categories */}
-      <section className="py-12 md:py-20 bg-neutral-50">
+      <section className="py-12 md:py-20 bg-professional-blue/10 relative">
         <div className="max-w-6xl mx-auto px-6">
+          {/* Geometric overlays */}
+          <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/3 -z-10"></div>
+          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/3 -z-10"></div>
+          
           {/* Tabs */}
-          <div className="flex gap-2 mb-12 overflow-x-auto pb-4 md:pb-0">
+          <div className="flex gap-2 mb-12 overflow-x-auto pb-4 md:pb-0 relative z-10">
             {serviceCategories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveTab(category.id)}
-                className={`px-6 py-3 font-semibold text-base whitespace-nowrap transition-all rounded-lg ${
+                className={`px-6 py-3 font-semibold text-base whitespace-nowrap transition-all ${
                   activeTab === category.id
-                    ? "bg-deep-navy text-off-white shadow-md"
-                    : "bg-white text-charcoal border border-neutral-200 hover:border-professional-blue"
+                    ? "bg-professional-blue text-white shadow-md"
+                    : "bg-white text-charcoal border border-professional-blue/20 hover:border-professional-blue"
                 }`}
               >
                 {category.title}
@@ -120,9 +124,9 @@ const Services = () => {
 
           {/* Tab Content */}
           {activeCategory && (
-            <div className="bg-white p-8 md:p-12 rounded-lg border border-neutral-200">
+            <div className="bg-white p-8 md:p-12 border border-professional-blue/20 relative z-10">
               <div className="mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-deep-navy mb-2">{activeCategory.title}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-2">{activeCategory.title}</h2>
                 <p className="text-charcoal/70 text-lg">{activeCategory.description}</p>
               </div>
 
@@ -132,7 +136,7 @@ const Services = () => {
                   <Link
                     key={service.name}
                     to={service.link}
-                    className="p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:border-professional-blue hover:shadow-md transition-all group"
+                    className="p-4 bg-neutral-50 border border-neutral-200 hover:border-professional-blue hover:shadow-md transition-all group"
                   >
                     <div className="flex justify-between items-start">
                       <div className="flex-1">

@@ -180,70 +180,86 @@ const ApostilleServices: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-off-white">
 
-      {/* Pain Points Section - visually enhanced */}
-      <section className="section bg-neutral-50 py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6 mb-12">
+      {/* Pain Points Section - List style */}
+      <section className="section bg-professional-blue/10 py-20 md:py-28 relative">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-4 justify-center">
-            <span className="h-px w-12 bg-neutral-300"></span>
-            <span className="text-xs uppercase tracking-[0.25em] text-electric-blue font-semibold">Pain Points We Eliminate</span>
-            <span className="h-px w-12 bg-neutral-300"></span>
+            <span className="h-px w-12 bg-professional-blue/30"></span>
+            <span className="text-xs uppercase tracking-[0.25em] text-professional-blue font-semibold">Pain Points We Eliminate</span>
+            <span className="h-px w-12 bg-professional-blue/30"></span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-proof text-center mb-4">What We Remove From Your Process</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal text-center mb-16">What We Remove From Your Process</h2>
         </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {painPoints.map((point, index) => (
-            <div key={index} className="card bg-white shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-electric-blue fade-in">
-              <div className="mb-4">
-                <svg className="w-8 h-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+        
+        <div className="max-w-4xl mx-auto px-6 relative">
+          {/* Geometric overlays */}
+          <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/3 -z-10"></div>
+          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/3 -z-10"></div>
+          
+          <div className="space-y-4">
+            {painPoints.map((point, index) => (
+              <div key={index} className="flex items-start gap-4 bg-white p-6 border-l-4 border-professional-blue fade-in">
+                <div className="flex-shrink-0 mt-1">
+                  <svg className="w-6 h-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <p className="text-charcoal text-lg leading-relaxed">{point}</p>
               </div>
-              <p className="text-neutral-800 text-lg">{point}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Our Solution Section - visually enhanced, blue only */}
+      {/* Our Solution Section - List style */}
       <section className="section bg-white py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6 mb-12">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-4 justify-center">
-            <span className="h-px w-12 bg-neutral-300"></span>
-            <span className="text-xs uppercase tracking-[0.25em] text-electric-blue font-semibold">Our Solution</span>
-            <span className="h-px w-12 bg-neutral-300"></span>
+            <span className="h-px w-12 bg-professional-blue/30"></span>
+            <span className="text-xs uppercase tracking-[0.25em] text-professional-blue font-semibold">Our Solution</span>
+            <span className="h-px w-12 bg-professional-blue/30"></span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-proof text-center mb-4">How We Make Complex Simple</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal text-center mb-16">How We Make Complex Simple</h2>
         </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {solutions.map((solution, index) => (
-            <div key={index} className="card bg-white shadow-lg p-8 flex flex-col items-center text-center border-t-4 border-electric-blue fade-in-delay">
-              <div className="mb-4">{solution.icon}</div>
-              <h3 className="text-lg font-bold text-proof mb-2">{solution.action}</h3>
-              <p className="text-neutral-600">{solution.benefit}</p>
-            </div>
-          ))}
+        
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="space-y-4">
+            {solutions.map((solution, index) => (
+              <div key={index} className="flex items-start gap-4 bg-professional-blue/5 p-6 border-l-4 border-professional-blue fade-in-delay">
+                <div className="flex-shrink-0 mt-1">
+                  <svg className="w-6 h-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-charcoal mb-1">{solution.action}</h3>
+                  <p className="text-charcoal/70">{solution.benefit}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* How It Works Section - Simplified horizontal steps */}
-      <section className="section bg-white">
+      <section className="section bg-professional-blue/10 relative">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-proof text-center mb-12">How It Works</h2>
+          <h2 className="text-3xl font-bold text-charcoal text-center mb-12">How It Works</h2>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="flex-1 text-center">
-              <span className="text-electric-blue font-bold text-2xl">1.</span>
-              <h3 className="text-lg font-semibold mt-2 mb-1">Upload or Snap</h3>
-              <p className="text-neutral-600 text-sm">Send your document—we confirm eligibility.</p>
+              <span className="text-professional-blue font-bold text-2xl">1.</span>
+              <h3 className="text-lg font-semibold mt-2 mb-1 text-charcoal">Upload or Snap</h3>
+              <p className="text-charcoal/70 text-sm">Send your document—we confirm eligibility.</p>
             </div>
-            <div className="hidden md:block text-neutral-300 text-2xl">→</div>
+            <div className="hidden md:block text-professional-blue/30 text-2xl">→</div>
             <div className="flex-1 text-center">
-              <span className="text-electric-blue font-bold text-2xl">2.</span>
-              <h3 className="text-lg font-semibold mt-2 mb-1">Ship It</h3>
-              <p className="text-neutral-600 text-sm">Drop in prepaid mailer or use our courier.</p>
+              <span className="text-professional-blue font-bold text-2xl">2.</span>
+              <h3 className="text-lg font-semibold mt-2 mb-1 text-charcoal">Ship It</h3>
+              <p className="text-charcoal/70 text-sm">Drop in prepaid mailer or use our courier.</p>
             </div>
-            <div className="hidden md:block text-neutral-300 text-2xl">→</div>
+            <div className="hidden md:block text-professional-blue/30 text-2xl">→</div>
             <div className="flex-1 text-center">
               <span className="text-electric-blue font-bold text-2xl">3.</span>
               <h3 className="text-lg font-semibold mt-2 mb-1">Track & Receive</h3>
@@ -254,13 +270,13 @@ const ApostilleServices: React.FC = () => {
       </section>
 
       {/* Quick Quiz CTA - Simplified inline */}
-      <section className="section bg-neutral-50">
+      <section className="section bg-professional-blue/10">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold text-proof mb-4">Still Unsure If You Need an Apostille?</h2>
-          <p className="text-neutral-600 mb-6">Take our 30-second quiz to find out.</p>
+          <h2 className="text-2xl font-bold text-charcoal mb-4">Still Unsure If You Need an Apostille?</h2>
+          <p className="text-charcoal/70 mb-6">Take our 30-second quiz to find out.</p>
           <button 
             onClick={() => navigate('/apostille/quiz')}
-            className="button-primary"
+            className="inline-flex items-center justify-center gap-2 bg-professional-blue text-white hover:bg-professional-blue/90 font-semibold py-4 px-8 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
             aria-label="Start apostille need assessment quiz"
           >
             Start Quiz
@@ -308,7 +324,7 @@ const ApostilleServices: React.FC = () => {
       {/* Contact Form Modal */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
-          <div className="bg-white rounded-md max-w-xl w-full p-6 relative">
+          <div className="bg-white max-w-xl w-full p-6 relative">
             <button 
               onClick={() => setShowContactForm(false)}
               className="absolute top-4 right-4 text-neutral-500 hover:text-electric-blue text-2xl"

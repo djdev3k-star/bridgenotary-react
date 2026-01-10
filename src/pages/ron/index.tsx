@@ -101,52 +101,56 @@ export default function RONPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="section bg-white">
+      <section className="section bg-professional-blue/10 relative">
         <div className="max-w-7xl mx-auto px-6">
           {/* Breadcrumb Header */}
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-neutral-300"></div>
-              <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">Simple Process</span>
-              <div className="h-px flex-1 bg-neutral-300"></div>
+              <div className="h-px w-12 bg-professional-blue/30"></div>
+              <span className="text-sm font-medium text-professional-blue uppercase tracking-wider">Simple Process</span>
+              <div className="h-px flex-1 bg-professional-blue/30"></div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-proof mb-6">How Remote Online Notarization Works</h2>
-            <p className="text-xl text-neutral-600 max-w-3xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">How Remote Online Notarization Works</h2>
+            <p className="text-xl text-charcoal/70 max-w-3xl">
               Our streamlined 3-step process makes remote notarization as easy as meeting in person, but from the comfort of your home or office.
             </p>
           </div>
 
           {/* Horizontal process cards (single row on desktop, similar to pricing cards) */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            {/* Geometric overlays */}
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/3 -z-10"></div>
+            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/3 -z-10"></div>
+            
             {/* Step 1: Upload */}
-            <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all">
+            <div className="p-6 border border-professional-blue/20 hover:shadow-md transition-all bg-white">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                   </svg>
                 </div>
                 <div>
-                  <span className="text-sm font-semibold text-electric-blue">Step 1</span>
-                  <h3 className="text-xl font-bold text-proof">Upload Documents</h3>
+                  <span className="text-sm font-semibold text-professional-blue">Step 1</span>
+                  <h3 className="text-xl font-bold text-charcoal">Upload Documents</h3>
                 </div>
               </div>
               <div className="mb-6">
                 <img
                   src="/images/upload-documents.png"
                   alt="Upload and prepare documents" 
-                  className="w-full h-40 object-cover rounded"
+                  className="w-full h-40 object-cover"
                 />
               </div>
-              <p className="text-neutral-700 mb-4">
-                Upload your documents securely through our encrypted platform. <span className="text-sm text-neutral-500">We support PDF, DOCX, and images.</span>
+              <p className="text-charcoal/70 mb-4">
+                Upload your documents securely through our encrypted platform. <span className="text-sm text-charcoal/60">We support PDF, DOCX, and images.</span>
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Bank-grade encryption</span>
+                  <span className="text-sm text-charcoal/70">Bank-grade encryption</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">

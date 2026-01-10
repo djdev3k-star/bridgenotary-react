@@ -13,7 +13,7 @@ const ApostillePage: React.FC = () => {
       {/* Contact Form Modal */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
-          <div className="bg-white rounded-md max-w-xl w-full p-6">
+          <div className="bg-white max-w-xl w-full p-6">
             <h3 className="text-2xl font-semibold mb-4">Start Your Apostille Process</h3>
             {/* Add your contact form here */}
             <button

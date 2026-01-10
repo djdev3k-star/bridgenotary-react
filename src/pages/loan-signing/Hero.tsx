@@ -56,44 +56,86 @@ const LoanSigningHero: React.FC = () => {
         </video>
       )}
 
-      {/* Deepened blue gradient overlay with multiply blend while preserving image detail */}
+      {/* Refined gradient overlay for better readability */}
       <div className="absolute inset-0 z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-proof/80 via-electric-blue/70 to-proof/80 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-electric-blue/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/70 via-charcoal/50 to-transparent"></div>
       </div>
     </div>
     
     <div className="w-full relative z-20 px-6 py-24">
-      <div className="text-left max-w-4xl mx-auto fade-in">
-        <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white">
-          Your Trusted Partner
-          <br />
-          for{" "}
-          <span className="text-neutral-900">
-            Secure Closings
-          </span>
-        </h1>
-        <p className="text-lg text-white/90 mb-10 leading-relaxed max-w-2xl font-light">
-          Bridge Notary offers professional, reliable, and convenient mobile notary and loan signing services for title companies, lenders, and real estate professionals.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-5 mb-12">
-          <Link to="/book" className="bg-proof hover:bg-proof/90 rounded text-lg py-4 px-8 inline-block text-center text-white font-semibold pulse-button transition-all duration-300">
-            <div className="flex items-center justify-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              Sign
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="fade-in">
+            <div className="mb-6">
+              <span className="text-professional-blue font-semibold text-sm uppercase tracking-[0.2em]">Professional Loan Signing Services</span>
             </div>
-          </Link>
-          <Link to="/pricing" className="border-2 border-white text-white hover:bg-white hover:text-proof rounded text-lg py-4 px-8 inline-block text-center font-semibold transition-all duration-300">
-            <div className="flex items-center justify-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-              </svg>
-              View Services & Pricing
+            
+            <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+              Expert Signings
+              <br />
+              Every Time
+            </h1>
+            
+            <p className="text-lg text-white/95 mb-8 leading-relaxed max-w-xl font-light">
+              NNA-certified signing agents with deep expertise in residential and commercial closings. We handle complex documents with precision to keep your transactions on track.
+            </p>
+            
+            {/* Trust Markers */}
+            <div className="mb-10 space-y-3">
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-professional-blue flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-white/90">99% On-Time Delivery Rate</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-professional-blue flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-white/90">$100K E&O Insurance Coverage</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-professional-blue flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-white/90">DFW Mobile Service • Available 24/7</span>
+              </div>
             </div>
-          </Link>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/book" className="bg-professional-blue hover:bg-professional-blue/90 text-white font-semibold py-4 px-8 inline-flex items-center justify-center gap-2 transition-all duration-300 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Book Your Signing
+              </Link>
+              <Link to="/contact" className="border-2 border-white text-white hover:bg-white hover:text-charcoal font-semibold py-4 px-8 inline-flex items-center justify-center gap-2 transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Get a Quote
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Side - Stats or Quick Info */}
+          <div className="hidden md:block fade-in-delay">
+            <div className="space-y-6">
+              <div className="border-l-4 border-professional-blue pl-6">
+                <div className="text-5xl font-bold text-white mb-2">2,500+</div>
+                <p className="text-white/90 text-lg">Successful Closings</p>
+              </div>
+              <div className="border-l-4 border-professional-blue pl-6">
+                <div className="text-5xl font-bold text-white mb-2">Same-Day</div>
+                <p className="text-white/90 text-lg">Appointments Available</p>
+              </div>
+              <div className="border-l-4 border-professional-blue pl-6">
+                <div className="text-5xl font-bold text-white mb-2">All Types</div>
+                <p className="text-white/90 text-lg">Residential & Commercial Loans</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -64,8 +64,7 @@ const About = () => (
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-deep-navy mb-4">Our Mission & Vision</h2>
-          <p className="text-lg text-charcoal max-w-2xl mx-auto">What we strive for every single day.</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">What We Strive for Every Single Day</h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">

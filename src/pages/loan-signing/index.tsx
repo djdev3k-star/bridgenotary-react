@@ -62,27 +62,31 @@ const LoanSigningPage: React.FC = () => {
       <LoanSigningHero />
 
       <div className="w-full bg-white">
-      {/* Preparation Cards Section */}
-      <section className="section bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Preparation Cards Section - Full Width Background */}
+      <section className="w-full bg-professional-blue/10 py-20 md:py-28 relative">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
-            <span className="text-electric-blue font-semibold text-sm uppercase tracking-wide">Before Your Signing</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-proof mt-4 mb-6">What You Need to Know</h2>
-            <p className="text-xl text-neutral-600">
-              Our certified signing agents handle all types of loan documents with precision and care. Here's how we ensure a smooth closing.
+            <span className="text-professional-blue font-semibold text-xs uppercase tracking-[0.2em]">Why Choose Bridge Notary</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mt-4 mb-6">Trusted by Title Companies & Lenders</h2>
+            <p className="text-lg text-charcoal/70">
+              We deliver reliability, precision, and professionalism on every signing.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            {/* Geometric overlays */}
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/3 -z-10"></div>
+            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/3 -z-10"></div>
+            
             {benefits.map((benefit, index) => (
-              <div key={index} className="card group hover:shadow-2xl transition-all duration-300">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="text-white group-hover:scale-110 transition-transform">
+              <div key={index} className="bg-white border-l-4 border-professional-blue p-8 group hover:shadow-lg transition-all duration-300">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="text-professional-blue group-hover:scale-110 transition-transform flex-shrink-0">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-proof mt-2">{benefit.title}</h3>
+                  <h3 className="text-xl font-bold text-charcoal">{benefit.title}</h3>
                 </div>
-                <p className="text-neutral-600 leading-relaxed">{benefit.description}</p>
+                <p className="text-charcoal/70 leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -90,33 +94,37 @@ const LoanSigningPage: React.FC = () => {
       </section>
 
       {/* Loan Types Section */}
-      <section className="section bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="w-full bg-white py-20 md:py-28 relative">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
-            <span className="text-electric-blue font-semibold text-sm uppercase tracking-wide">Document Types</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-proof mt-4 mb-6">Loan Documents We Handle</h2>
-            <p className="text-xl text-neutral-600">
+            <span className="text-professional-blue font-semibold text-xs uppercase tracking-[0.2em]">Document Types</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mt-4 mb-6">Loan Documents We Handle</h2>
+            <p className="text-lg text-charcoal/70">
               From residential purchases to complex commercial loans, our certified agents are experienced with all document types.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-12 relative">
+            {/* Geometric overlays */}
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/5 -z-10"></div>
+            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/5 -z-10"></div>
+            
             {loanTypes.map((type, index) => (
-              <div key={index} className="card group hover:shadow-2xl transition-all duration-300 hover:border-electric-blue">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="text-white group-hover:scale-110 transition-transform">
+              <div key={index} className="group">
+                <div className="flex items-start gap-6 mb-8">
+                  <div className="text-professional-blue flex-shrink-0 group-hover:scale-110 transition-transform">
                     {type.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-proof">{type.title}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-charcoal">{type.title}</h3>
                 </div>
                 
-                <ul className="space-y-4">
+                <ul className="space-y-3 ml-16">
                   {type.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-lg text-neutral-700">{item}</span>
+                      <span className="text-lg text-charcoal/80">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -192,7 +200,7 @@ const LoanSigningPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link
               to="/book"
-              className="inline-flex items-center justify-center gap-2 bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded-lg text-lg px-10 py-5 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+              className="inline-flex items-center justify-center gap-2 bg-white text-proof hover:bg-neutral-100 transition-all font-semibold text-lg px-10 py-5 shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

@@ -3,34 +3,27 @@ import heroImage from "@/assets/images/commloanFlyers2.png";
 import TrustSection from "@/components/common/TrustSection";
 
 const HomePage = () => (
-  <div className="w-full bg-deep-navy">
-    {/* Hero Section - Dynamic with Gradient Background */}
-    <section className="relative overflow-hidden pt-20 pb-32 md:pt-32 md:pb-48">
-      {/* Dynamic Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-deep-navy via-deep-navy to-professional-blue/20 -z-10"></div>
-      
-      {/* Animated accent shapes */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-professional-blue/5 rounded-full -mr-48 -mt-48 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-muted-gold/5 rounded-full -ml-36 -mb-36 blur-3xl"></div>
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+  <div className="w-full bg-off-white">
+    {/* Hero Section */}
+    <section className="relative overflow-hidden pt-20 pb-32 md:pt-32 md:pb-48 bg-gradient-to-br from-off-white via-soft-gray/30 to-off-white">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
-        <div className="text-off-white">
-          {/* Credentials - Now with colored badges */}
+        <div className="text-charcoal">
+          {/* Credentials */}
           <div className="flex flex-wrap gap-3 mb-10">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/20 border border-professional-blue/40 rounded-full text-xs font-semibold text-professional-blue backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/10 border border-professional-blue/30 rounded-full text-xs font-semibold text-professional-blue">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               NNA Certified
             </span>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-muted-gold/20 border border-muted-gold/40 rounded-full text-xs font-semibold text-muted-gold backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-muted-gold/10 border border-muted-gold/30 rounded-full text-xs font-semibold text-muted-gold">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               $100K E&O Insured
             </span>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/20 border border-professional-blue/40 rounded-full text-xs font-semibold text-professional-blue backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/10 border border-professional-blue/30 rounded-full text-xs font-semibold text-professional-blue">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
@@ -38,13 +31,13 @@ const HomePage = () => (
             </span>
           </div>
 
-          {/* Headline with Gradient Text */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-            Professional Notary Services <span className="text-transparent bg-clip-text bg-gradient-to-r from-professional-blue via-muted-gold to-professional-blue">You Can Trust</span>
+          {/* Headline */}
+          <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight text-charcoal">
+            Professional Notary Services <span className="text-professional-blue">You Can Trust</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl text-off-white/80 mb-10 leading-relaxed max-w-lg font-light">
+          <p className="text-lg text-charcoal/70 mb-10 leading-relaxed max-w-lg font-light">
             Reliable loan signings, mobile notarization, and apostille services for individuals and businesses across the Dallas-Fort Worth area.
           </p>
 
@@ -52,7 +45,7 @@ const HomePage = () => (
           <div className="flex flex-col sm:flex-row gap-4">
             <Link 
               to="/book" 
-              className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-professional-blue to-professional-blue/80 text-white hover:from-professional-blue/90 hover:to-professional-blue/70 font-semibold py-4 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="group inline-flex items-center justify-center gap-2 bg-professional-blue text-white hover:bg-professional-blue/90 font-semibold py-4 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -61,7 +54,7 @@ const HomePage = () => (
             </Link>
             <Link 
               to="/contact" 
-              className="group inline-flex items-center justify-center gap-2 border-2 border-off-white/40 text-off-white hover:border-muted-gold hover:bg-muted-gold/10 font-semibold py-4 px-8 rounded-lg transition-all backdrop-blur-sm"
+              className="group inline-flex items-center justify-center gap-2 border-2 border-charcoal/20 text-charcoal hover:border-professional-blue hover:bg-professional-blue/5 font-semibold py-4 px-8 rounded-lg transition-all"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -73,28 +66,24 @@ const HomePage = () => (
 
         {/* Right Image */}
         <div className="hidden md:block relative">
-          <div className="relative z-10">
-            <img 
-              src={heroImage} 
-              alt="Professional notary services"
-              className="w-full h-auto rounded-2xl shadow-2xl object-cover border border-professional-blue/20"
-            />
-          </div>
-          {/* Glow effect behind image */}
-          <div className="absolute inset-0 bg-gradient-to-r from-professional-blue/30 to-muted-gold/20 rounded-2xl blur-2xl -z-10"></div>
+          <img 
+            src={heroImage} 
+            alt="Professional notary services"
+            className="w-full h-auto rounded-2xl shadow-xl object-cover border border-charcoal/10"
+          />
         </div>
       </div>
     </section>
 
-    {/* Services Overview - Dark Background with Gradient Cards */}
-    <section className="py-24 md:py-36 bg-gradient-to-b from-deep-navy via-deep-navy to-deep-navy/95">
+    {/* Services Overview */}
+    <section className="py-24 md:py-36 bg-soft-gray/50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
             <span className="text-sm font-semibold text-professional-blue uppercase tracking-widest bg-professional-blue/10 px-4 py-2 rounded-full">Our Services</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-off-white mb-6">Professional Notary Solutions</h2>
-          <p className="text-lg text-off-white/70 max-w-2xl mx-auto font-light">
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Professional Notary Solutions</h2>
+          <p className="text-lg text-charcoal/70 max-w-2xl mx-auto font-light">
             From loan signings to international document authentication—we handle every notarization need with expertise and reliability.
           </p>
         </div>
@@ -110,8 +99,8 @@ const HomePage = () => (
               title: "Loan Signing",
               desc: "Purchase, refinance, reverse mortgage & more",
               link: "/loan-signing",
-              color: "from-professional-blue/20 to-professional-blue/5",
-              borderColor: "border-professional-blue/30",
+              color: "from-professional-blue/5 to-transparent",
+              borderColor: "border-professional-blue/20",
               iconColor: "text-professional-blue"
             },
             {
@@ -123,8 +112,8 @@ const HomePage = () => (
               title: "Apostille",
               desc: "International document authentication",
               link: "/apostille",
-              color: "from-muted-gold/20 to-muted-gold/5",
-              borderColor: "border-muted-gold/30",
+              color: "from-muted-gold/5 to-transparent",
+              borderColor: "border-muted-gold/20",
               iconColor: "text-muted-gold"
             },
             {
@@ -136,8 +125,8 @@ const HomePage = () => (
               title: "Remote Online",
               desc: "Notarize from anywhere, anytime",
               link: "/ron",
-              color: "from-professional-blue/20 to-professional-blue/5",
-              borderColor: "border-professional-blue/30",
+              color: "from-professional-blue/5 to-transparent",
+              borderColor: "border-professional-blue/20",
               iconColor: "text-professional-blue"
             },
             {
@@ -150,24 +139,22 @@ const HomePage = () => (
               title: "Mobile Notary",
               desc: "We come to you—home, office, or hospital",
               link: "/services",
-              color: "from-muted-gold/20 to-muted-gold/5",
-              borderColor: "border-muted-gold/30",
+              color: "from-muted-gold/5 to-transparent",
+              borderColor: "border-muted-gold/20",
               iconColor: "text-muted-gold"
             },
           ].map((item) => (
             <Link 
               key={item.title} 
               to={item.link}
-              className={`group relative overflow-hidden rounded-xl p-8 transition-all hover:scale-105 cursor-pointer border ${item.borderColor} hover:${item.borderColor} bg-gradient-to-br ${item.color} hover:backdrop-blur-sm`}
+              className={`group relative overflow-hidden rounded-xl p-8 transition-all hover:scale-105 cursor-pointer border ${item.borderColor} bg-gradient-to-br ${item.color} bg-white hover:shadow-lg hover:border-charcoal/20`}
             >
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${item.color} rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform`}></div>
-              
               <div className="relative z-10">
                 <div className={`mb-6 ${item.iconColor} group-hover:scale-110 transition-transform origin-left`}>
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-off-white mb-2 group-hover:text-professional-blue transition-colors">{item.title}</h3>
-                <p className="text-off-white/60 text-sm mb-6 leading-relaxed group-hover:text-off-white/80 transition-colors">{item.desc}</p>
+                <h3 className="text-xl font-bold text-charcoal mb-2 group-hover:text-professional-blue transition-colors">{item.title}</h3>
+                <p className="text-charcoal/60 text-sm mb-6 leading-relaxed group-hover:text-charcoal/80 transition-colors">{item.desc}</p>
                 <span className={`inline-flex items-center gap-2 ${item.iconColor} text-sm font-semibold group-hover:gap-3 transition-all`}>
                   Learn more
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -185,18 +172,18 @@ const HomePage = () => (
     <TrustSection />
 
     {/* Why Choose Us */}
-    <section className="py-20 lg:py-28 bg-deep-navy border-t border-professional-blue/10">
+    <section className="py-20 lg:py-28 bg-white border-t border-charcoal/10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-off-white">
+          <div className="text-charcoal">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-12 bg-professional-blue/40"></div>
               <span className="text-sm font-medium text-professional-blue uppercase tracking-wider">Why Bridge Notary</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-charcoal">
               More Than Just a Signature
             </h2>
-            <p className="text-lg text-off-white/70 mb-8 font-light">
+            <p className="text-lg text-charcoal/70 mb-8 font-light">
               We understand that behind every document is a story—a new home, a business deal, a legal matter. That's why we treat every signing with the care and attention it deserves.
             </p>
 
@@ -212,7 +199,7 @@ const HomePage = () => (
                   <svg className="w-5 h-5 text-professional-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-off-white/80 font-light">{item}</span>
+                  <span className="text-charcoal/80 font-light">{item}</span>
                 </div>
               ))}
             </div>
@@ -220,37 +207,37 @@ const HomePage = () => (
 
           {/* Stats Card */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-professional-blue/10 to-muted-gold/10 border border-professional-blue/20 p-8 md:p-12 rounded-xl">
-              <div className="bg-deep-navy/80 backdrop-blur-sm shadow-xl p-6 md:p-8 border border-professional-blue/30 rounded-lg">
-                <div className="flex items-center gap-4 mb-6 pb-6 border-b border-professional-blue/20">
-                  <div className="w-16 h-16 bg-gradient-to-br from-professional-blue to-muted-gold flex items-center justify-center text-off-white text-2xl font-bold rounded-lg">
+            <div className="bg-gradient-to-br from-professional-blue/5 to-muted-gold/5 border border-professional-blue/20 p-8 md:p-12 rounded-xl">
+              <div className="bg-white shadow-lg p-6 md:p-8 border border-charcoal/10 rounded-lg">
+                <div className="flex items-center gap-4 mb-6 pb-6 border-b border-charcoal/10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-professional-blue to-muted-gold flex items-center justify-center text-white text-2xl font-bold rounded-lg">
                     BN
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-off-white">Bridge Notary</h4>
-                    <p className="text-off-white/60 text-sm">Professional Notary Services</p>
+                    <h4 className="text-xl font-bold text-charcoal">Bridge Notary</h4>
+                    <p className="text-charcoal/60 text-sm">Professional Notary Services</p>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-off-white/70">Client Satisfaction</span>
+                    <span className="text-charcoal/70">Client Satisfaction</span>
                     <span className="text-professional-blue font-bold">99%</span>
                   </div>
-                  <div className="w-full bg-professional-blue/10 h-2 rounded-full">
+                  <div className="w-full bg-charcoal/10 h-2 rounded-full">
                     <div className="bg-gradient-to-r from-professional-blue to-muted-gold h-2 rounded-full" style={{ width: '99%' }}></div>
                   </div>
                   <div className="flex justify-between items-center pt-2">
-                    <span className="text-off-white/70">On-Time Rate</span>
+                    <span className="text-charcoal/70">On-Time Rate</span>
                     <span className="text-professional-blue font-bold">99%</span>
                   </div>
-                  <div className="w-full bg-professional-blue/10 h-2 rounded-full">
+                  <div className="w-full bg-charcoal/10 h-2 rounded-full">
                     <div className="bg-gradient-to-r from-professional-blue to-muted-gold h-2 rounded-full" style={{ width: '99%' }}></div>
                   </div>
                   <div className="flex justify-between items-center pt-2">
-                    <span className="text-off-white/70">Document Accuracy</span>
+                    <span className="text-charcoal/70">Document Accuracy</span>
                     <span className="text-professional-blue font-bold">100%</span>
                   </div>
-                  <div className="w-full bg-professional-blue/10 h-2 rounded-full">
+                  <div className="w-full bg-charcoal/10 h-2 rounded-full">
                     <div className="bg-gradient-to-r from-professional-blue to-muted-gold h-2 rounded-full" style={{ width: '100%' }}></div>
                   </div>
                 </div>
@@ -262,22 +249,18 @@ const HomePage = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="py-24 lg:py-32 bg-gradient-to-r from-professional-blue/20 via-deep-navy to-muted-gold/20 border-t border-professional-blue/20 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-professional-blue/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-muted-gold/10 rounded-full -ml-48 -mb-48 blur-3xl"></div>
-
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-off-white mb-6">
+    <section className="py-24 lg:py-32 bg-gradient-to-r from-professional-blue/10 via-off-white to-muted-gold/10 border-t border-charcoal/10">
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
           Ready to Work With a Notary You Can Trust?
         </h2>
-        <p className="text-xl text-off-white/80 mb-10 max-w-2xl mx-auto font-light">
+        <p className="text-xl text-charcoal/70 mb-10 max-w-2xl mx-auto font-light">
           Whether it's a simple notarization or a complex loan signing, we're here to make it seamless.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link 
             to="/book" 
-            className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-professional-blue to-professional-blue/80 text-white hover:from-professional-blue/90 hover:to-professional-blue/70 transition-all text-lg py-4 px-8 font-semibold shadow-xl transform hover:scale-105 rounded-lg"
+            className="inline-flex items-center justify-center gap-3 bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold shadow-lg transform hover:scale-105 rounded-lg"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -286,7 +269,7 @@ const HomePage = () => (
           </Link>
           <a 
             href="tel:+14696298932" 
-            className="inline-flex items-center justify-center gap-3 border-2 border-off-white/40 text-off-white hover:border-muted-gold hover:bg-muted-gold/10 transition-all text-lg py-4 px-8 font-semibold rounded-lg"
+            className="inline-flex items-center justify-center gap-3 border-2 border-charcoal/20 text-charcoal hover:border-professional-blue hover:bg-professional-blue/5 transition-all text-lg py-4 px-8 font-semibold rounded-lg"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

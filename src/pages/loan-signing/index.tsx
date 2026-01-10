@@ -73,13 +73,13 @@ const LoanSigningPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 relative">
+          <div className="grid md:grid-cols-3 gap-12 relative">
             {/* Geometric overlays */}
             <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/3 -z-10"></div>
             <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/3 -z-10"></div>
             
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white border-l-4 border-professional-blue p-8 group hover:shadow-lg transition-all duration-300">
+              <div key={index} className="border-l-2 border-professional-blue pl-6 group">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="text-professional-blue group-hover:scale-110 transition-transform flex-shrink-0">
                     {benefit.icon}

@@ -62,15 +62,15 @@
     @apply py-20 md:py-28 px-4 md:px-0 max-w-5xl mx-auto;
   }
   .card {
-    @apply bg-white rounded-lg border border-neutral-200 p-8 md:p-12 shadow-sm transition-all duration-300 hover:shadow-md;
+    @apply bg-white border border-neutral-200 p-8 md:p-12 shadow-sm transition-all duration-300 hover:shadow-md;
   }
   .pill {
-    @apply inline-block bg-neutral-100 rounded-full px-5 py-2 text-sm font-semibold text-deep-navy;
+    @apply inline-block bg-neutral-100 px-5 py-2 text-sm font-semibold text-deep-navy;
   }
 
   /* Professional button styles */
   .button {
-    @apply rounded-lg px-6 py-3 font-semibold text-base transition-all duration-300 focus-visible:ring-2 focus-visible:ring-professional-blue focus:outline-none;
+    @apply px-6 py-3 font-semibold text-base transition-all duration-300 focus-visible:ring-2 focus-visible:ring-professional-blue focus:outline-none;
   }
   .button-primary {
     @apply button bg-professional-blue text-white hover:bg-hover-blue shadow-md hover:shadow-lg;
@@ -84,7 +84,7 @@
 
   /* Card with border design */
   .service-card {
-    @apply bg-white rounded-lg border border-neutral-200 p-6 transition-all duration-300 hover:border-professional-blue hover:shadow-md;
+    @apply bg-white border border-neutral-200 p-6 transition-all duration-300 hover:border-professional-blue hover:shadow-md;
   }
 
   @keyframes pulse {

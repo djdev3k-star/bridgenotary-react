@@ -75,16 +75,16 @@ const pricingTiers = [
 
 const Pricing = () => {
   return (
-    <div className="w-full bg-off-white">
+    <div className="w-full bg-professional-blue/10">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-deep-navy text-off-white w-screen left-1/2 -translate-x-1/2 py-24 md:py-32">
+      <section className="relative overflow-hidden bg-professional-blue/10 text-charcoal w-screen left-1/2 -translate-x-1/2 py-24 md:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold tracking-[0.1em] uppercase text-muted-gold mb-4">Simple & Transparent</p>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <p className="text-sm font-semibold tracking-[0.1em] uppercase text-professional-blue mb-4">Simple & Transparent</p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-deep-navy">
               Professional Pricing You Can Trust
             </h1>
-            <p className="text-xl text-off-white/80 leading-relaxed">
+            <p className="text-xl text-charcoal/80 leading-relaxed">
               Flat-rate pricing with no hidden fees. Know exactly what you're paying before you book.
             </p>
           </div>
@@ -99,31 +99,43 @@ const Pricing = () => {
             <p className="text-lg text-charcoal max-w-2xl mx-auto">Three professional packages designed for your needs.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            {/* Geometric overlays for off-center effect */}
+            <div className="absolute -top-20 -left-20 w-96 h-96 bg-professional-blue/5 -z-10"></div>
+            <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-professional-blue/8 -z-10"></div>
+            
             {pricingTiers.map((tier, idx) => (
               <div 
                 key={idx}
-                className={`relative p-8 rounded-lg border-2 transition-all ${
+                className={`relative p-8 border-2 transition-all ${
                   tier.popular 
-                    ? 'border-professional-blue bg-professional-blue/5 transform md:scale-105' 
-                    : 'border-neutral-200 bg-white hover:border-professional-blue'
+                    ? 'border-professional-blue bg-professional-blue/5 transform md:scale-105 shadow-lg' 
+                    : 'border-neutral-200 bg-white hover:border-professional-blue hover:shadow-md'
                 }`}
               >
+                {/* Geometric accent for popular tier */}
+                {tier.popular && (
+                  <>
+                    <div className="absolute -top-px -right-px w-32 h-32 bg-professional-blue/10"></div>
+                    <div className="absolute -bottom-px -left-px w-24 h-24 bg-professional-blue/5"></div>
+                  </>
+                )}
+                
                 {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-professional-blue text-white text-xs font-bold py-1 px-4 rounded-full">MOST POPULAR</span>
+                    <span className="bg-professional-blue text-white text-xs font-bold py-1 px-4">MOST POPULAR</span>
                   </div>
                 )}
                 
-                <h3 className="text-2xl font-bold text-deep-navy mb-2">{tier.name}</h3>
-                <p className="text-charcoal text-sm mb-6 leading-relaxed">{tier.description}</p>
+                <h3 className="text-2xl font-bold text-deep-navy mb-2 relative z-10">{tier.name}</h3>
+                <p className="text-charcoal text-sm mb-6 leading-relaxed relative z-10">{tier.description}</p>
                 
-                <div className="mb-6">
+                <div className="mb-6 relative z-10">
                   <div className="text-4xl font-bold text-professional-blue">{tier.price}</div>
                   <div className="text-sm text-soft-gray">{tier.period}</div>
                 </div>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-8 relative z-10">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -136,7 +148,7 @@ const Pricing = () => {
 
                 <a 
                   href={tier.cta === 'Learn More' ? '/ron' : '/book'}
-                  className={`block w-full py-3 px-6 rounded-lg font-semibold text-center transition-all ${
+                  className={`block w-full py-3 px-6 font-semibold text-center transition-all relative z-10 ${
                     tier.popular
                       ? 'bg-professional-blue text-white hover:bg-professional-blue/90'
                       : 'border-2 border-professional-blue text-professional-blue hover:bg-professional-blue/5'
@@ -151,7 +163,7 @@ const Pricing = () => {
       </section>
 
       {/* Detailed Services */}
-      <section className="py-20 lg:py-28 bg-off-white">
+      <section className="py-20 lg:py-28 bg-professional-blue/10">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-14">
             <h2 className="text-4xl md:text-5xl font-bold text-deep-navy mb-4">Service Details</h2>
@@ -163,7 +175,7 @@ const Pricing = () => {
             <h3 className="text-2xl font-bold text-deep-navy mb-6">Loan Signing Services</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {coreServices.map((service, idx) => (
-                <div key={idx} className="bg-white p-6 border border-neutral-200 rounded-lg hover:border-professional-blue hover:shadow-lg transition-all">
+                <div key={idx} className="bg-white p-6 border border-neutral-200 hover:border-professional-blue hover:shadow-lg transition-all">
                   <div className="flex items-start justify-between mb-2">
                     <h4 className="text-lg font-semibold text-deep-navy">{service.name}</h4>
                     <div className="text-2xl font-bold text-professional-blue">{service.fee}</div>
@@ -180,7 +192,7 @@ const Pricing = () => {
             <p className="text-charcoal mb-6">Optional services to enhance your signing experience.</p>
             <div className="grid md:grid-cols-3 gap-4">
               {addOnServices.map((service, idx) => (
-                <div key={idx} className="bg-white p-5 border border-neutral-200 rounded-lg hover:bg-off-white transition-all">
+                <div key={idx} className="bg-white p-5 border border-neutral-200 hover:bg-off-white transition-all">
                   <div className="flex items-start justify-between mb-2">
                     <h4 className="font-semibold text-deep-navy">{service.name}</h4>
                     <div className="text-lg font-bold text-professional-blue">{service.fee}</div>
@@ -239,7 +251,7 @@ const Pricing = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/book"
-              className="inline-flex items-center justify-center gap-3 bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold rounded-lg"
+              className="inline-flex items-center justify-center gap-3 bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -248,7 +260,7 @@ const Pricing = () => {
             </Link>
             <Link 
               to="/contact"
-              className="inline-flex items-center justify-center gap-3 border-2 border-off-white text-off-white hover:bg-off-white hover:text-deep-navy transition-all text-lg py-4 px-8 font-semibold rounded-lg"
+              className="inline-flex items-center justify-center gap-3 border-2 border-off-white text-off-white hover:bg-off-white hover:text-deep-navy transition-all text-lg py-4 px-8 font-semibold"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

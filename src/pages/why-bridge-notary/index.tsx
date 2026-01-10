@@ -35,7 +35,7 @@ const BenefitItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 
 const WhyBridgeNotaryPage: React.FC = () => {
   return (
-    <div className="w-full bg-white text-neutral-900 pt-20">
+    <div className="w-full bg-professional-blue/10 text-neutral-900 pt-20">
       {/* Hero Section */}
       <section className="bg-proof/10 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">

@@ -48,24 +48,21 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-professional-blue/10">
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white py-20 md:py-28 w-screen left-1/2 -translate-x-1/2">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-electric-blue via-proof to-electric-blue"></div>
-        <div className="absolute inset-0 z-10 bg-proof/20"></div>
-
+      <section className="relative overflow-hidden text-charcoal py-20 md:py-28 w-screen left-1/2 -translate-x-1/2 bg-professional-blue/10">
         <div className="max-w-6xl mx-auto px-6 relative z-20">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 text-sm font-medium mb-6 border border-white/30">
+            <div className="inline-flex items-center gap-2 bg-professional-blue/20 backdrop-blur-sm px-4 py-2 text-sm font-medium mb-6 border border-professional-blue/30">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               Get in Touch
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Let's <span className="text-electric-blue">Connect</span>
+            <h1 className="text-4xl md:text-5xl font-bold text-deep-navy mb-4 leading-tight">
+              Let's <span className="text-professional-blue">Connect</span>
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-xl text-charcoal/80 leading-relaxed">
               Have a question or need a custom quote? We're here to help with all your notary needs.
             </p>
           </div>

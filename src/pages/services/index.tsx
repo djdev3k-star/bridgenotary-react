@@ -48,7 +48,7 @@ const Services = () => {
   const activeCategory = serviceCategories.find(cat => cat.id === activeTab);
 
   return (
-    <div className="w-full bg-white pt-20">
+    <div className="w-full bg-professional-blue/10 pt-20">
       {/* Hero Section */}
       <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="max-w-6xl mx-auto px-6">

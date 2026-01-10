@@ -80,7 +80,7 @@ const HomePage = () => (
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
-            <span className="text-sm font-semibold text-professional-blue uppercase tracking-widest bg-professional-blue/10 px-4 py-2 rounded-full">Our Services</span>
+            <span className="text-sm font-semibold text-professional-blue uppercase tracking-widest bg-professional-blue/10 px-4 py-2">Our Services</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Professional Notary Solutions</h2>
           <p className="text-lg text-charcoal/70 max-w-2xl mx-auto font-light">

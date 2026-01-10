@@ -69,7 +69,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.resources.map(link => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-off-white/70 hover:text-off-white transition-colors text-sm">
+                  <Link to={link.path} className="text-off-white/85 hover:text-professional-blue transition-colors text-sm font-medium">
                     {link.label}
                   </Link>
                 </li>
@@ -83,7 +83,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.map(link => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-off-white/70 hover:text-off-white transition-colors text-sm">
+                  <Link to={link.path} className="text-off-white/85 hover:text-professional-blue transition-colors text-sm font-medium">
                     {link.label}
                   </Link>
                 </li>
@@ -97,7 +97,7 @@ export default function Footer() {
             <p className="text-off-white/70 mb-4 text-sm leading-relaxed">
               Schedule your appointment in minutes.
             </p>
-            <Link to="/book" className="button-primary w-full text-center block">
+            <Link to="/book" className="inline-block w-full bg-professional-blue text-white hover:bg-professional-blue/90 font-semibold py-3 px-4 rounded-lg text-center transition-all">
               Schedule Now
             </Link>
             <p className="text-xs text-off-white/60 text-center mt-4">
@@ -115,7 +115,7 @@ export default function Footer() {
             <ul className="flex space-x-6 mt-4 md:mt-0">
               {footerLinks.legal.map(link => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-off-white/70 hover:text-off-white text-xs transition-colors">
+                  <Link to={link.path} className="text-off-white/85 hover:text-professional-blue text-xs transition-colors font-medium">
                     {link.label}
                   </Link>
                 </li>

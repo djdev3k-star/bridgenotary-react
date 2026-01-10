@@ -217,13 +217,13 @@ const Navigation: React.FC<NavigationProps> = () => {
   const mobileSolutionLinks: NavigationMenuItems[] = solutionsMenuGroups.flatMap((group) => group.items);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur z-50 border-b border-neutral-200">
+    <header className="sticky top-0 left-0 w-full bg-white shadow-sm z-50 border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-bold text-2xl tracking-tighter text-proof">Bridge Notary</Link>
+        <Link to="/" className="font-bold text-2xl tracking-tight text-deep-navy">Bridge Notary</Link>
         <nav className="hidden md:flex gap-8 items-center">
           <DropdownMenu
             trigger={
-              <span className="text-neutral-900 hover:text-proof transition text-base font-medium flex items-center gap-1">
+              <span className="text-charcoal hover:text-professional-blue transition text-base font-semibold flex items-center gap-1">
                   Solutions
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -232,45 +232,23 @@ const Navigation: React.FC<NavigationProps> = () => {
             }
             groups={solutionsMenuGroups}
           />
-          <Link to="/pricing" className="text-neutral-900 hover:text-proof transition text-base font-medium">Pricing</Link>
-            <Link to="/ron" className="text-neutral-900 hover:text-proof transition text-base font-medium">RON</Link>
-          <Link to="/about" className="text-neutral-900 hover:text-proof transition text-base font-medium">About</Link>
+          <Link to="/pricing" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Pricing</Link>
+          <Link to="/about" className="text-charcoal hover:text-professional-blue transition text-base font-medium">About</Link>
+          <Link to="/contact" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Contact</Link>
         </nav>
-        <div className="hidden md:flex items-center gap-6">
-          {/* Trust Badges */}
-          <div className="flex items-center gap-3 px-3 py-1">
-            <div className="flex items-center gap-1 text-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              <span className="text-neutral-700 font-medium">Trusted</span>
-            </div>
-            <div className="flex items-center gap-1 text-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="text-neutral-700 font-medium">Certified</span>
-            </div>
-            <div className="flex items-center gap-1 text-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="text-neutral-700 font-medium">24/7</span>
-            </div>
-          </div>
-          <Link to="/login" className="text-neutral-900 hover:text-proof transition font-medium">
-            Login
-          </Link>
-          <Link to="/book">
-            <Button variant="primary" className={`pulse-button ${notarizeButtonClass}`}>
-              Notarize
-            </Button>
+        <div className="hidden md:flex items-center gap-4">
+          {/* Phone and CTA */}
+          <a href="tel:+14696298932" className="text-charcoal hover:text-professional-blue transition text-sm font-semibold">
+            (469) 629-8932
+          </a>
+          <Link to="/book" className="button-primary">
+            Book Now
           </Link>
         </div>
         <div className="md:hidden">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)} 
-            className="text-neutral-700 hover:text-proof focus:outline-none"
+            className="text-charcoal hover:text-professional-blue focus:outline-none"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -280,27 +258,29 @@ const Navigation: React.FC<NavigationProps> = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden bg-white/80 backdrop-blur">
-          <nav className="px-6 pt-2 pb-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-neutral-200">
+          <nav className="px-6 pt-4 pb-4 flex flex-col gap-4">
             {mobileSolutionLinks.map((item) => (
               <Link 
                 key={item.path}
                 to={item.path} 
-                className="text-neutral-900 hover:text-proof transition text-base font-medium"
+                className="text-charcoal hover:text-professional-blue transition text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <Link to="/pricing" className="text-neutral-900 hover:text-proof transition text-base font-medium">Pricing</Link>
-            <Link to="/contact" className="text-neutral-900 hover:text-proof transition text-base font-medium">Contact</Link>
-            <Link to="/login" className="text-neutral-900 hover:text-proof transition text-base font-medium">Login</Link>
-            {/* TODO: Add phone contact for future development */}
-            <Link to="/book">
-              <Button variant="primary" className={`w-full pulse-button ${notarizeButtonClass}`}>
-                Notarize
-              </Button>
-            </Link>
+            <div className="border-t border-neutral-200 pt-4 mt-4 flex flex-col gap-4">
+              <Link to="/pricing" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Pricing</Link>
+              <Link to="/about" className="text-charcoal hover:text-professional-blue transition text-base font-medium">About</Link>
+              <Link to="/contact" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Contact</Link>
+              <a href="tel:+14696298932" className="text-charcoal hover:text-professional-blue transition text-base font-semibold">
+                Call: (469) 629-8932
+              </a>
+              <Link to="/book" className="button-primary w-full text-center">
+                Book Now
+              </Link>
+            </div>
           </nav>
         </div>
       )}

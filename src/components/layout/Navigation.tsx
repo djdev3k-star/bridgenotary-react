@@ -237,10 +237,13 @@ const Navigation: React.FC<NavigationProps> = () => {
           <Link to="/contact" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Contact</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
-          {/* Phone and CTA */}
-          <a href="tel:+14696298932" className="text-charcoal hover:text-professional-blue transition text-sm font-semibold">
-            (469) 629-8932
-          </a>
+          {/* 24/7 Badge and CTA */}
+          <span className="text-xs font-semibold text-professional-blue bg-professional-blue/10 px-3 py-1 rounded-full">
+            Available 24/7
+          </span>
+          <Link to="/login" className="text-charcoal hover:text-professional-blue transition text-sm font-semibold">
+            Log In
+          </Link>
           <Link to="/book" className="button-primary">
             Book Now
           </Link>
@@ -274,9 +277,9 @@ const Navigation: React.FC<NavigationProps> = () => {
               <Link to="/pricing" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Pricing</Link>
               <Link to="/about" className="text-charcoal hover:text-professional-blue transition text-base font-medium">About</Link>
               <Link to="/contact" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Contact</Link>
-              <a href="tel:+14696298932" className="text-charcoal hover:text-professional-blue transition text-base font-semibold">
-                Call: (469) 629-8932
-              </a>
+              <Link to="/login" className="text-charcoal hover:text-professional-blue transition text-base font-semibold">
+                Log In
+              </Link>
               <Link to="/book" className="button-primary w-full text-center">
                 Book Now
               </Link>

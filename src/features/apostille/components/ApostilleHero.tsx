@@ -76,7 +76,7 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
     </section>
 
     {/* Flyer Strip Section - full-width seamless trio with deep links */}
-    <section className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden bg-neutral-50">
+    <section className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden bg-off-white">
       <div className="flex flex-col md:flex-row h-56 md:h-64 lg:h-72">
         <Link
           to="/study-abroad"
@@ -88,10 +88,10 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
             alt="Study Abroad"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-electric-blue/60 via-electric-blue/30 to-transparent group-hover:from-electric-blue/70 group-hover:via-electric-blue/40 transition-colors duration-300"></div>
-          <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
-            <p className="text-sm uppercase tracking-[0.2em] text-white/80">Study Abroad</p>
-            <p className="text-lg font-semibold">Academic & visa documents</p>
+          <div className="absolute inset-0 bg-professional-blue/60 group-hover:bg-professional-blue/50 transition-colors duration-300"></div>
+          <div className="absolute inset-0 flex flex-col justify-end p-6">
+            <p className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-2">Study Abroad</p>
+            <p className="text-lg md:text-xl font-bold text-white">Academic & Visa Documents</p>
           </div>
         </Link>
 
@@ -105,10 +105,10 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
             alt="International Adoption"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-proof/65 via-electric-blue/35 to-transparent group-hover:from-proof/75 group-hover:via-electric-blue/45 transition-colors duration-300"></div>
-          <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
-            <p className="text-sm uppercase tracking-[0.2em] text-white/80">International Adoption</p>
-            <p className="text-lg font-semibold">Home studies & dossiers</p>
+          <div className="absolute inset-0 bg-professional-blue/60 group-hover:bg-professional-blue/50 transition-colors duration-300"></div>
+          <div className="absolute inset-0 flex flex-col justify-end p-6">
+            <p className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-2">International Adoption</p>
+            <p className="text-lg md:text-xl font-bold text-white">Home Studies & Dossiers</p>
           </div>
         </Link>
 
@@ -122,10 +122,10 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
             alt="Destination Wedding"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-electric-blue/40 via-proof/20 to-transparent group-hover:from-electric-blue/50 group-hover:via-proof/30 transition-colors duration-300"></div>
-          <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
-            <p className="text-sm uppercase tracking-[0.2em] text-white/80">Destination Wedding</p>
-            <p className="text-lg font-semibold">Marriage & identity docs</p>
+          <div className="absolute inset-0 bg-professional-blue/60 group-hover:bg-professional-blue/50 transition-colors duration-300"></div>
+          <div className="absolute inset-0 flex flex-col justify-end p-6">
+            <p className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-2">Destination Wedding</p>
+            <p className="text-lg md:text-xl font-bold text-white">Marriage & Identity Documents</p>
           </div>
         </Link>
       </div>

@@ -180,111 +180,83 @@ const ApostilleServices: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-off-white">
+    <div className="w-full bg-white">
 
-      {/* Pain Points Section - List style */}
-      <section className="section bg-professional-blue/10 py-20 md:py-28 relative">
+      {/* Pain Points Section - Redesigned with left-border cards */}
+      <section className="bg-off-white py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4 justify-center">
-            <span className="h-px w-12 bg-professional-blue/30"></span>
-            <span className="text-xs uppercase tracking-[0.25em] text-professional-blue font-semibold">Pain Points We Eliminate</span>
-            <span className="h-px w-12 bg-professional-blue/30"></span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal text-center mb-16">What We Remove From Your Process</h2>
-        </div>
-        
-        <div className="max-w-4xl mx-auto px-6 relative">
-          {/* Geometric overlays */}
-          <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/3 -z-10"></div>
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/3 -z-10"></div>
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Why People Get Stuck</h2>
+          <p className="text-xl text-charcoal/70 mb-12 max-w-3xl">These common roadblocks stop most DIY apostille attempts. We've solved all of them.</p>
           
-          <div className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
             {painPoints.map((point, index) => (
-              <div key={index} className="flex items-start gap-4 bg-white p-6 border-l-4 border-professional-blue fade-in">
-                <div className="flex-shrink-0 mt-1">
-                  <svg className="w-6 h-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </div>
-                <p className="text-charcoal text-lg leading-relaxed">{point}</p>
+              <div key={index} className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
+                <p className="text-charcoal leading-relaxed">{point}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Solution Section - List style */}
-      <section className="section bg-white py-20 md:py-28">
+      {/* Our Solution Section - Redesigned */}
+      <section className="bg-white py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4 justify-center">
-            <span className="h-px w-12 bg-professional-blue/30"></span>
-            <span className="text-xs uppercase tracking-[0.25em] text-professional-blue font-semibold">Our Solution</span>
-            <span className="h-px w-12 bg-professional-blue/30"></span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal text-center mb-16">How We Make Complex Simple</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">How We Solve It</h2>
+          <p className="text-xl text-charcoal/70 mb-12 max-w-3xl">Every step is handled by our team so you don't have to.</p>
         </div>
         
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="space-y-4">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {solutions.map((solution, index) => (
-              <div key={index} className="flex items-start gap-4 bg-professional-blue/5 p-6 border-l-4 border-professional-blue fade-in-delay">
-                <div className="flex-shrink-0 mt-1">
-                  <svg className="w-6 h-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-charcoal mb-1">{solution.action}</h3>
-                  <p className="text-charcoal/70">{solution.benefit}</p>
-                </div>
+              <div key={index} className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
+                <h3 className="text-lg font-bold text-charcoal mb-2">{solution.action}</h3>
+                <p className="text-charcoal/70">{solution.benefit}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works Section - Simplified horizontal steps */}
-      <section className="section bg-professional-blue/10 relative">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-charcoal text-center mb-12">How It Works</h2>
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-            <div className="flex-1 text-center">
-              <span className="text-professional-blue font-bold text-2xl">1.</span>
-              <h3 className="text-lg font-semibold mt-2 mb-1 text-charcoal">Upload or Snap</h3>
-              <p className="text-charcoal/70 text-sm">Send your document—we confirm eligibility.</p>
+      {/* How It Works Section - Redesigned */}
+      <section className="bg-off-white py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-16 text-center">How It Works</h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-professional-blue text-white rounded-full font-bold text-xl mb-4">1</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Upload Documents</h3>
+              <p className="text-charcoal/70">Send your documents—we confirm eligibility and next steps.</p>
             </div>
-            <div className="hidden md:block text-professional-blue/30 text-2xl">→</div>
-            <div className="flex-1 text-center">
-              <span className="text-professional-blue font-bold text-2xl">2.</span>
-              <h3 className="text-lg font-semibold mt-2 mb-1 text-charcoal">Ship It</h3>
-              <p className="text-charcoal/70 text-sm">Drop in prepaid mailer or use our courier.</p>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-professional-blue text-white rounded-full font-bold text-xl mb-4">2</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">We Handle It</h3>
+              <p className="text-charcoal/70">Our team manages shipping, processing, and apostille application.</p>
             </div>
-            <div className="hidden md:block text-professional-blue/30 text-2xl">→</div>
-            <div className="flex-1 text-center">
-              <span className="text-electric-blue font-bold text-2xl">3.</span>
-              <h3 className="text-lg font-semibold mt-2 mb-1">Track & Receive</h3>
-              <p className="text-neutral-600 text-sm">Apostilled documents delivered to your door.</p>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-professional-blue text-white rounded-full font-bold text-xl mb-4">3</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Receive Complete</h3>
+              <p className="text-charcoal/70">Apostilled documents delivered ready to use internationally.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Quiz CTA - Simplified inline */}
-      <section className="section bg-professional-blue/10">
+      {/* Quick Quiz CTA - Simplified */}
+      <section className="bg-professional-blue/10 py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold text-charcoal mb-4">Still Unsure If You Need an Apostille?</h2>
-          <p className="text-charcoal/70 mb-6">Take our 30-second quiz to find out.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">Still Not Sure If You Need an Apostille?</h2>
+          <p className="text-lg text-charcoal/70 mb-8">Take our quick 30-second quiz to find out what documents need authentication.</p>
           <button 
             onClick={() => navigate('/apostille/quiz')}
-            className="inline-flex items-center justify-center gap-2 bg-professional-blue text-white hover:bg-professional-blue/90 font-semibold py-4 px-8 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center gap-2 bg-professional-blue text-white hover:bg-professional-blue/90 font-semibold py-4 px-10 transition-all"
             aria-label="Start apostille need assessment quiz"
           >
-            Start Quiz
+            Start the Quiz
           </button>
         </div>
       </section>
 
-      {/* Final CTA Section */}
+      {/* Final CTA Section - Redesigned */}
       <section className="relative py-24 px-6 overflow-hidden">
         {/* Background image overlay */}
         <div className="absolute inset-0">
@@ -293,30 +265,28 @@ const ApostilleServices: React.FC = () => {
             alt="Study Abroad Documents" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-proof to-electric-blue opacity-85"></div>
+          <div className="absolute inset-0 bg-professional-blue/70"></div>
         </div>
         
         <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 fade-in">Make Your Documents World-Ready</h2>
-          <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto fade-in-delay leading-relaxed">
-            Stop guessing. Start traveling, marrying, studying, or doing business abroad—confident your documents will cross borders as smoothly as you do.
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Make Your Documents World-Ready</h2>
+          <p className="text-lg md:text-xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Stop worrying about apostille requirements. Let our experts handle the complexity so your documents cross borders without delays.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-6 fade-in-delay">
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
             <button 
               onClick={() => setShowContactForm(true)}
-              className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative z-50"
+              className="bg-white text-professional-blue hover:bg-off-white transition-all font-semibold text-lg py-4 px-10 relative z-50"
             >
-              Get My Apostille Now
+              Get Started Now
             </button>
-            {/* TODO: Add phone contact for future development */}
-            {/* <a 
-              href="tel:+14696298932" 
-              className="bg-transparent border-2 border-white hover:bg-white/10 transition-all font-semibold rounded text-lg py-5 px-10 text-white relative z-50 flex flex-col items-center"
+            <button 
+              onClick={() => navigate('/contact')}
+              className="border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all font-semibold text-lg py-4 px-10 relative z-50"
             >
-              <span className="text-sm text-white/80">Free 5-min Consult</span>
-              <span>(469) 629-8932</span>
-            </a> */}
+              Contact a Specialist
+            </button>
           </div>
         </div>
       </section>
@@ -324,91 +294,91 @@ const ApostilleServices: React.FC = () => {
       {/* Contact Form Modal */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
-          <div className="bg-white max-w-xl w-full p-6 relative">
+          <div className="bg-white max-w-xl w-full p-8 relative">
             <button 
               onClick={() => setShowContactForm(false)}
-              className="absolute top-4 right-4 text-neutral-500 hover:text-electric-blue text-2xl"
+              className="absolute top-4 right-4 text-charcoal/40 hover:text-charcoal text-2xl"
               aria-label="Close contact form"
             >
               ✕
             </button>
-            <h3 className="text-2xl font-semibold mb-2 text-proof text-center">Start Your Apostille Process</h3>
-            <p className="text-neutral-600 mb-4 text-center">Fill out this quick form and our team will reach out to guide you through the next steps.</p>
+            <h3 className="text-2xl font-bold text-charcoal mb-2">Start Your Apostille Process</h3>
+            <p className="text-charcoal/70 mb-6">Fill out this quick form and our team will reach out to guide you through the next steps.</p>
             {submitted ? (
               <div className="text-center py-8">
-                <div className="text-electric-blue text-4xl mb-2">✓</div>
-                <div className="text-proof font-semibold">Thank you! We'll be in touch soon.</div>
+                <div className="text-professional-blue text-4xl mb-2">✓</div>
+                <div className="text-charcoal font-semibold">Thank you! We'll be in touch soon.</div>
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-proof mb-1">Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-charcoal mb-2">Name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-electric-blue"
+                    className="w-full border border-professional-blue/20 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-professional-blue/20 focus:border-transparent transition-all"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-proof mb-1">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-charcoal mb-2">Email</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-electric-blue"
+                    className="w-full border border-professional-blue/20 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-professional-blue/20 focus:border-transparent transition-all"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="documentTypes" className="block text-sm font-medium text-proof mb-1">Type of Document(s)</label>
+                  <label htmlFor="documentTypes" className="block text-sm font-medium text-charcoal mb-2">Type of Document(s)</label>
                   <select
                     id="documentTypes"
                     name="documentTypes"
                     multiple
                     value={formData.documentTypes}
                     onChange={handleInputChange}
-                    className="w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-electric-blue bg-white"
+                    className="w-full border border-professional-blue/20 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-professional-blue/20 focus:border-transparent transition-all bg-white"
                     required
                   >
                     {documentOptions.map((option) => (
                       <option key={option} value={option}>{option}</option>
                     ))}
                   </select>
-                  <p className="text-xs text-neutral-500 mt-1">Hold Ctrl (Windows) or Cmd (Mac) to select multiple.</p>
+                  <p className="text-xs text-charcoal/50 mt-1">Hold Ctrl (Windows) or Cmd (Mac) to select multiple.</p>
                 </div>
                 <div>
-                  <label htmlFor="destinationCountry" className="block text-sm font-medium text-proof mb-1">Destination Country</label>
+                  <label htmlFor="destinationCountry" className="block text-sm font-medium text-charcoal mb-2">Destination Country</label>
                   <input
                     type="text"
                     id="destinationCountry"
                     name="destinationCountry"
                     value={formData.destinationCountry}
                     onChange={handleInputChange}
-                    className="w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-electric-blue"
+                    className="w-full border border-professional-blue/20 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-professional-blue/20 focus:border-transparent transition-all"
                     placeholder="e.g. Italy, India, Mexico"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="comments" className="block text-sm font-medium text-proof mb-1">Comments (optional)</label>
+                  <label htmlFor="comments" className="block text-sm font-medium text-charcoal mb-2">Comments (optional)</label>
                   <textarea
                     id="comments"
                     name="comments"
                     value={formData.comments}
                     onChange={handleInputChange}
-                    className="w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-electric-blue"
+                    className="w-full border border-professional-blue/20 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-professional-blue/20 focus:border-transparent transition-all"
                     rows={2}
                   />
                 </div>
                 <button
                   type="submit"
-                  className="button-primary w-full mt-2 pulse-button"
+                  className="w-full bg-professional-blue text-white font-semibold py-3 hover:bg-professional-blue/90 transition-all mt-2"
                 >
                   Submit
                 </button>

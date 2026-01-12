@@ -1,26 +1,17 @@
 import React from 'react';
 import { Outlet, useLocation, Link } from 'react-router-dom';
-import ApostilleSidebar from '@/features/apostille/components/ApostilleSidebar';
 import ScrollToTop from '@/components/layout/ScrollToTop';
 
 const ApostilleLayout: React.FC = () => {
   const location = useLocation();
-  const hideSidebar = location.pathname.startsWith('/apostille/quiz');
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-off-white">
       <ScrollToTop />
       <main className="pt-10 pb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className={hideSidebar ? 'md:col-span-4' : 'md:col-span-3'}>
-              <Outlet />
-            </div>
-            {!hideSidebar && (
-              <div className="md:col-span-1">
-                <ApostilleSidebar />
-              </div>
-            )}
+          <div className="w-full">
+            <Outlet />
           </div>
         </div>
       </main>

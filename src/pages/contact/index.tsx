@@ -75,8 +75,8 @@ const Contact = () => {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Left Column - Form */}
             <div className="lg:col-span-2">
-              <form className="bg-neutral-50 border border-neutral-200 p-8 md:p-10" onSubmit={handleSubmit} noValidate>
-                <h2 className="text-2xl font-bold text-proof mb-6">Send Us a Message</h2>
+              <form className="bg-off-white border border-professional-blue/20 p-8 md:p-10" onSubmit={handleSubmit} noValidate>
+                <h2 className="text-2xl font-bold text-charcoal mb-6">Send Us a Message</h2>
                 
                 {error && (
                   <div className="text-sm text-red-700 p-4 bg-red-50 border border-red-200 mb-6 flex items-center gap-3">
@@ -97,56 +97,56 @@ const Contact = () => {
 
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-proof mb-2">Full Name *</label>
+                    <label htmlFor="name" className="block text-sm font-semibold text-charcoal mb-2">Full Name *</label>
                     <input 
                       id="name" 
                       value={name} 
                       onChange={(e) => setName(e.target.value)} 
                       type="text" 
                       placeholder="Your name" 
-                      className="w-full px-4 py-3 bg-white text-neutral-800 border border-neutral-300 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 outline-none transition" 
+                      className="w-full px-4 py-3 bg-white text-charcoal border border-professional-blue/20 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 outline-none transition" 
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-proof mb-2">Email Address *</label>
+                    <label htmlFor="email" className="block text-sm font-semibold text-charcoal mb-2">Email Address *</label>
                     <input 
                       id="email" 
                       value={email} 
                       onChange={(e) => setEmail(e.target.value)} 
                       type="email" 
                       placeholder="you@example.com" 
-                      className="w-full px-4 py-3 bg-white text-neutral-800 border border-neutral-300 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 outline-none transition" 
+                      className="w-full px-4 py-3 bg-white text-charcoal border border-professional-blue/20 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 outline-none transition" 
                     />
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <label htmlFor="phone" className="block text-sm font-semibold text-proof mb-2">Phone Number</label>
+                  <label htmlFor="phone" className="block text-sm font-semibold text-charcoal mb-2">Phone Number</label>
                   <input 
                     id="phone" 
                     value={phone} 
                     onChange={(e) => setPhone(e.target.value)} 
                     type="tel" 
                     placeholder="(555) 123-4567" 
-                    className="w-full px-4 py-3 bg-white text-neutral-800 border border-neutral-300 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 outline-none transition" 
+                    className="w-full px-4 py-3 bg-white text-charcoal border border-professional-blue/20 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 outline-none transition" 
                   />
                 </div>
 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-semibold text-proof mb-2">Message *</label>
+                  <label htmlFor="message" className="block text-sm font-semibold text-charcoal mb-2">Message *</label>
                   <textarea 
                     id="message" 
                     value={message} 
                     onChange={(e) => setMessage(e.target.value)} 
                     rows={5} 
                     placeholder="How can we help you?" 
-                    className="w-full px-4 py-3 bg-white text-neutral-800 border border-neutral-300 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 outline-none transition resize-none" 
+                    className="w-full px-4 py-3 bg-white text-charcoal border border-professional-blue/20 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 outline-none transition resize-none" 
                   />
                 </div>
 
                 <button 
                   type="submit" 
-                  className="w-full bg-electric-blue hover:bg-hover-blue text-white font-semibold py-4 transition flex items-center justify-center gap-2" 
+                  className="w-full bg-professional-blue hover:bg-professional-blue/90 text-white font-semibold py-4 transition flex items-center justify-center gap-2" 
                   disabled={loading}
                 >
                   {loading ? (
@@ -172,87 +172,87 @@ const Contact = () => {
             {/* Right Column - Contact Info */}
             <div className="space-y-6">
               {/* Direct Contact */}
-              <div className="bg-electric-blue/5 border border-electric-blue/20 p-6">
-                <h3 className="text-lg font-bold text-proof mb-6">Direct Contact</h3>
+              <div className="bg-professional-blue/5 border border-professional-blue/20 p-6">
+                <h3 className="text-lg font-bold text-charcoal mb-6">Direct Contact</h3>
                 <div className="space-y-5">
                   <a href="tel:+14696298932" className="flex items-center gap-4 hover:translate-x-1 transition-transform">
-                    <svg className="w-5 h-5 text-electric-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     <div>
-                      <p className="text-neutral-500 text-xs uppercase tracking-wider">Phone</p>
-                      <p className="font-semibold text-proof">(469) 629-8932</p>
+                      <p className="text-charcoal/70 text-xs uppercase tracking-wider">Phone</p>
+                      <p className="font-semibold text-charcoal">(469) 629-8932</p>
                     </div>
                   </a>
                   
                   <a href="mailto:contact@bridgenotary.com" className="flex items-center gap-4 hover:translate-x-1 transition-transform">
-                    <svg className="w-5 h-5 text-electric-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     <div>
-                      <p className="text-neutral-500 text-xs uppercase tracking-wider">Email</p>
-                      <p className="font-semibold text-proof">contact@bridgenotary.com</p>
+                      <p className="text-charcoal/70 text-xs uppercase tracking-wider">Email</p>
+                      <p className="font-semibold text-charcoal">contact@bridgenotary.com</p>
                     </div>
                   </a>
 
                   <div className="flex items-center gap-4">
-                    <svg className="w-5 h-5 text-electric-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <div>
-                      <p className="text-neutral-500 text-xs uppercase tracking-wider">Service Area</p>
-                      <p className="font-semibold text-proof">Dallas-Fort Worth Metroplex</p>
+                      <p className="text-charcoal/70 text-xs uppercase tracking-wider">Service Area</p>
+                      <p className="font-semibold text-charcoal">Dallas-Fort Worth Metroplex</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Availability */}
-              <div className="bg-neutral-50 border border-neutral-200 p-6">
-                <h3 className="text-lg font-bold text-proof mb-4">Availability</h3>
+              <div className="bg-off-white border border-professional-blue/20 p-6">
+                <h3 className="text-lg font-bold text-charcoal mb-4">Availability</h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-neutral-600">Mobile Notary</span>
-                    <span className="font-semibold text-proof">7 Days/Week</span>
+                    <span className="text-charcoal/70">Mobile Notary</span>
+                    <span className="font-semibold text-charcoal">7 Days/Week</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-neutral-600">RON Sessions</span>
-                    <span className="font-semibold text-electric-blue">24/7</span>
+                    <span className="text-charcoal/70">RON Sessions</span>
+                    <span className="font-semibold text-charcoal">24/7</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-neutral-600">Response Time</span>
-                    <span className="font-semibold text-proof">Under 2 Hours</span>
+                    <span className="text-charcoal/70">Response Time</span>
+                    <span className="font-semibold text-charcoal">Under 2 Hours</span>
                   </div>
                 </div>
-                <div className="mt-4 pt-4 border-t border-neutral-200">
-                  <p className="text-xs text-neutral-500">Same-day & rush appointments available</p>
+                <div className="mt-4 pt-4 border-t border-professional-blue/20">
+                  <p className="text-xs text-charcoal/70">Same-day & rush appointments available</p>
                 </div>
               </div>
 
               {/* Quick Actions */}
-              <div className="bg-neutral-50 border border-neutral-200 p-6">
-                <h3 className="text-lg font-bold text-proof mb-4">Quick Actions</h3>
+              <div className="bg-off-white border border-professional-blue/20 p-6">
+                <h3 className="text-lg font-bold text-charcoal mb-4">Quick Actions</h3>
                 <div className="space-y-3">
-                  <Link to="/book" className="flex items-center gap-3 text-electric-blue hover:text-hover-blue transition group">
+                  <Link to="/book" className="flex items-center gap-3 text-professional-blue hover:text-professional-blue/80 transition group">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     <span className="font-medium group-hover:translate-x-1 transition-transform">Book Appointment</span>
                   </Link>
-                  <Link to="/ron" className="flex items-center gap-3 text-electric-blue hover:text-hover-blue transition group">
+                  <Link to="/ron" className="flex items-center gap-3 text-professional-blue hover:text-professional-blue/80 transition group">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                     <span className="font-medium group-hover:translate-x-1 transition-transform">Start RON Session</span>
                   </Link>
-                  <Link to="/pricing" className="flex items-center gap-3 text-electric-blue hover:text-hover-blue transition group">
+                  <Link to="/pricing" className="flex items-center gap-3 text-professional-blue hover:text-professional-blue/80 transition group">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="font-medium group-hover:translate-x-1 transition-transform">View Pricing</span>
                   </Link>
-                  <Link to="/faq" className="flex items-center gap-3 text-electric-blue hover:text-hover-blue transition group">
+                  <Link to="/faq" className="flex items-center gap-3 text-professional-blue hover:text-professional-blue/80 transition group">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -266,16 +266,16 @@ const Contact = () => {
       </section>
 
       {/* Map / CTA Section */}
-      <section className="py-16 bg-neutral-50 border-t border-neutral-200">
+      <section className="py-16 bg-off-white border-t border-professional-blue/20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-proof mb-4">Serving the Entire DFW Metroplex</h2>
-          <p className="text-neutral-600 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-4">Serving the Entire DFW Metroplex</h2>
+          <p className="text-charcoal/70 mb-8 max-w-2xl mx-auto">
             From Dallas to Fort Worth, Plano to Arlington—we bring professional notary services directly to your location.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="tel:+14696298932" 
-              className="inline-flex items-center justify-center gap-3 bg-electric-blue hover:bg-hover-blue text-white font-semibold py-4 px-8 transition"
+              className="inline-flex items-center justify-center gap-3 bg-professional-blue hover:bg-professional-blue/90 text-white font-semibold py-4 px-8 transition"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -284,7 +284,7 @@ const Contact = () => {
             </a>
             <Link 
               to="/services/mobile" 
-              className="inline-flex items-center justify-center gap-3 border-2 border-proof text-proof hover:bg-proof hover:text-white font-semibold py-4 px-8 transition"
+              className="inline-flex items-center justify-center gap-3 border-2 border-professional-blue text-professional-blue hover:bg-professional-blue hover:text-white font-semibold py-4 px-8 transition"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />

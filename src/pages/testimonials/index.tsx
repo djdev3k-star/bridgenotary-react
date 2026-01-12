@@ -20,27 +20,20 @@ const testimonials = [
 ];
 
 const Testimonials = () => (
-  <div className="section">
-    <div className="max-w-4xl mx-auto text-center">
-      <div className="flex items-center justify-center gap-3 mb-6">
-        <span className="h-px w-12 bg-neutral-300"></span>
-        <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">
-          Testimonials
-        </span>
-        <span className="h-px w-12 bg-neutral-300"></span>
-      </div>
-      <h1 className="text-4xl md:text-5xl font-extrabold text-proof mb-6">What Our Clients Say</h1>
-      <p className="text-xl text-neutral-700 mb-12">
+  <div className="w-full bg-off-white py-20 lg:py-28" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <div className="max-w-6xl mx-auto px-6 text-center">
+      <h1 className="text-4xl md:text-5xl font-extrabold text-charcoal mb-6">What Our Clients Say</h1>
+      <p className="text-xl text-charcoal/70 mb-12">
         We pride ourselves on providing a professional and reliable service. Here’s what our clients have to say about their experience with Bridge Notary.
       </p>
     </div>
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left max-w-6xl mx-auto px-6">
       {testimonials.map((t) => (
-        <div key={t.name} className="card h-full flex flex-col">
-          <p className="text-neutral-700 italic mb-6 flex-grow">“{t.quote}”</p>
+        <div key={t.name} className="p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-colors h-full flex flex-col">
+          <p className="text-charcoal/70 italic mb-6 flex-grow">“{t.quote}”</p>
           <div>
-            <div className="font-bold text-proof">{t.name}</div>
-            <div className="text-neutral-600 text-sm">{t.role}</div>
+            <div className="font-bold text-charcoal">{t.name}</div>
+            <div className="text-charcoal/70 text-sm">{t.role}</div>
           </div>
         </div>
       ))}

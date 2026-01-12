@@ -194,8 +194,8 @@ const FAQ = () => (
   <div className="section">
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-proof mb-6">Frequently Asked Questions</h1>
-        <p className="text-xl text-neutral-700">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-charcoal mb-6">Frequently Asked Questions</h1>
+        <p className="text-xl text-charcoal/70">
           Have questions? We've got answers. Browse by category to find what you need.
         </p>
       </div>
@@ -205,18 +205,18 @@ const FAQ = () => (
           <div key={catIdx}>
             {/* Category Header */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="bg-electric-blue text-white p-3 rounded">
+              <div className="bg-professional-blue text-white p-3 rounded">
                 {category.icon}
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-proof">{category.category}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-charcoal">{category.category}</h2>
             </div>
 
             {/* Questions in Category */}
             <div className="space-y-6 ml-0 md:ml-14">
               {category.questions.map((item, qIdx) => (
                 <div key={qIdx} className="card hover:shadow-xl transition-shadow">
-                  <h3 className="text-lg font-bold text-proof mb-3">{item.q}</h3>
-                  <p className="text-neutral-700 leading-relaxed">{item.a}</p>
+                  <h3 className="text-lg font-bold text-charcoal mb-3">{item.q}</h3>
+                  <p className="text-charcoal/70 leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>
@@ -225,9 +225,9 @@ const FAQ = () => (
       </div>
 
       {/* CTA Section */}
-      <div className="card bg-gradient-to-br from-proof/5 to-electric-blue/5 border-2 border-proof/10 mt-16 text-center">
-        <h3 className="text-2xl font-bold text-proof mb-4">Still Have Questions?</h3>
-        <p className="text-neutral-700 mb-6">
+      <div className="card bg-professional-blue/10 border-l-4 border-professional-blue mt-16 text-center">
+        <h3 className="text-2xl font-bold text-charcoal mb-4">Still Have Questions?</h3>
+        <p className="text-charcoal/70 mb-6">
           We're here to help! Contact us directly and we'll be happy to answer any questions you may have.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

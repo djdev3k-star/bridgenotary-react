@@ -68,11 +68,11 @@ const TrustSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-professional-blue/10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="inline-block text-sm font-semibold text-professional-blue uppercase tracking-wider mb-3">Why Partners Trust Us</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-deep-navy mb-4">Built for Professional Excellence</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">Built for Professional Excellence</h2>
           <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">
             Trusted by lenders, title companies, and individuals throughout DFW. We maintain the highest standards of professionalism and compliance.
           </p>
@@ -80,29 +80,24 @@ const TrustSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {trustMarkers.map((marker, index) => (
-            <div key={index} className="flex gap-4 p-6 bg-neutral-50 rounded-lg border border-neutral-200 hover:border-professional-blue/20 transition-all">
-              <div className="flex-shrink-0 text-professional-blue">
+            <div key={index} className="py-4 group">
+              <div className="mb-4 text-professional-blue group-hover:scale-110 transition-transform">
                 {marker.icon}
               </div>
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold text-deep-navy mb-2">{marker.title}</h3>
-                <p className="text-sm text-charcoal/70 leading-relaxed">{marker.description}</p>
-              </div>
+              <h3 className="text-lg font-semibold text-charcoal mb-2">{marker.title}</h3>
+              <p className="text-sm text-charcoal/70 leading-relaxed">{marker.description}</p>
             </div>
           ))}
         </div>
 
         {/* B2B CTA */}
-        <div className="mt-12 pt-12 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="mt-12 pt-12 border-t border-professional-blue/20 flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
-            <h3 className="text-2xl font-bold text-deep-navy mb-2">Volume & Partnership Opportunities</h3>
+            <h3 className="text-2xl font-bold text-charcoal mb-2">Volume & Partnership Opportunities</h3>
             <p className="text-charcoal/70">We work with title companies and lenders on customized rates and dedicated support.</p>
           </div>
           <div className="flex gap-4 whitespace-nowrap">
-            <a href="tel:+14696298932" className="button-outline">
-              Call: (469) 629-8932
-            </a>
-            <a href="mailto:contact@bridgenotary.com" className="button-primary">
+            <a href="mailto:contact@bridgenotary.com" className="inline-flex items-center justify-center gap-3 bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold">
               Contact B2B Team
             </a>
           </div>

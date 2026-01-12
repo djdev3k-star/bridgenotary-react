@@ -246,7 +246,7 @@ const Sitemap: React.FC = () => {
           <div className="flex items-center gap-3 mb-2">
             <Link 
               to={route.path}
-              className="text-lg font-medium text-electric-blue hover:text-proof transition"
+              className="text-lg font-medium text-professional-blue hover:text-professional-blue/80 transition"
             >
               {route.title}
             </Link>
@@ -260,7 +260,7 @@ const Sitemap: React.FC = () => {
             {route.component && (
               <>
                 <span>→</span>
-                <code className="bg-electric-blue/10 text-electric-blue px-2 py-1 rounded font-mono text-xs">
+                <code className="bg-professional-blue/10 text-professional-blue px-2 py-1 rounded font-mono text-xs">
                   {route.component}
                 </code>
               </>
@@ -297,8 +297,8 @@ const Sitemap: React.FC = () => {
             </span>
             <span className="h-px w-12 bg-neutral-300"></span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-proof mb-4">Site Map</h1>
-          <div className="h-1 w-20 bg-electric-blue mb-6"></div>
+          <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Site Map</h1>
+          <div className="h-1 w-20 bg-professional-blue mb-6"></div>
           <p className="text-lg text-neutral-600 max-w-3xl">
             Complete directory of all routes and pages in the Bridge Notary application. 
             Includes active pages, inactive/development pages, and route aliases.
@@ -308,7 +308,7 @@ const Sitemap: React.FC = () => {
         {/* Statistics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <div className="bg-white rounded p-6 shadow-sm border border-neutral-200">
-            <div className="text-3xl font-bold text-proof mb-1">{totalRoutes}</div>
+            <div className="text-3xl font-bold text-charcoal mb-1">{totalRoutes}</div>
             <div className="text-sm text-neutral-600">Total Routes</div>
           </div>
           <div className="bg-white rounded p-6 shadow-sm border border-neutral-200">
@@ -320,7 +320,7 @@ const Sitemap: React.FC = () => {
             <div className="text-sm text-neutral-600">Inactive Pages</div>
           </div>
           <div className="bg-white rounded p-6 shadow-sm border border-neutral-200">
-            <div className="text-3xl font-bold text-blue-600 mb-1">{aliasRoutes.length}</div>
+            <div className="text-3xl font-bold text-charcoal mb-1">{aliasRoutes.length}</div>
             <div className="text-sm text-neutral-600">Route Aliases</div>
           </div>
         </div>
@@ -354,45 +354,45 @@ const Sitemap: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Primary Services */}
           <div className="bg-white rounded shadow-sm border border-neutral-200 p-6">
-            <h3 className="text-xl font-semibold text-proof mb-4">Primary Services</h3>
+            <h3 className="text-xl font-semibold text-charcoal mb-4">Primary Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/ron" className="text-electric-blue hover:text-proof">Remote Online Notarization</Link></li>
-              <li><Link to="/apostille" className="text-electric-blue hover:text-proof">Apostille Services</Link></li>
-              <li><Link to="/loan-signing" className="text-electric-blue hover:text-proof">Loan Signing Services</Link></li>
-              <li><Link to="/services/mobile" className="text-electric-blue hover:text-proof">Mobile Notary</Link></li>
+              <li><Link to="/ron" className="text-professional-blue hover:text-professional-blue/80">Remote Online Notarization</Link></li>
+              <li><Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80">Apostille Services</Link></li>
+              <li><Link to="/loan-signing" className="text-professional-blue hover:text-professional-blue/80">Loan Signing Services</Link></li>
+              <li><Link to="/services/mobile" className="text-professional-blue hover:text-professional-blue/80">Mobile Notary</Link></li>
             </ul>
           </div>
 
           {/* Company Info */}
           <div className="bg-white rounded shadow-sm border border-neutral-200 p-6">
-            <h3 className="text-xl font-semibold text-proof mb-4">Company Information</h3>
+            <h3 className="text-xl font-semibold text-charcoal mb-4">Company Information</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-electric-blue hover:text-proof">About Us</Link></li>
-              <li><Link to="/why" className="text-electric-blue hover:text-proof">Why Bridge Notary</Link></li>
-              <li><Link to="/testimonials" className="text-electric-blue hover:text-proof">Testimonials</Link></li>
-              <li><Link to="/pricing" className="text-electric-blue hover:text-proof">Pricing</Link></li>
+              <li><Link to="/about" className="text-professional-blue hover:text-professional-blue/80">About Us</Link></li>
+              <li><Link to="/why" className="text-professional-blue hover:text-professional-blue/80">Why Bridge Notary</Link></li>
+              <li><Link to="/testimonials" className="text-professional-blue hover:text-professional-blue/80">Testimonials</Link></li>
+              <li><Link to="/pricing" className="text-professional-blue hover:text-professional-blue/80">Pricing</Link></li>
             </ul>
           </div>
 
           {/* Actions */}
           <div className="bg-white rounded shadow-sm border border-neutral-200 p-6">
-            <h3 className="text-xl font-semibold text-proof mb-4">Take Action</h3>
+            <h3 className="text-xl font-semibold text-charcoal mb-4">Take Action</h3>
             <ul className="space-y-2">
-              <li><Link to="/login" className="text-electric-blue hover:text-proof">Client Login</Link></li>
-              <li><Link to="/book" className="text-electric-blue hover:text-proof">Book Appointment</Link></li>
-              <li><Link to="/schedule" className="text-electric-blue hover:text-proof">Schedule</Link></li>
-              <li><Link to="/demo" className="text-electric-blue hover:text-proof">Request Demo</Link></li>
-              <li><Link to="/contact" className="text-electric-blue hover:text-proof">Contact Us</Link></li>
+              <li><Link to="/login" className="text-professional-blue hover:text-professional-blue/80">Client Login</Link></li>
+              <li><Link to="/book" className="text-professional-blue hover:text-professional-blue/80">Book Appointment</Link></li>
+              <li><Link to="/schedule" className="text-professional-blue hover:text-professional-blue/80">Schedule</Link></li>
+              <li><Link to="/demo" className="text-professional-blue hover:text-professional-blue/80">Request Demo</Link></li>
+              <li><Link to="/contact" className="text-professional-blue hover:text-professional-blue/80">Contact Us</Link></li>
             </ul>
           </div>
 
           {/* Resources */}
           <div className="bg-white rounded shadow-sm border border-neutral-200 p-6">
-            <h3 className="text-xl font-semibold text-proof mb-4">Resources & Help</h3>
+            <h3 className="text-xl font-semibold text-charcoal mb-4">Resources & Help</h3>
             <ul className="space-y-2">
-              <li><Link to="/faq" className="text-electric-blue hover:text-proof">FAQ</Link></li>
-              <li><Link to="/resources" className="text-electric-blue hover:text-proof">Resources</Link></li>
-              <li><Link to="/services" className="text-electric-blue hover:text-proof">All Services</Link></li>
+              <li><Link to="/faq" className="text-professional-blue hover:text-professional-blue/80">FAQ</Link></li>
+              <li><Link to="/resources" className="text-professional-blue hover:text-professional-blue/80">Resources</Link></li>
+              <li><Link to="/services" className="text-professional-blue hover:text-professional-blue/80">All Services</Link></li>
             </ul>
           </div>
         </div>

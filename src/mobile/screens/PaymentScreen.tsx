@@ -208,7 +208,7 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F8FAFB',
   },
   scrollContent: {
     padding: 20,
@@ -217,29 +217,29 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333333',
+    color: '#192252', // charcoal
     marginBottom: 10,
     textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#666666',
+    color: '#192252B3', // charcoal/70
     textAlign: 'center',
     marginBottom: 30,
   },
   summaryContainer: {
-    backgroundColor: '#F9F9F9',
-    borderRadius: 10,
+    backgroundColor: '#0055E605', // professional-blue/3
+    borderLeftWidth: 2,
+    borderLeftColor: '#0055E6', // professional-blue
+    paddingLeft: 16,
     padding: 20,
     marginBottom: 30,
-    borderWidth: 1,
-    borderColor: '#EEEEEE',
   },
   summaryTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 15,
-    color: '#333',
+    color: '#192252', // charcoal
   },
   summaryItem: {
     flexDirection: 'row',
@@ -247,18 +247,18 @@ const styles = StyleSheet.create({
   },
   summaryLabel: {
     fontSize: 16,
-    color: '#666',
+    color: '#192252B3', // charcoal/70
     width: '30%',
   },
   summaryValue: {
     fontSize: 16,
-    color: '#333',
+    color: '#192252', // charcoal
     fontWeight: '500',
     flex: 1,
   },
   divider: {
     height: 1,
-    backgroundColor: '#EEEEEE',
+    backgroundColor: '#0055E633', // professional-blue/20
     marginVertical: 15,
   },
   feeItem: {
@@ -268,27 +268,29 @@ const styles = StyleSheet.create({
   feeLabel: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#192252', // charcoal
     flex: 1,
   },
   feeValue: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#0057B8',
+    color: '#0055E6', // professional-blue
   },
   securityNote: {
-    backgroundColor: '#F0F7FF',
-    borderRadius: 8,
+    backgroundColor: '#0055E60D', // professional-blue/5
+    borderLeftWidth: 2,
+    borderLeftColor: '#0055E6', // professional-blue
+    paddingLeft: 16,
     padding: 15,
     marginBottom: 30,
   },
   securityTitle: {
     fontWeight: '600',
     marginBottom: 5,
-    color: '#333',
+    color: '#192252', // charcoal
   },
   securityText: {
-    color: '#666',
+    color: '#192252B3', // charcoal/70
     fontSize: 14,
   },
   buttonContainer: {

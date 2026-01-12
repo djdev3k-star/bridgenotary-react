@@ -92,11 +92,11 @@ const Pricing = () => {
       </section>
 
       {/* Main Pricing Tiers */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-deep-navy mb-4">Choose Your Service Level</h2>
-            <p className="text-lg text-charcoal max-w-2xl mx-auto">Three professional packages designed for your needs.</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Choose Your Service Level</h2>
+            <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">Three professional packages designed for your needs.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
@@ -107,48 +107,40 @@ const Pricing = () => {
             {pricingTiers.map((tier, idx) => (
               <div 
                 key={idx}
-                className={`relative p-8 border-2 transition-all ${
+                className={`relative pl-6 py-8 pr-8 border-l-2 border-professional-blue transition-all group hover:bg-professional-blue/5 ${
                   tier.popular 
-                    ? 'border-professional-blue bg-professional-blue/5 transform md:scale-105 shadow-lg' 
-                    : 'border-neutral-200 bg-white hover:border-professional-blue hover:shadow-md'
+                    ? 'bg-professional-blue/5 transform md:scale-105' 
+                    : 'bg-white'
                 }`}
               >
-                {/* Geometric accent for popular tier */}
                 {tier.popular && (
-                  <>
-                    <div className="absolute -top-px -right-px w-32 h-32 bg-professional-blue/10"></div>
-                    <div className="absolute -bottom-px -left-px w-24 h-24 bg-professional-blue/5"></div>
-                  </>
-                )}
-                
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute -top-4 left-6">
                     <span className="bg-professional-blue text-white text-xs font-bold py-1 px-4">MOST POPULAR</span>
                   </div>
                 )}
                 
-                <h3 className="text-2xl font-bold text-deep-navy mb-2 relative z-10">{tier.name}</h3>
-                <p className="text-charcoal text-sm mb-6 leading-relaxed relative z-10">{tier.description}</p>
+                <h3 className="text-2xl font-bold text-charcoal mb-2">{tier.name}</h3>
+                <p className="text-charcoal/70 text-sm mb-6 leading-relaxed">{tier.description}</p>
                 
-                <div className="mb-6 relative z-10">
+                <div className="mb-6">
                   <div className="text-4xl font-bold text-professional-blue">{tier.price}</div>
-                  <div className="text-sm text-soft-gray">{tier.period}</div>
+                  <div className="text-sm text-charcoal/70">{tier.period}</div>
                 </div>
 
-                <ul className="space-y-3 mb-8 relative z-10">
+                <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-charcoal text-sm">{feature}</span>
+                      <span className="text-charcoal/70 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <a 
                   href={tier.cta === 'Learn More' ? '/ron' : '/book'}
-                  className={`block w-full py-3 px-6 font-semibold text-center transition-all relative z-10 ${
+                  className={`block w-full py-3 px-6 font-semibold text-center transition-all ${
                     tier.popular
                       ? 'bg-professional-blue text-white hover:bg-professional-blue/90'
                       : 'border-2 border-professional-blue text-professional-blue hover:bg-professional-blue/5'
@@ -163,24 +155,24 @@ const Pricing = () => {
       </section>
 
       {/* Detailed Services */}
-      <section className="py-20 lg:py-28 bg-professional-blue/10">
+      <section className="py-20 lg:py-28 bg-off-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold text-deep-navy mb-4">Service Details</h2>
-            <p className="text-lg text-charcoal">Comprehensive pricing for all our notary and signing services.</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Service Details</h2>
+            <p className="text-lg text-charcoal/70">Comprehensive pricing for all our notary and signing services.</p>
           </div>
 
           {/* Loan Signing Services */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-deep-navy mb-6">Loan Signing Services</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <h3 className="text-2xl font-bold text-charcoal mb-8">Loan Signing Services</h3>
+            <div className="grid md:grid-cols-2 gap-4">
               {coreServices.map((service, idx) => (
-                <div key={idx} className="bg-white p-6 border border-neutral-200 hover:border-professional-blue hover:shadow-lg transition-all">
+                <div key={idx} className="p-4 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
                   <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-base font-semibold text-deep-navy">{service.name}</h4>
-                    <div className="text-2xl font-bold text-professional-blue">{service.fee}</div>
+                    <h4 className="text-base font-bold text-charcoal">{service.name}</h4>
+                    <div className="font-bold text-professional-blue whitespace-nowrap ml-2">{service.fee}</div>
                   </div>
-                  <p className="text-xs text-soft-gray">{service.notes}</p>
+                  <p className="text-xs text-charcoal/70">{service.notes}</p>
                 </div>
               ))}
             </div>
@@ -188,16 +180,16 @@ const Pricing = () => {
 
           {/* Add-On Services */}
           <div>
-            <h3 className="text-2xl font-bold text-deep-navy mb-6">Add-On Services</h3>
-            <p className="text-charcoal mb-6">Optional services to enhance your signing experience.</p>
+            <h3 className="text-2xl font-bold text-charcoal mb-2">Add-On Services</h3>
+            <p className="text-charcoal/70 mb-8">Optional services to enhance your signing experience.</p>
             <div className="grid md:grid-cols-3 gap-4">
               {addOnServices.map((service, idx) => (
-                <div key={idx} className="bg-white p-5 border border-neutral-200 hover:bg-off-white transition-all">
+                <div key={idx} className="p-4 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
                   <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-sm font-semibold text-deep-navy">{service.name}</h4>
-                    <div className="text-lg font-bold text-professional-blue">{service.fee}</div>
+                    <h4 className="text-base font-bold text-charcoal">{service.name}</h4>
+                    <div className="font-bold text-professional-blue whitespace-nowrap ml-2">{service.fee}</div>
                   </div>
-                  <p className="text-xs text-soft-gray">{service.notes}</p>
+                  <p className="text-xs text-charcoal/70">{service.notes}</p>
                 </div>
               ))}
             </div>
@@ -208,47 +200,47 @@ const Pricing = () => {
       {/* FAQ */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-deep-navy mb-12 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-12 text-center">Frequently Asked Questions</h2>
           
-          <div className="space-y-8">
-            <div className="pb-8 border-b border-neutral-200 last:border-b-0 last:pb-0">
-              <h3 className="text-lg font-bold text-deep-navy mb-3">Do your fees include travel?</h3>
-              <p className="text-charcoal leading-relaxed">Our standard fees include travel within 10-15 miles depending on service type. For distances beyond that, we charge a small additional fee based on distance. Always ask about travel during booking.</p>
+          <div className="space-y-0">
+            <div className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
+              <h3 className="text-lg font-bold text-charcoal mb-3">Do your fees include travel?</h3>
+              <p className="text-charcoal/70 leading-relaxed">Our standard fees include travel within 10-15 miles depending on service type. For distances beyond that, we charge a small additional fee based on distance. Always ask about travel during booking.</p>
             </div>
 
-            <div className="pb-8 border-b border-neutral-200 last:border-b-0 last:pb-0">
-              <h3 className="text-lg font-bold text-deep-navy mb-3">Are there additional fees for weekends?</h3>
-              <p className="text-charcoal leading-relaxed">Yes, weekend and after-hours appointments (before 8 AM or after 6 PM) incur a $50 additional fee. This helps us accommodate urgent requests outside standard business hours.</p>
+            <div className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
+              <h3 className="text-lg font-bold text-charcoal mb-3">Are there additional fees for weekends?</h3>
+              <p className="text-charcoal/70 leading-relaxed">Yes, weekend and after-hours appointments (before 8 AM or after 6 PM) incur a $50 additional fee. This helps us accommodate urgent requests outside standard business hours.</p>
             </div>
 
-            <div className="pb-8 border-b border-neutral-200 last:border-b-0 last:pb-0">
-              <h3 className="text-lg font-bold text-deep-navy mb-3">What payment methods do you accept?</h3>
-              <p className="text-charcoal leading-relaxed">We accept all major credit cards, Cash App, Venmo, and cash. Payment is due at the time of service. For corporate accounts, we can arrange invoicing.</p>
+            <div className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
+              <h3 className="text-lg font-bold text-charcoal mb-3">What payment methods do you accept?</h3>
+              <p className="text-charcoal/70 leading-relaxed">We accept all major credit cards, Cash App, Venmo, and cash. Payment is due at the time of service. For corporate accounts, we can arrange invoicing.</p>
             </div>
 
-            <div className="pb-8 border-b border-neutral-200 last:border-b-0 last:pb-0">
-              <h3 className="text-lg font-bold text-deep-navy mb-3">What's your cancellation policy?</h3>
-              <p className="text-charcoal leading-relaxed">We offer free rescheduling with 24 hours notice. Cancellations with less than 24 hours notice may incur a $25 fee. No-shows incur the full service fee.</p>
+            <div className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
+              <h3 className="text-lg font-bold text-charcoal mb-3">What's your cancellation policy?</h3>
+              <p className="text-charcoal/70 leading-relaxed">We offer free rescheduling with 24 hours notice. Cancellations with less than 24 hours notice may incur a $25 fee. No-shows incur the full service fee.</p>
             </div>
 
-            <div className="pb-8 border-b border-neutral-200 last:border-b-0 last:pb-0">
-              <h3 className="text-lg font-bold text-deep-navy mb-3">Do you offer bulk or volume discounts?</h3>
-              <p className="text-charcoal leading-relaxed">Yes! For title companies, lenders, and other high-volume clients, we offer custom pricing. Contact us to discuss your specific needs.</p>
+            <div className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
+              <h3 className="text-lg font-bold text-charcoal mb-3">Do you offer bulk or volume discounts?</h3>
+              <p className="text-charcoal/70 leading-relaxed">Yes! For title companies, lenders, and other high-volume clients, we offer custom pricing. Contact us to discuss your specific needs.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 lg:py-32 bg-deep-navy text-off-white w-screen left-1/2 -translate-x-1/2 flex items-center justify-center">
+      <section className="py-24 lg:py-32 bg-professional-blue/10 w-full flex items-center justify-center">
         <div className="max-w-4xl px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-off-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-charcoal/70 mb-10 max-w-2xl mx-auto leading-relaxed">
             Book your appointment or request a custom quote for your specific needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
               to="/book"
               className="inline-flex items-center justify-center gap-3 bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold"
@@ -260,7 +252,7 @@ const Pricing = () => {
             </Link>
             <Link 
               to="/contact"
-              className="inline-flex items-center justify-center gap-3 border-2 border-off-white text-off-white hover:bg-off-white hover:text-deep-navy transition-all text-lg py-4 px-8 font-semibold"
+              className="inline-flex items-center justify-center gap-3 border-2 border-professional-blue text-professional-blue hover:bg-professional-blue hover:text-white transition-all text-lg py-4 px-8 font-semibold"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

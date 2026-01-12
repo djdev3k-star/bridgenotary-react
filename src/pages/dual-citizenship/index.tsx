@@ -5,44 +5,46 @@ import { Link } from 'react-router-dom';
 const DualCitizenshipPage: React.FC = () => {
   return (
     <Layout>
-      {/* Hero Section - Left-aligned with overlay image and transparent CTA */}
-      <section className="relative overflow-hidden text-white min-h-[70vh] flex items-center">
-        {/* Deep blue gradient background */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-electric-blue to-proof"></div>
+      {/* Breadcrumbs */}
+      <section className="bg-off-white border-b border-professional-blue/20 px-6 py-4">
+        <div className="max-w-7xl mx-auto">
+          <nav className="text-sm text-charcoal/70 flex items-center gap-2">
+            <Link to="/" className="hover:text-professional-blue transition-colors">Home</Link>
+            <span>/</span>
+            <Link to="/services" className="hover:text-professional-blue transition-colors">Services</Link>
+            <span>/</span>
+            <span className="text-charcoal font-medium">Dual Citizenship</span>
+          </nav>
+        </div>
+      </section>
 
+      {/* Hero Section */}
+      <section className="relative overflow-hidden text-charcoal min-h-[70vh] flex items-center bg-professional-blue/10 py-24 md:py-32">
         {/* Background image overlay */}
-        <div className="absolute inset-0 z-0 opacity-60">
+        <div className="absolute inset-0 z-0 opacity-40">
           <img
             src="/src/assets/images/dual-citizenship.png"
             alt="Dual citizenship"
-            className="w-full h-full object-cover brightness-110 saturate-110"
+            className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 z-10 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-br from-proof/60 via-electric-blue/50 to-proof/65 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-electric-blue/20"></div>
-        </div>
+        <div className="absolute inset-0 z-10 pointer-events-none bg-professional-blue/60"></div>
 
         {/* Content */}
         <div className="max-w-7xl mx-auto py-20 px-6 relative z-20 w-full">
           <div className="max-w-3xl text-left">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-12 bg-white/50"></span>
-              <span className="text-xs uppercase tracking-[0.25em] text-white/90">Dual Citizenship</span>
-              <span className="h-px w-12 bg-white/50"></span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Apostille Support for Dual Citizenship
             </h1>
-            <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed drop-shadow-sm">
+            <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed">
               Prepare birth certificates, marriage records, background checks, and other civil documents for dual citizenship applications worldwide.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/apostille" className="bg-white text-proof hover:bg-neutral-100 transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl">
+              <Link to="/apostille" className="inline-flex items-center justify-center bg-white text-professional-blue hover:bg-off-white transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg">
                 View Apostille Services
               </Link>
-              <Link to="/contact" className="border-2 border-white text-white hover:bg-white hover:text-proof transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl">
+              <Link to="/contact" className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all rounded text-lg py-3 px-8 font-semibold">
                 Talk to a Specialist
               </Link>
             </div>
@@ -50,28 +52,23 @@ const DualCitizenshipPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Info blocks - sharp cards */}
-      <section className="section bg-white">
-        <div className="mb-10">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-12 bg-neutral-300"></span>
-            <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">What You May Need</span>
-            <span className="h-px w-12 bg-neutral-300"></span>
+      {/* Info blocks */}
+      <section className="bg-off-white py-20 lg:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Common Dual Citizenship Documents</h2>
+          <p className="text-lg text-charcoal/70 mb-12 max-w-3xl">We help authenticate the core records required by consulates and embassies.</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: 'Vital Records', desc: 'Birth certificates, marriage certificates, divorce decrees' },
+              { title: 'Identity & Background', desc: 'Passports, FBI/state background checks, notarized copies' },
+              { title: 'Consular Requirements', desc: 'Affidavits, residency proofs, parental consent or lineage documents' },
+            ].map((item) => (
+              <div key={item.title} className="p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
+                <h3 className="text-xl font-bold text-charcoal mb-2">{item.title}</h3>
+                <p className="text-charcoal/70">{item.desc}</p>
+              </div>
+            ))}
           </div>
-          <h2 className="text-3xl font-bold text-proof">Common Dual Citizenship Documents</h2>
-          <p className="text-lg text-neutral-600 mt-3">We help authenticate the core records required by consulates and embassies.</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { title: 'Vital Records', desc: 'Birth certificates, marriage certificates, divorce decrees' },
-            { title: 'Identity & Background', desc: 'Passports, FBI/state background checks, notarized copies' },
-            { title: 'Consular Requirements', desc: 'Affidavits, residency proofs, parental consent or lineage documents' },
-          ].map((item) => (
-            <div key={item.title} className="bg-white rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-semibold text-proof mb-2">{item.title}</h3>
-              <p className="text-neutral-700">{item.desc}</p>
-            </div>
-          ))}
         </div>
       </section>
     </Layout>

@@ -1,19 +1,45 @@
 // Layout wrapper removed — App routes render Layout via Outlet
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { StartRONModal } from '@/features/ron/components';
 import InfoCard from '@/components/common/InfoCard';
 
 export default function RONPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className="w-full bg-white">
-      {/* Hero Section - Full Viewport Width with Deep Blue Gradient */}
+      {/* Breadcrumbs */}
+      <div className="w-full bg-off-white border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-3">
+          <div className="flex items-center gap-2 text-sm">
+            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Home</Link>
+            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <Link to="/services" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Services</Link>
+            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <span className="text-charcoal/70">Remote Online Notarization</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Hero Section - Full Viewport Width with Professional Blue Gradient */}
       <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
-        {/* Deep blue gradient background covering full viewport */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-electric-blue to-electric-blue"></div>
+        {/* Professional blue gradient background covering full viewport */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-professional-blue via-professional-blue/80 to-professional-blue"></div>
         
         {/* Background image with overlay - cycling dual images */}
-        <div className="absolute inset-0 z-0 opacity-70">
+        <div className="absolute inset-0 z-0 opacity-25">
           <img 
             src="/images/secure-video-signing.png" 
             alt="" 
@@ -25,13 +51,13 @@ export default function RONPage() {
             className="absolute inset-0 w-full h-full object-cover ron-cycle-secondary"
           />
         </div>
-        <div className="absolute inset-0 z-0 bg-electric-blue/70"></div>
+        <div className="absolute inset-0 z-0 bg-professional-blue/80"></div>
         
         <div className="max-w-7xl mx-auto py-28 px-6 relative z-20">
           {/* Main Content */}
           <div className="text-left max-w-3xl mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
-              Remote Online <span className="text-gold">Notarization</span>
+              Remote Online <span className="text-white">Notarization</span>
             </h1>
             <p className="text-xl text-white mb-10 drop-shadow-md">
               Complete your notarization securely from anywhere, in minutes. Our platform ensures a legally-binding process with enterprise-grade security.
@@ -39,8 +65,8 @@ export default function RONPage() {
 
             <div className="mb-12">
               <button
-                onClick={() => setIsModalOpen(true)}
-                className="border-2 border-white text-white hover:bg-white hover:text-proof transition-all rounded text-lg py-4 px-8 font-semibold shadow-xl pulse-button"
+                onClick={openModal}
+                className="border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all text-lg py-4 px-8 font-semibold pulse-button"
               >
                 <div className="flex items-center justify-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -52,7 +78,7 @@ export default function RONPage() {
             </div>
 
             {/* RON Modal */}
-            <StartRONModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+            <StartRONModal isOpen={isModalOpen} onClose={closeModal} />
           </div>
 
           {/* Feature Grid */}
@@ -101,7 +127,7 @@ export default function RONPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="section bg-professional-blue/10 relative">
+      <section className="w-full bg-professional-blue/10 py-20 md:py-28 relative">
         <div className="max-w-7xl mx-auto px-6">
           {/* Breadcrumb Header */}
           <div className="mb-16">
@@ -120,7 +146,6 @@ export default function RONPage() {
           <div className="grid md:grid-cols-3 gap-12 relative">
             {/* Geometric overlays */}
             <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/3 -z-10"></div>
-            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/3 -z-10"></div>
             
             {/* Step 1: Upload */}
             <div className="border-l-2 border-professional-blue pl-6 group">
@@ -354,27 +379,27 @@ export default function RONPage() {
               imageSrc="/images/ronsession.jpg"
               imageAlt="Live remote notarization session"
             >
-              <p className="text-neutral-700 mb-4">
+              <p className="text-charcoal/70 mb-4">
                 Click the session link at your scheduled time, verify your identity, and follow the notary's guidance.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Join 2-3 minutes early to test connection</span>
+                  <span className="text-sm text-charcoal/70">Join 2-3 minutes early to test connection</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Close other apps using camera/microphone</span>
+                  <span className="text-sm text-charcoal/70">Close other apps using camera/microphone</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Use a quiet, well-lit space</span>
+                  <span className="text-sm text-charcoal/70">Use a quiet, well-lit space</span>
                 </li>
               </ul>
             </InfoCard>
@@ -385,17 +410,16 @@ export default function RONPage() {
       {/* Notary Role in RON section removed per request */}
 
       {/* Why Choose RON Section - Consolidated */}
-      <section className="section bg-white">
+      <section className="section bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-7xl mx-auto px-6">
           {/* Breadcrumb Header */}
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-neutral-300"></div>
-              <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">Why Choose RON</span>
-              <div className="h-px flex-1 bg-neutral-300"></div>
+              <div className="h-px w-12 bg-professional-blue/40"></div>
+              <span className="text-sm font-medium text-professional-blue uppercase tracking-wider">Why Choose RON</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-proof mb-6">Enterprise-Grade Remote Notarization</h2>
-            <p className="text-xl text-neutral-600 max-w-3xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Enterprise-Grade Remote Notarization</h2>
+            <p className="text-xl text-charcoal/70 max-w-3xl">
               Our certified remote online notaries provide secure, legally-binding notarization services from anywhere in the United States with enterprise-grade security and compliance.
             </p>
           </div>
@@ -510,29 +534,29 @@ export default function RONPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-24 px-6 overflow-hidden bg-professional-blue/10">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-electric-blue"></div>
+        <div className="absolute inset-0 bg-professional-blue/5"></div>
         {/* Background image with overlay */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-15">
           <img 
             src="/images/stack-loan-documents.jpg" 
             alt="" 
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-electric-blue/70"></div>
+        <div className="absolute inset-0 bg-professional-blue/10"></div>
 
         <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Ready to Start Your RON Session?</h2>
-          <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-8">Ready to Start Your RON Session?</h2>
+          <p className="text-xl text-charcoal/70 mb-12 max-w-3xl mx-auto">
             Experience the future of notarization with secure, convenient remote online notarization.
             Available 24/7 with certified notaries nationwide.
           </p>
           <div className="flex justify-center">
             <button
-              onClick={() => setIsModalOpen(true)}
-              className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              onClick={openModal}
+              className="bg-professional-blue text-white hover:bg-professional-blue/90 transition-all font-semibold text-lg py-5 px-10"
             >
               Start RON Session
             </button>

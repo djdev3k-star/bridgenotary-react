@@ -94,7 +94,7 @@ const LoanSigningPage: React.FC = () => {
       </section>
 
       {/* Loan Types Section */}
-      <section className="w-full bg-white py-20 md:py-28 relative">
+      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
             <span className="text-professional-blue font-semibold text-xs uppercase tracking-[0.2em]">Document Types</span>

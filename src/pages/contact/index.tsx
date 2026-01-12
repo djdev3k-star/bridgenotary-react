@@ -70,7 +70,7 @@ const Contact = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-16 lg:py-24 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Left Column - Form */}

@@ -199,7 +199,7 @@ const ApostilleServices: React.FC = () => {
       </section>
 
       {/* Our Solution Section - Redesigned */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-white py-20 md:py-28" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">How We Solve It</h2>
           <p className="text-xl text-charcoal/70 mb-12 max-w-3xl">Every step is handled by our team so you don't have to.</p>

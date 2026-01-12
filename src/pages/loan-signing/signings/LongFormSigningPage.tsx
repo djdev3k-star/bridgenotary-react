@@ -63,7 +63,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-20 md:py-24 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="space-y-12">
             {sections.map((section, idx) => (
@@ -127,7 +127,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
         </div>
       </section>
       {relatedLinks && relatedLinks.length > 0 && (
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-16 md:py-20 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-sm uppercase tracking-widest text-professional-blue font-semibold mb-2">Related Services</p>

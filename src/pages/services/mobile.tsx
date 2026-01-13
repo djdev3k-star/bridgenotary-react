@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import loanFlyersImg from "@/assets/images/loanFlyers.png";
+import { featureFlags } from "@/utils/featureFlags";
 
 const MobileNotaryPage = () => {
   return (
@@ -117,7 +118,9 @@ const MobileNotaryPage = () => {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">Skip the Office. We Handle It All On-Site.</h2>
             <p className="text-lg text-charcoal/70 max-w-3xl">
-              Our mobile notaries bring certified services directly to your location—fast, reliable, and on-demand. Need <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 underline">apostille services</Link>? We handle that too.
+              Our mobile notaries bring certified services directly to your location—fast, reliable, and on-demand.{featureFlags.enableApostille && (
+                <> Need <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 underline">apostille services</Link>? We handle that too.</>
+              )}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">

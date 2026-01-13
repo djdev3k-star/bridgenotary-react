@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/images/commloanFlyers2.png";
 import TrustSection from "@/components/common/TrustSection";
+import { featureFlags } from "@/utils/featureFlags";
 
 const HomePage = () => (
   <div className="w-full bg-off-white">
@@ -32,7 +33,10 @@ const HomePage = () => (
 
           {/* Subheadline */}
           <p className="text-base md:text-lg text-charcoal/70 mb-8 md:mb-10 leading-relaxed max-w-lg font-light">
-            Reliable loan signings, mobile notarization, and apostille services for individuals and businesses across the Dallas-Fort Worth area.
+            {featureFlags.enableApostille 
+              ? "Reliable loan signings, mobile notarization, and apostille services for individuals and businesses across the Dallas-Fort Worth area."
+              : "Reliable loan signings and mobile notarization for individuals and businesses across the Dallas-Fort Worth area."
+            }
           </p>
 
           {/* CTAs */}
@@ -100,7 +104,7 @@ const HomePage = () => (
               borderColor: "border-professional-blue/20",
               iconColor: "text-professional-blue"
             },
-            {
+            ...(featureFlags.enableApostille ? [{
               icon: (
                 <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0110.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -112,7 +116,7 @@ const HomePage = () => (
               color: "from-professional-blue/5 to-transparent",
               borderColor: "border-professional-blue/20",
               iconColor: "text-professional-blue"
-            },
+            }] : []),
             {
               icon: (
                 <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">

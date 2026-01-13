@@ -30,19 +30,19 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
         <div className="max-w-3xl text-left">
           {/* Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            Document Apostille Services
+            Apostille Partner Network
           </h1>
 
           {/* Tagline */}
           <div className="mb-6">
             <p className="text-lg md:text-xl font-bold text-white drop-shadow-sm">
-              Avoid Rejection. Avoid Delays. Get It Right the First Time.
+              Connect. Authenticate. Deliver. We Bridge You to TX SOS.
             </p>
           </div>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed drop-shadow-sm">
-            Whether it's for a destination wedding in Italy, teaching in Japan, or adopting from Colombia, we get your documents stamped, sealed, and ready—without the guesswork.
+            Bridge Notary connects you with certified notary partners in your area, then handles secure courier delivery to the Texas Secretary of State for official apostille authentication.
           </p>
 
 

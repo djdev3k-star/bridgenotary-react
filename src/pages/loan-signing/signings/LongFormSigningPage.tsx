@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoanSigningBreadcrumb from "@/features/loan-signing/components/LoanSigningBreadcrumb";
+import commLoanImage from '@/assets/images/commloanFlyers3.png';
+import stackLoanImage from '@/assets/images/stack-loan-documents.jpg';
+import commLoanFlyers from '@/assets/images/commloanFlyers.png';
 
 interface ContentSection {
   title: string;
@@ -47,7 +50,22 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
       <LoanSigningBreadcrumb />
       
       <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-professional-blue/20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-        <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-24">
+        {/* Background Image with Blob Mask */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-60">
+            <img 
+              src={commLoanImage} 
+              alt="" 
+              className="w-full h-full object-cover"
+              style={{
+                maskImage: `radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0) 70%)`,
+                WebkitMaskImage: `radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0) 70%)`
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-24 z-10">
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-charcoal/60 mb-4">Loan Signing Services</p>
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-charcoal">{title}</h1>
           <p className="text-2xl md:text-3xl text-professional-blue font-semibold mb-6">{subtitle}</p>
@@ -63,17 +81,56 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="space-y-12">
+      <section className="py-28 md:py-32 bg-gradient-to-b from-white to-professional-blue/5 space-y-24">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="space-y-24">
             {sections.map((section, idx) => (
-              <article key={section.title} className="space-y-6 border-l-2 border-professional-blue pl-6 py-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-charcoal leading-tight">{section.title}</h2>
-                {section.paragraphs.map((paragraph, pIdx) => (
-                  <p key={`${section.title}-${pIdx}`} className="text-lg text-charcoal/70 leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
+              <article key={section.title} className="group">
+                {/* Header with number */}
+                <div className="flex items-start gap-6 mb-8">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-gradient-to-br from-professional-blue/25 to-professional-blue/15 border-2 border-professional-blue/30 group-hover:border-professional-blue/50 transition-colors">
+                      <span className="text-professional-blue font-bold text-2xl">{idx + 1}</span>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="text-3xl md:text-4xl font-bold text-charcoal leading-tight group-hover:text-professional-blue transition-colors">
+                      {section.title}
+                    </h2>
+                  </div>
+                </div>
+
+                {/* Content with borders */}
+                <div className="border-l-4 border-professional-blue/30 pl-8 py-2 space-y-6">
+                  {section.paragraphs.map((paragraph, pIdx) => (
+                    <p key={`${section.title}-${pIdx}`} className="text-charcoal/80 leading-relaxed text-lg font-normal">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+
+                {/* Value proposition bar */}
+                <div className="mt-8 pt-8 border-t-2 border-professional-blue/10">
+                  <div className="bg-professional-blue/5 rounded-lg p-6 border-l-4 border-professional-blue/50">
+                    <p className="text-sm font-semibold text-professional-blue uppercase tracking-widest mb-3">Key benefit</p>
+                    <p className="text-charcoal/85 leading-relaxed">Reduces delays, protects all parties, and establishes legal certainty across jurisdictions</p>
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div className="mt-8">
+                  <a href="#" className="inline-flex items-center gap-3 text-professional-blue hover:text-professional-blue/70 font-semibold text-base group/link transition-colors">
+                    <span>Get started today</span>
+                    <svg className="w-5 h-5 group-hover/link:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+
+                {/* Divider between sections */}
+                {idx < sections.length - 1 && (
+                  <div className="mt-12 pt-12 border-t-2 border-professional-blue/10" />
+                )}
               </article>
             ))}
           </div>

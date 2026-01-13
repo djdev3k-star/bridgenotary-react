@@ -37,7 +37,7 @@ const serviceCategories = [
     description: "International documents and remote notarization",
     services: [
       { name: "Remote Online Notarization", link: "/ron", price: "$50+" },
-      { name: "Apostille Services", link: "/apostille", price: "$150+" },
+      { name: "Apostille Partner Network", link: "/apostille", price: "$150+" },
       { name: "International POA", link: "/apostille", price: "Contact" },
     ],
   },
@@ -123,21 +123,24 @@ const Services = () => {
       </section>
 
       {/* Tabbed Service Categories */}
-      <section className="py-8 md:py-20 bg-white relative" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="py-16 md:py-24 bg-white relative" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           {/* Tabs */}
-          <div className="flex gap-2 mb-8 md:mb-12 overflow-x-auto pb-3 md:pb-0 relative z-10">
+          <div className="flex gap-1 mb-12 md:mb-16 overflow-x-auto pb-3 md:pb-0 relative z-10 justify-center">
             {serviceCategories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveTab(category.id)}
-                className={`px-4 md:px-6 py-2 md:py-3 font-semibold text-sm md:text-base whitespace-nowrap transition-all ${
+                className={`px-6 md:px-8 py-3 md:py-4 font-medium text-sm md:text-base whitespace-nowrap transition-all relative group ${
                   activeTab === category.id
-                    ? "bg-professional-blue text-white shadow-md"
-                    : "bg-white text-charcoal border border-professional-blue/20 hover:border-professional-blue"
+                    ? "text-professional-blue"
+                    : "text-charcoal/70 hover:text-professional-blue"
                 }`}
               >
                 {category.title}
+                <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-professional-blue transition-all ${
+                  activeTab === category.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-50'
+                }`}></div>
               </button>
             ))}
           </div>
@@ -150,22 +153,36 @@ const Services = () => {
                 <p className="text-charcoal/70 text-base md:text-lg">{activeCategory.description}</p>
               </div>
 
-              {/* Services Grid */}
-              <div className="space-y-1 max-w-3xl">
-                {activeCategory.services.map((service, idx) => (
-                  <Link
-                    key={service.name}
-                    to={service.link}
-                    className="flex items-center justify-between px-4 py-2 group hover:bg-professional-blue/6 transition-all rounded-sm fade-in-up"
-                    style={{animationDelay: `${idx * 0.05}s`}}
-                  >
-                    <h3 className="font-medium text-base tracking-tight text-charcoal group-hover:text-professional-blue transition-colors flex-1">{service.name}</h3>
-                    <p className="text-professional-blue font-semibold text-sm tracking-wide flex-shrink-0 ml-2">{service.price}</p>
-                    <svg className="w-4 h-4 text-professional-blue opacity-0 group-hover:opacity-100 transition-opacity ml-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                ))}
+              {/* Services Table */}
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b-2 border-professional-blue">
+                      <th className="text-left py-4 px-6 font-bold text-charcoal text-lg">Service</th>
+                      <th className="text-center py-4 px-6 font-bold text-charcoal text-lg min-w-[120px]">Starting Price</th>
+                      <th className="text-center py-4 px-6 font-bold text-charcoal text-lg w-12"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {activeCategory.services.map((service, idx) => (
+                      <tr key={service.name} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
+                        <td className="py-4 px-6">
+                          <Link to={service.link} className="font-semibold text-charcoal group-hover:text-professional-blue transition-colors">
+                            {service.name}
+                          </Link>
+                        </td>
+                        <td className="py-4 px-6 text-center text-professional-blue text-lg">{service.price}</td>
+                        <td className="py-4 px-6 text-center">
+                          <Link to={service.link} className="inline-block">
+                            <svg className="w-5 h-5 text-professional-blue opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           )}

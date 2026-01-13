@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import DropdownMenu from '@/components/ui/DropdownMenu';
+import { featureFlags } from '@/utils/featureFlags';
 import { NavigationMenuItems, NavigationMenuGroup, NavigationProps } from './Navigation.types';
 
 const Navigation: React.FC<NavigationProps> = () => {
@@ -53,7 +54,7 @@ const Navigation: React.FC<NavigationProps> = () => {
         }
       ]
     },
-    {
+    ...(featureFlags.enableApostille ? [{
       title: 'Apostille',
       items: [
         {
@@ -119,7 +120,7 @@ const Navigation: React.FC<NavigationProps> = () => {
           )
         },
       ]
-    },
+    }] : []),
     {
       title: 'Loan Signing',
       items: [

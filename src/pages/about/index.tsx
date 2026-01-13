@@ -24,46 +24,52 @@ const About = () => (
 
     {/* Our Story */}
     <section className="py-12 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-      <div className="max-w-4xl mx-auto px-4 md:px-6">
-        <div className="mb-8 md:mb-12">
-          {/* Prominent Statement */}
-          <div className="bg-gradient-to-r from-professional-blue/5 to-professional-blue/10 border-l-4 border-professional-blue p-8 md:p-10 mb-8 md:mb-12 rounded-r-lg fade-in-up">
-            <p className="text-xl md:text-2xl font-semibold text-charcoal leading-[1.8]">
-              Our approach is straightforward: show up on time, prepare thoroughly, communicate clearly, and deliver documents that are correct on the first attempt. <span className="text-professional-blue">This is how notary services should work.</span>
-            </p>
-          </div>
-
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
+        {/* Opening Statement */}
+        <div className="mb-16 md:mb-20 fade-in-up">
+          <p className="text-3xl md:text-5xl lg:text-5xl font-bold text-charcoal leading-[1.4] text-center">
+            Our approach is straightforward: show up on time, prepare thoroughly, communicate clearly, and deliver documents that are correct on the first attempt.
+          </p>
+        </div>
+        
+        {/* Our Values Grid */}
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-20">
           {/* Why Bridge */}
-          <div className="bg-white border border-professional-blue/20 p-6 md:p-8 mb-8 md:mb-12 rounded-r-lg">
-            <p className="text-charcoal/70 text-sm md:text-base leading-relaxed">
-              <span className="font-semibold text-charcoal">The name "Bridge"</span> reflects what we do: we connect your paperwork to outcomes. Documents don't close transactions on their own—they need proper notarization, verification, and delivery. We bridge that gap, ensuring every signature, seal, and detail moves you forward without delays.
+          <div className="flex flex-col justify-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-charcoal mb-4">Why "Bridge"?</h3>
+            <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
+              We connect your paperwork to outcomes. Documents don't close transactions on their own—they need proper notarization, verification, and delivery. We bridge that gap, ensuring every signature, seal, and detail moves you forward without delays.
             </p>
           </div>
           
           {/* Three Pillars */}
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
-            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all fade-in-up fade-in-up-delay-1">
-              <h4 className="font-bold text-charcoal text-base md:text-lg mb-2">Punctuality</h4>
-              <p className="text-charcoal/70 leading-relaxed text-xs md:text-sm">We arrive when scheduled and come prepared. No delays, no excuses.</p>
+          <div className="space-y-4 md:space-y-6">
+            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+              <h4 className="font-bold text-charcoal text-lg mb-2">Punctuality</h4>
+              <p className="text-charcoal/70 leading-relaxed text-sm">We arrive when scheduled and come prepared. No delays, no excuses.</p>
             </div>
-            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all fade-in-up fade-in-up-delay-2">
-              <h4 className="font-bold text-charcoal text-base md:text-lg mb-2">Accuracy</h4>
-              <p className="text-charcoal/70 leading-relaxed text-xs md:text-sm">Correct documents on the first attempt. Missing signatures and errors are preventable—we prevent them.</p>
+            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+              <h4 className="font-bold text-charcoal text-lg mb-2">Accuracy</h4>
+              <p className="text-charcoal/70 leading-relaxed text-sm">Correct documents on the first attempt. Missing signatures and errors are preventable—we prevent them.</p>
             </div>
-            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all fade-in-up fade-in-up-delay-3">
-              <h4 className="font-bold text-charcoal text-base md:text-lg mb-2">Communication</h4>
+            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+              <h4 className="font-bold text-charcoal text-lg mb-2">Communication</h4>
               <p className="text-charcoal/70 leading-relaxed text-sm">From booking to completion, you know what to expect. Clear updates, no surprises.</p>
             </div>
           </div>
+        </div>
 
-          <div className="bg-professional-blue/5 border-l-4 border-professional-blue p-6 rounded-r-lg mb-8">
-            <p className="text-charcoal italic text-lg leading-relaxed">
-              "We believe notary services should be straightforward and reliable. We handle the details so you can focus on your transaction."
-            </p>
-          </div>
+        {/* Closing Statement */}
+        <div className="text-center mb-12 fade-in-up">
+          <p className="text-3xl md:text-5xl lg:text-5xl font-bold text-charcoal leading-[1.4]">
+            <span className="text-professional-blue">This is how notary services should work.</span>
+          </p>
+        </div>
 
-          <p className="text-lg text-charcoal leading-[1.9]">
-            Whether you're a title company coordinating closings, a lender managing compliance, or an individual needing document authentication, Bridge Notary is built to handle the work efficiently.
+        {/* Who We Serve */}
+        <div className="bg-professional-blue/5 border-l-4 border-professional-blue p-6 md:p-8 rounded-r-lg">
+          <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
+            Whether you're a title company coordinating closings, a lender managing compliance, or an individual needing document authentication, Bridge Notary is built to handle the work efficiently and professionally.
           </p>
         </div>
       </div>

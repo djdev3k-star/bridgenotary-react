@@ -93,14 +93,14 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('click', handleClickOutside);
     } else {
       document.body.style.overflow = 'unset';
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     }
     return () => {
       document.body.style.overflow = 'unset';
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, [isOpen, handleClickOutside]);
 

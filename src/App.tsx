@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
+import { featureFlags } from "@/utils/featureFlags";
 import {
   generalImages,
   travelImages,
@@ -14,14 +15,16 @@ const notFoundImages = [
   generalImages.genNotaryStripFlyer,
   ronImages.remoteNotaryProfessional,
   ronImages.happyCustomer,
-  apostilleImages.apostilleDocument,
-  apostilleImages.apostilleFlyer,
-  apostilleImages.apostilleFlyerStrip,
-  travelImages.destinationWedding,
-  travelImages.dualCitizenship,
-  travelImages.internationalAdoption,
-  travelImages.overseasProperty,
-  travelImages.studyAbroad,
+  ...(featureFlags.enableApostille ? [
+    apostilleImages.apostilleDocument,
+    apostilleImages.apostilleFlyer,
+    apostilleImages.apostilleFlyerStrip,
+    travelImages.destinationWedding,
+    travelImages.dualCitizenship,
+    travelImages.internationalAdoption,
+    travelImages.overseasProperty,
+    travelImages.studyAbroad,
+  ] : []),
   loanSigningImages.stackLoanDocuments,
   loanSigningImages.loanFlyer,
   loanSigningImages.commLoanFlyer,
@@ -70,16 +73,16 @@ import React, { Suspense } from 'react';
 const HomePage = React.lazy(() => import("@/pages/home"));
 const Home1Page = React.lazy(() => import("@/pages/home1"));
 const RONPage = React.lazy(() => import("@/pages/ron"));
-const ApostillePage = React.lazy(() => import("@/pages/apostille"));
-const ApostilleLayout = React.lazy(() => import("@/pages/apostille/ApostilleLayout"));
-const ApostilleQuizPage = React.lazy(() => import("@/pages/apostille/quiz"));
-const ApostilleQuizStartPage = React.lazy(() => import("@/pages/apostille/quiz/quiz-start"));
-const ApostilleQuizResultsPage = React.lazy(() => import("@/pages/apostille/quiz/quiz-results"));
-const StudyAbroadPage = React.lazy(() => import("@/pages/study-abroad"));
-const DualCitizenshipPage = React.lazy(() => import("@/pages/dual-citizenship"));
-const InternationalAdoptionPage = React.lazy(() => import("@/pages/international-adoption"));
-const OverseasPropertyPage = React.lazy(() => import("@/pages/overseas-property"));
-const DestinationWeddingPage = React.lazy(() => import("@/pages/destination-wedding"));
+const ApostillePage = featureFlags.enableApostille ? React.lazy(() => import("@/pages/apostille")) : null;
+const ApostilleLayout = featureFlags.enableApostille ? React.lazy(() => import("@/pages/apostille/ApostilleLayout")) : null;
+const ApostilleQuizPage = featureFlags.enableApostille ? React.lazy(() => import("@/pages/apostille/quiz")) : null;
+const ApostilleQuizStartPage = featureFlags.enableApostille ? React.lazy(() => import("@/pages/apostille/quiz/quiz-start")) : null;
+const ApostilleQuizResultsPage = featureFlags.enableApostille ? React.lazy(() => import("@/pages/apostille/quiz/quiz-results")) : null;
+const StudyAbroadPage = featureFlags.enableApostille ? React.lazy(() => import("@/pages/study-abroad")) : null;
+const DualCitizenshipPage = featureFlags.enableApostille ? React.lazy(() => import("@/pages/dual-citizenship")) : null;
+const InternationalAdoptionPage = featureFlags.enableApostille ? React.lazy(() => import("@/pages/international-adoption")) : null;
+const OverseasPropertyPage = featureFlags.enableApostille ? React.lazy(() => import("@/pages/overseas-property")) : null;
+const DestinationWeddingPage = featureFlags.enableApostille ? React.lazy(() => import("@/pages/destination-wedding")) : null;
 const LoanSigningPage = React.lazy(() => import("@/pages/loan-signing"));
 const RefinanceSigningPage = React.lazy(() => import("@/pages/loan-signing/signings/refinance"));
 const PurchaseSigningPage = React.lazy(() => import("@/pages/loan-signing/signings/purchase"));
@@ -130,20 +133,22 @@ function App() {
               <Route path="/home1" element={<Home1Page />} />
               <Route path="/ron" element={<RONPage />} />
               <Route path="/remote-notarization" element={<RONPage />} />
-              <Route path="/apostille" element={<ApostillePage />} />
+              {featureFlags.enableApostille && <Route path="/apostille" element={<ApostillePage />} />}
             </Route>
             
-            {/* Apostille section with custom layout */}
-            <Route element={<ApostilleLayout />}>
-              <Route path="/apostille/quiz" element={<ApostilleQuizPage />} />
-              <Route path="/apostille/quiz-start" element={<ApostilleQuizStartPage />} />
-              <Route path="/apostille/quiz-results" element={<ApostilleQuizResultsPage />} />
-              <Route path="/study-abroad" element={<StudyAbroadPage />} />
-              <Route path="/dual-citizenship" element={<DualCitizenshipPage />} />
-              <Route path="/international-adoption" element={<InternationalAdoptionPage />} />
-              <Route path="/overseas-property" element={<OverseasPropertyPage />} />
-              <Route path="/destination-wedding" element={<DestinationWeddingPage />} />
-            </Route>
+            {/* Apostille section with custom layout - conditionally rendered */}
+            {featureFlags.enableApostille && (
+              <Route element={<ApostilleLayout />}>
+                <Route path="/apostille/quiz" element={<ApostilleQuizPage />} />
+                <Route path="/apostille/quiz-start" element={<ApostilleQuizStartPage />} />
+                <Route path="/apostille/quiz-results" element={<ApostilleQuizResultsPage />} />
+                <Route path="/study-abroad" element={<StudyAbroadPage />} />
+                <Route path="/dual-citizenship" element={<DualCitizenshipPage />} />
+                <Route path="/international-adoption" element={<InternationalAdoptionPage />} />
+                <Route path="/overseas-property" element={<OverseasPropertyPage />} />
+                <Route path="/destination-wedding" element={<DestinationWeddingPage />} />
+              </Route>
+            )}
             
             <Route element={<Layout />}>
               <Route path="/loan-signing" element={<LoanSigningPage />} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { featureFlags } from '@/utils/featureFlags';
 
 const DestinationWeddingPage: React.FC = () => {
   return (
@@ -12,10 +13,21 @@ const DestinationWeddingPage: React.FC = () => {
             <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Apostille</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            {featureFlags.enableApostille ? (
+              <>
+                <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Apostille</Link>
+                <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </>
+            ) : (
+              <>
+                <Link to="/services" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Services</Link>
+                <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </>
+            )}
             <span className="text-charcoal/70">Destination Wedding</span>
           </div>
         </div>
@@ -29,13 +41,21 @@ const DestinationWeddingPage: React.FC = () => {
               <svg className="w-4 h-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C6.5 6.5 3.5 10.5 3.5 15S6.5 23.5 12 23.5s8.5-4 8.5-8.5-3-8.5-8.5-8.5z" />
               </svg>
-              <span className="text-professional-blue">Apostille Services</span>
+              <span className="text-professional-blue">
+                {featureFlags.enableApostille ? 'Apostille Services' : 'Document Services'}
+              </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
-              Document Authentication for Destination Weddings
+              {featureFlags.enableApostille 
+                ? 'Document Authentication for Destination Weddings'
+                : 'Notary Services for Destination Weddings'
+              }
             </h1>
             <p className="text-lg text-charcoal/70 leading-relaxed">
-              Authenticate marriage licenses, birth certificates, and legal documents for international wedding celebrations with certified apostille support.
+              {featureFlags.enableApostille
+                ? 'Authenticate marriage licenses, birth certificates, and legal documents for international wedding celebrations with certified apostille support.'
+                : 'Professional notarization and document authentication for international wedding celebrations and legal requirements.'
+              }
             </p>
           </div>
         </div>

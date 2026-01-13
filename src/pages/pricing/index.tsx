@@ -2,7 +2,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
-const coreServices = [
+// Loan Signing Services
+const loanSigningServices = [
   { name: 'Refinance', fee: '$125–$150', notes: 'Per closing package' },
   { name: 'Purchase (Buyer)', fee: '$100–$125', notes: 'Per closing package' },
   { name: 'Seller', fee: '$75–$100', notes: 'Per closing package' },
@@ -13,66 +14,44 @@ const coreServices = [
   { name: 'TX Property Tax Loans', fee: '$125', notes: 'Flat rate' },
 ];
 
+// Mobile Notary Services
+const mobileNotaryServices = [
+  { name: 'General Documents (1-3 docs)', fee: '$75', notes: 'Affidavits, POAs, contracts' },
+  { name: 'Multiple Documents (4-10 docs)', fee: '$100', notes: 'Estate planning packages' },
+  { name: 'Complex Notarization (10+ docs)', fee: '$125', notes: 'Business agreements, trusts' },
+  { name: 'Witness Services', fee: '$50', notes: 'Plus notary fees' },
+  { name: 'I-9 Verification', fee: '$50', notes: 'Employment verification' },
+  { name: 'Hospital/Jail Signing', fee: '$100', notes: 'Includes travel time' },
+];
+
+// Remote Online Notarization (RON)
+const ronServices = [
+  { name: 'Single Document RON', fee: '$50', notes: '1-3 signatures' },
+  { name: 'Multi-Document RON', fee: '$75', notes: '4-8 signatures' },
+  { name: 'Complex RON Session', fee: '$100', notes: '9+ signatures or multiple signers' },
+  { name: 'After-Hours RON', fee: '$75', notes: 'Evenings, weekends, holidays' },
+  { name: 'International RON', fee: '$100', notes: 'Cross-border transactions' },
+];
+
+// Specialty Services
+const specialtyServices = [
+  { name: 'Apostille Partner Network', fee: '$150+', notes: 'Connect with local notary partners + TX SOS courier service' },
+  { name: 'International POA', fee: 'Contact', notes: 'Complex international documents via partner network' },
+  { name: 'Estate Planning Package', fee: '$200+', notes: 'Wills, trusts, POAs together' },
+  { name: 'Business Formation Docs', fee: '$150+', notes: 'Corporate agreements, partnerships' },
+];
+
+// Add-On Services
 const addOnServices = [
   { name: 'Scanbacks', fee: '$15', notes: 'Per signing package' },
   { name: 'Printing', fee: '$10–$25', notes: 'Based on page count' },
   { name: 'Additional Signers', fee: '$25', notes: 'Per additional signer' },
   { name: 'Weekend/After Hours', fee: '$50', notes: 'Additional fee' },
-  { name: 'Travel', fee: 'Varies', notes: 'Based on distance' },
-  { name: 'Facility Fee (TX Equity Loans)', fee: '$25', notes: 'If applicable' },
+  { name: 'Travel (15+ miles)', fee: '$1/mile', notes: 'Beyond standard radius' },
+  { name: 'Facility Fee (TX Equity)', fee: '$25', notes: 'If applicable' },
 ];
 
-// Main pricing tiers
-const pricingTiers = [
-  {
-    name: 'Standard Closing',
-    description: 'In-person signing with professional notarization',
-    price: '$125',
-    period: 'per closing',
-    popular: true,
-    features: [
-      'In-person signing at your location',
-      'Full document review',
-      'Complete ID verification',
-      'Electronic delivery',
-      '24-hour rescheduling',
-      'Travel within 15 miles included'
-    ],
-    cta: 'Book Now'
-  },
-  {
-    name: 'Premium In-Person',
-    description: 'Concierge service for complex transactions',
-    price: '$200',
-    period: 'per signing',
-    popular: false,
-    features: [
-      'Priority scheduling',
-      'Extended appointment time',
-      'Pre-review of documents',
-      'Digital & physical copies',
-      'Travel up to 25 miles',
-      'After-hours available'
-    ],
-    cta: 'Book Now'
-  },
-  {
-    name: 'Remote Online (RON)',
-    description: 'Secure video notarization from anywhere',
-    price: '$100',
-    period: 'per session',
-    popular: false,
-    features: [
-      'Two-way video conferencing',
-      'Digital document signing',
-      'Identity verification',
-      'Electronic journal entry',
-      'Outside business hours available',
-      'No travel required'
-    ],
-    cta: 'Learn More'
-  },
-];
+
 
 const Pricing = () => {
   const navigate = useNavigate();
@@ -99,6 +78,10 @@ const Pricing = () => {
             <span className="text-charcoal/70 font-medium">Pricing By Service:</span>
             <a href="#loan-signing" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Loan Signing</a>
             <span className="text-charcoal/30">•</span>
+            <a href="#mobile-notary" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Mobile Notary</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#remote-online" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Remote Online</a>
+            <span className="text-charcoal/30">•</span>
             <a href="#specialty-services" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Specialty Services</a>
             <span className="text-charcoal/30">•</span>
             <a href="#faq" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">FAQs</a>
@@ -107,15 +90,31 @@ const Pricing = () => {
       </section>
 
       {/* Main Content */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-professional-blue via-professional-blue/95 to-professional-blue/90 text-white w-full py-20 md:py-32 lg:py-40">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-30" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%)'}}></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-professional-blue/20 rounded-full -ml-40 -mb-40"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-professional-blue via-professional-blue/95 to-professional-blue/90 text-white w-screen left-1/2 -translate-x-1/2 py-32 md:py-40 lg:py-48 min-h-[600px] flex items-center">
+        {/* Spectral Pattern Background */}
+        <div className="absolute inset-0 opacity-40" style={{
+          backgroundImage: `
+            linear-gradient(90deg, 
+              transparent 0%, 
+              rgba(59, 130, 246, 0.25) 15%, 
+              rgba(99, 102, 241, 0.25) 35%, 
+              rgba(139, 92, 246, 0.25) 55%,
+              rgba(168, 85, 247, 0.25) 75%,
+              rgba(168, 85, 247, 0.2) 100%),
+            radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 45%),
+            radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%)
+          `,
+          backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+          backgroundAttachment: 'fixed'
+        }}></div>
         
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
+        {/* Geometric Overlays */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-none -mr-48 -mt-48"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-professional-blue/20 rounded-none -ml-40 -mb-40"></div>
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full mb-6 border border-white/20">
+            <div className="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-lg mb-6 border border-white/20">
               <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -147,108 +146,150 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Main Pricing Tiers */}
+      {/* Service Categories - Reorganized */}
       <section id="pricing-tiers" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Choose Your Service Level</h2>
-            <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">Three professional packages designed for your needs.</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Professional Notary Services</h2>
+            <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">Transparent pricing for all your notarization needs.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
-            {/* Geometric overlays for off-center effect */}
-            <div className="absolute -top-20 -left-20 w-96 h-96 bg-professional-blue/5 -z-10"></div>
-            <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-professional-blue/8 -z-10"></div>
-            
-            {pricingTiers.map((tier, idx) => (
-              <div 
-                key={idx}
-                className={`relative pl-6 py-8 pr-8 border-l-2 border-professional-blue transition-all group hover:bg-professional-blue/5 ${
-                  tier.popular 
-                    ? 'bg-professional-blue/5 transform md:scale-105' 
-                    : 'bg-white'
-                }`}
-              >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-6">
-                    <span className="bg-professional-blue text-white text-xs font-bold py-1 px-4">MOST POPULAR</span>
-                  </div>
-                )}
-                
-                <h3 className="text-2xl font-bold text-charcoal mb-2">{tier.name}</h3>
-                <p className="text-charcoal/70 text-sm mb-6 leading-relaxed">{tier.description}</p>
-                
-                <div className="mb-6">
-                  <div className="text-4xl font-bold text-professional-blue">{tier.price}</div>
-                  <div className="text-sm text-charcoal/70">{tier.period}</div>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {tier.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-charcoal/70 text-sm">{feature}</span>
-                    </li>
+          {/* Loan Signing Services */}
+          <div id="loan-signing" className="mb-20 scroll-mt-20">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold text-charcoal mb-3">Loan Signing Services</h3>
+              <p className="text-charcoal/70 text-lg">Real estate closings and mortgage document signings.</p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-professional-blue">
+                    <th className="text-left py-4 px-6 font-bold text-charcoal text-lg">Service</th>
+                    <th className="text-center py-4 px-6 font-bold text-charcoal text-lg min-w-[120px]">Fee</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {loanSigningServices.map((service, idx) => (
+                    <tr key={idx} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
+                      <td className="py-4 px-6">
+                        <div className="font-semibold text-charcoal group-hover:text-professional-blue transition-colors">{service.name}</div>
+                        <div className="text-sm text-charcoal/70 mt-1">{service.notes}</div>
+                      </td>
+                      <td className="py-4 px-6 text-center text-professional-blue text-lg">{service.fee}</td>
+                    </tr>
                   ))}
-                </ul>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-                <a 
-                  href={tier.cta === 'Learn More' ? '/ron' : '/book'}
-                  className={`block w-full py-3 px-6 font-semibold text-center transition-all ${
-                    tier.popular
-                      ? 'bg-professional-blue text-white hover:bg-professional-blue/90'
-                      : 'border-2 border-professional-blue text-professional-blue hover:bg-professional-blue/5'
-                  }`}
-                >
-                  {tier.cta}
-                </a>
-              </div>
-            ))}
+          {/* Mobile Notary Services */}
+          <div id="mobile-notary" className="mb-20 scroll-mt-20">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold text-charcoal mb-3">Mobile Notary Services</h3>
+              <p className="text-charcoal/70 text-lg">We come to you for general notarization needs.</p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-professional-blue">
+                    <th className="text-left py-4 px-6 font-bold text-charcoal text-lg">Service</th>
+                    <th className="text-center py-4 px-6 font-bold text-charcoal text-lg min-w-[120px]">Fee</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {mobileNotaryServices.map((service, idx) => (
+                    <tr key={idx} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
+                      <td className="py-4 px-6">
+                        <div className="font-semibold text-charcoal group-hover:text-professional-blue transition-colors">{service.name}</div>
+                        <div className="text-sm text-charcoal/70 mt-1">{service.notes}</div>
+                      </td>
+                      <td className="py-4 px-6 text-center text-professional-blue text-lg">{service.fee}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Remote Online Notarization */}
+          <div id="remote-online" className="mb-20 scroll-mt-20">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold text-charcoal mb-3">Remote Online Notarization (RON)</h3>
+              <p className="text-charcoal/70 text-lg">Secure video notarization available 24/7.</p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-professional-blue">
+                    <th className="text-left py-4 px-6 font-bold text-charcoal text-lg">Service</th>
+                    <th className="text-center py-4 px-6 font-bold text-charcoal text-lg min-w-[120px]">Fee</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ronServices.map((service, idx) => (
+                    <tr key={idx} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
+                      <td className="py-4 px-6">
+                        <div className="font-semibold text-charcoal group-hover:text-professional-blue transition-colors">{service.name}</div>
+                        <div className="text-sm text-charcoal/70 mt-1">{service.notes}</div>
+                      </td>
+                      <td className="py-4 px-6 text-center text-professional-blue text-lg">{service.fee}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Specialty Services */}
+          <div className="scroll-mt-20">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold text-charcoal mb-3">Specialty Services</h3>
+              <p className="text-charcoal/70 text-lg">International documents and complex notarization.</p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-professional-blue">
+                    <th className="text-left py-4 px-6 font-bold text-charcoal text-lg">Service</th>
+                    <th className="text-center py-4 px-6 font-bold text-charcoal text-lg min-w-[120px]">Fee</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {specialtyServices.map((service, idx) => (
+                    <tr key={idx} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
+                      <td className="py-4 px-6">
+                        <div className="font-semibold text-charcoal group-hover:text-professional-blue transition-colors">{service.name}</div>
+                        <div className="text-sm text-charcoal/70 mt-1">{service.notes}</div>
+                      </td>
+                      <td className="py-4 px-6 text-center text-professional-blue text-lg">{service.fee}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Detailed Services */}
-      <section className="py-20 lg:py-28 bg-off-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      {/* Add-On Services */}
+      <section className="py-20 lg:py-28 bg-professional-blue/5" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Service Details</h2>
-            <p className="text-lg text-charcoal/70">Comprehensive pricing for all our notary and signing services.</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Add-On Services</h2>
+            <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">Optional services to enhance your notarization experience.</p>
           </div>
 
-          {/* Loan Signing Services */}
-          <div id="loan-signing" className="mb-16 scroll-mt-20">
-            <h3 className="text-2xl font-bold text-charcoal mb-8">Loan Signing Services</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {coreServices.map((service, idx) => (
-                <div key={idx} className="p-4 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-base font-bold text-charcoal">{service.name}</h4>
-                    <div className="font-bold text-professional-blue whitespace-nowrap ml-2">{service.fee}</div>
-                  </div>
-                  <p className="text-xs text-charcoal/70">{service.notes}</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {addOnServices.map((service, idx) => (
+              <div key={idx} className="bg-white border-l-2 border-professional-blue pl-6 py-6 pr-6 group hover:bg-professional-blue/5 transition-colors">
+                <div className="flex items-start justify-between mb-3">
+                  <h4 className="text-lg font-semibold text-charcoal group-hover:text-professional-blue transition-colors">{service.name}</h4>
+                  <div className="font-bold text-professional-blue text-xl whitespace-nowrap ml-4">{service.fee}</div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Add-On Services */}
-          <div id="specialty-services" className="scroll-mt-20">
-            <h3 className="text-2xl font-bold text-charcoal mb-2">Add-On Services</h3>
-            <p className="text-charcoal/70 mb-8">Optional services to enhance your signing experience.</p>
-            <div className="grid md:grid-cols-3 gap-4">
-              {addOnServices.map((service, idx) => (
-                <div key={idx} className="p-4 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-base font-bold text-charcoal">{service.name}</h4>
-                    <div className="font-bold text-professional-blue whitespace-nowrap ml-2">{service.fee}</div>
-                  </div>
-                  <p className="text-xs text-charcoal/70">{service.notes}</p>
-                </div>
-              ))}
-            </div>
+                <p className="text-sm text-charcoal/70 leading-relaxed">{service.notes}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

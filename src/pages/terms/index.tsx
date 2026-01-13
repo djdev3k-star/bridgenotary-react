@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { featureFlags } from '@/utils/featureFlags';
 
 const Terms = () => {
   return (
@@ -30,7 +31,7 @@ const Terms = () => {
               <ul className="list-disc list-inside text-charcoal/70 space-y-2">
                 <li>Mobile notarization at client location</li>
                 <li>Remote online notarization (RON)</li>
-                <li>Apostille services</li>
+                {featureFlags.enableApostille && <li>Apostille services</li>}
                 <li>Document authentication</li>
               </ul>
               <p className="text-charcoal/70 leading-relaxed mt-4">

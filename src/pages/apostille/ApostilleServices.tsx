@@ -212,6 +212,57 @@ const ApostilleServices: React.FC = () => {
         </div>
       </section>
 
+      {/* Partner Network Model Section */}
+      <section className="py-20 md:py-28 bg-professional-blue/5 border-y border-professional-blue/10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">How We Work</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Partner Network Model</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">Bridge Notary connects you with certified partners, then handles secure delivery to Texas SOS.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-professional-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-charcoal mb-2">Connect with Partner</h3>
+              <p className="text-charcoal/70">We match you with a certified notary partner in your area for document preparation and notarization.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-professional-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-charcoal mb-2">Bridge to TX SOS</h3>
+              <p className="text-charcoal/70">Bridge Notary handles secure courier service directly to the Texas Secretary of State for official apostille processing.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-professional-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-charcoal mb-2">Secure Delivery</h3>
+              <p className="text-charcoal/70">Receive your apostilled documents back via secure, trackable courier service - fully authenticated and ready for international use.</p>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <div className="bg-white border-l-2 border-professional-blue p-6 max-w-2xl mx-auto">
+              <p className="text-charcoal/80 font-medium">
+                <span className="text-professional-blue font-semibold">Note:</span> Bridge Notary specializes in connecting clients with our trusted notary partner network and providing secure courier services to Texas SOS. We do not perform notarizations directly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Apostille Services Grid */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -414,7 +465,7 @@ const ApostilleServices: React.FC = () => {
         </div>
       </section>
 
-      {/* Final CTA Section - Redesigned */}
+      {/* Final CTA Section - Make Your Documents World-Ready */}
       <section className="relative py-24 px-6 overflow-hidden">
         {/* Background image overlay */}
         <div className="absolute inset-0">

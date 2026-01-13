@@ -104,27 +104,27 @@ const LoanSigningPage: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 relative">
+          <div className="grid md:grid-cols-2 gap-6 relative">
             {/* Geometric overlays */}
             <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/5 -z-10"></div>
             <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/5 -z-10"></div>
             
             {loanTypes.map((type, index) => (
               <div key={index} className="group">
-                <div className="flex items-start gap-6 mb-8">
+                <div className="flex items-start gap-4 mb-4">
                   <div className="text-professional-blue flex-shrink-0 group-hover:scale-110 transition-transform">
                     {type.icon}
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-charcoal">{type.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-charcoal">{type.title}</h3>
                 </div>
                 
-                <ul className="space-y-3 ml-16">
+                <ul className="space-y-2 ml-14">
                   {type.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <li key={i} className="flex items-start gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-lg text-charcoal/80">{item}</span>
+                      <span className="text-base text-charcoal/80 leading-tight">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -135,47 +135,47 @@ const LoanSigningPage: React.FC = () => {
       </section>
 
       {/* Process Section */}
-      <section className="section bg-gradient-to-br from-neutral-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-20 fade-in">
-            <span className="text-electric-blue font-semibold text-sm uppercase tracking-wide">Simple Process</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-proof mt-4 mb-6">How It Works</h2>
-            <p className="text-xl text-neutral-600">
+      <section className="w-full bg-off-white py-20 md:py-28 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.03) 2px, rgba(0, 85, 230, 0.03) 4px)'}}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
+            <span className="text-professional-blue font-semibold text-xs uppercase tracking-[0.2em]">Simple Process</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mt-4 mb-6">How It Works</h2>
+            <p className="text-lg text-charcoal/70">
               Three simple steps to a successful loan signing — from scheduling to completion.
             </p>
           </div>
           
           <div className="relative">
             {/* Connection line */}
-            <div className="hidden lg:block absolute top-20 left-1/4 right-1/4 h-1 bg-gradient-to-r from-electric-blue via-proof to-electric-blue" />
+            <div className="hidden lg:block absolute top-20 left-1/4 right-1/4 h-1 bg-gradient-to-r from-professional-blue via-professional-blue/50 to-professional-blue" />
             
             <div className="grid md:grid-cols-3 gap-12">
-              <div className="relative text-center group">
-                <div className="mb-6 text-2xl font-bold text-electric-blue">
+              <div className="relative text-center group p-8 border-l-2 border-professional-blue hover:bg-professional-blue/5 transition-colors">
+                <div className="mb-6 text-4xl font-bold text-professional-blue">
                   1
                 </div>
-                <h3 className="text-2xl font-bold text-proof mb-4">Schedule</h3>
-                <p className="text-neutral-600 leading-relaxed">
+                <h3 className="text-2xl font-bold text-charcoal mb-4">Schedule</h3>
+                <p className="text-charcoal/70 leading-relaxed">
                   Book online or call us. Choose your preferred time and location — we come to you.
                 </p>
               </div>
               
-              <div className="relative text-center group">
-                <div className="mb-6 text-2xl font-bold text-electric-blue">
+              <div className="relative text-center group p-8 border-l-2 border-professional-blue hover:bg-professional-blue/5 transition-colors">
+                <div className="mb-6 text-4xl font-bold text-professional-blue">
                   2
                 </div>
-                <h3 className="text-2xl font-bold text-proof mb-4">Sign</h3>
-                <p className="text-neutral-600 leading-relaxed">
+                <h3 className="text-2xl font-bold text-charcoal mb-4">Sign</h3>
+                <p className="text-charcoal/70 leading-relaxed">
                   Our certified agent arrives prepared, reviews documents, and guides you through each signature.
                 </p>
               </div>
               
-              <div className="relative text-center group">
-                <div className="mb-6 text-2xl font-bold text-electric-blue">
+              <div className="relative text-center group p-8 border-l-2 border-professional-blue hover:bg-professional-blue/5 transition-colors">
+                <div className="mb-6 text-4xl font-bold text-professional-blue">
                   3
                 </div>
-                <h3 className="text-2xl font-bold text-proof mb-4">Close</h3>
-                <p className="text-neutral-600 leading-relaxed">
+                <h3 className="text-2xl font-bold text-charcoal mb-4">Close</h3>
+                <p className="text-charcoal/70 leading-relaxed">
                   Documents are notarized, scanned, and returned same-day. Your closing is complete.
                 </p>
               </div>

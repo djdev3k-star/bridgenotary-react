@@ -39,13 +39,13 @@ const WhyBridgeNotaryPage: React.FC = () => {
       {/* Hero Section */}
       <section className="bg-professional-blue/10 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
             Why Bridge Notary?
           </h1>
-          <p className="text-xl text-charcoal/70 max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-charcoal/70 max-w-3xl mx-auto mb-8">
             The Smarter, Safer Way to Notarize
           </p>
-          <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">
+          <p className="text-base text-charcoal/70 max-w-3xl mx-auto">
             When it comes to notarizing your most important documents, you deserve a process that's
             <strong> secure</strong>, <strong>simple</strong>, and <strong>trusted</strong> — no matter where you are.
             Bridge Notary was built to connect people with modern, remote notarization services without
@@ -79,7 +79,7 @@ const WhyBridgeNotaryPage: React.FC = () => {
       </section>
 
       {/* Security & Compliance Section */}
-      <section className="bg-professional-blue/10 py-20 lg:py-28 px-6">
+      <section className="bg-white py-20 lg:py-28 px-6" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-charcoal mb-6 text-center">Security & Compliance First</h2>
           <p className="text-lg text-charcoal/70 text-center mb-12 max-w-3xl mx-auto">
@@ -127,7 +127,7 @@ const WhyBridgeNotaryPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-professional-blue/10 text-charcoal py-20 px-6 w-full flex items-center justify-center">
+      <section className="relative bg-white text-charcoal py-20 px-6 w-full flex items-center justify-center" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Start Your Notarization Now</h2>
           <p className="text-lg text-charcoal/70 mb-8">
@@ -138,8 +138,8 @@ const WhyBridgeNotaryPage: React.FC = () => {
             <Link to="/book" className="inline-flex items-center justify-center bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold shadow-lg">
               Get Started
             </Link>
-            <Link to="/schedule" className="inline-flex items-center justify-center border-2 border-professional-blue text-professional-blue hover:bg-professional-blue hover:text-white transition-all text-lg py-4 px-8 font-semibold">
-              Schedule a Session
+            <Link to="/book?service=ron&mode=online" className="inline-flex items-center justify-center border-2 border-professional-blue text-professional-blue hover:bg-professional-blue hover:text-white transition-all text-lg py-4 px-8 font-semibold">
+              Schedule RON Session
             </Link>
           </div>
         </div>

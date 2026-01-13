@@ -63,7 +63,7 @@ const LoanSigningPage: React.FC = () => {
 
       <div className="w-full bg-white">
       {/* Preparation Cards Section - Full Width Background */}
-      <section className="w-full bg-professional-blue/10 py-20 md:py-28 relative">
+      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.12) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.08) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
             <span className="text-professional-blue font-semibold text-xs uppercase tracking-[0.2em]">Why Choose Bridge Notary</span>

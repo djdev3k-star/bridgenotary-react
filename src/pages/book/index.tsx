@@ -65,7 +65,11 @@ const BookAppointment: React.FC = () => {
     const serviceParam = searchParams.get('service');
     const modeParam = searchParams.get('mode'); // 'mobile' or 'online'
     
-    if (serviceParam) {
+    if (modeParam === 'online' || serviceParam === 'ron') {
+      // RON session requested
+      setSelectedService('online');
+      setFormData(prev => ({ ...prev, documentType: 'general' }));
+    } else if (serviceParam) {
       const service = getServiceById(serviceParam);
       if (service) {
         setPreselectedDocType(service);
@@ -74,8 +78,6 @@ const BookAppointment: React.FC = () => {
         // Auto-select mobile if service is in-person only
         if (service.inPersonOnly) {
           setSelectedService('mobile');
-        } else if (modeParam === 'online' && service.ronCapable) {
-          navigate('/ron');
         } else if (modeParam === 'mobile') {
           setSelectedService('mobile');
         }
@@ -127,9 +129,7 @@ const BookAppointment: React.FC = () => {
     }
     
     setSelectedService(serviceId);
-    if (serviceId === 'online') {
-      navigate('/ron');
-    }
+    // Don't navigate away - stay on book page and show form
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -142,9 +142,72 @@ const BookAppointment: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission based on selectedService
-    // You would typically send this to your backend
-    // Form submitted: { selectedService, formData }
+    
+    if (selectedService === 'online') {
+      // Handle RON session scheduling
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/ron-start`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            signerName: formData.name,
+            signerEmail: formData.email,
+            signerPhone: formData.phone,
+            transactionName: `${formData.documentType} - ${formData.name} - ${new Date().toLocaleDateString()}`,
+            preferredDate: formData.preferredDate,
+            preferredTime: formData.preferredTime,
+          }),
+        });
+        
+        const data = await response.json();
+        if (data.success && data.signerUrl) {
+          // Redirect to RON session or confirmation page
+          window.location.href = data.signerUrl;
+        } else {
+          alert('Failed to schedule RON session. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error scheduling RON:', error);
+        alert('An error occurred while scheduling. Please try again.');
+      }
+    } else if (selectedService === 'mobile') {
+      // Handle mobile notary appointment
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/contact`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            subject: 'Mobile Notary Appointment Request',
+            message: `Document Type: ${formData.documentType}\nPreferred Date: ${formData.preferredDate}\nPreferred Time: ${formData.preferredTime}\nLocation: ${formData.location}\n\nAdditional Notes:\n${formData.additionalNotes}`,
+          }),
+        });
+        
+        const data = await response.json();
+        if (data.success) {
+          alert('Appointment request submitted! We\'ll contact you soon to confirm.');
+          // Reset form
+          setSelectedService(null);
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            documentType: '',
+            preferredDate: '',
+            preferredTime: '',
+            location: '',
+            additionalNotes: ''
+          });
+        } else {
+          alert('Failed to submit appointment request. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error submitting appointment:', error);
+        alert('An error occurred. Please try again or call us directly.');
+      }
+    }
   };
 
   const renderServiceSelection = () => (
@@ -368,6 +431,22 @@ const BookAppointment: React.FC = () => {
           </div>
         )}
 
+        {selectedService === 'online' && (
+          <div className="bg-professional-blue/5 border border-professional-blue/20 p-6 rounded-lg">
+            <div className="flex items-start gap-3 mb-4">
+              <svg className="w-6 h-6 text-professional-blue flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <div>
+                <h3 className="font-semibold text-charcoal mb-1">Remote Online Notarization</h3>
+                <p className="text-sm text-charcoal/70">
+                  Complete your notarization securely from anywhere via video conference. You'll receive a secure link to join at your scheduled time.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div>
           <label className="block text-sm font-medium text-charcoal mb-2">Additional Notes</label>
           <textarea
@@ -392,7 +471,7 @@ const BookAppointment: React.FC = () => {
             type="submit"
             className="px-8 py-3 bg-professional-blue text-white hover:bg-professional-blue/90 transition-colors font-semibold"
           >
-            Confirm Appointment
+            {selectedService === 'online' ? 'Schedule RON Session' : 'Confirm Appointment'}
           </button>
         </div>
       </form>
@@ -400,7 +479,7 @@ const BookAppointment: React.FC = () => {
   );
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
       <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
         <div className="max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Schedule Your Appointment</h1>
@@ -410,7 +489,7 @@ const BookAppointment: React.FC = () => {
         </div>
         
         {!selectedService && renderServiceSelection()}
-        {selectedService && selectedService !== 'online' && renderAppointmentForm()}
+        {selectedService && renderAppointmentForm()}
       </div>
     </div>
   );

@@ -224,8 +224,8 @@ const ApostilleServices: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-professional-blue text-white rounded-full font-bold text-xl mb-4">1</div>
-              <h3 className="text-lg font-bold text-charcoal mb-2">Upload Documents</h3>
-              <p className="text-charcoal/70">Send your documents—we confirm eligibility and next steps.</p>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Secure Upload</h3>
+              <p className="text-charcoal/70">Send your documents through our encrypted portal. Only Bridge Notary accesses your files.</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-professional-blue text-white rounded-full font-bold text-xl mb-4">2</div>
@@ -242,8 +242,15 @@ const ApostilleServices: React.FC = () => {
       </section>
 
       {/* Quick Quiz CTA - Simplified */}
-      <section className="bg-professional-blue/10 py-20 md:py-28">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      <section className="bg-white py-20 md:py-28" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-3xl mx-auto px-6">
+          {/* Disclaimer */}
+          <div className="bg-charcoal/5 border-l-4 border-charcoal/30 p-6 mb-12 rounded-r-lg">
+            <p className="text-sm text-charcoal/70 leading-relaxed">
+              <span className="font-semibold text-charcoal">Important Disclaimer:</span> Bridge Notary is not a law firm and does not provide legal advice. We provide notarization and apostille services only. For questions about document requirements, visa applications, or legal implications specific to your situation, please consult with an immigration attorney or legal professional in your destination country.
+            </p>
+          </div>
+
           <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">Still Not Sure If You Need an Apostille?</h2>
           <p className="text-lg text-charcoal/70 mb-8">Take our quick 30-second quiz to find out what documents need authentication.</p>
           <button 
@@ -276,7 +283,7 @@ const ApostilleServices: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <button 
-              onClick={() => setShowContactForm(true)}
+              onClick={() => navigate('/apostille/quiz-start')}
               className="bg-white text-professional-blue hover:bg-off-white transition-all font-semibold text-lg py-4 px-10 relative z-50"
             >
               Get Started Now

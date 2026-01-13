@@ -80,8 +80,8 @@ const TrustSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {trustMarkers.map((marker, index) => (
-            <div key={index} className="py-4 group">
-              <div className="mb-4 text-professional-blue group-hover:scale-110 transition-transform">
+            <div key={index} className="py-4 group fade-in-up" style={{animationDelay: `${index * 0.08}s`}}>
+              <div className="mb-4 text-professional-blue group-hover:scale-110 transition-transform duration-300">
                 {marker.icon}
               </div>
               <h3 className="text-lg font-semibold text-charcoal mb-2">{marker.title}</h3>
@@ -97,7 +97,7 @@ const TrustSection = () => {
             <p className="text-charcoal/70">We work with title companies and lenders on customized rates and dedicated support.</p>
           </div>
           <div className="flex gap-4 whitespace-nowrap">
-            <a href="mailto:contact@bridgenotary.com" className="inline-flex items-center justify-center gap-3 bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold">
+            <a href="mailto:contact@bridgenotary.com" className="inline-flex items-center justify-center gap-3 bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold hover:shadow-lg hover:-translate-y-0.5">
               Contact B2B Team
             </a>
           </div>

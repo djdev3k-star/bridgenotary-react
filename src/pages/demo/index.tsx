@@ -18,7 +18,7 @@ const DemoPage: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-white text-neutral-900 pt-20">
+    <div className="w-full bg-white text-charcoal pt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
       <div className="max-w-4xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold text-proof mb-8">Interactive Demo</h1>
         

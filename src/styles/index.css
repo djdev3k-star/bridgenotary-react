@@ -255,6 +255,105 @@
   .scroll-animation {
     animation: scrollImage 30s linear infinite;
   }
+
+  /* Subtle entrance animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .fade-in-down {
+    animation: fadeInDown 0.6s ease-out forwards;
+  }
+
+  /* Stagger animations for list items */
+  .fade-in-up-delay-1 { animation-delay: 0.1s; }
+  .fade-in-up-delay-2 { animation-delay: 0.2s; }
+  .fade-in-up-delay-3 { animation-delay: 0.3s; }
+  .fade-in-up-delay-4 { animation-delay: 0.4s; }
+  .fade-in-up-delay-5 { animation-delay: 0.5s; }
+
+  /* Subtle underline animation */
+  @keyframes slideUnderline {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .link-underline {
+    position: relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: currentColor;
+    animation: slideUnderline 0.3s ease-out forwards;
+  }
+
+  /* Subtle icon pulse on hover */
+  @keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+
+  .icon-pulse:hover {
+    animation: iconPulse 0.4s ease-in-out;
+  }
+
+  /* Smooth border color transition */
+  .border-transition {
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* Subtle glow effect */
+  .subtle-glow {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .subtle-glow:hover {
+    box-shadow: 0 0 20px rgba(0, 85, 230, 0.1);
+  }
+
+  /* Text gradient animation */
+  @keyframes textGradient {
+    0% { background-position: 0% center; }
+    100% { background-position: 100% center; }
+  }
+
+  .text-gradient-animate {
+    background-size: 200% auto;
+    animation: textGradient 3s ease infinite;
+  }
 }
 #tawk-bubble-container,
 .tawk-min-container {

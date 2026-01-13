@@ -97,6 +97,7 @@ const PowerOfAttorneyPage = React.lazy(() => import("@/pages/services/power-of-a
 const WitnessPage = React.lazy(() => import("@/pages/services/witness"));
 const WhyBridgeNotaryPage = React.lazy(() => import("@/pages/why-bridge-notary"));
 const Pricing = React.lazy(() => import("@/pages/pricing"));
+const QuoteCalculator = React.lazy(() => import("@/pages/quote-calculator"));
 const BookAppointment = React.lazy(() => import("@/pages/book"));
 const Contact = React.lazy(() => import("@/pages/contact"));
 const Testimonials = React.lazy(() => import("@/pages/testimonials"));
@@ -107,6 +108,8 @@ const DemoPage = React.lazy(() => import("@/pages/demo"));
 const LoginPage = React.lazy(() => import("@/pages/login"));
 const ClientPortal = React.lazy(() => import("@/pages/client-portal"));
 const Sitemap = React.lazy(() => import("@/pages/sitemap"));
+const Privacy = React.lazy(() => import("@/pages/privacy"));
+const Terms = React.lazy(() => import("@/pages/terms"));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -151,7 +154,7 @@ function App() {
               <Route path="/loan-signing/modification" element={<LoanModificationSigningPage />} />
               <Route path="/loan-signing/commercial" element={<CommercialClosingSigningPage />} />
               <Route path="/loan-signing/property-tax" element={<PropertyTaxLoanSigningPage />} />
-              <Route path="/why" element={<WhyBridgeNotaryPage />} />
+              <Route path="/why-bridge-notary" element={<WhyBridgeNotaryPage />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/mobile" element={<MobileNotaryPage />} />
@@ -159,6 +162,7 @@ function App() {
               <Route path="/services/power-of-attorney" element={<PowerOfAttorneyPage />} />
               <Route path="/services/witness" element={<WitnessPage />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/quote" element={<QuoteCalculator />} />
               <Route path="/book" element={<BookAppointment />} />
               <Route path="/schedule" element={<SchedulePage />} />
               <Route path="/demo" element={<DemoPage />} />
@@ -169,6 +173,8 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/client-portal" element={<ClientPortal />} />
               <Route path="/sitemap" element={<Sitemap />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
             </Route>
             {/* 404 catch-all route */}
             <Route path="*" element={<NotFound />} />

@@ -177,3 +177,6 @@ logs
 
 # Local Netlify folder
 .netlify
+# Markdown documentation files
+*.md
+!README.md

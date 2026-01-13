@@ -46,7 +46,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
     <div className="w-full bg-white">
       <LoanSigningBreadcrumb />
       
-      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-professional-blue/20">
+      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-professional-blue/20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-24">
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-charcoal/60 mb-4">Loan Signing Services</p>
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-charcoal">{title}</h1>

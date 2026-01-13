@@ -1,77 +1,150 @@
 import React from 'react';
-import Layout from '@/components/layout/Layout';
 import { Link } from 'react-router-dom';
 
 const DualCitizenshipPage: React.FC = () => {
   return (
-    <Layout>
+    <>
       {/* Breadcrumbs */}
-      <section className="bg-off-white border-b border-professional-blue/20 px-6 py-4">
-        <div className="max-w-7xl mx-auto">
-          <nav className="text-sm text-charcoal/70 flex items-center gap-2">
-            <Link to="/" className="hover:text-professional-blue transition-colors">Home</Link>
-            <span>/</span>
-            <Link to="/services" className="hover:text-professional-blue transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-charcoal font-medium">Dual Citizenship</span>
-          </nav>
+      <section className="bg-off-white border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-3">
+          <div className="flex items-center gap-2 text-sm">
+            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Home</Link>
+            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Apostille</Link>
+            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <span className="text-charcoal/70">Dual Citizenship</span>
+          </div>
         </div>
       </section>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-charcoal min-h-[70vh] flex items-center bg-professional-blue/10 py-24 md:py-32">
-        {/* Background image overlay */}
-        <div className="absolute inset-0 z-0 opacity-40">
-          <img
-            src="/src/assets/images/dual-citizenship.png"
-            alt="Dual citizenship"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 z-10 pointer-events-none bg-professional-blue/60"></div>
-
-        {/* Content */}
-        <div className="max-w-7xl mx-auto py-20 px-6 relative z-20 w-full">
-          <div className="max-w-3xl text-left">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+      <section className="relative overflow-hidden bg-white text-charcoal w-full py-24 md:py-32" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-4 py-2 text-sm font-medium mb-6 border border-professional-blue/20">
+              <svg className="w-4 h-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C6.5 6.5 3.5 10.5 3.5 15S6.5 23.5 12 23.5s8.5-4 8.5-8.5-3-8.5-8.5-8.5z" />
+              </svg>
+              <span className="text-professional-blue">Apostille Services</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
               Apostille Support for Dual Citizenship
             </h1>
-            <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed">
+            <p className="text-lg text-charcoal/70 leading-relaxed">
               Prepare birth certificates, marriage records, background checks, and other civil documents for dual citizenship applications worldwide.
             </p>
+          </div>
+        </div>
+      </section>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/apostille" className="inline-flex items-center justify-center bg-white text-professional-blue hover:bg-off-white transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg">
-                View Apostille Services
-              </Link>
-              <Link to="/contact" className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all rounded text-lg py-3 px-8 font-semibold">
-                Talk to a Specialist
-              </Link>
+      {/* Content Section */}
+      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Common Dual Citizenship Documents</h2>
+            <p className="text-lg text-charcoal/70 leading-relaxed mb-8">
+              We help authenticate the core records required by consulates and embassies worldwide.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="border-l-2 border-professional-blue pl-6 py-4">
+                <h3 className="text-lg font-bold text-charcoal mb-3">Vital Records</h3>
+                <ul className="space-y-2 text-charcoal/70">
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Birth Certificates</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Marriage Records</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Divorce Decrees</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-professional-blue pl-6 py-4">
+                <h3 className="text-lg font-bold text-charcoal mb-3">Identity & Background</h3>
+                <ul className="space-y-2 text-charcoal/70">
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Passports</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Background Checks</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Notarized Copies</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="border-l-2 border-professional-blue pl-6 py-4">
+              <h3 className="text-lg font-bold text-charcoal mb-3">Consular Requirements</h3>
+              <ul className="space-y-2 text-charcoal/70">
+                <li className="flex items-start gap-2">
+                  <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Affidavits</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Residency Proofs</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Parental Consent & Lineage Documents</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Info blocks */}
-      <section className="bg-off-white py-20 lg:py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Common Dual Citizenship Documents</h2>
-          <p className="text-lg text-charcoal/70 mb-12 max-w-3xl">We help authenticate the core records required by consulates and embassies.</p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { title: 'Vital Records', desc: 'Birth certificates, marriage certificates, divorce decrees' },
-              { title: 'Identity & Background', desc: 'Passports, FBI/state background checks, notarized copies' },
-              { title: 'Consular Requirements', desc: 'Affidavits, residency proofs, parental consent or lineage documents' },
-            ].map((item) => (
-              <div key={item.title} className="p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
-                <h3 className="text-xl font-bold text-charcoal mb-2">{item.title}</h3>
-                <p className="text-charcoal/70">{item.desc}</p>
-              </div>
-            ))}
+      {/* CTA Section */}
+      <section className="py-20 lg:py-28 bg-professional-blue/10 w-full">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Ready to Apply for Dual Citizenship?</h2>
+          <p className="text-lg text-charcoal/70 mb-8 leading-relaxed">
+            Our apostille experts handle all your authentication needs. Get started today with our simple booking process.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/book" className="inline-flex items-center justify-center bg-professional-blue text-white hover:bg-professional-blue/90 transition-all rounded text-lg py-3 px-8 font-semibold">
+              Book Your Service
+            </Link>
+            <Link to="/contact" className="inline-flex items-center justify-center border-2 border-professional-blue text-professional-blue hover:bg-professional-blue hover:text-white transition-all rounded text-lg py-3 px-8 font-semibold">
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 

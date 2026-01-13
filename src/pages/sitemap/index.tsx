@@ -58,6 +58,36 @@ const Sitemap: React.FC = () => {
           title: 'Apostille Quiz Results',
           component: 'ApostilleQuizResultsPage',
           status: 'active'
+        },
+        {
+          path: '/destination-wedding',
+          title: 'Document Authentication for Destination Weddings',
+          component: 'DestinationWeddingPage',
+          status: 'active'
+        },
+        {
+          path: '/study-abroad',
+          title: 'Apostille & Document Certification for Study Abroad',
+          component: 'StudyAbroadPage',
+          status: 'active'
+        },
+        {
+          path: '/international-adoption',
+          title: 'International Adoption Document Authentication',
+          component: 'InternationalAdoptionPage',
+          status: 'active'
+        },
+        {
+          path: '/overseas-property',
+          title: 'Overseas Property Document Authentication',
+          component: 'OverseasPropertyPage',
+          status: 'active'
+        },
+        {
+          path: '/dual-citizenship',
+          title: 'Dual Citizenship Document Authentication',
+          component: 'DualCitizenshipPage',
+          status: 'active'
         }
       ]
     },
@@ -225,9 +255,9 @@ const Sitemap: React.FC = () => {
 
   const getStatusBadge = (status: 'active' | 'inactive' | 'alias') => {
     const badges = {
-      active: 'bg-green-100 text-green-800 border-green-200',
-      inactive: 'bg-neutral-100 text-neutral-600 border-neutral-200',
-      alias: 'bg-blue-100 text-blue-800 border-blue-200'
+      active: 'bg-professional-blue/10 text-professional-blue border-professional-blue/30',
+      inactive: 'bg-charcoal/10 text-charcoal/60 border-charcoal/20',
+      alias: 'bg-professional-blue/5 text-professional-blue border-professional-blue/20'
     };
     
     return (
@@ -299,53 +329,54 @@ const Sitemap: React.FC = () => {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Site Map</h1>
           <div className="h-1 w-20 bg-professional-blue mb-6"></div>
-          <p className="text-lg text-neutral-600 max-w-3xl">
+          <p className="text-lg text-charcoal/70 max-w-3xl">
             Complete directory of all routes and pages in the Bridge Notary application. 
-            Includes active pages, inactive/development pages, and route aliases.
+            Updated January 2026 with professional-blue/charcoal design refresh, spectral pattern enhancements, 
+            and consistent navigation across apostille service categories.
           </p>
         </div>
 
         {/* Statistics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          <div className="bg-white rounded p-6 shadow-sm border border-neutral-200">
-            <div className="text-3xl font-bold text-charcoal mb-1">{totalRoutes}</div>
-            <div className="text-sm text-neutral-600">Total Routes</div>
+          <div className="bg-white rounded border border-professional-blue/20 p-6 shadow-sm">
+            <div className="text-3xl font-bold text-professional-blue mb-1">{totalRoutes}</div>
+            <div className="text-sm text-charcoal/70">Total Routes</div>
           </div>
-          <div className="bg-white rounded p-6 shadow-sm border border-neutral-200">
-            <div className="text-3xl font-bold text-green-600 mb-1">{activeRoutes.length}</div>
-            <div className="text-sm text-neutral-600">Active Pages</div>
+          <div className="bg-white rounded border border-professional-blue/20 p-6 shadow-sm">
+            <div className="text-3xl font-bold text-professional-blue mb-1">{activeRoutes.length}</div>
+            <div className="text-sm text-charcoal/70">Active Pages</div>
           </div>
-          <div className="bg-white rounded p-6 shadow-sm border border-neutral-200">
-            <div className="text-3xl font-bold text-neutral-500 mb-1">{inactiveRoutes.length}</div>
-            <div className="text-sm text-neutral-600">Inactive Pages</div>
+          <div className="bg-white rounded border border-professional-blue/20 p-6 shadow-sm">
+            <div className="text-3xl font-bold text-charcoal/50 mb-1">{inactiveRoutes.length}</div>
+            <div className="text-sm text-charcoal/70">Inactive Pages</div>
           </div>
-          <div className="bg-white rounded p-6 shadow-sm border border-neutral-200">
-            <div className="text-3xl font-bold text-charcoal mb-1">{aliasRoutes.length}</div>
-            <div className="text-sm text-neutral-600">Route Aliases</div>
+          <div className="bg-white rounded border border-professional-blue/20 p-6 shadow-sm">
+            <div className="text-3xl font-bold text-professional-blue mb-1">{aliasRoutes.length}</div>
+            <div className="text-sm text-charcoal/70">Route Aliases</div>
           </div>
         </div>
 
         {/* All Routes */}
-        <div className="bg-white rounded shadow-sm border border-neutral-200 p-8 mb-8">
+        <div className="bg-white rounded border border-professional-blue/20 shadow-sm p-8 mb-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-semibold text-neutral-900">All Routes</h2>
+            <h2 className="text-2xl font-semibold text-charcoal">All Routes</h2>
             <div className="flex items-center gap-4 text-sm">
               <div className="flex items-center gap-2">
                 {getStatusBadge('active')}
-                <span className="text-neutral-600">Active</span>
+                <span className="text-charcoal/70">Active</span>
               </div>
               <div className="flex items-center gap-2">
                 {getStatusBadge('inactive')}
-                <span className="text-neutral-600">Inactive</span>
+                <span className="text-charcoal/70">Inactive</span>
               </div>
               <div className="flex items-center gap-2">
                 {getStatusBadge('alias')}
-                <span className="text-neutral-600">Alias</span>
+                <span className="text-charcoal/70">Alias</span>
               </div>
             </div>
           </div>
           
-          <div className="divide-y divide-neutral-100">
+          <div className="divide-y divide-professional-blue/10">
             {routes.map(route => renderRoute(route))}
           </div>
         </div>
@@ -353,7 +384,7 @@ const Sitemap: React.FC = () => {
         {/* Route Categories */}
         <div className="grid md:grid-cols-2 gap-6">
           {/* Primary Services */}
-          <div className="bg-white rounded shadow-sm border border-neutral-200 p-6">
+          <div className="bg-white rounded border border-professional-blue/20 shadow-sm p-6">
             <h3 className="text-xl font-semibold text-charcoal mb-4">Primary Services</h3>
             <ul className="space-y-2">
               <li><Link to="/ron" className="text-professional-blue hover:text-professional-blue/80">Remote Online Notarization</Link></li>
@@ -364,18 +395,18 @@ const Sitemap: React.FC = () => {
           </div>
 
           {/* Company Info */}
-          <div className="bg-white rounded shadow-sm border border-neutral-200 p-6">
+          <div className="bg-white rounded border border-professional-blue/20 shadow-sm p-6">
             <h3 className="text-xl font-semibold text-charcoal mb-4">Company Information</h3>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-professional-blue hover:text-professional-blue/80">About Us</Link></li>
-              <li><Link to="/why" className="text-professional-blue hover:text-professional-blue/80">Why Bridge Notary</Link></li>
+              <li><Link to="/why-bridge-notary" className="text-professional-blue hover:text-professional-blue/80">Why Bridge Notary</Link></li>
               <li><Link to="/testimonials" className="text-professional-blue hover:text-professional-blue/80">Testimonials</Link></li>
               <li><Link to="/pricing" className="text-professional-blue hover:text-professional-blue/80">Pricing</Link></li>
             </ul>
           </div>
 
           {/* Actions */}
-          <div className="bg-white rounded shadow-sm border border-neutral-200 p-6">
+          <div className="bg-white rounded border border-professional-blue/20 shadow-sm p-6">
             <h3 className="text-xl font-semibold text-charcoal mb-4">Take Action</h3>
             <ul className="space-y-2">
               <li><Link to="/login" className="text-professional-blue hover:text-professional-blue/80">Client Login</Link></li>
@@ -387,7 +418,7 @@ const Sitemap: React.FC = () => {
           </div>
 
           {/* Resources */}
-          <div className="bg-white rounded shadow-sm border border-neutral-200 p-6">
+          <div className="bg-white rounded border border-professional-blue/20 shadow-sm p-6">
             <h3 className="text-xl font-semibold text-charcoal mb-4">Resources & Help</h3>
             <ul className="space-y-2">
               <li><Link to="/faq" className="text-professional-blue hover:text-professional-blue/80">FAQ</Link></li>
@@ -398,14 +429,31 @@ const Sitemap: React.FC = () => {
         </div>
 
         {/* Technical Note */}
-        <div className="mt-8 bg-blue-50 border border-blue-200 rounded p-6">
-          <h3 className="text-lg font-semibold text-blue-900 mb-2">Technical Notes</h3>
-          <ul className="text-sm text-blue-800 space-y-1">
+        <div className="mt-8 bg-professional-blue/10 border border-professional-blue/30 rounded p-6">
+          <h3 className="text-lg font-semibold text-professional-blue mb-2">Recent Updates (January 2026)</h3>
+          <ul className="text-sm text-charcoal/70 space-y-1">
+            <li>✓ Professional-blue (#0055E6) & charcoal (#192252) design system implemented across all pages</li>
+            <li>✓ Left-border card design pattern (border-l-4 border-professional-blue) standardized</li>
+            <li>✓ Nearly invisible spectral lines pattern applied to 15+ major white sections</li>
+            <li>✓ Apostille layout unified with Navigation & Footer components for consistency</li>
+            <li>✓ Travel & Apostille services (Destination Wedding, Study Abroad, International Adoption, etc.) reorganized under ApostilleLayout</li>
+            <li>✓ Form styling refreshed with professional-blue borders and charcoal labels</li>
+            <li>✓ All deprecated color tokens removed (proof, electric-blue, muted-gold, neutral-*)</li>
+            <li>✓ Sitemap updated with complete route directory and accurate descriptions</li>
+          </ul>
+        </div>
+
+        {/* Technical Note */}
+        <div className="mt-4 bg-professional-blue/5 border border-professional-blue/20 rounded p-6">
+          <h3 className="text-lg font-semibold text-charcoal mb-2">Technical Architecture</h3>
+          <ul className="text-sm text-charcoal/70 space-y-1">
             <li>• All routes use React Router v7 with lazy loading for optimal performance</li>
-            <li>• Apostille quiz routes use a custom ApostilleLayout wrapper</li>
-            <li>• All other routes use the standard Layout component with Navigation and Footer</li>
+            <li>• Apostille & travel pages use ApostilleLayout wrapper for consistent presentation</li>
+            <li>• Primary routes use standard Layout component with Navigation and Footer</li>
+            <li>• RON and Home pages use custom layouts for unique hero sections</li>
             <li>• Inactive routes are defined but not currently linked in navigation</li>
             <li>• Alias routes redirect to the same component as their primary route</li>
+            <li>• Responsive design with mobile-first approach using Tailwind CSS</li>
           </ul>
         </div>
       </div>

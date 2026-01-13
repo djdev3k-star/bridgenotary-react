@@ -223,7 +223,7 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-28 bg-professional-blue/10">
+      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Stop Rescheduling. Get It Done Today.</h2>
           <p className="text-xl md:text-2xl text-charcoal/70 mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -237,10 +237,10 @@ const MobileNotaryPage = () => {
               Book Your Appointment
             </Link>
             <Link 
-              to="/ron" 
+              to="/book?service=ron&mode=online" 
               className="inline-block border-2 border-professional-blue text-professional-blue hover:bg-professional-blue hover:text-white font-bold py-5 px-12 text-xl transition-all"
             >
-              Or Try Online Notarization
+              Or Schedule Online Notarization
             </Link>
           </div>
         </div>

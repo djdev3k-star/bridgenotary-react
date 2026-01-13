@@ -1,34 +1,24 @@
 // Layout wrapper removed — App routes render Layout via Outlet
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { StartRONModal } from '@/features/ron/components';
 import InfoCard from '@/components/common/InfoCard';
 
 export default function RONPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className="w-full bg-white">
       {/* Breadcrumbs */}
       <div className="w-full bg-off-white border-b border-professional-blue/20">
-        <div className="max-w-6xl mx-auto px-6 py-3">
-          <div className="flex items-center gap-2 text-sm">
-            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Home</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-2 md:py-3">
+          <div className="flex items-center gap-2 text-xs md:text-sm overflow-x-auto">
+            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors whitespace-nowrap">Home</Link>
+            <svg className="w-3 h-3 md:w-4 md:h-4 text-charcoal/40 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <Link to="/services" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Services</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <Link to="/services" className="text-professional-blue hover:text-professional-blue/80 transition-colors whitespace-nowrap">Services</Link>
+            <svg className="w-3 h-3 md:w-4 md:h-4 text-charcoal/40 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="text-charcoal/70">Remote Online Notarization</span>
+            <span className="text-charcoal/70 whitespace-nowrap">RON</span>
           </div>
         </div>
       </div>
@@ -39,7 +29,7 @@ export default function RONPage() {
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-professional-blue via-professional-blue/80 to-professional-blue"></div>
         
         {/* Background image with overlay - cycling dual images */}
-        <div className="absolute inset-0 z-0 opacity-25">
+        <div className="absolute inset-0 z-0 opacity-40">
           <img 
             src="/images/secure-video-signing.png" 
             alt="" 
@@ -53,39 +43,36 @@ export default function RONPage() {
         </div>
         <div className="absolute inset-0 z-0 bg-professional-blue/80"></div>
         
-        <div className="max-w-7xl mx-auto py-28 px-6 relative z-20">
+        <div className="max-w-7xl mx-auto py-16 md:py-28 px-4 md:px-6 relative z-20">
           {/* Main Content */}
-          <div className="text-left max-w-3xl mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
+          <div className="text-left max-w-3xl mb-12 md:mb-16">
+            <h1 className="text-3xl md:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight drop-shadow-lg">
               Remote Online <span className="text-white">Notarization</span>
             </h1>
-            <p className="text-xl text-white mb-10 drop-shadow-md">
+            <p className="text-base md:text-xl text-white mb-8 md:mb-10 drop-shadow-md">
               Complete your notarization securely from anywhere, in minutes. Our platform ensures a legally-binding process with enterprise-grade security.
             </p>
 
-            <div className="mb-12">
-              <button
-                onClick={openModal}
-                className="border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all text-lg py-4 px-8 font-semibold pulse-button"
+            <div className="mb-8 md:mb-12">
+              <Link
+                to="/book?service=ron&mode=online"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all text-base md:text-lg py-3 md:py-4 px-6 md:px-8 font-semibold pulse-button whitespace-nowrap"
               >
-                <div className="flex items-center justify-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                  Schedule RON Session
-                </div>
-              </button>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Schedule a Session
+              </Link>
             </div>
 
-            {/* RON Modal */}
-            <StartRONModal isOpen={isModalOpen} onClose={closeModal} />
+            {/* RON Modal - kept for backward compatibility but not used */}
           </div>
 
           {/* Feature Grid */}
-          <div className="grid md:grid-cols-4 gap-6 max-w-5xl">
-            <div className="p-4 text-left">
-              <div className="p-3 w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 max-w-5xl text-center md:text-left">
+            <div className="p-3 md:p-4">
+              <div className="p-2 md:p-3 w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
@@ -127,7 +114,7 @@ export default function RONPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="w-full bg-professional-blue/10 py-20 md:py-28 relative">
+      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-7xl mx-auto px-6">
           {/* Breadcrumb Header */}
           <div className="mb-16">
@@ -152,12 +139,12 @@ export default function RONPage() {
               <div className="flex items-start gap-4 mb-6">
                 <div className="flex-shrink-0 text-professional-blue group-hover:scale-110 transition-transform">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
                 <div>
                   <span className="text-xs font-semibold text-professional-blue uppercase tracking-wide">Step 1</span>
-                  <h3 className="text-xl font-bold text-charcoal">Upload Documents</h3>
+                  <h3 className="text-xl font-bold text-charcoal">Secure Document Upload</h3>
                 </div>
               </div>
               <div className="mb-6">
@@ -167,27 +154,25 @@ export default function RONPage() {
                   className="w-full h-40 object-cover"
                 />
               </div>
-              <p className="text-charcoal/70 mb-4">
-                Upload your documents securely through our encrypted platform. <span className="text-sm text-charcoal/60">We support PDF, DOCX, and images.</span>
-              </p>
+              <p className="text-charcoal/70 mb-4 font-semibold">Your documents are transmitted and stored using encrypted, financial-grade security.</p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-charcoal/70">Bank-grade encryption</span>
+                  <span className="text-sm text-charcoal/70">Only Bridge Notary can access your files</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-charcoal/70">Multiple file formats supported</span>
+                  <span className="text-sm text-charcoal/70">AES-256 encryption at rest and in transit</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-charcoal/70">Instant upload confirmation</span>
+                  <span className="text-sm text-charcoal/70">PDF, DOCX, images supported</span>
                 </li>
               </ul>
             </div>
@@ -286,7 +271,7 @@ export default function RONPage() {
       </section>
 
       {/* Session Preparation Section */}
-      <section className="w-full bg-professional-blue/10 py-20 md:py-28">
+      <section className="w-full bg-white py-20 md:py-28" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-7xl mx-auto px-6">
           {/* Breadcrumb Header */}
           <div className="mb-16">
@@ -554,12 +539,12 @@ export default function RONPage() {
             Available 24/7 with certified notaries nationwide.
           </p>
           <div className="flex justify-center">
-            <button
-              onClick={openModal}
-              className="bg-professional-blue text-white hover:bg-professional-blue/90 transition-all font-semibold text-lg py-5 px-10"
+            <Link
+              to="/book?service=ron&mode=online"
+              className="inline-block bg-professional-blue text-white hover:bg-professional-blue/90 transition-all font-semibold text-lg py-5 px-10"
             >
-              Start RON Session
-            </button>
+              Schedule RON Session
+            </Link>
           </div>
         </div>
       </section>

@@ -123,8 +123,8 @@ const LoanSigningHero: React.FC = () => {
           <div className="hidden md:block fade-in-delay">
             <div className="space-y-6">
               <div className="border-l-4 border-professional-blue pl-6">
-                <div className="text-5xl font-bold text-white mb-2">2,500+</div>
-                <p className="text-white/90 text-lg">Successful Closings</p>
+                <div className="text-5xl font-bold text-white mb-2">Quick Turnaround</div>
+                <p className="text-white/90 text-lg">Fast, Efficient Closings</p>
               </div>
               <div className="border-l-4 border-professional-blue pl-6">
                 <div className="text-5xl font-bold text-white mb-2">Same-Day</div>

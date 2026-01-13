@@ -1,110 +1,151 @@
 import React from 'react';
-import Layout from '@/components/layout/Layout';
 import { Link } from 'react-router-dom';
 
 const StudyAbroadPage: React.FC = () => {
   return (
-    <Layout>
+    <>
       {/* Breadcrumbs */}
-      <section className="bg-off-white border-b border-charcoal/10">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center gap-2 text-sm text-charcoal/70">
-            <Link to="/" className="hover:text-professional-blue">Home</Link>
-            <span>/</span>
-            <Link to="/services" className="hover:text-professional-blue">Services</Link>
-            <span>/</span>
-            <span className="text-charcoal font-medium">Study Abroad</span>
+      <section className="bg-off-white border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-3">
+          <div className="flex items-center gap-2 text-sm">
+            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Home</Link>
+            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Apostille</Link>
+            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            <span className="text-charcoal/70">Study Abroad</span>
           </div>
         </div>
       </section>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 pb-32 md:pt-32 md:pb-48 bg-professional-blue">
-        {/* Background image overlay */}
-        <div className="absolute inset-0 z-0 opacity-40">
-          <img
-            src="/images/study-abroad.png"
-            alt="Study abroad"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 z-10 bg-professional-blue/70"></div>
-        
-        <div className="max-w-7xl mx-auto px-6 relative z-20 w-full">
-          <div className="max-w-3xl text-left">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Document Authentication for Study Abroad
+      <section className="relative overflow-hidden bg-white text-charcoal w-full py-24 md:py-32" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-4 py-2 text-sm font-medium mb-6 border border-professional-blue/20">
+              <svg className="w-4 h-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C6.5 6.5 3.5 10.5 3.5 15S6.5 23.5 12 23.5s8.5-4 8.5-8.5-3-8.5-8.5-8.5z" />
+              </svg>
+              <span className="text-professional-blue">Apostille Services</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
+              Academic Documents for Study Abroad
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-              Prepare your transcripts, diplomas, and identity documents for international programs with reliable apostille and legalization support.
+            <p className="text-lg text-charcoal/70 leading-relaxed">
+              Get your diplomas, transcripts, and academic credentials apostilled for international universities. We handle the certification so you can focus on your education.
             </p>
+          </div>
+        </div>
+      </section>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/apostille" className="inline-flex items-center justify-center gap-3 bg-white text-professional-blue hover:bg-off-white transition-all text-lg py-4 px-8 font-semibold">
-                View Apostille Services
-              </Link>
-              <Link to="/contact" className="inline-flex items-center justify-center gap-3 border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all text-lg py-4 px-8 font-semibold">
-                Talk to a Specialist
-              </Link>
+      {/* Content Section */}
+      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Documents We Apostille</h2>
+            <p className="text-lg text-charcoal/70 leading-relaxed mb-8">
+              Whether you're applying to universities abroad, completing exchange programs, or pursuing graduate studies, we ensure your academic credentials meet international standards.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="border-l-2 border-professional-blue pl-6 py-4">
+                <h3 className="text-lg font-bold text-charcoal mb-3">Academic Credentials</h3>
+                <ul className="space-y-2 text-charcoal/70">
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Diplomas & Degrees</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Transcripts</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Certificates</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-professional-blue pl-6 py-4">
+                <h3 className="text-lg font-bold text-charcoal mb-3">International Requirements</h3>
+                <ul className="space-y-2 text-charcoal/70">
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Official Hague Certification</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Fast Processing</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Expert Guidance</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Info blocks */}
-      <section className="py-20 md:py-28 bg-off-white">
-        <div className="max-w-6xl mx-auto px-6 mb-16">
-          <div className="inline-block mb-4">
-            <span className="text-sm font-semibold text-professional-blue uppercase tracking-widest bg-professional-blue/10 px-4 py-2">What You May Need</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Common Study Abroad Documents</h2>
-          <p className="text-xl text-charcoal/70 max-w-3xl">We help prepare and route the right documents for your destination country.</p>
-        </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Academic Records */}
-          <div className="border-l-2 border-professional-blue pl-6 py-4 group">
-            <div className="mb-4 text-professional-blue group-hover:scale-110 transition-transform">
-              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
+      {/* Why Choose Us */}
+      <section className="py-20 lg:py-28 bg-professional-blue/5">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-12">Why Choose Bridge Notary</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="border-l-2 border-professional-blue pl-6">
+              <h3 className="text-lg font-bold text-charcoal mb-3">Expert Knowledge</h3>
+              <p className="text-charcoal/70">We understand international apostille requirements and work with universities worldwide.</p>
             </div>
-            <h3 className="text-lg font-bold text-charcoal mb-2">Academic Records</h3>
-            <ul className="text-charcoal/70 text-sm space-y-1">
-              <li>Transcripts</li>
-              <li>Diplomas</li>
-              <li>Enrollment letters</li>
-            </ul>
-          </div>
-          {/* Identity & Legal */}
-          <div className="border-l-2 border-professional-blue pl-6 py-4 group">
-            <div className="mb-4 text-professional-blue group-hover:scale-110 transition-transform">
-              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+            <div className="border-l-2 border-professional-blue pl-6">
+              <h3 className="text-lg font-bold text-charcoal mb-3">Fast Turnaround</h3>
+              <p className="text-charcoal/70">Same-day service available for urgent study abroad applications.</p>
             </div>
-            <h3 className="text-lg font-bold text-charcoal mb-2">Identity & Legal</h3>
-            <ul className="text-charcoal/70 text-sm space-y-1">
-              <li>Birth certificates</li>
-              <li>Notarized copies</li>
-              <li>Affidavits</li>
-            </ul>
-          </div>
-          {/* Program Materials */}
-          <div className="border-l-2 border-professional-blue pl-6 py-4 group">
-            <div className="mb-4 text-professional-blue group-hover:scale-110 transition-transform">
-              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a1 1 0 011 1v8a1 1 0 01-1 1H8a1 1 0 01-1-1V8a1 1 0 011-1h8zm-2 4H8m0 0V8m0 3v3m0-3h8" />
-              </svg>
+            <div className="border-l-2 border-professional-blue pl-6">
+              <h3 className="text-lg font-bold text-charcoal mb-3">Reliable Service</h3>
+              <p className="text-charcoal/70">99% on-time delivery rate. Your documents arrive when you need them.</p>
             </div>
-            <h3 className="text-lg font-bold text-charcoal mb-2">Program Materials</h3>
-            <ul className="text-charcoal/70 text-sm space-y-1">
-              <li>Acceptance letters</li>
-              <li>Visa application support documents</li>
-            </ul>
+            <div className="border-l-2 border-professional-blue pl-6">
+              <h3 className="text-lg font-bold text-charcoal mb-3">Professional Support</h3>
+              <p className="text-charcoal/70">We answer questions and guide you through the apostille process.</p>
+            </div>
           </div>
         </div>
       </section>
-    </Layout>
+
+      {/* CTA Section */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Ready for Your Study Abroad Adventure?</h2>
+          <p className="text-lg text-charcoal/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Get your academic credentials apostilled and certified. We handle the paperwork so you can focus on your future.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/book?service=apostille" className="inline-flex items-center justify-center gap-2 bg-professional-blue text-white hover:bg-professional-blue/90 font-semibold py-4 px-8 transition-all">
+              Get Apostille Now
+            </Link>
+            <Link to="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-professional-blue text-professional-blue hover:bg-professional-blue hover:text-white font-semibold py-4 px-8 transition-all">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

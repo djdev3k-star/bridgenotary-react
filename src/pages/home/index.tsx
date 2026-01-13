@@ -5,12 +5,12 @@ import TrustSection from "@/components/common/TrustSection";
 const HomePage = () => (
   <div className="w-full bg-off-white">
     {/* Hero Section */}
-    <section className="relative overflow-hidden pt-20 pb-32 md:pt-32 md:pb-48 bg-off-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <section className="relative overflow-hidden pt-16 pb-20 md:pt-32 md:pb-48 bg-off-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-6 md:gap-12 items-center">
         {/* Left Content */}
         <div className="text-charcoal">
           {/* Credentials */}
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-wrap gap-2 mb-6 md:mb-10">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/10 border border-professional-blue/30 text-xs font-semibold text-professional-blue">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -23,21 +23,15 @@ const HomePage = () => (
               </svg>
               $100K E&O Insured
             </span>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/10 border border-professional-blue/30 text-xs font-semibold text-professional-blue">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Available 24/7
-            </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight text-charcoal">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight text-charcoal">
             Professional Notary Services <span className="text-professional-blue">You Can Trust</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg text-charcoal/70 mb-10 leading-relaxed max-w-lg font-light">
+          <p className="text-base md:text-lg text-charcoal/70 mb-8 md:mb-10 leading-relaxed max-w-lg font-light">
             Reliable loan signings, mobile notarization, and apostille services for individuals and businesses across the Dallas-Fort Worth area.
           </p>
 
@@ -88,7 +82,7 @@ const HomePage = () => (
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 relative">
           {/* Geometric overlays */}
           <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/3 -z-10"></div>
           
@@ -141,16 +135,17 @@ const HomePage = () => (
               ),
               title: "Mobile Notary",
               desc: "We come to you—home, office, or hospital",
-              link: "/services",
+              link: "/services/mobile",
               color: "from-professional-blue/5 to-transparent",
               borderColor: "border-professional-blue/20",
               iconColor: "text-professional-blue"
             },
-          ].map((item) => (
+          ].map((item, idx) => (
             <Link 
               key={item.title} 
               to={item.link}
-              className="group border-l-2 border-professional-blue pl-6 py-6 transition-all hover:scale-105 cursor-pointer"
+              className={`group border-l-2 border-professional-blue pl-6 py-6 transition-all hover:scale-105 cursor-pointer fade-in-up fade-in-up-delay-${idx + 1}`}
+              style={{animationDelay: `${idx * 0.1}s`}}
             >
               <div className="relative z-10">
                 <div className="mb-6 text-professional-blue group-hover:scale-110 transition-transform origin-left">
@@ -256,7 +251,7 @@ const HomePage = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="py-24 lg:py-32 bg-professional-blue/10">
+    <section className="py-24 lg:py-32 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
           Ready to Work With a Notary You Can Trust?

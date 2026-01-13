@@ -20,6 +20,8 @@ interface NotaryServicePageProps {
   highlights?: HighlightItem[];
   ctaText?: string;
   ctaLink?: string;
+  breadcrumbLabel?: string;
+  showSidebar?: boolean;
 }
 
 const NotaryServicePage: React.FC<NotaryServicePageProps> = ({
@@ -30,6 +32,8 @@ const NotaryServicePage: React.FC<NotaryServicePageProps> = ({
   highlights,
   ctaText = "Schedule an Appointment",
   ctaLink = "/book",
+  breadcrumbLabel = title,
+  showSidebar = true,
 }) => {
   return (
     <div className="w-full bg-white">
@@ -45,7 +49,7 @@ const NotaryServicePage: React.FC<NotaryServicePageProps> = ({
             <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="text-charcoal/70">{title}</span>
+            <span className="text-charcoal/70">{breadcrumbLabel}</span>
           </div>
         </div>
       </div>
@@ -71,8 +75,8 @@ const NotaryServicePage: React.FC<NotaryServicePageProps> = ({
       {/* Content Section */}
       <section className="py-20 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 space-y-12">
+          <div className={showSidebar ? "grid lg:grid-cols-3 gap-12" : "grid gap-12"}>
+            <div className={showSidebar ? "lg:col-span-2 space-y-12" : "space-y-12"}>
               {sections.map((section) => (
                 <article key={section.title} className="space-y-6 border-l-2 border-professional-blue pl-6 py-4">
                   <h2 className="text-3xl md:text-4xl font-bold text-charcoal leading-tight">{section.title}</h2>
@@ -84,9 +88,11 @@ const NotaryServicePage: React.FC<NotaryServicePageProps> = ({
                 </article>
               ))}
             </div>
-            <aside className="space-y-6">
-              <NotaryServicesSidebar currentService={title} />
-            </aside>
+            {showSidebar && (
+              <aside className="space-y-6">
+                <NotaryServicesSidebar currentService={title} />
+              </aside>
+            )}
           </div>
         </div>
       </section>

@@ -7,35 +7,6 @@ interface LoginForm {
   password: string;
 }
 
-// Tawk.to chat component
-const TawkChat: React.FC = () => {
-  useEffect(() => {
-    // Initialize Tawk.to embedded chat
-    if (!(window as any).Tawk_API) {
-      (window as any).Tawk_API = {};
-      (window as any).Tawk_LoadStart = new Date();
-      (window as any).Tawk_API.embedded = 'tawk_693c5584e0ccea197d8fdf4c';
-      
-      const s1 = document.createElement("script");
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/693c5584e0ccea197d8fdf4c/1jc9ra8th';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      document.body.appendChild(s1);
-    }
-  }, []);
-
-  return (
-    <div className="bg-white rounded border border-professional-blue/20 shadow-sm overflow-hidden">
-      <div className="p-5 border-b border-professional-blue/20 bg-professional-blue text-white">
-        <h4 className="text-lg font-semibold">Chat with Support</h4>
-        <p className="text-xs text-white/80 mt-1">Questions? Message our team directly</p>
-      </div>
-      <div id='tawk_693c5584e0ccea197d8fdf4c' className="h-96 overflow-hidden"></div>
-    </div>
-  );
-};
-
 const LoginPage: React.FC = () => {
   const [formData, setFormData] = useState<LoginForm>({ email: "", password: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -61,38 +32,52 @@ const LoginPage: React.FC = () => {
   };
 
   const renderUploadArea = () => (
-    <div className="bg-white rounded border border-professional-blue/20 p-6 shadow-sm">
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <h3 className="text-xl font-semibold text-charcoal">Secure Document Upload</h3>
-          <p className="text-sm text-charcoal/70">PDF, DOCX, and image files are accepted.</p>
+    <div className="bg-white rounded border border-professional-blue/20 p-8 shadow-sm">
+      <div className="mb-6">
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <h3 className="text-2xl font-bold text-charcoal mb-2">Secure Document Upload</h3>
+            <p className="text-base text-charcoal/70 mb-4">Your documents are transmitted and stored using encrypted, financial-grade security.</p>
+            <div className="flex items-center gap-2 p-3 bg-professional-blue/5 border border-professional-blue/20 rounded inline-flex">
+              <svg className="h-5 w-5 text-professional-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm font-semibold text-professional-blue">Only Bridge Notary can access your files</span>
+            </div>
+          </div>
+          <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-professional-blue/10 text-professional-blue border border-professional-blue/20 whitespace-nowrap">AES-256 Encryption</span>
         </div>
-        <span className="text-xs font-medium px-3 py-1 rounded bg-professional-blue/10 text-professional-blue border border-professional-blue/20">AES-256 at rest</span>
       </div>
 
-      <label className="block border-2 border-dashed border-professional-blue/20 rounded p-8 text-center cursor-pointer hover:border-professional-blue transition">
+      <label className="block border-2 border-dashed border-professional-blue/30 rounded-lg p-8 text-center cursor-pointer hover:border-professional-blue hover:bg-professional-blue/3 transition">
         <input type="file" multiple className="hidden" onChange={handleFileChange} aria-label="Upload documents" />
         <div className="flex flex-col items-center gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
           </svg>
           <div>
-            <p className="text-charcoal font-medium">Drag & drop to upload</p>
-            <p className="text-sm text-charcoal/70">or click to browse files</p>
+            <p className="text-charcoal font-semibold text-base">Upload Signing Documents</p>
+            <p className="text-sm text-charcoal/60 mt-1">Drag & drop or click to browse (PDF, DOCX, images)</p>
           </div>
         </div>
       </label>
 
       {files.length > 0 && (
-        <div className="mt-4 space-y-2">
-          <p className="text-sm font-medium text-charcoal/70">Files ready to send</p>
-          <ul className="space-y-1">
+        <div className="mt-6 pt-6 border-t border-professional-blue/20">
+          <p className="text-sm font-semibold text-charcoal mb-3 flex items-center gap-2">
+            <svg className="h-4 w-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Ready to send ({files.length})
+          </p>
+          <ul className="space-y-2">
             {files.map((file) => (
-              <li key={file.name} className="flex items-center gap-2 text-sm text-charcoal/70">
-                <svg className="h-4 w-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              <li key={file.name} className="flex items-center gap-2 text-sm text-charcoal/70 bg-professional-blue/5 p-2 rounded">
+                <svg className="h-4 w-4 text-professional-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                {file.name}
+                <span className="flex-1">{file.name}</span>
+                <span className="text-xs text-charcoal/50">({(file.size / 1024).toFixed(0)} KB)</span>
               </li>
             ))}
           </ul>
@@ -204,7 +189,6 @@ const LoginPage: React.FC = () => {
               </div>
 
               <div className="space-y-4">
-                <TawkChat />
                 {renderHelpResources()}
               </div>
             </div>

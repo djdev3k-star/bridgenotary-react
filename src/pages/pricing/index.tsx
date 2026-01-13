@@ -77,14 +77,14 @@ const Pricing = () => {
   return (
     <div className="w-full bg-professional-blue/10">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-professional-blue/10 text-charcoal w-screen left-1/2 -translate-x-1/2 py-24 md:py-32">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="relative overflow-hidden bg-professional-blue/10 text-charcoal w-screen left-1/2 -translate-x-1/2 py-16 md:py-32">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold tracking-[0.1em] uppercase text-professional-blue mb-4">Simple & Transparent</p>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-deep-navy">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
               Professional Pricing You Can Trust
             </h1>
-            <p className="text-xl text-charcoal/80 leading-relaxed">
+            <p className="text-xl text-white/80 leading-relaxed">
               Flat-rate pricing with no hidden fees. Know exactly what you're paying before you book.
             </p>
           </div>
@@ -99,7 +99,7 @@ const Pricing = () => {
             <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">Three professional packages designed for your needs.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
             {/* Geometric overlays for off-center effect */}
             <div className="absolute -top-20 -left-20 w-96 h-96 bg-professional-blue/5 -z-10"></div>
             <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-professional-blue/8 -z-10"></div>
@@ -198,7 +198,7 @@ const Pricing = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-12 text-center">Frequently Asked Questions</h2>
           
@@ -232,7 +232,7 @@ const Pricing = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 lg:py-32 bg-professional-blue/10 w-full flex items-center justify-center">
+      <section className="py-24 lg:py-32 bg-white w-full flex items-center justify-center" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-4xl px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
             Ready to Get Started?

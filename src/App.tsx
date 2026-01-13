@@ -98,6 +98,7 @@ const WitnessPage = React.lazy(() => import("@/pages/services/witness"));
 const WhyBridgeNotaryPage = React.lazy(() => import("@/pages/why-bridge-notary"));
 const Pricing = React.lazy(() => import("@/pages/pricing"));
 const QuoteCalculator = React.lazy(() => import("@/pages/quote-calculator"));
+const SeniorServicesLanding = React.lazy(() => import("@/pages/senior-services"));
 const BookAppointment = React.lazy(() => import("@/pages/book"));
 const Contact = React.lazy(() => import("@/pages/contact"));
 const Testimonials = React.lazy(() => import("@/pages/testimonials"));
@@ -163,6 +164,7 @@ function App() {
               <Route path="/services/witness" element={<WitnessPage />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/quote" element={<QuoteCalculator />} />
+              <Route path="/senior-services" element={<SeniorServicesLanding />} />
               <Route path="/book" element={<BookAppointment />} />
               <Route path="/schedule" element={<SchedulePage />} />
               <Route path="/demo" element={<DemoPage />} />

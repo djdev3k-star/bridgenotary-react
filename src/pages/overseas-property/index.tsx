@@ -1,9 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import overseasPropertyImage from '@/assets/images/overseas-property.png';
 
 const OverseasPropertyPage: React.FC = () => {
   return (
     <>
+      {/* Quick Links to Other Apostille Services */}
+      <section className="bg-professional-blue/5 border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="text-charcoal/70 font-medium">Apostille Services:</span>
+            <Link to="/dual-citizenship" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Dual Citizenship</Link>
+            <span className="text-charcoal/30">•</span>
+            <Link to="/study-abroad" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Study Abroad</Link>
+            <span className="text-charcoal/30">•</span>
+            <Link to="/international-adoption" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">International Adoption</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Breadcrumbs */}
       <section className="bg-off-white border-b border-professional-blue/20">
         <div className="max-w-6xl mx-auto px-6 py-3">
@@ -22,8 +37,9 @@ const OverseasPropertyPage: React.FC = () => {
       </section>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white text-charcoal w-full py-24 md:py-32" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="relative overflow-hidden text-charcoal w-full py-24 md:py-32 lg:py-40 flex items-center min-h-96" style={{backgroundImage: `url(${overseasPropertyImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-4 py-2 text-sm font-medium mb-6 border border-professional-blue/20">
               <svg className="w-4 h-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -123,6 +139,48 @@ const OverseasPropertyPage: React.FC = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Apostille Services */}
+      <section className="py-20 lg:py-28 bg-white border-t border-professional-blue/20 w-full">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">Other Apostille Services</h2>
+            <p className="text-lg text-charcoal/70">Explore our other international document authentication services</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/dual-citizenship" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+              <h3 className="text-xl font-bold text-charcoal mb-2">Dual Citizenship</h3>
+              <p className="text-charcoal/70 mb-4 text-sm">Authenticate documents for citizenship and immigration purposes</p>
+              <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+            <Link to="/study-abroad" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+              <h3 className="text-xl font-bold text-charcoal mb-2">Study Abroad</h3>
+              <p className="text-charcoal/70 mb-4 text-sm">Certify educational records for international university applications</p>
+              <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+            <Link to="/international-adoption" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+              <h3 className="text-xl font-bold text-charcoal mb-2">International Adoption</h3>
+              <p className="text-charcoal/70 mb-4 text-sm">Authenticate legal documents for international adoption proceedings</p>
+              <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
           </div>
         </div>
       </section>

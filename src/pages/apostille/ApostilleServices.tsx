@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 interface ScenarioType {
   situation: string;
@@ -172,77 +172,228 @@ const ApostilleServices: React.FC = () => {
   ];
 
   const painPoints = [
-    "Confusing Guidelines – Every state (and the U.S. State Dept.) has its own forms, fees, and mailing quirks.",
-    "Time-Sensitive Deadlines – Visas, court dates, and wedding planners don't wait for slow mail.",
-    "Costly Rejections – One missing seal and you pay for re-shipping, new copies, even trip rescheduling.",
-    "No Status Visibility – Government offices rarely tell you where your paperwork sits in the pile.",
-    "Lost Workdays – Queueing at county clerks or FedEx counters steals hours you could spend planning your move."
+    { title: "Confusing Guidelines", description: "Every state (and the U.S. State Dept.) has its own forms, fees, and mailing quirks." },
+    { title: "Time-Sensitive Deadlines", description: "Visas, court dates, and wedding planners don't wait for slow mail." },
+    { title: "Costly Rejections", description: "One missing seal and you pay for re-shipping, new copies, even trip rescheduling." },
+    { title: "No Status Visibility", description: "Government offices rarely tell you where your paperwork sits in the pile." },
+    { title: "Lost Workdays", description: "Queueing at county clerks or FedEx counters steals hours you could spend planning your move." },
+    { title: "Language Barriers", description: "Many foreign consulates require specific terminology and formatting in English or translated documents." }
   ];
 
   return (
     <div className="w-full bg-white">
 
-      {/* Pain Points Section - Redesigned with left-border cards */}
-      <section className="bg-off-white py-20 md:py-28">
+      {/* Pain Points Section - Government Document Aesthetic */}
+      <section className="w-full py-20 md:py-28 bg-white border-t border-professional-blue/10\" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.03) 2px, rgba(0, 85, 230, 0.03) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Why People Get Stuck</h2>
-          <p className="text-xl text-charcoal/70 mb-12 max-w-3xl">These common roadblocks stop most DIY apostille attempts. We've solved all of them.</p>
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">The Challenge</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Why DIY Apostille Fails</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">These obstacles derail most people. We eliminate every one.</p>
+          </div>
           
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {painPoints.map((point, index) => (
-              <div key={index} className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
-                <p className="text-charcoal leading-relaxed">{point}</p>
+              <div key={index} className="border-l border-professional-blue/30 pl-6 py-4 group hover:bg-professional-blue/3 transition-all rounded-sm">
+                <div className="flex items-start gap-4\">
+                  <div className="flex-shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center">
+                    <svg className="h-5 w-5 text-professional-blue" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M13.477 14.89A6 6 0 112.5 5.5a6 6 0 0110.977 9.39z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-charcoal mb-1 text-base">{point.title}</h3>
+                    <p className="text-charcoal/70 text-sm leading-relaxed">{point.description}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Solution Section - Redesigned */}
-      <section className="bg-white py-20 md:py-28" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      {/* Apostille Services Grid */}
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">How We Solve It</h2>
-          <p className="text-xl text-charcoal/70 mb-12 max-w-3xl">Every step is handled by our team so you don't have to.</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Apostille Services</h2>
+            <p className="text-xl text-charcoal/70 max-w-3xl mx-auto">Choose your situation below to learn more about how we handle your specific apostille needs.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link to="/overseas-property" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+              <h3 className="text-xl font-bold text-charcoal mb-2">Overseas Property</h3>
+              <p className="text-charcoal/70 mb-4 text-sm">Authenticate deeds and real estate documents for international property purchases</p>
+              <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+            <Link to="/dual-citizenship" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+              <h3 className="text-xl font-bold text-charcoal mb-2">Dual Citizenship</h3>
+              <p className="text-charcoal/70 mb-4 text-sm">Certify vital records and legal documents for citizenship applications</p>
+              <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+            <Link to="/study-abroad" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+              <h3 className="text-xl font-bold text-charcoal mb-2">Study Abroad</h3>
+              <p className="text-charcoal/70 mb-4 text-sm">Authenticate educational records for international university applications</p>
+              <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+            <Link to="/international-adoption" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+              <h3 className="text-xl font-bold text-charcoal mb-2">International Adoption</h3>
+              <p className="text-charcoal/70 mb-4 text-sm">Authenticate legal documents for international adoption proceedings</p>
+              <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          </div>
         </div>
-        
+      </section>
+
+      {/* Our Solution Section - Government Document Aesthetic */}
+      <section className="w-full py-20 md:py-28 bg-white\" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.03) 2px, rgba(0, 85, 230, 0.03) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">Our Process</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">How We Solve It</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">Every step handled by our expert team—you stay informed throughout.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {solutions.map((solution, index) => (
-              <div key={index} className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
-                <h3 className="text-lg font-bold text-charcoal mb-2">{solution.action}</h3>
-                <p className="text-charcoal/70">{solution.benefit}</p>
+              <div key={index} className="border-l border-professional-blue/30 pl-6 py-4 group hover:bg-professional-blue/3 transition-all rounded-sm\">
+                <div className="flex items-start gap-3\">
+                  <div className="flex-shrink-0 mt-0.5">
+                    {solution.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-base font-bold text-charcoal mb-1">{solution.action}</h3>
+                    <p className="text-sm text-charcoal/70 leading-relaxed">{solution.benefit}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works Section - Redesigned */}
-      <section className="bg-off-white py-20 md:py-28">
+      {/* Courier Services & Process Section */}
+      <section className="w-full bg-white py-20 md:py-28\" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.03) 2px, rgba(0, 85, 230, 0.03) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-16 text-center">How It Works</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-professional-blue text-white rounded-full font-bold text-xl mb-4">1</div>
-              <h3 className="text-lg font-bold text-charcoal mb-2">Secure Upload</h3>
-              <p className="text-charcoal/70">Send your documents through our encrypted portal. Only Bridge Notary accesses your files.</p>
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">End-to-End Delivery</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Your Apostille Journey</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">From submission to delivery, we handle every step with professional expertise and complete transparency.</p>
+          </div>
+
+          {/* Four-Step Process */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+            {[
+              {
+                step: '1',
+                title: 'You Submit',
+                desc: 'Upload documents securely or arrange local courier pickup in DFW.'
+              },
+              {
+                step: '2',
+                title: 'We Courier',
+                desc: 'Our professional network routes documents to the correct government office.'
+              },
+              {
+                step: '3',
+                title: 'Government Issues',
+                desc: 'Authority applies apostille seal and processes your documents.'
+              },
+              {
+                step: '4',
+                title: 'Return to You',
+                desc: 'Authenticated documents delivered securely with full tracking.'
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="border-l border-professional-blue/40 pl-6 group hover:bg-professional-blue/5 transition-all py-1">
+                <div className="flex items-start gap-4 mb-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-professional-blue text-white flex items-center justify-center font-bold text-sm">{item.step}</div>
+                </div>
+                <h3 className="font-bold text-charcoal mb-2">{item.title}</h3>
+                <p className="text-sm text-charcoal/70 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Why Our Network Matters */}
+          <div className="border-l border-professional-blue/40 pl-6 py-8 mb-12">
+            <h3 className="text-2xl font-bold text-charcoal mb-8">Why Our Courier Network Matters</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: 'Reliable Local Pickup',
+                  desc: 'Professional couriers throughout DFW. Flexible scheduling at your convenience.'
+                },
+                {
+                  title: 'Direct Routing',
+                  desc: 'We identify the correct office—no misdirected documents or processing delays.'
+                },
+                {
+                  title: 'Real-Time Tracking',
+                  desc: 'SMS updates and secure portal access from submission through delivery.'
+                },
+                {
+                  title: 'Secure Handling',
+                  desc: 'Tamper-evident packaging, chain-of-custody documentation, full accountability.'
+                }
+              ].map((benefit, idx) => (
+                <div key={idx} className="flex gap-4">
+                  <div className="flex-shrink-0 mt-1">
+                    <svg className="h-5 w-5 text-professional-blue" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-charcoal mb-1">{benefit.title}</h4>
+                    <p className="text-sm text-charcoal/70 leading-relaxed">{benefit.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-professional-blue text-white rounded-full font-bold text-xl mb-4">2</div>
-              <h3 className="text-lg font-bold text-charcoal mb-2">We Handle It</h3>
-              <p className="text-charcoal/70">Our team manages shipping, processing, and apostille application.</p>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-professional-blue text-white rounded-full font-bold text-xl mb-4">3</div>
-              <h3 className="text-lg font-bold text-charcoal mb-2">Receive Complete</h3>
-              <p className="text-charcoal/70">Apostilled documents delivered ready to use internationally.</p>
+          </div>
+
+          {/* Partnership Opportunity */}
+          <div className="border-l border-professional-blue/40 pl-6 py-8">
+            <div className="flex items-start gap-4">
+              <svg className="h-6 w-6 text-professional-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v2h8v-2zM16 11a2 2 0 100-4 2 2 0 000 4z" />
+              </svg>
+              <div className="flex-1">
+                <h4 className="font-bold text-charcoal mb-2">Join Our Professional Network</h4>
+                <p className="text-sm text-charcoal/70 mb-4">We're always looking for reliable couriers and notaries in the DFW area to expand our service capability. If you're interested in partnership opportunities, we'd love to talk.</p>
+                <Link to="/contact" className="inline-flex items-center gap-2 text-professional-blue hover:text-professional-blue/80 font-semibold text-sm transition-colors group">
+                  Explore Opportunities
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Quick Quiz CTA - Simplified */}
-      <section className="bg-white py-20 md:py-28" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="w-full bg-white py-20 md:py-28\" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.03) 2px, rgba(0, 85, 230, 0.03) 4px)'}}>
         <div className="max-w-3xl mx-auto px-6">
           {/* Disclaimer */}
           <div className="bg-charcoal/5 border-l-4 border-charcoal/30 p-6 mb-12 rounded-r-lg">

@@ -4,6 +4,20 @@ import { Link } from 'react-router-dom';
 const DualCitizenshipPage: React.FC = () => {
   return (
     <>
+      {/* Quick Links to Other Apostille Services */}
+      <section className="bg-professional-blue/5 border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="text-charcoal/70 font-medium">Apostille Services:</span>
+            <Link to="/overseas-property" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Overseas Property</Link>
+            <span className="text-charcoal/30">•</span>
+            <Link to="/study-abroad" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Study Abroad</Link>
+            <span className="text-charcoal/30">•</span>
+            <Link to="/international-adoption" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">International Adoption</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Breadcrumbs */}
       <section className="bg-off-white border-b border-professional-blue/20">
         <div className="max-w-6xl mx-auto px-6 py-3">
@@ -123,6 +137,48 @@ const DualCitizenshipPage: React.FC = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Apostille Services */}
+      <section className="py-20 lg:py-28 bg-white border-t border-professional-blue/20 w-full">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">Other Apostille Services</h2>
+            <p className="text-lg text-charcoal/70">Explore our other international document authentication services</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/overseas-property" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+              <h3 className="text-xl font-bold text-charcoal mb-2">Overseas Property</h3>
+              <p className="text-charcoal/70 mb-4 text-sm">Authenticate property deeds and real estate documents</p>
+              <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+            <Link to="/study-abroad" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+              <h3 className="text-xl font-bold text-charcoal mb-2">Study Abroad</h3>
+              <p className="text-charcoal/70 mb-4 text-sm">Certify educational records for international university applications</p>
+              <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+            <Link to="/international-adoption" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+              <h3 className="text-xl font-bold text-charcoal mb-2">International Adoption</h3>
+              <p className="text-charcoal/70 mb-4 text-sm">Authenticate legal documents for international adoption proceedings</p>
+              <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
           </div>
         </div>
       </section>

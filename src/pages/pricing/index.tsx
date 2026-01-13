@@ -75,24 +75,50 @@ const pricingTiers = [
 
 const Pricing = () => {
   return (
-    <div className="w-full bg-professional-blue/10">
+    <div className="w-full bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-professional-blue/10 text-charcoal w-screen left-1/2 -translate-x-1/2 py-16 md:py-32">
-        <div className="max-w-6xl mx-auto px-4 md:px-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-professional-blue via-professional-blue/95 to-professional-blue/90 text-white w-screen left-1/2 -translate-x-1/2 py-20 md:py-32 lg:py-40">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-30" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%)'}}></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-professional-blue/20 rounded-full -ml-40 -mb-40"></div>
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold tracking-[0.1em] uppercase text-professional-blue mb-4">Simple & Transparent</p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
-              Professional Pricing You Can Trust
+            <div className="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full mb-6 border border-white/20">
+              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm font-semibold text-white">Transparent & Competitive Pricing</span>
+            </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+              Professional Pricing<br />You Can Trust
             </h1>
-            <p className="text-xl text-white/80 leading-relaxed">
-              Flat-rate pricing with no hidden fees. Know exactly what you're paying before you book.
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 max-w-2xl">
+              Flat-rate pricing with zero hidden fees. Know exactly what you're paying before you book.
             </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#pricing-tiers" className="inline-flex items-center justify-center gap-2 bg-white text-professional-blue hover:bg-white/95 font-semibold py-4 px-8 rounded-lg transition-all shadow-lg hover:shadow-xl">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+                View Pricing Plans
+              </a>
+              <a href="/quote" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold py-4 px-8 rounded-lg transition-all">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3v3m-6-1v-7a2 2 0 012-2h12a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                </svg>
+                Get Custom Quote
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Main Pricing Tiers */}
-      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section id="pricing-tiers" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Choose Your Service Level</h2>

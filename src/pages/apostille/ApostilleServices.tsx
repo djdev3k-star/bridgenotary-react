@@ -434,7 +434,7 @@ const ApostilleServices: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <button 
-              onClick={() => navigate('/apostille/quiz-start')}
+              onClick={() => navigate('/book')}
               className="bg-white text-professional-blue hover:bg-off-white transition-all font-semibold text-lg py-4 px-10 relative z-50"
             >
               Get Started Now

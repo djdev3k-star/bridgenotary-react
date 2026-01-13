@@ -1,5 +1,6 @@
 // Service pricing data
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const coreServices = [
   { name: 'Refinance', fee: '$125–$150', notes: 'Per closing package' },
@@ -74,10 +75,39 @@ const pricingTiers = [
 ];
 
 const Pricing = () => {
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    // Handle anchor navigation on page load
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
+  
   return (
     <div className="w-full bg-white">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-professional-blue via-professional-blue/95 to-professional-blue/90 text-white w-screen left-1/2 -translate-x-1/2 py-20 md:py-32 lg:py-40">
+      {/* Sub-Navigation Links */}
+      <section className="bg-professional-blue/5 border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="text-charcoal/70 font-medium">Pricing By Service:</span>
+            <a href="#loan-signing" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Loan Signing</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#specialty-services" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Specialty Services</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#faq" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">FAQs</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-professional-blue via-professional-blue/95 to-professional-blue/90 text-white w-full py-20 md:py-32 lg:py-40">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-30" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%)'}}></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48"></div>
@@ -189,7 +219,7 @@ const Pricing = () => {
           </div>
 
           {/* Loan Signing Services */}
-          <div className="mb-16">
+          <div id="loan-signing" className="mb-16 scroll-mt-20">
             <h3 className="text-2xl font-bold text-charcoal mb-8">Loan Signing Services</h3>
             <div className="grid md:grid-cols-2 gap-4">
               {coreServices.map((service, idx) => (
@@ -205,7 +235,7 @@ const Pricing = () => {
           </div>
 
           {/* Add-On Services */}
-          <div>
+          <div id="specialty-services" className="scroll-mt-20">
             <h3 className="text-2xl font-bold text-charcoal mb-2">Add-On Services</h3>
             <p className="text-charcoal/70 mb-8">Optional services to enhance your signing experience.</p>
             <div className="grid md:grid-cols-3 gap-4">
@@ -224,7 +254,7 @@ const Pricing = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section id="faq" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-12 text-center">Frequently Asked Questions</h2>
           

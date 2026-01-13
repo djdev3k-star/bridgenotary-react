@@ -48,52 +48,76 @@ const Services = () => {
   const activeCategory = serviceCategories.find(cat => cat.id === activeTab);
 
   return (
-    <div className="w-full bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-      {/* Hero Section */}
-      <section className="py-12 md:py-20 border-b border-professional-blue/20">
-        <div className="max-w-6xl mx-auto px-4 md:px-6">
-          <span className="inline-block text-sm font-semibold text-professional-blue uppercase tracking-wider mb-3">Services</span>
-          <h1 className="text-3xl md:text-5xl font-bold text-charcoal mb-3 md:mb-4 leading-tight">
-            Our Professional Services
-          </h1>
-          <p className="text-base md:text-xl text-charcoal/70 max-w-3xl leading-relaxed mb-6 md:mb-8">
-            From mortgage closings to international document authentication—we handle every notarization need with expertise and reliability.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/book" className="button-primary inline-flex items-center justify-center gap-2 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+    <div className="w-full bg-white">
+      {/* Hero Section - Elegant & Purpose-Driven */}
+      <section className="w-full py-16 md:py-24 bg-gradient-to-b from-professional-blue/5 to-white border-b border-professional-blue/10" style={{backgroundImage: 'radial-gradient(circle at 15% 50%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-5xl mx-auto px-6">
+          {/* Header Section */}
+          <div className="mb-12 md:mb-16">
+            <span className="inline-block text-xs font-semibold text-professional-blue uppercase tracking-widest mb-4 bg-professional-blue/10 px-4 py-2 rounded-full">Professional Services</span>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-6 leading-tight">
+              Every Document.
+              <br />
+              <span className="text-professional-blue">Perfectly Notarized.</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-charcoal/70 max-w-2xl leading-relaxed">
+              From loan closings to international apostilles—we provide precision notarization services trusted by lenders, attorneys, and individuals across Texas.
+            </p>
+          </div>
+
+          {/* Trust Markers - Redesigned */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16 py-8 md:py-12 border-y border-professional-blue/10">
+            <div className="flex items-start gap-3">
+              <svg className="h-6 w-6 text-professional-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <h3 className="font-semibold text-charcoal text-sm md:text-base">NNA Certified</h3>
+                <p className="text-charcoal/60 text-xs md:text-sm">National Notary Association</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <svg className="h-6 w-6 text-professional-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <h3 className="font-semibold text-charcoal text-sm md:text-base">$100K E&O Insurance</h3>
+                <p className="text-charcoal/60 text-xs md:text-sm">Errors & Omissions covered</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <svg className="h-6 w-6 text-professional-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <h3 className="font-semibold text-charcoal text-sm md:text-base">Texas Commissioned</h3>
+                <p className="text-charcoal/60 text-xs md:text-sm">Licensed & bonded notary</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+            <Link 
+              to="/book" 
+              className="bg-professional-blue text-white hover:bg-professional-blue/90 font-semibold py-4 px-8 transition-all hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2 rounded-sm"
+            >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              Book an Appointment
+              Book a Service
             </Link>
-            <Link to="/contact" className="button-outline inline-flex items-center justify-center gap-2 hover:shadow-md transition-all">
+            <Link 
+              to="/contact" 
+              className="border-2 border-professional-blue/40 text-professional-blue hover:border-professional-blue/70 hover:bg-professional-blue/5 font-semibold py-4 px-8 transition-all flex items-center justify-center gap-2 rounded-sm"
+            >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              Contact Us
+              Request Quote
             </Link>
-          </div>
-
-          {/* Trust Markers */}
-          <div className="flex flex-wrap gap-4 md:gap-6 mt-6 md:mt-8 pt-6 md:pt-8 border-t border-professional-blue/20">
-            <div className="flex items-center gap-2 text-charcoal">
-              <svg className="h-5 w-5 text-professional-blue" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="font-semibold">NNA Certified</span>
-            </div>
-            <div className="flex items-center gap-2 text-charcoal">
-              <svg className="h-5 w-5 text-professional-blue" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="font-semibold">$100K E&O Insurance</span>
-            </div>
-            <div className="flex items-center gap-2 text-charcoal">
-              <svg className="h-5 w-5 text-professional-blue" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="font-semibold">Texas Commissioned</span>
-            </div>
           </div>
         </div>
       </section>

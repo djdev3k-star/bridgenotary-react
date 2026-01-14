@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/images/commloanFlyers2.png";
+const heroImage = "/images/commloanFlyers2.png";
 import TrustSection from "@/components/common/TrustSection";
 import { featureFlags } from "@/utils/featureFlags";
 

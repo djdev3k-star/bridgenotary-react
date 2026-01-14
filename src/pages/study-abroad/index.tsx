@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import studyAbroadImage from '@/assets/images/study-abroad.png';
+const studyAbroadImage = '/images/study-abroad.png';
 
 const StudyAbroadPage: React.FC = () => {
   return (

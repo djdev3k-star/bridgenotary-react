@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import internationalAdoptionImage from '@/assets/images/international-adoption.png';
+const internationalAdoptionImage = '/images/international-adoption.png';
 
 const InternationalAdoptionPage: React.FC = () => {
   return (

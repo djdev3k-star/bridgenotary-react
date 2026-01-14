@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import seniorsImage from '@/assets/images/seniors.png';
+const seniorsImage = '/images/seniors.png';
 
 interface LeadForm {
   facilityName: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import dualCitizenshipImage from '@/assets/images/dual-citizenship.png';
+const dualCitizenshipImage = '/images/dual-citizenship.png';
 
 const DualCitizenshipPage: React.FC = () => {
   return (

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoanSigningBreadcrumb from "@/features/loan-signing/components/LoanSigningBreadcrumb";
-import commLoanImage from '@/assets/images/commloanFlyers3.png';
-import stackLoanImage from '@/assets/images/stack-loan-documents.jpg';
-import commLoanFlyers from '@/assets/images/commloanFlyers.png';
+const commLoanImage = '/images/commloanFlyers3.png';
+const stackLoanImage = '/images/stack-loan-documents.jpg';
+const commLoanFlyers = '/images/commloanFlyers.png';
 
 interface ContentSection {
   title: string;

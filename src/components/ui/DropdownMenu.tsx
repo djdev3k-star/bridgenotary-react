@@ -38,23 +38,27 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
     if (!triggerRef.current || !menuRef.current) return;
 
     const triggerRect = triggerRef.current.getBoundingClientRect();
-    const menuRect = menuRef.current.getBoundingClientRect();
+    const menuHeight = 400; // Estimated height for calculation
     
     let top = triggerRect.bottom + 12; // 12px gap from trigger
     let left = triggerRect.left;
 
     // Prevent horizontal overflow
     const viewportWidth = window.innerWidth;
-    const rightEdge = left + Math.min(menuRect.width, viewportWidth * 0.96);
+    const menuWidth = Math.min(600, viewportWidth * 0.96);
+    const rightEdge = left + menuWidth;
     
     if (rightEdge > viewportWidth - 8) {
-      left = Math.max(8, viewportWidth - Math.min(menuRect.width, viewportWidth * 0.96) - 8);
+      left = Math.max(8, viewportWidth - menuWidth - 8);
     }
 
-    // Prevent vertical overflow
+    // Prevent vertical overflow - show above if not enough space below
     const viewportHeight = window.innerHeight;
-    if (top + menuRect.height > viewportHeight - 8) {
-      top = triggerRect.top - menuRect.height - 12;
+    const spaceBelow = viewportHeight - triggerRect.bottom;
+    
+    if (spaceBelow < menuHeight) {
+      // Not enough space below, show above
+      top = triggerRect.top - menuHeight - 12;
     }
 
     setPosition({ top, left });
@@ -158,6 +162,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
           style={{
             top: `${position.top}px`,
             left: `${position.left}px`,
+            minWidth: '280px',
             maxWidth: 'calc(100vw - 1rem)',
             maxHeight: 'calc(100vh - 2rem)',
             overflow: 'auto',

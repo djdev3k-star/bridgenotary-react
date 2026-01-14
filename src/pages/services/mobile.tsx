@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import loanFlyersImg from "@/assets/images/loanFlyers.png";
+const loanFlyersImg = "/images/loanFlyers.png";
 import { featureFlags } from "@/utils/featureFlags";
 
 const MobileNotaryPage = () => {

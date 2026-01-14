@@ -124,7 +124,7 @@ const UploadScreen: React.FC<UploadScreenProps> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F8FAFB',
   },
   scrollContent: {
     padding: 20,
@@ -133,26 +133,25 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333333',
+    color: '#192252', // charcoal
     marginBottom: 10,
     textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#666666',
+    color: '#192252B3', // charcoal/70
     textAlign: 'center',
     marginBottom: 30,
   },
   uploadArea: {
-    borderWidth: 2,
-    borderColor: '#E0E0E0',
-    borderStyle: 'dashed',
-    borderRadius: 10,
+    borderLeftWidth: 2,
+    borderLeftColor: '#0055E6', // professional-blue
+    paddingLeft: 16,
     padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 30,
-    backgroundColor: '#F9F9F9',
+    backgroundColor: '#0055E605', // professional-blue/3
   },
   documentPreview: {
     alignItems: 'center',
@@ -163,11 +162,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 5,
-    color: '#333',
+    color: '#192252', // charcoal
   },
   documentSize: {
     fontSize: 14,
-    color: '#666',
+    color: '#192252B3', // charcoal/70
     marginBottom: 15,
   },
   changeButton: {
@@ -181,35 +180,40 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     marginBottom: 8,
-    color: '#333',
+    color: '#192252', // charcoal
   },
   input: {
-    borderWidth: 1,
-    borderColor: '#DDD',
-    borderRadius: 8,
+    borderLeftWidth: 2,
+    borderLeftColor: '#0055E6', // professional-blue
+    paddingLeft: 16,
     padding: 15,
     fontSize: 16,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: 'transparent',
     marginBottom: 8,
+    borderTopWidth: 0,
+    borderRightWidth: 0,
+    borderBottomWidth: 1,
+    borderBottomColor: '#0055E61A', // professional-blue/10
   },
   formNote: {
     fontSize: 12,
-    color: '#888',
+    color: '#192252B3', // charcoal/70
     marginTop: 5,
   },
   supportedTypes: {
-    backgroundColor: '#F0F7FF',
+    backgroundColor: '#0055E60D', // professional-blue/5
     padding: 15,
-    borderRadius: 8,
+    borderLeftWidth: 2,
+    borderLeftColor: '#0055E6', // professional-blue
     marginBottom: 30,
   },
   supportedTitle: {
     fontWeight: '600',
     marginBottom: 5,
-    color: '#333',
+    color: '#192252', // charcoal
   },
   supportedList: {
-    color: '#666',
+    color: '#192252B3', // charcoal/70
   },
   buttonContainer: {
     width: '100%',

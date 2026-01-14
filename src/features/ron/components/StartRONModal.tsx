@@ -1,17 +1,17 @@
 /**
- * Start RON Modal Component
- * Collects signer information and initiates RON session
+ * Schedule RON Modal Component
+ * Collects signer information and schedules a RON session
  */
 
 import React, { useState } from 'react';
 import ronService from '@/services/ronService';
 
-interface StartRONModalProps {
+interface ScheduleRONModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose }) => {
+export const ScheduleRONModal: React.FC<ScheduleRONModalProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     signerName: '',
     signerEmail: '',
@@ -34,23 +34,23 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
     setError(null);
 
     try {
-      // Call backend to create RON transaction
+      // Call backend to schedule RON transaction
       const response = await ronService.startRON({
         signerName: formData.signerName,
         signerEmail: formData.signerEmail,
         signerPhone: formData.signerPhone || undefined,
-        transactionName: `RON - ${formData.signerName} - ${new Date().toLocaleDateString()}`,
+        transactionName: `Scheduled RON - ${formData.signerName} - ${new Date().toLocaleDateString()}`,
       });
 
       if (response.success && response.signerUrl) {
-        // Redirect to Proof's signer URL
+        // Redirect to Proof's scheduling link (or confirmation page)
         window.location.href = response.signerUrl;
       } else {
-        throw new Error(response.error || 'Failed to start RON session');
+        throw new Error(response.error || 'Failed to schedule RON session');
       }
     } catch (err: any) {
-      console.error('Error starting RON:', err);
-      setError(err.message || 'Failed to start RON session. Please try again.');
+      console.error('Error scheduling RON:', err);
+      setError(err.message || 'Failed to schedule RON session. Please try again.');
       setIsLoading(false);
     }
   };
@@ -59,7 +59,7 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="bg-white rounded shadow-2xl max-w-md w-full p-8 relative">
+      <div className="modal max-w-md w-full p-8 relative">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -73,8 +73,8 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
 
         {/* Modal content */}
         <div className="mb-6">
-          <h2 className="text-3xl font-bold text-proof mb-2">Start RON Session</h2>
-          <p className="text-neutral-600">Enter your information to begin your remote online notarization.</p>
+          <h2 className="text-3xl font-bold text-proof mb-2">Schedule RON Session</h2>
+          <p className="text-neutral-600">Enter your information to schedule your remote online notarization. We’ll send you a secure link to join at your chosen time.</p>
         </div>
 
         {error && (
@@ -149,14 +149,14 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Starting Session...
+                Scheduling Session...
               </>
             ) : (
               <>
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
-                Start RON Session
+                Schedule RON Session
               </>
             )}
           </button>
@@ -164,7 +164,7 @@ export const StartRONModal: React.FC<StartRONModalProps> = ({ isOpen, onClose })
 
         {/* Info text */}
         <p className="mt-6 text-xs text-neutral-500 text-center">
-          By continuing, you agree to our Terms of Service and Privacy Policy. You'll be redirected to our secure notarization platform.
+          By continuing, you agree to our Terms of Service and Privacy Policy. You’ll receive a secure link to your scheduled notarization session.
         </p>
       </div>
     </div>

@@ -28,24 +28,36 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
         
         <View style={styles.features}>
           <View style={styles.featureItem}>
-            <View style={styles.featureIcon}>
+            <View style={styles.featureBorder} />
+            <View style={styles.featureContent}>
               <Text style={styles.featureIconText}>📱</Text>
+              <View style={styles.featureTextWrapper}>
+                <Text style={styles.featureTitle}>Notarize Anywhere</Text>
+                <Text style={styles.featureText}>Complete documents from your device</Text>
+              </View>
             </View>
-            <Text style={styles.featureText}>Notarize documents from anywhere</Text>
           </View>
           
           <View style={styles.featureItem}>
-            <View style={styles.featureIcon}>
+            <View style={styles.featureBorder} />
+            <View style={styles.featureContent}>
               <Text style={styles.featureIconText}>🔒</Text>
+              <View style={styles.featureTextWrapper}>
+                <Text style={styles.featureTitle}>Bank-Grade Security</Text>
+                <Text style={styles.featureText}>Military-grade encryption</Text>
+              </View>
             </View>
-            <Text style={styles.featureText}>Secure identity verification</Text>
           </View>
           
           <View style={styles.featureItem}>
-            <View style={styles.featureIcon}>
+            <View style={styles.featureBorder} />
+            <View style={styles.featureContent}>
               <Text style={styles.featureIconText}>⏱️</Text>
+              <View style={styles.featureTextWrapper}>
+                <Text style={styles.featureTitle}>Lightning Fast</Text>
+                <Text style={styles.featureText}>5-minute average sessions</Text>
+              </View>
             </View>
-            <Text style={styles.featureText}>Complete in minutes, not days</Text>
           </View>
         </View>
         
@@ -63,7 +75,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F8FAFB',
   },
   content: {
     flex: 1,
@@ -79,13 +91,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#333333',
+    color: '#192252', // charcoal
     marginBottom: 10,
     textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#666666',
+    color: '#192252B3', // charcoal/70
     textAlign: 'center',
     marginBottom: 40,
   },
@@ -95,25 +107,38 @@ const styles = StyleSheet.create({
   },
   featureItem: {
     flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20,
+    alignItems: 'flex-start',
+    marginBottom: 24,
+    paddingLeft: 12,
+    borderLeftWidth: 2,
+    borderLeftColor: '#0055E6', // professional-blue
   },
-  featureIcon: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: '#f0f7ff', // light blue
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 15,
+  featureBorder: {
+    position: 'absolute',
+  },
+  featureContent: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    flex: 1,
   },
   featureIconText: {
-    fontSize: 20,
+    fontSize: 28,
+    marginRight: 12,
+    marginTop: 4,
+  },
+  featureTextWrapper: {
+    flex: 1,
+  },
+  featureTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#192252', // charcoal
+    marginBottom: 4,
   },
   featureText: {
-    fontSize: 16,
-    color: '#444444',
-    flex: 1,
+    fontSize: 14,
+    color: '#192252B3', // charcoal/70
+    lineHeight: 20,
   },
   buttonContainer: {
     width: '100%',

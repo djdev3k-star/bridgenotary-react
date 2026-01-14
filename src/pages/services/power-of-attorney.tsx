@@ -63,12 +63,14 @@ const PowerOfAttorneyPage = () => {
   return (
     <NotaryServicePage
       title="Power of Attorney Notarization"
+      breadcrumbLabel="Power of Attorney"
       subtitle="Expert POA Document Services"
       heroSummary="Grant trusted individuals the authority to act on your behalf with properly notarized power of attorney documents. We handle financial, medical, and legal POA documents with precision and ensure your wishes are legally protected."
       sections={sections}
       highlights={highlights}
       ctaText="Book POA Notarization"
       ctaLink="/book?service=power-of-attorney"
+      showSidebar={false}
     />
   );
 };

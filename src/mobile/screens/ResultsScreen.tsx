@@ -153,7 +153,7 @@ const ResultsScreen: React.FC<ResultsScreenProps> = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F8FAFB',
   },
   scrollContent: {
     padding: 20,
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: '#E8F5E9',
+    backgroundColor: '#0055E60D', // professional-blue/5
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20,
@@ -179,13 +179,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333333',
+    color: '#192252', // charcoal
     marginBottom: 15,
     textAlign: 'center',
   },
   message: {
     fontSize: 16,
-    color: '#666666',
+    color: '#192252B3', // charcoal/70
     textAlign: 'center',
     marginBottom: 20,
   },
@@ -195,26 +195,26 @@ const styles = StyleSheet.create({
   },
   sessionInfoLabel: {
     fontSize: 14,
-    color: '#666',
+    color: '#192252B3', // charcoal/70
     marginRight: 5,
   },
   sessionInfoValue: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#333',
-    backgroundColor: '#F5F5F5',
+    color: '#0055E6', // professional-blue
+    backgroundColor: '#0055E605', // professional-blue/3
     paddingHorizontal: 8,
     paddingVertical: 4,
-    borderRadius: 4,
+    borderRadius: 0, // Clean look
   },
   documentPreview: {
-    backgroundColor: '#F9F9F9',
-    borderRadius: 10,
+    backgroundColor: '#0055E605', // professional-blue/3
+    borderLeftWidth: 2,
+    borderLeftColor: '#0055E6', // professional-blue
+    paddingLeft: 16,
     padding: 20,
     marginBottom: 25,
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#EEEEEE',
   },
   documentPreviewHeader: {
     alignItems: 'center',
@@ -223,12 +223,12 @@ const styles = StyleSheet.create({
   documentPreviewTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#192252', // charcoal
     marginBottom: 5,
   },
   documentPreviewSubtitle: {
     fontSize: 14,
-    color: '#666',
+    color: '#192252B3', // charcoal/70
   },
   documentIconContainer: {
     width: 120,
@@ -247,14 +247,16 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   auditButton: {
-    backgroundColor: '#6200EA',
+    backgroundColor: '#0055E6', // professional-blue
   },
   shareButton: {
-    backgroundColor: '#00897B',
+    backgroundColor: '#0055E6', // professional-blue
   },
   infoContainer: {
-    backgroundColor: '#F0F7FF',
-    borderRadius: 10,
+    backgroundColor: '#0055E60D', // professional-blue/5
+    borderLeftWidth: 2,
+    borderLeftColor: '#0055E6', // professional-blue
+    paddingLeft: 16,
     padding: 20,
     marginBottom: 30,
   },
@@ -262,11 +264,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 15,
-    color: '#333',
+    color: '#192252', // charcoal
   },
   infoItem: {
     fontSize: 14,
-    color: '#555',
+    color: '#192252B3', // charcoal/70
     marginBottom: 10,
     lineHeight: 20,
   },

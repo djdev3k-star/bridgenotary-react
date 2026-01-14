@@ -16,18 +16,27 @@ export default {
         fadeIn: 'fadeIn 0.1s ease-out'
       },
       colors: {
-        'electric-blue': '#0046fa',
-        'hover-blue': '#1437c0',
-        'light-headings-text': '#f9f9f7',
-        gold: '#FFD700',
+        // Professional color palette - Deep navy, muted gold, professional blue
+        'deep-navy': '#1A2B4D',
+        'professional-blue': '#0055E6',
+        'hover-blue': '#0049CC',
+        'muted-gold': '#D4AF37',
         'gold-dark': '#BFA100',
+        'charcoal': '#2C3E50',
+        'soft-gray': '#7F8C8D',
+        'light-headings-text': '#f9f9f7',
+        
+        // Legacy colors (maintained for backward compatibility)
+        'electric-blue': '#0055E6',
+        'light-gray': '#ECF0F1',
+        gold: '#D4AF37',
         'royal-blue': '#274B8C',
         proof: {
-          DEFAULT: '#192252', // Proof.com dark blue
-          light: '#2A3163',
+          DEFAULT: '#1A2B4D', // Updated to deep navy
+          light: '#2C3E50',   // Charcoal
         },
         neutral: {
-          50: '#FAFAFA',
+          50: '#F8F9FA',      // Off-white
           100: '#F4F4F5',
           200: '#E4E4E7',
           300: '#D4D4D8',
@@ -36,9 +45,9 @@ export default {
           700: '#3F3F46',
           900: '#18181B',
         },
-        primary: '#2563eb',
-        secondary: '#1e40af',
-        accent: '#3b82f6',
+        primary: '#0055E6',
+        secondary: '#1A2B4D',
+        accent: '#D4AF37',
         success: '#10b981',
       },
       // Tighter, consistent radii across the site

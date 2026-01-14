@@ -1,4 +1,5 @@
 // BookingSidebar retired; remove sidebar usage
+import { Link } from 'react-router-dom';
 
 const resources = [
   { name: "Fee Sheet (PDF)", link: "/downloads/fee-sheet.pdf" },
@@ -14,7 +15,7 @@ const Resources = () => (
           <div className="card">
             <p className="text-neutral-800">Looking for Remote Online Notarization details? Visit our updated RON page.</p>
             <div className="mt-4">
-              <a href="/ron" className="button-primary inline-block">Go to RON</a>
+              <Link to="/ron" className="button-primary inline-block">Go to RON</Link>
             </div>
           </div>
     </div>

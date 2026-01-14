@@ -85,7 +85,7 @@ const ConfirmationScreen: React.FC<ConfirmationScreenProps> = ({ navigation, rou
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F8FAFB',
   },
   content: {
     flex: 1,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor: '#F0F7FF',
+    backgroundColor: '#0055E60D', // professional-blue/5
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20,
@@ -112,13 +112,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333333',
+    color: '#192252', // charcoal
     marginBottom: 15,
     textAlign: 'center',
   },
   message: {
     fontSize: 16,
-    color: '#666666',
+    color: '#192252B3', // charcoal/70
     textAlign: 'center',
     marginBottom: 20,
   },
@@ -129,36 +129,39 @@ const styles = StyleSheet.create({
   },
   sessionInfoLabel: {
     fontSize: 14,
-    color: '#666',
+    color: '#192252B3', // charcoal/70
     marginRight: 5,
   },
   sessionInfoValue: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#333',
-    backgroundColor: '#F5F5F5',
+    color: '#0055E6', // professional-blue
+    backgroundColor: '#0055E605', // professional-blue/3
     paddingHorizontal: 8,
     paddingVertical: 4,
-    borderRadius: 4,
+    borderRadius: 0, // Remove border radius for clean look
   },
   statusContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#F0F7FF',
+    backgroundColor: '#0055E605', // professional-blue/3
     paddingHorizontal: 15,
     paddingVertical: 10,
-    borderRadius: 20,
+    borderLeftWidth: 2,
+    borderLeftColor: '#0055E6', // professional-blue
   },
   statusText: {
     marginLeft: 8,
     fontSize: 14,
     fontWeight: '500',
-    color: '#0057B8',
+    color: '#0055E6', // professional-blue
   },
   instructionsContainer: {
     width: '100%',
-    backgroundColor: '#F9F9F9',
-    borderRadius: 10,
+    backgroundColor: '#FFE6E6', // soft warning color
+    borderLeftWidth: 2,
+    borderLeftColor: '#FF6B6B', // complementary accent
+    paddingLeft: 16,
     padding: 20,
     marginBottom: 30,
   },
@@ -166,11 +169,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 15,
-    color: '#333',
+    color: '#192252', // charcoal
   },
   instructionItem: {
     fontSize: 14,
-    color: '#555',
+    color: '#192252B3', // charcoal/70
     marginBottom: 10,
     lineHeight: 20,
   },

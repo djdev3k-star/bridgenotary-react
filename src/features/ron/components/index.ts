@@ -2,4 +2,4 @@ export * from './RONComponents.types';
 export * from './FeatureCard';
 export * from './Stat';
 export * from './IndustryCard';
-export { StartRONModal } from './StartRONModal';
+export { ScheduleRONModal as StartRONModal } from './StartRONModal';

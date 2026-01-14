@@ -62,12 +62,14 @@ const EstateTrustPage = () => {
   return (
     <NotaryServicePage
       title="Estate & Trust Notarization"
+      breadcrumbLabel="Estate & Trust"
       subtitle="Professional, Compassionate Care"
       heroSummary="Protect your family's future with expert notarization of wills, trusts, healthcare directives, and powers of attorney. We handle sensitive estate documents with discretion and bring our services directly to your location."
       sections={sections}
       highlights={highlights}
       ctaText="Schedule Estate Notarization"
       ctaLink="/book?service=estate-trust"
+      showSidebar={false}
     />
   );
 };

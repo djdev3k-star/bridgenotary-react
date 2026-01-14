@@ -1,13 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Layout from '@/components/layout/Layout';
 
 const ApostilleQuizPage: React.FC = () => {
   const navigate = useNavigate();
   
   return (
-    <Layout>
-      <section className="py-12 md:py-16 bg-neutral-50">
+    <section className="py-12 md:py-16 bg-neutral-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
@@ -135,8 +133,7 @@ const ApostilleQuizPage: React.FC = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
-};
-
-export default ApostilleQuizPage;
+    );
+  };
+  
+  export default ApostilleQuizPage;

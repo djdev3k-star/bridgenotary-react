@@ -49,6 +49,124 @@ Bridge Notary is a professional notary service provider's website built with:
 
 ## Styling Guidelines
 
+### Design System (Current Standard)
+
+The Bridge Notary website uses a unified design system based on minimal aesthetics with professional-blue accents and charcoal typography.
+
+#### Color System
+
+- **Primary Accent**: `professional-blue` (#0055E6) - Used for icons, borders, links, hover states
+- **Text Primary**: `charcoal` (#192252) - All headings and primary text
+- **Text Secondary**: `charcoal/70` (#192252B3) - Supporting text, descriptions
+- **Background Accent**: `professional-blue/10` (#0055E61A) - Full-width section backgrounds, subtle overlays
+- **Borders**: `professional-blue/20` (#0055E633) - Light borders on images, subtle dividers
+- **Off-White**: `off-white` - Footer and dark mode backgrounds
+
+#### Card Design Pattern
+
+**OLD STYLE** (Deprecated):
+```tsx
+className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white"
+```
+
+**NEW STYLE** (Current Standard):
+```tsx
+className="border-l-2 border-professional-blue pl-6 group"
+```
+
+- Remove: `rounded`, `shadow-sm`, `bg-white`, `hover:shadow-md`, all neutral colors
+- Add: `border-l-2 border-professional-blue` (thin left border accent)
+- Add: `pl-6` (padding-left for offset from border)
+- Add: `group` for hover state management
+
+#### Icon Styling
+
+```tsx
+// Inside cards with group class
+<svg className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform">
+```
+
+- Color: `text-professional-blue` (always)
+- Hover Effect: `group-hover:scale-110 transition-transform` (subtle scale on card hover)
+
+#### Section Backgrounds
+
+**Full-Width Sections** with light background:
+```tsx
+<section className="w-full bg-professional-blue/10 py-20 md:py-28">
+  <div className="max-w-7xl mx-auto px-6">
+    {/* content */}
+  </div>
+</section>
+```
+
+- `w-full` extends background to gutters
+- `bg-professional-blue/10` for subtle accent
+- `py-20 md:py-28` for consistent vertical spacing
+- Inner container with `max-w-7xl mx-auto px-6` for content
+
+#### Text Hierarchy
+
+```tsx
+// Heading
+<h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Title</h2>
+
+// Description
+<p className="text-xl text-charcoal/70 max-w-3xl">Description</p>
+
+// List Items
+<li className="flex items-start gap-2">
+  <svg className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" />
+  <span className="text-sm text-charcoal/70">List item text</span>
+</li>
+```
+
+#### Component Classes
+
+1. **TailwindCSS**: Primary styling method with custom components and theme:
+
+   - Custom color palette: `professional-blue`, `charcoal`, `off-white`, `muted-gold`
+   - Typography system with consistent heading styles
+   - Component classes defined in `/src/styles/index.css`
+
+2. **Component Classes**: Reusable styles in `@layer components`:
+
+   ```css
+   /* Example from index.css */
+   .button-primary {
+     @apply button bg-professional-blue text-white hover:bg-blue-600;
+   }
+   ```
+
+3. **Animation Classes**: Predefined animations for UI elements:
+   - `fade-in`, `fade-in-delay`, `pulse-button`, `floating-element`
+   - Used for staggered entrance animations and hover effects
+
+### Mobile/React Native
+
+Mobile screens use React Native StyleSheet with equivalent design tokens:
+
+```javascript
+// Colors
+charcoal: '#192252'
+charcoalLight: '#192252B3' // charcoal/70
+professionalBlue: '#0055E6'
+```
+
+Card styling in mobile:
+```javascript
+featureItem: {
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  marginBottom: 24,
+  paddingLeft: 12,
+  borderLeftWidth: 2,
+  borderLeftColor: '#0055E6', // professional-blue
+}
+```
+
+## Styling Guidelines
+
 1. **TailwindCSS**: Primary styling method with custom components and theme:
 
    - Custom color palette using Bridge Notary brand colors (`proof`, `gold`, `electric-blue`)

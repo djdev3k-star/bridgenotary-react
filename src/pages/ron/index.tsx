@@ -1,19 +1,34 @@
 // Layout wrapper removed — App routes render Layout via Outlet
-import { useState } from 'react';
-import { StartRONModal } from '@/features/ron/components';
+import { Link } from 'react-router-dom';
 import InfoCard from '@/components/common/InfoCard';
 
 export default function RONPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="w-full bg-white">
-      {/* Hero Section - Full Viewport Width with Deep Blue Gradient */}
+      {/* Sub-Navigation */}
+      <section className="bg-professional-blue/10 border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="text-charcoal/70 font-medium">Remote Notarization:</span>
+            <a href="#how-it-works" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">How It Works</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#preparation" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Preparation</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#benefits" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Benefits</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#schedule" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Schedule</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Section - Full Viewport Width with Professional Blue Gradient */}
       <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
-        {/* Deep blue gradient background covering full viewport */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-proof via-electric-blue to-electric-blue"></div>
+        {/* Professional blue gradient background covering full viewport */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-professional-blue via-professional-blue/80 to-professional-blue"></div>
         
         {/* Background image with overlay - cycling dual images */}
-        <div className="absolute inset-0 z-0 opacity-70">
+        <div className="absolute inset-0 z-0 opacity-40">
           <img 
             src="/images/secure-video-signing.png" 
             alt="" 
@@ -25,41 +40,38 @@ export default function RONPage() {
             className="absolute inset-0 w-full h-full object-cover ron-cycle-secondary"
           />
         </div>
-        <div className="absolute inset-0 z-0 bg-electric-blue/70"></div>
+        <div className="absolute inset-0 z-0 bg-professional-blue/80"></div>
         
-        <div className="max-w-7xl mx-auto py-28 px-6 relative z-20">
+        <div className="max-w-7xl mx-auto py-16 md:py-28 px-4 md:px-6 relative z-20">
           {/* Main Content */}
-          <div className="text-left max-w-3xl mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
-              Remote Online <span className="text-gold">Notarization</span>
+          <div className="text-left max-w-3xl mb-12 md:mb-16">
+            <h1 className="text-3xl md:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight drop-shadow-lg">
+              Remote Online <span className="text-white">Notarization</span>
             </h1>
-            <p className="text-xl text-white mb-10 drop-shadow-md">
+            <p className="text-base md:text-xl text-white mb-8 md:mb-10 drop-shadow-md">
               Complete your notarization securely from anywhere, in minutes. Our platform ensures a legally-binding process with enterprise-grade security.
             </p>
 
-            <div className="mb-12">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="border-2 border-white text-white hover:bg-white hover:text-proof transition-all rounded text-lg py-4 px-8 font-semibold shadow-xl pulse-button"
+            <div className="mb-8 md:mb-12">
+              <Link
+                to="/book?service=ron&mode=online"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all text-base md:text-lg py-3 md:py-4 px-6 md:px-8 font-semibold pulse-button whitespace-nowrap"
               >
-                <div className="flex items-center justify-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                  Start RON Session
-                </div>
-              </button>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Schedule a Session
+              </Link>
             </div>
 
-            {/* RON Modal */}
-            <StartRONModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+            {/* RON Modal - kept for backward compatibility but not used */}
           </div>
 
           {/* Feature Grid */}
-          <div className="grid md:grid-cols-4 gap-6 max-w-5xl">
-            <div className="p-4 text-left">
-              <div className="p-3 w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 max-w-5xl text-center md:text-left">
+            <div className="p-3 md:p-4">
+              <div className="p-2 md:p-3 w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
@@ -101,154 +113,140 @@ export default function RONPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="section bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Breadcrumb Header */}
-          <div className="mb-16">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-neutral-300"></div>
-              <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">Simple Process</span>
-              <div className="h-px flex-1 bg-neutral-300"></div>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-proof mb-6">How Remote Online Notarization Works</h2>
-            <p className="text-xl text-neutral-600 max-w-3xl">
+      <section id="how-it-works" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">Simple Process</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">How Remote Online Notarization Works</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">
               Our streamlined 3-step process makes remote notarization as easy as meeting in person, but from the comfort of your home or office.
             </p>
           </div>
 
-          {/* Horizontal process cards (single row on desktop, similar to pricing cards) */}
+          {/* Process Steps */}
           <div className="grid md:grid-cols-3 gap-8">
             {/* Step 1: Upload */}
-            <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="text-sm font-semibold text-electric-blue">Step 1</span>
-                  <h3 className="text-xl font-bold text-proof">Upload Documents</h3>
-                </div>
+            <div className="border-l-2 border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all">
+              <div className="mb-4">
+                <span className="text-xs font-semibold text-professional-blue uppercase tracking-wide">Step 1</span>
+                <h3 className="text-xl font-bold text-charcoal group-hover:text-professional-blue transition-colors">Secure Document Upload</h3>
               </div>
-              <div className="mb-6">
+              <div className="mb-4">
                 <img
                   src="/images/upload-documents.png"
                   alt="Upload and prepare documents" 
-                  className="w-full h-40 object-cover rounded"
+                  className="w-full h-32 object-cover border border-professional-blue/20"
                 />
               </div>
-              <p className="text-neutral-700 mb-4">
-                Upload your documents securely through our encrypted platform. <span className="text-sm text-neutral-500">We support PDF, DOCX, and images.</span>
-              </p>
-              <ul className="space-y-2">
+              <p className="text-charcoal/70 mb-3 text-sm">Your documents are transmitted and stored using encrypted, financial-grade security.</p>
+              <ul className="space-y-1 text-sm">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Bank-grade encryption</span>
+                  <span className="text-sm text-charcoal/70">Only Bridge Notary can access your files</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Multiple file formats supported</span>
+                  <span className="text-sm text-charcoal/70">AES-256 encryption at rest and in transit</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Instant upload confirmation</span>
+                  <span className="text-sm text-charcoal/70">PDF, DOCX, images supported</span>
                 </li>
               </ul>
             </div>
 
             {/* Step 2: Verify */}
-            <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 text-professional-blue group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
-                  <span className="text-sm font-semibold text-electric-blue">Step 2</span>
-                  <h3 className="text-xl font-bold text-proof">Verify Identity</h3>
+                  <span className="text-xs font-semibold text-professional-blue uppercase tracking-wide">Step 2</span>
+                  <h3 className="text-xl font-bold text-charcoal">Verify Identity</h3>
                 </div>
               </div>
               <div className="mb-6">
                 <img
                   src="/images/Verify-identity.png"
                   alt="Verify your identity" 
-                  className="w-full h-40 object-cover rounded"
+                  className="w-full h-40 object-cover"
                 />
               </div>
-              <p className="text-neutral-700 mb-4">
+              <p className="text-charcoal/70 mb-4">
                 Complete secure identity verification with your government-issued ID through our advanced, automated validation system.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Government ID verification</span>
+                  <span className="text-sm text-charcoal/70">Government ID verification</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Knowledge-based authentication</span>
+                  <span className="text-sm text-charcoal/70">Knowledge-based authentication</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Compliant with state requirements</span>
+                  <span className="text-sm text-charcoal/70">Compliant with state requirements</span>
                 </li>
               </ul>
             </div>
 
             {/* Step 3: Notarize */}
-            <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 text-professional-blue group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <span className="text-sm font-semibold text-electric-blue">Step 3</span>
-                  <h3 className="text-xl font-bold text-proof">Live Notarization</h3>
+                  <span className="text-xs font-semibold text-professional-blue uppercase tracking-wide">Step 3</span>
+                  <h3 className="text-xl font-bold text-charcoal">Live Notarization</h3>
                 </div>
               </div>
               <div className="mb-6">
                 <img
                   src="/images/secure-video-signing.png"
                   alt="Meet with notary and sign documents" 
-                  className="w-full h-40 object-cover rounded"
+                  className="w-full h-40 object-cover"
                 />
               </div>
-              <p className="text-neutral-700 mb-4">
+              <p className="text-charcoal/70 mb-4">
                 Connect with a certified notary via secure HD video call and complete your notarization session in real time.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Secure video conferencing</span>
+                  <span className="text-sm text-charcoal/70">Secure video conferencing</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Digital signature & seal applied</span>
+                  <span className="text-sm text-charcoal/70">Digital signature & seal applied</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Instant document delivery</span>
+                  <span className="text-sm text-charcoal/70">Instant document delivery</span>
                 </li>
               </ul>
             </div>
@@ -257,17 +255,17 @@ export default function RONPage() {
       </section>
 
       {/* Session Preparation Section */}
-      <section className="section bg-neutral-50">
+      <section className="w-full bg-white py-20 md:py-28" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-7xl mx-auto px-6">
           {/* Breadcrumb Header */}
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-neutral-300"></div>
-              <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">Session Checklist</span>
-              <div className="h-px flex-1 bg-neutral-300"></div>
+              <div className="h-px w-12 bg-professional-blue/30"></div>
+              <span className="text-sm font-medium text-professional-blue uppercase tracking-wider">Session Checklist</span>
+              <div className="h-px flex-1 bg-professional-blue/30"></div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-proof mb-6">Prepare for Your Session</h2>
-            <p className="text-xl text-neutral-600 max-w-3xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Prepare for Your Session</h2>
+            <p className="text-xl text-charcoal/70 max-w-3xl">
               Follow these simple steps to ensure your remote notarization goes smoothly and efficiently.
             </p>
           </div>
@@ -278,28 +276,28 @@ export default function RONPage() {
             <InfoCard
               title="Gather Your Documents"
               icon={(
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h8a2 2 0 012 2v2m4 0h-4m0 0v10a2 2 0 01-2 2H6a2 2 0 01-2-2V8m12 0H6" />
                 </svg>
               )}
               imageSrc="/images/stack-loan-documents.jpg"
               imageAlt="Stack of documents ready for notarization"
             >
-              <p className="text-neutral-700 mb-4">
+              <p className="text-charcoal/70 mb-4">
                 Have your government-issued photo ID and documents ready in digital format (PDF or images).
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Accepted ID: Driver's license, passport, state ID</span>
+                  <span className="text-sm text-charcoal/70">Accepted ID: Driver's license, passport, state ID</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Ensure documents are legible and complete</span>
+                  <span className="text-sm text-charcoal/70">Ensure documents are legible and complete</span>
                 </li>
               </ul>
             </InfoCard>
@@ -307,34 +305,34 @@ export default function RONPage() {
             <InfoCard
               title="Check Your Technology"
               icon={(
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               )}
               imageSrc="/images/happy customer using video conference conveniently from mobile device.jpg"
               imageAlt="Customer using video conference on mobile device"
             >
-              <p className="text-neutral-700 mb-4">
+              <p className="text-charcoal/70 mb-4">
                 Ensure your device, camera, microphone, and internet connection are working properly.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Minimum 1 Mbps upload/download speed</span>
+                  <span className="text-sm text-charcoal/70">Minimum 1 Mbps upload/download speed</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Working webcam and microphone</span>
+                  <span className="text-sm text-charcoal/70">Working webcam and microphone</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Updated browser (Chrome, Firefox, Safari)</span>
+                  <span className="text-sm text-charcoal/70">Updated browser (Chrome, Firefox, Safari)</span>
                 </li>
               </ul>
             </InfoCard>
@@ -343,34 +341,34 @@ export default function RONPage() {
             <InfoCard
               title="Join Your Session"
               icon={(
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               )}
               imageSrc="/images/ronsession.jpg"
               imageAlt="Live remote notarization session"
             >
-              <p className="text-neutral-700 mb-4">
+              <p className="text-charcoal/70 mb-4">
                 Click the session link at your scheduled time, verify your identity, and follow the notary's guidance.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Join 2-3 minutes early to test connection</span>
+                  <span className="text-sm text-charcoal/70">Join 2-3 minutes early to test connection</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Close other apps using camera/microphone</span>
+                  <span className="text-sm text-charcoal/70">Close other apps using camera/microphone</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Use a quiet, well-lit space</span>
+                  <span className="text-sm text-charcoal/70">Use a quiet, well-lit space</span>
                 </li>
               </ul>
             </InfoCard>
@@ -381,121 +379,115 @@ export default function RONPage() {
       {/* Notary Role in RON section removed per request */}
 
       {/* Why Choose RON Section - Consolidated */}
-      <section className="section bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Breadcrumb Header */}
-          <div className="mb-16">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-neutral-300"></div>
-              <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">Why Choose RON</span>
-              <div className="h-px flex-1 bg-neutral-300"></div>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-proof mb-6">Enterprise-Grade Remote Notarization</h2>
-            <p className="text-xl text-neutral-600 max-w-3xl">
-              Our certified remote online notaries provide secure, legally-binding notarization services from anywhere in the United States with enterprise-grade security and compliance.
+      <section id="benefits" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-charcoal mb-3">Why Choose Remote Online Notarization?</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">
+              Experience the convenience and security of digital notarization with legal validity in all 50 states.
             </p>
           </div>
 
           {/* Benefits Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white">
-              <div className="flex items-center gap-4 mb-4">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-proof">Bank-Grade Security</h3>
+                <h3 className="text-xl font-bold text-charcoal">Bank-Grade Security</h3>
               </div>
-              <p className="text-neutral-700 mb-4">
+              <p className="text-charcoal/70 mb-4">
                 End-to-end encryption with tamper-evident digital certificates and secure video sessions for complete protection.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">256-bit encryption for all transfers</span>
+                  <span className="text-sm text-charcoal/70">256-bit encryption for all transfers</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Tamper-evident digital certificates</span>
+                  <span className="text-sm text-charcoal/70">Tamper-evident digital certificates</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Complete digital audit trail</span>
+                  <span className="text-sm text-charcoal/70">Complete digital audit trail</span>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white">
-              <div className="flex items-center gap-4 mb-4">
+            <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-proof">Available 24/7</h3>
+                <h3 className="text-xl font-bold text-charcoal">Available 24/7</h3>
               </div>
-              <p className="text-neutral-700 mb-4">
+              <p className="text-charcoal/70 mb-4">
                 Connect with a certified notary anytime, anywhere. No appointments needed for most services.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Notaries available round-the-clock</span>
+                  <span className="text-sm text-charcoal/70">Notaries available round-the-clock</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Valid in all 50 states</span>
+                  <span className="text-sm text-charcoal/70">Valid in all 50 states</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Instant session start</span>
+                  <span className="text-sm text-charcoal/70">Instant session start</span>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-all bg-white">
-              <div className="flex items-center gap-4 mb-4">
+            <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-proof">Lightning Fast</h3>
+                <h3 className="text-xl font-bold text-charcoal">Lightning Fast</h3>
               </div>
-              <p className="text-neutral-700 mb-4">
+              <p className="text-charcoal/70 mb-4">
                 Complete your notarization in just 5 minutes on average with our streamlined process.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">5-minute average session time</span>
+                  <span className="text-sm text-charcoal/70">5-minute average session time</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Multi-factor authentication</span>
+                  <span className="text-sm text-charcoal/70">Multi-factor authentication</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm text-neutral-600">Instant document delivery</span>
+                  <span className="text-sm text-charcoal/70">Instant document delivery</span>
                 </li>
               </ul>
             </div>
@@ -506,32 +498,32 @@ export default function RONPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-24 px-6 overflow-hidden bg-professional-blue/10">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-electric-blue"></div>
+        <div className="absolute inset-0 bg-professional-blue/5"></div>
         {/* Background image with overlay */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-15">
           <img 
             src="/images/stack-loan-documents.jpg" 
             alt="" 
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-electric-blue/70"></div>
+        <div className="absolute inset-0 bg-professional-blue/10"></div>
 
         <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Ready to Start Your RON Session?</h2>
-          <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-8">Ready to Start Your RON Session?</h2>
+          <p className="text-xl text-charcoal/70 mb-12 max-w-3xl mx-auto">
             Experience the future of notarization with secure, convenient remote online notarization.
             Available 24/7 with certified notaries nationwide.
           </p>
           <div className="flex justify-center">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="bg-white text-proof hover:bg-neutral-100 transition-all font-semibold rounded text-lg py-5 px-10 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+            <Link
+              to="/book?service=ron&mode=online"
+              className="inline-block bg-professional-blue text-white hover:bg-professional-blue/90 transition-all font-semibold text-lg py-5 px-10"
             >
-              Start RON Session
-            </button>
+              Schedule RON Session
+            </Link>
           </div>
         </div>
       </section>

@@ -4,7 +4,7 @@
  */
 
 export const featureFlags = {
-  // Enable/disable apostille services
+  // Enable/disable apostille services (defaults to true when env var is not set)
   enableApostille: import.meta.env.VITE_ENABLE_APOSTILLE === 'true' || import.meta.env.VITE_ENABLE_APOSTILLE === undefined,
 };
 

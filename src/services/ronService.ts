@@ -3,7 +3,11 @@
  * Handles communication with the backend RON API
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL;
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+
+if (!API_BASE_URL && import.meta.env.DEV) {
+  console.warn('VITE_API_URL is not configured. RON API calls will fail.');
+}
 
 interface StartRONParams {
   signerName: string;

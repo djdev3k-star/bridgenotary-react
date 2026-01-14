@@ -178,7 +178,12 @@ router.post('/webhook', async (req, res) => {
       .update(rawBody)
       .digest('hex');
 
-    if (signature !== expectedSignature) {
+    // Use timing-safe comparison to prevent timing attacks
+    const signatureBuffer = Buffer.from(signature, 'hex');
+    const expectedBuffer = Buffer.from(expectedSignature, 'hex');
+    
+    if (signatureBuffer.length !== expectedBuffer.length || 
+        !crypto.timingSafeEqual(signatureBuffer, expectedBuffer)) {
       return res.status(401).json({ error: 'Invalid webhook signature' });
     }
 

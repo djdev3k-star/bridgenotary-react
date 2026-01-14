@@ -5,19 +5,16 @@ const About = () => (
     {/* Hero Section */}
     <section className="relative overflow-hidden bg-white text-charcoal w-full py-16 md:py-32" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium mb-4 md:mb-6 border border-professional-blue/20">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium mb-6 md:mb-8 border border-professional-blue/20">
             <svg className="w-3 h-3 md:w-4 md:h-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="text-professional-blue">About Bridge</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight text-charcoal">
-            Professional Notary Services Built on Trust
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-charcoal leading-[1.4] mb-8 md:mb-12">
+            Our approach is straightforward: show up on time, prepare thoroughly, communicate clearly, and deliver documents that are correct on the first attempt.
           </h1>
-          <p className="text-base md:text-lg text-charcoal/70 leading-relaxed">
-            For title companies, mortgage lenders, and individuals across the Dallas-Fort Worth area, Bridge Notary is the reliable partner they depend on.
-          </p>
         </div>
       </div>
     </section>
@@ -25,12 +22,6 @@ const About = () => (
     {/* Our Story */}
     <section className="py-12 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        {/* Opening Statement */}
-        <div className="mb-16 md:mb-20 fade-in-up">
-          <p className="text-3xl md:text-5xl lg:text-5xl font-bold text-charcoal leading-[1.4] text-center">
-            Our approach is straightforward: show up on time, prepare thoroughly, communicate clearly, and deliver documents that are correct on the first attempt.
-          </p>
-        </div>
         
         {/* Our Values Grid */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-20">

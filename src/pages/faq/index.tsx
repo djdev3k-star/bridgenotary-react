@@ -213,25 +213,22 @@ const FAQ = () => (
     </section>
 
     {/* Main Content */}
-    <section className="py-20 md:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <section className="py-16 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
       <div className="max-w-5xl mx-auto px-6">
-        <div className="space-y-16">
+        <div className="space-y-12">
           {faqCategories.map((category, catIdx) => (
             <div key={catIdx}>
               {/* Category Header */}
-              <div className="flex items-center gap-4 mb-8 pb-6 border-b border-professional-blue/20">
-                <div className="flex-shrink-0 p-3 bg-professional-blue text-white rounded-lg">
-                  {category.icon}
-                </div>
-                <h2 className="text-3xl font-bold text-charcoal">{category.category}</h2>
+              <div className="mb-6 pb-4 border-b border-professional-blue/30">
+                <h2 className="text-2xl font-bold text-charcoal">{category.category}</h2>
               </div>
 
               {/* Questions in Category */}
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {category.questions.map((item, qIdx) => (
-                  <div key={qIdx} className="bg-off-white hover:bg-professional-blue/5 border-l-4 border-professional-blue/40 hover:border-professional-blue px-6 py-5 transition-all rounded-sm">
-                    <h3 className="text-lg font-semibold text-charcoal mb-3">{item.q}</h3>
-                    <p className="text-charcoal/75 leading-relaxed text-base">{item.a}</p>
+                  <div key={qIdx} className="border-l-2 border-professional-blue/40 hover:border-professional-blue pl-4 py-3 hover:bg-professional-blue/3 transition-all">
+                    <h3 className="text-base font-semibold text-charcoal mb-2">{item.q}</h3>
+                    <p className="text-charcoal/70 leading-relaxed text-sm">{item.a}</p>
                   </div>
                 ))}
               </div>

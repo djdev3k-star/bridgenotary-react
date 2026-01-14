@@ -40,18 +40,21 @@ const features: FeatureItem[] = [
 export default function MobileNotaryPage() {
   return (
     <div>
-      {/* Breadcrumb Navigation */}
-      <div className="bg-professional-blue/5 border-b border-professional-blue/10">
-        <div className="max-w-6xl mx-auto px-6 py-3">
-          <div className="flex items-center gap-2 text-sm">
-            <Link to="/" className="text-professional-blue hover:text-professional-blue/70">Home</Link>
-            <span className="text-charcoal/40">/</span>
-            <Link to="/services" className="text-professional-blue hover:text-professional-blue/70">General Notary Services</Link>
-            <span className="text-charcoal/40">/</span>
-            <span className="text-charcoal/70 font-medium">Mobile Compatible</span>
+      {/* Sub-Navigation */}
+      <section className="bg-professional-blue/10 border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="text-charcoal/70 font-medium">Mobile Notary Services:</span>
+            <a href="#services" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">What We Notarize</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#process" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">How It Works</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#pricing" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Pricing</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#schedule" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Schedule</a>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Hero section - Redesigned */}
       <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2">
@@ -116,61 +119,59 @@ export default function MobileNotaryPage() {
       </section>
 
       {/* Key Benefits Section */}
-      <section id="details" className="py-20 md:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
+          {/* Features Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             {features.map((f) => (
-              <div key={f.title} className="group">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="flex-shrink-0 p-3 bg-professional-blue/10 rounded-lg group-hover:bg-professional-blue/15 transition-colors">
-                    {f.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-charcoal pt-1">{f.title}</h3>
+              <div key={f.title} className="border-l-2 border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all">
+                <div className="mb-4">
+                  <h3 className="text-lg font-bold text-charcoal group-hover:text-professional-blue transition-colors mb-2">{f.title}</h3>
+                  <p className="text-charcoal/70 leading-relaxed text-sm">{f.description}</p>
                 </div>
-                <p className="text-charcoal/70 leading-relaxed">{f.description}</p>
               </div>
             ))}
           </div>
 
-          {/* Two Column Layout */}
+          {/* What We Notarize & How It Works */}
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Left: What We Notarize */}
-            <div>
-              <h2 className="text-3xl font-bold text-charcoal mb-8">What We Notarize</h2>
-              <ul className="space-y-4">
+            <div id="services" className="scroll-mt-20">
+              <h2 className="text-2xl font-bold text-charcoal mb-6">What We Notarize</h2>
+              <div className="space-y-3">
                 {[
                   "Power of Attorney",
                   "Affidavits & Statements",
-                  "Title & Deed Transfers",
+                  "Title & Deed Transfers", 
                   "Estate & Trust Documents",
                   "School Permission Forms",
                   "Medical Authorization",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                  <div key={item} className="flex items-center gap-3 py-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-professional-blue flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-charcoal/80">{item}</span>
-                  </li>
+                    <span className="text-charcoal/80 text-sm">{item}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/* Right: How It Works */}
-            <div>
-              <h2 className="text-3xl font-bold text-charcoal mb-8">How It Works</h2>
-              <div className="space-y-6">
+            <div id="process" className="scroll-mt-20">
+              <h2 className="text-2xl font-bold text-charcoal mb-6">How It Works</h2>
+              <div className="space-y-4">
                 {[
                   { num: 1, text: "Book your appointment and share document details" },
                   { num: 2, text: "Prepare valid government-issued ID(s)" },
                   { num: 3, text: "We arrive on time and perform notarization" },
                   { num: 4, text: "Receive your notarized documents and receipt" },
                 ].map((step) => (
-                  <div key={step.num} className="flex items-start gap-4">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-professional-blue/15 flex-shrink-0">
-                      <span className="text-professional-blue font-bold">{step.num}</span>
+                  <div key={step.num} className="flex items-start gap-3">
+                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-professional-blue/15 flex-shrink-0 mt-0.5">
+                      <span className="text-professional-blue font-semibold text-sm">{step.num}</span>
                     </div>
-                    <p className="text-charcoal/80 leading-relaxed pt-1">{step.text}</p>
+                    <p className="text-charcoal/80 leading-relaxed text-sm pt-1">{step.text}</p>
                   </div>
                 ))}
               </div>
@@ -178,27 +179,27 @@ export default function MobileNotaryPage() {
           </div>
 
           {/* Pricing Section */}
-          <div className="bg-professional-blue/5 rounded-xl p-8 border border-professional-blue/10 mb-12">
-            <h2 className="text-3xl font-bold text-charcoal mb-8">Transparent Pricing</h2>
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div id="pricing" className="bg-professional-blue/5 p-8 border-l-2 border-professional-blue mb-16 scroll-mt-20">
+            <h2 className="text-2xl font-bold text-charcoal mb-6">Transparent Pricing</h2>
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
               {[
                 { label: "Standard Notarization", price: "$10", desc: "Per notarial act" },
                 { label: "Travel Fee", price: "From $25", desc: "Local DFW area" },
                 { label: "After-Hours / Weekend", price: "+$20", desc: "Premium availability" },
               ].map((item, idx) => (
-                <div key={idx}>
-                  <p className="text-sm font-semibold text-professional-blue uppercase tracking-wide mb-2">{item.label}</p>
-                  <p className="text-3xl font-bold text-charcoal mb-1">{item.price}</p>
-                  <p className="text-charcoal/60 text-sm">{item.desc}</p>
+                <div key={idx} className="text-center md:text-left">
+                  <p className="text-xs font-semibold text-professional-blue uppercase tracking-wide mb-1">{item.label}</p>
+                  <p className="text-2xl font-bold text-charcoal mb-1">{item.price}</p>
+                  <p className="text-charcoal/60 text-xs">{item.desc}</p>
                 </div>
               ))}
             </div>
-            <p className="text-charcoal/70 text-sm">Exact pricing depends on location, document count, and timing. <Link to="/pricing" className="text-professional-blue hover:underline font-semibold">View full pricing →</Link></p>
+            <p className="text-charcoal/70 text-xs">Exact pricing depends on location, document count, and timing. <Link to="/pricing" className="text-professional-blue hover:underline font-semibold">View full pricing →</Link></p>
           </div>
 
           {/* Final CTA */}
-          <div className="text-center">
-            <Link to="/book" className="inline-flex items-center gap-2 bg-professional-blue text-white hover:bg-professional-blue/90 font-semibold py-4 px-8 rounded-lg transition-all shadow-lg hover:shadow-xl">
+          <div id="schedule" className="text-center scroll-mt-20">
+            <Link to="/book" className="inline-flex items-center gap-2 bg-professional-blue text-white hover:bg-professional-blue/90 font-semibold py-4 px-8 transition-all">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
@@ -210,3 +211,5 @@ export default function MobileNotaryPage() {
     </div>
   );
 }
+
+export default MobileNotaryPage;

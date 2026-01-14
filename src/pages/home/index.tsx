@@ -6,33 +6,17 @@ import { featureFlags } from "@/utils/featureFlags";
 const HomePage = () => (
   <div className="w-full bg-off-white">
     {/* Hero Section */}
-    <section className="relative overflow-hidden pt-16 pb-20 md:pt-32 md:pb-48 bg-off-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-      <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+    <section className="relative overflow-hidden pt-20 pb-24 md:pt-36 md:pb-52 bg-off-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
         {/* Left Content */}
         <div className="text-charcoal">
-          {/* Credentials */}
-          <div className="flex flex-wrap gap-2 mb-6 md:mb-10">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/10 border border-professional-blue/30 text-xs font-semibold text-professional-blue">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              NNA Certified
-            </span>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-professional-blue/10 border border-professional-blue/30 text-xs font-semibold text-professional-blue">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              $100K E&O Insured
-            </span>
-          </div>
-
           {/* Headline */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight text-charcoal">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight text-charcoal">
             Professional Notary Services <span className="text-professional-blue">You Can Trust</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base md:text-lg text-charcoal/70 mb-8 md:mb-10 leading-relaxed max-w-lg font-light">
+          <p className="text-lg md:text-xl text-charcoal/70 mb-10 md:mb-12 leading-relaxed max-w-lg">
             {featureFlags.enableApostille 
               ? "Reliable loan signings, mobile notarization, and apostille services for individuals and businesses across the Dallas-Fort Worth area."
               : "Reliable loan signings and mobile notarization for individuals and businesses across the Dallas-Fort Worth area."

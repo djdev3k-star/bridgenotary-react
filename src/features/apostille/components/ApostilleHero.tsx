@@ -84,7 +84,7 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
           aria-label="Study Abroad apostille services"
         >
           <img
-            src="/src/assets/images/study-abroad.png"
+            src="/images/study-abroad.png"
             alt="Study Abroad"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -101,7 +101,7 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
           aria-label="International Adoption apostille services"
         >
           <img
-            src="/src/assets/images/international-adoption.png"
+            src="/images/international-adoption.png"
             alt="International Adoption"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -118,7 +118,7 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
           aria-label="Destination Wedding apostille services"
         >
           <img
-            src="/src/assets/images/destination-wedding.png"
+            src="/images/destination-wedding.png"
             alt="Destination Wedding"
             className="absolute inset-0 w-full h-full object-cover"
           />

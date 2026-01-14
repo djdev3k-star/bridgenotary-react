@@ -6,22 +6,21 @@ export default function RONPage() {
 
   return (
     <div className="w-full bg-white">
-      {/* Breadcrumbs */}
-      <div className="w-full bg-off-white border-b border-professional-blue/20">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 py-2 md:py-3">
-          <div className="flex items-center gap-2 text-xs md:text-sm overflow-x-auto">
-            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors whitespace-nowrap">Home</Link>
-            <svg className="w-3 h-3 md:w-4 md:h-4 text-charcoal/40 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <Link to="/services" className="text-professional-blue hover:text-professional-blue/80 transition-colors whitespace-nowrap">Services</Link>
-            <svg className="w-3 h-3 md:w-4 md:h-4 text-charcoal/40 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <span className="text-charcoal/70 whitespace-nowrap">RON</span>
+      {/* Sub-Navigation */}
+      <section className="bg-professional-blue/10 border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="text-charcoal/70 font-medium">Remote Notarization:</span>
+            <a href="#how-it-works" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">How It Works</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#preparation" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Preparation</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#benefits" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Benefits</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#schedule" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Schedule</a>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Hero Section - Full Viewport Width with Professional Blue Gradient */}
       <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
@@ -114,50 +113,35 @@ export default function RONPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Breadcrumb Header */}
-          <div className="mb-16">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-professional-blue/30"></div>
-              <span className="text-sm font-medium text-professional-blue uppercase tracking-wider">Simple Process</span>
-              <div className="h-px flex-1 bg-professional-blue/30"></div>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">How Remote Online Notarization Works</h2>
-            <p className="text-xl text-charcoal/70 max-w-3xl">
+      <section id="how-it-works" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">Simple Process</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">How Remote Online Notarization Works</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">
               Our streamlined 3-step process makes remote notarization as easy as meeting in person, but from the comfort of your home or office.
             </p>
           </div>
 
-          {/* Horizontal process cards (single row on desktop, similar to pricing cards) */}
-          <div className="grid md:grid-cols-3 gap-12 relative">
-            {/* Geometric overlays */}
-            <div className="absolute -top-20 -right-20 w-96 h-96 bg-professional-blue/3 -z-10"></div>
-            
+          {/* Process Steps */}
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Step 1: Upload */}
-            <div className="border-l-2 border-professional-blue pl-6 group">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="flex-shrink-0 text-professional-blue group-hover:scale-110 transition-transform">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="text-xs font-semibold text-professional-blue uppercase tracking-wide">Step 1</span>
-                  <h3 className="text-xl font-bold text-charcoal">Secure Document Upload</h3>
-                </div>
+            <div className="border-l-2 border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all">
+              <div className="mb-4">
+                <span className="text-xs font-semibold text-professional-blue uppercase tracking-wide">Step 1</span>
+                <h3 className="text-xl font-bold text-charcoal group-hover:text-professional-blue transition-colors">Secure Document Upload</h3>
               </div>
-              <div className="mb-6">
+              <div className="mb-4">
                 <img
                   src="/images/upload-documents.png"
                   alt="Upload and prepare documents" 
-                  className="w-full h-40 object-cover"
+                  className="w-full h-32 object-cover border border-professional-blue/20"
                 />
               </div>
-              <p className="text-charcoal/70 mb-4 font-semibold">Your documents are transmitted and stored using encrypted, financial-grade security.</p>
-              <ul className="space-y-2">
+              <p className="text-charcoal/70 mb-3 text-sm">Your documents are transmitted and stored using encrypted, financial-grade security.</p>
+              <ul className="space-y-1 text-sm">
                 <li className="flex items-start gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                   <span className="text-sm text-charcoal/70">Only Bridge Notary can access your files</span>
@@ -395,17 +379,12 @@ export default function RONPage() {
       {/* Notary Role in RON section removed per request */}
 
       {/* Why Choose RON Section - Consolidated */}
-      <section className="section bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Breadcrumb Header */}
-          <div className="mb-16">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-professional-blue/40"></div>
-              <span className="text-sm font-medium text-professional-blue uppercase tracking-wider">Why Choose RON</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Enterprise-Grade Remote Notarization</h2>
-            <p className="text-xl text-charcoal/70 max-w-3xl">
-              Our certified remote online notaries provide secure, legally-binding notarization services from anywhere in the United States with enterprise-grade security and compliance.
+      <section id="benefits" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-charcoal mb-3">Why Choose Remote Online Notarization?</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">
+              Experience the convenience and security of digital notarization with legal validity in all 50 states.
             </p>
           </div>
 

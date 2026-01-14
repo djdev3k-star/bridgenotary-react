@@ -90,7 +90,7 @@ const Pricing = () => {
       </section>
 
       {/* Main Content */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-professional-blue via-professional-blue/95 to-professional-blue/90 text-white w-screen left-1/2 -translate-x-1/2 py-32 md:py-40 lg:py-48 min-h-[600px] flex items-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-professional-blue via-professional-blue/95 to-professional-blue/90 text-white w-screen left-1/2 -translate-x-1/2 py-20 md:py-24 lg:py-28 min-h-[400px] flex items-center">
         {/* Spectral Pattern Background */}
         <div className="absolute inset-0 opacity-40" style={{
           backgroundImage: `
@@ -275,54 +275,65 @@ const Pricing = () => {
       {/* Add-On Services */}
       <section className="py-20 lg:py-28 bg-professional-blue/5" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Add-On Services</h2>
-            <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">Optional services to enhance your notarization experience.</p>
+          <div className="mb-8">
+            <h3 className="text-3xl font-bold text-charcoal mb-3">Add-On Services</h3>
+            <p className="text-charcoal/70 text-lg">Optional services to enhance your notarization experience.</p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {addOnServices.map((service, idx) => (
-              <div key={idx} className="bg-white border-l-2 border-professional-blue pl-6 py-6 pr-6 group hover:bg-professional-blue/5 transition-colors">
-                <div className="flex items-start justify-between mb-3">
-                  <h4 className="text-lg font-semibold text-charcoal group-hover:text-professional-blue transition-colors">{service.name}</h4>
-                  <div className="font-bold text-professional-blue text-xl whitespace-nowrap ml-4">{service.fee}</div>
-                </div>
-                <p className="text-sm text-charcoal/70 leading-relaxed">{service.notes}</p>
-              </div>
-            ))}
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-professional-blue">
+                  <th className="text-left py-4 px-6 font-bold text-charcoal text-lg">Service</th>
+                  <th className="text-center py-4 px-6 font-bold text-charcoal text-lg min-w-[120px]">Fee</th>
+                </tr>
+              </thead>
+              <tbody>
+                {addOnServices.map((service, idx) => (
+                  <tr key={idx} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
+                    <td className="py-4 px-6">
+                      <div className="font-semibold text-charcoal group-hover:text-professional-blue transition-colors">{service.name}</div>
+                      <div className="text-sm text-charcoal/70 mt-1">{service.notes}</div>
+                    </td>
+                    <td className="py-4 px-6 text-center text-professional-blue text-lg">{service.fee}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section id="faq" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-12 text-center">Frequently Asked Questions</h2>
-          
-          <div className="space-y-0">
-            <div className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
-              <h3 className="text-lg font-bold text-charcoal mb-3">Do your fees include travel?</h3>
-              <p className="text-charcoal/70 leading-relaxed">Our standard fees include travel within 10-15 miles depending on service type. For distances beyond that, we charge a small additional fee based on distance. Always ask about travel during booking.</p>
-            </div>
+      {/* FAQ - Compact Layout */}
+      <section id="faq" className="py-12 bg-professional-blue/3 border-t border-professional-blue/10 scroll-mt-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-4xl">
+            <h3 className="text-2xl font-bold text-charcoal mb-6">Common Questions</h3>
+            
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+                <h4 className="text-base font-semibold text-charcoal mb-2">Do your fees include travel?</h4>
+                <p className="text-charcoal/70 text-sm leading-relaxed">Standard fees include travel within 10-15 miles. Beyond that, we charge a small distance-based fee.</p>
+              </div>
 
-            <div className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
-              <h3 className="text-lg font-bold text-charcoal mb-3">Are there additional fees for weekends?</h3>
-              <p className="text-charcoal/70 leading-relaxed">Yes, weekend and after-hours appointments (before 8 AM or after 6 PM) incur a $50 additional fee. This helps us accommodate urgent requests outside standard business hours.</p>
-            </div>
+              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+                <h4 className="text-base font-semibold text-charcoal mb-2">Are there additional fees for weekends?</h4>
+                <p className="text-charcoal/70 text-sm leading-relaxed">Yes, weekend and after-hours appointments incur a $50 additional fee for urgent requests.</p>
+              </div>
 
-            <div className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
-              <h3 className="text-lg font-bold text-charcoal mb-3">What payment methods do you accept?</h3>
-              <p className="text-charcoal/70 leading-relaxed">We accept all major credit cards, Cash App, Venmo, and cash. Payment is due at the time of service. For corporate accounts, we can arrange invoicing.</p>
-            </div>
+              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+                <h4 className="text-base font-semibold text-charcoal mb-2">What payment methods do you accept?</h4>
+                <p className="text-charcoal/70 text-sm leading-relaxed">All major credit cards, Cash App, Venmo, and cash. Corporate accounts can arrange invoicing.</p>
+              </div>
 
-            <div className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
-              <h3 className="text-lg font-bold text-charcoal mb-3">What's your cancellation policy?</h3>
-              <p className="text-charcoal/70 leading-relaxed">We offer free rescheduling with 24 hours notice. Cancellations with less than 24 hours notice may incur a $25 fee. No-shows incur the full service fee.</p>
-            </div>
+              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+                <h4 className="text-base font-semibold text-charcoal mb-2">What's your cancellation policy?</h4>
+                <p className="text-charcoal/70 text-sm leading-relaxed">Free rescheduling with 24 hours notice. Less than 24 hours may incur a $25 fee.</p>
+              </div>
 
-            <div className="p-6 border-l-4 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
-              <h3 className="text-lg font-bold text-charcoal mb-3">Do you offer bulk or volume discounts?</h3>
-              <p className="text-charcoal/70 leading-relaxed">Yes! For title companies, lenders, and other high-volume clients, we offer custom pricing. Contact us to discuss your specific needs.</p>
+              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors md:col-span-2">
+                <h4 className="text-base font-semibold text-charcoal mb-2">Do you offer bulk or volume discounts?</h4>
+                <p className="text-charcoal/70 text-sm leading-relaxed">Yes! For title companies, lenders, and high-volume clients, we offer custom pricing. Contact us to discuss your specific needs.</p>
+              </div>
             </div>
           </div>
         </div>

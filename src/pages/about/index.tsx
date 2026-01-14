@@ -3,16 +3,33 @@ import { Link } from "react-router-dom";
 const About = () => (
   <div className="w-full">
     {/* Hero Section */}
-    <section className="relative overflow-hidden bg-white text-charcoal w-full py-16 md:py-32" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
+    <section className="relative overflow-hidden bg-white text-charcoal w-screen left-1/2 -translate-x-1/2 py-32 md:py-40 lg:py-48 min-h-[600px] flex items-center">
+      {/* Spectral Pattern Background */}
+      <div className="absolute inset-0 opacity-30" style={{
+        backgroundImage: `
+          linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(59, 130, 246, 0.15) 15%, 
+            rgba(99, 102, 241, 0.15) 35%, 
+            rgba(139, 92, 246, 0.15) 55%,
+            rgba(168, 85, 247, 0.15) 75%,
+            rgba(168, 85, 247, 0.12) 100%),
+          radial-gradient(circle at 20% 50%, rgba(0, 85, 230, 0.08) 0%, transparent 45%),
+          radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.06) 0%, transparent 50%)
+        `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}></div>
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium mb-6 md:mb-8 border border-professional-blue/20">
-            <svg className="w-3 h-3 md:w-4 md:h-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-4 py-2 text-sm font-medium mb-8 border border-professional-blue/20">
+            <svg className="w-4 h-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="text-professional-blue">About Bridge</span>
           </div>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-charcoal leading-[1.4] mb-8 md:mb-12">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-charcoal leading-[1.5] mb-8">
             Our approach is straightforward: show up on time, prepare thoroughly, communicate clearly, and deliver documents that are correct on the first attempt.
           </h1>
         </div>

@@ -144,16 +144,19 @@ const SeniorServicesLanding: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/contact', {
+      const formDataObj = new FormData();
+      formDataObj.append('form-name', 'senior-services');
+      formDataObj.append('facility-name', formData.facilityName);
+      formDataObj.append('contact-name', formData.contactName);
+      formDataObj.append('email', formData.email);
+      formDataObj.append('phone', formData.phone);
+      formDataObj.append('residents', formData.residents);
+      formDataObj.append('services', formData.services.join(', '));
+      formDataObj.append('message', formData.message);
+
+      const response = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.contactName,
-          email: formData.email,
-          phone: formData.phone,
-          subject: 'Senior Services Lead - ' + formData.facilityName,
-          message: `Facility: ${formData.facilityName}\nResidents: ${formData.residents}\nServices Interested: ${formData.services.join(', ')}\n\nAdditional Info:\n${formData.message}`,
-        }),
+        body: formDataObj,
       });
       
       if (response.ok) {
@@ -321,11 +324,20 @@ const SeniorServicesLanding: React.FC = () => {
                 <p className="text-charcoal/70">We'll contact you within 24 hours with pricing and availability.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form 
+                onSubmit={handleSubmit} 
+                className="space-y-4"
+                name="senior-services"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+              >
+                <input type="hidden" name="form-name" value="senior-services" />
+                <input type="hidden" name="bot-field" />
                 <div className="grid md:grid-cols-2 gap-4">
                   <input
                     type="text"
-                    name="facilityName"
+                    name="facility-name"
                     placeholder="Facility Name *"
                     value={formData.facilityName}
                     onChange={handleInputChange}
@@ -334,7 +346,7 @@ const SeniorServicesLanding: React.FC = () => {
                   />
                   <input
                     type="text"
-                    name="contactName"
+                    name="contact-name"
                     placeholder="Your Name *"
                     value={formData.contactName}
                     onChange={handleInputChange}

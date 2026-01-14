@@ -31,10 +31,16 @@ const Contact = () => {
     }
     setLoading(true);
     try {
-      const resp = await fetch('/api/contact', {
+      const formData = new FormData();
+      formData.append('form-name', 'contact');
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('phone', phone);
+      formData.append('message', message);
+
+      const resp = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, message }),
+        body: formData,
       });
       if (!resp.ok) throw new Error(`Server responded ${resp.status}`);
       setSuccess('Thanks — your message was sent. We will reply shortly.');
@@ -60,7 +66,17 @@ const Contact = () => {
                 <p className="text-charcoal/70">Ready to schedule or have questions? Send us a message and we'll respond quickly.</p>
               </div>
               
-              <form className="bg-white border border-professional-blue/20 p-6 md:p-8" onSubmit={handleSubmit} noValidate>
+              <form 
+                className="bg-white border border-professional-blue/20 p-6 md:p-8" 
+                onSubmit={handleSubmit} 
+                noValidate
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
                 
                 {error && (
                   <div className="text-sm text-red-700 p-4 bg-red-50 border border-red-200 mb-6 flex items-center gap-3">
@@ -83,7 +99,8 @@ const Contact = () => {
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-charcoal mb-2">Full Name *</label>
                     <input 
-                      id="name" 
+                      id="name"
+                      name="name"
                       value={name} 
                       onChange={(e) => setName(e.target.value)} 
                       type="text" 
@@ -94,7 +111,8 @@ const Contact = () => {
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-charcoal mb-2">Email Address *</label>
                     <input 
-                      id="email" 
+                      id="email"
+                      name="email"
                       value={email} 
                       onChange={(e) => setEmail(e.target.value)} 
                       type="email" 
@@ -107,7 +125,8 @@ const Contact = () => {
                 <div className="mb-6">
                   <label htmlFor="phone" className="block text-sm font-semibold text-charcoal mb-2">Phone Number</label>
                   <input 
-                    id="phone" 
+                    id="phone"
+                    name="phone"
                     value={phone} 
                     onChange={(e) => setPhone(e.target.value)} 
                     type="tel" 
@@ -119,7 +138,8 @@ const Contact = () => {
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-sm font-semibold text-charcoal mb-2">Message *</label>
                   <textarea 
-                    id="message" 
+                    id="message"
+                    name="message"
                     value={message} 
                     onChange={(e) => setMessage(e.target.value)} 
                     rows={5} 

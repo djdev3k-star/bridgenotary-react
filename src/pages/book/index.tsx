@@ -144,7 +144,7 @@ const BookAppointment: React.FC = () => {
     e.preventDefault();
     
     if (selectedService === 'online') {
-      // Handle RON session scheduling
+      // Handle RON session scheduling - keep this as Netlify Function
       try {
         const response = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/ron-start`, {
           method: 'POST',
@@ -171,22 +171,26 @@ const BookAppointment: React.FC = () => {
         alert('An error occurred while scheduling. Please try again.');
       }
     } else if (selectedService === 'mobile') {
-      // Handle mobile notary appointment
+      // Handle mobile notary appointment via Netlify Forms
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/contact`, {
+        const formDataToSend = new FormData();
+        formDataToSend.append('form-name', 'appointment');
+        formDataToSend.append('service-type', 'mobile');
+        formDataToSend.append('name', formData.name);
+        formDataToSend.append('email', formData.email);
+        formDataToSend.append('phone', formData.phone);
+        formDataToSend.append('document-type', formData.documentType);
+        formDataToSend.append('preferred-date', formData.preferredDate);
+        formDataToSend.append('preferred-time', formData.preferredTime);
+        formDataToSend.append('location', formData.location);
+        formDataToSend.append('additional-notes', formData.additionalNotes);
+
+        const response = await fetch('/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            subject: 'Mobile Notary Appointment Request',
-            message: `Document Type: ${formData.documentType}\nPreferred Date: ${formData.preferredDate}\nPreferred Time: ${formData.preferredTime}\nLocation: ${formData.location}\n\nAdditional Notes:\n${formData.additionalNotes}`,
-          }),
+          body: formDataToSend,
         });
         
-        const data = await response.json();
-        if (data.success) {
+        if (response.ok) {
           alert('Appointment request submitted! We\'ll contact you soon to confirm.');
           // Reset form
           setSelectedService(null);
@@ -282,7 +286,16 @@ const BookAppointment: React.FC = () => {
 
   const renderAppointmentForm = () => (
     <div className="bg-off-white p-8 max-w-4xl mx-auto">
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form
+        name="appointment"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+        className="space-y-6"
+      >
+        <input type="hidden" name="form-name" value="appointment" />
+        <input type="hidden" name="bot-field" />
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-medium text-charcoal mb-2">Full Name</label>

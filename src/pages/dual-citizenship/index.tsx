@@ -20,7 +20,7 @@ const DualCitizenshipPage: React.FC = () => {
       </section>
 
       {/* Hero Section - Full Width with Blue Gradient & Background Image */}
-      <section className="relative overflow-hidden text-white min-h-[600px] flex items-center w-screen left-1/2 -translate-x-1/2">
+      <section className="hero-dark">
         {/* Gradient Background */}
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-professional-blue via-professional-blue/80 to-professional-blue"></div>
         
@@ -36,7 +36,7 @@ const DualCitizenshipPage: React.FC = () => {
         </div>
         
         {/* Content */}
-        <div className="max-w-7xl mx-auto py-32 md:py-40 px-6 relative z-20 w-full">
+        <div className="hero-content w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 text-sm font-medium mb-6 border border-white/40 rounded-full backdrop-blur-sm">
               <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -44,10 +44,10 @@ const DualCitizenshipPage: React.FC = () => {
               </svg>
               <span className="text-white">Apostille Services</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+            <h1 className="hero-title text-white">
               Dual Citizenship Apostilles
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed drop-shadow">
+            <p className="hero-subtitle text-white/90">
               Professional authentication of civil records for your citizenship applications worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">

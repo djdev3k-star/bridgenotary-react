@@ -61,6 +61,32 @@
   .section {
     @apply py-20 md:py-28 px-4 md:px-0 max-w-5xl mx-auto;
   }
+  
+  /* Hero section base styles */
+  .hero {
+    @apply w-screen left-1/2 -translate-x-1/2 relative overflow-hidden py-20 md:py-28 lg:py-32 min-h-[500px] flex items-center justify-center;
+  }
+  
+  .hero-dark {
+    @apply hero bg-gradient-to-br from-professional-blue via-professional-blue/80 to-professional-blue text-white;
+  }
+  
+  .hero-light {
+    @apply hero bg-white text-charcoal;
+  }
+  
+  .hero-content {
+    @apply max-w-6xl mx-auto px-6 relative z-10;
+  }
+  
+  .hero-title {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg;
+  }
+  
+  .hero-subtitle {
+    @apply text-lg md:text-xl lg:text-2xl leading-relaxed drop-shadow-lg;
+  }
+  
   .card {
     @apply bg-white border border-neutral-200 p-8 md:p-12 shadow-sm transition-all duration-300 hover:shadow-md;
   }

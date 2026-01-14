@@ -19,34 +19,17 @@ const OverseasPropertyPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Breadcrumbs */}
-      <section className="bg-off-white border-b border-professional-blue/20">
-        <div className="max-w-6xl mx-auto px-6 py-3">
-          <div className="flex items-center gap-2 text-sm">
-            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Home</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Apostille</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <span className="text-charcoal/70">Overseas Property</span>
-          </div>
-        </div>
-      </section>
-
       {/* Hero Section */}
-      <section className="w-screen left-1/2 -translate-x-1/2 relative overflow-hidden text-white py-32 md:py-40 lg:py-48 flex items-center justify-center min-h-[600px]" style={{backgroundImage: `url(${overseasPropertyImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <section className="hero-dark" style={{backgroundImage: `url(${overseasPropertyImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className="absolute inset-0 bg-gradient-to-r from-professional-blue via-professional-blue/80 to-professional-blue"></div>
         <div className="absolute inset-0 mix-blend-multiply" style={{backgroundImage: `url(${overseasPropertyImage})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.5}}></div>
         <div className="absolute inset-0 bg-professional-blue/20"></div>
-        <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
+        <div className="hero-content text-center">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+            <h1 className="hero-title text-white">
               International Real Estate Made Simple
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed drop-shadow-lg">
+            <p className="hero-subtitle text-white/90">
               Authenticate property documents and deeds for overseas real estate transactions with certified apostille support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">

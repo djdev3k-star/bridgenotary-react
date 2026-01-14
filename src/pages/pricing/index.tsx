@@ -72,7 +72,7 @@ const Pricing = () => {
   return (
     <div className="w-full bg-white">
       {/* Sub-Navigation Links */}
-      <section className="bg-professional-blue/5 border-b border-professional-blue/20">
+      <section className="bg-professional-blue/10 border-b border-professional-blue/20 z-40 relative">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex flex-wrap items-center gap-3 text-sm">
             <span className="text-charcoal/70 font-medium">Pricing By Service:</span>

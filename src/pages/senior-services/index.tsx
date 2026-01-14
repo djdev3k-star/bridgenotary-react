@@ -141,22 +141,41 @@ const SeniorServicesLanding: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Lead form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        facilityName: '',
-        contactName: '',
-        email: '',
-        phone: '',
-        residents: '',
-        services: [],
-        message: '',
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.contactName,
+          email: formData.email,
+          phone: formData.phone,
+          subject: 'Senior Services Lead - ' + formData.facilityName,
+          message: `Facility: ${formData.facilityName}\nResidents: ${formData.residents}\nServices Interested: ${formData.services.join(', ')}\n\nAdditional Info:\n${formData.message}`,
+        }),
       });
-    }, 3000);
+      
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({
+            facilityName: '',
+            contactName: '',
+            email: '',
+            phone: '',
+            residents: '',
+            services: [],
+            message: '',
+          });
+        }, 3000);
+      } else {
+        console.error('Failed to submit senior services lead');
+      }
+    } catch (error) {
+      console.error('Error submitting senior services lead:', error);
+    }
   };
 
   return (

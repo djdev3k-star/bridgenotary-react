@@ -103,37 +103,6 @@ const MobileNotaryPage = () => {
         </div>
       </section>
 
-      {/* Quick Stats */}
-      <section className="py-12 bg-white relative" style={{backgroundImage: `
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
-        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
-        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
-      `,
-        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
-        backgroundAttachment: 'fixed'
-      }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-professional-blue mb-2">2 hrs</div>
-              <p className="text-charcoal/70 font-medium">Avg Response</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-professional-blue mb-2">99%</div>
-              <p className="text-charcoal/70 font-medium">On-Time Rate</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-professional-blue mb-2">7/7</div>
-              <p className="text-charcoal/70 font-medium">Days Available</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-professional-blue mb-2">DFW</div>
-              <p className="text-charcoal/70 font-medium">Full Coverage</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Benefits Section */}
       <section className="py-20 lg:py-28 bg-white relative" id="benefits" style={{backgroundImage: `
         repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),

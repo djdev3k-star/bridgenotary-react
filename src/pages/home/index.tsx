@@ -6,7 +6,14 @@ import { featureFlags } from "@/utils/featureFlags";
 const HomePage = () => (
   <div className="w-full bg-off-white">
     {/* Hero Section */}
-    <section className="relative overflow-hidden pt-20 pb-24 md:pt-36 md:pb-52 bg-off-white" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
+    <section className="relative overflow-hidden pt-20 pb-24 md:pt-36 md:pb-52 bg-off-white" style={{backgroundImage: `
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+      radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+      radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+    `,
+      backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
         {/* Left Content */}
         <div className="text-charcoal">

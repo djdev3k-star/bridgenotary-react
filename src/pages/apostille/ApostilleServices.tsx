@@ -526,7 +526,6 @@ const ApostilleServices: React.FC = () => {
             >
               ✕
             </button>
-            <h3 className="text-2xl font-bold text-charcoal mb-2">Start Your Apostille Process</h3>
             <p className="text-charcoal/70 mb-6">Fill out this quick form and our team will reach out to guide you through the next steps.</p>
             {submitted ? (
               <div className="text-center py-8">

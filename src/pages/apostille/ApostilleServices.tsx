@@ -199,7 +199,7 @@ const ApostilleServices: React.FC = () => {
     <div className="w-full bg-white">
 
       {/* Pain Points Section - Government Document Aesthetic */}
-      <section className="w-full py-20 md:py-28 bg-white border-t border-professional-blue/10\" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.03) 2px, rgba(0, 85, 230, 0.03) 4px)'}}>
+      <section className="w-full py-20 md:py-28 bg-white border-t border-professional-blue/10 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>'
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">The Challenge</span>
@@ -331,7 +331,7 @@ const ApostilleServices: React.FC = () => {
       </section>
 
       {/* Our Solution Section - Government Document Aesthetic */}
-      <section className="w-full py-20 md:py-28 bg-white\" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.03) 2px, rgba(0, 85, 230, 0.03) 4px)'}}>
+      <section className="w-full py-20 md:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>'
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">Our Process</span>
@@ -358,7 +358,7 @@ const ApostilleServices: React.FC = () => {
       </section>
 
       {/* Courier Services & Process Section */}
-      <section className="w-full bg-white py-20 md:py-28\" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.03) 2px, rgba(0, 85, 230, 0.03) 4px)'}}>
+      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>'
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">End-to-End Delivery</span>

@@ -114,13 +114,7 @@ const MobileNotaryPage = () => {
 
       {/* Quick Stats */}
       <section className="py-12 bg-white relative" style={{backgroundImage: `
-        linear-gradient(90deg, 
-          transparent 0%, 
-          rgba(59, 130, 246, 0.08) 15%, 
-          rgba(99, 102, 241, 0.08) 35%, 
-          rgba(139, 92, 246, 0.08) 55%,
-          rgba(168, 85, 247, 0.08) 75%,
-          rgba(168, 85, 247, 0.06) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
         radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
         radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
       `,
@@ -151,13 +145,7 @@ const MobileNotaryPage = () => {
 
       {/* Benefits Section */}
       <section className="py-20 lg:py-28 bg-white relative" id="benefits" style={{backgroundImage: `
-        linear-gradient(90deg, 
-          transparent 0%, 
-          rgba(59, 130, 246, 0.08) 15%, 
-          rgba(99, 102, 241, 0.08) 35%, 
-          rgba(139, 92, 246, 0.08) 55%,
-          rgba(168, 85, 247, 0.08) 75%,
-          rgba(168, 85, 247, 0.06) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
         radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
         radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
       `,
@@ -213,13 +201,7 @@ const MobileNotaryPage = () => {
 
       {/* Common Use Cases */}
       <section className="py-20 lg:py-28 bg-white relative" id="use-cases" style={{backgroundImage: `
-        linear-gradient(90deg, 
-          transparent 0%, 
-          rgba(59, 130, 246, 0.08) 15%, 
-          rgba(99, 102, 241, 0.08) 35%, 
-          rgba(139, 92, 246, 0.08) 55%,
-          rgba(168, 85, 247, 0.08) 75%,
-          rgba(168, 85, 247, 0.06) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
         radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
         radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
       `,
@@ -302,13 +284,7 @@ const MobileNotaryPage = () => {
 
       {/* Process Section */}
       <section className="py-20 lg:py-28 bg-white relative" id="process" style={{backgroundImage: `
-        linear-gradient(90deg, 
-          transparent 0%, 
-          rgba(59, 130, 246, 0.08) 15%, 
-          rgba(99, 102, 241, 0.08) 35%, 
-          rgba(139, 92, 246, 0.08) 55%,
-          rgba(168, 85, 247, 0.08) 75%,
-          rgba(168, 85, 247, 0.06) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
         radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
         radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
       `,
@@ -357,13 +333,7 @@ const MobileNotaryPage = () => {
 
       {/* FAQ Quick Reference */}
       <section className="py-20 lg:py-28 bg-white relative" id="faq" style={{backgroundImage: `
-        linear-gradient(90deg, 
-          transparent 0%, 
-          rgba(59, 130, 246, 0.08) 15%, 
-          rgba(99, 102, 241, 0.08) 35%, 
-          rgba(139, 92, 246, 0.08) 55%,
-          rgba(168, 85, 247, 0.08) 75%,
-          rgba(168, 85, 247, 0.06) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
         radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
         radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
       `,

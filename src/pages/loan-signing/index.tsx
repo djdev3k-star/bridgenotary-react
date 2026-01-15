@@ -64,13 +64,7 @@ const LoanSigningPage: React.FC = () => {
       <div className="w-full bg-white">
       {/* Preparation Cards Section - Full Width Background */}
       <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: `
-        linear-gradient(90deg, 
-          transparent 0%, 
-          rgba(59, 130, 246, 0.08) 15%, 
-          rgba(99, 102, 241, 0.08) 35%, 
-          rgba(139, 92, 246, 0.08) 55%,
-          rgba(168, 85, 247, 0.08) 75%,
-          rgba(168, 85, 247, 0.06) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
         radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
         radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
       `,
@@ -108,13 +102,7 @@ const LoanSigningPage: React.FC = () => {
 
       {/* Loan Types Section */}
       <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: `
-        linear-gradient(90deg, 
-          transparent 0%, 
-          rgba(59, 130, 246, 0.08) 15%, 
-          rgba(99, 102, 241, 0.08) 35%, 
-          rgba(139, 92, 246, 0.08) 55%,
-          rgba(168, 85, 247, 0.08) 75%,
-          rgba(168, 85, 247, 0.06) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
         radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
         radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
       `,
@@ -162,13 +150,7 @@ const LoanSigningPage: React.FC = () => {
 
       {/* Process Section */}
       <section className="w-full bg-off-white py-20 md:py-28 relative" style={{backgroundImage: `
-        linear-gradient(90deg, 
-          transparent 0%, 
-          rgba(59, 130, 246, 0.08) 15%, 
-          rgba(99, 102, 241, 0.08) 35%, 
-          rgba(139, 92, 246, 0.08) 55%,
-          rgba(168, 85, 247, 0.08) 75%,
-          rgba(168, 85, 247, 0.06) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
         radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
         radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
       `,

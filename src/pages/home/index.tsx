@@ -157,13 +157,7 @@ const HomePage = () => (
 
     {/* Why Choose Us */}
     <section className="py-20 lg:py-28 bg-white border-t border-charcoal/10 relative" style={{backgroundImage: `
-      linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(59, 130, 246, 0.08) 15%, 
-        rgba(99, 102, 241, 0.08) 35%, 
-        rgba(139, 92, 246, 0.08) 55%,
-        rgba(168, 85, 247, 0.08) 75%,
-        rgba(168, 85, 247, 0.06) 100%),
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
       radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
       radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
     `,

@@ -1,151 +1,110 @@
 import { Link } from "react-router-dom";
 
 const About = () => (
-  <div className="w-full bg-white">
+  <div className="w-full">
     {/* Hero Section */}
-    <section className="relative overflow-hidden bg-white border-b border-neutral-200 w-screen left-1/2 -translate-x-1/2">
-      <div className="max-w-6xl mx-auto py-20 md:py-24 px-6">
-        <p className="text-sm font-semibold tracking-[0.2em] uppercase text-electric-blue mb-4">About Us</p>
-        <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6 leading-tight">
-          The Bridge Notary Story
-        </h1>
-        <p className="text-xl text-neutral-600 max-w-3xl leading-relaxed">
-          What started as a passion for helping people navigate important life moments has grown into a trusted notary service partner for title companies, lenders, and individuals across the Dallas-Fort Worth area.
-        </p>
+    <section className="relative overflow-hidden bg-white text-charcoal w-screen left-1/2 -translate-x-1/2 py-32 md:py-40 lg:py-48 min-h-[600px] flex items-center">
+      {/* Spectral Pattern Background */}
+      <div className="absolute inset-0 opacity-30" style={{
+        backgroundImage: `
+          linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(59, 130, 246, 0.15) 15%, 
+            rgba(99, 102, 241, 0.15) 35%, 
+            rgba(139, 92, 246, 0.15) 55%,
+            rgba(168, 85, 247, 0.15) 75%,
+            rgba(168, 85, 247, 0.12) 100%),
+          radial-gradient(circle at 20% 50%, rgba(0, 85, 230, 0.08) 0%, transparent 45%),
+          radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.06) 0%, transparent 50%)
+        `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}></div>
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-4 py-2 text-sm font-medium mb-8 border border-professional-blue/20">
+            <svg className="w-4 h-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-professional-blue">About Bridge</span>
+          </div>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-charcoal leading-[1.5] mb-8">
+            Our approach is straightforward: show up on time, prepare thoroughly, communicate clearly, and deliver documents that are correct on the first attempt.
+          </h1>
+        </div>
       </div>
     </section>
 
     {/* Our Story */}
-    <section className="py-20 lg:py-28 bg-white">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="prose prose-lg max-w-none">
-          <p className="text-lg text-neutral-700 leading-[1.9] mb-8 first-letter:text-5xl first-letter:font-bold first-letter:text-proof first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none">
-            Bridge Notary was founded with a simple belief: every signature tells a story. Whether it's a first-time homebuyer signing their closing documents, a business owner finalizing a critical agreement, or a family handling estate matters, we recognized that these moments deserve more than just a stamp—they deserve care, professionalism, and peace of mind.
-          </p>
-          <p className="text-lg text-neutral-700 leading-[1.9] mb-8">
-            Bridge Notary was created to raise the standard for notary services—making the process clear, professional, and reliable for every client and every document.
-          </p>
-          <p className="text-lg text-neutral-700 leading-[1.9] mb-8">
-            Today, Bridge Notary serves as a trusted partner for title companies, mortgage lenders, real estate professionals, and individuals throughout the DFW metroplex. We've built our reputation on three pillars: <strong className="text-proof">reliability</strong> (we show up on time, every time), <strong className="text-proof">accuracy</strong> (we get documents right the first time), and <strong className="text-proof">communication</strong> (we keep everyone informed throughout the process).
-          </p>
-          <div className="my-12 pl-6 border-l-4 border-electric-blue/30 text-neutral-800 italic text-xl leading-relaxed">
-            "Behind every document is a story—a new home, a business deal, a family legacy. We treat each signing with the care it deserves."
-          </div>
-          <p className="text-lg text-neutral-700 leading-[1.9]">
-            Whether you need a mobile notary to come to your location, remote online notarization from the comfort of your home, or assistance navigating the apostille process for international documents, Bridge Notary is here to make it seamless.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    {/* Mission & Vision */}
-    <section className="py-20 lg:py-28 bg-neutral-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Mission */}
-          <div className="bg-white p-8 md:p-10 border border-neutral-200">
-            <div className="mb-6">
-              <svg className="w-8 h-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-proof mb-4">Our Mission</h2>
-            <p className="text-neutral-700 text-lg leading-relaxed">
-              To offer a professional and stress-free notary experience for our clients and their customers, with a focus on reliability, clear communication, and unwavering confidence at every step.
+    <section className="py-12 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
+        
+        {/* Our Values Grid */}
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-20">
+          {/* Why Bridge */}
+          <div className="flex flex-col justify-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-charcoal mb-4">Why "Bridge"?</h3>
+            <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
+              We connect your paperwork to outcomes. Documents don't close transactions on their own—they need proper notarization, verification, and delivery. We bridge that gap, ensuring every signature, seal, and detail moves you forward without delays.
             </p>
           </div>
-
-          {/* Vision */}
-          <div className="bg-white p-8 md:p-10 border border-neutral-200">
-            <div className="mb-6">
-              <svg className="w-8 h-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-              </svg>
+          
+          {/* Three Pillars */}
+          <div className="space-y-4 md:space-y-6">
+            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+              <h4 className="font-bold text-charcoal text-lg mb-2">Punctuality</h4>
+              <p className="text-charcoal/70 leading-relaxed text-sm">We arrive when scheduled and come prepared. No delays, no excuses.</p>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-proof mb-4">Our Vision</h2>
-            <p className="text-neutral-700 text-lg leading-relaxed">
-              To be the most trusted notary closing partner for complex, urgent, and high-value transactions, recognized for our professionalism, punctuality, and meticulous attention to detail.
-            </p>
+            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+              <h4 className="font-bold text-charcoal text-lg mb-2">Accuracy</h4>
+              <p className="text-charcoal/70 leading-relaxed text-sm">Correct documents on the first attempt. Missing signatures and errors are preventable—we prevent them.</p>
+            </div>
+            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+              <h4 className="font-bold text-charcoal text-lg mb-2">Communication</h4>
+              <p className="text-charcoal/70 leading-relaxed text-sm">From booking to completion, you know what to expect. Clear updates, no surprises.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    {/* Values */}
-    <section className="py-20 lg:py-28 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-proof mb-4">What Guides Us</h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            These core values shape every interaction and every signing.
+        {/* Closing Statement */}
+        <div className="text-center mb-12 fade-in-up">
+          <p className="text-3xl md:text-5xl lg:text-5xl font-bold text-charcoal leading-[1.4]">
+            <span className="text-professional-blue">This is how notary services should work.</span>
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Reliability",
-              desc: "We show up on time, prepared, and ready. Our 99% on-time rate isn't a marketing claim—it's our standard.",
-              icon: (
-                <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              )
-            },
-            {
-              title: "Accuracy",
-              desc: "We get documents right the first time. Missing signatures and incorrect notarizations cause costly delays—we prevent them.",
-              icon: (
-                <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              )
-            },
-            {
-              title: "Communication",
-              desc: "From booking to completion, we keep everyone informed. No surprises, no missed details, no uncertainty.",
-              icon: (
-                <svg className="w-6 h-6 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              )
-            },
-          ].map((value) => (
-            <div key={value.title} className="text-center">
-              <div className="w-12 h-12 bg-electric-blue/10 flex items-center justify-center mx-auto mb-6">
-                {value.icon}
-              </div>
-              <h3 className="text-xl font-bold text-proof mb-3">{value.title}</h3>
-              <p className="text-neutral-600 leading-relaxed">{value.desc}</p>
-            </div>
-          ))}
+        {/* Who We Serve */}
+        <div className="bg-professional-blue/5 border-l-4 border-professional-blue p-6 md:p-8 rounded-r-lg">
+          <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
+            Whether you're a title company coordinating closings, a lender managing compliance, or an individual needing document authentication, Bridge Notary is built to handle the work efficiently and professionally.
+          </p>
         </div>
       </div>
     </section>
 
     {/* CTA Section */}
-    <section className="py-20 lg:py-28 bg-electric-blue">
+    <section className="py-24 lg:py-32 bg-professional-blue/10 text-charcoal w-full flex items-center justify-center" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-          Ready to Experience the Difference?
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
+          Ready to Work With Us?
         </h2>
-        <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-          Let us show you what professional notary service looks like.
+        <p className="text-xl text-charcoal/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Simple scheduling, professional execution. Let's handle your notarization needs.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link 
             to="/book" 
-            className="inline-flex items-center justify-center gap-3 bg-white text-proof hover:bg-neutral-100 transition-all text-lg py-4 px-8 font-semibold shadow-xl"
+            className="inline-flex items-center justify-center gap-3 bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-5 h-5 transition-transform group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
             Book an Appointment
           </Link>
           <Link 
             to="/services" 
-            className="inline-flex items-center justify-center gap-3 border-2 border-white text-white hover:bg-white hover:text-proof transition-all text-lg py-4 px-8 font-semibold"
+            className="inline-flex items-center justify-center gap-3 border-2 border-professional-blue text-professional-blue hover:bg-professional-blue hover:text-white transition-all text-lg py-4 px-8 font-semibold hover:shadow-md"
           >
             View Our Services
           </Link>

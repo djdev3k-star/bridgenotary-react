@@ -15,12 +15,12 @@ interface FeatureCardProps {
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon }) => (
-  <div className="bg-white rounded p-6 shadow-sm border border-neutral-100">
+  <div className="p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
     <div className="flex items-start gap-4">
-      <div className="text-proof">{icon}</div>
+      <div className="text-professional-blue flex-shrink-0">{icon}</div>
       <div>
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
-        <p className="text-neutral-600">{description}</p>
+        <h3 className="text-lg font-semibold mb-2 text-charcoal">{title}</h3>
+        <p className="text-charcoal/70">{description}</p>
       </div>
     </div>
   </div>
@@ -28,31 +28,24 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon }) =
 
 const BenefitItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div className="flex items-start gap-2">
-    <CheckIcon className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
-    <span className="text-neutral-600">{children}</span>
+    <CheckIcon className="h-5 w-5 text-professional-blue mt-1 flex-shrink-0" />
+    <span className="text-charcoal/70">{children}</span>
   </div>
 );
 
 const WhyBridgeNotaryPage: React.FC = () => {
   return (
-    <div className="w-full bg-white text-neutral-900 pt-20">
+    <div className="w-full bg-off-white text-charcoal" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
       {/* Hero Section */}
-      <section className="bg-proof/10 py-20 px-6">
+      <section className="bg-professional-blue/10 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="h-px w-12 bg-neutral-300"></span>
-            <span className="text-xs uppercase tracking-[0.25em] text-neutral-700">
-              Why Choose Us
-            </span>
-            <span className="h-px w-12 bg-neutral-300"></span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-proof mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
             Why Bridge Notary?
           </h1>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-charcoal/70 max-w-3xl mx-auto mb-8">
             The Smarter, Safer Way to Notarize
           </p>
-          <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-base text-charcoal/70 max-w-3xl mx-auto">
             When it comes to notarizing your most important documents, you deserve a process that's
             <strong> secure</strong>, <strong>simple</strong>, and <strong>trusted</strong> — no matter where you are.
             Bridge Notary was built to connect people with modern, remote notarization services without
@@ -62,22 +55,22 @@ const WhyBridgeNotaryPage: React.FC = () => {
       </section>
 
       {/* Remote But Personal Section */}
-      <section className="section">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-20 lg:py-28 px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-semibold mb-6">Remote, But Personal</h2>
-              <p className="text-lg text-neutral-600 mb-6">
+              <h2 className="text-3xl font-bold text-charcoal mb-6">Remote, But Personal</h2>
+              <p className="text-lg text-charcoal/70 mb-6">
                 We combine cutting-edge technology with real, certified notaries to deliver a remote
                 experience that's just as valid — and far more convenient — than going in person.
               </p>
-              <p className="text-lg text-neutral-600">
+              <p className="text-lg text-charcoal/70">
                 You can notarize your documents online from home, work, or anywhere, with no printing,
                 mailing, or travel.
               </p>
             </div>
-            <div className="bg-neutral-100 aspect-video rounded">
-              <div className="flex items-center justify-center h-full text-neutral-400">
+            <div className="bg-professional-blue/10 aspect-video rounded">
+              <div className="flex items-center justify-center h-full text-charcoal/40">
                 [Infographic: Remote Notarization Process]
               </div>
             </div>
@@ -86,10 +79,10 @@ const WhyBridgeNotaryPage: React.FC = () => {
       </section>
 
       {/* Security & Compliance Section */}
-      <section className="bg-neutral-50 py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold mb-12 text-center">Security & Compliance First</h2>
-          <p className="text-lg text-neutral-600 text-center mb-12">
+      <section className="bg-white py-20 lg:py-28 px-6" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-charcoal mb-6 text-center">Security & Compliance First</h2>
+          <p className="text-lg text-charcoal/70 text-center mb-12 max-w-3xl mx-auto">
             Bridge Notary meets or exceeds the standards for Remote Online Notarization (RON) laws in the U.S.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -113,10 +106,10 @@ const WhyBridgeNotaryPage: React.FC = () => {
       </section>
 
       {/* Fast & Flexible Section */}
-      <section className="section">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold mb-8 text-center">Fast, Flexible & On Your Time</h2>
-          <div className="grid md:grid-cols-2 gap-12">
+      <section className="py-20 lg:py-28 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-charcoal mb-8 text-center">Fast, Flexible & On Your Time</h2>
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <div className="space-y-4">
               <BenefitItem>Available 24/7 with on-demand notaries</BenefitItem>
               <BenefitItem>Same-day appointments or instant sessions</BenefitItem>
@@ -134,29 +127,19 @@ const WhyBridgeNotaryPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-proof text-white py-20 px-6">
-        {/* Background image with overlay */}
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src="/images/stack-loan-documents.jpg" 
-            alt="" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-proof/70"></div>
-        
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-6">Start Your Notarization Now</h2>
-          <p className="text-lg mb-8">
+      <section className="relative bg-white text-charcoal py-20 px-6 w-full flex items-center justify-center" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Start Your Notarization Now</h2>
+          <p className="text-lg text-charcoal/70 mb-8">
             Whether you're notarizing one page or one hundred, Bridge Notary is here to simplify the process.
             Experience how easy remote notarization can be.
           </p>
-          <div className="flex flex-col md:flex-row justify-center gap-4">
-            <Link to="/book" className="button-primary text-lg py-4 px-8 bg-white text-proof hover:bg-neutral-100">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
+            <Link to="/book" className="inline-flex items-center justify-center bg-professional-blue text-white hover:bg-professional-blue/90 transition-all text-lg py-4 px-8 font-semibold shadow-lg">
               Get Started
             </Link>
-            <Link to="/schedule" className="button-outline text-lg py-4 px-8 border-white text-white hover:bg-white/10">
-              Schedule a Session
+            <Link to="/book?service=ron&mode=online" className="inline-flex items-center justify-center border-2 border-professional-blue text-professional-blue hover:bg-professional-blue hover:text-white transition-all text-lg py-4 px-8 font-semibold">
+              Schedule RON Session
             </Link>
           </div>
         </div>

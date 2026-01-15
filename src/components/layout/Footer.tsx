@@ -1,18 +1,16 @@
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/Button';
 
 const footerLinks = {
-  resources: [
-    { label: 'Services', path: '/services' },
-    { label: 'Pricing', path: '/pricing' },
-    { label: 'FAQ', path: '/faq' },
-    { label: 'Remote Notary', path: '/ron' },
-    { label: 'Resources', path: '/resources' },
+  services: [
+    { label: 'Mobile Notary', path: '/services/mobile' },
+    { label: 'Loan Signing', path: '/loan-signing' },
+    { label: 'Apostille Services', path: '/apostille' },
+    { label: 'Remote Online Notary', path: '/ron' },
   ],
   company: [
     { label: 'About Us', path: '/about' },
     { label: 'Contact', path: '/contact' },
-    { label: 'Bridge Notary Pro', path: '/pro' },
+    { label: 'FAQ', path: '/faq' },
   ],
   legal: [
     { label: 'Privacy Policy', path: '/privacy' },
@@ -22,34 +20,36 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white mt-20">
+    <footer className="bg-white border-t border-professional-blue/10 mt-20">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-12 gap-8 mb-12">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
-          <div className="md:col-span-4">
-            <h3 className="text-xl font-bold text-white mb-4">Bridge Notary</h3>
-            <p className="text-gray-300 mb-6">
-              Professional mobile notary and loan signing services in the Greater Houston area.
+          <div>
+            <div className="flex flex-col gap-0.5 mb-4">
+              <h3 className="text-2xl font-bold text-charcoal tracking-tight">Bridge Notary</h3>
+              <div className="h-1 w-8 bg-professional-blue"></div>
+            </div>
+            <p className="text-charcoal/70 mb-6 text-sm leading-relaxed">
+              Professional notary services throughout DFW. Licensed, certified, and insured.
             </p>
-            <div className="space-y-4">
-              {/* TODO: Add phone contact for future development */}
-              {/* <a href="tel:+14696298932" className="flex items-center text-gray-300 hover:text-white transition-colors"> */}
-                {/* <span className="text-lg">(469) 629-8932</span> */}
-              {/* </a> */}
-              <a href="mailto:contact@bridgenotary.com" className="text-gray-300 hover:text-white transition-colors">
+            <div className="space-y-3 text-sm">
+              <a href="tel:+14696298932" className="flex items-center text-charcoal hover:text-professional-blue transition-colors font-semibold">
+                (469) 629-8932
+              </a>
+              <a href="mailto:contact@bridgenotary.com" className="block text-charcoal/75 hover:text-professional-blue transition-colors text-sm">
                 contact@bridgenotary.com
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-2">
-            <h4 className="text-base font-semibold text-gray-200 uppercase tracking-wider mb-4">Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map(link => (
+          {/* Services Links */}
+          <div>
+            <h4 className="text-xs font-bold text-charcoal uppercase tracking-widest mb-6 letter-spacing">Services</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.services.map(link => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-gray-300 hover:text-white transition-colors">
+                  <Link to={link.path} className="text-charcoal/75 hover:text-professional-blue transition-colors text-sm">
                     {link.label}
                   </Link>
                 </li>
@@ -57,12 +57,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-2">
-            <h4 className="text-base font-semibold text-gray-200 uppercase tracking-wider mb-4">Company</h4>
-            <ul className="space-y-3">
+          {/* Company Links */}
+          <div>
+            <h4 className="text-xs font-bold text-charcoal uppercase tracking-widest mb-6">Company</h4>
+            <ul className="space-y-2.5">
               {footerLinks.company.map(link => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-gray-300 hover:text-white transition-colors">
+                  <Link to={link.path} className="text-charcoal/75 hover:text-professional-blue transition-colors text-sm">
                     {link.label}
                   </Link>
                 </li>
@@ -70,44 +71,46 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* CTA Column */}
-          <div className="md:col-span-4">
-            <div className="bg-gray-800 rounded p-6">
-              <h4 className="text-lg font-semibold text-white mb-2">Ready to get started?</h4>
-              <p className="text-gray-300 mb-4">
-                Book your signing appointment now or contact us for special requests.
-              </p>
-              <Link to="/book">
-                <Button variant="primary" className="w-full mb-3">
-                  Schedule a Signing
-                </Button>
-              </Link>
-              <p className="text-sm text-gray-300 text-center">
-                Available 7 days a week
-              </p>
+          {/* Credentials Column */}
+          <div>
+            <h4 className="text-xs font-bold text-charcoal uppercase tracking-widest mb-6">Credentials</h4>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-start gap-2">
+                <svg className="w-4 h-4 text-professional-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-charcoal/75">NNA Certified</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <svg className="w-4 h-4 text-professional-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-charcoal/75">$100K E&O Insurance</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <svg className="w-4 h-4 text-professional-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-charcoal/75">Licensed in Texas</span>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300 text-sm">
+        <div className="pt-8 border-t border-professional-blue/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-charcoal/70 text-xs">
               &copy; {new Date().getFullYear()} Bridge Notary. All rights reserved.
             </p>
-            <ul className="flex space-x-6 mt-4 md:mt-0">
+            <ul className="flex space-x-6">
               {footerLinks.legal.map(link => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-gray-300 hover:text-white text-sm transition-colors">
+                  <Link to={link.path} className="text-charcoal/70 hover:text-professional-blue text-xs transition-colors">
                     {link.label}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link to="/client-portal" className="text-gray-400 hover:text-gray-300 text-xs transition-colors">
-                  Client Portal
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from "react-router-dom";
-import { Button } from '@/components/ui/Button';
+import { Link } from "react-router-dom";
 import DropdownMenu from '@/components/ui/DropdownMenu';
+import { featureFlags } from '@/utils/featureFlags';
 import { NavigationMenuItems, NavigationMenuGroup, NavigationProps } from './Navigation.types';
 
 const Navigation: React.FC<NavigationProps> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-  const isLoginPage = location.pathname === '/login';
-  const notarizeButtonClass = isLoginPage ? 'bg-[#10A981] hover:bg-[#0d8c6e]' : '';
 
   const solutionsMenuGroups: NavigationMenuGroup[] = [
     {
@@ -46,29 +43,18 @@ const Navigation: React.FC<NavigationProps> = () => {
           )
         },
         {
-          label: 'Estate & Trust Documents',
-          path: '/services/estate-trust',
-          description: 'Wills, trusts, healthcare directives, and POAs.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c1.657 0 3-.895 3-2s-1.343-2-3-2-3 .895-3 2 1.343 2 3 2z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 20c0-2.21 2.686-4 6-4s6 1.79 6 4" />
-            </svg>
-          )
-        },
-        {
-          label: 'View all notary services →',
+          label: 'View all services →',
           path: '/services',
           description: 'POA, witness services, affidavits, and more.',
           icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           )
         }
       ]
     },
-    {
+    ...(featureFlags.enableApostille ? [{
       title: 'Apostille',
       items: [
         {
@@ -83,16 +69,6 @@ const Navigation: React.FC<NavigationProps> = () => {
           )
         },
         {
-          label: 'Apostille Quiz',
-          path: '/apostille/quiz-start',
-          description: 'Find out what documents you need.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16h6m-9 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          )
-        },
-        {
           label: 'Study Abroad',
           path: '/study-abroad',
           description: 'Diplomas, transcripts, and educational documents.',
@@ -100,37 +76,6 @@ const Navigation: React.FC<NavigationProps> = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14v7" />
-            </svg>
-          )
-        },
-        /* {
-          label: 'Dual Citizenship',
-          path: '/dual-citizenship',
-          description: 'Vital records and background checks for dual passports.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 20a6 6 0 1112 0H6z" />
-            </svg>
-          )
-        }, */
-        /* {
-          label: 'International Adoption',
-          path: '/international-adoption',
-          description: 'Home studies, dossiers, and legal documents.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
-          )
-        }, */
-        {
-          label: 'Overseas Property',
-          path: '/overseas-property',
-          description: 'Real estate deeds, contracts, and legal documents.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-3m0 0l7-4 7 4M5 9v10a1 1 0 001 1h12a1 1 0 001-1V9m-9 4l4 2m-4-2l-4-2" />
             </svg>
           )
         },
@@ -144,8 +89,38 @@ const Navigation: React.FC<NavigationProps> = () => {
             </svg>
           )
         },
+        {
+          label: 'Dual Citizenship',
+          path: '/dual-citizenship',
+          description: 'Documentation for citizenship and passport applications.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H5a2 2 0 00-2 2v10a2 2 0 002 2h5m4 0h5a2 2 0 002-2V8a2 2 0 00-2-2h-5" />
+            </svg>
+          )
+        },
+        {
+          label: 'International Adoption',
+          path: '/international-adoption',
+          description: 'Court orders and adoption-related documentation.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+            </svg>
+          )
+        },
+        {
+          label: 'Overseas Property',
+          path: '/overseas-property',
+          description: 'Property deeds and international real estate transactions.',
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3" />
+            </svg>
+          )
+        },
       ]
-    },
+    }] : []),
     {
       title: 'Loan Signing',
       items: [
@@ -180,32 +155,11 @@ const Navigation: React.FC<NavigationProps> = () => {
           )
         },
         {
-          label: 'HELOC & Home Equity',
-          path: '/loan-signing/heloc',
-          description: 'Equity line closings with lender-specific docs.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-            </svg>
-          )
-        },
-        {
-          label: 'Seller Signing',
-          path: '/loan-signing/seller',
-          description: 'Seller-side closings and proceeds.',
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 17h10m4 0h.01M5 17l1-4h11l1 4M6 13l2-7h8l2 7" />
-            </svg>
-          )
-        },
-        {
-          label: 'View all loan signings →',
+          label: 'View all signings →',
           path: '/loan-signing',
           description: 'Complete loan signing overview.',
           icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           )
@@ -217,13 +171,16 @@ const Navigation: React.FC<NavigationProps> = () => {
   const mobileSolutionLinks: NavigationMenuItems[] = solutionsMenuGroups.flatMap((group) => group.items);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur z-50 border-b border-neutral-200">
+    <header className="sticky top-0 left-0 w-full shadow-sm z-50 bg-white border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-bold text-2xl tracking-tighter text-proof">Bridge Notary</Link>
+        <Link to="/" className="flex flex-col gap-0.5">
+          <span className="font-bold text-2xl tracking-tight text-deep-navy">Bridge Notary</span>
+          <div className="h-1 w-8 bg-professional-blue"></div>
+        </Link>
         <nav className="hidden md:flex gap-8 items-center">
           <DropdownMenu
             trigger={
-              <span className="text-neutral-900 hover:text-proof transition text-base font-medium flex items-center gap-1">
+              <span className="text-charcoal hover:text-professional-blue transition text-base font-semibold flex items-center gap-1">
                   Solutions
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -232,45 +189,26 @@ const Navigation: React.FC<NavigationProps> = () => {
             }
             groups={solutionsMenuGroups}
           />
-          <Link to="/pricing" className="text-neutral-900 hover:text-proof transition text-base font-medium">Pricing</Link>
-            <Link to="/ron" className="text-neutral-900 hover:text-proof transition text-base font-medium">RON</Link>
-          <Link to="/about" className="text-neutral-900 hover:text-proof transition text-base font-medium">About</Link>
+          <Link to="/pricing" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Pricing</Link>
+          <Link to="/about" className="text-charcoal hover:text-professional-blue transition text-base font-medium">About</Link>
+          <Link to="/contact" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Contact</Link>
         </nav>
-        <div className="hidden md:flex items-center gap-6">
-          {/* Trust Badges */}
-          <div className="flex items-center gap-3 px-3 py-1">
-            <div className="flex items-center gap-1 text-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              <span className="text-neutral-700 font-medium">Trusted</span>
-            </div>
-            <div className="flex items-center gap-1 text-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="text-neutral-700 font-medium">Certified</span>
-            </div>
-            <div className="flex items-center gap-1 text-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-proof" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="text-neutral-700 font-medium">24/7</span>
-            </div>
-          </div>
-          <Link to="/login" className="text-neutral-900 hover:text-proof transition font-medium">
-            Login
+        <div className="hidden md:flex items-center gap-4">
+          {/* 24/7 Badge and CTA */}
+          <span className="text-xs font-semibold text-professional-blue bg-professional-blue/10 px-3 py-1 rounded-full">
+            Available 24/7
+          </span>
+          <Link to="/login" className="text-charcoal hover:text-professional-blue transition text-sm font-semibold">
+            Log In
           </Link>
-          <Link to="/book">
-            <Button variant="primary" className={`pulse-button ${notarizeButtonClass}`}>
-              Notarize
-            </Button>
+          <Link to="/book" className="button-primary px-6 py-2 font-semibold rounded transition">
+            Notarize
           </Link>
         </div>
         <div className="md:hidden">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)} 
-            className="text-neutral-700 hover:text-proof focus:outline-none"
+            className="text-charcoal hover:text-professional-blue focus:outline-none"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -280,27 +218,29 @@ const Navigation: React.FC<NavigationProps> = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden bg-white/80 backdrop-blur">
-          <nav className="px-6 pt-2 pb-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-neutral-200">
+          <nav className="px-6 pt-4 pb-4 flex flex-col gap-4">
             {mobileSolutionLinks.map((item) => (
               <Link 
                 key={item.path}
                 to={item.path} 
-                className="text-neutral-900 hover:text-proof transition text-base font-medium"
+                className="text-charcoal hover:text-professional-blue transition text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <Link to="/pricing" className="text-neutral-900 hover:text-proof transition text-base font-medium">Pricing</Link>
-            <Link to="/contact" className="text-neutral-900 hover:text-proof transition text-base font-medium">Contact</Link>
-            <Link to="/login" className="text-neutral-900 hover:text-proof transition text-base font-medium">Login</Link>
-            {/* TODO: Add phone contact for future development */}
-            <Link to="/book">
-              <Button variant="primary" className={`w-full pulse-button ${notarizeButtonClass}`}>
+            <div className="border-t border-neutral-200 pt-4 mt-4 flex flex-col gap-4">
+              <Link to="/pricing" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Pricing</Link>
+              <Link to="/about" className="text-charcoal hover:text-professional-blue transition text-base font-medium">About</Link>
+              <Link to="/contact" className="text-charcoal hover:text-professional-blue transition text-base font-medium">Contact</Link>
+              <Link to="/login" className="text-charcoal hover:text-professional-blue transition text-base font-semibold">
+                Log In
+              </Link>
+              <Link to="/book" className="button-primary w-full text-center">
                 Notarize
-              </Button>
-            </Link>
+              </Link>
+            </div>
           </nav>
         </div>
       )}

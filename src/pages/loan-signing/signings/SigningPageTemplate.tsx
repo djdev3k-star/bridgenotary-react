@@ -45,7 +45,7 @@ const SigningPageTemplate: React.FC<SigningPageProps> = ({
   return (
     <div className="w-full bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-neutral-200">
+      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-neutral-200" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
         <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-24">
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-proof/60 mb-4">
             Loan Signing Services

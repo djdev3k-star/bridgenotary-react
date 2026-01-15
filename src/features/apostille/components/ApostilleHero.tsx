@@ -30,27 +30,27 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
         <div className="max-w-3xl text-left">
           {/* Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            Document Apostille Services
+            Apostille Partner Network
           </h1>
 
           {/* Tagline */}
           <div className="mb-6">
             <p className="text-lg md:text-xl font-bold text-white drop-shadow-sm">
-              Avoid Rejection. Avoid Delays. Get It Right the First Time.
+              Connect. Authenticate. Deliver. We Bridge You to TX SOS.
             </p>
           </div>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-white/95 mb-8 leading-relaxed drop-shadow-sm">
-            Whether it's for a destination wedding in Italy, teaching in Japan, or adopting from Colombia, we get your documents stamped, sealed, and ready—without the guesswork.
+            Bridge Notary connects you with certified notary partners in your area, then handles secure courier delivery to the Texas Secretary of State for official apostille authentication.
           </p>
 
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              onClick={onContactClick}
-              className="bg-white text-proof hover:bg-neutral-100 transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl"
+            <Link
+              to="/contact"
+              className="bg-white text-proof hover:bg-neutral-100 transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl text-center"
             >
               <span className="flex items-center justify-center gap-2 whitespace-nowrap">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -58,7 +58,7 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
                 </svg>
                 Start My Apostille
               </span>
-            </button>
+            </Link>
             <button
               onClick={onContactClick}
               className="border-2 border-white text-white hover:bg-white hover:text-proof transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl"
@@ -76,7 +76,7 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
     </section>
 
     {/* Flyer Strip Section - full-width seamless trio with deep links */}
-    <section className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden bg-neutral-50">
+    <section className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden bg-off-white">
       <div className="flex flex-col md:flex-row h-56 md:h-64 lg:h-72">
         <Link
           to="/study-abroad"
@@ -84,14 +84,14 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
           aria-label="Study Abroad apostille services"
         >
           <img
-            src="/src/assets/images/study-abroad.png"
+            src="/images/study-abroad.png"
             alt="Study Abroad"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-electric-blue/60 via-electric-blue/30 to-transparent group-hover:from-electric-blue/70 group-hover:via-electric-blue/40 transition-colors duration-300"></div>
-          <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
-            <p className="text-sm uppercase tracking-[0.2em] text-white/80">Study Abroad</p>
-            <p className="text-lg font-semibold">Academic & visa documents</p>
+          <div className="absolute inset-0 bg-professional-blue/60 group-hover:bg-professional-blue/50 transition-colors duration-300"></div>
+          <div className="absolute inset-0 flex flex-col justify-end p-6">
+            <p className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-2">Study Abroad</p>
+            <p className="text-lg md:text-xl font-bold text-white">Academic & Visa Documents</p>
           </div>
         </Link>
 
@@ -101,14 +101,14 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
           aria-label="International Adoption apostille services"
         >
           <img
-            src="/src/assets/images/international-adoption.png"
+            src="/images/international-adoption.png"
             alt="International Adoption"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-proof/65 via-electric-blue/35 to-transparent group-hover:from-proof/75 group-hover:via-electric-blue/45 transition-colors duration-300"></div>
-          <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
-            <p className="text-sm uppercase tracking-[0.2em] text-white/80">International Adoption</p>
-            <p className="text-lg font-semibold">Home studies & dossiers</p>
+          <div className="absolute inset-0 bg-professional-blue/60 group-hover:bg-professional-blue/50 transition-colors duration-300"></div>
+          <div className="absolute inset-0 flex flex-col justify-end p-6">
+            <p className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-2">International Adoption</p>
+            <p className="text-lg md:text-xl font-bold text-white">Home Studies & Dossiers</p>
           </div>
         </Link>
 
@@ -118,14 +118,14 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
           aria-label="Destination Wedding apostille services"
         >
           <img
-            src="/src/assets/images/destination-wedding.png"
+            src="/images/destination-wedding.png"
             alt="Destination Wedding"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-electric-blue/40 via-proof/20 to-transparent group-hover:from-electric-blue/50 group-hover:via-proof/30 transition-colors duration-300"></div>
-          <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
-            <p className="text-sm uppercase tracking-[0.2em] text-white/80">Destination Wedding</p>
-            <p className="text-lg font-semibold">Marriage & identity docs</p>
+          <div className="absolute inset-0 bg-professional-blue/60 group-hover:bg-professional-blue/50 transition-colors duration-300"></div>
+          <div className="absolute inset-0 flex flex-col justify-end p-6">
+            <p className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-2">Destination Wedding</p>
+            <p className="text-lg md:text-xl font-bold text-white">Marriage & Identity Documents</p>
           </div>
         </Link>
       </div>

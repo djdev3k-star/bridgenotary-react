@@ -1,39 +1,13 @@
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import { featureFlags } from "@/utils/featureFlags";
-
-// Direct image paths
-const generalImages = {
-  notaryPublicStamp: '/images/notarypublic-generalimagewithstamp.jpg',
-  genNotaryFlyer: '/images/genNotaryFlyers.png',
-  genNotaryStripFlyer: '/images/genNotarystripFlyers- Bridge Notary .png',
-};
-
-const ronImages = {
-  remoteNotaryProfessional: '/images/A professional notary conducting a video conference with a client for online notary services. The image shows the notary on a laptop screen, with a legal document visible in the foreground._.jpg',
-  happyCustomer: '/images/happy customer using video conference conveniently from mobile device.jpg',
-};
-
-const apostilleImages = {
-  apostilleDocument: '/images/apostille_A person signing important legal documents in the presence of a notary public. The notary is seen from the side, with a clear view of the signature, documents, and notary seal._.jpg',
-  apostilleFlyer: '/images/apostilleFlyers.png',
-  apostilleFlyerStrip: '/images/apostilleFlyersstrip.png',
-};
-
-const travelImages = {
-  destinationWedding: '/images/destination-wedding.png',
-  dualCitizenship: '/images/dual-citizenship.png',
-  internationalAdoption: '/images/international-adoption.png',
-  overseasProperty: '/images/overseas-property.png',
-  studyAbroad: '/images/study-abroad.png',
-};
-
-const loanSigningImages = {
-  stackLoanDocuments: '/images/stack-loan-documents.jpg',
-  loanFlyer: '/images/loanFlyers.png',
-  commLoanFlyer: '/images/commloanFlyers.png',
-  commSignFlyer: '/images/commsignFlyer.png'
-};
+import {
+  generalImages,
+  travelImages,
+  ronImages,
+  apostilleImages,
+  loanSigningImages
+} from "@/assets/images";
 
 const notFoundImages = [
   generalImages.notaryPublicStamp,

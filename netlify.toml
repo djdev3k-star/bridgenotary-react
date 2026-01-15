@@ -3,11 +3,39 @@
   publish = "dist"
   environment = { NETLIFY_NEXT_PLUGIN_SKIP = "true" }
 
+[dev]
+  targetPort = 3000
+  port = 8888
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+
+[[redirects]]
+  from = "/api/appointment"
+  to = "/.netlify/functions/appointment"
+  status = 200
+
+[[redirects]]
+  from = "/api/apostille"
+  to = "/.netlify/functions/apostille"
+  status = 200
+
+[[redirects]]
+  from = "/api/ron/start"
+  to = "/.netlify/functions/ron-start"
+  status = 200
+
 [context.production]
-  environment = { NODE_VERSION = "18" }
+  environment = { NODE_VERSION = "20" }
 
 [context.deploy-preview]
-  environment = { NODE_VERSION = "18" }
+  environment = { NODE_VERSION = "20" }
 
 [[redirects]]
   from = "/*"

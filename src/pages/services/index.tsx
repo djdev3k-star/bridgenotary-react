@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 // Service categories with all services
 const serviceCategories = [
   {
+    id: "loan-signing",
     title: "Loan Signing",
     description: "Mortgage and real estate closings handled with precision",
     services: [
@@ -15,10 +17,9 @@ const serviceCategories = [
       { name: "Commercial Closing", link: "/loan-signing/commercial", price: "$200+" },
       { name: "TX Property Tax Loan", link: "/loan-signing/property-tax", price: "$125" },
     ],
-    ctaLink: "/loan-signing",
-    ctaText: "View All Loan Signings",
   },
   {
+    id: "general-notary",
     title: "General Notary",
     description: "Essential notarization for personal and legal documents",
     services: [
@@ -29,214 +30,228 @@ const serviceCategories = [
       { name: "Affidavits & Jurats", link: "/book?service=general", price: "$25+" },
       { name: "I-9 Verification", link: "/book?service=i9-verification", price: "$50+" },
     ],
-    ctaLink: "/book?service=general",
-    ctaText: "Book General Notary",
   },
   {
+    id: "specialty",
     title: "Specialty Services",
     description: "International documents and remote notarization",
     services: [
       { name: "Remote Online Notarization", link: "/ron", price: "$50+" },
-      { name: "Apostille Services", link: "/apostille", price: "$150+" },
+      { name: "Apostille Partner Network", link: "/apostille", price: "$150+" },
       { name: "International POA", link: "/apostille", price: "Contact" },
     ],
-    ctaLink: "/ron",
-    ctaText: "Explore RON",
   },
 ];
 
-const Services = () => (
-  <div className="w-full bg-white">
-    {/* Hero Section */}
-    <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-neutral-200">
-      <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-sm font-semibold tracking-[0.2em] uppercase text-proof/60 mb-4">
-          Bridge Notary
-        </p>
-        <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-proof">
-          Our Services
-        </h1>
-        <p className="text-2xl md:text-3xl text-electric-blue font-semibold mb-6">
-          Professional Notary Solutions
-        </p>
-        <p className="text-xl md:text-2xl text-neutral-700 max-w-3xl leading-relaxed mb-8">
-          From mortgage closings to international document authentication—we handle every notarization need with expertise and reliability.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            to="/book"
-            className="bg-electric-blue text-white font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl hover:bg-electric-blue/90 transition-all"
-          >
-            Book an Appointment
-          </Link>
-          <Link
-            to="/contact"
-            className="border-2 border-proof text-proof font-semibold px-8 py-4 text-lg hover:bg-proof hover:text-white transition-all"
-          >
-            Contact Us
-          </Link>
-        </div>
+const Services = () => {
+  const [activeTab, setActiveTab] = useState("loan-signing");
+  const activeCategory = serviceCategories.find(cat => cat.id === activeTab);
 
-        {/* Credentials inline */}
-        <div className="flex flex-wrap gap-6 mt-10 pt-8 border-t border-neutral-200">
-          <div className="flex items-center gap-2 text-neutral-700">
-            <svg className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>NNA Certified</span>
-          </div>
-          <div className="flex items-center gap-2 text-neutral-700">
-            <svg className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>E&O Insured ($100K)</span>
-          </div>
-          <div className="flex items-center gap-2 text-neutral-700">
-            <svg className="h-5 w-5 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>Texas Commissioned</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Service Categories */}
-    <section className="py-20 md:py-24 bg-neutral-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="space-y-16">
-          {serviceCategories.map((category, catIdx) => (
-            <div key={category.title} className={catIdx > 0 ? "pt-16 border-t border-neutral-200" : ""}>
-              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-proof mb-2">
-                    {category.title}
-                  </h2>
-                  <p className="text-lg text-neutral-600">{category.description}</p>
-                </div>
-                <Link
-                  to={category.ctaLink}
-                  className="text-electric-blue font-semibold hover:underline flex items-center gap-2 shrink-0"
-                >
-                  {category.ctaText}
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {category.services.map((service) => (
-                  <Link
-                    key={service.name}
-                    to={service.link}
-                    className="group bg-white p-5 border border-neutral-200 hover:border-electric-blue/50 hover:shadow-md transition-all"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-semibold text-proof group-hover:text-electric-blue transition-colors">
-                        {service.name}
-                      </span>
-                      <span className="text-sm text-neutral-500">{service.price}</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Value-Added Services - Simple List */}
-    <section className="py-16 px-6 bg-white border-t border-neutral-200">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-12">
-          <div className="md:w-1/3">
-            <h2 className="text-2xl font-bold text-proof mb-4">Add-On Services</h2>
-            <p className="text-neutral-600">
-              Additional services available with any signing appointment.
+  return (
+    <div className="w-full bg-white">
+      {/* Hero Section - Elegant & Purpose-Driven */}
+      <section className="w-full py-16 md:py-24 bg-gradient-to-b from-professional-blue/5 to-white border-b border-professional-blue/10" style={{backgroundImage: 'radial-gradient(circle at 15% 50%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-5xl mx-auto px-6">
+          {/* Header Section */}
+          <div className="mb-12 md:mb-16">
+            <span className="inline-block text-xs font-semibold text-professional-blue uppercase tracking-widest mb-4 bg-professional-blue/10 px-4 py-2 rounded-full">Professional Services</span>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-6 leading-tight">
+              Every Document.
+              <br />
+              <span className="text-professional-blue">Perfectly Notarized.</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-charcoal/70 max-w-2xl leading-relaxed">
+              From loan closings to international apostilles—we provide precision notarization services trusted by lenders, attorneys, and individuals across Texas.
             </p>
           </div>
-          <div className="md:w-2/3">
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
-              {[
-                { name: "Scanbacks", desc: "Same-day digital delivery" },
-                { name: "Printing", desc: "On-site document printing" },
-                { name: "Additional Signers", desc: "Multiple party signings" },
-                { name: "Weekend/After Hours", desc: "Flexible scheduling" },
-                { name: "Travel Fee", desc: "Extended service area" },
-                { name: "Facility Fee", desc: "TX equity loan locations" },
-              ].map((item) => (
-                <div key={item.name} className="flex items-start gap-3 py-2">
-                  <svg className="w-5 h-5 text-electric-blue mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
+
+          {/* Trust Markers - Redesigned */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16 py-8 md:py-12 border-y border-professional-blue/10">
+            <div className="flex items-start gap-3">
+              <svg className="h-6 w-6 text-professional-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <h3 className="font-semibold text-charcoal text-sm md:text-base">NNA Certified</h3>
+                <p className="text-charcoal/60 text-xs md:text-sm">National Notary Association</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <svg className="h-6 w-6 text-professional-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <h3 className="font-semibold text-charcoal text-sm md:text-base">$100K E&O Insurance</h3>
+                <p className="text-charcoal/60 text-xs md:text-sm">Errors & Omissions covered</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <svg className="h-6 w-6 text-professional-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <h3 className="font-semibold text-charcoal text-sm md:text-base">Texas Commissioned</h3>
+                <p className="text-charcoal/60 text-xs md:text-sm">Licensed & bonded notary</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+            <Link 
+              to="/book" 
+              className="bg-professional-blue text-white hover:bg-professional-blue/90 font-semibold py-4 px-8 transition-all hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2 rounded-sm"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              Book a Service
+            </Link>
+            <Link 
+              to="/contact" 
+              className="border-2 border-professional-blue/40 text-professional-blue hover:border-professional-blue/70 hover:bg-professional-blue/5 font-semibold py-4 px-8 transition-all flex items-center justify-center gap-2 rounded-sm"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Request Quote
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Tabbed Service Categories */}
+      <section className="py-16 md:py-24 bg-white relative" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          {/* Tabs */}
+          <div className="flex gap-1 mb-12 md:mb-16 overflow-x-auto pb-3 md:pb-0 relative z-10 justify-center">
+            {serviceCategories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveTab(category.id)}
+                className={`px-6 md:px-8 py-3 md:py-4 font-medium text-sm md:text-base whitespace-nowrap transition-all relative group ${
+                  activeTab === category.id
+                    ? "text-professional-blue"
+                    : "text-charcoal/70 hover:text-professional-blue"
+                }`}
+              >
+                {category.title}
+                <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-professional-blue transition-all ${
+                  activeTab === category.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-50'
+                }`}></div>
+              </button>
+            ))}
+          </div>
+
+          {/* Tab Content */}
+          {activeCategory && (
+            <div className="bg-white border-l-2 border-professional-blue pl-4 md:pl-6 py-6 md:py-12 pr-4 md:pr-8 relative z-10">
+              <div className="mb-6 md:mb-8">
+                <h2 className="text-xl md:text-3xl font-bold text-charcoal mb-2">{activeCategory.title}</h2>
+                <p className="text-charcoal/70 text-base md:text-lg">{activeCategory.description}</p>
+              </div>
+
+              {/* Services Table */}
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b-2 border-professional-blue">
+                      <th className="text-left py-4 px-6 font-bold text-charcoal text-lg">Service</th>
+                      <th className="text-center py-4 px-6 font-bold text-charcoal text-lg min-w-[120px]">Starting Price</th>
+                      <th className="text-center py-4 px-6 font-bold text-charcoal text-lg w-12"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {activeCategory.services.map((service, idx) => (
+                      <tr key={service.name} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
+                        <td className="py-4 px-6">
+                          <Link to={service.link} className="font-semibold text-charcoal group-hover:text-professional-blue transition-colors">
+                            {service.name}
+                          </Link>
+                        </td>
+                        <td className="py-4 px-6 text-center text-professional-blue text-lg">{service.price}</td>
+                        <td className="py-4 px-6 text-center">
+                          <Link to={service.link} className="inline-block">
+                            <svg className="w-5 h-5 text-professional-blue opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 md:py-28 bg-professional-blue text-white w-full">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left: Content */}
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Schedule Your Notarization Today
+              </h2>
+              <p className="text-lg text-white/90 mb-8 leading-relaxed">
+                Same-day appointments available. Most signings can be scheduled within 2 hours. Whether mobile, remote, or in-office—we handle it all with professional precision.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-white/80 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <div>
-                    <span className="font-medium text-proof">{item.name}</span>
-                    <span className="text-neutral-500 text-sm ml-2">— {item.desc}</span>
-                  </div>
+                  <span className="text-white/90">No hidden fees. Transparent pricing on every service.</span>
                 </div>
-              ))}
+                <div className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-white/80 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-white/90">Available 7 days a week for mobile services.</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-white/80 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-white/90">RON available 24/7 for remote online notarization.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Action */}
+            <div className="space-y-4">
+              <Link 
+                to="/book" 
+                className="flex items-center justify-center gap-2 bg-white text-professional-blue hover:bg-white/90 font-bold py-5 px-8 text-lg shadow-xl transition-all rounded w-full group"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span className="group-hover:translate-x-1 transition-transform">Book Your Appointment</span>
+              </Link>
+              <a 
+                href="tel:+14696298932" 
+                className="flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-bold py-5 px-8 text-lg transition-all rounded w-full group"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span className="group-hover:translate-x-1 transition-transform">Call (469) 629-8932</span>
+              </a>
+              <p className="text-center text-white/70 text-sm pt-2">
+                Available for same-day appointments in most cases
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    {/* What to Bring - Inline */}
-    <section className="py-16 px-6 bg-electric-blue/5 border-t border-electric-blue/20">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl font-bold text-proof mb-8 text-center">What to Bring to Your Appointment</h2>
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-          <div className="flex items-center gap-3">
-            <svg className="w-6 h-6 text-electric-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M16 7h.01M3.5 7v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-13a2 2 0 0 0-2 2z"/>
-              <path d="M3.5 7H6m11 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-            </svg>
-            <span className="text-proof font-medium">Valid Photo ID</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <svg className="w-6 h-6 text-electric-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-            </svg>
-            <span className="text-proof font-medium">Your Documents</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <svg className="w-6 h-6 text-electric-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <path d="M22 4 12 14.01l-3-3"/>
-            </svg>
-            <span className="text-proof font-medium">Supporting Paperwork</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* CTA Section */}
-    <section className="py-20 md:py-28 bg-electric-blue text-white">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
-        <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-          Schedule your appointment today. Same-day service available throughout DFW.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            to="/book"
-            className="inline-block bg-white text-proof hover:bg-neutral-100 font-bold py-5 px-12 text-xl shadow-2xl hover:shadow-xl hover:scale-105 transition-all"
-          >
-            Book an Appointment
-          </Link>
-          <a
-            href="mailto:info@bridgenotary.com"
-            className="inline-block border-2 border-white text-white hover:bg-white hover:text-electric-blue font-bold py-5 px-12 text-xl transition-all"
-          >
-            Email Us
-          </a>
-        </div>
-      </div>
-    </section>
-  </div>
-);
+      </section>
+    </div>
+  );
+};
 
 export default Services;

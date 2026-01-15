@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
-import { TawkChat } from '@/components/common/TawkChat';
 
 const RouteLayout: React.FC = () => {
   return (
@@ -16,8 +15,6 @@ const RouteLayout: React.FC = () => {
         </div>
       </main>
       <Footer />
-      {/* Tawk.to floating chat widget - hidden on client portal */}
-      <TawkChat />
     </div>
   );
 };

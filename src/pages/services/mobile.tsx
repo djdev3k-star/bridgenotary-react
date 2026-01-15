@@ -366,8 +366,14 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-professional-blue to-professional-blue/90 text-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 40%)'}}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-20 lg:py-28 bg-gradient-to-br from-professional-blue to-professional-blue/90 text-white relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
+        radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.15) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>        <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Stop Rescheduling. Book Today.</h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Same-day mobile notarization across DFW. We come to you at your preferred time and location.

@@ -656,7 +656,7 @@ export default function RONPage() {
               </svg>
             </Link>
             <button onClick={() => {
-              const element = document.getElementById('faqs');
+              const element = document.getElementById('benefits');
               element?.scrollIntoView({ behavior: 'smooth' });
             }} className="inline-flex items-center justify-center px-8 py-4 border-2 border-professional-blue text-professional-blue font-semibold rounded-lg hover:bg-professional-blue/5 transition-colors text-lg">
               Learn More

@@ -23,7 +23,10 @@ export default function RONPage() {
       </section>
 
       {/* Hero Section - Full Viewport Width with Professional Blue Gradient */}
-      <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
+      <section
+        className="relative overflow-hidden text-white min-h-[85vh] flex items-center"
+        style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}
+      >
         {/* Professional blue gradient background covering full viewport */}
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-professional-blue via-professional-blue/80 to-professional-blue"></div>
         

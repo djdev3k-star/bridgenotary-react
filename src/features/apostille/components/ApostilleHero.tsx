@@ -7,7 +7,7 @@ interface ApostilleHeroProps {
 }
 
 export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) => {
-  const { toggle } = useTawkChat();
+  const { openChat } = useTawkChat();
   return (
     <>
     {/* Hero Section - Full Viewport Width with Deep Blue Gradient */}
@@ -63,7 +63,7 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
               </span>
             </Link>
             <button
-              onClick={() => toggle()}
+              onClick={() => openChat()}
               className="border-2 border-white text-white hover:bg-white hover:text-proof transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl"
             >
               <span className="flex items-center justify-center gap-2 whitespace-nowrap">

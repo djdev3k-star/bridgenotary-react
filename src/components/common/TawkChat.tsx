@@ -103,7 +103,8 @@ export const TawkChat: React.FC<TawkChatProps> = ({
     if (shouldHide) {
       window.Tawk_API?.hideWidget?.();
     } else {
-      window.Tawk_API?.showWidget?.();
+      // Hide by default, only show when chat button is clicked
+      window.Tawk_API?.hideWidget?.();
     }
   }, [shouldHide]);
 
@@ -130,8 +131,12 @@ export const useTawkChat = () => {
   const toggle = () => window.Tawk_API?.toggle?.();
   const hide = () => window.Tawk_API?.hideWidget?.();
   const show = () => window.Tawk_API?.showWidget?.();
+  const openChat = () => {
+    window.Tawk_API?.showWidget?.();
+    window.Tawk_API?.maximize?.();
+  };
 
-  return { maximize, minimize, toggle, hide, show };
+  return { maximize, minimize, toggle, hide, show, openChat };
 };
 
 export default TawkChat;

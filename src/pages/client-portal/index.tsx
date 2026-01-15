@@ -35,6 +35,7 @@ const ClientPortal: React.FC = () => {
   ]);
   const [chatInput, setChatInput] = useState("");
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const uploadInputRef = useRef<HTMLInputElement>(null);
 
   // Get service context from URL params
   const serviceParam = searchParams.get("service");
@@ -375,7 +376,13 @@ const ClientPortal: React.FC = () => {
                 </div>
 
                 <label className="block border-2 border-dashed border-professional-blue/30 rounded-xl p-6 text-center cursor-pointer hover:border-professional-blue hover:bg-professional-blue/30 transition group">
-                  <input type="file" className="hidden" onChange={handleFileChange} accept=".pdf,.doc,.docx,.jpg,.png,.jpeg" />
+                  <input
+                    ref={uploadInputRef}
+                    type="file"
+                    className="hidden"
+                    onChange={handleFileChange}
+                    accept=".pdf,.doc,.docx,.jpg,.png,.jpeg"
+                  />
                   <div className="flex flex-col items-center gap-3">
                     <div className="w-12 h-12 bg-professional-blue/10 rounded-full flex items-center justify-center group-hover:bg-professional-blue/20 transition">
                       <svg className="w-6 h-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -587,7 +594,7 @@ const ClientPortal: React.FC = () => {
                 <div className="flex gap-3">
                   <button
                     type="button"
-                    onClick={() => document.querySelector<HTMLInputElement>('input[type="file"]')?.click()}
+                    onClick={() => uploadInputRef.current?.click()}
                     className="p-3 text-neutral-500 hover:text-professional-blue hover:bg-professional-blue/5 rounded-xl transition"
                     title="Attach file"
                   >

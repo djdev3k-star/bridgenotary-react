@@ -493,9 +493,9 @@ const ApostilleServices: React.FC = () => {
         </div>
         
         <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Make Your Documents World-Ready</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Apostille Services You Can Trust</h2>
           <p className="text-lg md:text-xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Stop worrying about apostille requirements. Let our experts handle the complexity so your documents cross borders without delays.
+            Every country has different apostille requirements. We handle the authentication and secure courier service. For legal questions about what documents you need, consult the relevant foreign agency or an attorney.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-6">

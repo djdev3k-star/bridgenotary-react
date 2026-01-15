@@ -376,6 +376,109 @@ export default function RONPage() {
         </div>
       </section>
 
+      {/* Important Limitations & Restrictions Section */}
+      <section className="py-20 lg:py-28 bg-professional-blue/10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+              <span className="text-sm font-semibold tracking-widest text-professional-blue uppercase">Important Information</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">RON Limitations & Document Restrictions</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl">
+              Not all documents can be notarized remotely. Some Texas documents require in-person notarization.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
+            {/* Documents We CAN Notarize Remotely */}
+            <div className="border-l-2 border-professional-blue pl-6">
+              <h3 className="text-2xl font-bold text-charcoal mb-4">Documents We CAN Notarize Remotely</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Powers of Attorney (Limited POA)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Affidavits and Declarations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Loan Documents & Mortgage Applications</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Rental & Lease Agreements</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Certified Copies & Acknowledgments</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Documents That CANNOT Be Notarized Remotely */}
+            <div className="border-l-2 border-professional-blue pl-6">
+              <h3 className="text-2xl font-bold text-charcoal mb-4">Documents Requiring In-Person Notarization</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Wills & Testamentary Documents</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Healthcare Powers of Attorney (HIPAA)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">General Durable Powers of Attorney (DPOA)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Deed of Trust & Mortgages (Real Estate)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Custody or Guardianship Documents</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 p-6 bg-white border-l-2 border-professional-blue rounded">
+            <p className="text-charcoal/80 mb-3">
+              <strong>Not Sure About Your Document?</strong> The restrictions on remote notarization are complex and specific to Texas law. We strongly recommend contacting us before your session to confirm whether your specific document(s) can be notarized remotely.
+            </p>
+            <p className="text-charcoal/70 text-sm">
+              For questions about document eligibility, call us at <a href="tel:+14696298932" className="text-professional-blue hover:underline font-semibold">(469) 629-8932</a> or contact a licensed attorney for legal advice about your specific notarization needs.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Notary Role in RON section removed per request */}
 
       {/* Why Choose RON Section - Consolidated */}

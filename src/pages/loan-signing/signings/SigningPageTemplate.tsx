@@ -169,6 +169,16 @@ const SigningPageTemplate: React.FC<SigningPageProps> = ({
                 </div>
               </div>
 
+              {/* Important Disclaimer */}
+              <article className="bg-professional-blue/5 border-l-4 border-professional-blue p-8 md:p-10">
+                <h3 className="text-lg font-bold text-charcoal mb-3">Important: Our Role</h3>
+                <p className="text-sm md:text-base text-charcoal/70 leading-relaxed">
+                  Bridge Notary provides <strong>notarization services only</strong>. We witness and authenticate signatures on loan documents. 
+                  We do NOT provide legal advice, review documents for accuracy, or advise on loan terms. 
+                  If you have questions about your loan documents, consult your lender, loan officer, or an attorney.
+                </p>
+              </article>
+
               {/* Other Services */}
               <div className="bg-white p-6 shadow-sm border border-neutral-200">
                 <h4 className="font-bold text-proof mb-4">Other Loan Signings</h4>

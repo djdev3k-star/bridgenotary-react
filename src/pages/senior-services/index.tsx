@@ -283,6 +283,107 @@ const SeniorServicesLanding: React.FC = () => {
         </div>
       </section>
 
+      {/* Important Elder Services Disclaimers */}
+      <section className="py-20 md:py-28 bg-professional-blue/10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0zm3 1a1 1 0 100-2 1 1 0 000 2zm2-1a1 1 0 11-2 0 1 1 0 012 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-sm font-semibold tracking-widest text-professional-blue uppercase">Important Information</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Notary Services Don't Provide Legal Advice</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl">
+              Protecting Texas seniors and families with clear disclosure about what notary services do and don't include.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mb-8">
+            {/* What We DO Provide */}
+            <div className="border-l-2 border-professional-blue pl-6">
+              <h3 className="text-2xl font-bold text-charcoal mb-4">What We DO Provide</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70"><strong>Document Authentication:</strong> Verify identity and authenticate signatures on documents</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70"><strong>Proper Execution:</strong> Ensure documents meet notarization requirements</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70"><strong>Neutral Documentation:</strong> Create an official record for institutions</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70"><strong>Referral Assistance:</strong> Recommend licensed attorneys when appropriate</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* What We DO NOT Provide */}
+            <div className="border-l-2 border-professional-blue pl-6">
+              <h3 className="text-2xl font-bold text-charcoal mb-4">What We DO NOT Provide</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70"><strong>Legal Advice:</strong> We cannot advise on whether a document is appropriate for your situation</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70"><strong>Document Interpretation:</strong> We cannot explain what terms or conditions mean</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70"><strong>Estate or Tax Guidance:</strong> We cannot advise on tax implications or estate planning strategy</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70"><strong>Document Drafting:</strong> We cannot draft documents or modify existing documents</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="p-6 bg-white border border-professional-blue/20 rounded">
+            <div className="flex items-start gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <p className="text-charcoal/80 font-semibold mb-2">
+                  For Senior Planning Documents, Consult a Licensed Attorney
+                </p>
+                <p className="text-charcoal/70 text-sm mb-3">
+                  Powers of Attorney, wills, trusts, and healthcare documents have significant legal implications. We strongly recommend consulting with a licensed estate planning attorney in Texas to ensure your documents protect your interests and comply with state law requirements.
+                </p>
+                <p className="text-charcoal/70 text-sm">
+                  <strong>Questions about document appropriateness?</strong> Call us at <a href="tel:+14696298932" className="text-professional-blue hover:underline font-semibold">(469) 629-8932</a> to discuss your needs, or contact an estate planning attorney for legal guidance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Lead Capture Form */}
       <section id="lead-form" className="py-20 md:py-28 bg-white">
         <div className="max-w-2xl mx-auto px-6">

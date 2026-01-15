@@ -250,7 +250,7 @@ const Pricing = () => {
           </div>
 
           {/* Specialty Services */}
-          <div className="scroll-mt-20">
+          <div id="specialty-services" className="scroll-mt-20">
             <div className="mb-8">
               <h3 className="text-3xl font-bold text-charcoal mb-3">Specialty Services</h3>
               <p className="text-charcoal/70 text-lg">International documents and complex notarization.</p>

@@ -63,13 +63,21 @@ const DualCitizenshipPage: React.FC = () => {
       </section>
 
       {/* Content Section */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Which Documents Need Apostille?</h2>
-            <p className="text-lg text-charcoal/70 leading-relaxed mb-12 max-w-3xl">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">Which Documents Need Apostille?</h2>
+            <p className="text-lg text-charcoal/70 leading-relaxed">
               Consulates and embassies require authenticated copies of vital records and supporting documents. We handle the complete apostille process.
             </p>
+          </div>
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="border-l border-professional-blue pl-6 group">
@@ -162,26 +170,26 @@ const DualCitizenshipPage: React.FC = () => {
           </div>
 
           {/* Process Section */}
-          <div className="bg-professional-blue/5 border border-professional-blue/20 rounded-lg p-8 md:p-12">
-            <h3 className="text-2xl font-bold text-charcoal mb-8">Our Apostille Process</h3>
+          <div className="bg-gradient-to-br from-professional-blue/5 to-professional-blue/3 border border-professional-blue/20 rounded-lg p-8 md:p-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-charcoal mb-8 text-center">Our Apostille Process</h3>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="w-12 h-12 bg-professional-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">1</div>
+                <div className="w-14 h-14 bg-professional-blue text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-md">1</div>
                 <h4 className="font-semibold text-charcoal mb-2">Submit Docs</h4>
                 <p className="text-sm text-charcoal/70">Provide copies of documents needing apostille</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-professional-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">2</div>
+                <div className="w-14 h-14 bg-professional-blue text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-md">2</div>
                 <h4 className="font-semibold text-charcoal mb-2">Verification</h4>
                 <p className="text-sm text-charcoal/70">We verify documents with issuing authorities</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-professional-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">3</div>
+                <div className="w-14 h-14 bg-professional-blue text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-md">3</div>
                 <h4 className="font-semibold text-charcoal mb-2">Certification</h4>
                 <p className="text-sm text-charcoal/70">Official apostille certificate is issued</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-professional-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">4</div>
+                <div className="w-14 h-14 bg-professional-blue text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-md">4</div>
                 <h4 className="font-semibold text-charcoal mb-2">Delivery</h4>
                 <p className="text-sm text-charcoal/70">Authenticated documents sent to you</p>
               </div>
@@ -191,7 +199,14 @@ const DualCitizenshipPage: React.FC = () => {
       </section>
 
       {/* Related Apostille Services */}
-      <section className="py-20 lg:py-28 bg-professional-blue/5 border-t border-professional-blue/20">
+      <section className="py-20 lg:py-28 bg-white relative border-t border-professional-blue/20" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Other Apostille Services</h2>

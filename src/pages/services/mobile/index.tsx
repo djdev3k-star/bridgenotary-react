@@ -61,7 +61,7 @@ export default function MobileNotaryPage() {
         <div className="relative bg-gradient-to-br from-professional-blue via-professional-blue/98 to-professional-blue/95 text-white min-h-[600px] flex items-center">
           {/* Background pattern - diagonal stripes */}
           <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)`,
+            backgroundImage: `radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.1) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.05) 0%, transparent 40%)`,
           }}></div>
 
           {/* Content */}

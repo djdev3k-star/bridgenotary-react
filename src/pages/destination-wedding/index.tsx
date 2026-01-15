@@ -34,7 +34,7 @@ const DestinationWeddingPage: React.FC = () => {
       </section>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white text-charcoal w-full py-24 md:py-32" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="relative overflow-hidden bg-white text-charcoal w-full py-24 md:py-32 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-4 py-2 text-sm font-medium mb-6 border border-professional-blue/20">
@@ -62,7 +62,7 @@ const DestinationWeddingPage: React.FC = () => {
       </section>
 
       {/* Content Section */}
-      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Common Destination Wedding Documents</h2>

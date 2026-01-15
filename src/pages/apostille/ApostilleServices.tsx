@@ -459,7 +459,7 @@ const ApostilleServices: React.FC = () => {
       </section>
 
       {/* Quick Quiz CTA - Simplified */}
-      <section className="w-full bg-white py-20 md:py-28\" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.03) 2px, rgba(0, 85, 230, 0.03) 4px)'}}>
+      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>'
         <div className="max-w-3xl mx-auto px-6">
           {/* Disclaimer */}
           <div className="bg-charcoal/5 border-l-4 border-charcoal/30 p-6 mb-12 rounded-r-lg">

@@ -49,7 +49,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
     <div className="w-full bg-white">
       <LoanSigningBreadcrumb />
       
-      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-professional-blue/20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-professional-blue/20 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         {/* Background Image with Blob Mask */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-60">
@@ -184,7 +184,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
         </div>
       </section>
       {relatedLinks && relatedLinks.length > 0 && (
-        <section className="py-16 md:py-20 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <section className="py-16 md:py-20 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-sm uppercase tracking-widest text-professional-blue font-semibold mb-2">Related Services</p>

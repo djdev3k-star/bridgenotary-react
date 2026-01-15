@@ -37,7 +37,7 @@ const About = () => (
     </section>
 
     {/* Our Story */}
-    <section className="py-12 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <section className="py-12 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         
         {/* Our Values Grid */}
@@ -84,7 +84,7 @@ const About = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="py-24 lg:py-32 bg-professional-blue/10 text-charcoal w-full flex items-center justify-center" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <section className="py-24 lg:py-32 bg-professional-blue/10 text-charcoal w-full flex items-center justify-center relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
           Ready to Work With Us?

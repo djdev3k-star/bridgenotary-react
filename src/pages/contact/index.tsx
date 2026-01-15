@@ -50,7 +50,7 @@ const Contact = () => {
   return (
     <div className="w-full bg-white">
       {/* Main Content */}
-      <section className="py-8 lg:py-16" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="py-8 lg:py-16 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
             {/* Left Column - Form */}

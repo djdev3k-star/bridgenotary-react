@@ -18,7 +18,7 @@ const DemoPage: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-white text-charcoal pt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <div className="w-full bg-white text-charcoal pt-20 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
       <div className="max-w-4xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold text-proof mb-8">Interactive Demo</h1>
         

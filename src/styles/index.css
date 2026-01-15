@@ -362,18 +362,18 @@
 }
 #tawk-bubble-container,
 .tawk-min-container {
-  --tawk-header-color: #0046fa !important;
-  --tawk-primary-color: #0046fa !important;
+  --tawk-header-color: #0055E6 !important;
+  --tawk-primary-color: #0055E6 !important;
 }
 
 /* Override Tawk.to bubble background color */
 .tawk-min-container .tawk-button,
 #tawk-bubble-container .tawk-button {
-  background-color: #0046fa !important;
+  background-color: #0055E6 !important;
 }
 
 /* Override chat header */
 .tawk-min-container .tawk-header,
 iframe[title*="chat widget"] {
-  --tawk-header-background: #0046fa !important;
+  --tawk-header-background: #0055E6 !important;
 }

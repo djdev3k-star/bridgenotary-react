@@ -63,7 +63,7 @@ export const TawkChat: React.FC<TawkChatProps> = ({
         window.Tawk_API.embedded = containerId;
       }
 
-      // Custom styling for the widget position
+      // Custom styling for the widget position and appearance
       window.Tawk_API.customStyle = {
         visibility: {
           desktop: {
@@ -87,9 +87,9 @@ export const TawkChat: React.FC<TawkChatProps> = ({
       script.setAttribute('crossorigin', '*');
       document.body.appendChild(script);
 
-      // Note: Widget color (blue) should be set in Tawk.to dashboard:
+      // Note: Primary widget color (professional-blue #0055E6) should be set in Tawk.to dashboard:
       // Dashboard > Administration > Chat Widget > Appearance > Widget Color
-      // Set to: #0046fa (electric-blue)
+      // Set to: #0055E6 (professional-blue - matches Bridge Notary brand)
 
       return () => {
         // Cleanup on unmount if needed

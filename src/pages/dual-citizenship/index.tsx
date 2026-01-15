@@ -79,7 +79,7 @@ const DualCitizenshipPage: React.FC = () => {
             </p>
           </div>
             
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="border-l border-professional-blue pl-6 group">
                 <div className="mb-4">
                   <svg className="w-10 h-10 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -195,7 +195,6 @@ const DualCitizenshipPage: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Related Apostille Services */}

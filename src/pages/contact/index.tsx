@@ -156,7 +156,7 @@ const Contact = () => {
             {/* Right Column - Contact Info */}
             <div className="space-y-6">
               {/* Direct Contact */}
-              <div className="border-l-2 border-professional-blue pl-6 py-4 group">
+              <div className="border-l border-professional-blue pl-6 py-4 group">
                 <h3 className="text-lg font-bold text-charcoal mb-6">Direct Contact</h3>
                 <div className="space-y-5">
                   <a href="tel:+14696298932" className="flex items-center gap-4 hover:translate-x-1 transition-transform">
@@ -193,7 +193,7 @@ const Contact = () => {
               </div>
 
               {/* Availability */}
-              <div className="border-l-2 border-professional-blue pl-6 py-4 group">
+              <div className="border-l border-professional-blue pl-6 py-4 group">
                 <h3 className="text-lg font-bold text-charcoal mb-4">Availability</h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
@@ -215,7 +215,7 @@ const Contact = () => {
               </div>
 
               {/* Quick Actions */}
-              <div className="border-l-2 border-professional-blue pl-6 py-4 group">
+              <div className="border-l border-professional-blue pl-6 py-4 group">
                 <h3 className="text-lg font-bold text-charcoal mb-4">Quick Actions</h3>
                 <div className="space-y-3">
                   <Link to="/book" className="flex items-center gap-3 text-professional-blue hover:text-professional-blue/80 transition group">

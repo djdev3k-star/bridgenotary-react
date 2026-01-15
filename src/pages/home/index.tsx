@@ -132,7 +132,7 @@ const HomePage = () => (
             <Link 
               key={item.title} 
               to={item.link}
-              className={`group border-l-2 border-professional-blue pl-6 py-6 transition-all hover:scale-105 cursor-pointer fade-in-up fade-in-up-delay-${idx + 1}`}
+              className={`group border-l border-professional-blue pl-6 py-6 transition-all hover:scale-105 cursor-pointer fade-in-up fade-in-up-delay-${idx + 1}`}
               style={{animationDelay: `${idx * 0.1}s`}}
             >
               <div className="relative z-10">
@@ -191,7 +191,7 @@ const HomePage = () => (
 
           {/* Stats Card */}
           <div className="relative">
-            <div className="border-l-2 border-professional-blue pl-6 py-4">
+            <div className="border-l border-professional-blue pl-6 py-4">
               <div className="space-y-4">
                 <div className="flex items-center gap-4 pb-4 border-b border-professional-blue/20">
                   <div className="w-12 h-12 bg-professional-blue flex items-center justify-center text-white text-lg font-bold">

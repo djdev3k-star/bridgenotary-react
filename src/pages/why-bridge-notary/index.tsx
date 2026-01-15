@@ -15,7 +15,7 @@ interface FeatureCardProps {
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon }) => (
-  <div className="p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
+  <div className="p-6 border-l border-professional-blue group hover:bg-professional-blue/5 transition-colors">
     <div className="flex items-start gap-4">
       <div className="text-professional-blue flex-shrink-0">{icon}</div>
       <div>

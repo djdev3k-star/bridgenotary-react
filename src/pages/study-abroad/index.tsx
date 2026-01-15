@@ -69,7 +69,7 @@ const StudyAbroadPage: React.FC = () => {
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="border-l border-professional-blue pl-6 group">
                 <div className="mb-4">
                   <svg className="w-10 h-10 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C6.5 6.5 3.5 10.5 3.5 15S6.5 23.5 12 23.5s8.5-4 8.5-8.5-3-8.5-8.5-8.5z" />
@@ -98,7 +98,7 @@ const StudyAbroadPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="border-l border-professional-blue pl-6 group">
                 <div className="mb-4">
                   <svg className="w-10 h-10 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -127,7 +127,7 @@ const StudyAbroadPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="border-l border-professional-blue pl-6 group">
                 <div className="mb-4">
                   <svg className="w-10 h-10 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -326,7 +326,7 @@ const StudyAbroadPage: React.FC = () => {
             <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">Explore our complete range of international document authentication services</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Link to="/overseas-property" className="border-l-2 border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
+            <Link to="/overseas-property" className="border-l border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
               <h3 className="text-2xl font-bold text-charcoal mb-3">Overseas Property</h3>
               <p className="text-charcoal/70 mb-6 text-base leading-relaxed">Authenticate deeds, purchase agreements, and real estate documentation for international transactions</p>
               <span className="inline-flex items-center gap-2 text-professional-blue font-semibold group-hover:gap-3 transition-all">
@@ -336,7 +336,7 @@ const StudyAbroadPage: React.FC = () => {
                 </svg>
               </span>
             </Link>
-            <Link to="/dual-citizenship" className="border-l-2 border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
+            <Link to="/dual-citizenship" className="border-l border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
               <h3 className="text-2xl font-bold text-charcoal mb-3">Dual Citizenship</h3>
               <p className="text-charcoal/70 mb-6 text-base leading-relaxed">Authenticate civil records and documents for citizenship and immigration applications</p>
               <span className="inline-flex items-center gap-2 text-professional-blue font-semibold group-hover:gap-3 transition-all">
@@ -346,7 +346,7 @@ const StudyAbroadPage: React.FC = () => {
                 </svg>
               </span>
             </Link>
-            <Link to="/international-adoption" className="border-l-2 border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
+            <Link to="/international-adoption" className="border-l border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
               <h3 className="text-2xl font-bold text-charcoal mb-3">International Adoption</h3>
               <p className="text-charcoal/70 mb-6 text-base leading-relaxed">Authenticate birth certificates, court orders, and legal documents for adoption proceedings</p>
               <span className="inline-flex items-center gap-2 text-professional-blue font-semibold group-hover:gap-3 transition-all">

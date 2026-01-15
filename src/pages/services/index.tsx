@@ -147,7 +147,7 @@ const Services = () => {
 
           {/* Tab Content */}
           {activeCategory && (
-            <div className="bg-white border-l-2 border-professional-blue pl-4 md:pl-6 py-6 md:py-12 pr-4 md:pr-8 relative z-10">
+            <div className="bg-white border-l border-professional-blue pl-4 md:pl-6 py-6 md:py-12 pr-4 md:pr-8 relative z-10">
               <div className="mb-6 md:mb-8">
                 <h2 className="text-xl md:text-3xl font-bold text-charcoal mb-2">{activeCategory.title}</h2>
                 <p className="text-charcoal/70 text-base md:text-lg">{activeCategory.description}</p>

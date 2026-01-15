@@ -87,6 +87,11 @@
     @apply bg-white border border-neutral-200 p-6 transition-all duration-300 hover:border-professional-blue hover:shadow-md;
   }
 
+  /* Refined left accent border - refined thickness for less visual clutter */
+  .accent-left {
+    @apply border-l border-professional-blue;
+  }
+
   @keyframes pulse {
     0%, 100% {
       transform: scale(1);

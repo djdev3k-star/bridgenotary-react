@@ -301,7 +301,7 @@ const SeniorServicesLanding: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mb-8">
             {/* What We DO Provide */}
-            <div className="border-l-2 border-professional-blue pl-6">
+            <div className="border-l border-professional-blue pl-6">
               <h3 className="text-2xl font-bold text-charcoal mb-4">What We DO Provide</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -332,7 +332,7 @@ const SeniorServicesLanding: React.FC = () => {
             </div>
 
             {/* What We DO NOT Provide */}
-            <div className="border-l-2 border-professional-blue pl-6">
+            <div className="border-l border-professional-blue pl-6">
               <h3 className="text-2xl font-bold text-charcoal mb-4">What We DO NOT Provide</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">

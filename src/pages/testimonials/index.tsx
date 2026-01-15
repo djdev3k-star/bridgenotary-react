@@ -29,7 +29,7 @@ const Testimonials = () => (
     </div>
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left max-w-6xl mx-auto px-6">
       {testimonials.map((t) => (
-        <div key={t.name} className="p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-colors h-full flex flex-col">
+        <div key={t.name} className="p-6 border-l border-professional-blue group hover:bg-professional-blue/5 transition-colors h-full flex flex-col">
           <p className="text-charcoal/70 italic mb-6 flex-grow">“{t.quote}”</p>
           <div>
             <div className="font-bold text-charcoal">{t.name}</div>

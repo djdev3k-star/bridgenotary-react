@@ -71,7 +71,7 @@ const DestinationWeddingPage: React.FC = () => {
             </p>
             
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="border-l-2 border-professional-blue pl-6 py-4">
+              <div className="border-l border-professional-blue pl-6 py-4">
                 <h3 className="text-lg font-bold text-charcoal mb-3">Marriage Documents</h3>
                 <ul className="space-y-2 text-charcoal/70">
                   <li className="flex items-start gap-2">
@@ -95,7 +95,7 @@ const DestinationWeddingPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="border-l-2 border-professional-blue pl-6 py-4">
+              <div className="border-l border-professional-blue pl-6 py-4">
                 <h3 className="text-lg font-bold text-charcoal mb-3">Identity & Legal</h3>
                 <ul className="space-y-2 text-charcoal/70">
                   <li className="flex items-start gap-2">
@@ -120,7 +120,7 @@ const DestinationWeddingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="border-l-2 border-professional-blue pl-6 py-4">
+            <div className="border-l border-professional-blue pl-6 py-4">
               <h3 className="text-lg font-bold text-charcoal mb-3">Wedding Materials</h3>
               <ul className="space-y-2 text-charcoal/70">
                 <li className="flex items-start gap-2">

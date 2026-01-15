@@ -147,7 +147,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {highlights.map((item, index) => (
-                <div key={item.title} className="border-l-2 border-professional-blue pl-6 py-4 group hover:bg-white/50 transition-colors">
+                <div key={item.title} className="border-l border-professional-blue pl-6 py-4 group hover:bg-white/50 transition-colors">
                   <div className="flex items-start gap-3 mb-3">
                     <span className="text-professional-blue font-bold text-lg flex-shrink-0">{index + 1}.</span>
                     <h3 className="font-bold text-charcoal text-lg">{item.title}</h3>
@@ -156,7 +156,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
                 </div>
               ))}
             </div>
-            <div className="mt-16 p-8 border-l-2 border-professional-blue pl-6 bg-white">
+            <div className="mt-16 p-8 border-l border-professional-blue pl-6 bg-white">
               <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                 <div className="flex-shrink-0">
                   <svg className="w-12 h-12 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -195,7 +195,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="group border-l-2 border-professional-blue/50 pl-6 py-4 hover:border-professional-blue hover:bg-professional-blue/5 transition-all"
+                  className="group border-l border-professional-blue/50 pl-6 py-4 hover:border-professional-blue hover:bg-professional-blue/5 transition-all"
                 >
                   <p className="text-lg font-semibold mb-2 text-charcoal group-hover:text-professional-blue transition-colors flex items-center gap-2">
                     {link.label}

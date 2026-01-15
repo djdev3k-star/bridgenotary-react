@@ -154,7 +154,7 @@ const MobileNotaryPage = () => {
                 )
               },
             ].map((item) => (
-              <div key={item.title} className="border-l-2 border-professional-blue pl-6 py-4 group">
+              <div key={item.title} className="border-l border-professional-blue pl-6 py-4 group">
                 <div className="mb-4 group-hover:scale-110 transition-transform origin-left">{item.icon}</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">{item.title}</h3>
                 <p className="text-charcoal/70 leading-relaxed">{item.desc}</p>
@@ -175,7 +175,7 @@ const MobileNotaryPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal">When You Need a Notary Fast</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            <Link to="/loan-signing" className="group border-l-2 border-professional-blue pl-6 py-4">
+            <Link to="/loan-signing" className="group border-l border-professional-blue pl-6 py-4">
               <h3 className="text-xl font-bold text-charcoal mb-3 group-hover:text-professional-blue transition-colors flex items-center gap-2">
                 Real Estate Closings
                 <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -191,7 +191,7 @@ const MobileNotaryPage = () => {
               { title: 'Business Contracts', desc: 'Corporate agreements, vendor contracts, employment documents, and organizational filings.' },
               { title: 'Medical & Healthcare', desc: 'Hospital visits, assisted living facilities, HIPAA authorizations, advance directives.' },
             ].map((item) => (
-              <div key={item.title} className="border-l-2 border-professional-blue pl-6 py-4">
+              <div key={item.title} className="border-l border-professional-blue pl-6 py-4">
                 <h3 className="text-xl font-bold text-charcoal mb-3">{item.title}</h3>
                 <p className="text-charcoal/70">{item.desc}</p>
               </div>

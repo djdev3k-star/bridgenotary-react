@@ -124,7 +124,7 @@ export default function MobileNotaryPage() {
           {/* Features Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             {features.map((f) => (
-              <div key={f.title} className="border-l-2 border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all">
+              <div key={f.title} className="border-l border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all">
                 <div className="mb-4">
                   <h3 className="text-lg font-bold text-charcoal group-hover:text-professional-blue transition-colors mb-2">{f.title}</h3>
                   <p className="text-charcoal/70 leading-relaxed text-sm">{f.description}</p>
@@ -179,7 +179,7 @@ export default function MobileNotaryPage() {
           </div>
 
           {/* Pricing Section */}
-          <div id="pricing" className="bg-professional-blue/5 p-8 border-l-2 border-professional-blue mb-16 scroll-mt-20">
+          <div id="pricing" className="bg-professional-blue/5 p-8 border-l border-professional-blue mb-16 scroll-mt-20">
             <h2 className="text-2xl font-bold text-charcoal mb-6">Transparent Pricing</h2>
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               {[

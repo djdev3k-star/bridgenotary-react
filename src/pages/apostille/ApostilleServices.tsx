@@ -269,7 +269,7 @@ const ApostilleServices: React.FC = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <div className="bg-white border-l-2 border-professional-blue p-6 max-w-2xl mx-auto">
+            <div className="bg-white border-l border-professional-blue p-6 max-w-2xl mx-auto">
               <p className="text-charcoal/80 font-medium">
                 <span className="text-professional-blue font-semibold">Note:</span> Bridge Notary specializes in connecting clients with our trusted notary partner network and providing secure courier services to Texas SOS. We do not perform notarizations directly.
               </p>
@@ -286,7 +286,7 @@ const ApostilleServices: React.FC = () => {
             <p className="text-xl text-charcoal/70 max-w-3xl mx-auto">Choose your situation below to learn more about how we handle your specific apostille needs.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Link to="/overseas-property" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+            <Link to="/overseas-property" className="border-l border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
               <h3 className="text-xl font-bold text-charcoal mb-2">Overseas Property</h3>
               <p className="text-charcoal/70 mb-4 text-sm">Authenticate deeds and real estate documents for international property purchases</p>
               <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
@@ -296,7 +296,7 @@ const ApostilleServices: React.FC = () => {
                 </svg>
               </span>
             </Link>
-            <Link to="/dual-citizenship" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+            <Link to="/dual-citizenship" className="border-l border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
               <h3 className="text-xl font-bold text-charcoal mb-2">Dual Citizenship</h3>
               <p className="text-charcoal/70 mb-4 text-sm">Certify vital records and legal documents for citizenship applications</p>
               <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
@@ -306,7 +306,7 @@ const ApostilleServices: React.FC = () => {
                 </svg>
               </span>
             </Link>
-            <Link to="/study-abroad" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+            <Link to="/study-abroad" className="border-l border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
               <h3 className="text-xl font-bold text-charcoal mb-2">Study Abroad</h3>
               <p className="text-charcoal/70 mb-4 text-sm">Authenticate educational records for international university applications</p>
               <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
@@ -316,7 +316,7 @@ const ApostilleServices: React.FC = () => {
                 </svg>
               </span>
             </Link>
-            <Link to="/international-adoption" className="border-l-2 border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
+            <Link to="/international-adoption" className="border-l border-professional-blue pl-6 py-6 group hover:scale-105 transition-transform cursor-pointer">
               <h3 className="text-xl font-bold text-charcoal mb-2">International Adoption</h3>
               <p className="text-charcoal/70 mb-4 text-sm">Authenticate legal documents for international adoption proceedings</p>
               <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">

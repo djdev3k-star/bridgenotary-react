@@ -79,7 +79,7 @@ const LoanSigningPage: React.FC = () => {
             <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/3 -z-10"></div>
             
             {benefits.map((benefit, index) => (
-              <div key={index} className="border-l-2 border-professional-blue pl-6 group">
+              <div key={index} className="border-l border-professional-blue pl-6 group">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="text-professional-blue group-hover:scale-110 transition-transform flex-shrink-0">
                     {benefit.icon}
@@ -150,7 +150,7 @@ const LoanSigningPage: React.FC = () => {
             <div className="hidden lg:block absolute top-20 left-1/4 right-1/4 h-1 bg-gradient-to-r from-professional-blue via-professional-blue/50 to-professional-blue" />
             
             <div className="grid md:grid-cols-3 gap-12">
-              <div className="relative text-center group p-8 border-l-2 border-professional-blue hover:bg-professional-blue/5 transition-colors">
+              <div className="relative text-center group p-8 border-l border-professional-blue hover:bg-professional-blue/5 transition-colors">
                 <div className="mb-6 text-4xl font-bold text-professional-blue">
                   1
                 </div>
@@ -160,7 +160,7 @@ const LoanSigningPage: React.FC = () => {
                 </p>
               </div>
               
-              <div className="relative text-center group p-8 border-l-2 border-professional-blue hover:bg-professional-blue/5 transition-colors">
+              <div className="relative text-center group p-8 border-l border-professional-blue hover:bg-professional-blue/5 transition-colors">
                 <div className="mb-6 text-4xl font-bold text-professional-blue">
                   2
                 </div>
@@ -170,7 +170,7 @@ const LoanSigningPage: React.FC = () => {
                 </p>
               </div>
               
-              <div className="relative text-center group p-8 border-l-2 border-professional-blue hover:bg-professional-blue/5 transition-colors">
+              <div className="relative text-center group p-8 border-l border-professional-blue hover:bg-professional-blue/5 transition-colors">
                 <div className="mb-6 text-4xl font-bold text-professional-blue">
                   3
                 </div>

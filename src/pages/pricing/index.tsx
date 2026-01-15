@@ -310,27 +310,27 @@ const Pricing = () => {
             <h3 className="text-2xl font-bold text-charcoal mb-6">Common Questions</h3>
             
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+              <div className="p-4 bg-white/80 border-l border-professional-blue/40 hover:bg-white transition-colors">
                 <h4 className="text-base font-semibold text-charcoal mb-2">Do your fees include travel?</h4>
                 <p className="text-charcoal/70 text-sm leading-relaxed">Standard fees include travel within 10-15 miles. Beyond that, we charge a small distance-based fee.</p>
               </div>
 
-              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+              <div className="p-4 bg-white/80 border-l border-professional-blue/40 hover:bg-white transition-colors">
                 <h4 className="text-base font-semibold text-charcoal mb-2">Are there additional fees for weekends?</h4>
                 <p className="text-charcoal/70 text-sm leading-relaxed">Yes, weekend and after-hours appointments incur a $50 additional fee for urgent requests.</p>
               </div>
 
-              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+              <div className="p-4 bg-white/80 border-l border-professional-blue/40 hover:bg-white transition-colors">
                 <h4 className="text-base font-semibold text-charcoal mb-2">What payment methods do you accept?</h4>
                 <p className="text-charcoal/70 text-sm leading-relaxed">All major credit cards, Cash App, Venmo, and cash. Corporate accounts can arrange invoicing.</p>
               </div>
 
-              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+              <div className="p-4 bg-white/80 border-l border-professional-blue/40 hover:bg-white transition-colors">
                 <h4 className="text-base font-semibold text-charcoal mb-2">What's your cancellation policy?</h4>
                 <p className="text-charcoal/70 text-sm leading-relaxed">Free rescheduling with 24 hours notice. Less than 24 hours may incur a $25 fee.</p>
               </div>
 
-              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors md:col-span-2">
+              <div className="p-4 bg-white/80 border-l border-professional-blue/40 hover:bg-white transition-colors md:col-span-2">
                 <h4 className="text-base font-semibold text-charcoal mb-2">Do you offer bulk or volume discounts?</h4>
                 <p className="text-charcoal/70 text-sm leading-relaxed">Yes! For title companies, lenders, and high-volume clients, we offer custom pricing. Contact us to discuss your specific needs.</p>
               </div>

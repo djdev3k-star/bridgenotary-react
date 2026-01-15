@@ -52,15 +52,15 @@ const About = () => (
           
           {/* Three Pillars */}
           <div className="space-y-4 md:space-y-6">
-            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+            <div className="p-4 md:p-6 border-l border-professional-blue group hover:bg-professional-blue/5 transition-all">
               <h4 className="font-bold text-charcoal text-lg mb-2">Punctuality</h4>
               <p className="text-charcoal/70 leading-relaxed text-sm">We arrive when scheduled and come prepared. No delays, no excuses.</p>
             </div>
-            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+            <div className="p-4 md:p-6 border-l border-professional-blue group hover:bg-professional-blue/5 transition-all">
               <h4 className="font-bold text-charcoal text-lg mb-2">Accuracy</h4>
               <p className="text-charcoal/70 leading-relaxed text-sm">Correct documents on the first attempt. Missing signatures and errors are preventable—we prevent them.</p>
             </div>
-            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+            <div className="p-4 md:p-6 border-l border-professional-blue group hover:bg-professional-blue/5 transition-all">
               <h4 className="font-bold text-charcoal text-lg mb-2">Communication</h4>
               <p className="text-charcoal/70 leading-relaxed text-sm">From booking to completion, you know what to expect. Clear updates, no surprises.</p>
             </div>

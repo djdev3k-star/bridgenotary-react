@@ -72,7 +72,7 @@ const DualCitizenshipPage: React.FC = () => {
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="border-l border-professional-blue pl-6 group">
                 <div className="mb-4">
                   <svg className="w-10 h-10 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -101,7 +101,7 @@ const DualCitizenshipPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="border-l border-professional-blue pl-6 group">
                 <div className="mb-4">
                   <svg className="w-10 h-10 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H5a2 2 0 00-2 2v10a2 2 0 002 2h5m0 0h5a2 2 0 002-2v-10a2 2 0 00-2-2h-5m0 0V5a2 2 0 012-2h3.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V7m0 0v8m0 0V7" />
@@ -130,7 +130,7 @@ const DualCitizenshipPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="border-l border-professional-blue pl-6 group">
                 <div className="mb-4">
                   <svg className="w-10 h-10 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -198,7 +198,7 @@ const DualCitizenshipPage: React.FC = () => {
             <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">Explore our complete range of international document authentication services</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Link to="/overseas-property" className="border-l-2 border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
+            <Link to="/overseas-property" className="border-l border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
               <h3 className="text-2xl font-bold text-charcoal mb-3">Overseas Property</h3>
               <p className="text-charcoal/70 mb-6 text-base leading-relaxed">Authenticate deeds, purchase agreements, and real estate documentation for international transactions</p>
               <span className="inline-flex items-center gap-2 text-professional-blue font-semibold group-hover:gap-3 transition-all">
@@ -208,7 +208,7 @@ const DualCitizenshipPage: React.FC = () => {
                 </svg>
               </span>
             </Link>
-            <Link to="/study-abroad" className="border-l-2 border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
+            <Link to="/study-abroad" className="border-l border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
               <h3 className="text-2xl font-bold text-charcoal mb-3">Study Abroad</h3>
               <p className="text-charcoal/70 mb-6 text-base leading-relaxed">Certify transcripts, diplomas, and academic records for international university applications</p>
               <span className="inline-flex items-center gap-2 text-professional-blue font-semibold group-hover:gap-3 transition-all">
@@ -218,7 +218,7 @@ const DualCitizenshipPage: React.FC = () => {
                 </svg>
               </span>
             </Link>
-            <Link to="/international-adoption" className="border-l-2 border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
+            <Link to="/international-adoption" className="border-l border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md rounded transition-all">
               <h3 className="text-2xl font-bold text-charcoal mb-3">International Adoption</h3>
               <p className="text-charcoal/70 mb-6 text-base leading-relaxed">Authenticate birth certificates, court orders, and legal documents for adoption proceedings</p>
               <span className="inline-flex items-center gap-2 text-professional-blue font-semibold group-hover:gap-3 transition-all">

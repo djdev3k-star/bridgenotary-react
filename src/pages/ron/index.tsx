@@ -126,7 +126,7 @@ export default function RONPage() {
           {/* Process Steps */}
           <div className="grid md:grid-cols-3 gap-8">
             {/* Step 1: Upload */}
-            <div className="border-l-2 border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all">
+            <div className="border-l border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all">
               <div className="mb-4">
                 <span className="text-xs font-semibold text-professional-blue uppercase tracking-wide">Step 1</span>
                 <h3 className="text-xl font-bold text-charcoal group-hover:text-professional-blue transition-colors">Secure Document Upload</h3>
@@ -162,7 +162,7 @@ export default function RONPage() {
             </div>
 
             {/* Step 2: Verify */}
-            <div className="border-l-2 border-professional-blue pl-6 group">
+            <div className="border-l border-professional-blue pl-6 group">
               <div className="flex items-start gap-4 mb-6">
                 <div className="flex-shrink-0 text-professional-blue group-hover:scale-110 transition-transform">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -207,7 +207,7 @@ export default function RONPage() {
             </div>
 
             {/* Step 3: Notarize */}
-            <div className="border-l-2 border-professional-blue pl-6 group">
+            <div className="border-l border-professional-blue pl-6 group">
               <div className="flex items-start gap-4 mb-6">
                 <div className="flex-shrink-0 text-professional-blue group-hover:scale-110 transition-transform">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -394,7 +394,7 @@ export default function RONPage() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
             {/* Documents We CAN Notarize Remotely */}
-            <div className="border-l-2 border-professional-blue pl-6">
+            <div className="border-l border-professional-blue pl-6">
               <h3 className="text-2xl font-bold text-charcoal mb-4">Documents We CAN Notarize Remotely</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -431,7 +431,7 @@ export default function RONPage() {
             </div>
 
             {/* Documents That CANNOT Be Notarized Remotely */}
-            <div className="border-l-2 border-professional-blue pl-6">
+            <div className="border-l border-professional-blue pl-6">
               <h3 className="text-2xl font-bold text-charcoal mb-4">Documents Requiring In-Person Notarization</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -468,7 +468,7 @@ export default function RONPage() {
             </div>
           </div>
 
-          <div className="mt-12 p-6 bg-white border-l-2 border-professional-blue rounded">
+          <div className="mt-12 p-6 bg-white border-l border-professional-blue rounded">
             <p className="text-charcoal/80 mb-3">
               <strong>Not Sure About Your Document?</strong> The restrictions on remote notarization are complex and specific to Texas law. We strongly recommend contacting us before your session to confirm whether your specific document(s) can be notarized remotely.
             </p>
@@ -493,7 +493,7 @@ export default function RONPage() {
 
           {/* Benefits Grid */}
           <div className="grid md:grid-cols-3 gap-12 mb-12">
-            <div className="border-l-2 border-professional-blue pl-6 group">
+            <div className="border-l border-professional-blue pl-6 group">
               <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -527,7 +527,7 @@ export default function RONPage() {
               </ul>
             </div>
 
-            <div className="border-l-2 border-professional-blue pl-6 group">
+            <div className="border-l border-professional-blue pl-6 group">
               <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -561,7 +561,7 @@ export default function RONPage() {
               </ul>
             </div>
 
-            <div className="border-l-2 border-professional-blue pl-6 group">
+            <div className="border-l border-professional-blue pl-6 group">
               <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

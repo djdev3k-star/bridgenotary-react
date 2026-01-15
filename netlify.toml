@@ -17,15 +17,25 @@
   status = 200
 
 [[redirects]]
+  from = "/api/appointment"
+  to = "/.netlify/functions/appointment"
+  status = 200
+
+[[redirects]]
+  from = "/api/apostille"
+  to = "/.netlify/functions/apostille"
+  status = 200
+
+[[redirects]]
   from = "/api/ron/start"
   to = "/.netlify/functions/ron-start"
   status = 200
 
 [context.production]
-  environment = { NODE_VERSION = "18" }
+  environment = { NODE_VERSION = "20" }
 
 [context.deploy-preview]
-  environment = { NODE_VERSION = "18" }
+  environment = { NODE_VERSION = "20" }
 
 [[redirects]]
   from = "/*"

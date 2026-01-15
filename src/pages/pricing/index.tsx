@@ -154,7 +154,7 @@ const Pricing = () => {
       `,
         backgroundSize: '100% 100%, 100% 100%, 100% 100%',
         backgroundAttachment: 'fixed'
-      }}>'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Pricing</span>
@@ -177,8 +177,8 @@ const Pricing = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {loanSigningServices.map((service, idx) => (
-                    <tr key={idx} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
+                  {loanSigningServices.map((service) => (
+                    <tr key={service.name} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
                       <td className="py-4 px-6">
                         <div className="font-semibold text-charcoal group-hover:text-professional-blue transition-colors">{service.name}</div>
                         <div className="text-sm text-charcoal/70 mt-1">{service.notes}</div>

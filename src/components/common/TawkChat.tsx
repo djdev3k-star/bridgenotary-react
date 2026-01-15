@@ -33,8 +33,8 @@ declare global {
   }
 }
 
-const TAWK_PROPERTY_ID = '693c5584e0ccea197d8fdf4c';
-const TAWK_WIDGET_ID = '1jc9ra8th';
+const TAWK_PROPERTY_ID = '69688c4b48d012197e10b8b2';
+const TAWK_WIDGET_ID = '1jf0681ej';
 
 // Pages where the floating widget should be hidden
 const HIDDEN_ON_PAGES = ['/client-portal', '/portal'];

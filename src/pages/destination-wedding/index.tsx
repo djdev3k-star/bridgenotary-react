@@ -5,30 +5,18 @@ import { featureFlags } from '@/utils/featureFlags';
 const DestinationWeddingPage: React.FC = () => {
   return (
     <>
-      {/* Breadcrumbs */}
-      <section className="bg-off-white border-b border-professional-blue/20">
-        <div className="max-w-6xl mx-auto px-6 py-3">
-          <div className="flex items-center gap-2 text-sm">
-            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Home</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            {featureFlags.enableApostille ? (
-              <>
-                <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Apostille</Link>
-                <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </>
-            ) : (
-              <>
-                <Link to="/services" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Services</Link>
-                <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </>
-            )}
-            <span className="text-charcoal/70">Destination Wedding</span>
+      {/* Quick Links to Other Apostille Services */}
+      <section className="bg-professional-blue/5 border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="text-charcoal/70 font-medium">Apostille Services:</span>
+            <Link to="/overseas-property" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Overseas Property</Link>
+            <span className="text-charcoal/30">•</span>
+            <Link to="/dual-citizenship" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Dual Citizenship</Link>
+            <span className="text-charcoal/30">•</span>
+            <Link to="/study-abroad" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Study Abroad</Link>
+            <span className="text-charcoal/30">•</span>
+            <Link to="/international-adoption" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">International Adoption</Link>
           </div>
         </div>
       </section>

@@ -19,23 +19,6 @@ const OverseasPropertyPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Breadcrumbs */}
-      <section className="bg-off-white border-b border-professional-blue/20">
-        <div className="max-w-6xl mx-auto px-6 py-3">
-          <div className="flex items-center gap-2 text-sm">
-            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Home</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Apostille</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <span className="text-charcoal/70">Overseas Property</span>
-          </div>
-        </div>
-      </section>
-
       {/* Hero Section */}
       <section className="w-screen left-1/2 -translate-x-1/2 relative overflow-hidden text-white py-32 md:py-40 lg:py-48 flex items-center justify-center min-h-[600px]" style={{backgroundImage: `url(${overseasPropertyImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className="absolute inset-0 bg-gradient-to-r from-professional-blue via-professional-blue/80 to-professional-blue"></div>

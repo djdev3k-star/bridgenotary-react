@@ -60,16 +60,12 @@ const About = () => (
           </div>
         </div>
 
-        {/* Closing Statement */}
-        <div className="text-center mb-12 fade-in-up">
-          <p className="text-3xl md:text-5xl lg:text-5xl font-bold text-charcoal leading-[1.4]">
-            <span className="text-professional-blue">This is how notary services should work.</span>
-          </p>
-        </div>
-
-        {/* Who We Serve */}
-        <div className="bg-professional-blue/5 border-l-4 border-professional-blue p-6 md:p-8 rounded-r-lg">
-          <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
+        {/* Mission Statement */}
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4 leading-tight">
+            This is how notary services should work.
+          </h2>
+          <p className="text-lg md:text-xl text-charcoal/70 leading-relaxed">
             Whether you're a title company coordinating closings, a lender managing compliance, or an individual needing document authentication, Bridge Notary is built to handle the work efficiently and professionally.
           </p>
         </div>

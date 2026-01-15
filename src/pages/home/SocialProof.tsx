@@ -23,7 +23,7 @@ const testimonials = [
 
 export default function SocialProof() {
   return (
-    <section className="bg-white py-16" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <section className="bg-white py-16 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
           Trusted by Hundreds of Clients

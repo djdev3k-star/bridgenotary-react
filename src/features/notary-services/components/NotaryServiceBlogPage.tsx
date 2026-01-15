@@ -97,7 +97,7 @@ const NotaryServiceBlogPage: React.FC<NotaryServiceBlogPageProps> = ({
             {/* Main Article Column */}
             <div className="lg:col-span-2 space-y-12">
               {/* Featured/Main Article */}
-              <article className="border-l-2 border-professional-blue pl-6 py-4">
+              <article className="border-l border-professional-blue pl-6 py-4">
                 <div className="flex items-center gap-4 mb-6">
                   <span className="bg-professional-blue text-white text-xs font-bold uppercase tracking-wider px-3 py-1">
                     Featured
@@ -162,7 +162,7 @@ const NotaryServiceBlogPage: React.FC<NotaryServiceBlogPageProps> = ({
                     <article
                       key={article.id}
                       id={article.id}
-                      className="border-l-2 border-professional-blue pl-6 py-4 overflow-hidden transition-all"
+                      className="border-l border-professional-blue pl-6 py-4 overflow-hidden transition-all"
                     >
                       {/* Article Card Header */}
                       <button
@@ -243,7 +243,7 @@ const NotaryServiceBlogPage: React.FC<NotaryServiceBlogPageProps> = ({
               <NotaryServicesSidebar currentService={title} />
 
               {/* Quick Links to Articles */}
-              <div className="border-l-2 border-professional-blue pl-6 py-4 sticky top-24">
+              <div className="border-l border-professional-blue pl-6 py-4 sticky top-24">
                 <h4 className="font-bold text-charcoal mb-4">In This Guide</h4>
                 <nav className="space-y-2">
                   <div className="text-sm text-professional-blue font-medium pb-2 border-b border-professional-blue/20">

@@ -50,7 +50,14 @@ const Services = () => {
   return (
     <div className="w-full bg-white">
       {/* Hero Section - Elegant & Purpose-Driven */}
-      <section className="w-full py-16 md:py-24 bg-gradient-to-b from-professional-blue/5 to-white border-b border-professional-blue/10" style={{backgroundImage: 'radial-gradient(circle at 15% 50%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="w-full py-16 md:py-24 bg-gradient-to-b from-professional-blue/5 to-white border-b border-professional-blue/10" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 15% 50%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-5xl mx-auto px-6">
           {/* Header Section */}
           <div className="mb-12 md:mb-16">
@@ -123,7 +130,7 @@ const Services = () => {
       </section>
 
       {/* Tabbed Service Categories */}
-      <section className="py-16 md:py-24 bg-white relative" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="py-16 md:py-24 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           {/* Tabs */}
           <div className="flex gap-1 mb-12 md:mb-16 overflow-x-auto pb-3 md:pb-0 relative z-10 justify-center">
@@ -147,7 +154,7 @@ const Services = () => {
 
           {/* Tab Content */}
           {activeCategory && (
-            <div className="bg-white border-l-2 border-professional-blue pl-4 md:pl-6 py-6 md:py-12 pr-4 md:pr-8 relative z-10">
+            <div className="bg-white border-l border-professional-blue pl-4 md:pl-6 py-6 md:py-12 pr-4 md:pr-8 relative z-10">
               <div className="mb-6 md:mb-8">
                 <h2 className="text-xl md:text-3xl font-bold text-charcoal mb-2">{activeCategory.title}</h2>
                 <p className="text-charcoal/70 text-base md:text-lg">{activeCategory.description}</p>
@@ -194,8 +201,8 @@ const Services = () => {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Content */}
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <div className="text-white">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
                 Schedule Your Notarization Today
               </h2>
               <p className="text-lg text-white/90 mb-8 leading-relaxed">
@@ -234,15 +241,6 @@ const Services = () => {
                 </svg>
                 <span className="group-hover:translate-x-1 transition-transform">Book Your Appointment</span>
               </Link>
-              <a 
-                href="tel:+14696298932" 
-                className="flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-bold py-5 px-8 text-lg transition-all rounded w-full group"
-              >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span className="group-hover:translate-x-1 transition-transform">Call (469) 629-8932</span>
-              </a>
               <p className="text-center text-white/70 text-sm pt-2">
                 Available for same-day appointments in most cases
               </p>

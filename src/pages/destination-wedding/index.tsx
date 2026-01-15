@@ -5,36 +5,24 @@ import { featureFlags } from '@/utils/featureFlags';
 const DestinationWeddingPage: React.FC = () => {
   return (
     <>
-      {/* Breadcrumbs */}
-      <section className="bg-off-white border-b border-professional-blue/20">
-        <div className="max-w-6xl mx-auto px-6 py-3">
-          <div className="flex items-center gap-2 text-sm">
-            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Home</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            {featureFlags.enableApostille ? (
-              <>
-                <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Apostille</Link>
-                <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </>
-            ) : (
-              <>
-                <Link to="/services" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Services</Link>
-                <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </>
-            )}
-            <span className="text-charcoal/70">Destination Wedding</span>
+      {/* Quick Links to Other Apostille Services */}
+      <section className="bg-professional-blue/5 border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="text-charcoal/70 font-medium">Apostille Services:</span>
+            <Link to="/overseas-property" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Overseas Property</Link>
+            <span className="text-charcoal/30">•</span>
+            <Link to="/dual-citizenship" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Dual Citizenship</Link>
+            <span className="text-charcoal/30">•</span>
+            <Link to="/study-abroad" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Study Abroad</Link>
+            <span className="text-charcoal/30">•</span>
+            <Link to="/international-adoption" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">International Adoption</Link>
           </div>
         </div>
       </section>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white text-charcoal w-full py-24 md:py-32" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="relative overflow-hidden bg-white text-charcoal w-full py-24 md:py-32 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-4 py-2 text-sm font-medium mb-6 border border-professional-blue/20">
@@ -62,7 +50,7 @@ const DestinationWeddingPage: React.FC = () => {
       </section>
 
       {/* Content Section */}
-      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Common Destination Wedding Documents</h2>
@@ -71,7 +59,7 @@ const DestinationWeddingPage: React.FC = () => {
             </p>
             
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="border-l-2 border-professional-blue pl-6 py-4">
+              <div className="border-l border-professional-blue pl-6 py-4">
                 <h3 className="text-lg font-bold text-charcoal mb-3">Marriage Documents</h3>
                 <ul className="space-y-2 text-charcoal/70">
                   <li className="flex items-start gap-2">
@@ -95,7 +83,7 @@ const DestinationWeddingPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="border-l-2 border-professional-blue pl-6 py-4">
+              <div className="border-l border-professional-blue pl-6 py-4">
                 <h3 className="text-lg font-bold text-charcoal mb-3">Identity & Legal</h3>
                 <ul className="space-y-2 text-charcoal/70">
                   <li className="flex items-start gap-2">
@@ -120,7 +108,7 @@ const DestinationWeddingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="border-l-2 border-professional-blue pl-6 py-4">
+            <div className="border-l border-professional-blue pl-6 py-4">
               <h3 className="text-lg font-bold text-charcoal mb-3">Wedding Materials</h3>
               <ul className="space-y-2 text-charcoal/70">
                 <li className="flex items-start gap-2">

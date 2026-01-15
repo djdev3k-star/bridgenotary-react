@@ -15,7 +15,7 @@ interface FeatureCardProps {
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon }) => (
-  <div className="p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-colors">
+  <div className="p-6 border-l border-professional-blue group hover:bg-professional-blue/5 transition-colors">
     <div className="flex items-start gap-4">
       <div className="text-professional-blue flex-shrink-0">{icon}</div>
       <div>
@@ -35,7 +35,7 @@ const BenefitItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 
 const WhyBridgeNotaryPage: React.FC = () => {
   return (
-    <div className="w-full bg-off-white text-charcoal" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <div className="w-full bg-off-white text-charcoal" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.04) 0%, transparent 40%)'}}>'
       {/* Hero Section */}
       <section className="bg-professional-blue/10 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -79,7 +79,14 @@ const WhyBridgeNotaryPage: React.FC = () => {
       </section>
 
       {/* Security & Compliance Section */}
-      <section className="bg-white py-20 lg:py-28 px-6" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="bg-white py-20 lg:py-28 px-6 relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>'
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-charcoal mb-6 text-center">Security & Compliance First</h2>
           <p className="text-lg text-charcoal/70 text-center mb-12 max-w-3xl mx-auto">
@@ -127,7 +134,14 @@ const WhyBridgeNotaryPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-white text-charcoal py-20 px-6 w-full flex items-center justify-center" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="relative bg-white text-charcoal py-20 px-6 w-full flex items-center justify-center" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>'
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Start Your Notarization Now</h2>
           <p className="text-lg text-charcoal/70 mb-8">

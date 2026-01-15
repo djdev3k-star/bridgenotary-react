@@ -50,7 +50,14 @@ const Contact = () => {
   return (
     <div className="w-full bg-white">
       {/* Main Content */}
-      <section className="py-8 lg:py-16" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="py-8 lg:py-16 relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
             {/* Left Column - Form */}
@@ -156,7 +163,7 @@ const Contact = () => {
             {/* Right Column - Contact Info */}
             <div className="space-y-6">
               {/* Direct Contact */}
-              <div className="border-l-2 border-professional-blue pl-6 py-4 group">
+              <div className="border-l border-professional-blue pl-6 py-4 group">
                 <h3 className="text-lg font-bold text-charcoal mb-6">Direct Contact</h3>
                 <div className="space-y-5">
                   <a href="tel:+14696298932" className="flex items-center gap-4 hover:translate-x-1 transition-transform">
@@ -193,7 +200,7 @@ const Contact = () => {
               </div>
 
               {/* Availability */}
-              <div className="border-l-2 border-professional-blue pl-6 py-4 group">
+              <div className="border-l border-professional-blue pl-6 py-4 group">
                 <h3 className="text-lg font-bold text-charcoal mb-4">Availability</h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
@@ -215,7 +222,7 @@ const Contact = () => {
               </div>
 
               {/* Quick Actions */}
-              <div className="border-l-2 border-professional-blue pl-6 py-4 group">
+              <div className="border-l border-professional-blue pl-6 py-4 group">
                 <h3 className="text-lg font-bold text-charcoal mb-4">Quick Actions</h3>
                 <div className="space-y-3">
                   <Link to="/book" className="flex items-center gap-3 text-professional-blue hover:text-professional-blue/80 transition group">
@@ -259,7 +266,7 @@ const Contact = () => {
             </div>
             <div className="flex gap-3">
               <a 
-                href="tel:+14696298932" 
+              
                 className="inline-flex items-center gap-2 bg-professional-blue hover:bg-professional-blue/90 text-white font-medium py-3 px-6 transition text-sm"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

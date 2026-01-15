@@ -19,23 +19,6 @@ const OverseasPropertyPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Breadcrumbs */}
-      <section className="bg-off-white border-b border-professional-blue/20">
-        <div className="max-w-6xl mx-auto px-6 py-3">
-          <div className="flex items-center gap-2 text-sm">
-            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Home</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Apostille</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <span className="text-charcoal/70">Overseas Property</span>
-          </div>
-        </div>
-      </section>
-
       {/* Hero Section */}
       <section className="w-screen left-1/2 -translate-x-1/2 relative overflow-hidden text-white py-32 md:py-40 lg:py-48 flex items-center justify-center min-h-[600px]" style={{backgroundImage: `url(${overseasPropertyImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className="absolute inset-0 bg-gradient-to-r from-professional-blue via-professional-blue/80 to-professional-blue"></div>
@@ -71,7 +54,7 @@ const OverseasPropertyPage: React.FC = () => {
             </p>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="border-l border-professional-blue pl-6 group">
                 <div className="flex items-center gap-3 mb-4">
                   <svg className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4z" clipRule="evenodd" />
@@ -100,7 +83,7 @@ const OverseasPropertyPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="border-l border-professional-blue pl-6 group">
                 <div className="flex items-center gap-3 mb-4">
                   <svg className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 6H6.28l-.31-1.243A1 1 0 005 4H3z" />
@@ -130,7 +113,7 @@ const OverseasPropertyPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="border-l-2 border-professional-blue pl-6 group">
+              <div className="border-l border-professional-blue pl-6 group">
                 <div className="flex items-center gap-3 mb-4">
                   <svg className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v2a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
@@ -197,7 +180,7 @@ const OverseasPropertyPage: React.FC = () => {
           </div>
 
           {/* Property Markets by Country */}
-          <div className="mb-16 bg-professional-blue/5 rounded-lg p-8 border-l-2 border-professional-blue">
+          <div className="mb-16 bg-professional-blue/5 rounded-lg p-8 border-l border-professional-blue">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-8">Property Markets by Country</h2>
             <p className="text-lg text-charcoal/70 mb-8">
               Different countries have unique document requirements for real estate transactions. We're familiar with apostille requirements across major international markets.
@@ -244,7 +227,7 @@ const OverseasPropertyPage: React.FC = () => {
             <p className="text-lg text-charcoal/70">Explore our other international document authentication services</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            <Link to="/dual-citizenship" className="border-l-2 border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md transition-all">
+            <Link to="/dual-citizenship" className="border-l border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md transition-all">
               <h3 className="text-xl font-bold text-charcoal mb-2">Dual Citizenship</h3>
               <p className="text-charcoal/70 mb-4 text-base">Authenticate documents for citizenship and immigration purposes</p>
               <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
@@ -254,7 +237,7 @@ const OverseasPropertyPage: React.FC = () => {
                 </svg>
               </span>
             </Link>
-            <Link to="/study-abroad" className="border-l-2 border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md transition-all">
+            <Link to="/study-abroad" className="border-l border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md transition-all">
               <h3 className="text-xl font-bold text-charcoal mb-2">Study Abroad</h3>
               <p className="text-charcoal/70 mb-4 text-base">Certify educational records for international university applications</p>
               <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">
@@ -264,7 +247,7 @@ const OverseasPropertyPage: React.FC = () => {
                 </svg>
               </span>
             </Link>
-            <Link to="/international-adoption" className="border-l-2 border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md transition-all">
+            <Link to="/international-adoption" className="border-l border-professional-blue pl-6 py-6 group hover:bg-white hover:shadow-md transition-all">
               <h3 className="text-xl font-bold text-charcoal mb-2">International Adoption</h3>
               <p className="text-charcoal/70 mb-4 text-base">Authenticate legal documents for international adoption proceedings</p>
               <span className="inline-flex items-center gap-2 text-professional-blue text-sm font-semibold group-hover:gap-3 transition-all">

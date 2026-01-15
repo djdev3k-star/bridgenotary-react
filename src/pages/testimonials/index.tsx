@@ -20,7 +20,7 @@ const testimonials = [
 ];
 
 const Testimonials = () => (
-  <div className="w-full bg-off-white py-20 lg:py-28" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+  <div className="w-full bg-off-white py-20 lg:py-28 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>
     <div className="max-w-6xl mx-auto px-6 text-center">
       <h1 className="text-4xl md:text-5xl font-extrabold text-charcoal mb-6">What Our Clients Say</h1>
       <p className="text-xl text-charcoal/70 mb-12">
@@ -29,7 +29,7 @@ const Testimonials = () => (
     </div>
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left max-w-6xl mx-auto px-6">
       {testimonials.map((t) => (
-        <div key={t.name} className="p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-colors h-full flex flex-col">
+        <div key={t.name} className="p-6 border-l border-professional-blue group hover:bg-professional-blue/5 transition-colors h-full flex flex-col">
           <p className="text-charcoal/70 italic mb-6 flex-grow">“{t.quote}”</p>
           <div>
             <div className="font-bold text-charcoal">{t.name}</div>

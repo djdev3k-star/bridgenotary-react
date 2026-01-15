@@ -34,9 +34,9 @@ export default function Footer() {
               Professional notary services throughout DFW. Licensed, certified, and insured.
             </p>
             <div className="space-y-3 text-sm">
-              <a href="tel:+14696298932" className="flex items-center text-charcoal hover:text-professional-blue transition-colors font-semibold">
-                (469) 629-8932
-              </a>
+              <span className="flex items-center text-charcoal font-semibold">
+                Contact us for assistance
+              </span>
               <a href="mailto:contact@bridgenotary.com" className="block text-charcoal/75 hover:text-professional-blue transition-colors text-sm">
                 contact@bridgenotary.com
               </a>

@@ -147,9 +147,17 @@ const Pricing = () => {
       </section>
 
       {/* Service Categories - Reorganized */}
-      <section id="pricing-tiers" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section id="pricing-tiers" className="py-20 lg:py-28 bg-white scroll-mt-20 relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Pricing</span>
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Professional Notary Services</h2>
             <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">Transparent pricing for all your notarization needs.</p>
           </div>
@@ -169,8 +177,8 @@ const Pricing = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {loanSigningServices.map((service, idx) => (
-                    <tr key={idx} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
+                  {loanSigningServices.map((service) => (
+                    <tr key={service.name} className="border-b border-professional-blue/20 hover:bg-professional-blue/5 transition-colors group">
                       <td className="py-4 px-6">
                         <div className="font-semibold text-charcoal group-hover:text-professional-blue transition-colors">{service.name}</div>
                         <div className="text-sm text-charcoal/70 mt-1">{service.notes}</div>
@@ -242,7 +250,7 @@ const Pricing = () => {
           </div>
 
           {/* Specialty Services */}
-          <div className="scroll-mt-20">
+          <div id="specialty-services" className="scroll-mt-20">
             <div className="mb-8">
               <h3 className="text-3xl font-bold text-charcoal mb-3">Specialty Services</h3>
               <p className="text-charcoal/70 text-lg">International documents and complex notarization.</p>
@@ -273,7 +281,7 @@ const Pricing = () => {
       </section>
 
       {/* Add-On Services */}
-      <section className="py-20 lg:py-28 bg-professional-blue/5" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="py-20 lg:py-28 bg-professional-blue/5 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-8">
             <h3 className="text-3xl font-bold text-charcoal mb-3">Add-On Services</h3>
@@ -310,27 +318,27 @@ const Pricing = () => {
             <h3 className="text-2xl font-bold text-charcoal mb-6">Common Questions</h3>
             
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+              <div className="p-4 bg-white/80 border-l border-professional-blue/40 hover:bg-white transition-colors">
                 <h4 className="text-base font-semibold text-charcoal mb-2">Do your fees include travel?</h4>
                 <p className="text-charcoal/70 text-sm leading-relaxed">Standard fees include travel within 10-15 miles. Beyond that, we charge a small distance-based fee.</p>
               </div>
 
-              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+              <div className="p-4 bg-white/80 border-l border-professional-blue/40 hover:bg-white transition-colors">
                 <h4 className="text-base font-semibold text-charcoal mb-2">Are there additional fees for weekends?</h4>
                 <p className="text-charcoal/70 text-sm leading-relaxed">Yes, weekend and after-hours appointments incur a $50 additional fee for urgent requests.</p>
               </div>
 
-              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+              <div className="p-4 bg-white/80 border-l border-professional-blue/40 hover:bg-white transition-colors">
                 <h4 className="text-base font-semibold text-charcoal mb-2">What payment methods do you accept?</h4>
                 <p className="text-charcoal/70 text-sm leading-relaxed">All major credit cards, Cash App, Venmo, and cash. Corporate accounts can arrange invoicing.</p>
               </div>
 
-              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors">
+              <div className="p-4 bg-white/80 border-l border-professional-blue/40 hover:bg-white transition-colors">
                 <h4 className="text-base font-semibold text-charcoal mb-2">What's your cancellation policy?</h4>
                 <p className="text-charcoal/70 text-sm leading-relaxed">Free rescheduling with 24 hours notice. Less than 24 hours may incur a $25 fee.</p>
               </div>
 
-              <div className="p-4 bg-white/80 border-l-2 border-professional-blue/40 hover:bg-white transition-colors md:col-span-2">
+              <div className="p-4 bg-white/80 border-l border-professional-blue/40 hover:bg-white transition-colors md:col-span-2">
                 <h4 className="text-base font-semibold text-charcoal mb-2">Do you offer bulk or volume discounts?</h4>
                 <p className="text-charcoal/70 text-sm leading-relaxed">Yes! For title companies, lenders, and high-volume clients, we offer custom pricing. Contact us to discuss your specific needs.</p>
               </div>
@@ -340,7 +348,14 @@ const Pricing = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 lg:py-32 bg-white w-full flex items-center justify-center" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="py-24 lg:py-32 bg-white w-full flex items-center justify-center relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>'
         <div className="max-w-4xl px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
             Ready to Get Started?

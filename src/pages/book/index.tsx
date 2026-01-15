@@ -375,7 +375,7 @@ const BookAppointment: React.FC = () => {
                     In-Person Only
                   </span>
                 ) : SERVICE_TYPES[formData.documentType].ronCapable ? (
-                  <span className="text-xs text-professional-blue bg-professional-blue/10 px-2 py-1 inline-flex items-center gap-1 border-l-2 border-professional-blue">
+                  <span className="text-xs text-professional-blue bg-professional-blue/10 px-2 py-1 inline-flex items-center gap-1 border-l border-professional-blue">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
@@ -483,7 +483,7 @@ const BookAppointment: React.FC = () => {
   );
 
   return (
-    <div className="w-full bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <div className="w-full bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
       <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
         <div className="max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Schedule Your Appointment</h1>

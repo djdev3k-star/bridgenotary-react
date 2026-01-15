@@ -45,7 +45,7 @@ const SigningPageTemplate: React.FC<SigningPageProps> = ({
   return (
     <div className="w-full bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-neutral-200" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-neutral-200 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-24">
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-proof/60 mb-4">
             Loan Signing Services
@@ -168,6 +168,16 @@ const SigningPageTemplate: React.FC<SigningPageProps> = ({
                   </div>
                 </div>
               </div>
+
+              {/* Important Disclaimer */}
+              <article className="bg-professional-blue/5 border-l-4 border-professional-blue p-8 md:p-10">
+                <h3 className="text-lg font-bold text-charcoal mb-3">Important: Our Role</h3>
+                <p className="text-sm md:text-base text-charcoal/70 leading-relaxed">
+                  Bridge Notary provides <strong>notarization services only</strong>. We witness and authenticate signatures on loan documents. 
+                  We do NOT provide legal advice, review documents for accuracy, or advise on loan terms. 
+                  If you have questions about your loan documents, consult your lender, loan officer, or an attorney.
+                </p>
+              </article>
 
               {/* Other Services */}
               <div className="bg-white p-6 shadow-sm border border-neutral-200">

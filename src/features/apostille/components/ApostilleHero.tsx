@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTawkChat } from '@/components/common';
 
 interface ApostilleHeroProps {
-  onContactClick: () => void;
+  onContactClick?: () => void;
 }
 
-export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) => (
-  <>
+export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) => {
+  const { openChat } = useTawkChat();
+  return (
+    <>
     {/* Hero Section - Full Viewport Width with Deep Blue Gradient */}
     <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
       {/* Deep blue gradient background covering full viewport */}
@@ -60,7 +63,7 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
               </span>
             </Link>
             <button
-              onClick={onContactClick}
+              onClick={() => openChat()}
               className="border-2 border-white text-white hover:bg-white hover:text-proof transition-all rounded text-lg py-3 px-8 font-semibold shadow-lg hover:shadow-xl"
             >
               <span className="flex items-center justify-center gap-2 whitespace-nowrap">
@@ -131,4 +134,5 @@ export const ApostilleHero: React.FC<ApostilleHeroProps> = ({ onContactClick }) 
       </div>
     </section>
   </>
-);
+  );
+};

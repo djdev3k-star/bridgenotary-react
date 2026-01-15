@@ -30,9 +30,7 @@ const ApostillePage: React.FC = () => {
       {/* Contact Form Modal */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
-          <div className="bg-white max-w-xl w-full p-6">
-            <h3 className="text-2xl font-semibold mb-4">Start Your Apostille Process</h3>
-            {/* Add your contact form here */}
+          <div className="bg-white max-w-xl w-full p-6 relative">
             <button
               onClick={() => setShowContactForm(false)}
               className="absolute top-4 right-4 text-neutral-500 hover:text-neutral-700"
@@ -40,6 +38,7 @@ const ApostillePage: React.FC = () => {
             >
               ✕
             </button>
+            <p className="text-charcoal/70 mb-6">Fill out this quick form and our team will reach out to guide you through the next steps.</p>
           </div>
         </div>
       )}

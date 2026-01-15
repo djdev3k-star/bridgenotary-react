@@ -5,7 +5,7 @@ const Terms = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-white py-16 md:py-20 border-b border-professional-blue/20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="bg-white py-16 md:py-20 border-b border-professional-blue/20 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="max-w-4xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Terms of Service</h1>
           <p className="text-lg text-charcoal/70">Please read these terms carefully before using Bridge Notary services.</p>
@@ -13,7 +13,7 @@ const Terms = () => {
       </section>
 
       {/* Content */}
-      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="max-w-4xl mx-auto px-6">
           <div className="space-y-8">
             <div>
@@ -134,13 +134,63 @@ const Terms = () => {
               <div className="bg-professional-blue/5 border-l-4 border-professional-blue p-6 rounded-r">
                 <p className="text-charcoal font-semibold mb-2">Bridge Notary</p>
                 <p className="text-charcoal/70">Email: <a href="mailto:contact@bridgenotary.com" className="text-professional-blue hover:underline">contact@bridgenotary.com</a></p>
-                <p className="text-charcoal/70">Phone: <a href="tel:+14696298932" className="text-professional-blue hover:underline">(469) 629-8932</a></p>
+
               </div>
             </div>
 
             <div className="pt-8 border-t border-professional-blue/20">
               <p className="text-sm text-charcoal/60">
                 Last updated: January 2026
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 lg:py-28 bg-professional-blue/5 border-t border-professional-blue/20">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="bg-white border-l-4 border-professional-blue p-8 mb-12 rounded-sm">
+            <h2 className="text-2xl font-bold text-charcoal mb-4">IMPORTANT LEGAL DISCLAIMER</h2>
+            <div className="space-y-4 text-charcoal/70 leading-relaxed text-sm md:text-base">
+              <p>
+                <span className="font-semibold text-charcoal">Bridge Notary is NOT a law firm.</span> Our notaries are NOT licensed attorneys. We do NOT provide legal advice, legal representation, legal review, or legal interpretation of documents.
+              </p>
+              
+              <div>
+                <p className="font-semibold text-charcoal mb-2">Services Bridge Notary DOES provide:</p>
+                <ul className="list-disc list-inside space-y-1 ml-2">
+                  <li>Notarization (witnessing and authenticating signatures)</li>
+                  <li>Identity verification per Texas notary law</li>
+                  <li>Remote online notarization (RON) services</li>
+                  <li>Apostille coordination and secure courier services</li>
+                  <li>Loan document signing services (as notary only)</li>
+                </ul>
+              </div>
+
+              <div>
+                <p className="font-semibold text-charcoal mb-2">Services Bridge Notary does NOT provide:</p>
+                <ul className="list-disc list-inside space-y-1 ml-2">
+                  <li>Legal advice of any kind</li>
+                  <li>Document interpretation or analysis</li>
+                  <li>Legal representation</li>
+                  <li>Will, estate, or probate planning</li>
+                  <li>Power of attorney guidance</li>
+                  <li>Immigration or tax advice</li>
+                  <li>Determination of document validity or legality</li>
+                </ul>
+              </div>
+
+              <p>
+                <span className="font-semibold text-charcoal">For legal questions,</span> consult a Texas-licensed attorney. We are happy to notarize documents you prepare with legal counsel, but we cannot advise you on legal matters.
+              </p>
+
+              <p className="pt-2 border-t border-charcoal/20">
+                <span className="font-semibold text-charcoal">RON Limitations:</span> Remote online notarization cannot be used for certain documents (such as some powers of attorney and certain financial instruments). Contact us to confirm if your specific documents can be notarized remotely.
+              </p>
+
+              <p>
+                <span className="font-semibold text-charcoal">Bonding & Insurance:</span> All Texas notaries are bonded as required by law. Notary bonding covers errors in the notarial act itself, not document validity, legal interpretation, or client outcomes.
               </p>
             </div>
           </div>

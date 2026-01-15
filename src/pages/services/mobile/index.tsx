@@ -61,7 +61,7 @@ export default function MobileNotaryPage() {
         <div className="relative bg-gradient-to-br from-professional-blue via-professional-blue/98 to-professional-blue/95 text-white min-h-[600px] flex items-center">
           {/* Background pattern - diagonal stripes */}
           <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)`,
+            backgroundImage: `radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.1) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.05) 0%, transparent 40%)`,
           }}></div>
 
           {/* Content */}
@@ -119,12 +119,12 @@ export default function MobileNotaryPage() {
       </section>
 
       {/* Key Benefits Section */}
-      <section className="py-20 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         <div className="max-w-6xl mx-auto px-6">
           {/* Features Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             {features.map((f) => (
-              <div key={f.title} className="border-l-2 border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all">
+              <div key={f.title} className="border-l border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all">
                 <div className="mb-4">
                   <h3 className="text-lg font-bold text-charcoal group-hover:text-professional-blue transition-colors mb-2">{f.title}</h3>
                   <p className="text-charcoal/70 leading-relaxed text-sm">{f.description}</p>
@@ -179,7 +179,7 @@ export default function MobileNotaryPage() {
           </div>
 
           {/* Pricing Section */}
-          <div id="pricing" className="bg-professional-blue/5 p-8 border-l-2 border-professional-blue mb-16 scroll-mt-20">
+          <div id="pricing" className="bg-professional-blue/5 p-8 border-l border-professional-blue mb-16 scroll-mt-20">
             <h2 className="text-2xl font-bold text-charcoal mb-6">Transparent Pricing</h2>
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               {[

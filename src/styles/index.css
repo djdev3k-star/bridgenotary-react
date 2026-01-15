@@ -87,6 +87,11 @@
     @apply bg-white border border-neutral-200 p-6 transition-all duration-300 hover:border-professional-blue hover:shadow-md;
   }
 
+  /* Refined left accent border - refined thickness for less visual clutter */
+  .accent-left {
+    @apply border-l border-professional-blue;
+  }
+
   @keyframes pulse {
     0%, 100% {
       transform: scale(1);
@@ -357,18 +362,18 @@
 }
 #tawk-bubble-container,
 .tawk-min-container {
-  --tawk-header-color: #0046fa !important;
-  --tawk-primary-color: #0046fa !important;
+  --tawk-header-color: #0055E6 !important;
+  --tawk-primary-color: #0055E6 !important;
 }
 
 /* Override Tawk.to bubble background color */
 .tawk-min-container .tawk-button,
 #tawk-bubble-container .tawk-button {
-  background-color: #0046fa !important;
+  background-color: #0055E6 !important;
 }
 
 /* Override chat header */
 .tawk-min-container .tawk-header,
 iframe[title*="chat widget"] {
-  --tawk-header-background: #0046fa !important;
+  --tawk-header-background: #0055E6 !important;
 }

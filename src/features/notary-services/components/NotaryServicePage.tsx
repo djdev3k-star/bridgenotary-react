@@ -78,7 +78,7 @@ const NotaryServicePage: React.FC<NotaryServicePageProps> = ({
           <div className={showSidebar ? "grid lg:grid-cols-3 gap-12" : "grid gap-12"}>
             <div className={showSidebar ? "lg:col-span-2 space-y-12" : "space-y-12"}>
               {sections.map((section) => (
-                <article key={section.title} className="space-y-6 border-l-2 border-professional-blue pl-6 py-4">
+                <article key={section.title} className="space-y-6 border-l border-professional-blue pl-6 py-4">
                   <h2 className="text-3xl md:text-4xl font-bold text-charcoal leading-tight">{section.title}</h2>
                   {section.paragraphs.map((paragraph, pIdx) => (
                     <p key={`${section.title}-${pIdx}`} className="text-lg text-charcoal/70 leading-relaxed">
@@ -106,7 +106,7 @@ const NotaryServicePage: React.FC<NotaryServicePageProps> = ({
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {highlights.map((item) => (
-                <div key={item.title} className="border-l-2 border-professional-blue pl-6 py-4 group">
+                <div key={item.title} className="border-l border-professional-blue pl-6 py-4 group">
                   <p className="font-bold text-charcoal text-base mb-2">{item.title}</p>
                   <p className="text-sm text-charcoal/70 leading-relaxed">{item.description}</p>
                 </div>

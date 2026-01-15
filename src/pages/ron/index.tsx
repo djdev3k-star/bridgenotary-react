@@ -23,7 +23,10 @@ export default function RONPage() {
       </section>
 
       {/* Hero Section - Full Viewport Width with Professional Blue Gradient */}
-      <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
+      <section
+        className="relative overflow-hidden text-white min-h-[85vh] flex items-center"
+        style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}
+      >
         {/* Professional blue gradient background covering full viewport */}
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-professional-blue via-professional-blue/80 to-professional-blue"></div>
         
@@ -113,10 +116,17 @@ export default function RONPage() {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section id="how-it-works" className="py-20 lg:py-28 bg-off-white scroll-mt-20 relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">Simple Process</span>
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Simple Process</span>
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">How Remote Online Notarization Works</h2>
             <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">
               Our streamlined 3-step process makes remote notarization as easy as meeting in person, but from the comfort of your home or office.
@@ -126,7 +136,7 @@ export default function RONPage() {
           {/* Process Steps */}
           <div className="grid md:grid-cols-3 gap-8">
             {/* Step 1: Upload */}
-            <div className="border-l-2 border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all">
+            <div className="border-l border-professional-blue pl-6 group hover:bg-white rounded p-6 transition-all">
               <div className="mb-4">
                 <span className="text-xs font-semibold text-professional-blue uppercase tracking-wide">Step 1</span>
                 <h3 className="text-xl font-bold text-charcoal group-hover:text-professional-blue transition-colors">Secure Document Upload</h3>
@@ -135,7 +145,7 @@ export default function RONPage() {
                 <img
                   src="/images/upload-documents.png"
                   alt="Upload and prepare documents" 
-                  className="w-full h-32 object-cover border border-professional-blue/20"
+                  className="w-full h-40 object-cover border border-professional-blue/20 rounded"
                 />
               </div>
               <p className="text-charcoal/70 mb-3 text-sm">Your documents are transmitted and stored using encrypted, financial-grade security.</p>
@@ -162,7 +172,7 @@ export default function RONPage() {
             </div>
 
             {/* Step 2: Verify */}
-            <div className="border-l-2 border-professional-blue pl-6 group">
+            <div className="border-l border-professional-blue pl-6 group hover:bg-white rounded p-6 transition-all">
               <div className="flex items-start gap-4 mb-6">
                 <div className="flex-shrink-0 text-professional-blue group-hover:scale-110 transition-transform">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -207,7 +217,7 @@ export default function RONPage() {
             </div>
 
             {/* Step 3: Notarize */}
-            <div className="border-l-2 border-professional-blue pl-6 group">
+            <div className="border-l border-professional-blue pl-6 group hover:bg-white rounded p-6 transition-all">
               <div className="flex items-start gap-4 mb-6">
                 <div className="flex-shrink-0 text-professional-blue group-hover:scale-110 transition-transform">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -251,27 +261,32 @@ export default function RONPage() {
               </ul>
             </div>
           </div>
+
+          {/* Connection line visual element */}
+          <div className="hidden lg:block absolute top-32 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-professional-blue/0 via-professional-blue/20 to-professional-blue/0 -z-10" />
         </div>
       </section>
 
       {/* Session Preparation Section */}
-      <section className="w-full bg-white py-20 md:py-28" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Breadcrumb Header */}
-          <div className="mb-16">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-professional-blue/30"></div>
-              <span className="text-sm font-medium text-professional-blue uppercase tracking-wider">Session Checklist</span>
-              <div className="h-px flex-1 bg-professional-blue/30"></div>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Prepare for Your Session</h2>
-            <p className="text-xl text-charcoal/70 max-w-3xl">
+      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 80% 20%, rgba(0, 85, 230, 0.05) 0%, transparent 35%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Session Checklist</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Prepare for Your Session</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">
               Follow these simple steps to ensure your remote notarization goes smoothly and efficiently.
             </p>
           </div>
 
-          {/* Stacked InfoCards only (right column removed) */}
-          <div className="space-y-6">
+          {/* Stacked InfoCards */}
+          <div className="space-y-6 max-w-3xl mx-auto">
             {/* Card 1: Prepare Your Documents (using shared InfoCard) */}
             <InfoCard
               title="Gather Your Documents"
@@ -376,21 +391,151 @@ export default function RONPage() {
         </div>
       </section>
 
+      {/* Important Limitations & Restrictions Section */}
+      <section className="py-20 lg:py-28 bg-off-white relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.06) 0%, transparent 35%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 35%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12">
+            <div className="inline-block mb-4">
+              <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase bg-professional-blue/10 px-4 py-2 rounded flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+                Important Information
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">RON Limitations & Document Restrictions</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl">
+              Not all documents can be notarized remotely. Some Texas documents require in-person notarization.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mb-12">
+            {/* Documents We CAN Notarize Remotely */}
+            <div className="border-l border-professional-blue pl-6">
+              <h3 className="text-2xl font-bold text-charcoal mb-6">Documents We CAN Notarize Remotely</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Powers of Attorney (Limited POA)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Affidavits and Declarations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Loan Documents & Mortgage Applications</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Rental & Lease Agreements</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Certified Copies & Acknowledgments</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Documents That CANNOT Be Notarized Remotely */}
+            <div className="border-l border-professional-blue pl-6">
+              <h3 className="text-2xl font-bold text-charcoal mb-4">Documents Requiring In-Person Notarization</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Wills & Testamentary Documents</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Healthcare Powers of Attorney (HIPAA)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">General Durable Powers of Attorney (DPOA)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Deed of Trust & Mortgages (Real Estate)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M13.707 1.293a1 1 0 00-1.414 0L.293 13.293a1 1 0 000 1.414l1.414 1.414a1 1 0 001.414 0L15.414 4.121a1 1 0 000-1.414l-1.707-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-charcoal/70">Custody or Guardianship Documents</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-l-4 border-professional-blue bg-professional-blue/5 p-6 md:p-8 rounded-r-lg">
+            <div className="flex items-start gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue flex-shrink-0 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2z" clipRule="evenodd" />
+              </svg>
+              <div>
+                <p className="text-charcoal font-bold mb-3 text-lg">
+                  Not Sure About Your Document?
+                </p>
+                <p className="text-charcoal/70 text-sm leading-relaxed mb-3">
+                  The restrictions on remote notarization are complex and specific to Texas law. We strongly recommend contacting us before your session to confirm whether your specific document(s) can be notarized remotely.
+                </p>
+                <p className="text-charcoal/70 text-sm leading-relaxed">
+                  Contact a licensed attorney for legal advice about your specific notarization needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Notary Role in RON section removed per request */}
 
-      {/* Why Choose RON Section - Consolidated */}
-      <section id="benefits" className="py-20 lg:py-28 bg-white scroll-mt-20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      {/* Why Choose RON Section */}
+      <section id="benefits" className="py-20 lg:py-28 bg-white scroll-mt-20 relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-charcoal mb-3">Why Choose Remote Online Notarization?</h2>
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Benefits</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Why Choose Remote Online Notarization?</h2>
             <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">
               Experience the convenience and security of digital notarization with legal validity in all 50 states.
             </p>
           </div>
 
           {/* Benefits Grid */}
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            <div className="border-l-2 border-professional-blue pl-6 group">
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="border-l border-professional-blue pl-6 group">
               <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -424,7 +569,7 @@ export default function RONPage() {
               </ul>
             </div>
 
-            <div className="border-l-2 border-professional-blue pl-6 group">
+            <div className="border-l border-professional-blue pl-6 group">
               <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -458,7 +603,7 @@ export default function RONPage() {
               </ul>
             </div>
 
-            <div className="border-l-2 border-professional-blue pl-6 group">
+            <div className="border-l border-professional-blue pl-6 group">
               <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -492,38 +637,48 @@ export default function RONPage() {
               </ul>
             </div>
           </div>
-
-          {/* Stats Row removed per request */}
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-24 px-6 overflow-hidden bg-professional-blue/10">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-professional-blue/5"></div>
-        {/* Background image with overlay */}
-        <div className="absolute inset-0 opacity-15">
-          <img 
-            src="/images/stack-loan-documents.jpg" 
-            alt="" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-professional-blue/10"></div>
-
-        <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-8">Ready to Start Your RON Session?</h2>
-          <p className="text-xl text-charcoal/70 mb-12 max-w-3xl mx-auto">
-            Experience the future of notarization with secure, convenient remote online notarization.
-            Available 24/7 with certified notaries nationwide.
+      <section className="py-20 lg:py-28 bg-professional-blue/10 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.08) 0%, transparent 35%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.04) 0%, transparent 35%)'}}>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Ready to Start Your RON Session?</h2>
+          <p className="text-xl text-charcoal/70 mb-10">
+            Join thousands of satisfied customers. Get certified notarization in minutes, not days.
           </p>
-          <div className="flex justify-center">
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/book?service=ron&mode=online"
-              className="inline-block bg-professional-blue text-white hover:bg-professional-blue/90 transition-all font-semibold text-lg py-5 px-10"
+              className="inline-flex items-center justify-center px-8 py-4 bg-professional-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-lg"
             >
-              Schedule RON Session
+              Book Your Session Now
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+              </svg>
             </Link>
+            <button onClick={() => {
+              const element = document.getElementById('benefits');
+              element?.scrollIntoView({ behavior: 'smooth' });
+            }} className="inline-flex items-center justify-center px-8 py-4 border-2 border-professional-blue text-professional-blue font-semibold rounded-lg hover:bg-professional-blue/5 transition-colors text-lg">
+              Learn More
+            </button>
+          </div>
+
+          <div className="mt-16 grid md:grid-cols-3 gap-8 pt-12 border-t border-professional-blue/20">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-professional-blue mb-2">5 min</div>
+              <p className="text-charcoal/70">Average session time</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-professional-blue mb-2">$15</div>
+              <p className="text-charcoal/70">Simple pricing, no hidden fees</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-professional-blue mb-2">24/7</div>
+              <p className="text-charcoal/70">Always available when you need us</p>
+            </div>
           </div>
         </div>
       </section>

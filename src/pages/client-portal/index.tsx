@@ -35,6 +35,7 @@ const ClientPortal: React.FC = () => {
   ]);
   const [chatInput, setChatInput] = useState("");
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const uploadInputRef = useRef<HTMLInputElement>(null);
 
   // Get service context from URL params
   const serviceParam = searchParams.get("service");
@@ -254,16 +255,6 @@ const ClientPortal: React.FC = () => {
               <h3 className="font-semibold text-charcoal mb-2">Start RON Session</h3>
               <p className="text-sm text-charcoal/70">Notarize online via secure video</p>
             </Link>
-            
-            <a href="tel:+14696298932" className="group bg-white rounded-xl border border-neutral-200 p-6 hover:shadow-lg hover:border-professional-blue/30 transition">
-              <div className="w-12 h-12 bg-professional-blue/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-professional-blue/20 transition">
-                <svg className="w-6 h-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <h3 className="font-semibold text-charcoal mb-2">Call Us</h3>
-              <p className="text-sm text-charcoal/70">(469) 629-8932 — Same-day available</p>
-            </a>
           </div>
         </div>
       </div>
@@ -287,15 +278,7 @@ const ClientPortal: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <a 
-                href="tel:+14696298932" 
-                className="hidden md:flex items-center gap-2 text-sm text-neutral-600 hover:text-professional-blue transition"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                (469) 629-8932
-              </a>
+
               <button
                 onClick={() => setIsIdentified(false)}
                 className="text-sm text-neutral-600 hover:text-charcoal transition"
@@ -392,8 +375,14 @@ const ClientPortal: React.FC = () => {
                   <span className="text-xs font-semibold text-professional-blue">Only Bridge Notary can access your files</span>
                 </div>
 
-                <label className="block border-2 border-dashed border-professional-blue/30 rounded-xl p-6 text-center cursor-pointer hover:border-professional-blue hover:bg-professional-blue/3 transition group">
-                  <input type="file" className="hidden" onChange={handleFileChange} accept=".pdf,.doc,.docx,.jpg,.png,.jpeg" />
+                <label className="block border-2 border-dashed border-professional-blue/30 rounded-xl p-6 text-center cursor-pointer hover:border-professional-blue hover:bg-professional-blue/30 transition group">
+                  <input
+                    ref={uploadInputRef}
+                    type="file"
+                    className="hidden"
+                    onChange={handleFileChange}
+                    accept=".pdf,.doc,.docx,.jpg,.png,.jpeg"
+                  />
                   <div className="flex flex-col items-center gap-3">
                     <div className="w-12 h-12 bg-professional-blue/10 rounded-full flex items-center justify-center group-hover:bg-professional-blue/20 transition">
                       <svg className="w-6 h-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -506,14 +495,6 @@ const ClientPortal: React.FC = () => {
                   </div>
                   <span className="text-sm font-medium text-charcoal">Start RON Session</span>
                 </Link>
-                <a href="tel:+14696298932" className="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-50 transition group">
-                  <div className="w-8 h-8 bg-professional-blue/10 rounded-lg flex items-center justify-center group-hover:bg-professional-blue/20 transition">
-                    <svg className="w-4 h-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium text-charcoal">Call Now</span>
-                </a>
               </div>
             </div>
 
@@ -613,7 +594,7 @@ const ClientPortal: React.FC = () => {
                 <div className="flex gap-3">
                   <button
                     type="button"
-                    onClick={() => document.querySelector<HTMLInputElement>('input[type="file"]')?.click()}
+                    onClick={() => uploadInputRef.current?.click()}
                     className="p-3 text-neutral-500 hover:text-professional-blue hover:bg-professional-blue/5 rounded-xl transition"
                     title="Attach file"
                   >
@@ -640,7 +621,7 @@ const ClientPortal: React.FC = () => {
                   </button>
                 </div>
                 <p className="text-xs text-neutral-500 mt-2 text-center">
-                  Secure document messaging • <a href="tel:+14696298932" className="text-professional-blue hover:underline">Call (469) 629-8932</a> for urgent requests
+                  Secure document messaging for your notarization needs
                 </p>
               </form>
             </div>

@@ -49,7 +49,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
     <div className="w-full bg-white">
       <LoanSigningBreadcrumb />
       
-      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-professional-blue/20" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="relative overflow-hidden w-screen left-1/2 -translate-x-1/2 bg-white border-b border-professional-blue/20 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
         {/* Background Image with Blob Mask */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-60">
@@ -147,7 +147,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {highlights.map((item, index) => (
-                <div key={item.title} className="border-l-2 border-professional-blue pl-6 py-4 group hover:bg-white/50 transition-colors">
+                <div key={item.title} className="border-l border-professional-blue pl-6 py-4 group hover:bg-white/50 transition-colors">
                   <div className="flex items-start gap-3 mb-3">
                     <span className="text-professional-blue font-bold text-lg flex-shrink-0">{index + 1}.</span>
                     <h3 className="font-bold text-charcoal text-lg">{item.title}</h3>
@@ -156,7 +156,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
                 </div>
               ))}
             </div>
-            <div className="mt-16 p-8 border-l-2 border-professional-blue pl-6 bg-white">
+            <div className="mt-16 p-8 border-l border-professional-blue pl-6 bg-white">
               <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                 <div className="flex-shrink-0">
                   <svg className="w-12 h-12 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -184,7 +184,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
         </div>
       </section>
       {relatedLinks && relatedLinks.length > 0 && (
-        <section className="py-16 md:py-20 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+        <section className="py-16 md:py-20 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-sm uppercase tracking-widest text-professional-blue font-semibold mb-2">Related Services</p>
@@ -195,7 +195,7 @@ const LongFormSigningPage: React.FC<LongFormSigningPageProps> = ({
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="group border-l-2 border-professional-blue/50 pl-6 py-4 hover:border-professional-blue hover:bg-professional-blue/5 transition-all"
+                  className="group border-l border-professional-blue/50 pl-6 py-4 hover:border-professional-blue hover:bg-professional-blue/5 transition-all"
                 >
                   <p className="text-lg font-semibold mb-2 text-charcoal group-hover:text-professional-blue transition-colors flex items-center gap-2">
                     {link.label}

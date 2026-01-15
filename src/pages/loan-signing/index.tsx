@@ -63,7 +63,14 @@ const LoanSigningPage: React.FC = () => {
 
       <div className="w-full bg-white">
       {/* Preparation Cards Section - Full Width Background */}
-      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.12) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.08) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
             <span className="text-professional-blue font-semibold text-xs uppercase tracking-[0.2em]">Why Choose Bridge Notary</span>
@@ -79,7 +86,7 @@ const LoanSigningPage: React.FC = () => {
             <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-muted-gold/3 -z-10"></div>
             
             {benefits.map((benefit, index) => (
-              <div key={index} className="border-l-2 border-professional-blue pl-6 group">
+              <div key={index} className="border-l border-professional-blue pl-6 group">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="text-professional-blue group-hover:scale-110 transition-transform flex-shrink-0">
                     {benefit.icon}
@@ -94,7 +101,14 @@ const LoanSigningPage: React.FC = () => {
       </section>
 
       {/* Loan Types Section */}
-      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
             <span className="text-professional-blue font-semibold text-xs uppercase tracking-[0.2em]">Document Types</span>
@@ -135,7 +149,14 @@ const LoanSigningPage: React.FC = () => {
       </section>
 
       {/* Process Section */}
-      <section className="w-full bg-off-white py-20 md:py-28 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.03) 2px, rgba(0, 85, 230, 0.03) 4px)'}}>
+      <section className="w-full bg-off-white py-20 md:py-28 relative" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
             <span className="text-professional-blue font-semibold text-xs uppercase tracking-[0.2em]">Simple Process</span>
@@ -150,7 +171,7 @@ const LoanSigningPage: React.FC = () => {
             <div className="hidden lg:block absolute top-20 left-1/4 right-1/4 h-1 bg-gradient-to-r from-professional-blue via-professional-blue/50 to-professional-blue" />
             
             <div className="grid md:grid-cols-3 gap-12">
-              <div className="relative text-center group p-8 border-l-2 border-professional-blue hover:bg-professional-blue/5 transition-colors">
+              <div className="relative text-center group p-8 border-l border-professional-blue hover:bg-professional-blue/5 transition-colors">
                 <div className="mb-6 text-4xl font-bold text-professional-blue">
                   1
                 </div>
@@ -160,7 +181,7 @@ const LoanSigningPage: React.FC = () => {
                 </p>
               </div>
               
-              <div className="relative text-center group p-8 border-l-2 border-professional-blue hover:bg-professional-blue/5 transition-colors">
+              <div className="relative text-center group p-8 border-l border-professional-blue hover:bg-professional-blue/5 transition-colors">
                 <div className="mb-6 text-4xl font-bold text-professional-blue">
                   2
                 </div>
@@ -170,7 +191,7 @@ const LoanSigningPage: React.FC = () => {
                 </p>
               </div>
               
-              <div className="relative text-center group p-8 border-l-2 border-professional-blue hover:bg-professional-blue/5 transition-colors">
+              <div className="relative text-center group p-8 border-l border-professional-blue hover:bg-professional-blue/5 transition-colors">
                 <div className="mb-6 text-4xl font-bold text-professional-blue">
                   3
                 </div>

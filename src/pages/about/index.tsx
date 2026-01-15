@@ -3,41 +3,34 @@ import { Link } from "react-router-dom";
 const About = () => (
   <div className="w-full">
     {/* Hero Section */}
-    <section className="relative overflow-hidden bg-white text-charcoal w-screen left-1/2 -translate-x-1/2 py-32 md:py-40 lg:py-48 min-h-[600px] flex items-center">
-      {/* Spectral Pattern Background */}
-      <div className="absolute inset-0 opacity-30" style={{
-        backgroundImage: `
-          linear-gradient(90deg, 
-            transparent 0%, 
-            rgba(59, 130, 246, 0.15) 15%, 
-            rgba(99, 102, 241, 0.15) 35%, 
-            rgba(139, 92, 246, 0.15) 55%,
-            rgba(168, 85, 247, 0.15) 75%,
-            rgba(168, 85, 247, 0.12) 100%),
-          radial-gradient(circle at 20% 50%, rgba(0, 85, 230, 0.08) 0%, transparent 45%),
-          radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.06) 0%, transparent 50%)
-        `,
-        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
-        backgroundAttachment: 'fixed'
-      }}></div>
-      
+    <section className="relative overflow-hidden bg-white text-charcoal w-screen left-1/2 -translate-x-1/2 py-24 md:py-32 lg:py-40 min-h-[600px] flex items-center" style={{backgroundImage: `
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+      radial-gradient(circle at 20% 50%, rgba(0, 85, 230, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.06) 0%, transparent 50%)
+    `,
+      backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-professional-blue/10 px-4 py-2 text-sm font-medium mb-8 border border-professional-blue/20">
-            <svg className="w-4 h-4 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span className="text-professional-blue">About Bridge</span>
-          </div>
+          <p className="text-lg md:text-xl text-professional-blue font-semibold mb-6 uppercase tracking-wide">About Bridge Notary</p>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-charcoal leading-[1.5] mb-8">
             Our approach is straightforward: show up on time, prepare thoroughly, communicate clearly, and deliver documents that are correct on the first attempt.
           </h1>
+          <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">Professional notary services built on reliability, expertise, and attention to detail.</p>
         </div>
       </div>
     </section>
 
     {/* Our Story */}
-    <section className="py-12 lg:py-28 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <section className="py-12 lg:py-28 bg-white relative" style={{backgroundImage: `
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+      radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+      radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+    `,
+      backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         
         {/* Our Values Grid */}
@@ -52,31 +45,27 @@ const About = () => (
           
           {/* Three Pillars */}
           <div className="space-y-4 md:space-y-6">
-            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+            <div className="p-4 md:p-6 border-l border-professional-blue group hover:bg-professional-blue/5 transition-all">
               <h4 className="font-bold text-charcoal text-lg mb-2">Punctuality</h4>
               <p className="text-charcoal/70 leading-relaxed text-sm">We arrive when scheduled and come prepared. No delays, no excuses.</p>
             </div>
-            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+            <div className="p-4 md:p-6 border-l border-professional-blue group hover:bg-professional-blue/5 transition-all">
               <h4 className="font-bold text-charcoal text-lg mb-2">Accuracy</h4>
               <p className="text-charcoal/70 leading-relaxed text-sm">Correct documents on the first attempt. Missing signatures and errors are preventable—we prevent them.</p>
             </div>
-            <div className="p-4 md:p-6 border-l-2 border-professional-blue group hover:bg-professional-blue/5 transition-all">
+            <div className="p-4 md:p-6 border-l border-professional-blue group hover:bg-professional-blue/5 transition-all">
               <h4 className="font-bold text-charcoal text-lg mb-2">Communication</h4>
               <p className="text-charcoal/70 leading-relaxed text-sm">From booking to completion, you know what to expect. Clear updates, no surprises.</p>
             </div>
           </div>
         </div>
 
-        {/* Closing Statement */}
-        <div className="text-center mb-12 fade-in-up">
-          <p className="text-3xl md:text-5xl lg:text-5xl font-bold text-charcoal leading-[1.4]">
-            <span className="text-professional-blue">This is how notary services should work.</span>
-          </p>
-        </div>
-
-        {/* Who We Serve */}
-        <div className="bg-professional-blue/5 border-l-4 border-professional-blue p-6 md:p-8 rounded-r-lg">
-          <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
+        {/* Mission Statement */}
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4 leading-tight">
+            This is how notary services should work.
+          </h2>
+          <p className="text-lg md:text-xl text-charcoal/70 leading-relaxed">
             Whether you're a title company coordinating closings, a lender managing compliance, or an individual needing document authentication, Bridge Notary is built to handle the work efficiently and professionally.
           </p>
         </div>
@@ -84,7 +73,14 @@ const About = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="py-24 lg:py-32 bg-professional-blue/10 text-charcoal w-full flex items-center justify-center" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <section className="py-24 lg:py-32 bg-professional-blue/10 text-charcoal w-full flex items-center justify-center relative" style={{backgroundImage: `
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+      radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+      radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+    `,
+      backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-charcoal">
           Ready to Work With Us?

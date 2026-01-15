@@ -213,7 +213,7 @@ const FAQ = () => (
     </section>
 
     {/* Main Content */}
-    <section className="py-16 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <section className="py-16 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
       <div className="max-w-5xl mx-auto px-6">
         <div className="space-y-12">
           {faqCategories.map((category, catIdx) => (
@@ -226,7 +226,7 @@ const FAQ = () => (
               {/* Questions in Category */}
               <div className="space-y-3">
                 {category.questions.map((item, qIdx) => (
-                  <div key={qIdx} className="border-l-2 border-professional-blue/40 hover:border-professional-blue pl-4 py-3 hover:bg-professional-blue/3 transition-all">
+                  <div key={qIdx} className="border-l border-professional-blue/40 hover:border-professional-blue pl-4 py-3 hover:bg-professional-blue/3 transition-all">
                     <h3 className="text-base font-semibold text-charcoal mb-2">{item.q}</h3>
                     <p className="text-charcoal/70 leading-relaxed text-sm">{item.a}</p>
                   </div>

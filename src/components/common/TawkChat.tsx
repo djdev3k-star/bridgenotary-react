@@ -33,8 +33,8 @@ declare global {
   }
 }
 
-const TAWK_PROPERTY_ID = '693c5584e0ccea197d8fdf4c';
-const TAWK_WIDGET_ID = '1jc9ra8th';
+const TAWK_PROPERTY_ID = '69688c4b48d012197e10b8b2';
+const TAWK_WIDGET_ID = '1jf0681ej';
 
 // Pages where the floating widget should be hidden
 const HIDDEN_ON_PAGES = ['/client-portal', '/portal'];
@@ -63,7 +63,7 @@ export const TawkChat: React.FC<TawkChatProps> = ({
         window.Tawk_API.embedded = containerId;
       }
 
-      // Custom styling for the widget position
+      // Custom styling for the widget position and appearance
       window.Tawk_API.customStyle = {
         visibility: {
           desktop: {
@@ -87,9 +87,9 @@ export const TawkChat: React.FC<TawkChatProps> = ({
       script.setAttribute('crossorigin', '*');
       document.body.appendChild(script);
 
-      // Note: Widget color (blue) should be set in Tawk.to dashboard:
+      // Note: Primary widget color (professional-blue #0055E6) should be set in Tawk.to dashboard:
       // Dashboard > Administration > Chat Widget > Appearance > Widget Color
-      // Set to: #0046fa (electric-blue)
+      // Set to: #0055E6 (professional-blue - matches Bridge Notary brand)
 
       return () => {
         // Cleanup on unmount if needed
@@ -103,9 +103,37 @@ export const TawkChat: React.FC<TawkChatProps> = ({
     if (shouldHide) {
       window.Tawk_API?.hideWidget?.();
     } else {
-      window.Tawk_API?.showWidget?.();
+      // Hide by default, only show when chat button is clicked
+      window.Tawk_API?.hideWidget?.();
     }
   }, [shouldHide]);
+
+  // Hide widget when clicking outside of it
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      // Check if click is outside Tawk elements
+      const isTawkElement = target.closest('#tawk-bubble-container') || 
+                           target.closest('.tawk-min-container') ||
+                           target.closest('iframe[src*="tawk"]') ||
+                           target.closest('[data-tawk]');
+      
+      // If click is outside Tawk, hide the widget
+      if (!isTawkElement && window.Tawk_API?.hideWidget) {
+        window.Tawk_API.hideWidget();
+      }
+    };
+
+    // Add event listener with a slight delay to allow widget to load
+    const timeoutId = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   if (embedded) {
     return (
@@ -130,8 +158,12 @@ export const useTawkChat = () => {
   const toggle = () => window.Tawk_API?.toggle?.();
   const hide = () => window.Tawk_API?.hideWidget?.();
   const show = () => window.Tawk_API?.showWidget?.();
+  const openChat = () => {
+    window.Tawk_API?.showWidget?.();
+    window.Tawk_API?.maximize?.();
+  };
 
-  return { maximize, minimize, toggle, hide, show };
+  return { maximize, minimize, toggle, hide, show, openChat };
 };
 
 export default TawkChat;

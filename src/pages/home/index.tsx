@@ -6,7 +6,14 @@ import { featureFlags } from "@/utils/featureFlags";
 const HomePage = () => (
   <div className="w-full bg-off-white">
     {/* Hero Section */}
-    <section className="relative overflow-hidden pt-20 pb-24 md:pt-36 md:pb-52 bg-off-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <section className="relative overflow-hidden pt-20 pb-24 md:pt-36 md:pb-52 bg-off-white" style={{backgroundImage: `
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+      radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+      radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+    `,
+      backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
         {/* Left Content */}
         <div className="text-charcoal">
@@ -132,7 +139,7 @@ const HomePage = () => (
             <Link 
               key={item.title} 
               to={item.link}
-              className={`group border-l-2 border-professional-blue pl-6 py-6 transition-all hover:scale-105 cursor-pointer fade-in-up fade-in-up-delay-${idx + 1}`}
+              className={`group border-l border-professional-blue pl-6 py-6 transition-all hover:scale-105 cursor-pointer fade-in-up fade-in-up-delay-${idx + 1}`}
               style={{animationDelay: `${idx * 0.1}s`}}
             >
               <div className="relative z-10">
@@ -156,7 +163,14 @@ const HomePage = () => (
     <TrustSection />
 
     {/* Why Choose Us */}
-    <section className="py-20 lg:py-28 bg-white border-t border-charcoal/10" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <section className="py-20 lg:py-28 bg-white border-t border-charcoal/10 relative" style={{backgroundImage: `
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+      radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+      radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+    `,
+      backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-charcoal">
@@ -191,7 +205,7 @@ const HomePage = () => (
 
           {/* Stats Card */}
           <div className="relative">
-            <div className="border-l-2 border-professional-blue pl-6 py-4">
+            <div className="border-l border-professional-blue pl-6 py-4">
               <div className="space-y-4">
                 <div className="flex items-center gap-4 pb-4 border-b border-professional-blue/20">
                   <div className="w-12 h-12 bg-professional-blue flex items-center justify-center text-white text-lg font-bold">
@@ -239,7 +253,7 @@ const HomePage = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="py-24 lg:py-32 bg-white" style={{backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px)'}}>
+    <section className="py-24 lg:py-32 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
           Ready to Work With a Notary You Can Trust?

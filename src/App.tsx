@@ -58,14 +58,14 @@ const NotFound = () => {
           <Link to="/book" className="button-outline">Book an Appointment</Link>
           <Link to="/contact" className="button-outline">Contact Us</Link>
         </div>
-        <div className="text-sm text-gray-500">Need help? Call <a href="tel:+14696298932" className="underline hover:text-electric-blue">(469) 629-8932</a></div>
+        <div className="text-sm text-gray-500">Need help? Visit our <a href="/contact" className="underline hover:text-electric-blue">contact page</a></div>
       </div>
     </div>
   );
 };
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "@/components/layout";
-import { ErrorBoundary } from "@/components/common";
+import { ErrorBoundary, TawkChat } from "@/components/common";
 import { LoadingSpinner } from "@/components/common";
 import React, { Suspense } from 'react';
 
@@ -221,6 +221,7 @@ function App() {
           </Routes>
         </Suspense>
       </ErrorBoundary>
+      <TawkChat />
     </Router>
     </>
   );

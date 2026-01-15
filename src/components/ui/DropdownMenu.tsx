@@ -32,33 +32,47 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   const triggerRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
+  const positionTimeoutRef = useRef<NodeJS.Timeout>();
+  const debounceTimeoutRef = useRef<NodeJS.Timeout>();
 
-  // Calculate intelligent menu position
+  // Calculate intelligent menu position with proper timing
   const updatePosition = useCallback(() => {
     if (!triggerRef.current || !menuRef.current) return;
 
     const triggerRect = triggerRef.current.getBoundingClientRect();
     const menuRect = menuRef.current.getBoundingClientRect();
     
+    // If menu hasn't been laid out yet, use estimated width
+    const menuWidth = menuRect.width || 400;
+    const menuHeight = menuRect.height || 300;
+    
     let top = triggerRect.bottom + 12; // 12px gap from trigger
     let left = triggerRect.left;
 
     // Prevent horizontal overflow
     const viewportWidth = window.innerWidth;
-    const rightEdge = left + Math.min(menuRect.width, viewportWidth * 0.96);
+    const rightEdge = left + menuWidth;
     
     if (rightEdge > viewportWidth - 8) {
-      left = Math.max(8, viewportWidth - Math.min(menuRect.width, viewportWidth * 0.96) - 8);
+      left = Math.max(8, viewportWidth - menuWidth - 8);
     }
 
     // Prevent vertical overflow
     const viewportHeight = window.innerHeight;
-    if (top + menuRect.height > viewportHeight - 8) {
-      top = triggerRect.top - menuRect.height - 12;
+    if (top + menuHeight > viewportHeight - 8) {
+      top = Math.max(8, triggerRect.top - menuHeight - 12);
     }
 
     setPosition({ top, left });
   }, []);
+
+  // Debounced position update for resize/scroll
+  const debouncedUpdatePosition = useCallback(() => {
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
+    }
+    debounceTimeoutRef.current = setTimeout(updatePosition, 50);
+  }, [updatePosition]);
 
   // Handle keyboard navigation
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -81,51 +95,49 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
     }
   }, [isOpen]);
 
-  // Handle click outside
+  // Handle click outside - check if click is outside both trigger and menu
   const handleClickOutside = useCallback((event: MouseEvent) => {
-    if (menuRef.current && !menuRef.current.contains(event.target as Node) &&
-        triggerRef.current && !triggerRef.current.contains(event.target as Node)) {
+    const target = event.target as Node;
+    const isClickOnTrigger = triggerRef.current?.contains(target);
+    const isClickOnMenu = menuRef.current?.contains(target);
+    
+    if (!isClickOnTrigger && !isClickOnMenu) {
       setIsOpen(false);
     }
   }, []);
 
-  // Prevent body scroll when menu is open
+  // Manage event listeners with proper cleanup
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      document.addEventListener('click', handleClickOutside);
-    } else {
-      document.body.style.overflow = 'unset';
-      document.removeEventListener('click', handleClickOutside);
-    }
+    if (!isOpen) return;
+
+    // Update position immediately when opening and after a brief delay for layout
+    updatePosition();
+    positionTimeoutRef.current = setTimeout(updatePosition, 100);
+
+    // Add event listeners
+    const handleClickListener = (e: MouseEvent) => handleClickOutside(e);
+    const handleResizeListener = () => debouncedUpdatePosition();
+    const handleKeyListener = (e: KeyboardEvent) => handleKeyDown(e);
+
+    document.addEventListener('click', handleClickListener, true);
+    window.addEventListener('resize', handleResizeListener);
+    window.addEventListener('scroll', handleResizeListener, true);
+    document.addEventListener('keydown', handleKeyListener);
+
+    // Cleanup function
     return () => {
-      document.body.style.overflow = 'unset';
-      document.removeEventListener('click', handleClickOutside);
+      if (positionTimeoutRef.current) {
+        clearTimeout(positionTimeoutRef.current);
+      }
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+      }
+      document.removeEventListener('click', handleClickListener, true);
+      window.removeEventListener('resize', handleResizeListener);
+      window.removeEventListener('scroll', handleResizeListener, true);
+      document.removeEventListener('keydown', handleKeyListener);
     };
-  }, [isOpen, handleClickOutside]);
-
-  // Update position when menu opens and on window resize
-  useEffect(() => {
-    if (isOpen) {
-      updatePosition();
-      window.addEventListener('resize', updatePosition);
-      window.addEventListener('scroll', updatePosition);
-      return () => {
-        window.removeEventListener('resize', updatePosition);
-        window.removeEventListener('scroll', updatePosition);
-      };
-    }
-  }, [isOpen, updatePosition]);
-
-  // Keyboard event listener
-  useEffect(() => {
-    if (isOpen) {
-      document.addEventListener('keydown', handleKeyDown);
-      return () => {
-        document.removeEventListener('keydown', handleKeyDown);
-      };
-    }
-  }, [isOpen, handleKeyDown]);
+  }, [isOpen, updatePosition, debouncedUpdatePosition, handleClickOutside, handleKeyDown]);
 
   const handleClose = useCallback(() => {
     setIsOpen(false);
@@ -154,13 +166,15 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
       {isOpen && (
         <div
           ref={menuRef}
-          className="fixed rounded-lg shadow-2xl bg-white ring-1 ring-black/5 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+          className="fixed rounded-lg shadow-2xl bg-white ring-1 ring-black/5 z-50"
           style={{
             top: `${position.top}px`,
             left: `${position.left}px`,
             maxWidth: 'calc(100vw - 1rem)',
             maxHeight: 'calc(100vh - 2rem)',
             overflow: 'auto',
+            willChange: 'transform',
+            backfaceVisibility: 'hidden',
           }}
           role="menu"
           aria-label={ariaLabel}

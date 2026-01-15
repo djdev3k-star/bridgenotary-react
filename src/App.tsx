@@ -65,7 +65,7 @@ const NotFound = () => {
 };
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "@/components/layout";
-import { ErrorBoundary } from "@/components/common";
+import { ErrorBoundary, TawkChat } from "@/components/common";
 import { LoadingSpinner } from "@/components/common";
 import React, { Suspense } from 'react';
 
@@ -221,6 +221,7 @@ function App() {
           </Routes>
         </Suspense>
       </ErrorBoundary>
+      <TawkChat />
     </Router>
     </>
   );

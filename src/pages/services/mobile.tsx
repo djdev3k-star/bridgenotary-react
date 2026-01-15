@@ -1,161 +1,100 @@
 import { Link } from "react-router-dom";
-import loanFlyersImg from "@/assets/images/loanFlyers.png";
 import { featureFlags } from "@/utils/featureFlags";
 
 const MobileNotaryPage = () => {
   return (
     <div className="w-full bg-white">
-      {/* Breadcrumbs */}
-      <div className="w-full bg-off-white border-b border-professional-blue/20">
-        <div className="max-w-6xl mx-auto px-6 py-3">
-          <div className="flex items-center gap-2 text-sm">
-            <Link to="/" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Home</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <Link to="/services" className="text-professional-blue hover:text-professional-blue/80 transition-colors">Services</Link>
-            <svg className="w-4 h-4 text-charcoal/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <span className="text-charcoal/70">Mobile Notary</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Hero Section - Full Viewport Width */}
-      <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
-        {/* Professional blue gradient background */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-professional-blue via-professional-blue/80 to-professional-blue"></div>
-
-        {/* Background image overlay */}
-        <div className="absolute inset-0 z-0 opacity-30">
-          <img
-            src={loanFlyersImg}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 z-10 bg-gradient-to-br from-professional-blue/85 via-professional-blue/75 to-professional-blue/80"></div>
-
-        {/* Content */}
-        <div className="max-w-7xl mx-auto py-28 px-6 relative z-20 w-full">
-          <div className="max-w-3xl text-left">
-            <div className="fade-in">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 border border-white/30">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-                Get Documents Signed <span className="text-white">Today</span>—We Come to You
-              </h1>
-              <p className="text-xl md:text-2xl text-white font-semibold mb-4 drop-shadow-md">
-                Same-Day Mobile Notary Across DFW
-              </p>
-              <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed drop-shadow-sm max-w-2xl">
-                No more rescheduling your day. Our certified notaries arrive at your home, office, hospital, or any location—on your schedule, with documents ready to sign.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/book?service=general" 
-                  className="inline-block bg-white text-professional-blue hover:bg-off-white transition-all text-lg py-4 px-10 font-semibold transform hover:scale-105"
-                >
-                  <div className="flex items-center justify-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    Book Same-Day Appointment
-                  </div>
-                </Link>
-                <a 
-                  href="tel:+14696298932" 
-                  className="inline-block border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all text-lg py-4 px-10 font-semibold"
-                >
-                  <div className="flex items-center justify-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    Call (469) 629-8932
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl fade-in-delay">
-            <div className="text-center">
-              <p className="text-4xl font-bold text-white mb-1">2hr</p>
-              <p className="text-white/80 text-sm">Avg Response Time</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-white mb-1">99%</p>
-              <p className="text-white/80 text-sm">On-Time Rate</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-white mb-1">7 Days</p>
-              <p className="text-white/80 text-sm">A Week Availability</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold text-white mb-1">DFW</p>
-              <p className="text-white/80 text-sm">Full Coverage</p>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pt-20 pb-28 md:pt-32 md:pb-40 bg-gradient-to-br from-professional-blue to-professional-blue/90" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 40%)'}}>
+        <div className="max-w-6xl mx-auto px-6 text-white relative z-10">
+          <div className="max-w-3xl">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm border border-white/30">Mobile Notary Services</span>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              We Come to<br />You—On Your<br />Schedule
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl leading-relaxed">
+              Same-day notarization anywhere across DFW. No more rescheduling your day. Our certified notaries arrive ready to sign.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link 
+                to="/book?service=general" 
+                className="inline-flex items-center justify-center gap-2 bg-white text-professional-blue hover:bg-off-white transition-colors font-semibold py-4 px-8 text-lg"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.3A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+                </svg>
+                Book Now
+              </Link>
+              <a 
+                href="tel:+14696298932" 
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 transition-colors font-semibold py-4 px-8 text-lg"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.823.912c.487 1.566 1.457 3.457 3.181 5.181s3.615 2.694 5.181 3.181l.912-1.823a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                (469) 629-8932
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Benefits */}
-      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
+      {/* Quick Stats */}
+      <section className="py-12 bg-professional-blue/5 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%)'}}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-professional-blue/40"></div>
-              <span className="text-sm font-medium text-professional-blue uppercase tracking-wider">Why Mobile Notary</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-professional-blue mb-2">2 hrs</div>
+              <p className="text-charcoal/70 font-medium">Avg Response</p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">Skip the Office. We Handle It All On-Site.</h2>
-            <p className="text-lg text-charcoal/70 max-w-3xl">
-              Our mobile notaries bring certified services directly to your location—fast, reliable, and on-demand.{featureFlags.enableApostille && (
-                <> Need <Link to="/apostille" className="text-professional-blue hover:text-professional-blue/80 underline">apostille services</Link>? We handle that too.</>
-              )}
-            </p>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-professional-blue mb-2">99%</div>
+              <p className="text-charcoal/70 font-medium">On-Time Rate</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-professional-blue mb-2">7/7</div>
+              <p className="text-charcoal/70 font-medium">Days Available</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-professional-blue mb-2">DFW</div>
+              <p className="text-charcoal/70 font-medium">Full Coverage</p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Why Choose Mobile</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Notarization Without the Hassle</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">Skip the drive. No waiting rooms. Just certified notarization on your terms.</p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { 
-                title: 'We Come to You', 
-                desc: 'Home, office, hospital, nursing facility, or anywhere you need notarization services.',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                )
+              {
+                icon: "🏠",
+                title: "We Come to You",
+                desc: "Home, office, hospital, nursing facility—anywhere you need us, we'll be there."
               },
-              { 
-                title: 'Same-Day & Rush Available', 
-                desc: 'Urgent documents? We offer same-day and rush appointments throughout DFW—evenings and weekends included.',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                )
+              {
+                icon: "⚡",
+                title: "Same-Day & Rush",
+                desc: "Urgent documents? We offer same-day service including evenings and weekends."
               },
-              { 
-                title: 'All Document Types', 
-                desc: 'Real estate, legal, business, medical, and personal documents—properly executed the first time.',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                )
-              },
-            ].map((item) => (
-              <div key={item.title} className="border-l border-professional-blue pl-6 py-4 group">
-                <div className="mb-4 group-hover:scale-110 transition-transform origin-left">{item.icon}</div>
+              {
+                icon: "📋",
+                title: "All Document Types",
+                desc: "Real estate, legal, business, medical, and personal documents handled expertly."
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="border-l-2 border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all p-6">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">{item.icon}</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">{item.title}</h3>
                 <p className="text-charcoal/70 leading-relaxed">{item.desc}</p>
               </div>
@@ -165,57 +104,90 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* Common Use Cases */}
-      <section className="py-20 lg:py-28 bg-professional-blue/5">
+      <section className="py-20 lg:py-28 bg-professional-blue/10 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-professional-blue/40"></div>
-              <span className="text-sm font-medium text-professional-blue uppercase tracking-wider">Common Situations</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-charcoal">When You Need a Notary Fast</h2>
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Common Needs</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">When to Call a Mobile Notary</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">We handle the documents you need, at the time that works for you.</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Link to="/loan-signing" className="group border-l border-professional-blue pl-6 py-4">
-              <h3 className="text-xl font-bold text-charcoal mb-3 group-hover:text-professional-blue transition-colors flex items-center gap-2">
-                Real Estate Closings
-                <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </h3>
-              <p className="text-charcoal/70">
-                Loan signings, refinance documents, purchase agreements at your home or title office.
-              </p>
-            </Link>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Legal Documents', desc: 'Affidavits, power of attorney, trusts, wills, and estate planning documents.' },
-              { title: 'Business Contracts', desc: 'Corporate agreements, vendor contracts, employment documents, and organizational filings.' },
-              { title: 'Medical & Healthcare', desc: 'Hospital visits, assisted living facilities, HIPAA authorizations, advance directives.' },
-            ].map((item) => (
-              <div key={item.title} className="border-l border-professional-blue pl-6 py-4">
-                <h3 className="text-xl font-bold text-charcoal mb-3">{item.title}</h3>
-                <p className="text-charcoal/70">{item.desc}</p>
+              {
+                title: "Real Estate Closings",
+                desc: "Loan signings, refinances, purchase agreements at your home or title office.",
+                icon: "🏠"
+              },
+              {
+                title: "Legal Documents",
+                desc: "Affidavits, power of attorney, trusts, wills, and estate planning documents.",
+                icon: "⚖️"
+              },
+              {
+                title: "Business Contracts",
+                desc: "Corporate agreements, vendor contracts, employment docs, and organizational filings.",
+                icon: "💼"
+              },
+              {
+                title: "Medical & Healthcare",
+                desc: "Hospital visits, assisted living, HIPAA authorizations, and advance directives.",
+                icon: "🏥"
+              },
+              {
+                title: "School & Education",
+                desc: "Parental consent forms, field trip permissions, and school enrollment documents.",
+                icon: "🎓"
+              },
+              {
+                title: "Financial",
+                desc: "Loan applications, bank documents, investment accounts, and financial agreements.",
+                icon: "💰"
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white rounded-lg p-6 border border-professional-blue/20 hover:border-professional-blue/50 group hover:shadow-md transition-all">
+                <div className="text-3xl mb-4">{item.icon}</div>
+                <h3 className="text-lg font-bold text-charcoal mb-2">{item.title}</h3>
+                <p className="text-charcoal/70 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
+      {/* Process Section */}
+      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">Simple 3-Step Process</h2>
-            <p className="text-lg text-charcoal/70">From booking to signed—we make it effortless.</p>
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Our Process</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Book to Sign in 3 Simple Steps</h2>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">Fast, professional, and stress-free from start to finish.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            {/* Connection line */}
+            <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-professional-blue/0 via-professional-blue/30 to-professional-blue/0 z-0" />
+            
             {[
-              { step: '1', title: 'Book Your Time', desc: 'Choose a time that works for you—same-day, evening, or weekend appointments available.' },
-              { step: '2', title: 'We Arrive Prepared', desc: 'Your notary arrives at your location with all necessary supplies, ready to execute.' },
-              { step: '3', title: 'Sign & Done', desc: 'Documents are properly notarized, witnessed if needed, and you receive copies immediately.' },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
+              {
+                num: "1",
+                title: "Book Online or Call",
+                desc: "Choose your date, time, and location. We offer same-day appointments and flexible hours."
+              },
+              {
+                num: "2",
+                title: "We Arrive Ready",
+                desc: "Your notary arrives on time with all supplies and expertise to handle your documents."
+              },
+              {
+                num: "3",
+                title: "Sign & Receive Copies",
+                desc: "Documents notarized, witnessed if needed, and you get copies immediately."
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="relative z-10 text-center">
                 <div className="w-16 h-16 bg-professional-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                  {item.step}
+                  {item.num}
                 </div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">{item.title}</h3>
                 <p className="text-charcoal/70">{item.desc}</p>
@@ -225,26 +197,73 @@ const MobileNotaryPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Stop Rescheduling. Get It Done Today.</h2>
-          <p className="text-xl md:text-2xl text-charcoal/70 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Book your mobile notary appointment now—we'll come to you at your preferred time and location across DFW.
+      {/* FAQ Quick Reference */}
+      <section className="py-20 lg:py-28 bg-professional-blue/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Frequently Asked</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal">Got Questions? We Have Answers</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                q: "How much does mobile notary cost?",
+                a: "Service fees vary based on document complexity and travel distance. Call (469) 629-8932 for an instant quote."
+              },
+              {
+                q: "How fast can you arrive?",
+                a: "We offer same-day appointments in most cases, with average response time of 2 hours from booking."
+              },
+              {
+                q: "Do you notarize any document type?",
+                a: "Yes, we notarize personal, business, legal, medical, and real estate documents. We cannot notarize unethical or illegal documents."
+              },
+              {
+                q: "Are you available evenings/weekends?",
+                a: "Absolutely! We offer appointments 7 days a week, including early mornings and evenings for your convenience."
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white rounded-lg p-6 border border-professional-blue/20">
+                <h3 className="text-lg font-bold text-charcoal mb-3">{item.q}</h3>
+                <p className="text-charcoal/70">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 lg:py-28 bg-gradient-to-br from-professional-blue to-professional-blue/90 text-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 40%)'}}>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Stop Rescheduling. Book Today.</h2>
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+            Same-day mobile notarization across DFW. We come to you at your preferred time and location.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/book?service=general" 
-              className="inline-block bg-professional-blue text-white hover:bg-professional-blue/90 font-bold py-5 px-12 text-xl transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-white text-professional-blue hover:bg-off-white transition-colors font-semibold py-4 px-10 text-lg"
             >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.3A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+              </svg>
               Book Your Appointment
             </Link>
-            <Link 
-              to="/book?service=ron&mode=online" 
-              className="inline-block border-2 border-professional-blue text-professional-blue hover:bg-professional-blue hover:text-white font-bold py-5 px-12 text-xl transition-all"
+            <a 
+              href="tel:+14696298932" 
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 transition-colors font-semibold py-4 px-10 text-lg"
             >
-              Or Schedule Online Notarization
-            </Link>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.823.912c.487 1.566 1.457 3.457 3.181 5.181s3.615 2.694 5.181 3.181l.912-1.823a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              Call (469) 629-8932
+            </a>
+          </div>
+
+          <div className="mt-12 pt-12 border-t border-white/20">
+            <p className="text-white/80 text-sm">Available 7 days a week • Same-day appointments • Full DFW coverage • No hidden fees</p>
           </div>
         </div>
       </section>

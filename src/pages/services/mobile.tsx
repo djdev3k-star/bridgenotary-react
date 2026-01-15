@@ -4,46 +4,116 @@ import { featureFlags } from "@/utils/featureFlags";
 const MobileNotaryPage = () => {
   return (
     <div className="w-full bg-white">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 pb-28 md:pt-32 md:pb-40 bg-gradient-to-br from-professional-blue to-professional-blue/90" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 40%)'}}>
-        <div className="max-w-6xl mx-auto px-6 text-white relative z-10">
-          <div className="max-w-3xl">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm border border-white/30">Mobile Notary Services</span>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              We Come to<br />You—On Your<br />Schedule
+      {/* Sub-Navigation */}
+      <section className="bg-professional-blue/10 border-b border-professional-blue/20">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="text-charcoal/70 font-medium">Mobile Notary:</span>
+            <a href="#benefits" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Benefits</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#use-cases" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Use Cases</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#process" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">Process</a>
+            <span className="text-charcoal/30">•</span>
+            <a href="#faq" className="text-professional-blue hover:text-professional-blue/80 hover:underline transition-colors font-medium">FAQ</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Section - Full Viewport Width with Professional Blue Gradient & Image Overlay */}
+      <section className="relative overflow-hidden text-white min-h-[85vh] flex items-center w-screen left-1/2 -translate-x-1/2">
+        {/* Professional blue gradient background covering full viewport */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-professional-blue via-professional-blue/80 to-professional-blue"></div>
+        
+        {/* Background image with overlay - service images */}
+        <div className="absolute inset-0 z-0 opacity-35">
+          <img 
+            src="/images/notarypublic-generalimagewithstamp.jpg" 
+            alt="" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 z-0 bg-professional-blue/75"></div>
+        
+        <div className="max-w-7xl mx-auto py-16 md:py-28 px-4 md:px-6 relative z-20">
+          {/* Main Content */}
+          <div className="text-left max-w-3xl mb-12 md:mb-16">
+            <h1 className="text-3xl md:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight drop-shadow-lg">
+              Mobile Notarization<br /><span className="text-white">On Your Schedule</span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl leading-relaxed">
-              Same-day notarization anywhere across DFW. No more rescheduling your day. Our certified notaries arrive ready to sign.
+            <p className="text-base md:text-xl text-white mb-8 md:mb-10 drop-shadow-md max-w-2xl">
+              We come to you. Same-day notarization anywhere across DFW. No rescheduling, no waiting rooms—just certified notarization when and where you need it.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/book?service=general" 
-                className="inline-flex items-center justify-center gap-2 bg-white text-professional-blue hover:bg-off-white transition-colors font-semibold py-4 px-8 text-lg"
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-12">
+              <Link
+                to="/book?service=general"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all text-base md:text-lg py-3 md:py-4 px-6 md:px-8 font-semibold pulse-button whitespace-nowrap"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.3A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 Book Now
               </Link>
               <a 
                 href="tel:+14696298932" 
-                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 transition-colors font-semibold py-4 px-8 text-lg"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 transition-colors font-semibold py-3 md:py-4 px-6 md:px-8 text-base md:text-lg drop-shadow-sm"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.823.912c.487 1.566 1.457 3.457 3.181 5.181s3.615 2.694 5.181 3.181l.912-1.823a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 (469) 629-8932
               </a>
+            </div>
+          </div>
+
+          {/* Feature Grid - Similar to RON page */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 max-w-5xl text-center md:text-left">
+            <div className="p-3 md:p-4">
+              <div className="p-2 md:p-3 w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold mb-2 text-white">2 Hour Response</h3>
+              <p className="text-white/80 text-sm font-medium">Average appointment time</p>
+            </div>
+            <div className="p-3 md:p-4">
+              <div className="p-2 md:p-3 w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold mb-2 text-white">99% On-Time</h3>
+              <p className="text-white/80 text-sm font-medium">Reliability you can count on</p>
+            </div>
+            <div className="p-3 md:p-4">
+              <div className="p-2 md:p-3 w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold mb-2 text-white">7/7 Days Available</h3>
+              <p className="text-white/80 text-sm font-medium">Including evenings & weekends</p>
+            </div>
+            <div className="p-3 md:p-4">
+              <div className="p-2 md:p-3 w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold mb-2 text-white">DFW Service Area</h3>
+              <p className="text-white/80 text-sm font-medium">Full Dallas-Fort Worth coverage</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Quick Stats */}
-      <section className="py-12 bg-professional-blue/5 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%)'}}>
+      <section className="py-12 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -67,7 +137,7 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" id="benefits" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Why Choose Mobile</span>
@@ -105,7 +175,7 @@ const MobileNotaryPage = () => {
                 desc: "Real estate, legal, business, medical, and personal documents handled expertly."
               }
             ].map((item, idx) => (
-              <div key={idx} className="border-l-2 border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all p-6">
+              <div key={idx} className="border-l border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all p-6">
                 <div className="mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">{item.title}</h3>
                 <p className="text-charcoal/70 leading-relaxed">{item.desc}</p>
@@ -116,7 +186,7 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* Common Use Cases */}
-      <section className="py-20 lg:py-28 bg-professional-blue/10 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" id="use-cases" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Common Needs</span>
@@ -192,7 +262,7 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 lg:py-28 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" id="process" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Our Process</span>
@@ -234,7 +304,7 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* FAQ Quick Reference */}
-      <section className="py-20 lg:py-28 bg-professional-blue/5">
+      <section className="py-20 lg:py-28 bg-white relative" id="faq" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Frequently Asked</span>
@@ -270,7 +340,7 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-professional-blue to-professional-blue/90 text-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 40%)'}}>
+      <section className="py-20 lg:py-28 bg-gradient-to-br from-professional-blue to-professional-blue/90 text-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 40%)'}}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Stop Rescheduling. Book Today.</h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
@@ -280,10 +350,10 @@ const MobileNotaryPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/book?service=general" 
-              className="inline-flex items-center justify-center gap-2 bg-white text-professional-blue hover:bg-off-white transition-colors font-semibold py-4 px-10 text-lg"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-colors font-semibold py-4 px-10 text-lg"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.3A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               Book Your Appointment
             </Link>
@@ -291,10 +361,10 @@ const MobileNotaryPage = () => {
               href="tel:+14696298932" 
               className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 transition-colors font-semibold py-4 px-10 text-lg"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.823.912c.487 1.566 1.457 3.457 3.181 5.181s3.615 2.694 5.181 3.181l.912-1.823a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call (469) 629-8932
+              (469) 629-8932
             </a>
           </div>
 

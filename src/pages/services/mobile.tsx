@@ -113,7 +113,20 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* Quick Stats */}
-      <section className="py-12 bg-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
+      <section className="py-12 bg-white relative" style={{backgroundImage: `
+        linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(59, 130, 246, 0.08) 15%, 
+          rgba(99, 102, 241, 0.08) 35%, 
+          rgba(139, 92, 246, 0.08) 55%,
+          rgba(168, 85, 247, 0.08) 75%,
+          rgba(168, 85, 247, 0.06) 100%),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -137,7 +150,20 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 lg:py-28 bg-white relative" id="benefits" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" id="benefits" style={{backgroundImage: `
+        linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(59, 130, 246, 0.08) 15%, 
+          rgba(99, 102, 241, 0.08) 35%, 
+          rgba(139, 92, 246, 0.08) 55%,
+          rgba(168, 85, 247, 0.08) 75%,
+          rgba(168, 85, 247, 0.06) 100%),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Why Choose Mobile</span>
@@ -186,7 +212,20 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* Common Use Cases */}
-      <section className="py-20 lg:py-28 bg-white relative" id="use-cases" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" id="use-cases" style={{backgroundImage: `
+        linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(59, 130, 246, 0.08) 15%, 
+          rgba(99, 102, 241, 0.08) 35%, 
+          rgba(139, 92, 246, 0.08) 55%,
+          rgba(168, 85, 247, 0.08) 75%,
+          rgba(168, 85, 247, 0.06) 100%),
+        radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Common Needs</span>
@@ -262,7 +301,20 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 lg:py-28 bg-white relative" id="process" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" id="process" style={{backgroundImage: `
+        linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(59, 130, 246, 0.08) 15%, 
+          rgba(99, 102, 241, 0.08) 35%, 
+          rgba(139, 92, 246, 0.08) 55%,
+          rgba(168, 85, 247, 0.08) 75%,
+          rgba(168, 85, 247, 0.06) 100%),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Our Process</span>
@@ -304,7 +356,20 @@ const MobileNotaryPage = () => {
       </section>
 
       {/* FAQ Quick Reference */}
-      <section className="py-20 lg:py-28 bg-white relative" id="faq" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
+      <section className="py-20 lg:py-28 bg-white relative" id="faq" style={{backgroundImage: `
+        linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(59, 130, 246, 0.08) 15%, 
+          rgba(99, 102, 241, 0.08) 35%, 
+          rgba(139, 92, 246, 0.08) 55%,
+          rgba(168, 85, 247, 0.08) 75%,
+          rgba(168, 85, 247, 0.06) 100%),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Frequently Asked</span>

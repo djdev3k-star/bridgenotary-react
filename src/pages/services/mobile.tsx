@@ -78,23 +78,35 @@ const MobileNotaryPage = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: "🏠",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2.646-2.646a4.5 4.5 0 016.708 0l2.646 2.646m-6.708 5l2.646 2.646a4.5 4.5 0 006.708 0l2.646-2.646m-6-6h.01M9 21h6a2 2 0 002-2V5a2 2 0 00-2-2H9a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                ),
                 title: "We Come to You",
                 desc: "Home, office, hospital, nursing facility—anywhere you need us, we'll be there."
               },
               {
-                icon: "⚡",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
                 title: "Same-Day & Rush",
                 desc: "Urgent documents? We offer same-day service including evenings and weekends."
               },
               {
-                icon: "📋",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-professional-blue group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                ),
                 title: "All Document Types",
                 desc: "Real estate, legal, business, medical, and personal documents handled expertly."
               }
             ].map((item, idx) => (
               <div key={idx} className="border-l-2 border-professional-blue pl-6 group hover:bg-professional-blue/5 transition-all p-6">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">{item.icon}</div>
+                <div className="mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-charcoal mb-3">{item.title}</h3>
                 <p className="text-charcoal/70 leading-relaxed">{item.desc}</p>
               </div>
@@ -117,36 +129,60 @@ const MobileNotaryPage = () => {
               {
                 title: "Real Estate Closings",
                 desc: "Loan signings, refinances, purchase agreements at your home or title office.",
-                icon: "🏠"
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2.646-2.646a4.5 4.5 0 016.708 0l2.646 2.646m-6.708 5l2.646 2.646a4.5 4.5 0 006.708 0l2.646-2.646m-6-6h.01M9 21h6a2 2 0 002-2V5a2 2 0 00-2-2H9a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                )
               },
               {
                 title: "Legal Documents",
                 desc: "Affidavits, power of attorney, trusts, wills, and estate planning documents.",
-                icon: "⚖️"
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                )
               },
               {
                 title: "Business Contracts",
                 desc: "Corporate agreements, vendor contracts, employment docs, and organizational filings.",
-                icon: "💼"
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                )
               },
               {
                 title: "Medical & Healthcare",
                 desc: "Hospital visits, assisted living, HIPAA authorizations, and advance directives.",
-                icon: "🏥"
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                )
               },
               {
                 title: "School & Education",
                 desc: "Parental consent forms, field trip permissions, and school enrollment documents.",
-                icon: "🎓"
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5m0 0l-2 1m2-1v10l9 5 9-5V9m-9 5l9-5" />
+                  </svg>
+                )
               },
               {
                 title: "Financial",
                 desc: "Loan applications, bank documents, investment accounts, and financial agreements.",
-                icon: "💰"
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                )
               }
             ].map((item, idx) => (
               <div key={idx} className="bg-white rounded-lg p-6 border border-professional-blue/20 hover:border-professional-blue/50 group hover:shadow-md transition-all">
-                <div className="text-3xl mb-4">{item.icon}</div>
+                <div className="text-professional-blue mb-4">{item.icon}</div>
                 <h3 className="text-lg font-bold text-charcoal mb-2">{item.title}</h3>
                 <p className="text-charcoal/70 text-sm">{item.desc}</p>
               </div>

@@ -99,7 +99,7 @@ const Privacy = () => {
               <div className="bg-professional-blue/5 border-l-4 border-professional-blue p-6 rounded-r">
                 <p className="text-charcoal font-semibold mb-2">Bridge Notary</p>
                 <p className="text-charcoal/70">Email: <a href="mailto:contact@bridgenotary.com" className="text-professional-blue hover:underline">contact@bridgenotary.com</a></p>
-                <p className="text-charcoal/70">Phone: <a href="tel:+14696298932" className="text-professional-blue hover:underline">(469) 629-8932</a></p>
+
               </div>
             </div>
 

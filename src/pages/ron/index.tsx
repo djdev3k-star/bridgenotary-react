@@ -142,7 +142,7 @@ export default function RONPage() {
                 <img
                   src="/images/upload-documents.png"
                   alt="Upload and prepare documents" 
-                  className="w-full h-32 object-cover border border-professional-blue/20 rounded"
+                  className="w-full h-40 object-cover border border-professional-blue/20 rounded"
                 />
               </div>
               <p className="text-charcoal/70 mb-3 text-sm">Your documents are transmitted and stored using encrypted, financial-grade security.</p>
@@ -489,20 +489,20 @@ export default function RONPage() {
             </div>
           </div>
 
-          <div className="p-6 md:p-8 bg-white border border-professional-blue/20 border-l-2 border-l-professional-blue rounded-lg">
+          <div className="border-l-4 border-professional-blue bg-professional-blue/5 p-6 md:p-8 rounded-r-lg">
             <div className="flex items-start gap-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-professional-blue flex-shrink-0 mt-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2z" clipRule="evenodd" />
               </svg>
               <div>
-                <p className="text-charcoal/80 font-semibold mb-2">
+                <p className="text-charcoal font-bold mb-3 text-lg">
                   Not Sure About Your Document?
                 </p>
-                <p className="text-charcoal/70 text-sm mb-3">
+                <p className="text-charcoal/70 text-sm leading-relaxed mb-3">
                   The restrictions on remote notarization are complex and specific to Texas law. We strongly recommend contacting us before your session to confirm whether your specific document(s) can be notarized remotely.
                 </p>
-                <p className="text-charcoal/70 text-sm">
-                  For questions about document eligibility, call us at <a href="tel:+14696298932" className="text-professional-blue hover:underline font-semibold">(469) 629-8932</a> or contact a licensed attorney for legal advice about your specific notarization needs.
+                <p className="text-charcoal/70 text-sm leading-relaxed">
+                  Contact a licensed attorney for legal advice about your specific notarization needs.
                 </p>
               </div>
             </div>

@@ -259,7 +259,7 @@ const Contact = () => {
             </div>
             <div className="flex gap-3">
               <a 
-                href="tel:+14696298932" 
+              
                 className="inline-flex items-center gap-2 bg-professional-blue hover:bg-professional-blue/90 text-white font-medium py-3 px-6 transition text-sm"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

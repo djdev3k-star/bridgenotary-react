@@ -57,15 +57,6 @@ const MobileNotaryPage = () => {
                 </svg>
                 Book Now
               </Link>
-              <a 
-                href="tel:+14696298932" 
-                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 transition-colors font-semibold py-3 md:py-4 px-6 md:px-8 text-base md:text-lg drop-shadow-sm"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                (469) 629-8932
-              </a>
             </div>
           </div>
 
@@ -392,15 +383,6 @@ const MobileNotaryPage = () => {
               </svg>
               Book Your Appointment
             </Link>
-            <a 
-              href="tel:+14696298932" 
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 transition-colors font-semibold py-4 px-10 text-lg"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              (469) 629-8932
-            </a>
           </div>
 
           <div className="mt-12 pt-12 border-t border-white/20">

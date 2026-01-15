@@ -189,7 +189,7 @@ const SeniorServicesLanding: React.FC = () => {
                   </svg>
                   Get Free Consultation
                 </a>
-                <a href="tel:+14696298932" className="group inline-flex items-center justify-center gap-2 border-2 border-charcoal/20 text-charcoal hover:border-professional-blue hover:bg-professional-blue/5 font-semibold py-4 px-8 transition-all flex-1">
+                <a className="group inline-flex items-center justify-center gap-2 border-2 border-charcoal/20 text-charcoal hover:border-professional-blue hover:bg-professional-blue/5 font-semibold py-4 px-8 transition-all flex-1">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
@@ -376,7 +376,7 @@ const SeniorServicesLanding: React.FC = () => {
                   Powers of Attorney, wills, trusts, and healthcare documents have significant legal implications. We strongly recommend consulting with a licensed estate planning attorney in Texas to ensure your documents protect your interests and comply with state law requirements.
                 </p>
                 <p className="text-charcoal/70 text-sm">
-                  <strong>Questions about document appropriateness?</strong> Call us at <a href="tel:+14696298932" className="text-professional-blue hover:underline font-semibold">(469) 629-8932</a> to discuss your needs, or contact an estate planning attorney for legal guidance.
+                  <strong>Questions about document appropriateness?</strong> Contact an estate planning attorney for legal guidance.
                 </p>
               </div>
             </div>
@@ -553,7 +553,7 @@ const SeniorServicesLanding: React.FC = () => {
             <a href="#lead-form" className="inline-flex items-center justify-center gap-2 bg-white text-professional-blue hover:bg-white/95 font-bold py-4 px-8 rounded-lg transition-all">
               Request Consultation
             </a>
-            <a href="tel:+14696298932" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-8 rounded-lg transition-all">
+            <a className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-8 rounded-lg transition-all">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>

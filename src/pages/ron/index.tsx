@@ -113,7 +113,20 @@ export default function RONPage() {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 lg:py-28 bg-off-white scroll-mt-20 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)'}}>
+      <section id="how-it-works" className="py-20 lg:py-28 bg-off-white scroll-mt-20 relative" style={{backgroundImage: `
+        linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(59, 130, 246, 0.08) 15%, 
+          rgba(99, 102, 241, 0.08) 35%, 
+          rgba(139, 92, 246, 0.08) 55%,
+          rgba(168, 85, 247, 0.08) 75%,
+          rgba(168, 85, 247, 0.06) 100%),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Simple Process</span>
@@ -258,7 +271,19 @@ export default function RONPage() {
       </section>
 
       {/* Session Preparation Section */}
-      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(0, 85, 230, 0.05) 0%, transparent 35%)'}}>
+      <section className="w-full bg-white py-20 md:py-28 relative" style={{backgroundImage: `
+        linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(59, 130, 246, 0.08) 15%, 
+          rgba(99, 102, 241, 0.08) 35%, 
+          rgba(139, 92, 246, 0.08) 55%,
+          rgba(168, 85, 247, 0.08) 75%,
+          rgba(168, 85, 247, 0.06) 100%),
+        radial-gradient(circle at 80% 20%, rgba(0, 85, 230, 0.05) 0%, transparent 35%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16">
@@ -376,7 +401,20 @@ export default function RONPage() {
       </section>
 
       {/* Important Limitations & Restrictions Section */}
-      <section className="py-20 lg:py-28 bg-off-white relative" style={{backgroundImage: 'radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.06) 0%, transparent 35%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 35%)'}}>
+      <section className="py-20 lg:py-28 bg-off-white relative" style={{backgroundImage: `
+        linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(59, 130, 246, 0.08) 15%, 
+          rgba(99, 102, 241, 0.08) 35%, 
+          rgba(139, 92, 246, 0.08) 55%,
+          rgba(168, 85, 247, 0.08) 75%,
+          rgba(168, 85, 247, 0.06) 100%),
+        radial-gradient(circle at 20% 40%, rgba(0, 85, 230, 0.06) 0%, transparent 35%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 35%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-12">
             <div className="inline-block mb-4">
@@ -493,7 +531,20 @@ export default function RONPage() {
       {/* Notary Role in RON section removed per request */}
 
       {/* Why Choose RON Section */}
-      <section id="benefits" className="py-20 lg:py-28 bg-white scroll-mt-20 relative" style={{backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>
+      <section id="benefits" className="py-20 lg:py-28 bg-white scroll-mt-20 relative" style={{backgroundImage: `
+        linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(59, 130, 246, 0.08) 15%, 
+          rgba(99, 102, 241, 0.08) 35%, 
+          rgba(139, 92, 246, 0.08) 55%,
+          rgba(168, 85, 247, 0.08) 75%,
+          rgba(168, 85, 247, 0.06) 100%),
+        radial-gradient(circle at 20% 30%, rgba(0, 85, 230, 0.05) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2 rounded">Benefits</span>

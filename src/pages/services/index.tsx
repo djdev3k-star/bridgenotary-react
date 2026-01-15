@@ -50,7 +50,14 @@ const Services = () => {
   return (
     <div className="w-full bg-white">
       {/* Hero Section - Elegant & Purpose-Driven */}
-      <section className="w-full py-16 md:py-24 bg-gradient-to-b from-professional-blue/5 to-white border-b border-professional-blue/10" style={{backgroundImage: 'radial-gradient(circle at 15% 50%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)'}}>'
+      <section className="w-full py-16 md:py-24 bg-gradient-to-b from-professional-blue/5 to-white border-b border-professional-blue/10" style={{backgroundImage: `
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 85, 230, 0.02) 2px, rgba(0, 85, 230, 0.02) 4px),
+        radial-gradient(circle at 15% 50%, rgba(0, 85, 230, 0.08) 0%, transparent 40%), 
+        radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 40%)
+      `,
+        backgroundSize: '100% 100%, 100% 100%, 100% 100%',
+        backgroundAttachment: 'fixed'
+      }}>
         <div className="max-w-5xl mx-auto px-6">
           {/* Header Section */}
           <div className="mb-12 md:mb-16">

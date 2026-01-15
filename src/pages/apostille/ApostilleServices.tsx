@@ -50,14 +50,29 @@ const ApostilleServices: React.FC = () => {
     }
   }
 
-  function handleFormSubmit(e: React.FormEvent) {
+  async function handleFormSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setShowContactForm(false);
-      setSubmitted(false);
-      setFormData({ name: '', email: '', documentTypes: [], destinationCountry: '', comments: '' });
-    }, 1500);
+    try {
+      const response = await fetch('/api/apostille', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setShowContactForm(false);
+          setSubmitted(false);
+          setFormData({ name: '', email: '', documentTypes: [], destinationCountry: '', comments: '' });
+        }, 2000);
+      } else {
+        alert('Failed to submit. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting apostille form:', error);
+      alert('An error occurred. Please try again or call us at (469) 629-8932.');
+    }
   }
 
   const commonScenarios: ScenarioType[] = [

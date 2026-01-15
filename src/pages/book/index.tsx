@@ -173,15 +173,19 @@ const BookAppointment: React.FC = () => {
     } else if (selectedService === 'mobile') {
       // Handle mobile notary appointment
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/contact`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/appointment`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name: formData.name,
             email: formData.email,
             phone: formData.phone,
-            subject: 'Mobile Notary Appointment Request',
-            message: `Document Type: ${formData.documentType}\nPreferred Date: ${formData.preferredDate}\nPreferred Time: ${formData.preferredTime}\nLocation: ${formData.location}\n\nAdditional Notes:\n${formData.additionalNotes}`,
+            documentType: formData.documentType,
+            preferredDate: formData.preferredDate,
+            preferredTime: formData.preferredTime,
+            location: formData.location,
+            additionalNotes: formData.additionalNotes,
+            serviceType: 'mobile',
           }),
         });
         

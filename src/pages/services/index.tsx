@@ -201,8 +201,8 @@ const Services = () => {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Content */}
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <div className="text-white">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
                 Schedule Your Notarization Today
               </h2>
               <p className="text-lg text-white/90 mb-8 leading-relaxed">

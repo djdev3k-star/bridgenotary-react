@@ -185,7 +185,7 @@ export default function RONPage() {
                 <img
                   src="/images/Verify-identity.png"
                   alt="Verify your identity" 
-                  className="w-full h-40 object-cover rounded"
+                  className="w-full h-40 object-cover"
                 />
               </div>
               <p className="text-charcoal/70 mb-4">
@@ -230,7 +230,7 @@ export default function RONPage() {
                 <img
                   src="/images/secure-video-signing.png"
                   alt="Meet with notary and sign documents" 
-                  className="w-full h-40 object-cover rounded"
+                  className="w-full h-40 object-cover"
                 />
               </div>
               <p className="text-charcoal/70 mb-4">

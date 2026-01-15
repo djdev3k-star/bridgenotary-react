@@ -124,9 +124,42 @@ const LoadingFallback = () => (
 
 function App() {
   return (
-    <Router>
-      <ErrorBoundary>
-        <Suspense fallback={<LoadingFallback />}>
+    <>
+      {/* Hidden Netlify Forms for build-time detection */}
+      <form name="appointment" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="appointment" />
+        <input name="name" />
+        <input name="email" />
+        <input name="phone" />
+        <input name="documentType" />
+        <input name="preferredDate" />
+        <input name="preferredTime" />
+        <input name="location" />
+        <textarea name="additionalNotes"></textarea>
+      </form>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="contact" />
+        <input name="name" />
+        <input name="email" />
+        <input name="phone" />
+        <textarea name="message"></textarea>
+      </form>
+
+      <form name="senior-services" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="senior-services" />
+        <input name="facility-name" />
+        <input name="contact-name" />
+        <input name="email" />
+        <input name="phone" />
+        <input name="residents" />
+        <input name="services" />
+        <textarea name="message"></textarea>
+      </form>
+
+      <Router>
+        <ErrorBoundary>
+          <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<HomePage />} />
@@ -189,6 +222,7 @@ function App() {
         </Suspense>
       </ErrorBoundary>
     </Router>
+    </>
   );
 }
 

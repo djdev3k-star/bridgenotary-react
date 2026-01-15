@@ -374,7 +374,7 @@ const ClientPortal: React.FC = () => {
                   <span className="text-xs font-semibold text-professional-blue">Only Bridge Notary can access your files</span>
                 </div>
 
-                <label className="block border-2 border-dashed border-professional-blue/30 rounded-xl p-6 text-center cursor-pointer hover:border-professional-blue hover:bg-professional-blue/3 transition group">
+                <label className="block border-2 border-dashed border-professional-blue/30 rounded-xl p-6 text-center cursor-pointer hover:border-professional-blue hover:bg-professional-blue/30 transition group">
                   <input type="file" className="hidden" onChange={handleFileChange} accept=".pdf,.doc,.docx,.jpg,.png,.jpeg" />
                   <div className="flex flex-col items-center gap-3">
                     <div className="w-12 h-12 bg-professional-blue/10 rounded-full flex items-center justify-center group-hover:bg-professional-blue/20 transition">

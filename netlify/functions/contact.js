@@ -113,19 +113,25 @@ exports.handler = async function(event) {
       </div>
     `;
 
-    // Send emails in parallel
-    const [adminResult, userResult] = await Promise.all([
-      sendEmail(ADMIN_EMAIL, `New Contact Form: ${name}`, adminHtml, message),
-      sendEmail(email, 'We received your message - Bridge Notary', userHtml, 'Thank you for contacting us.')
-    ]);
+    // Try to send emails (optional - form succeeds regardless)
+    let emailSent = false;
+    if (process.env.SENDGRID_API_KEY) {
+      const [adminResult, userResult] = await Promise.all([
+        sendEmail(ADMIN_EMAIL, `New Contact Form: ${name}`, adminHtml, message),
+        sendEmail(email, 'We received your message - Bridge Notary', userHtml, 'Thank you for contacting us.')
+      ]);
+      emailSent = adminResult.success && userResult.success;
+    } else {
+      console.log('⚠️ SendGrid not configured - emails will not be sent (setup optional for now)');
+    }
 
-    // Success response
+    // Success response - form always succeeds
     return {
       statusCode: 200,
       body: JSON.stringify({
         success: true,
         message: 'Thank you for your message. We will get back to you soon.',
-        emailSent: adminResult.success && userResult.success,
+        emailSent,
       })
     };
   } catch (error) {

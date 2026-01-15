@@ -134,19 +134,25 @@ exports.handler = async function(event) {
       </div>
     `;
 
-    // Send emails in parallel
-    const [adminResult, userResult] = await Promise.all([
-      sendEmail(ADMIN_EMAIL, `New Apostille Request: ${name}`, adminHtml, `${name} requested apostille services for ${documentsList}`),
-      sendEmail(email, 'Apostille Request Received - Bridge Notary', userHtml, 'Thank you for your apostille request. We will be in touch shortly.')
-    ]);
+    // Try to send emails (optional - form succeeds regardless)
+    let emailSent = false;
+    if (process.env.SENDGRID_API_KEY) {
+      const [adminResult, userResult] = await Promise.all([
+        sendEmail(ADMIN_EMAIL, `New Apostille Request: ${name}`, adminHtml, `${name} requested apostille services for ${documentsList}`),
+        sendEmail(email, 'Apostille Request Received - Bridge Notary', userHtml, 'Thank you for your apostille request. We will be in touch shortly.')
+      ]);
+      emailSent = adminResult.success && userResult.success;
+    } else {
+      console.log('⚠️ SendGrid not configured - emails will not be sent (setup optional for now)');
+    }
 
-    // Success response
+    // Success response - form always succeeds
     return {
       statusCode: 200,
       body: JSON.stringify({
         success: true,
         message: 'Thank you for your apostille request. We will contact you soon with guidance and pricing.',
-        emailSent: adminResult.success && userResult.success,
+        emailSent,
       })
     };
   } catch (error) {

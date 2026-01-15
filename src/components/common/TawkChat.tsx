@@ -108,6 +108,33 @@ export const TawkChat: React.FC<TawkChatProps> = ({
     }
   }, [shouldHide]);
 
+  // Hide widget when clicking outside of it
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      // Check if click is outside Tawk elements
+      const isTawkElement = target.closest('#tawk-bubble-container') || 
+                           target.closest('.tawk-min-container') ||
+                           target.closest('iframe[src*="tawk"]') ||
+                           target.closest('[data-tawk]');
+      
+      // If click is outside Tawk, hide the widget
+      if (!isTawkElement && window.Tawk_API?.hideWidget) {
+        window.Tawk_API.hideWidget();
+      }
+    };
+
+    // Add event listener with a slight delay to allow widget to load
+    const timeoutId = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   if (embedded) {
     return (
       <div 

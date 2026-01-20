@@ -114,6 +114,9 @@ const ClientPortal = React.lazy(() => import("@/pages/client-portal"));
 const Sitemap = React.lazy(() => import("@/pages/sitemap"));
 const Privacy = React.lazy(() => import("@/pages/privacy"));
 const Terms = React.lazy(() => import("@/pages/terms"));
+const NotaryRequestPage = React.lazy(() => import("@/pages/notary-request"));
+const CourierRequestPage = React.lazy(() => import("@/pages/courier-request"));
+const GeneralInquiryPage = React.lazy(() => import("@/pages/general-inquiry"));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -215,6 +218,9 @@ function App() {
               <Route path="/sitemap" element={<Sitemap />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/request/notary" element={<NotaryRequestPage />} />
+              <Route path="/request/courier" element={<CourierRequestPage />} />
+              <Route path="/request/inquiry" element={<GeneralInquiryPage />} />
             </Route>
             {/* 404 catch-all route */}
             <Route path="*" element={<NotFound />} />

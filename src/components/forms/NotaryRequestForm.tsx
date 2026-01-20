@@ -20,14 +20,15 @@ import type { NotaryRequestFormData, FormFieldError } from '@/types/forms';
 interface NotaryRequestFormProps {
   onSuccess?: (message: string) => void;
   onError?: (error: string) => void;
+  serviceType?: 'mobile' | 'online';
 }
 
-const NotaryRequestForm: React.FC<NotaryRequestFormProps> = ({ onSuccess, onError }) => {
+const NotaryRequestForm: React.FC<NotaryRequestFormProps> = ({ onSuccess, onError, serviceType = 'notary' }) => {
   const [formData, setFormData] = useState<Partial<NotaryRequestFormData>>({
     name: '',
     email: '',
     phone: '',
-    service_type: 'notary',
+    service_type: serviceType === 'online' ? 'ron' : 'notary',
     document_type: '',
     appointment_datetime: '',
     location: '',

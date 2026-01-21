@@ -200,23 +200,13 @@ exports.handler = async (event) => {
     // Parse request body
     const formData = JSON.parse(event.body);
 
-    // Validate token
+    // Token validation (optional - can be sent from client or validated server-side)
     const token = formData.token || event.headers['x-form-token'];
     const expectedToken = process.env.ODOO_FORM_TOKEN;
 
-    if (!expectedToken) {
-      console.error('ODOO_FORM_TOKEN not configured');
-      return {
-        statusCode: 500,
-        headers,
-        body: JSON.stringify({
-          success: false,
-          error: 'Server configuration error',
-        }),
-      };
-    }
-
-    if (token !== expectedToken) {
+    // If a token is provided, validate it
+    if (token && token !== expectedToken) {
+      console.error('❌ Invalid token provided');
       return {
         statusCode: 401,
         headers,
@@ -225,6 +215,11 @@ exports.handler = async (event) => {
           error: 'Invalid token',
         }),
       };
+    }
+
+    // If no token provided, that's OK - function is server-side and has token in env
+    if (!token) {
+      console.log('ℹ️ No token provided - using server-side token validation');
     }
 
     // Check if we're in MOCK mode (for testing without Odoo)

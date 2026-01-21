@@ -7,17 +7,16 @@ import type { RequestFormData, FormSubmissionResponse } from '@/types/forms';
 
 /**
  * Get Odoo form submission endpoint
- * Uses local backend server (supports Tailscale connections)
+ * Uses local backend server (works with Tailscale in both dev and prod)
  */
 const getOdooEndpoint = (): string => {
   const apiUrl = import.meta.env.VITE_API_URL;
   
-  // Use local backend server endpoint
   if (apiUrl) {
     return `${apiUrl}/api/odoo/form-submit`;
   }
   
-  // Fallback to localhost
+  // Fallback
   return 'http://localhost:5000/api/odoo/form-submit';
 };
 

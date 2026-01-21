@@ -1,0 +1,21 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- Monochrome BN Logo for Odoo -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+      .bn-text-odoo {
+        font-family: 'Poppins', sans-serif;
+        font-size: 56px;
+        font-weight: 700;
+        fill: #0055E6;
+        letter-spacing: -2px;
+      }
+    </style>
+  </defs>
+  
+  <!-- BN Text in Professional Blue -->
+  <text x="60" y="70" text-anchor="middle" class="bn-text-odoo">BN</text>
+  
+  <!-- Professional Blue Underline -->
+  <line x1="25" y1="85" x2="95" y2="85" stroke="#0055E6" stroke-width="4" stroke-linecap="round"/>
+</svg>

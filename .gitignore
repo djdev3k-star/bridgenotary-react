@@ -175,6 +175,24 @@ logs
 
 # Local Netlify folder
 .netlify
-# Markdown documentation files
-*.md
-!README.md
+
+# Deno
+deno.lock
+
+# Temporary/build files
+move-assets.js
+_routes.json
+
+# Generated files
+.qodo/
+
+# PR and temporary documentation in root
+PR-*.md
+HANDOFF-SUMMARY.md
+PROJECT-STATUS.txt
+*-SUMMARY.md
+ODOO-IMPLEMENTATION-README.md
+ODOO-INTEGRATION-COMPLETE.md
+
+# Keep core documentation
+# But exclude large/temporary markdown files from root

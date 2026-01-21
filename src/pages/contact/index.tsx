@@ -1,51 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { GeneralInquiryForm } from '@/components/forms';
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  const validate = () => {
-    if (!name.trim()) return 'Please enter your name';
-    if (!email.trim()) return 'Please enter your email';
-    // basic email check
-    const emailRe = /\S+@\S+\.\S+/;
-    if (!emailRe.test(email)) return 'Please enter a valid email address';
-    if (!message.trim()) return 'Please enter a message';
-    return null;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
-    setSuccess(null);
-    const v = validate();
-    if (v) {
-      setError(v);
-      return;
-    }
-    setLoading(true);
-    try {
-      const resp = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, message }),
-      });
-      if (!resp.ok) throw new Error(`Server responded ${resp.status}`);
-      setSuccess('Thanks — your message was sent. We will reply shortly.');
-      setName(''); setEmail(''); setPhone(''); setMessage('');
-    } catch (err: unknown) {
-      console.error(err);
-      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again later.');
-    } finally {
-      setLoading(false);
-    }
-  };
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   return (
     <div className="w-full bg-white">
@@ -67,97 +25,7 @@ const Contact = () => {
                 <p className="text-charcoal/70">Ready to schedule or have questions? Send us a message and we'll respond quickly.</p>
               </div>
               
-              <form className="bg-white border border-professional-blue/20 p-6 md:p-8" onSubmit={handleSubmit} noValidate>
-                
-                {error && (
-                  <div className="text-sm text-red-700 p-4 bg-red-50 border border-red-200 mb-6 flex items-center gap-3">
-                    <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {error}
-                  </div>
-                )}
-                {success && (
-                  <div className="text-sm text-green-700 p-4 bg-green-50 border border-green-200 mb-6 flex items-center gap-3">
-                    <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {success}
-                  </div>
-                )}
-
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-charcoal mb-2">Full Name *</label>
-                    <input 
-                      id="name" 
-                      value={name} 
-                      onChange={(e) => setName(e.target.value)} 
-                      type="text" 
-                      placeholder="Your name" 
-                      className="w-full px-4 py-3 bg-white text-charcoal border border-professional-blue/20 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 outline-none transition" 
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-charcoal mb-2">Email Address *</label>
-                    <input 
-                      id="email" 
-                      value={email} 
-                      onChange={(e) => setEmail(e.target.value)} 
-                      type="email" 
-                      placeholder="you@example.com" 
-                      className="w-full px-4 py-3 bg-white text-charcoal border border-professional-blue/20 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 outline-none transition" 
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <label htmlFor="phone" className="block text-sm font-semibold text-charcoal mb-2">Phone Number</label>
-                  <input 
-                    id="phone" 
-                    value={phone} 
-                    onChange={(e) => setPhone(e.target.value)} 
-                    type="tel" 
-                    placeholder="(555) 123-4567" 
-                    className="w-full px-4 py-3 bg-white text-charcoal border border-professional-blue/20 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 outline-none transition" 
-                  />
-                </div>
-
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-semibold text-charcoal mb-2">Message *</label>
-                  <textarea 
-                    id="message" 
-                    value={message} 
-                    onChange={(e) => setMessage(e.target.value)} 
-                    rows={5} 
-                    placeholder="How can we help you?" 
-                    className="w-full px-4 py-3 bg-white text-charcoal border border-professional-blue/20 focus:border-professional-blue focus:ring-2 focus:ring-professional-blue/20 outline-none transition resize-none" 
-                  />
-                </div>
-
-                <button 
-                  type="submit" 
-                  className="w-full bg-professional-blue hover:bg-professional-blue/90 text-white font-semibold py-4 transition flex items-center justify-center gap-2" 
-                  disabled={loading}
-                >
-                  {loading ? (
-                    <>
-                      <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                      </svg>
-                      Send Message
-                    </>
-                  )}
-                </button>
-              </form>
+              <GeneralInquiryForm onSuccess={() => setFormSubmitted(true)} />
             </div>
 
             {/* Right Column - Contact Info */}

@@ -9,6 +9,7 @@ import dotenv from 'dotenv';
 import config from './config/env.js';
 import ronRoutes from './api/ron.js';
 import contactRoutes from './api/contact.js';
+import odooRoutes from './api/odoo.js';
 
 // Load environment variables
 dotenv.config();
@@ -46,6 +47,7 @@ app.get('/health', (req, res) => {
 // API routes
 app.use('/api/ron', ronRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api/odoo', odooRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

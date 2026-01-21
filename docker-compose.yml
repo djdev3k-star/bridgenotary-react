@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: bridgenotary-backend
+    ports:
+      - "5000:5000"
+    environment:
+      # Server Configuration
+      PORT: 5000
+      NODE_ENV: production
+      
+      # Odoo Configuration (set via environment variables)
+      ODOO_URL: ${ODOO_URL}
+      ODOO_DB: ${ODOO_DB}
+      ODOO_USERNAME: ${ODOO_USERNAME}
+      ODOO_API_KEY: ${ODOO_API_KEY}
+      ODOO_FORM_TOKEN: ${ODOO_FORM_TOKEN}
+      
+      # Proof API Configuration
+      PROOF_API_KEY: ${PROOF_API_KEY}
+      PROOF_ENVIRONMENT: test
+    
+    # Connect to Tailscale network (if Tailscale is running)
+    networks:
+      - bridge_network
+    
+    # Restart policy
+    restart: unless-stopped
+    
+    # Logs
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  bridge_network:
+    driver: bridge

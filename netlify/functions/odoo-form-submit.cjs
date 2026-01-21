@@ -222,6 +222,52 @@ exports.handler = async (event) => {
       };
     }
 
+    // Check if we're in MOCK mode (for testing without Odoo)
+    const mockMode = process.env.MOCK_ODOO === 'true';
+    
+    if (mockMode) {
+      console.log('✅ MOCK MODE: Form submission accepted');
+      console.log('Form data:', formData);
+      
+      // Generate a mock lead ID
+      const mockLeadId = Math.floor(Math.random() * 100000) + 1;
+      
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          success: true,
+          message: '✅ Mock: Form submitted successfully (no Odoo connection)',
+          lead_id: mockLeadId,
+        }),
+      };
+    }
+
+    // Validate required Odoo environment variables
+
+    if (!expectedToken) {
+      console.error('ODOO_FORM_TOKEN not configured');
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({
+          success: false,
+          error: 'Server configuration error',
+        }),
+      };
+    }
+
+    if (token !== expectedToken) {
+      return {
+        statusCode: 401,
+        headers,
+        body: JSON.stringify({
+          success: false,
+          error: 'Invalid token',
+        }),
+      };
+    }
+
     // Validate required Odoo environment variables
     const odooUrl = process.env.ODOO_URL;
     const odooDb = process.env.ODOO_DB;

@@ -218,9 +218,9 @@ function App() {
               <Route path="/sitemap" element={<Sitemap />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
-              <Route path="/request/notary" element={<NotaryRequestPage />} />
-              <Route path="/request/courier" element={<CourierRequestPage />} />
-              <Route path="/request/inquiry" element={<GeneralInquiryPage />} />
+              <Route path="/notary-request" element={<NotaryRequestPage />} />
+              <Route path="/courier-request" element={<CourierRequestPage />} />
+              <Route path="/general-inquiry" element={<GeneralInquiryPage />} />
             </Route>
             {/* 404 catch-all route */}
             <Route path="*" element={<NotFound />} />

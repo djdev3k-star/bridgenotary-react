@@ -13,6 +13,7 @@
       "dependencies": [
         "npm:@headlessui/react@^1.7.17",
         "npm:@heroicons/react@^2.0.18",
+        "npm:@sendgrid/mail@^8.1.6",
         "npm:@testing-library/jest-dom@^6.8.0",
         "npm:@testing-library/react@^16.3.0",
         "npm:@types/jest@30",
@@ -27,6 +28,7 @@
         "npm:dotenv@^16.3.1",
         "npm:express@^4.18.2",
         "npm:jest@^30.0.5",
+        "npm:netlify-cli@^23.13.5",
         "npm:node-fetch@^3.3.2",
         "npm:nodemon@^3.0.2",
         "npm:postcss@^8.4.29",

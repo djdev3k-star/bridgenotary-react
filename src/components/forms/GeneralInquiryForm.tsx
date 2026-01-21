@@ -37,6 +37,7 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
   const [generalError, setGeneralError] = useState<string | null>(null);
+  const [submittedData, setSubmittedData] = useState<GeneralInquiryFormData | null>(null);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -95,23 +96,9 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
 
       if (response.success) {
         const message = 'Thank you! Your inquiry has been submitted. We\'ll contact you soon.';
+        setSubmittedData(completeFormData);
         setSuccess(message);
         if (onSuccess) onSuccess(message);
-
-        // Reset form
-        setFormData({
-          full_name: '',
-          email: '',
-          phone: '',
-          service_type: 'other',
-          appointment_datetime: '',
-          location: '',
-          notes: '',
-          consent: false,
-        });
-
-        // Clear success message after 5 seconds
-        setTimeout(() => setSuccess(null), 5000);
       } else {
         const errorMsg = response.error || 'Failed to submit form. Please try again.';
         setGeneralError(errorMsg);
@@ -128,6 +115,99 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
   };
 
   return (
+    <>
+      {/* Confirmation Screen - Show after successful submission */}
+      {submittedData && success && (
+        <div className="bg-white border border-professional-blue/20 p-8 md:p-12 rounded-lg">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+              <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2 className="text-3xl font-bold text-charcoal mb-2">Inquiry Submitted!</h2>
+            <p className="text-lg text-charcoal/70">Thank you for your inquiry. We'll review your information and contact you soon.</p>
+          </div>
+
+          {/* Submitted Information */}
+          <div className="bg-gray-50 p-6 rounded-lg mb-8">
+            <h3 className="text-lg font-semibold text-charcoal mb-4">Submitted Information</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-sm">
+              <div>
+                <p className="text-charcoal/70 font-medium">Full Name</p>
+                <p className="text-charcoal">{submittedData.full_name}</p>
+              </div>
+              <div>
+                <p className="text-charcoal/70 font-medium">Email</p>
+                <p className="text-charcoal break-all">{submittedData.email}</p>
+              </div>
+              <div>
+                <p className="text-charcoal/70 font-medium">Phone</p>
+                <p className="text-charcoal">{submittedData.phone}</p>
+              </div>
+              <div>
+                <p className="text-charcoal/70 font-medium">Inquiry Type</p>
+                <p className="text-charcoal capitalize">{submittedData.service_type}</p>
+              </div>
+              {submittedData.appointment_datetime && (
+                <div>
+                  <p className="text-charcoal/70 font-medium">Preferred Date & Time</p>
+                  <p className="text-charcoal">{new Date(submittedData.appointment_datetime).toLocaleString()}</p>
+                </div>
+              )}
+              {submittedData.location && (
+                <div className="md:col-span-2">
+                  <p className="text-charcoal/70 font-medium">Location</p>
+                  <p className="text-charcoal">{submittedData.location}</p>
+                </div>
+              )}
+              {submittedData.notes && (
+                <div className="md:col-span-2">
+                  <p className="text-charcoal/70 font-medium">Additional Notes</p>
+                  <p className="text-charcoal">{submittedData.notes}</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              type="button"
+              onClick={() => {
+                setSubmittedData(null);
+                setSuccess(null);
+                setFormData({
+                  full_name: '',
+                  email: '',
+                  phone: '',
+                  service_type: 'other',
+                  appointment_datetime: '',
+                  location: '',
+                  notes: '',
+                  consent: false,
+                });
+              }}
+              className="button-outline px-8"
+            >
+              Submit Another Inquiry
+            </button>
+            <a href="/" className="button-primary px-8 text-center">
+              Return Home
+            </a>
+          </div>
+
+          {/* Reference Number Info */}
+          <div className="mt-8 pt-8 border-t border-gray-200 text-center">
+            <p className="text-sm text-charcoal/70">
+              We've received your inquiry and will contact you within 24 business hours.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Form - Show when not submitted */}
+      {!submittedData && (
     <form onSubmit={handleSubmit} className="bg-white border border-professional-blue/20 p-6 md:p-8" noValidate>
       {generalError && <ErrorAlert message={generalError} />}
       {success && <SuccessAlert message={success} />}
@@ -300,6 +380,8 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
         </button>
       </div>
     </form>
+      )}
+    </>
   );
 };
 

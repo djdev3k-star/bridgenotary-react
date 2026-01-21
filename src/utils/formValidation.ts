@@ -61,9 +61,9 @@ export const validateRequestForm = (formData: Partial<RequestFormData>): FormVal
   const errors: FormFieldError[] = [];
 
   // Validate full name (required)
-  if (!formData.name || !isValidRequiredString(formData.name)) {
+  if (!formData.full_name || !isValidRequiredString(formData.full_name)) {
     errors.push({
-      field: 'name',
+      field: 'full_name',
       message: 'Full name is required'
     });
   }

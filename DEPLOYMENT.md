@@ -37,7 +37,7 @@ nano .env.prod
 
 Fill in:
 ```
-ODOO_API_KEY=7946Apiu$er
+ODOO_API_KEY=your_odoo_password
 ODOO_FORM_TOKEN=your_secret_token
 PROOF_API_KEY=your_proof_key
 ```
@@ -175,6 +175,21 @@ Backend (Your Server) - https://your-api-domain.com
     ↓ Tailscale (internal network)
 Odoo (Docker) - 100.116.83.95:8069
 ```
+
+---
+
+## 🔒 Security Notes
+
+### HTTP to Odoo (Current Setup)
+- **Safe in current setup** because traffic is confined to Tailscale (private network)
+- Credentials and session data are not exposed on public internet
+- **Warning logs** will appear in production reminding you of this
+
+### For Public Odoo Instances
+If moving to public Odoo Cloud in future:
+- Use HTTPS with proper SSL certificates
+- Never use HTTP for production authentication
+- Consider using API tokens instead of passwords
 
 ---
 

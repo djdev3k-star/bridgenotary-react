@@ -14,6 +14,11 @@ const router = express.Router();
  * Authenticate with Odoo and get session
  */
 async function authenticateOdoo(odooUrl, db, username, password) {
+  // ⚠️ Security check: Warn if using insecure HTTP in production
+  if (process.env.NODE_ENV === 'production' && odooUrl.startsWith('http://')) {
+    console.warn('⚠️  WARNING: Using insecure HTTP to Odoo in production. Ensure traffic is confined to private network (e.g., Tailscale).');
+  }
+
   return new Promise((resolve, reject) => {
     const authData = JSON.stringify({
       jsonrpc: '2.0',
@@ -172,12 +177,34 @@ function mapFormDataToOdooLead(formData) {
 /**
  * POST /api/odoo/form-submit
  * Submit a form to Odoo CRM
+ * 
+ * Requires: X-Form-Token header or token in body
  */
 router.post('/form-submit', async (req, res) => {
   try {
     console.log('🔄 Processing Odoo form submission...');
     
     const formData = req.body;
+
+    // ✅ Validate authentication token
+    const expectedToken = process.env.ODOO_FORM_TOKEN;
+    const providedToken = req.headers['x-form-token'] || formData.token;
+
+    if (!expectedToken) {
+      console.error('❌ Missing ODOO_FORM_TOKEN in environment');
+      return res.status(500).json({
+        success: false,
+        error: 'Server configuration error: Missing form token',
+      });
+    }
+
+    if (!providedToken || providedToken !== expectedToken) {
+      console.error('❌ Invalid or missing form token');
+      return res.status(401).json({
+        success: false,
+        error: 'Unauthorized: Invalid form token',
+      });
+    }
 
     // Validate required Odoo environment variables
     const odooUrl = process.env.ODOO_URL;

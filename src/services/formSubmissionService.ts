@@ -21,11 +21,9 @@ const getOdooEndpoint = (): string => {
 };
 
 /**
- * Get form submission token for Odoo validation
+ * Form token is kept server-side only for security
+ * Backend validates token from environment variables
  */
-const getFormToken = (): string => {
-  return import.meta.env.VITE_ODOO_FORM_TOKEN || '';
-};
 
 /**
  * Submit a form to Odoo CRM via Netlify Function
@@ -37,13 +35,9 @@ export const submitRequestForm = async (
 ): Promise<FormSubmissionResponse> => {
   try {
     const endpoint = getOdooEndpoint();
-    const token = getFormToken();
 
     // Prepare payload for Odoo
     const odooPayload = {
-      // Security token
-      token,
-      
       // Form metadata
       form_type: formType,
       
@@ -66,7 +60,7 @@ export const submitRequestForm = async (
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Form-Token': token,
+        // Token is validated server-side, no need to send it from client
       },
       body: JSON.stringify(odooPayload),
     });

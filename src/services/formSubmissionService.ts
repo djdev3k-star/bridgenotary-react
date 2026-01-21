@@ -1,71 +1,83 @@
 /**
  * Form submission service
- * Handles POST requests to Odoo backend
+ * Handles POST requests to Odoo backend via Netlify Function
  */
 
 import type { RequestFormData, FormSubmissionResponse } from '@/types/forms';
 
 /**
- * Default API endpoint for form submissions
- * Should be configured via environment variable
+ * Get Odoo form submission endpoint
+ * Uses Netlify Function as proxy to Odoo API
  */
-const getApiEndpoint = (): string => {
-  return import.meta.env.VITE_API_URL || '';
+const getOdooEndpoint = (): string => {
+  // In production, use Netlify function URL
+  if (import.meta.env.PROD) {
+    return '/.netlify/functions/odoo-form-submit';
+  }
+  
+  // In development, use local Netlify dev server
+  return 'http://localhost:8888/.netlify/functions/odoo-form-submit';
 };
 
 /**
- * Submit a form to the backend
- * Maps form data to Odoo CRM lead fields
+ * Get form submission token for Odoo validation
+ */
+const getFormToken = (): string => {
+  return import.meta.env.VITE_ODOO_FORM_TOKEN || '';
+};
+
+/**
+ * Submit a form to Odoo CRM via Netlify Function
+ * Creates a lead in Odoo with standardized fields
  */
 export const submitRequestForm = async (
   formData: RequestFormData,
   formType: 'notary' | 'courier' | 'general-inquiry'
 ): Promise<FormSubmissionResponse> => {
   try {
-    const endpoint = `${getApiEndpoint()}/api/request-form`;
+    const endpoint = getOdooEndpoint();
+    const token = getFormToken();
 
-    // Map form data to Odoo fields
+    // Prepare payload for Odoo
     const odooPayload = {
-      // Standard fields
-      name: formData.name,
-      email_from: formData.email,
+      // Security token
+      token,
+      
+      // Form metadata
+      form_type: formType,
+      
+      // Standardized fields (matches Odoo schema)
+      full_name: formData.full_name,
+      email: formData.email,
       phone: formData.phone,
       service_type: formData.service_type,
-      description: formData.notes || '',
-      x_consent: formData.consent,
-
-      // Custom fields
-      x_appointment_datetime: formData.appointment_datetime || null,
-      x_location: formData.location || '',
-      x_form_type: formType,
-
-      // Form-specific fields
-      ...(formType === 'notary' && 'document_type' in formData && {
-        x_document_type: (formData as any).document_type,
-      }),
-      ...(formType === 'courier' && {
-        x_pickup_address: (formData as any).pickup_address || '',
-        x_delivery_address: (formData as any).delivery_address || '',
-        x_service_date: (formData as any).service_date || null,
-      }),
-      ...(formType === 'general-inquiry' && 'subject' in formData && {
-        x_subject: (formData as any).subject || '',
-      }),
+      notes: formData.notes || '',
+      consent: formData.consent,
+      
+      // Optional fields
+      appointment_datetime: formData.appointment_datetime || null,
+      location: formData.location || '',
     };
+
+    console.log('Submitting form to Odoo:', { formType, endpoint });
 
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-Form-Token': token,
       },
       body: JSON.stringify(odooPayload),
     });
 
     if (!response.ok) {
-      throw new Error(`Server responded with status ${response.status}`);
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error || `Server responded with status ${response.status}`);
     }
 
     const data = await response.json() as FormSubmissionResponse;
+
+    console.log('Form submission response:', data);
 
     return {
       success: data.success ?? false,
@@ -80,7 +92,7 @@ export const submitRequestForm = async (
 
     return {
       success: false,
-      message: 'Failed to submit form',
+      message: 'Failed to submit form. Please try again or contact us directly.',
       error: errorMessage,
     };
   }

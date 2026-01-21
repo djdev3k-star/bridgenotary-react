@@ -128,10 +128,7 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
   };
 
   return (
-    <form onSubmit={handleSubmit} action={import.meta.env.VITE_ODOO_FORM_URL || 'http://localhost:8069/form/submit'} method="POST" className="bg-white border border-professional-blue/20 p-6 md:p-8" noValidate>
-      {/* Hidden Token Field for Odoo validation */}
-      <input type="hidden" name="token" value={import.meta.env.VITE_ODOO_FORM_TOKEN || ''} />
-
+    <form onSubmit={handleSubmit} className="bg-white border border-professional-blue/20 p-6 md:p-8" noValidate>
       {generalError && <ErrorAlert message={generalError} />}
       {success && <SuccessAlert message={success} />}
 

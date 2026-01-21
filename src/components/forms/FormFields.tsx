@@ -70,9 +70,9 @@ export const InputField: React.FC<InputFieldProps> = ({
   disabled = false,
 }) => (
   <div>
-    <label htmlFor={id} className="block text-sm font-semibold text-charcoal mb-2">
+    <label htmlFor={id} className="block text-sm font-semibold text-charcoal mb-3">
       {label}
-      {required && <span className="text-red-500 ml-1">*</span>}
+      {required && <span className="text-professional-blue ml-1">*</span>}
     </label>
     <input
       id={id}
@@ -82,11 +82,11 @@ export const InputField: React.FC<InputFieldProps> = ({
       onChange={onChange}
       placeholder={placeholder}
       disabled={disabled}
-      className={`w-full px-4 py-3 bg-white text-charcoal border transition focus:outline-none focus:ring-2 ${
+      className={`w-full px-4 py-2.5 bg-white text-charcoal border-2 rounded-lg transition-all duration-200 focus:outline-none ${
         error
-          ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
-          : 'border-professional-blue/20 focus:border-professional-blue focus:ring-professional-blue/20'
-      } ${disabled ? 'bg-gray-100 text-gray-500 cursor-not-allowed' : ''}`}
+          ? 'border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-100'
+          : 'border-professional-blue/20 hover:border-professional-blue/30 focus:border-professional-blue focus:ring-4 focus:ring-professional-blue/10'
+      } ${disabled ? 'bg-gray-50 text-gray-400 cursor-not-allowed border-gray-200' : ''} placeholder:text-charcoal/40`}
     />
     {error && (
       <p className="text-red-600 text-sm mt-1 flex items-center gap-1">
@@ -115,9 +115,9 @@ export const TextAreaField: React.FC<TextAreaFieldProps> = ({
   disabled = false,
 }) => (
   <div>
-    <label htmlFor={id} className="block text-sm font-semibold text-charcoal mb-2">
+    <label htmlFor={id} className="block text-sm font-semibold text-charcoal mb-3">
       {label}
-      {required && <span className="text-red-500 ml-1">*</span>}
+      {required && <span className="text-professional-blue ml-1">*</span>}
     </label>
     <textarea
       id={id}
@@ -127,11 +127,11 @@ export const TextAreaField: React.FC<TextAreaFieldProps> = ({
       placeholder={placeholder}
       rows={rows}
       disabled={disabled}
-      className={`w-full px-4 py-3 bg-white text-charcoal border transition focus:outline-none focus:ring-2 ${
+      className={`w-full px-4 py-2.5 bg-white text-charcoal border-2 rounded-lg transition-all duration-200 focus:outline-none resize-none ${
         error
-          ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
-          : 'border-professional-blue/20 focus:border-professional-blue focus:ring-professional-blue/20'
-      } ${disabled ? 'bg-gray-100 text-gray-500 cursor-not-allowed' : ''}`}
+          ? 'border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-100'
+          : 'border-professional-blue/20 hover:border-professional-blue/30 focus:border-professional-blue focus:ring-4 focus:ring-professional-blue/10'
+      } ${disabled ? 'bg-gray-50 text-gray-400 cursor-not-allowed border-gray-200' : ''} placeholder:text-charcoal/40`}
     />
     {error && (
       <p className="text-red-600 text-sm mt-1 flex items-center gap-1">
@@ -159,28 +159,33 @@ export const SelectField: React.FC<SelectFieldProps> = ({
   disabled = false,
 }) => (
   <div>
-    <label htmlFor={id} className="block text-sm font-semibold text-charcoal mb-2">
+    <label htmlFor={id} className="block text-sm font-semibold text-charcoal mb-3">
       {label}
-      {required && <span className="text-red-500 ml-1">*</span>}
+      {required && <span className="text-professional-blue ml-1">*</span>}
     </label>
-    <select
-      id={id}
-      name={name}
-      value={value}
-      onChange={onChange}
-      disabled={disabled}
-      className={`w-full px-4 py-3 bg-white text-charcoal border transition focus:outline-none focus:ring-2 ${
-        error
-          ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
-          : 'border-professional-blue/20 focus:border-professional-blue focus:ring-professional-blue/20'
-      } ${disabled ? 'bg-gray-100 text-gray-500 cursor-not-allowed' : ''}`}
-    >
-      {options.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.label}
-        </option>
-      ))}
-    </select>
+    <div className="relative">
+      <select
+        id={id}
+        name={name}
+        value={value}
+        onChange={onChange}
+        disabled={disabled}
+        className={`w-full px-4 py-2.5 bg-white text-charcoal border-2 rounded-lg transition-all duration-200 focus:outline-none appearance-none ${
+          error
+            ? 'border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-100'
+            : 'border-professional-blue/20 hover:border-professional-blue/30 focus:border-professional-blue focus:ring-4 focus:ring-professional-blue/10'
+        } ${disabled ? 'bg-gray-50 text-gray-400 cursor-not-allowed border-gray-200' : ''} pr-10`}
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      <svg className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-professional-blue pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
     {error && (
       <p className="text-red-600 text-sm mt-1 flex items-center gap-1">
         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -214,9 +219,9 @@ export const CheckboxField: React.FC<CheckboxFieldProps> = ({
         checked={checked}
         onChange={onChange}
         disabled={disabled}
-        className={`mt-1 rounded border-professional-blue/30 text-professional-blue focus:ring-professional-blue/50 ${
-          disabled ? 'cursor-not-allowed opacity-50' : ''
-        }`}
+        className={`mt-1 w-5 h-5 rounded border-2 border-professional-blue/30 text-professional-blue focus:ring-4 focus:ring-professional-blue/10 cursor-pointer transition-all ${
+          error ? 'border-red-300' : 'hover:border-professional-blue/50'
+        } ${disabled ? 'cursor-not-allowed opacity-50' : ''}`}
       />
       <label htmlFor={id} className={`text-sm text-charcoal ${disabled ? 'opacity-50' : ''}`}>
         {label}

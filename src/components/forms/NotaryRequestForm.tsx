@@ -205,13 +205,16 @@ const NotaryRequestForm: React.FC<NotaryRequestFormProps> = ({ onSuccess, onErro
 
       {/* Form - Show when not submitted */}
       {!submittedData && (
-    <form onSubmit={handleSubmit} className="bg-white border border-professional-blue/20 p-6 md:p-8" noValidate>
+    <form onSubmit={handleSubmit} className="bg-white border-2 border-professional-blue/15 rounded-xl shadow-sm p-8 md:p-10 hover:border-professional-blue/25 transition-all" noValidate>
       {generalError && <ErrorAlert message={generalError} />}
       {success && <SuccessAlert message={success} />}
 
       {/* Personal Information Section */}
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold text-charcoal mb-4">Personal Information</h3>
+      <div className="mb-8 pb-8 border-b border-professional-blue/10">
+        <h3 className="text-lg font-bold text-charcoal mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-professional-blue rounded"></span>
+          Personal Information
+        </h3>
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <InputField
@@ -274,8 +277,11 @@ const NotaryRequestForm: React.FC<NotaryRequestFormProps> = ({ onSuccess, onErro
       </div>
 
       {/* Service Details Section */}
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold text-charcoal mb-4">Service Details</h3>
+      <div className="mb-8 pb-8 border-b border-professional-blue/10">
+        <h3 className="text-lg font-bold text-charcoal mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-professional-blue rounded"></span>
+          Service Details
+        </h3>
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <InputField
@@ -303,8 +309,11 @@ const NotaryRequestForm: React.FC<NotaryRequestFormProps> = ({ onSuccess, onErro
       </div>
 
       {/* Additional Information Section */}
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold text-charcoal mb-4">Additional Information</h3>
+      <div className="mb-8 pb-8 border-b border-professional-blue/10">
+        <h3 className="text-lg font-bold text-charcoal mb-6 flex items-center gap-2">
+          <span className="w-1 h-6 bg-professional-blue rounded"></span>
+          Additional Information
+        </h3>
 
         <TextAreaField
           id="notes"

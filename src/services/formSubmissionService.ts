@@ -7,16 +7,18 @@ import type { RequestFormData, FormSubmissionResponse } from '@/types/forms';
 
 /**
  * Get Odoo form submission endpoint
- * Uses Netlify Function as proxy to Odoo API
+ * Uses local backend server (supports Tailscale connections)
  */
 const getOdooEndpoint = (): string => {
-  // In production, use Netlify function URL
-  if (import.meta.env.PROD) {
-    return '/.netlify/functions/odoo-form-submit';
+  const apiUrl = import.meta.env.VITE_API_URL;
+  
+  // Use local backend server endpoint
+  if (apiUrl) {
+    return `${apiUrl}/api/odoo/form-submit`;
   }
   
-  // In development, use local Netlify dev server
-  return 'http://localhost:8888/.netlify/functions/odoo-form-submit';
+  // Fallback to localhost
+  return 'http://localhost:5000/api/odoo/form-submit';
 };
 
 /**

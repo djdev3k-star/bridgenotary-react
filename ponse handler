@@ -1,0 +1,26 @@
+[1mdiff --git a/netlify/functions/odoo-form-submit.cjs b/netlify/functions/odoo-form-submit.cjs[m
+[1mindex d10df56..330ec45 100644[m
+[1m--- a/netlify/functions/odoo-form-submit.cjs[m
+[1m+++ b/netlify/functions/odoo-form-submit.cjs[m
+[36m@@ -120,13 +120,18 @@[m [masync function createOdooLead(odooUrl, sessionId, leadData) {[m
+       res.on('end', () => {[m
+         try {[m
+           const response = JSON.parse(data);[m
+[32m+[m[32m          console.log('Lead creation response:', JSON.stringify(response, null, 2));[m[41m[m
+           if (response.error) {[m
+[31m-            reject(new Error(response.error.message || 'Lead creation failed'));[m
+[31m-          } else {[m
+[32m+[m[32m            reject(new Error(`Odoo lead error: ${response.error.message || JSON.stringify(response.error)}`));[m[41m[m
+[32m+[m[32m          } else if (typeof response.result === 'number') {[m[41m[m
+[32m+[m[32m            // Lead creation returns the lead ID (a number)[m[41m[m
+             resolve(response.result);[m
+[32m+[m[32m          } else {[m[41m[m
+[32m+[m[32m            reject(new Error(`Unexpected lead response: ${JSON.stringify(response)}`));[m[41m[m
+           }[m
+         } catch (error) {[m
+[31m-          reject(error);[m
+[32m+[m[32m          console.log('Raw response data:', data);[m[41m[m
+[32m+[m[32m          reject(new Error(`Failed to parse lead response: ${error.message}`));[m[41m[m
+         }[m
+       });[m
+     });[m

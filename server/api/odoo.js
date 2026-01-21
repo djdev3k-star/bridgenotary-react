@@ -273,7 +273,7 @@ router.post('/form-submit', async (req, res) => {
 
     // Authenticate with Odoo
     console.log('🔐 Authenticating with Odoo...');
-    const { sessionId } = await authenticateOdoo(odooUrl, odooDb, odooUsername, odooPassword);
+    const { uid, sessionId } = await authenticateOdoo(odooUrl, odooDb, odooUsername, odooPassword);
 
     if (!sessionId) {
       throw new Error('Failed to obtain Odoo session');
@@ -290,6 +290,12 @@ router.post('/form-submit', async (req, res) => {
     // Add stage_id if we found one
     if (stageId) {
       leadData.stage_id = stageId;
+    }
+    
+    // Assign to authenticated user (critical for visibility!)
+    if (uid) {
+      leadData.user_id = uid;
+      console.log(`👤 Assigning lead to user ID: ${uid}`);
     }
     
     const leadId = await createOdooLead(odooUrl, sessionId, leadData);

@@ -20,9 +20,8 @@ services:
       PROOF_API_KEY: ${PROOF_API_KEY}
       PROOF_ENVIRONMENT: test
     
-    # Connect to Tailscale network (if Tailscale is running)
-    networks:
-      - bridge_network
+    # Use host network to access Tailscale
+    network_mode: host
     
     # Restart policy
     restart: unless-stopped

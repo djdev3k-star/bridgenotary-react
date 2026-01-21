@@ -8,7 +8,7 @@ import type { RequestFormData, FormSubmissionResponse } from '@/types/forms';
 
 /**
  * Get Odoo form submission endpoint
- * In production: Uses Netlify Function (/.netlify/functions/odoo-form-submit)
+ * In production (self-hosted): Uses relative path (same server)
  * In development: Uses local backend server
  */
 const getOdooEndpoint = (): string => {
@@ -21,8 +21,10 @@ const getOdooEndpoint = (): string => {
     return 'http://localhost:5000/api/odoo/form-submit';
   }
   
-  // Production: Use Netlify Function endpoint (HTTPS, avoids mixed content)
-  return '/.netlify/functions/odoo-form-submit';
+  // Production (self-hosted): Use relative path
+  // Nginx proxies /api/* to the Express backend
+  // This avoids mixed content (HTTPS → HTTP) issues
+  return '/api/odoo/form-submit';
 };
 
 /**

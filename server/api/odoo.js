@@ -361,11 +361,10 @@ router.post('/form-submit', async (req, res) => {
       leadData.team_id = teamId;
     }
     
-    // Assign to authenticated user (critical for visibility!)
-    if (uid) {
-      leadData.user_id = uid;
-      console.log(`👤 Assigning lead to user ID: ${uid}`);
-    }
+    // Assign to admin user (user_id=2) for visibility
+    leadData.user_id = 2;
+    console.log(`👤 Assigning lead to user ID: 2 (admin)`);
+
     
     const leadId = await createOdooLead(odooUrl, sessionId, leadData);
 

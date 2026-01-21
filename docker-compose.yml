@@ -36,18 +36,22 @@ services:
         max-size: "10m"
         max-file: "3"
 
-  # Optional: Nginx service for containerized deployment
-  # Uncomment to use Docker for Nginx as well
-  # nginx:
-  #   image: nginx:latest
-  #   container_name: bridgenotary-nginx
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   volumes:
-  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-  #     - /var/www/bridgenotary:/usr/share/nginx/html:ro
-  #     - /etc/letsencrypt:/etc/letsencrypt:ro
+  # Nginx service for containerized deployment
+  nginx:
+    image: nginx:alpine
+    container_name: bridgenotary-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./dist:/usr/share/nginx/html:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - backend
+    networks:
+      - bridge_network
+    restart: unless-stopped
   #   depends_on:
   #     - backend
   #   networks:

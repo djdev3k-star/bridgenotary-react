@@ -15,8 +15,8 @@ This document provides detailed function and API documentation for the Bridge No
 **Purpose:** Authenticate with Odoo and obtain a session ID for subsequent API calls.
 
 **Parameters:**
-- `odooUrl` (string): Base URL of the Odoo instance (e.g., `http://100.116.83.95:8069`)
-- `db` (string): Odoo database name (e.g., `1logisticsdb`)
+- `odooUrl` (string): Base URL of the Odoo instance (e.g., `https://your-odoo-instance.com`)
+- `db` (string): Odoo database name (e.g., `your_database_name`)
 - `username` (string): Odoo user login (usually email format)
 - `password` (string): Odoo user password or API key
 
@@ -36,8 +36,8 @@ Promise<{
 **Example:**
 ```javascript
 const { uid, sessionId } = await authenticateOdoo(
-  'http://100.116.83.95:8069',
-  '1logisticsdb',
+  'https://your-odoo-instance.com',
+  'your_database_name',
   'user@example.com',
   'password123'
 );
@@ -81,7 +81,7 @@ Promise<number> // Returns the created lead ID
 **Example:**
 ```javascript
 const leadId = await createOdooLead(
-  'http://100.116.83.95:8069',
+  'https://your-odoo-instance.com',
   'abc123sessionid',
   {
     name: 'Notary - John Doe',
@@ -320,8 +320,8 @@ interface FormSubmissionResponse {
 ### Backend (Server)
 
 **Required:**
-- `ODOO_URL` - Odoo instance URL (e.g., `http://100.116.83.95:8069`)
-- `ODOO_DB` - Database name (e.g., `1logisticsdb`)
+- `ODOO_URL` - Odoo instance URL (e.g., `https://your-odoo-instance.com`)
+- `ODOO_DB` - Database name (e.g., `your_database_name`)
 - `ODOO_USERNAME` - Login email (e.g., `user@example.com`)
 - `ODOO_API_KEY` - Password or API key
 - `ODOO_FORM_TOKEN` - Custom security token

@@ -145,6 +145,65 @@ async function getFirstStage(odooUrl, sessionId) {
 }
 
 /**
+ * Get the first CRM team (for pipeline assignment)
+ */
+async function getFirstTeam(odooUrl, sessionId) {
+  return new Promise((resolve, reject) => {
+    const requestData = JSON.stringify({
+      jsonrpc: '2.0',
+      method: 'call',
+      params: {
+        model: 'crm.team',
+        method: 'search_read',
+        args: [[], ['id', 'name']],
+        kwargs: { limit: 1 },
+      },
+      id: Date.now(),
+    });
+
+    const url = new URL('/web/dataset/call_kw/crm.team/search_read', odooUrl);
+    const protocol = url.protocol === 'https:' ? https : http;
+
+    const options = {
+      hostname: url.hostname,
+      port: url.port || (url.protocol === 'https:' ? 443 : 80),
+      path: url.pathname,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(requestData),
+        'Cookie': `session_id=${sessionId}`,
+      },
+    };
+
+    const req = protocol.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => {
+        try {
+          const response = JSON.parse(data);
+          if (response.error) {
+            console.warn('⚠️  Could not get team');
+            resolve(null);
+          } else if (response.result && response.result.length > 0) {
+            console.log(`🏢 Using team: ${response.result[0].name} (ID: ${response.result[0].id})`);
+            resolve(response.result[0].id);
+          } else {
+            resolve(null);
+          }
+        } catch (error) {
+          resolve(null);
+        }
+      });
+    });
+
+    req.on('error', () => resolve(null));
+    req.write(requestData);
+    req.end();
+  });
+}
+
+/**
  * Create a CRM lead in Odoo
  */
 async function createOdooLead(odooUrl, sessionId, leadData) {
@@ -283,6 +342,10 @@ router.post('/form-submit', async (req, res) => {
     console.log('📍 Getting first CRM stage...');
     const stageId = await getFirstStage(odooUrl, sessionId);
 
+    // Get first team (for custom pipeline visibility)
+    console.log('🏢 Getting first CRM team...');
+    const teamId = await getFirstTeam(odooUrl, sessionId);
+
     // Map and create lead
     console.log('📝 Creating Odoo lead...');
     const leadData = mapFormDataToOdooLead(formData);
@@ -290,6 +353,11 @@ router.post('/form-submit', async (req, res) => {
     // Add stage_id if we found one
     if (stageId) {
       leadData.stage_id = stageId;
+    }
+    
+    // Add team_id for custom pipelines (CRITICAL!)
+    if (teamId) {
+      leadData.team_id = teamId;
     }
     
     // Assign to authenticated user (critical for visibility!)

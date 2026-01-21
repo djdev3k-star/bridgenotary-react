@@ -130,10 +130,12 @@ async function createOdooLead(odooUrl, sessionId, leadData) {
           console.log('📍 Odoo lead creation response:', typeof response.result === 'number' ? `Lead ID: ${response.result}` : 'Error');
           
           if (response.error) {
-            reject(new Error(`Odoo lead error: ${response.error.message || JSON.stringify(response.error)}`));
+            console.error('❌ Odoo lead creation error details:', JSON.stringify(response.error, null, 2));
+            reject(new Error(`Odoo lead error: ${response.error.data?.message || response.error.message || JSON.stringify(response.error)}`));
           } else if (typeof response.result === 'number') {
             resolve(response.result);
           } else {
+            console.error('❌ Unexpected lead response:', JSON.stringify(response, null, 2));
             reject(new Error(`Unexpected lead response: ${JSON.stringify(response)}`));
           }
         } catch (error) {

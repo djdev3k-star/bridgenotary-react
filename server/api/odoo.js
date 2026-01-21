@@ -280,6 +280,7 @@ function mapFormDataToOdooLead(formData) {
     // Required fields
     name: `${formData.service_type || 'Inquiry'} - ${formData.full_name}`,
     type: 'lead',
+    active: true,  // CRITICAL: Ensure lead is not archived
     
     // Standard optional fields
     contact_name: formData.full_name,

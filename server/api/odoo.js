@@ -161,7 +161,7 @@ function mapFormDataToOdooLead(formData) {
   const leadData = {
     // Required fields
     name: `${formData.service_type || 'Inquiry'} - ${formData.full_name}`,
-    type: 'lead', // Changed from 'opportunity' to 'lead'
+    type: 'lead',
     
     // Standard optional fields
     contact_name: formData.full_name,
@@ -170,7 +170,7 @@ function mapFormDataToOdooLead(formData) {
     description: formData.notes || `Service: ${formData.service_type}\nLocation: ${formData.location || 'N/A'}`,
   };
   
-  // Only add these if they're simple values (no custom fields until we verify they exist)
+  console.log('📋 Lead data being sent to Odoo:', JSON.stringify(leadData, null, 2));
   return leadData;
 }
 

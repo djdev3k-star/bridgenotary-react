@@ -157,25 +157,21 @@ async function createOdooLead(odooUrl, sessionId, leadData) {
  * Map frontend form data to Odoo CRM lead fields
  */
 function mapFormDataToOdooLead(formData) {
-  return {
-    // Standard CRM lead fields
-    name: `${formData.service_type} - ${formData.full_name}`,
-    partner_name: formData.full_name,
+  // Minimal safe payload - only standard Odoo fields
+  const leadData = {
+    // Required fields
+    name: `${formData.service_type || 'Inquiry'} - ${formData.full_name}`,
+    type: 'lead', // Changed from 'opportunity' to 'lead'
+    
+    // Standard optional fields
+    contact_name: formData.full_name,
     email_from: formData.email,
     phone: formData.phone,
-    description: formData.notes || '',
-    
-    // Custom fields
-    x_service_type: formData.service_type,
-    x_appointment_datetime: formData.appointment_datetime || false,
-    x_location: formData.location || '',
-    x_consent: formData.consent || false,
-    x_form_type: formData.form_type || 'general-inquiry',
-    
-    // Lead configuration
-    type: 'opportunity',
-    source_id: 1, // Website source
+    description: formData.notes || `Service: ${formData.service_type}\nLocation: ${formData.location || 'N/A'}`,
   };
+  
+  // Only add these if they're simple values (no custom fields until we verify they exist)
+  return leadData;
 }
 
 /**

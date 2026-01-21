@@ -1,28 +1,33 @@
 /**
  * Form submission service
- * Handles POST requests to Odoo backend via Netlify Function
+ * Handles POST requests to Odoo backend via Netlify Function proxy
+ * Uses Netlify Functions to avoid mixed content (HTTPS frontend -> HTTP backend)
  */
 
 import type { RequestFormData, FormSubmissionResponse } from '@/types/forms';
 
 /**
  * Get Odoo form submission endpoint
- * Uses local backend server (works with Tailscale in both dev and prod)
+ * In production: Uses Netlify Function (/.netlify/functions/odoo-form-submit)
+ * In development: Uses local backend server
  */
 const getOdooEndpoint = (): string => {
-  const apiUrl = import.meta.env.VITE_API_URL;
-  
-  if (apiUrl) {
-    return `${apiUrl}/api/odoo/form-submit`;
+  // Check if we're in development
+  if (import.meta.env.DEV) {
+    const apiUrl = import.meta.env.VITE_API_URL;
+    if (apiUrl) {
+      return `${apiUrl}/api/odoo/form-submit`;
+    }
+    return 'http://localhost:5000/api/odoo/form-submit';
   }
   
-  // Fallback
-  return 'http://localhost:5000/api/odoo/form-submit';
+  // Production: Use Netlify Function endpoint (HTTPS, avoids mixed content)
+  return '/.netlify/functions/odoo-form-submit';
 };
 
 /**
  * Form token is kept server-side only for security
- * Backend validates token from environment variables
+ * Backend/Netlify function validates token from environment variables
  */
 
 /**

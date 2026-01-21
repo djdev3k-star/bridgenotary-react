@@ -1,13 +1,9 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  environment = { NETLIFY_NEXT_PLUGIN_SKIP = "true" }
 
-# Secrets scanning configuration
-# VITE_API_URL is a legitimate frontend variable that must be in the bundle
-# VITE_ODOO_FORM_TOKEN should not be used (token is server-side only)
 [build.environment]
-  # Allow these variables in the build output
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
   SECRETS_SCAN_OMIT_KEYS = "VITE_API_URL,VITE_ENABLE_APOSTILLE"
 
 [dev]

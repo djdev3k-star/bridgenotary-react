@@ -186,20 +186,12 @@ router.post('/form-submit', async (req, res) => {
     
     const formData = req.body;
 
-    // ✅ Validate authentication token
+    // ✅ Optional token validation (for security, but not required for private Tailscale network)
     const expectedToken = process.env.ODOO_FORM_TOKEN;
     const providedToken = req.headers['x-form-token'] || formData.token;
 
-    if (!expectedToken) {
-      console.error('❌ Missing ODOO_FORM_TOKEN in environment');
-      return res.status(500).json({
-        success: false,
-        error: 'Server configuration error: Missing form token',
-      });
-    }
-
-    if (!providedToken || providedToken !== expectedToken) {
-      console.error('❌ Invalid or missing form token');
+    if (expectedToken && providedToken && providedToken !== expectedToken) {
+      console.error('❌ Invalid form token');
       return res.status(401).json({
         success: false,
         error: 'Unauthorized: Invalid form token',

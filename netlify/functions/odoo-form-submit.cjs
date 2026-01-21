@@ -120,13 +120,18 @@ async function createOdooLead(odooUrl, sessionId, leadData) {
       res.on('end', () => {
         try {
           const response = JSON.parse(data);
+          console.log('Lead creation response:', JSON.stringify(response, null, 2));
           if (response.error) {
-            reject(new Error(response.error.message || 'Lead creation failed'));
-          } else {
+            reject(new Error(`Odoo lead error: ${response.error.message || JSON.stringify(response.error)}`));
+          } else if (typeof response.result === 'number') {
+            // Lead creation returns the lead ID (a number)
             resolve(response.result);
+          } else {
+            reject(new Error(`Unexpected lead response: ${JSON.stringify(response)}`));
           }
         } catch (error) {
-          reject(error);
+          console.log('Raw response data:', data);
+          reject(new Error(`Failed to parse lead response: ${error.message}`));
         }
       });
     });

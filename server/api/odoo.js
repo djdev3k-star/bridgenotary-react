@@ -86,6 +86,65 @@ async function authenticateOdoo(odooUrl, db, username, password) {
 }
 
 /**
+ * Get the first CRM stage (for new leads)
+ */
+async function getFirstStage(odooUrl, sessionId) {
+  return new Promise((resolve, reject) => {
+    const requestData = JSON.stringify({
+      jsonrpc: '2.0',
+      method: 'call',
+      params: {
+        model: 'crm.stage',
+        method: 'search_read',
+        args: [[], ['id', 'name']],
+        kwargs: { order: 'sequence asc', limit: 1 },
+      },
+      id: Date.now(),
+    });
+
+    const url = new URL('/web/dataset/call_kw/crm.stage/search_read', odooUrl);
+    const protocol = url.protocol === 'https:' ? https : http;
+
+    const options = {
+      hostname: url.hostname,
+      port: url.port || (url.protocol === 'https:' ? 443 : 80),
+      path: url.pathname,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(requestData),
+        'Cookie': `session_id=${sessionId}`,
+      },
+    };
+
+    const req = protocol.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => {
+        try {
+          const response = JSON.parse(data);
+          if (response.error) {
+            console.warn('⚠️  Could not get stage, using default');
+            resolve(null);
+          } else if (response.result && response.result.length > 0) {
+            console.log(`📍 Using stage: ${response.result[0].name} (ID: ${response.result[0].id})`);
+            resolve(response.result[0].id);
+          } else {
+            resolve(null);
+          }
+        } catch (error) {
+          resolve(null);
+        }
+      });
+    });
+
+    req.on('error', () => resolve(null));
+    req.write(requestData);
+    req.end();
+  });
+}
+
+/**
  * Create a CRM lead in Odoo
  */
 async function createOdooLead(odooUrl, sessionId, leadData) {
@@ -220,9 +279,19 @@ router.post('/form-submit', async (req, res) => {
       throw new Error('Failed to obtain Odoo session');
     }
 
+    // Get first stage (for Kanban visibility)
+    console.log('📍 Getting first CRM stage...');
+    const stageId = await getFirstStage(odooUrl, sessionId);
+
     // Map and create lead
     console.log('📝 Creating Odoo lead...');
     const leadData = mapFormDataToOdooLead(formData);
+    
+    // Add stage_id if we found one
+    if (stageId) {
+      leadData.stage_id = stageId;
+    }
+    
     const leadId = await createOdooLead(odooUrl, sessionId, leadData);
 
     console.log(`✅ Lead created successfully: ${leadId}`);

@@ -25,11 +25,10 @@ interface NotaryRequestFormProps {
 
 const NotaryRequestForm: React.FC<NotaryRequestFormProps> = ({ onSuccess, onError, serviceType = 'notary' }) => {
   const [formData, setFormData] = useState<Partial<NotaryRequestFormData>>({
-    name: '',
+    full_name: '',
     email: '',
     phone: '',
-    service_type: serviceType === 'online' ? 'ron' : 'notary',
-    document_type: '',
+    service_type: 'notary_general',
     appointment_datetime: '',
     location: '',
     notes: '',
@@ -94,11 +93,10 @@ const NotaryRequestForm: React.FC<NotaryRequestFormProps> = ({ onSuccess, onErro
       const formattedPhone = formatPhoneNumber(formData.phone || '');
 
       const completeFormData: NotaryRequestFormData = {
-        name: formData.name || '',
+        full_name: formData.full_name || '',
         email: formData.email || '',
         phone: formattedPhone,
-        service_type: 'notary',
-        document_type: formData.document_type || '',
+        service_type: 'notary_general',
         appointment_datetime: formData.appointment_datetime || undefined,
         location: formData.location || '',
         notes: formData.notes || '',
@@ -114,11 +112,10 @@ const NotaryRequestForm: React.FC<NotaryRequestFormProps> = ({ onSuccess, onErro
 
         // Reset form
         setFormData({
-          name: '',
+          full_name: '',
           email: '',
           phone: '',
-          service_type: 'notary',
-          document_type: '',
+          service_type: 'notary_general',
           appointment_datetime: '',
           location: '',
           notes: '',
@@ -153,15 +150,15 @@ const NotaryRequestForm: React.FC<NotaryRequestFormProps> = ({ onSuccess, onErro
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <InputField
-            id="name"
+            id="full_name"
             label="Full Name"
-            name="name"
+            name="full_name"
             type="text"
-            value={formData.name || ''}
+            value={formData.full_name || ''}
             onChange={handleInputChange}
             placeholder="First and last name"
             required
-            error={getFieldError('name', errors)}
+            error={getFieldError('full_name', errors)}
             disabled={loading}
           />
 
@@ -216,17 +213,6 @@ const NotaryRequestForm: React.FC<NotaryRequestFormProps> = ({ onSuccess, onErro
         <h3 className="text-lg font-semibold text-charcoal mb-4">Service Details</h3>
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <SelectField
-            id="document_type"
-            label="Document Type"
-            name="document_type"
-            value={formData.document_type || ''}
-            onChange={handleInputChange}
-            options={documentTypeOptions}
-            placeholder="Select a document type"
-            disabled={loading}
-          />
-
           <InputField
             id="appointment_datetime"
             label="Preferred Date & Time"

@@ -3,7 +3,7 @@
  * Maps frontend form fields to Odoo CRM lead fields
  */
 
-export type ServiceType = 'notary' | 'loan-signing' | 'apostille' | 'courier' | 'other';
+export type ServiceType = 'notary_general' | 'loan_signing' | 'apostille' | 'courier' | 'other';
 export type RequestFormType = 'notary' | 'courier' | 'general-inquiry';
 
 /**
@@ -12,24 +12,23 @@ export type RequestFormType = 'notary' | 'courier' | 'general-inquiry';
  */
 export interface BaseRequestFormData {
   // Required fields
-  name: string;                    // Maps to: name
-  email: string;                   // Maps to: email_from
+  full_name: string;               // Maps to: full_name (Odoo)
+  email: string;                   // Maps to: email
   phone: string;                   // Maps to: phone
-  service_type: ServiceType;       // Maps to: tag_ids or custom service_type field
-  consent: boolean;                // Maps to: x_consent (boolean)
+  service_type: ServiceType;       // Maps to: service_type (Odoo)
+  consent: boolean;                // Maps to: consent (boolean)
 
   // Optional fields
-  appointment_datetime?: string;   // Maps to: x_appointment_datetime (ISO format)
-  location?: string;               // Maps to: x_location
-  notes?: string;                  // Maps to: description
+  appointment_datetime?: string;   // Maps to: appointment_datetime (ISO format)
+  location?: string;               // Maps to: location
+  notes?: string;                  // Maps to: notes
 }
 
 /**
  * Notary-specific request form
  */
 export interface NotaryRequestFormData extends BaseRequestFormData {
-  service_type: 'notary';
-  document_type?: string;          // Type of document to be notarized
+  service_type: 'notary_general';
 }
 
 /**
@@ -37,9 +36,6 @@ export interface NotaryRequestFormData extends BaseRequestFormData {
  */
 export interface CourierRequestFormData extends BaseRequestFormData {
   service_type: 'courier';
-  pickup_address?: string;         // Address for pickup (override location field)
-  delivery_address?: string;       // Address for delivery
-  service_date?: string;           // When service is needed (ISO format)
 }
 
 /**
@@ -47,7 +43,6 @@ export interface CourierRequestFormData extends BaseRequestFormData {
  */
 export interface GeneralInquiryFormData extends BaseRequestFormData {
   service_type: 'other';
-  subject?: string;                // Subject of inquiry
 }
 
 // Union type for any request form

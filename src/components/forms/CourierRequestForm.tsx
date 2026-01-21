@@ -23,13 +23,10 @@ interface CourierRequestFormProps {
 
 const CourierRequestForm: React.FC<CourierRequestFormProps> = ({ onSuccess, onError }) => {
   const [formData, setFormData] = useState<Partial<CourierRequestFormData>>({
-    name: '',
+    full_name: '',
     email: '',
     phone: '',
     service_type: 'courier',
-    pickup_address: '',
-    delivery_address: '',
-    service_date: '',
     location: '',
     notes: '',
     consent: false,
@@ -83,13 +80,10 @@ const CourierRequestForm: React.FC<CourierRequestFormProps> = ({ onSuccess, onEr
       const formattedPhone = formatPhoneNumber(formData.phone || '');
 
       const completeFormData: CourierRequestFormData = {
-        name: formData.name || '',
+        full_name: formData.full_name || '',
         email: formData.email || '',
         phone: formattedPhone,
         service_type: 'courier',
-        pickup_address: formData.pickup_address || '',
-        delivery_address: formData.delivery_address || '',
-        service_date: formData.service_date || undefined,
         location: formData.location || '',
         notes: formData.notes || '',
         consent: formData.consent || false,
@@ -104,13 +98,10 @@ const CourierRequestForm: React.FC<CourierRequestFormProps> = ({ onSuccess, onEr
 
         // Reset form
         setFormData({
-          name: '',
+          full_name: '',
           email: '',
           phone: '',
           service_type: 'courier',
-          pickup_address: '',
-          delivery_address: '',
-          service_date: '',
           location: '',
           notes: '',
           consent: false,
@@ -144,15 +135,15 @@ const CourierRequestForm: React.FC<CourierRequestFormProps> = ({ onSuccess, onEr
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <InputField
-            id="name"
+            id="full_name"
             label="Full Name"
-            name="name"
+            name="full_name"
             type="text"
-            value={formData.name || ''}
+            value={formData.full_name || ''}
             onChange={handleInputChange}
             placeholder="First and last name"
             required
-            error={getFieldError('name', errors)}
+            error={getFieldError('full_name', errors)}
             disabled={loading}
           />
 
@@ -203,54 +194,9 @@ const CourierRequestForm: React.FC<CourierRequestFormProps> = ({ onSuccess, onEr
         </div>
       </div>
 
-      {/* Pickup & Delivery Section */}
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold text-charcoal mb-4">Pickup & Delivery</h3>
-
-        <TextAreaField
-          id="pickup_address"
-          label="Pickup Address"
-          name="pickup_address"
-          value={formData.pickup_address || ''}
-          onChange={handleInputChange}
-          placeholder="Complete address for document pickup (street, city, state, ZIP)"
-          rows={3}
-          disabled={loading}
-        />
-
-        <div className="my-4 flex items-center gap-4">
-          <div className="flex-1 h-px bg-gray-300" />
-          <span className="text-gray-500 text-sm">to</span>
-          <div className="flex-1 h-px bg-gray-300" />
-        </div>
-
-        <TextAreaField
-          id="delivery_address"
-          label="Delivery Address"
-          name="delivery_address"
-          value={formData.delivery_address || ''}
-          onChange={handleInputChange}
-          placeholder="Complete address for document delivery (street, city, state, ZIP)"
-          rows={3}
-          disabled={loading}
-        />
-
-        <div className="mt-6">
-          <InputField
-            id="service_date"
-            label="Service Date & Time Needed"
-            name="service_date"
-            type="datetime-local"
-            value={formData.service_date || ''}
-            onChange={handleInputChange}
-            disabled={loading}
-          />
-        </div>
-      </div>
-
       {/* Additional Information Section */}
       <div className="mb-6">
-        <h3 className="text-lg font-semibold text-charcoal mb-4">Additional Information</h3>
+        <h3 className="text-lg font-semibold text-charcoal mb-4">Details</h3>
 
         <TextAreaField
           id="notes"

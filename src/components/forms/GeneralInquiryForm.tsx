@@ -23,11 +23,10 @@ interface GeneralInquiryFormProps {
 
 const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onError }) => {
   const [formData, setFormData] = useState<Partial<GeneralInquiryFormData>>({
-    name: '',
+    full_name: '',
     email: '',
     phone: '',
     service_type: 'other',
-    subject: '',
     appointment_datetime: '',
     location: '',
     notes: '',
@@ -82,11 +81,10 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
       const formattedPhone = formatPhoneNumber(formData.phone || '');
 
       const completeFormData: GeneralInquiryFormData = {
-        name: formData.name || '',
+        full_name: formData.full_name || '',
         email: formData.email || '',
         phone: formattedPhone,
-        service_type: 'other',
-        subject: formData.subject || '',
+        service_type: formData.service_type as any,
         appointment_datetime: formData.appointment_datetime || undefined,
         location: formData.location || '',
         notes: formData.notes || '',
@@ -102,11 +100,10 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
 
         // Reset form
         setFormData({
-          name: '',
+          full_name: '',
           email: '',
           phone: '',
           service_type: 'other',
-          subject: '',
           appointment_datetime: '',
           location: '',
           notes: '',
@@ -131,7 +128,10 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-professional-blue/20 p-6 md:p-8" noValidate>
+    <form onSubmit={handleSubmit} action={import.meta.env.VITE_ODOO_FORM_URL || 'http://localhost:8069/form/submit'} method="POST" className="bg-white border border-professional-blue/20 p-6 md:p-8" noValidate>
+      {/* Hidden Token Field for Odoo validation */}
+      <input type="hidden" name="token" value={import.meta.env.VITE_ODOO_FORM_TOKEN || ''} />
+
       {generalError && <ErrorAlert message={generalError} />}
       {success && <SuccessAlert message={success} />}
 
@@ -141,15 +141,15 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <InputField
-            id="name"
+            id="full_name"
             label="Full Name"
-            name="name"
+            name="full_name"
             type="text"
-            value={formData.name || ''}
+            value={formData.full_name || ''}
             onChange={handleInputChange}
             placeholder="First and last name"
             required
-            error={getFieldError('name', errors)}
+            error={getFieldError('full_name', errors)}
             disabled={loading}
           />
 
@@ -183,16 +183,16 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
 
           <SelectField
             id="service_type"
-            label="Inquiry Type"
+            label="Service Type"
             name="service_type"
             value={formData.service_type || 'other'}
             onChange={handleInputChange}
             options={[
-              { value: 'notary', label: 'Notary Services' },
-              { value: 'loan-signing', label: 'Loan Signing' },
-              { value: 'courier', label: 'Courier & Delivery' },
+              { value: 'notary_general', label: 'Notary General' },
+              { value: 'loan_signing', label: 'Loan Signing' },
               { value: 'apostille', label: 'Apostille' },
-              { value: 'other', label: 'Other / General Inquiry' },
+              { value: 'courier', label: 'Courier' },
+              { value: 'other', label: 'Other' },
             ]}
             required
             error={getFieldError('service_type', errors)}
@@ -201,26 +201,13 @@ const GeneralInquiryForm: React.FC<GeneralInquiryFormProps> = ({ onSuccess, onEr
         </div>
       </div>
 
-      {/* Inquiry Details Section */}
+      {/* Message Section */}
       <div className="mb-6">
-        <h3 className="text-lg font-semibold text-charcoal mb-4">Inquiry Details</h3>
-
-        <div className="mb-6">
-          <InputField
-            id="subject"
-            label="Subject"
-            name="subject"
-            type="text"
-            value={formData.subject || ''}
-            onChange={handleInputChange}
-            placeholder="Brief subject of your inquiry"
-            disabled={loading}
-          />
-        </div>
+        <h3 className="text-lg font-semibold text-charcoal mb-4">Message</h3>
 
         <TextAreaField
           id="notes"
-          label="Message"
+          label="Notes / Instructions"
           name="notes"
           value={formData.notes || ''}
           onChange={handleInputChange}

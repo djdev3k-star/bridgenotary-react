@@ -1,0 +1,21 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- BN Logo - Mobile/Web Use -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;display=swap');
+      .bn-text {
+        font-family: 'Poppins', sans-serif;
+        font-size: 56px;
+        font-weight: 700;
+        fill: #192252;
+        letter-spacing: -2px;
+      }
+    </style>
+  </defs>
+  
+  <!-- BN Text -->
+  <text x="60" y="70" text-anchor="middle" class="bn-text">BN</text>
+  
+  <!-- Professional Blue Underline -->
+  <line x1="25" y1="85" x2="95" y2="85" stroke="#0055E6" stroke-width="4" stroke-linecap="round"/>
+</svg>

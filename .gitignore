@@ -196,3 +196,23 @@ ODOO-INTEGRATION-COMPLETE.md
 
 # Keep core documentation
 # But exclude large/temporary markdown files from root
+
+# Large assets / marketing materials not used in web build.
+# PDFs and videos belong in public/downloads/ or public/videos/, not in src/assets/.
+# These patterns prevent accidentally re-adding them to the source tree.
+src/assets/Google-Business/
+src/assets/*.pdf
+src/assets/images/*.mp4
+src/assets/images/*.mov
+src/assets/images/*.avi
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# macOS
+**/.DS_Store
+
+# Windows
+**/Thumbs.db

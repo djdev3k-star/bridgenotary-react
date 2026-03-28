@@ -30,7 +30,7 @@ const services = [
     description: "Efficient loan modification document processing",
     features: [
       "Quick turnaround",
-      "Expert guidance",
+      "Trained signing agents",
       "Complete documentation",
       "Affordable rates"
     ],

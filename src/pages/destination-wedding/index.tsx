@@ -55,7 +55,7 @@ const DestinationWeddingPage: React.FC = () => {
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Common Destination Wedding Documents</h2>
             <p className="text-lg text-charcoal/70 leading-relaxed mb-8">
-              We help authenticate and certify documents for international wedding ceremonies and legal recognition abroad.
+              Many international wedding ceremonies require authenticated documents. We provide notarization and apostille coordination services for documents you provide.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -138,9 +138,12 @@ const DestinationWeddingPage: React.FC = () => {
       {/* CTA Section */}
       <section className="py-20 lg:py-28 bg-professional-blue/10 w-full">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Plan Your International Wedding With Confidence</h2>
-          <p className="text-lg text-charcoal/70 mb-8 leading-relaxed">
-            Let our experts handle your document authentication. We understand the importance of your special day.
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Document Authentication for International Weddings</h2>
+          <p className="text-lg text-charcoal/70 mb-4 leading-relaxed">
+            We provide notarization and apostille coordination services for destination wedding documents. Contact the destination country's embassy or consulate to confirm exact requirements.
+          </p>
+          <p className="text-sm text-charcoal/60 mb-8">
+            Note: We cannot provide legal advice about international marriage requirements. Please consult with an attorney or the appropriate embassy for legal guidance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/book" className="inline-flex items-center justify-center bg-professional-blue text-white hover:bg-professional-blue/90 transition-all rounded text-lg py-3 px-8 font-semibold">

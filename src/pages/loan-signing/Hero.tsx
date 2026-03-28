@@ -72,13 +72,13 @@ const LoanSigningHero: React.FC = () => {
             </div>
             
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
-              Expert Signings
+              Professional Signings
               <br />
               Every Time
             </h1>
             
             <p className="text-lg text-white/95 mb-8 leading-relaxed max-w-xl font-light">
-              NNA-certified signing agents with deep expertise in residential and commercial closings. We handle complex documents with precision to keep your transactions on track.
+              NNA-certified signing agents trained in residential and commercial closings. We handle loan documents with precision to keep your transactions on track.
             </p>
             
             {/* Trust Markers */}

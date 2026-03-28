@@ -4,34 +4,33 @@ const sections = [
   {
     title: "Professional Power of Attorney Notarization",
     paragraphs: [
-      "A Power of Attorney (POA) is one of the most important legal documents you can have. It grants someone you trust the authority to make decisions on your behalf—whether those decisions involve finances, healthcare, property, or other critical matters.",
-      "At Bridge Notary, we provide expert notarization services for all types of power of attorney documents. Our notaries understand the legal requirements for POA execution in Texas and ensure that every signature is properly witnessed, notarized, and legally valid.",
-      "Whether you're creating a durable power of attorney for financial matters, a medical power of attorney for healthcare decisions, or a limited power of attorney for specific transactions, we're here to help you complete the process correctly and efficiently.",
+      "A Power of Attorney (POA) is an important legal document that grants someone you trust the authority to act on your behalf. POA documents typically require notarization to be valid in Texas.",
+      "At Bridge Notary, we provide professional notarization services for power of attorney documents prepared by you or your attorney. We follow Texas notary requirements to ensure signatures are properly witnessed and notarized.",
+      "Important: Our notaries cannot provide legal advice, recommend which type of POA is right for your situation, or prepare POA documents. For legal guidance on powers of attorney, please consult a licensed Texas attorney.",
     ],
   },
   {
-    title: "Types of Power of Attorney We Handle",
+    title: "Types of Power of Attorney We Notarize",
     paragraphs: [
-      "Financial Power of Attorney grants your agent the authority to manage your financial affairs—paying bills, managing investments, handling real estate transactions, and more. This is essential for estate planning and ensuring your finances are managed if you become incapacitated.",
-      "Medical Power of Attorney (also called Healthcare Proxy) allows your designated agent to make healthcare decisions on your behalf if you're unable to do so. This document is crucial for ensuring your medical wishes are respected.",
-      "Limited or Special Power of Attorney grants authority for specific tasks or time periods—such as selling a property, signing documents while you're traveling, or handling a particular business transaction. These POAs expire once the task is completed or the time period ends.",
-      "Durable Power of Attorney remains in effect even if you become mentally incapacitated, making it a cornerstone of comprehensive estate planning. Non-durable POAs expire if you become incapacitated.",
+      "We notarize all types of power of attorney documents, including financial POAs, medical POAs (healthcare proxies), limited or special POAs, durable POAs, and springing POAs.",
+      "Each type of POA has different legal implications and requirements. We recommend consulting with a licensed attorney to determine which documents are appropriate for your situation before scheduling a notarization appointment.",
+      "Important: We cannot advise you on which type of POA to use, what powers to grant, or whether a document is suitable for your needs. These are legal questions that require an attorney.",
     ],
   },
   {
     title: "Mobile Notary for Power of Attorney Documents",
     paragraphs: [
-      "Creating or updating a power of attorney often happens during times of transition—planning for surgery, preparing for travel, or addressing aging parent concerns. Our mobile notary services bring professional notarization directly to you, eliminating the stress of traveling to an office.",
-      "We come to your home, office, hospital, or attorney's office at a time that works for your schedule. This is especially valuable when dealing with elderly family members or individuals with mobility challenges who need POA documents notarized.",
-      "Our notaries arrive prepared with all necessary equipment and documentation. We take the time to verify identities, ensure all parties understand the documents they're signing, and complete the notarization with full legal compliance.",
+      "Our mobile notary services bring professional notarization directly to you—at your home, office, hospital, or attorney's office—at a time that works for your schedule.",
+      "This is especially convenient for elderly family members or individuals with mobility challenges who need POA documents notarized. We also coordinate with attorneys' offices for seamless document execution.",
+      "Our notaries arrive prepared with all necessary equipment. We verify signer identities, confirm all parties appear willing and competent to sign, and complete the notarization according to Texas law.",
     ],
   },
   {
     title: "Why Proper POA Notarization Matters",
     paragraphs: [
-      "Power of attorney documents must be executed correctly to be legally valid. Improper notarization can lead to rejected documents, legal challenges, and situations where your agent's authority is questioned at critical moments.",
-      "Our notaries are experienced in handling POA documents and understand the specific requirements under Texas law. We ensure that all witnesses (when required) are present, that signatures are affixed in the correct order, and that the notarial certificate is completed accurately.",
-      "We work closely with estate planning attorneys, financial advisors, and healthcare providers to ensure seamless execution of POA documents. Whether you're working with a professional or handling documents independently, we provide the notarization expertise you need.",
+      "Power of attorney documents must be executed correctly to be accepted by banks, healthcare providers, and other institutions. Improper notarization can lead to rejected documents and delays.",
+      "Our notaries are trained in Texas notary law and POA notarization procedures. We ensure that required witnesses are present, signatures are affixed in the correct order, and notarial certificates are completed accurately.",
+      "We coordinate with estate planning attorneys and other professionals to ensure smooth execution of POA documents. For any legal questions about your POA documents, please consult your attorney.",
     ],
   },
 ];
@@ -39,23 +38,23 @@ const sections = [
 const highlights = [
   {
     title: "All POA Types",
-    description: "Financial, medical, limited, durable, and springing power of attorney.",
+    description: "We notarize financial, medical, limited, durable, and springing power of attorney documents.",
   },
   {
     title: "Mobile Service",
     description: "We come to your home, office, hospital, or attorney's location.",
   },
   {
-    title: "Legal Compliance",
-    description: "Every notarization meets Texas legal requirements for POA execution.",
+    title: "Texas Compliant",
+    description: "Notarization performed according to Texas notary law requirements.",
   },
   {
-    title: "Experienced Notaries",
-    description: "Our notaries specialize in estate planning and legal document notarization.",
+    title: "Trained Notaries",
+    description: "Our notaries are trained in proper POA notarization procedures.",
   },
   {
     title: "Fast Turnaround",
-    description: "Same-day service available for urgent POA notarization needs.",
+    description: "Same-day service available for urgent notarization needs.",
   },
 ];
 
@@ -64,8 +63,8 @@ const PowerOfAttorneyPage = () => {
     <NotaryServicePage
       title="Power of Attorney Notarization"
       breadcrumbLabel="Power of Attorney"
-      subtitle="Expert POA Document Services"
-      heroSummary="Grant trusted individuals the authority to act on your behalf with properly notarized power of attorney documents. We handle financial, medical, and legal POA documents with precision and ensure your wishes are legally protected."
+      subtitle="Professional POA Notarization Services"
+      heroSummary="Have your power of attorney documents professionally notarized at your location. We notarize POA documents prepared by you or your attorney, following Texas notary requirements. Note: We do not provide legal advice or prepare documents."
       sections={sections}
       highlights={highlights}
       ctaText="Book POA Notarization"

@@ -48,7 +48,7 @@ const InternationalAdoptionPage: React.FC = () => {
               International Adoption Apostilles
             </h1>
             <p className="text-xl text-white/90 leading-relaxed drop-shadow">
-              Expert authentication of adoption documents and dossiers for foreign central authorities and courts worldwide.
+              Professional notarization and apostille coordination services for adoption documents and dossiers required by foreign central authorities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
               <Link to="/book" className="inline-flex items-center justify-center bg-white text-professional-blue hover:bg-white/90 transition-all rounded font-bold py-3 px-8">
@@ -68,7 +68,7 @@ const InternationalAdoptionPage: React.FC = () => {
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">Adoption Dossier Documents</h2>
             <p className="text-lg text-charcoal/70 leading-relaxed mb-12 max-w-3xl">
-              Every international adoption requires authenticated documents verified by foreign authorities. We ensure all records meet Hague Convention and country-specific requirements.
+              International adoptions require authenticated documents verified by foreign authorities. We provide notarization and apostille coordination services for adoption dossier documents. Please work with your adoption agency and attorney to confirm specific requirements.
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">

@@ -250,15 +250,18 @@ const DualCitizenshipPage: React.FC = () => {
       <section className="py-20 lg:py-28 bg-professional-blue">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Start Your Dual Citizenship Journey</h2>
-          <p className="text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Our apostille experts ensure your documents meet consulate requirements. Complete the process with confidence and clarity.
+          <p className="text-xl text-white/90 mb-4 leading-relaxed max-w-2xl mx-auto">
+            We provide professional notarization and apostille coordination services for citizenship application documents.
+          </p>
+          <p className="text-sm text-white/70 mb-10 max-w-xl mx-auto">
+            Note: We cannot provide legal advice about immigration or citizenship matters. Please consult with an immigration attorney or your country's embassy for guidance on requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/book" className="inline-flex items-center justify-center bg-white text-professional-blue hover:bg-white/90 transition-all rounded font-bold py-3 px-10 text-lg">
               Book Apostille Service
             </Link>
             <Link to="/contact" className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all rounded font-bold py-3 px-10 text-lg">
-              Chat with Our Team
+              Contact Us
             </Link>
           </div>
         </div>

@@ -6,7 +6,7 @@ const sections = [
     paragraphs: [
       "A Power of Attorney (POA) is an important legal document that grants someone you trust the authority to act on your behalf. POA documents typically require notarization to be valid in Texas.",
       "At Bridge Notary, we provide professional notarization services for power of attorney documents prepared by you or your attorney. We follow Texas notary requirements to ensure signatures are properly witnessed and notarized.",
-      "Note: Our notaries cannot provide legal advice, recommend which type of POA is right for your situation, or prepare POA documents. For legal guidance on powers of attorney, please consult a licensed Texas attorney.",
+      "Important: Our notaries cannot provide legal advice, recommend which type of POA is right for your situation, or prepare POA documents. For legal guidance on powers of attorney, please consult a licensed Texas attorney.",
     ],
   },
   {

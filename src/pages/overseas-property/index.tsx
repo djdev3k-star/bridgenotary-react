@@ -265,15 +265,18 @@ const OverseasPropertyPage: React.FC = () => {
       <section className="py-20 lg:py-28 bg-professional-blue w-full">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Authenticate Your Property Documents?</h2>
-          <p className="text-lg text-white/90 mb-8 leading-relaxed">
-            Our experts guide you through every step of the apostille process for international real estate transactions.
+          <p className="text-lg text-white/90 mb-4 leading-relaxed">
+            We provide professional notarization and apostille coordination services for international real estate documents.
+          </p>
+          <p className="text-sm text-white/70 mb-8 max-w-xl mx-auto">
+            Note: We cannot provide legal advice about international real estate transactions. Please consult with a real estate attorney or appropriate legal counsel.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/book" className="inline-flex items-center justify-center bg-white text-professional-blue hover:bg-professional-blue hover:text-white transition-all rounded text-lg py-3 px-8 font-bold">
               Book Your Service
             </Link>
             <Link to="/contact" className="inline-flex items-center justify-center bg-white/20 border-2 border-white text-white hover:bg-white hover:text-professional-blue transition-all rounded text-lg py-3 px-8 font-bold">
-              Get in Touch
+              Contact Us
             </Link>
           </div>
         </div>

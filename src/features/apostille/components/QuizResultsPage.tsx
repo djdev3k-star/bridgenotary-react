@@ -22,8 +22,8 @@ const QuizResultsPage: React.FC = () => {
   const getFeedbackMessage = (percentage: number): { title: string; message: string } => {
     if (percentage >= 90) {
       return {
-        title: "Apostille Expert!",
-        message: "Impressive! You have an excellent understanding of apostilles and international document authentication. You're well-prepared to handle complex document scenarios."
+        title: "Excellent Score!",
+        message: "Impressive! You have an excellent understanding of apostilles and international document authentication. You're well-prepared to handle document requirements."
       };
     } else if (percentage >= 70) {
       return {
@@ -38,7 +38,7 @@ const QuizResultsPage: React.FC = () => {
     } else {
       return {
         title: "Learning Opportunity!",
-        message: "This is a great opportunity to learn more about apostilles. Review the questions you missed and consider consulting with our experts for your specific needs."
+        message: "This is a great opportunity to learn more about apostilles. Review the questions you missed and contact us if you need notarization or apostille coordination services."
       };
     }
   };
@@ -115,16 +115,16 @@ const QuizResultsPage: React.FC = () => {
             </div>
             
             <div className="bg-proof/5 border border-proof/20 rounded p-6">
-              <h3 className="text-xl font-semibold text-proof mb-4">Need Professional Apostille Services?</h3>
+              <h3 className="text-xl font-semibold text-proof mb-4">Need Apostille Services?</h3>
               <p className="mb-4">
-                Navigating international document requirements can be complex. Bridge Notary offers expert apostille and authentication services to ensure your documents are properly prepared for international use.
+                Bridge Notary provides notarization and apostille coordination services to help your documents be properly prepared for international use. Contact us to discuss your needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
                 <button 
                   onClick={() => navigate('/contact')}
                   className="button-primary"
                 >
-                  Get Expert Help
+                  Contact Us
                 </button>
                 <button 
                   onClick={() => navigate('/apostille')}

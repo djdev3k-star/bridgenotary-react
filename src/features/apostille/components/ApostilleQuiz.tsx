@@ -263,7 +263,7 @@ const ApostilleQuiz: React.FC = () => {
           </div>
           <div className="ml-3">
             <p className="text-sm text-neutral-600">
-              This quiz covers common apostille scenarios and pitfalls. Requirements can vary by country and document type. When in doubt, consult with our experts for your specific situation.
+              This quiz covers common apostille scenarios. Requirements vary by country and document type. Contact us if you need notarization or apostille coordination services, and consult the destination country's embassy for specific requirements.
             </p>
           </div>
         </div>

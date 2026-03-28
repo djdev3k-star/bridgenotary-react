@@ -36,15 +36,15 @@ export const ApostilleSidebar: React.FC = () => {
       </div>
       
       <div className="bg-electric-blue/10 rounded p-6">
-        <h3 className="font-semibold text-electric-blue mb-3">Need Apostille Help?</h3>
+        <h3 className="font-semibold text-electric-blue mb-3">Need Apostille Services?</h3>
         <p className="text-neutral-700 mb-4">
-          Our experts can help with any document authentication needs, from simple apostilles to complex international document legalization.
+          We provide notarization and apostille coordination services for documents requiring international authentication.
         </p>
         <Link 
           to="/contact" 
           className="button-primary w-full text-center block"
         >
-          Get Expert Help
+          Contact Us
         </Link>
       </div>
     </div>

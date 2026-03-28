@@ -97,8 +97,24 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Texas Notary Disclaimer */}
+        <div className="pt-8 border-t border-professional-blue/10 mb-6">
+          <div className="bg-professional-blue/5 border border-professional-blue/10 p-4 rounded text-xs text-charcoal/70 leading-relaxed">
+            <p className="font-semibold text-charcoal mb-2">Texas Notary Public Disclaimer</p>
+            <p className="mb-2">
+              Bridge Notary is a Texas notary service. Our notaries are <strong>not attorneys</strong> and are prohibited by Texas law from providing legal advice. We cannot explain or interpret documents, recommend specific documents, advise you on the legal effect of documents, or prepare documents for you. For legal questions, consult a licensed Texas attorney.
+            </p>
+            <p className="mb-2">
+              A notary public is a public official commissioned by the Texas Secretary of State to witness signatures, administer oaths, and certify copies of certain documents. Notarization does not validate the contents of a document or make it legally binding—it only confirms signer identity and willingness.
+            </p>
+            <p>
+              Notary fees in Texas are set by state law. Additional charges may apply for mobile travel, after-hours service, and other non-notarial services. See our <Link to="/pricing" className="text-professional-blue hover:underline">pricing page</Link> for details.
+            </p>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-professional-blue/10">
+        <div className="pt-6 border-t border-professional-blue/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-charcoal/70 text-xs">
               &copy; {new Date().getFullYear()} Bridge Notary. All rights reserved.

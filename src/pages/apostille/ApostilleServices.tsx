@@ -336,7 +336,7 @@ const ApostilleServices: React.FC = () => {
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">Our Process</span>
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">How We Solve It</h2>
-            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">Every step handled by our expert team—you stay informed throughout.</p>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">Every step handled by our team—you stay informed throughout.</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -363,7 +363,7 @@ const ApostilleServices: React.FC = () => {
           <div className="text-center mb-16">
             <span className="inline-block text-xs font-semibold tracking-widest text-professional-blue uppercase mb-3 bg-professional-blue/10 px-4 py-2">End-to-End Delivery</span>
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Your Apostille Journey</h2>
-            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">From submission to delivery, we handle every step with professional expertise and complete transparency.</p>
+            <p className="text-lg text-charcoal/70 max-w-3xl mx-auto">From submission to delivery, we handle every step with professionalism and complete transparency.</p>
           </div>
 
           {/* Four-Step Process */}

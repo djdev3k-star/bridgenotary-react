@@ -2,35 +2,35 @@ import NotaryServicePage from "@/features/notary-services/components/NotaryServi
 
 const sections = [
   {
-    title: "Trusted Estate & Trust Notarization Services",
+    title: "Professional Estate Document Notarization",
     paragraphs: [
-      "Estate planning is one of the most important steps you can take to protect your family's future. At Bridge Notary, we specialize in providing professional notarization services for wills, trusts, powers of attorney, healthcare directives, and other critical estate documents.",
-      "Our notaries understand the sensitive nature of estate planning and approach every appointment with discretion, professionalism, and respect. Whether you're working with an attorney or handling documents independently, we ensure that every signature is properly witnessed and notarized according to Texas law.",
-      "We offer mobile notary services, meaning we come to you—whether that's your home, your attorney's office, a hospital, or a care facility. This convenience is especially valuable when dealing with elderly family members or individuals with mobility challenges.",
+      "Estate planning documents—including wills, trusts, powers of attorney, and healthcare directives—often require notarization to be valid. At Bridge Notary, we provide professional notarization services for estate documents prepared by you or your attorney.",
+      "Our notaries approach every appointment with discretion, professionalism, and respect. We understand that estate documents involve sensitive family matters and handle each signing with appropriate care.",
+      "Important: We do not provide legal advice, prepare estate documents, or recommend specific documents for your situation. Estate planning involves complex legal considerations—we strongly recommend working with a licensed Texas attorney for document preparation and legal guidance.",
     ],
   },
   {
-    title: "Comprehensive Estate Document Support",
+    title: "Estate Documents We Notarize",
     paragraphs: [
-      "Estate and trust documents require precision and legal compliance. Our notaries are experienced in handling a wide range of estate planning instruments, including revocable and irrevocable trusts, last wills and testaments, living wills, and medical powers of attorney.",
-      "We work closely with estate planning attorneys, financial advisors, and family members to ensure that all notarization requirements are met. Our goal is to provide a seamless, stress-free experience during what can often be an emotionally challenging time.",
-      "Each notarization is performed with meticulous attention to detail, ensuring that all parties understand the documents they're signing and that every legal requirement is satisfied. We maintain strict confidentiality and handle all documents with the highest level of care.",
+      "We notarize a wide range of estate planning documents, including revocable and irrevocable trusts, last wills and testaments, living wills, medical powers of attorney, and financial powers of attorney.",
+      "Each document type has specific notarization requirements under Texas law. Our notaries are trained in proper procedures to ensure documents are notarized correctly.",
+      "Note: While we can notarize your estate documents, we cannot advise you on whether a particular document is appropriate for your situation, explain the legal effect of document provisions, or make changes to documents. For these services, please consult an estate planning attorney.",
     ],
   },
   {
-    title: "Mobile Notary for Senior Care & Hospice",
+    title: "Mobile Notary for Hospitals & Care Facilities",
     paragraphs: [
-      "When family members are in hospitals, nursing homes, or receiving hospice care, traveling to a notary office may not be feasible. Our mobile notary services bring professional notarization directly to the bedside.",
-      "We've worked with countless families during difficult times, providing compassionate and efficient notary services for estate documents, healthcare directives, and final wishes. Our notaries are trained to work respectfully in healthcare settings and can accommodate special circumstances.",
-      "Whether it's an urgent situation or a planned estate planning session, we respond promptly and handle every appointment with sensitivity and professionalism. We understand that timing can be critical, and we make ourselves available to meet your family's needs.",
+      "When family members are in hospitals, nursing homes, or receiving hospice care, traveling to a notary office may not be possible. Our mobile notary services bring professional notarization directly to the bedside or care facility.",
+      "We respond promptly to urgent requests and can coordinate with healthcare facilities for after-hours access when needed. Our notaries are experienced in working respectfully in healthcare settings.",
+      "Please note: We cannot determine whether a signer is mentally competent to sign documents. If there are concerns about a signer's capacity, we recommend consulting with healthcare providers and legal counsel before scheduling a notarization.",
     ],
   },
   {
-    title: "Why Choose Bridge Notary for Estate Planning?",
+    title: "Working with Estate Planning Attorneys",
     paragraphs: [
-      "Estate planning requires a notary who not only understands the legal requirements but also appreciates the personal significance of these documents. Our notaries bring both expertise and empathy to every appointment.",
-      "We've earned the trust of estate planning attorneys, financial planners, and families throughout the DFW area. Our reputation is built on reliability, professionalism, and a genuine commitment to serving our community during life's most important moments.",
-      "From initial estate planning documents to amendments and updates, we're here to provide notarization services whenever you need them. With flexible scheduling, mobile service, and a deep understanding of estate law requirements, Bridge Notary is your trusted partner in protecting your family's legacy.",
+      "We coordinate regularly with estate planning attorneys throughout DFW. If you're working with an attorney, we can notarize documents at their office or come to a location convenient for you and your family.",
+      "For clients who do not have an attorney, we recommend consulting with a licensed Texas estate planning attorney before preparing estate documents. While we can notarize documents you prepare yourself, proper legal guidance helps ensure your documents accomplish your intended goals.",
+      "The Texas State Bar offers lawyer referral services, and many estate planning attorneys offer initial consultations. Do not rely on a notary for legal advice about estate planning matters.",
     ],
   },
 ];
@@ -38,23 +38,23 @@ const sections = [
 const highlights = [
   {
     title: "Wills & Trusts",
-    description: "Professional notarization for all types of wills and trust documents.",
+    description: "Professional notarization for wills, trusts, and related estate documents.",
   },
   {
     title: "Mobile Service",
-    description: "We come to your home, hospital, or care facility for your convenience.",
+    description: "We come to your home, hospital, care facility, or attorney's office.",
   },
   {
     title: "Confidential",
-    description: "All estate documents handled with strict confidentiality and discretion.",
+    description: "All documents handled with strict confidentiality and discretion.",
   },
   {
-    title: "Legal Compliance",
-    description: "Every notarization meets Texas estate planning legal requirements.",
+    title: "Texas Compliant",
+    description: "Notarization performed according to Texas notary law requirements.",
   },
   {
-    title: "Compassionate Care",
-    description: "Sensitive handling of family matters during challenging times.",
+    title: "Sensitive Approach",
+    description: "Respectful handling of family matters during challenging times.",
   },
 ];
 
@@ -63,11 +63,11 @@ const EstateTrustPage = () => {
     <NotaryServicePage
       title="Estate & Trust Notarization"
       breadcrumbLabel="Estate & Trust"
-      subtitle="Professional, Compassionate Care"
-      heroSummary="Protect your family's future with expert notarization of wills, trusts, healthcare directives, and powers of attorney. We handle sensitive estate documents with discretion and bring our services directly to your location."
+      subtitle="Professional Document Notarization"
+      heroSummary="Have your estate planning documents professionally notarized at your location. We notarize wills, trusts, healthcare directives, and powers of attorney prepared by you or your attorney. Note: We do not provide legal advice or prepare documents—please consult a licensed attorney for estate planning guidance."
       sections={sections}
       highlights={highlights}
-      ctaText="Schedule Estate Notarization"
+      ctaText="Schedule Notarization"
       ctaLink="/book?service=estate-trust"
       showSidebar={false}
     />

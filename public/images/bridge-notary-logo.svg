@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" width="500" height="100" preserveAspectRatio="xMidYMid meet">
+  <!-- Main text: "Bridge Notary" -->
+  <text x="10" y="65" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#1A2B4D">Bridge Notary</text>
+  
+  <!-- Blue underline accent (under "Bridge") -->
+  <rect x="10" y="72" width="50" height="5" fill="#0055E6" rx="2"/>
+</svg>
